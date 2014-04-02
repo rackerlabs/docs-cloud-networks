@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+
+<!DOCTYPE feed
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<feed xmlns="http://www.w3.org/2005/Atom">
+   <title>Cloud Networks™ Getting Started OpenStack Networking API v2 revision history</title>
+   <link href="http://docs.rackspace.com/servers/api/v2/cn-gettingstarted/atom.xml" rel="self"/>
+   <link href="http://docs.rackspace.com/servers/api/v2/cn-gettingstarted/content/index.html"/>
+   <id>cn-gettingstarted</id>
+   <updated>2014-04-02T09:31:47-05:00</updated>
+   <entry>
+      <title>2014-03-14</title>
+      <link type="text/html" href="http://docs.rackspace.com/servers/api/v2/cn-gettingstarted/content/index.html"/>
+      <id>cn-gettingstarted-2014-03-14</id>
+      <updated>2014-03-14</updated>
+      <content type="xhtml">
+         <div xmlns="http://www.w3.org/1999/xhtml">
+                    
+            <p>Reorganized doc and added neutron api calls</p>
+                
+         </div>
+      </content>
+   </entry>
+   <entry>
+      <title>2014-02-17</title>
+      <link type="text/html" href="http://docs.rackspace.com/servers/api/v2/cn-gettingstarted/content/index.html"/>
+      <id>cn-gettingstarted-2014-02-17</id>
+      <updated>2014-02-17</updated>
+      <content type="xhtml">
+         <div xmlns="http://www.w3.org/1999/xhtml">
+                    
+            <p>Removed nova install from git instructions.</p>
+                
+         </div>
+      </content>
+   </entry>
+   <entry>
+      <title>2014-02-13</title>
+      <link type="text/html" href="http://docs.rackspace.com/servers/api/v2/cn-gettingstarted/content/index.html"/>
+      <id>cn-gettingstarted-2014-02-13</id>
+      <updated>2014-02-13</updated>
+      <content type="xhtml">
+         <div xmlns="http://www.w3.org/1999/xhtml">
+                    
+            <p>Removed supernova install instructions and added supernova link to resources section.</p>
+                
+         </div>
+      </content>
+   </entry>
+   <entry>
+      <title>2013-12-4</title>
+      <link type="text/html" href="http://docs.rackspace.com/servers/api/v2/cn-gettingstarted/content/index.html"/>
+      <id>cn-gettingstarted-2013-12-4</id>
+      <updated>2013-12-4</updated>
+      <content type="xhtml">
+         <div xmlns="http://www.w3.org/1999/xhtml">
+                    
+            <p>Updated the name for Managed Cloud Service Level</p>
+                
+         </div>
+      </content>
+   </entry>
+   <entry>
+      <title>2013-11-04</title>
+      <link type="text/html" href="http://docs.rackspace.com/servers/api/v2/cn-gettingstarted/content/index.html"/>
+      <id>cn-gettingstarted-2013-11-04</id>
+      <updated>2013-11-04</updated>
+      <content type="xhtml">
+         <div xmlns="http://www.w3.org/1999/xhtml">
+                    
+            <p>Published Performance server information, previously limited access. </p>
+                
+         </div>
+      </content>
+   </entry>
+   <entry>
+      <title>2013-10-31</title>
+      <link type="text/html" href="http://docs.rackspace.com/servers/api/v2/cn-gettingstarted/content/index.html"/>
+      <id>cn-gettingstarted-2013-10-31</id>
+      <updated>2013-10-31</updated>
+      <content type="xhtml">
+         <div xmlns="http://www.w3.org/1999/xhtml">
+                    
+            <p>Fixed the link for requesting Cloud Networks access to
+                        <a class="link" href="http://www.iwantcloudnetworks.com/" target="_top">http://www.iwantcloudnetworks.com/</a>.</p>
+                
+         </div>
+      </content>
+   </entry>
+   <entry>
+      <title>2013-09-26</title>
+      <link type="text/html" href="http://docs.rackspace.com/servers/api/v2/cn-gettingstarted/content/index.html"/>
+      <id>cn-gettingstarted-2013-09-26</id>
+      <updated>2013-09-26</updated>
+      <content type="xhtml">
+         <div xmlns="http://www.w3.org/1999/xhtml">
+                    
+            <div class="itemizedlist">
+               <ul class="itemizedlist" type="disc" compact="compact">
+                  <li class="listitem">
+                     <p>updated examples for d2to1 in install and update nova client section.</p>
+                  </li>
+                  <li class="listitem">
+                     <p>removed v4-fixed-ip from <a xmlns:html="http://www.w3.org/1999/xhtml" class="xref" href="content/nova_provision_server.html" title="Provision a Server with an Isolated Network with the nova Client">the section called “Provision a Server with an Isolated Network with the nova Client”</a>
+                     </p>
+                  </li>
+               </ul>
+            </div>
+                
+         </div>
+      </content>
+   </entry>
+   <entry>
+      <title>2013-08-28</title>
+      <link type="text/html" href="http://docs.rackspace.com/servers/api/v2/cn-gettingstarted/content/index.html"/>
+      <id>cn-gettingstarted-2013-08-28</id>
+      <updated>2013-08-28</updated>
+      <content type="xhtml">
+         <div xmlns="http://www.w3.org/1999/xhtml">
+                    
+            <p>Removed references to bandwidth since the RAX extension is no longer implemented. It causes an
+                        unsustainable load on Nova. See <a xmlns:html="http://www.w3.org/1999/xhtml" class="xref" href="content/list_servers.html" title="Step 4. List Servers and Attached Networks">the section called “Step 4. List Servers and Attached Networks”</a>.</p>
+                
+         </div>
+      </content>
+   </entry>
+   <entry>
+      <title>2013-06-26</title>
+      <link type="text/html" href="http://docs.rackspace.com/servers/api/v2/cn-gettingstarted/content/index.html"/>
+      <id>cn-gettingstarted-2013-06-26</id>
+      <updated>2013-06-26</updated>
+      <content type="xhtml">
+         <div xmlns="http://www.w3.org/1999/xhtml">
+                    
+            <p>Added Server Key Pairs nova commands.</p>
+                
+         </div>
+      </content>
+   </entry>
+   <entry>
+      <title>2013-06-24</title>
+      <link type="text/html" href="http://docs.rackspace.com/servers/api/v2/cn-gettingstarted/content/index.html"/>
+      <id>cn-gettingstarted-2013-06-24</id>
+      <updated>2013-06-24</updated>
+      <content type="xhtml">
+         <div xmlns="http://www.w3.org/1999/xhtml">
+                    
+            <p>Added important note that user may choose any endpoint regardless of account origin.</p>
+                
+         </div>
+      </content>
+   </entry>
+   <entry>
+      <title>2013-06-20</title>
+      <link type="text/html" href="http://docs.rackspace.com/servers/api/v2/cn-gettingstarted/content/index.html"/>
+      <id>cn-gettingstarted-2013-06-20</id>
+      <updated>2013-06-20</updated>
+      <content type="xhtml">
+         <div xmlns="http://www.w3.org/1999/xhtml">
+                    
+            <p>Updated link to supernova git repository</p>
+                
+         </div>
+      </content>
+   </entry>
+   <entry>
+      <title>2013-06-18</title>
+      <link type="text/html" href="http://docs.rackspace.com/servers/api/v2/cn-gettingstarted/content/index.html"/>
+      <id>cn-gettingstarted-2013-06-18</id>
+      <updated>2013-06-18</updated>
+      <content type="xhtml">
+         <div xmlns="http://www.w3.org/1999/xhtml">
+                    
+            <p>Removed optional parameters from nova_summary. </p>
+                
+         </div>
+      </content>
+   </entry>
+   <entry>
+      <title>2013-06-17</title>
+      <link type="text/html" href="http://docs.rackspace.com/servers/api/v2/cn-gettingstarted/content/index.html"/>
+      <id>cn-gettingstarted-2013-06-17</id>
+      <updated>2013-06-17</updated>
+      <content type="xhtml">
+         <div xmlns="http://www.w3.org/1999/xhtml">
+                    
+            <p>Removed optional parameters, such as hint, block_device_mapping, availability_zone, and
+                        security_groups, from <a xmlns:html="http://www.w3.org/1999/xhtml" class="xref" href="content/create_server_with_network.html" title="Step 3. Provision a Server with an Isolated Network">the section called “Step 3. Provision a Server with an Isolated Network”</a>. </p>
+                
+         </div>
+      </content>
+   </entry>
+   <entry>
+      <title>2013-05-23</title>
+      <link type="text/html" href="http://docs.rackspace.com/servers/api/v2/cn-gettingstarted/content/index.html"/>
+      <id>cn-gettingstarted-2013-05-23</id>
+      <updated>2013-05-23</updated>
+      <content type="xhtml">
+         <div xmlns="http://www.w3.org/1999/xhtml">
+                    
+            <p>Updated "control panel" to "Control Panel."</p>
+                
+         </div>
+      </content>
+   </entry>
+   <entry>
+      <title>2013-05-13</title>
+      <link type="text/html" href="http://docs.rackspace.com/servers/api/v2/cn-gettingstarted/content/index.html"/>
+      <id>cn-gettingstarted-2013-05-13</id>
+      <updated>2013-05-13</updated>
+      <content type="xhtml">
+         <div xmlns="http://www.w3.org/1999/xhtml">
+                    
+            <p>Added the Cloud Networks virtual interface extension, which enables you to create virtual interfaces for, list virtual interfaces
+                        for, and delete virtual interfaces from existing server instances.</p>
+                
+         </div>
+      </content>
+   </entry>
+   <entry>
+      <title>2013-03-26</title>
+      <link type="text/html" href="http://docs.rackspace.com/servers/api/v2/cn-gettingstarted/content/index.html"/>
+      <id>cn-gettingstarted-2013-03-26</id>
+      <updated>2013-03-26</updated>
+      <content type="xhtml">
+         <div xmlns="http://www.w3.org/1999/xhtml">
+                    
+            <p>Updated to add the list servers call, which lists servers and their attached networks.</p>
+                
+         </div>
+      </content>
+   </entry>
+   <entry>
+      <title>2013-02-07</title>
+      <link type="text/html" href="http://docs.rackspace.com/servers/api/v2/cn-gettingstarted/content/index.html"/>
+      <id>cn-gettingstarted-2013-02-07</id>
+      <updated>2013-02-07</updated>
+      <content type="xhtml">
+         <div xmlns="http://www.w3.org/1999/xhtml">
+                    
+            <p>Corrected the JSON request to add missing slashes in <a xmlns:html="http://www.w3.org/1999/xhtml" class="xref" href="content/curl_create_network.html" title="Create an Isolated Network with cURL">the section called “Create an Isolated Network with cURL”</a>.</p>
+                
+         </div>
+      </content>
+   </entry>
+   <entry>
+      <title>2013-01-08</title>
+      <link type="text/html" href="http://docs.rackspace.com/servers/api/v2/cn-gettingstarted/content/index.html"/>
+      <id>cn-gettingstarted-2013-01-08</id>
+      <updated>2013-01-08</updated>
+      <content type="xhtml">
+         <div xmlns="http://www.w3.org/1999/xhtml">
+                    
+            <p>Updated the authentication section with additional information about the token
+                        environment variable used in the cURL examples.</p>
+                
+         </div>
+      </content>
+   </entry>
+   <entry>
+      <title>2012-12-14</title>
+      <link type="text/html" href="http://docs.rackspace.com/servers/api/v2/cn-gettingstarted/content/index.html"/>
+      <id>cn-gettingstarted-2012-12-14</id>
+      <updated>2012-12-14</updated>
+      <content type="xhtml">
+         <div xmlns="http://www.w3.org/1999/xhtml">
+                    
+            <p>Added a link for the json.tool:
+                        <a class="link" href="http://docs.python.org/2/library/json.html" target="_top">json — JSON encoder and decoder</a>.
+                    </p>
+                
+         </div>
+      </content>
+   </entry>
+   <entry>
+      <title>2012-12-04</title>
+      <link type="text/html" href="http://docs.rackspace.com/servers/api/v2/cn-gettingstarted/content/index.html"/>
+      <id>cn-gettingstarted-2012-12-04</id>
+      <updated>2012-12-04</updated>
+      <content type="xhtml">
+         <div xmlns="http://www.w3.org/1999/xhtml">
+                    
+            <p>Corrected the <code class="literal">NOVA_RACK_AUTH</code> environment variable to
+                            <code class="literal">NOVA_RAX_AUTH</code>.</p>
+                
+         </div>
+      </content>
+   </entry>
+   <entry>
+      <title>2012-11-14</title>
+      <link type="text/html" href="http://docs.rackspace.com/servers/api/v2/cn-gettingstarted/content/index.html"/>
+      <id>cn-gettingstarted-2012-11-14</id>
+      <updated>2012-11-14</updated>
+      <content type="xhtml">
+         <div xmlns="http://www.w3.org/1999/xhtml">
+                    
+            <p>Updated formatting in PDF.</p>
+                
+         </div>
+      </content>
+   </entry>
+   <entry>
+      <title>2012-11-07</title>
+      <link type="text/html" href="http://docs.rackspace.com/servers/api/v2/cn-gettingstarted/content/index.html"/>
+      <id>cn-gettingstarted-2012-11-07</id>
+      <updated>2012-11-07</updated>
+      <content type="xhtml">
+         <div xmlns="http://www.w3.org/1999/xhtml">
+                    
+            <p>Updated formatting of nova client and cURL examples.</p>
+                
+         </div>
+      </content>
+   </entry>
+   <entry>
+      <title>2012-11-01</title>
+      <link type="text/html" href="http://docs.rackspace.com/servers/api/v2/cn-gettingstarted/content/index.html"/>
+      <id>cn-gettingstarted-2012-11-01</id>
+      <updated>2012-11-01</updated>
+      <content type="xhtml">
+         <div xmlns="http://www.w3.org/1999/xhtml">
+                    
+            <p>Fixed formatting problems in code examples.</p>
+                
+         </div>
+      </content>
+   </entry>
+   <entry>
+      <title>2012-10-31</title>
+      <link type="text/html" href="http://docs.rackspace.com/servers/api/v2/cn-gettingstarted/content/index.html"/>
+      <id>cn-gettingstarted-2012-10-31</id>
+      <updated>2012-10-31</updated>
+      <content type="xhtml">
+         <div xmlns="http://www.w3.org/1999/xhtml">
+                    
+            <div class="itemizedlist">
+               <ul class="itemizedlist" type="disc">
+                  <li class="listitem">
+                     <p>Fixed the link for requesting Cloud Networks access to
+                                <a class="link" href="http://www.iwantcloudnetworks.com/" target="_top">http://www.iwantcloudnetworks.com/</a>.
+                            </p>
+                  </li>
+                  <li class="listitem">
+                     <p>Corrected an error in list_networks.</p>
+                  </li>
+               </ul>
+            </div>
+                
+         </div>
+      </content>
+   </entry>
+   <entry>
+      <title>2012-10-30</title>
+      <link type="text/html" href="http://docs.rackspace.com/servers/api/v2/cn-gettingstarted/content/index.html"/>
+      <id>cn-gettingstarted-2012-10-30</id>
+      <updated>2012-10-30</updated>
+      <content type="xhtml">
+         <div xmlns="http://www.w3.org/1999/xhtml">
+                    
+            <div class="itemizedlist">
+               <ul class="itemizedlist" type="disc">
+                  <li class="listitem">
+                     <p>Cloud Networks phased-release launch.</p>
+                  </li>
+                  <li class="listitem">
+                     <p>First edition of this guide.</p>
+                  </li>
+               </ul>
+            </div>
+                
+         </div>
+      </content>
+   </entry>
+</feed>

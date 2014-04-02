@@ -1,0 +1,341 @@
+Changes since the 1.78.0 release
+
+Note: This document lists changes only since the 1.78.0 release. If you instead
+want a record of the complete list of changes for the codebase over its entire
+history, you can obtain one by running the following commands:
+
+  svn checkout https://docbook.svn.sourceforge.net/svnroot/docbook/trunk/xsl
+  svn log --xml --verbose xsl > ChangeHistory.xml
+
+-------------------------------------------------------------------------------
+
+Table of Contents
+
+Release Notes: snapshot_9779
+
+    Gentext
+    Common
+    FO
+    HTML
+    Manpages
+    Epub
+    Slides
+    Webhelp
+    Params
+    Highlighting
+
+Release Notes: snapshot_9779
+
+The following is a list of changes that have been made since the 1.78.0
+release.
+
+Gentext
+
+The following changes have been made to the gentext code since the 1.78.0
+release.
+
+  * tom_schr: locale/ca.xml; locale/da.xml; locale/cs.xml; locale/es.xml;
+    locale/fr.xml; local?
+
+    Added missing keycap context for ca, cs, da, es, et, eu, and fr
+
+  * tom_schr: locale/en.xml; locale/de.xml
+
+    Added option key for keycap context
+
+  * tom_schr: locale/de.xml
+
+    Added key="optional-step" as done in r9745
+
+  * Robert Stayton: locale/en.xml
+
+    Add key="optional-step".
+
+Common
+
+The following changes have been made to the common code since the 1.78.0
+release.
+
+  * Robert Stayton: titles.xsl
+
+    Make sure part and set titleabbrev are used in mode="titleabbrev.markup"
+
+  * Robert Stayton: titles.xsl
+
+    Add empty default template for titleabbrev since it is always processed in a mode.
+
+  * Robert Stayton: gentext.xsl
+
+    Make consistent handling of titleabbrev in xrefs.
+
+  * Robert Stayton: titles.xsl
+
+    for missing title in xref, provide parent information of target to help locate problem element.
+    Process bridgehead in mode="title.markup", not normal mode.
+
+  * Jirka Kosek: l10n.xsl
+
+    Fixed bug #3598963
+
+  * Robert Stayton: gentext.xsl; labels.xsl
+
+    Make sure bridgeheads are not numbered in all contexts, including html title attributes.
+
+FO
+
+The following changes have been made to the fo code since the 1.78.0 release.
+
+  * Robert Stayton: inline.xsl
+
+    Adjust exception for fop for menuchoice separator to
+    use the $symbol.font.family if it is set.
+
+  * Robert Stayton: division.xsl
+
+    Fix comment.
+
+  * Robert Stayton: param.ent
+
+    Fix typo that prevents param.xsl update.
+
+  * Robert Stayton: lists.xsl; param.xweb; param.ent
+
+    Add mark.optional.procedure.steps param.
+
+  * Robert Stayton: qandaset.xsl
+
+    Fix bug in question template that output empty list-item-label when
+    defaultlabel = 'none'.
+
+  * Robert Stayton: division.xsl
+
+    Fix bug where part TOC not generated when partintro is present.
+
+  * Jirka Kosek: xref.xsl
+
+    Footnotes can't be placed into fo:float
+
+  * Robert Stayton: titlepage.templates.xml
+
+    Remove margin-left when start-indent is used because they interfere
+    with each other.
+
+  * Robert Stayton: fo.xsl; pagesetup.xsl
+
+    Use dingbat.fontset rather than dingbat.font.family so it falls
+    back to symbol font if glyph not found, like other font properties.
+
+  * Robert Stayton: inline.xsl
+
+    Change last instance of inline.charseq in inline glossterm to
+    inline.italicseq so it is consistent with the others.
+
+  * Robert Stayton: xref.xsl
+
+    Make consistent handling of titleabbrev in xrefs.
+
+HTML
+
+The following changes have been made to the html code since the 1.78.0 release.
+
+  * Jirka Kosek: chunk-code.xsl
+
+    Enumarete separate file for revhistory if generate.revhistory.link=1
+
+  * Robert Stayton: inline.xsl
+
+    Update the inline.charseq template to also call 'common.html.attributes'
+    instead of using local-name for class value.
+
+  * Jirka Kosek: docbook.xsl; html.xsl
+
+    Enabling ITS processing again
+
+  * Robert Stayton: its.xsl
+
+    Change syntax for selecting @its:* attributes so it works
+    in xsltproc (which should work with the original, but doesn't).
+
+  * Robert Stayton: docbook.xsl; html.xsl
+
+    Turn off its.xsl update which is generating attribute insertion errors.
+
+  * Jirka Kosek: its.xsl; docbook.xsl; html.xsl
+
+    Added basic support for ITS 2.0 markup. It gets propagated into HTML
+    For more info about ITS see http://www.w3.org/TR/its20/
+
+  * Robert Stayton: docbook.xsl
+
+    Added a comment line to test checkin process.
+
+  * Robert Stayton: xref.xsl
+
+    Fix bug in mode=remove-ids that put link content outside the <a> element.
+
+  * tom_schr: chunktoc.xsl
+
+    Fixed SF ticket#3611689: added missing DocBook namespace declarations
+
+  * Robert Stayton: chunker.xsl
+
+    Change the internal chunk.base.dir from a param to a variable.
+
+  * Robert Stayton: inline.xsl
+
+    Turn off id attribute on glossterm anchor, because it is on the element itself.
+
+  * Robert Stayton: admon.xsl
+
+    Turn off $admon.style if $make.clean.html is set to non-zero.
+
+  * Jirka Kosek: highlight.xsl
+
+    Added new definitions for syntax highlighting
+
+  * Robert Stayton: chunk-common.xsl
+
+    Make active.olink.hrefs param work for chunked output too.
+
+  * Robert Stayton: xref.xsl
+
+    Make consistent handling of titleabbrev in xrefs.
+
+  * Robert Stayton: graphics.xsl
+
+    Add round() function when pixel counts are used for image width and height.
+
+  * Robert Stayton: glossary.xsl
+
+    fix missing class and id attributes on glossterm and glossdef.
+
+  * Robert Stayton: autoidx.xsl
+
+    Fix bug where prefer.index.titleabbrev ignored info/titleabbrev.
+
+Manpages
+
+The following changes have been made to the manpages code since the 1.78.0
+release.
+
+  * dleidert: info.xsl
+
+    Fix a typo (http://bugs.debian.org/698962).
+
+  * Robert Stayton: utility.xsl
+
+    Fix bug 3599520: spurious newline in para when starts with
+    whitespace and inline element.
+
+Epub
+
+The following changes have been made to the epub code since the 1.78.0 release.
+
+  * tom_schr: docbook.xsl
+
+    Introduced  variable in opf.guide
+
+  * tom_schr: docbook.xsl
+
+    Improved modularization in opf.spine and created new spine.cover template
+
+  * tom_schr: docbook.xsl
+
+    Improved opf.spine with info variable
+
+  * tom_schr: docbook.xsl
+
+    Bugfix in opf.spine: removed double refentry entries
+
+  * tom_schr: docbook.xsl
+
+    * Template package-identifier: introduced $info variable to simplify
+      code (similar to the EPUB3 stylesheets)
+    * Template opf.calloutlist: only call opf.reference.callout if
+      callout.graphics is set
+
+  * tom_schr: docbook.xsl
+
+    Backported Bob's EPUB3 changes to EPUB2 from r9740 -> r9742 -> r9743:
+
+    * Implement base.dir/OEBPS using internal chunk.base.dir instead of
+      new param epub.base.dir.
+
+    * Additional changes, specific to this stylesheet:
+      - Construct parameter epub.metainf.dir from base.dir + 'META-INF/'
+      - Changed parameter epub.cover.filename epub.oebps.dir to
+        chunk.base.dir
+      - Template opf: concat base.dir with epub.opf.filename
+      - Replaced two subsequent xsl:value-of's with concat()
+
+  * Robert Stayton: docbook.xsl
+
+    Fix bug in author template generating a span element inside an attribute value.
+
+Slides
+
+The following changes have been made to the slides code since the 1.78.0
+release.
+
+  * dleidert: images/callouts/gen.sh
+
+    Leave executable permissions for script.
+
+  * dleidert: s5/ui/default/pretty.css; slidy/graphics/w3c-logo-blue.gif; s5/ui
+    /default/notes.?
+
+    Drop executable permissions from files.
+
+  * Jirka Kosek: doc/Makefile
+
+    Corrected path
+
+Webhelp
+
+The following changes have been made to the webhelp code since the 1.78.0
+release.
+
+  * David Cramer: xsl/webhelp-common.xsl
+
+    Webhelp: Fix test for webhelp.include.search.tab param
+
+  * David Cramer: Makefile.sample
+
+    Webhelp: Fix order of args to xsltproc
+
+  * David Cramer: docsrc/readme.xml
+
+    Webhelp: Turn on xinclude-test.xml in readme to demo xinclude functionality
+
+  * David Cramer: Makefile; Makefile.sample
+
+    Webhelp: In Makefiles, do xinclude in first pass at document
+
+Params
+
+The following changes have been made to the params code since the 1.78.0
+release.
+
+  * Robert Stayton: mark.optional.procedure.steps.xml
+
+    New param to turn off Optional text for optional steps.
+
+  * David Cramer: webhelp.include.search.tab.xml
+
+    Webhelp: Fix test for webhelp.include.search.tab param
+
+  * Robert Stayton: article.appendix.title.properties.xml
+
+    Remove unneeded margin-left property from article appendix title.
+    It interferes with the start-indent property.
+
+Highlighting
+
+The following changes have been made to the highlighting code since the 1.78.0
+release.
+
+  * Jirka Kosek: c-hl.xml; cpp-hl.xml; sql2003-hl.xml; php-hl.xml; upc-hl.xml;
+    bourne-hl.xml; ?
+
+    Added new definitions for syntax highlighting
+

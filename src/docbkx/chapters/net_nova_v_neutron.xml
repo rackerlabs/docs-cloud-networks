@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section [
+<!-- Some useful entities borrowed from HTML -->
+<!ENTITY ndash  "&#x2013;">
+<!ENTITY mdash  "&#x2014;">
+<!ENTITY hellip "&#x2026;">
+<!ENTITY plusmn "&#xB1;">
+
+<!-- Useful for describing APIs -->
+<!ENTITY GET    '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
+<!ENTITY PUT    '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
+<!ENTITY POST   '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
+<!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
+
+<!ENTITY CHECK  '<inlinemediaobject xmlns="http://docbook.org/ns/docbook">
+<imageobject>
+<imagedata fileref="../figures/Check_mark_23x20_02.svg"
+format="SVG" scale="60"/>
+</imageobject>
+</inlinemediaobject>'>
+
+<!ENTITY ARROW  '<inlinemediaobject xmlns="http://docbook.org/ns/docbook">
+<imageobject>
+<imagedata fileref="../figures/Arrow_east.svg"
+format="SVG" scale="60"/>
+</imageobject>
+</inlinemediaobject>'>
+]>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="section_nova_v_neutron">
+    <title>Networking: Nova-network versus Neutron</title>
+    <para>Rackspace first introduced networking services by using the Nova-network API based on OpenStack. Now we are
+        providing the Neutron API, also based on OpenStack, which offers more functionality and flexibility than the
+        Nova-network API. Both sets of APIs continue to work well, but the Neutron API will be the base for all the future
+        networking services that Rackspace offers. </para>
+    <para>The Neutron API provides three primary, top-level resources (networks, ports, and subnets) and includes the ability
+        to perform the following functions: <itemizedlist>
+            <listitem>
+                <para>Use all existing create, read, update, delete (CRUD) API operations for networks</para>
+            </listitem>
+            <listitem>
+                <para>Attach and detach networks</para>
+            </listitem>
+            <listitem>
+                <para>Self-service additional IP addresses</para>
+            </listitem>
+            <listitem>
+                <para>Pass custom routes to servers</para>
+            </listitem>
+            <listitem>
+                <para>Set the default gateway on cloud networks</para>
+            </listitem>
+            <listitem>
+                <para>View quotas related to networks</para>
+            </listitem>
+        </itemizedlist>
+    </para>
+    <note>
+        <para>The Neutron API operations return only JSON-formatted responses. There is no option to receive responses in
+            XML.</para>
+    </note>
+</section>

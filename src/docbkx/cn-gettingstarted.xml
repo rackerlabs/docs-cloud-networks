@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+        <!-- Some useful entities borrowed from HTML -->
+        <!ENTITY ndash  "&#x2013;">
+        <!ENTITY mdash  "&#x2014;">
+        <!ENTITY hellip "&#x2026;">
+        <!ENTITY plusmn "&#xB1;">
+        
+        <!-- Useful for describing APIs -->
+        <!ENTITY GET    '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
+        <!ENTITY PUT    '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
+        <!ENTITY POST   '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
+        <!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>       
+<!ENTITY CN 'Cloud Networks'>
+<!ENTITY HOST 'dfw.servers.api.rackspacecloud.com'>
+<!ENTITY virt_ext 'Cloud Networks virtual interface extension'>
+<!ENTITY Uvirt_ext 'Cloud Networks Virtual Interface Extension'>
+<!ENTITY URL 'https://&HOST;/v2/'>
+]>
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg"
+    xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:db="http://docbook.org/ns/docbook" version="5.0" xml:id="cn-gettingstarted">
+    <title>Cloud Networks™ Getting Started</title>
+    <?rax title.font.size="37px" pdf.url="../../cn-gettingstarted.pdf" canonical.url.base="http://docs.rackspace.com/servers/api/v2/cn-gettingstarted/content"?>
+    <titleabbrev>Cloud Networks™ Getting Started</titleabbrev>
+    <info>
+        <author>
+            <personname>
+                <firstname/>
+                <surname/>
+            </personname>
+            <affiliation>
+                <orgname>Rackspace Cloud</orgname>
+            </affiliation>
+        </author>
+        <copyright>
+            <year>2012</year>
+            <year>2013</year>
+            <holder>Rackspace US, Inc.</holder>
+        </copyright>
+        <releaseinfo>OpenStack Networking API v2</releaseinfo>
+        <productname>Cloud Networks™</productname>
+        <pubdate/>
+        <legalnotice role="rs-api">
+            <annotation>
+                <para>
+                    <remark security="reviewer">Copyright details are filled in by the template.</remark>
+                </para>
+            </annotation>
+        </legalnotice>
+        <abstract>
+            <para>This document is for software developers who develop applications by using Rackspace Cloud Networks™, which
+                is powered by the OpenStack Networking code base. In addition to the core features of the OpenStack
+                Networking Application Programming Interface (API) v2, Rackspace has also deployed certain extensions as
+                permitted by the OpenStack Networking API contract.</para>
+        </abstract>
+        <revhistory>
+            <revision>
+                <date>2014-03-14</date>
+                <revdescription>
+                    <para>Reorganized doc and added neutron api calls</para>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2014-02-17</date>
+                <revdescription>
+                    <para>Removed nova install from git instructions.</para>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2014-02-13</date>
+                <revdescription>
+                    <para>Removed supernova install instructions and added supernova link to resources section.</para>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2013-12-4</date>
+                <revdescription>
+                    <para>Updated the name for Managed Cloud Service Level</para>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2013-11-04</date>
+                <revdescription>
+                    <para>Published Performance server information, previously limited access. </para>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2013-10-31</date>
+                <revdescription>
+                    <para>Fixed the link for requesting Cloud Networks access to
+                        <link xlink:href="http://www.iwantcloudnetworks.com/">http://www.iwantcloudnetworks.com/</link>.</para>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2013-09-26</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>updated examples for d2to1 in install and update nova client section.</para>
+                        </listitem>
+                        <listitem>
+                            <para>removed v4-fixed-ip from <xref linkend="nova_provision_server"/></para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2013-08-28</date>
+                <revdescription>
+                    <para>Removed references to bandwidth since the RAX extension is no longer implemented. It causes an
+                        unsustainable load on Nova. See <xref linkend="list_servers"/>.</para>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2013-06-26</date>
+                <revdescription>
+                    <para>Added Server Key Pairs nova commands.</para>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2013-06-24</date>
+                <revdescription>
+                    <para>Added important note that user may choose any endpoint regardless of account origin.</para>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2013-06-20</date>
+                <revdescription>
+                    <para>Updated link to supernova git repository</para>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2013-06-18</date>
+                <revdescription>
+                    <para>Removed optional parameters from nova_summary. </para>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2013-06-17</date>
+                <revdescription>
+                    <para>Removed optional parameters, such as hint, block_device_mapping, availability_zone, and
+                        security_groups, from <xref linkend="create_server_with_network"/>. </para>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2013-05-23</date>
+                <revdescription>
+                    <para>Updated "control panel" to "Control Panel."</para>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2013-05-13</date>
+                <revdescription>
+                    <para>Added the &virt_ext;, which enables you to create virtual interfaces for, list virtual interfaces
+                        for, and delete virtual interfaces from existing server instances.</para>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2013-03-26</date>
+                <revdescription>
+                    <para>Updated to add the list servers call, which lists servers and their attached networks.</para>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2013-02-07</date>
+                <revdescription>
+                    <para>Corrected the JSON request to add missing slashes in <xref linkend="curl_create_network"/>.</para>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2013-01-08</date>
+                <revdescription>
+                    <para>Updated the authentication section with additional information about the token
+                        environment variable used in the cURL examples.</para>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2012-12-14</date>
+                <revdescription>
+                    <para>Added a link for the json.tool:
+                        <link xlink:href="http://docs.python.org/2/library/json.html">json — JSON encoder and decoder</link>.
+                    </para>
+                </revdescription>
+            </revision>
+            <revision>
+                <!-- ... continue addding more revisions here as you change this document using the markup shown below... -->
+                <date>2012-12-04</date>
+                <revdescription>
+                    <para>Corrected the <literal>NOVA_RACK_AUTH</literal> environment variable to
+                            <literal>NOVA_RAX_AUTH</literal>.</para>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2012-11-14</date>
+                <revdescription>
+                    <para>Updated formatting in PDF.</para>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2012-11-07</date>
+                <revdescription>
+                    <para>Updated formatting of nova client and cURL examples.</para>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2012-11-01</date>
+                <revdescription>
+                    <para>Fixed formatting problems in code examples.</para>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2012-10-31</date>
+                <revdescription>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Fixed the link for requesting Cloud Networks access to
+                                <link xlink:href="http://www.iwantcloudnetworks.com/">http://www.iwantcloudnetworks.com/</link>.
+                            </para>
+                        </listitem>
+                        <listitem>
+                            <para>Corrected an error in list_networks.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2012-10-30</date>
+                <revdescription>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Cloud Networks phased-release launch.</para>
+                        </listitem>
+                        <listitem>
+                            <para>First edition of this guide.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+
+        </revhistory>
+        <raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
+            <raxm:displayname>Getting&#160;Started&#160;Guide</raxm:displayname>
+            <raxm:product version="v2">networks</raxm:product>
+            <raxm:priority>50</raxm:priority>
+        </raxm:metadata>
+    </info>
+    <xi:include href="chapters/net_preface.xml"/>
+    <xi:include href="chapters/net_overview.xml"/>
+    <xi:include href="chapters/net_use_examples.xml"/>
+    <xi:include href="chapters/net_set_up.xml"/>
+    <xi:include href="chapters/net_create_first_net.xml"/>
+    <xi:include href="chapters/net_attach_network_to_server.xml"/>
+    <glossary role="auto"/>
+</book>

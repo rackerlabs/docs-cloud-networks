@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section [
+<!-- Some useful entities borrowed from HTML -->
+<!ENTITY ndash  "&#x2013;">
+<!ENTITY mdash  "&#x2014;">
+<!ENTITY hellip "&#x2026;">
+<!ENTITY plusmn "&#xB1;">
+
+<!-- Useful for describing APIs -->
+<!ENTITY GET    '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
+<!ENTITY PUT    '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
+<!ENTITY POST   '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
+<!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
+
+<!ENTITY CHECK  '<inlinemediaobject xmlns="http://docbook.org/ns/docbook">
+<imageobject>
+<imagedata fileref="../figures/Check_mark_23x20_02.svg"
+format="SVG" scale="60"/>
+</imageobject>
+</inlinemediaobject>'>
+
+<!ENTITY ARROW  '<inlinemediaobject xmlns="http://docbook.org/ns/docbook">
+<imageobject>
+<imagedata fileref="../figures/Arrow_east.svg"
+format="SVG" scale="60"/>
+</imageobject>
+</inlinemediaobject>'>
+]>
+
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="section_pagination">
+    <title>Pagination of Requests</title>
+    <para>To reduce load on the service, list operations returns a maximum number of items at a time. To help you navigate
+        the collection, you can set the <parameter>limit</parameter>, <parameter>marker</parameter>, and
+            <parameter>page_reverse</parameter> parameters in the URI.</para>
+    <para>For example, the following request returns up to 100 pages, starting with the item with ID=1234:</para>
+    <programlisting>?limit=100&amp;marker=1234&amp;page_reverse=False</programlisting>
+    <para>The <parameter>marker</parameter> parameter is the ID of the last item in the previous list. The
+            <parameter>limit</parameter> parameter sets the page size. The <parameter>page_reverse</parameter> parameter sets
+        the page direction. These parameters are optional. If the client requests a limit beyond the maximum limit configured
+        by the deployment, the server returns the maximum limit number of items.</para>
+    <para>For convenience, list responses contain atom <code>next</code> links and <code>previous</code> links. The last page
+        in the list requested with <parameter>page_reverse=False</parameter> does not contain a <code>next</code> link, and
+        the last page in the list requested with <parameter>page_reverse=True</parameter> does not contain a
+            <code>previous</code> link. The following examples illustrate two pages with three items.</para>
+    <example xml:id="pageexfirstreq">
+        <title>Network Collection, First Page: JSON or XML Request</title>
+        <programlisting>GET /v2.0/networks.json?limit=2 HTTP/1.1</programlisting>
+    </example>
+    <example xml:id="pageexfirstjsonrsp">
+        <title>Network Collection, First Page: JSON Response</title>
+        <programlisting language="json"><?db-font-size 65%?>
+            <xi:include href="../../common/samples/pagefirstrsp.json" parse="text"/>
+        </programlisting>
+    </example>
+    <example xml:id="pageexfirstxmlrsp">
+        <title>Network Collection, First Page: XML Response</title>
+        <programlisting language="xml"><?db-font-size 65%?>
+            <xi:include href="../../common/samples/pagefirstrsp.xml" parse="text"/>
+        </programlisting>
+    </example>
+    <example xml:id="pageexlastreq">
+        <title>Network Collection, Last Page: JSON or XML Request</title>
+        <programlisting>GET /v2.0/networks.json?limit=2&amp;marker=71c1e68c-171a-4aa2-aca5-50ea153a3718 HTTP/1.1</programlisting>
+    </example>
+    <example xml:id="pageexlastjsonrsp">
+        <title>Network Collection, Last Page: JSON Response</title>
+        <programlisting language="json"><?db-font-size 65%?>
+            <xi:include href="../../common/samples/pagelastrsp.json" parse="text"/>
+        </programlisting>
+    </example>
+    <example xml:id="pageexlastxmlrsp">
+        <title>Network Collection, Last Page: XML Response</title>
+        <programlisting language="xml"><?db-font-size 65%?>
+            <xi:include href="../../common/samples/pagelastrsp.xml" parse="text"/>
+        </programlisting>
+    </example>
+</section>

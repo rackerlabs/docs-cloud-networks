@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter [
+        <!-- Some useful entities borrowed from HTML -->
+        <!ENTITY ndash  "&#x2013;">
+        <!ENTITY mdash  "&#x2014;">
+        <!ENTITY hellip "&#x2026;">
+        
+        <!-- Useful for describing APIs -->
+        <!ENTITY GET    '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
+        <!ENTITY PUT    '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
+        <!ENTITY POST   '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
+        <!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
+        
+        <!-- Product references -->
+        
+        <!ENTITY CS 'Cloud Servers'>
+<!ENTITY HOST 'dfw.servers.api.rackspacecloud.com'>
+<!ENTITY virt_ext 'Cloud Networks virtual interface extension'>
+<!ENTITY Uvirt_ext 'Cloud Networks Virtual Interface Extension'>
+<!ENTITY URL 'https://&HOST;/v2/'>
+]>
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+        xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="ch_overview">
+        <title>Overview</title>
+        <para>Cloud Networks enables you to create a virtual Layer 2 network, known as an isolated network, which gives you
+                greater control and security when you deploy web applications. </para>
+        <para>When you create a next generation Cloud Server, Cloud Networks enables you to attach one or more networks to
+                your server. You can attach an isolated network that you have created or a Rackspace network. </para>
+        <para>If you install the &virt_ext;, you can create a virtual interface to a specified Rackspace or isolated network
+                and attach that network to an existing server instance. You can also list virtual interfaces for and delete
+                virtual interfaces from a server instance. For information about the &virt_ext;, see <olink
+                        targetdoc="cn-devguide" targetptr="section_virt_ext">“Cloud Networks Virtual Interface
+                        Extension”</olink>.</para>
+        <para>Cloud Networks enables you to attach one or more of the following networks to your server: <itemizedlist>
+                        <listitem>
+                                <para><emphasis role="bold"><glossterm>PublicNet</glossterm></emphasis>. Provides access to
+                                        the Internet, to Rackspace services (such as Cloud Monitoring, Managed Cloud Service
+                                        Level support, RackConnect, and Cloud Backup), and to certain operating system
+                                        updates. </para>
+                                <para>When you list networks through Cloud Networks, PublicNet is labeled
+                                                <literal>public</literal>. </para>
+                        </listitem>
+                        <listitem>
+                                <para><emphasis role="bold"><glossterm>ServiceNet</glossterm></emphasis>. Provides access to
+                                        Rackspace services such as Cloud Files, Cloud Databases, and Cloud Backup, and to
+                                        certain packages and patches through an internal-only, multi-tenant network
+                                        connection within each Rackspace data center. </para>
+                                <para>When you list networks through Cloud Networks, ServiceNet is labeled
+                                                <literal>private</literal>.</para>
+                                <para>You can use ServiceNet for communications among web servers, application servers, and
+                                        database servers without incurring bandwidth charges. However, without an isolated
+                                        network, you must apply security rules to protect data integrity. When you add or
+                                        remove a server, you must update the security rules on individual servers to permit
+                                        or deny connections from newly added servers or removed servers. </para>
+                        </listitem>
+                        <listitem>
+                                <para><emphasis role="bold">Isolated</emphasis>. Enables you to deploy web applications on a
+                                        virtual Layer 2 network that you create through Cloud Networks. An isolated network
+                                        keeps your server separate from PublicNet, ServiceNet, or both. When you create a
+                                        isolated network, it is associated with your tenant ID.</para>
+                        </listitem>
+                </itemizedlist></para>
+        <para>When you provision a new server, the networks that are attached to it depend on which of the following methods
+                you use to provision it: <itemizedlist>
+                        <listitem>
+                                <para><emphasis role="bold">The Cloud Servers API</emphasis>. You must specify the networks
+                                        that you want to attach to your server. If you do not specify any networks,
+                                        ServiceNet and PublicNet are attached by default. However, if you specify an isolated
+                                        network, you must explicitly specify the UUIDs for PublicNet and ServiceNet to attach
+                                        these networks to your server. The UUID for ServiceNet is
+                                                <literal>11111111-1111-1111-1111-111111111111</literal>, and the UUID for
+                                        PublicNet is <literal>00000000-0000-0000-0000-000000000000</literal>. </para>
+                        </listitem>
+                        <listitem>
+                                <para><emphasis role="bold">The nova <command>boot</command> command</emphasis>. You must
+                                        specify the networks that you want to attach to your server. If you do not specify
+                                        any networks, ServiceNet and PublicNet are attached by default. To attach to isolated
+                                        networks that you have created, you must explicitly specify them in the command. If
+                                        you do so, those networks, in addition to PublicNet and ServiceNet, are attached to
+                                        your server.</para>
+                        </listitem>
+                        <listitem>
+                                <para><emphasis role="bold">The Cloud Control Panel</emphasis>. PublicNet and ServiceNet are
+                                        automatically attached, but you can disable these networks during the server creation
+                                        process. You can also attach any isolated networks that you have created. </para>
+                        </listitem>
+                </itemizedlist></para>
+        <note>
+                <para>You can explicitly opt out of attaching to the Rackspace networks, which introduces certain potential
+                        complications. For more information, see <olink targetdoc="cn-devguide" targetptr="networks"
+                                >“Limitations of Detaching from Rackspace Networks”</olink>.</para>
+        </note>
+        <para>You can use Cloud Networks to perform the following tasks: <itemizedlist>
+                        <listitem>
+                                <para>List networks to which the specified tenant has access.</para>
+                        </listitem>
+                        <listitem>
+                                <para>Create isolated networks.</para>
+                        </listitem>
+                        <listitem>
+                                <para>Show details for isolated networks. </para>
+                        </listitem>
+                        <listitem>
+                                <para>Delete an isolated network, but only if it is not associated with any server. </para>
+                                <para>To detach a network from a server, you must use the &virt_ext; to delete the virtual
+                                        interface for the network from the server. See <olink targetdoc="cn-devguide"
+                                                targetptr="section_virt_ext">“Cloud Networks Virtual Interface
+                                                Extension”</olink>.</para>
+                        </listitem>
+                        <listitem>
+                                <para>Manage subnets.</para>
+                        </listitem>
+                        <listitem>
+                                <para>Manage ports.</para>
+                        </listitem>
+                        <listitem>
+                                <para>Manage Layer-3 routers.</para>
+                        </listitem>
+                </itemizedlist></para>
+        <para>To list the networks that are attached to servers, issue a Cloud Servers List Servers operation. For more
+                information, see
+                <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/List_Servers-d1e2078.html">List Servers</link>
+                in the <citetitle>Cloud Servers Developer Guide</citetitle>.</para>
+        <xi:include href="net_nova_v_neutron.xml"/> 
+        <xi:include href="net_limitations.xml"/>
+</chapter>

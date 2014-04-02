@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section [
+        <!-- Some useful entities borrowed from HTML -->
+        <!ENTITY ndash  "&#x2013;">
+        <!ENTITY mdash  "&#x2014;">
+        <!ENTITY hellip "&#x2026;">
+        
+        <!-- Useful for describing APIs -->
+        <!ENTITY GET    '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
+        <!ENTITY PUT    '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
+        <!ENTITY POST   '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
+        <!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>     
+<!ENTITY fgCS 'first generation Cloud Servers'>
+<!ENTITY ngCS 'next generation Cloud Servers'>
+<!ENTITY cnresource1 'rax-networks'>
+<!ENTITY virt_ext 'Cloud Networks virtual interface extension'>
+<!ENTITY cnresource2 'os-networksv2'>
+]>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0"
+    xml:id="create_server_with_network">
+    <title>Step 3. Provision a Server with an Isolated Network</title>
+    <para>To create your new server and attach an isolated network, you need the following information: </para>
+
+    <itemizedlist>
+        <listitem>
+            <para>The name of the new server. Use a name of your choice.</para>
+        </listitem>
+        <listitem>
+            <para>The image ID. For how to list images, see
+                <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-gettingstarted/content/list_images.html">
+                    List Images</link>.</para>
+        </listitem>
+        <listitem>
+            <para>The flavor ID. For how to list flavors, see
+                <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-gettingstarted/content/list_flavors.html">
+                    List Flavors</link>.</para>
+        </listitem>
+        <listitem>
+            <para>The network ID of your isolated network. This is the ID you copied in <olink targetdoc="cn-gettingstarted"
+                    targetptr="create_network">“Step 1. Create an Isolated Network”</olink></para>
+        </listitem>
+    </itemizedlist>
+
+    <para>You specify these values as parameters in a nova command or as attributes in the request body in a cURL
+        command.</para>
+    <note security="external">
+        <para xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML"
+            xmlns:html="http://www.w3.org/1999/xhtml">You cannot attach an isolated network to an existing server. However,
+            to work around this limitation, you can create an image of the server and build a new server based on that image.
+            When you build the new server, you can attach the isolated network. For information, see
+            <link xlink:href="http://www.rackspace.com/knowledge_center/article/attach-an-existing-cloud-server-to-a-cloud-network">
+                <citetitle>Attach a Cloud Network to an Existing Cloud Server</citetitle></link>.
+            To use the create image API, see
+            <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/Create_Image-d1e4655.html">
+                Create Image</link>.</para>
+    </note>
+    <note>
+        <para xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML"
+            xmlns:html="http://www.w3.org/1999/xhtml">You can use the &virt_ext; to attach an isolated network to an existing
+            server. For information, see <olink targetdoc="cn-gettingstarted" targetptr="ch_gs_attach_network_to_server"
+                >Attach Your Network to an Existing Server</olink>.</para>
+    </note>
+    <sidebar>
+        <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
+                <listitem>
+                    <para><olink targetdoc="cn-gettingstarted" targetptr="nova_provision_server">“Provision a Server with an
+                            Isolated Network with the nova Client”</olink>Provision a server with an isolated network with
+                        the nova client</para>
+                </listitem>
+                <listitem>
+                    <para><olink targetdoc="cn-gettingstarted" targetptr="curl_provision_server">“Provision a Server with an
+                            Isolated Network with cURL”</olink>Provision a server with an isolated network with cURL</para>
+                </listitem>
+            </itemizedlist></para>
+    </sidebar>
+
+    <?hard-pagebreak?>
+    <section xml:id="nova_provision_server">
+        <title>Provision a Server with an Isolated Network with the nova Client</title>
+        <para>
+            <procedure>
+                <title>To provision a server and attach an isolated network</title>
+                <step>
+                    <para>Issue the following nova client command:
+                        <programlisting language="bash" role="gutter: false"><?db-font-size 50%?>
+                            <prompt>$</prompt> nova boot &lt;name&gt; --flavor &lt;flavor&gt; --image &lt;image&gt; --nic [net-id=&lt;private-net-uuid&gt; [--no-public] [--no-service-net]</programlisting></para>
+                    <para xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML"
+                        xmlns:html="http://www.w3.org/1999/xhtml" xmlns:db="http://docbook.org/ns/docbook"><emphasis
+                            role="bold">Positional arguments:</emphasis></para>
+                    <itemizedlist xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML"
+                        xmlns:html="http://www.w3.org/1999/xhtml" xmlns:db="http://docbook.org/ns/docbook">
+                        <listitem>
+                            <para><parameter>name</parameter>. The name of the server.</para>
+                        </listitem>
+                    </itemizedlist>
+                    <para xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML"
+                        xmlns:html="http://www.w3.org/1999/xhtml" xmlns:db="http://docbook.org/ns/docbook"><emphasis
+                            role="bold">Optional arguments:</emphasis>
+                        <itemizedlist>
+                            <listitem>
+                                <para><option>--no-service-net</option>. Optional. Opts out of attaching ServiceNet to your
+                                    server.</para>
+                                <note>
+                                    <para>RackConnect and Managed Cloud Service Level customers will receive an error if they
+                                        opt out of attaching ServiceNet to their server.</para>
+                                </note>
+                                <para>For example, to opt out of attaching ServiceNet to your server, issue the following
+                                    command:
+                                    <programlisting language="bash" role="gutter: false"><?db-font-size 55%?>
+                                        <db:prompt>$</db:prompt> nova boot &lt;name&gt; --flavor &lt;flavor&gt; --image &lt;image&gt; --nic net-id=&lt;private-net-uuid&gt; --no-service-net</programlisting></para>
+                            </listitem>
+                            <listitem>
+                                <para><option>--no-public</option>. Optional. Opts out of attaching PublicNet to your
+                                    server.</para>
+                                <note>
+                                    <para>RackConnect and Managed Cloud Service Level customers will receive an error if they
+                                        opt out of attaching PublicNet to their server.</para>
+                                </note>
+                                <para>For example, to opt out of attaching PublicNet to your server, issue the following
+                                    command:
+                                    <programlisting language="bash" role="gutter: false"><?db-font-size 55%?>
+                                        <db:prompt>$</db:prompt> nova boot &lt;name&gt; --flavor &lt;flavor&gt; --image &lt;image&gt; --nic net-id=&lt;private-net-uuid&gt; --no-public</programlisting></para>
+                            </listitem>
+                            <?sbr?>
+                            <listitem>
+                                <para><option>--disk-config</option> {<literal>auto</literal>|<literal>manual</literal>}.
+                                    Specifies whether to expand the primary partition to fill the disk. This value overrides
+                                    the value inherited from the image.</para>
+                            </listitem>
+                            <listitem>
+                                <para><option>--flavor</option>
+                                    <parameter>flavor</parameter>. Required. The flavor ID for the new server. To get a list
+                                    of flavors, issue <command>nova flavor-list</command>.</para>
+                            </listitem>
+                            <listitem>
+                                <para><option>--image</option>
+                                    <parameter>image</parameter>. Required. The image ID for the new server. To get a list of
+                                    images, issue <command>nova image-list</command>.</para>
+                            </listitem>
+                            <listitem>
+                                <para><option>--meta</option>
+                                    <parameter>key</parameter><command>=</command><parameter>value</parameter>. Arbitrary key
+                                    and value metadata that is written to <filename>/meta.js</filename> on the new server.
+                                    Can be specified multiple times. </para>
+                            </listitem>
+                            <listitem>
+                                <para><option>--file</option>
+                                    <parameter>dst-path</parameter>=<parameter>src-path</parameter>. Stores arbitrary files
+                                    from <parameter>src-path</parameter> locally to <parameter>dst- path</parameter> on the
+                                    new server. You can store up to five files. </para>
+                            </listitem>
+                            <listitem>
+                                <para><option>--key_name</option>
+                                    <parameter>key_name</parameter>. Key name of key pair. First, create the key pair with
+                                    the <command>keypair-add</command> command.</para>
+                            </listitem>
+                            <listitem>
+                                <para><option>--user_data</option>
+                                    <parameter>user-data</parameter>. User data file, which is exposed by the metadata
+                                    server. </para>
+                            </listitem>
+                            <?sbr?>
+                            <listitem>
+                                <para><option>--nic net-id=</option><parameter>private-net-id</parameter>>. Creates a NIC on
+                                    the server. Specify this option multiple times to create multiple NICs. Optionally, to
+                                    attach a NIC with a specified UUID to a network, specify the
+                                        <option>net-id</option>=<parameter>private-net-id</parameter> parameter. </para>
+                                <!--removed per Sameer as v4-fixed-ip is not supported (on 9/17/2013)-->
+                                <!--<para>Optionally, specify the <option>v4-fixed-ip=</option><parameter>ip-addr</parameter>
+                                    parameter to specify an IPv4 fixed address for NIC. </para>-->
+                                <para>If you do not specify any networks on the <option>--nic</option> parameter, PublicNet
+                                    and ServiceNet are attached to your server. </para>
+                                <note>
+                                    <para>ServiceNet is labeled as <literal>private</literal> and PublicNet is labeled as
+                                            <literal>public</literal> in the network list.</para>
+                                </note>
+                                <para>If you specify additional networks through the <option>—nic</option> parameter, these
+                                    networks, in addition to PublicNet and ServiceNet, are attached to your server.</para>
+                                <para>You can specify the optional <option>--no-public</option> and
+                                        <option>--no-service-net</option> parameters to opt out of attaching PublicNet and
+                                    ServiceNet to your server.</para>
+                                <para>Specify the <option>--no-public</option> parameter to opt out of attaching PublicNet to
+                                    your server.</para>
+                                <para>Specify the <option>--no-service-net</option> parameter to opt out of attaching
+                                    ServiceNet to your server.</para>
+                            </listitem>
+                            <listitem>
+                                <para><option>--config-drive</option>
+                                    <parameter>value</parameter>. Enables a configuration drive. </para>
+                            </listitem>
+                            <listitem>
+                                <para><option>--poll</option>. Blocks while the instance builds so progress can be reported.
+                                </para>
+                            </listitem>
+                        </itemizedlist></para>
+                    <para>For example, you might issue the following command to attach a NIC to your server. Additionally,
+                        PublicNet and ServiceNet are attached to your
+                        server.<programlisting language="bash" role="gutter: false">
+                            <prompt>$</prompt> nova boot my_server_with_network --flavor 2 --image d42f821e-c2d1-4796-9f07-af5ed7912d0e --nic net-id=e65accc0-1d98-45eb-af76-ab3d31edc7d2</programlisting></para>
+                    <?sbr?>
+                    <para><emphasis role="bold">Output:</emphasis> The command returns information about the new server, as
+                        shown in the following output:</para>
+                    <informalexample>
+                        <screen><computeroutput>+-------------------------+--------------------------------------+
+| Property                | Value                                |
++-------------------------+--------------------------------------+
+| OS-DCF:diskConfig       | AUTO                                 |
+| OS-EXT-STS:power_state  | 0                                    |
+| OS-EXT-STS:task_state   | scheduling                           |
+| OS-EXT-STS:vm_state     | building                             |
+| accessIPv4              |                                      |
+| accessIPv6              |                                      |
+| adminPass               | abababababab                         |
+| created                 | 2012-10-04T18:07:56Z                 |
+| flavor                  | 512MB Standard Instance              |
+| hostId                  |                                      |
+| id                      | 72859427-1e74-4a4f-b6b5-f547c1c3d452 |
+| image                   | Fedora 17 (Beefy Miracle)            |
+| metadata                | {}                                   |
+| name                    | my_server_with_network               |
+| progress                | 0                                    |
+| status                  | BUILD                                |
+| tenant_id               | 010101                               |
+| updated                 | 2012-10-04T18:07:56Z                 |
+| user_id                 | 170454                               |
++-------------------------+--------------------------------------+</computeroutput></screen>
+                    </informalexample>
+
+                </step>
+            </procedure>
+        </para>
+        <sidebar>
+            <para><emphasis role="bold">Next step:</emphasis>
+                <olink targetdoc="cn-gettingstarted" targetptr="list_servers">“Step 4. List Servers and Attached
+                    Networks”</olink></para>
+        </sidebar>
+    </section>
+    <?hard-pagebreak?>
+    <section xml:id="curl_provision_server">
+        <title>Provision a Server with an Isolated Network with cURL</title>
+        <section xml:id="json_create_server">
+            <title>JSON Request and Response</title>
+            <procedure>
+                <title>To provision a server with an isolated network to the server</title>
+                <step>
+                    <para>Issue the following cURL
+                        command:<programlisting language="bash" role="gutter: false"><?db-font-size 55%?>
+                            <prompt>$</prompt> curl https://dfw.servers.api.rackspacecloud.com/v2/$account/servers \
+         -X POST \
+         -H "X-Auth-Project-Id: $account" \
+         -H "Content-Type: application/json" \
+         -H "Accept: application/json" \
+         -H "X-Auth-Token: $token" \
+         -d '{"server": {"name": "my_server_with_network", "imageRef": "d42f821e-c2d1-4796-9f07-af5ed7912d0e", "flavorRef": "2", "max_count": 1, "min_count": 1, "networks": [{"uuid": "538a112a-34d1-47ff-bf1e-c40639e886e2"}, {"uuid": "00000000-0000-0000-0000-000000000000"}, {"uuid": "11111111-1111-1111-1111-111111111111"}]}}' \
+         | python -m json.tool</programlisting></para>
+                    <para>In addition to the isolated network, PublicNet and ServiceNet are attached to the server. You must
+                        explicitly specify these networks to attach them to your server.</para>
+                    <para><emphasis role="bold">Output:</emphasis> The API operation returns information about the new
+                        server, as shown in the following output:</para>
+                    <programlisting language="json"><?db-font-size 65%?>
+                        <xi:include href="../../common/samples/server-post-resp.json" parse="text"/></programlisting>
+                </step>
+            </procedure>
+            <sidebar>
+                <para><emphasis role="bold">Next step:</emphasis>
+                    <olink targetdoc="cn-gettingstarted" targetptr="list_servers">“Step 4. List Servers and Attached
+                        Networks”</olink></para>
+            </sidebar>
+        </section>
+        <section xml:id="xml_create_server">
+            <title>XML Request and Response</title>
+            <procedure>
+                <title>To provision a server and attach an isolated network to the server</title>
+                <step>
+                    <para>Issue the following cURL
+                        command:<programlisting language="bash" role="gutter: false"><?db-font-size 55%?>
+                            <prompt>$</prompt> curl -i https://dfw.servers.api.rackspacecloud.com/v2/$account/servers.xml \
+        -X POST \
+        -H "X-Auth-Project-Id: $account" \
+        -H "Content-Type: application/xml" \
+        -H "Accept: application/xml" \
+        -H "X-Auth-Token: $token" \
+        -d '&lt;?xml version="1.0" encoding="UTF-8"?>&lt;server xmlns="http://docs.openstack.org/compute/api/v1.1" imageRef="3afe97b2-26dc-49c5-a2cc-a2fc8d80c001" flavorRef="2" name="api-test-server-xml2">&lt;metadata>&lt;meta key="My Server Name">API Test Server XML&lt;/meta>&lt;/metadata>&lt;networks>&lt;uuid>0ef47ac7-6797-4e01-8a47-ed26ec3aaa56&lt;/uuid>&lt;uuid>00000000-0000-0000-0000-000000000000&lt;/uuid>&lt;uuid>11111111-1111-1111-1111-111111111111&lt;/uuid>&lt;/networks>&lt;/server>'</programlisting></para>
+                    <para>In addition to the isolated network, PublicNet and ServiceNet are attached to the server. You must
+                        explicitly specify these networks to attach them to your server.</para>
+                    <para><emphasis role="bold">Output:</emphasis> The API operation returns information about the new
+                        server, as shown in the following output:</para>
+                    <programlisting language="xml"><?db-font-size 65%?><xi:include href="../../common/samples/server-post-resp.xml" parse="text"/></programlisting>
+                </step>
+            </procedure>
+            <sidebar>
+                <para><emphasis role="bold">Next step:</emphasis>
+                    <olink targetdoc="cn-gettingstarted" targetptr="list_servers">“Step 4. List Servers and Attached
+                        Networks”</olink></para>
+            </sidebar>
+        </section>
+    </section>
+    <?hard-pagebreak?>
+
+</section>

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section [
+        <!-- Some useful entities borrowed from HTML -->
+        <!ENTITY ndash  "&#x2013;">
+        <!ENTITY mdash  "&#x2014;">
+        <!ENTITY hellip "&#x2026;">
+        
+        <!-- Useful for describing APIs -->
+        <!ENTITY GET    '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
+        <!ENTITY PUT    '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
+        <!ENTITY POST   '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
+        <!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
+     
+        <!ENTITY CIS 'Rackspace Cloud Identity Service'>
+<!ENTITY fgCS 'first generation Cloud Servers'>
+<!ENTITY ngCS 'next generation Cloud Servers'>
+<!ENTITY cnresource1 'rax-networks'>
+<!ENTITY virt_ext 'Cloud Networks virtual interface extension'>
+<!ENTITY cnresource2 'os-networksv2'>
+]>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0"
+    xml:id="create_network_neutron">
+    <title>Step 1. Create an Isolated Network</title>
+    <para>Before you create a server, you create an isolated network that you can attach to your new server. </para>
+    <para>To create an isolated network, you specify a name and an admin_state for your network.</para>
+    <para>After you create an isolated network, copy its network ID. You use this ID to attach the network to your server
+        when you create your server.</para>
+    <sidebar>
+        <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
+                <listitem>
+                    <para><olink targetdoc="cn-gettingstarted" targetptr="nova_create_network_neutron">“Create an Isolated
+                            Network with the nova Client ”</olink></para>
+                </listitem>
+                <listitem>
+                    <para><olink targetdoc="cn-gettingstarted" targetptr="neutron_create_network_neutron">“Create an Isolated
+                            Network with the neutron Client ”</olink></para>
+                </listitem>
+                <listitem>
+                    <para><olink targetdoc="cn-gettingstarted" targetptr="curl_create_network_neutron">“Create an Isolated
+                            Network with cURL”</olink></para>
+                </listitem>
+            </itemizedlist></para>
+    </sidebar>
+    <section xml:id="nova_create_network_neutron">
+        <title>Create an Isolated Network with the nova Client </title>
+        <para>
+            <procedure>
+                <title>To create an isolated network with the nova client</title>
+                <step>
+                    <para>Issue the following command:
+                        <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                            <prompt>$</prompt> nova network-create &lt;name&gt; &lt;admin_state_up&gt;</programlisting></para>
+                    <para><emphasis role="bold">Positional arguments:</emphasis></para>
+                    <para>
+                        <itemizedlist>
+                            <listitem>
+                                <para><parameter>name</parameter>. The network name.</para>
+                            </listitem>
+                            <listitem>
+                                <para><parameter>admin_state_up</parameter>. The administrative state of the network
+                                        (<literal>True</literal> if up or <literal>False</literal> if down).</para>
+                            </listitem>
+                        </itemizedlist>
+                    </para>
+                    <para><emphasis role="bold">Output:</emphasis></para>
+                    <para>The command returns the response, as shown in the following output:</para>
+                    <informalexample>
+                        <screen><computeroutput><?db-font-size 75%?>+----------------+--------------------------------------+
+| Property       | Value                                |
++----------------+--------------------------------------+
+| admin-state-up | false                                |
+| id             | 850d3f2c-f0a5-4f8b-b1cf-5836fc0be940 |
+| name           | sample_network                       |
+| shared         | false                                |
+| status         | ACTIVE                               |
+| subnets        |                                      |
+| tenant_id      | f667b69e4d6749749ef3bcba7251d9ce     |
++----------------+--------------------------------------+</computeroutput></screen>
+                    </informalexample>
+
+                </step>
+                <step>
+                    <para>Copy the <literal>id</literal> value from the output. You will use this value when you provision
+                        your server.</para>
+                </step>
+            </procedure>
+        </para>
+        <sidebar>
+            <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted"
+                    targetptr="list_networks_neutron">“Step 2. List Networks”</olink></para>
+        </sidebar>
+    </section>
+    <?hard-pagebreak?>
+    <section xml:id="neutron_create_network_neutron">
+        <title>Create an Isolated Network with the neutron Client </title>
+        <para>
+            <procedure>
+                <title>To create an isolated network with the neutron client</title>
+                <step>
+                    <para>Issue the following neutron command:
+                        <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+<prompt>$</prompt> neutron net-create &lt;amp&gt;</programlisting></para>
+                    <para><emphasis role="bold">Positional arguments:</emphasis></para>
+                    <para>
+                        <itemizedlist>
+                            <listitem>
+                                <para><parameter>name</parameter>. The network name. In this example, the name is
+                                        <literal>amp</literal>.</para>
+                            </listitem>
+                        </itemizedlist>
+                    </para>
+                    <para><emphasis role="bold">Output:</emphasis></para>
+                    <para>The command returns the response, as shown in the following output:</para>
+                    <informalexample>
+                        <screen><computeroutput><?db-font-size 75%?>
++----------------+--------------------------------------+
+| Field          | Value                                |
++----------------+--------------------------------------+
+| admin_state_up | True                                 |
+| id             | 29f52c7e-6efd-4335-a14a-db77d32a2555 |
+| name           | amp                                  |
+| shared         | False                                |
+| status         | ACTIVE                               |
+| subnets        |                                      |
+| tenant_id      | 53501b3c25d34f8ea293c03298caed60     |
++----------------+--------------------------------------+</computeroutput></screen>
+                    </informalexample>
+                </step>
+                <step>
+                    <para>Copy the <literal>id</literal> value from the output. You will use this value when you provision
+                        your server.</para>
+                </step>
+            </procedure>
+        </para>
+        <sidebar>
+            <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted"
+                    targetptr="list_networks_neutron">“Step 2. List Networks”</olink></para>
+        </sidebar>
+    </section>
+    <?hard-pagebreak?>
+    <section xml:id="curl_create_network_neutron">
+        <title>Create an Isolated Network with cURL</title>
+        <para>You can request a JSON or XML response when you issue a request in a cURL command.</para>
+        <section xml:id="json_create_network_neutron">
+            <title>JSON Request and Response</title>
+            <procedure>
+                <title>To create an isolated network and request a JSON response</title>
+                <step>
+                    <para>Issue the following cURL command:
+                        <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
+                            <prompt>$</prompt> curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/&cnresource2; \
+       -X POST \
+       -H "X-Auth-Project-Id: $account" \
+       -H "Content-Type: application/json" \
+       -H "Accept: application/json" \
+       -H "X-Auth-Token: $token" \
+       -d '{"network": {"name": "sample_network", "admin_state_up": "false"}}' | python -m json.tool</programlisting></para>
+                    <para>In this cURL command, you specify several options. For information about options, see <olink
+                            targetdoc="cn-gettingstarted" targetptr="curl_options">Table 2, “cURL Command-Line
+                            Options”</olink>.</para>
+                    <para><emphasis role="bold">Output:</emphasis>
+                    </para>
+                    <para>The operation returns the response body, as shown in the following JSON response:
+                        <programlisting language="json"><?db-font-size 65%?>
+                            <xi:include href="../../common/samples/network-post-resp.json" parse="text"/></programlisting></para>
+                </step>
+                <step>
+                    <para>Copy the <literal>id</literal> value from the output. You will use this value when you provision
+                        your server.</para>
+                </step>
+            </procedure>
+            <sidebar>
+                <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted"
+                        targetptr="list_networks_neutron">“Step 2. List Networks”</olink></para>
+            </sidebar>
+        </section>
+        <section xml:id="xml_create_network_neutron">
+            <title>XML Request and Response</title>
+            <procedure>
+                <title>To create an isolated network and request a XML response</title>
+                <step>
+                    <para>Issue the following cURL command:
+                        <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
+                            <prompt>$</prompt> curl -i https://dfw.servers.api.rackspacecloud.com/v2/$account/os-networksv2.xml \
+          -X POST -H "X-Auth-Project-Id: $account" -H "Content-Type: application/xml" \
+          -H "Accept: application/xml" \
+          -H "X-Auth-Token: $token" \
+          -d '&lt;network name="sample_network" admin_state_up="false" /&gt;'</programlisting></para>
+                    <para><emphasis role="bold">Output:</emphasis>
+                    </para>
+                    <para>The operation returns the response body, as shown in the following XML response:
+                        <programlisting language="xml"><?db-font-size 65%?>
+                            <xi:include href="../../common/samples/network-post-resp.xml" parse="text"/></programlisting></para>
+                </step>
+                <step>
+                    <para>Copy the <literal>id</literal> value from the output. You will use this value when you provision
+                        your server.</para>
+                </step>
+            </procedure>
+            <sidebar>
+                <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted"
+                        targetptr="list_networks_neutron">“Step 2. List Networks”</olink></para>
+            </sidebar>
+        </section>
+    </section>
+</section>

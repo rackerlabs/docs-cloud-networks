@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter [
+<!-- Some useful entities borrowed from HTML -->
+<!ENTITY ndash  "&#x2013;">
+<!ENTITY mdash  "&#x2014;">
+<!ENTITY hellip "&#x2026;">
+<!ENTITY plusmn "&#xB1;">
+
+<!-- Useful for describing APIs -->
+<!ENTITY GET    '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
+<!ENTITY PUT    '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
+<!ENTITY POST   '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
+<!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
+
+<!ENTITY CHECK  '<inlinemediaobject xmlns="http://docbook.org/ns/docbook">
+<imageobject>
+<imagedata fileref="figures/Check_mark_23x20_02.svg"
+format="SVG" scale="60"/>
+</imageobject>
+</inlinemediaobject>'>
+
+<!ENTITY ARROW  '<inlinemediaobject xmlns="http://docbook.org/ns/docbook">
+<imageobject>
+<imagedata fileref="../figures/Arrow_east.svg"
+ scale="60"/>
+</imageobject>
+</inlinemediaobject>'>
+<!ENTITY CIS 'Rackspace Cloud Identity Service'>
+<!ENTITY fgCS 'first generation Cloud Servers'>
+<!ENTITY ngCS 'next generation Cloud Servers'>
+<!ENTITY cnresource1 'rax-networks'>
+<!ENTITY virt_ext 'Cloud Networks virtual interface extension'>
+<!ENTITY Uvirt_ext 'Cloud Networks Virtual Interface Extension'>
+<!ENTITY cnresource2 'os-networksv2'>
+]>
+
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xmlns:raxm="http://docs.rackspace.com/api/metadata"
+    xml:id="api_operations_nuetron">
+    <title>API Operations - Neutron</title>
+    <para>The Rackspace Cloud Networks API v2 serves the following functions: <itemizedlist>
+            <listitem>
+                <para>Provides virtual networking services among devices that are managed by the Rackspace Cloud Servers
+                    service.</para>
+            </listitem>
+            <listitem>
+                <para>Combines the API v1.1 functionality with some essential Internet Protocol Address Management (IPAM)
+                    functionality.</para>
+            </listitem>
+            <listitem>
+                <para>Enables users to associate IP address blocks and other network configuration settings. You can choose a
+                    specific IP address from the block or let the Cloud Networks service choose the first available IP
+                    address.</para>
+            </listitem>
+        </itemizedlist></para>
+    <section xml:id="api_networks">
+        <title>Networks</title>
+        <para>This section describes the API operations for networks.</para>
+        <!--- this section comes from these WADLs: networks.wadl, ports.wadl, subnets.wadl -->
+        <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+            <!-- list networks -->
+            <wadl:resource href="../../wadl/networks.wadl#Networks">
+                <wadl:method href="listNetworks"/>
+            </wadl:resource>
+            <!-- create network -->
+            <wadl:resource href="../../wadl/networks.wadl#Networks">
+                <wadl:method href="createNetwork"/>
+            </wadl:resource>
+            <!-- create multiple networks -->
+            <wadl:resource href="../../wadl/networks.wadl#Networks">
+                <wadl:method href="bulkCreateNetwork"/>
+            </wadl:resource>
+            <!-- show network -->
+            <wadl:resource href="../../wadl/networks.wadl#networkID">
+                <wadl:method href="showNetwork"/>
+            </wadl:resource>
+            <!-- update network -->
+            <wadl:resource href="../../wadl/networks.wadl#networkID">
+                <wadl:method href="updateNetwork"/>
+            </wadl:resource>
+            <!-- delete network -->
+            <wadl:resource href="../../wadl/networks.wadl#networkID">
+                <wadl:method href="deleteNetwork"/>
+            </wadl:resource>
+        </wadl:resources>
+    </section>
+    <section xml:id="api_subnets_neutron">
+        <title>Subnets</title>
+        <para>This section describes the API operations for subnets.</para>
+        <!--- this section comes from these WADLs: subnets.wadl -->
+        <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+            <!-- list subnets -->
+            <wadl:resource href="../../wadl/subnets.wadl#Subnets">
+                <wadl:method href="listSubnets"/>
+            </wadl:resource>
+            <!-- create subnet -->
+            <wadl:resource href="../../wadl/subnets.wadl#Subnets">
+                <wadl:method href="createSubnet"/>
+            </wadl:resource>
+            <!-- create multiple subnets -->
+            <wadl:resource href="../../wadl/subnets.wadl#Subnets">
+                <wadl:method href="bulkCreateSubnet"/>
+            </wadl:resource>
+            <!-- show subnet -->
+            <wadl:resource href="../../wadl/subnets.wadl#subnetID">
+                <wadl:method href="showSubnet"/>
+            </wadl:resource>
+            <!-- update subnet -->
+            <wadl:resource href="../../wadl/subnets.wadl#subnetID">
+                <wadl:method href="updateSubnet"/>
+            </wadl:resource>
+            <!-- remove subnet -->
+            <wadl:resource href="../../wadl/subnets.wadl#subnetID">
+                <wadl:method href="removeSubnet"/>
+            </wadl:resource>
+        </wadl:resources>
+    </section>
+    <section xml:id="api_ports_neutron">
+        <title>Ports</title>
+        <para>This section describes the API operations for ports.</para>
+        <!--- this section comes from these WADLs: ports.wadl -->
+        <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+            <!-- list ports -->
+            <wadl:resource href="../../wadl/ports.wadl#Ports">
+                <wadl:method href="listPorts"/>
+            </wadl:resource>
+            <!-- create port -->
+            <wadl:resource href="../../wadl/ports.wadl#Ports">
+                <wadl:method href="createPort"/>
+            </wadl:resource>
+            <!-- create multiple ports -->
+            <wadl:resource href="../../wadl/ports.wadl#Ports">
+                <wadl:method href="bulkCreatePorts"/>
+            </wadl:resource>
+            <!-- show port -->
+            <wadl:resource href="../../wadl/ports.wadl#portID">
+                <wadl:method href="showPort"/>
+            </wadl:resource>
+            <!-- update port -->
+            <wadl:resource href="../../wadl/ports.wadl#portID">
+                <wadl:method href="updatePort"/>
+            </wadl:resource>
+            <!-- remove port -->
+            <wadl:resource href="../../wadl/ports.wadl#portID">
+                <wadl:method href="removePort"/>
+            </wadl:resource>
+        </wadl:resources>
+    </section>
+<!--    <section xml:id="api_ext_security_neutron">
+        <title>Extension - Security Groups</title>
+        <para>This section describes the API operations for security groups and rules.</para>
+        <!-\-\- this section comes from these WADLs: ports.wadl -\->
+        <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+            <!-\- list security groups -\->
+            <wadl:resource href="../../wadl/security-groups.wadl#SecGroups">
+                <wadl:method href="listSecGroups"/>
+            </wadl:resource>
+            <!-\- create security group -\->
+            <wadl:resource href="../../wadl/security-groups.wadl#SecGroups">
+                <wadl:method href="createSecGroup"/>
+            </wadl:resource>
+            <!-\- show security group -\->
+            <wadl:resource href="../../wadl/security-groups.wadl#securityGroupID">
+                <wadl:method href="showSecGroup"/>
+            </wadl:resource>
+            <!-\- delete security group -\->
+            <wadl:resource href="../../wadl/security-groups.wadl#securityGroupID">
+                <wadl:method href="deleteSecGroup"/>
+            </wadl:resource>
+            <!-\- list security group rules -\->
+            <wadl:resource href="../../wadl/security-groups.wadl#SecGroupsRules">
+                <wadl:method href="listSecGroupRules"/>
+            </wadl:resource>
+            <!-\- create security group rule-\->
+            <wadl:resource href="../../wadl/security-groups.wadl#SecGroupsRules">
+                <wadl:method href="createSecGroupRule"/>
+            </wadl:resource>
+            <!-\- show security group rule-\->
+            <wadl:resource href="../../wadl/security-groups.wadl#SecGroupRulesID">
+                <wadl:method href="showSecGroupRule"/>
+            </wadl:resource>
+            <!-\- delete security group rule -\->
+            <wadl:resource href="../../wadl/security-groups.wadl#SecGroupRulesID">
+                <wadl:method href="deleteSecGroupRule"/>
+            </wadl:resource>
+        </wadl:resources>
+    </section>-->
+    <section xml:id="api_ext_layer3_router">
+        <title>Extension - Layer-3 Networking (Router)</title>
+        <para>This section describes the API operations for creating and managing routers for Layer-3 (router)
+            networking.</para>
+        <para>The Layer-3 networking extension enables Cloud Networks API users to route packets between subnets, and forward
+            packets from internal networks to external ones.</para>
+        <para>The extension introduces the following resource:</para>
+        <variablelist>
+            <varlistentry>
+                <term>router</term>
+                <listitem>
+                    <para>a logical entity for forwarding packets across internal subnets and NATting them on external
+                        networks through an appropriate external gateway.</para>
+                    <para>See <olink targetdoc="cn-devguide" targetptr="conceptRouter">“Router”</olink>for more information
+                        about routers.</para>
+                </listitem>
+            </varlistentry>
+        </variablelist>
+        <!--- this section comes from these WADLs: layer3.wadl -->
+        <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+            <!-- list routers -->
+            <wadl:resource href="../../wadl/layer3.wadl#Routers">
+                <wadl:method href="listRouters"/>
+            </wadl:resource>
+            <!-- create router -->
+            <wadl:resource href="../../wadl/layer3.wadl#Routers">
+                <wadl:method href="createRouter"/>
+            </wadl:resource>
+            <!-- show router -->
+            <wadl:resource href="../../wadl/layer3.wadl#RouterID">
+                <wadl:method href="showRouter"/>
+            </wadl:resource>
+            <!-- update router -->
+            <wadl:resource href="../../wadl/layer3.wadl#RouterID">
+                <wadl:method href="updateRouter"/>
+            </wadl:resource>
+            <!-- delete router -->
+            <wadl:resource href="../../wadl/layer3.wadl#RouterID">
+                <wadl:method href="deleteRouter"/>
+            </wadl:resource>
+            <!-- add interface to router -->
+            <wadl:resource href="../../wadl/layer3.wadl#RouterID_add_interface">
+                <wadl:method href="addRouterInterface"/>
+            </wadl:resource>
+            <!-- remove interface from router-->
+            <wadl:resource href="../../wadl/layer3.wadl#RouterID_remove_interface">
+                <wadl:method href="removeRouterInterface"/>
+            </wadl:resource>
+        </wadl:resources>
+    </section>
+</chapter>

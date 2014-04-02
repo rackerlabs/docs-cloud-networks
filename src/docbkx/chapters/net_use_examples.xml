@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter [
+        <!-- Some useful entities borrowed from HTML -->
+        <!ENTITY ndash  "&#x2013;">
+        <!ENTITY mdash  "&#x2014;">
+        <!ENTITY hellip "&#x2026;">
+        
+        <!-- Useful for describing APIs -->
+        <!ENTITY GET    '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
+        <!ENTITY PUT    '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
+        <!ENTITY POST   '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
+        <!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
+        
+        <!-- Product references -->
+        
+        <!ENTITY CS 'Cloud Servers'>
+<!ENTITY HOST 'dfw.servers.api.rackspacecloud.com'>
+<!ENTITY virt_ext 'Cloud Networks virtual interface extension'>
+<!ENTITY Uvirt_ext 'Cloud Networks Virtual Interface Extension'>
+<!ENTITY URL 'https://&HOST;/v2/'>
+]>
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="how_examples_work">
+    <title>Learn How to Use the Examples in This Guide</title>
+    <para>For each exercise in this guide, you choose one of the following methods to make Cloud Networks API calls: <itemizedlist>
+            <listitem>
+                <para><emphasis role="bold">The
+                        <link xlink:href="http://www.rackspace.com/knowledge_center/article/using-python-novaclient-with-the-rackspace-cloud">nova client</link></emphasis>.
+                    We recommend that you use the nova client to run simple commands that make API calls. This open-source
+                    Python client runs on Linux or Mac OS X systems and is easy to learn and use. You can specify a debug
+                    parameter on any nova command to show the underlying API request for the command. This is a good way to
+                    become familiar with API requests. </para>
+                <para>See <olink targetdoc="cn-gettingstarted" targetptr="novaclient">“How the nova Client
+                    Works”</olink>.</para>
+            </listitem>
+            <listitem>
+                <para><emphasis role="bold"><link xlink:href="http://curl.haxx.se/">cURL</link> commands</emphasis>. If you
+                    are familiar with or want to learn cURL commands, choose this method. With cURL, you send HTTP requests
+                    with embedded API calls from the command line. The cURL examples in this guide show request and response
+                    bodies that are in JSON and XML formats. See <olink targetdoc="cn-gettingstarted" targetptr="curl">“How
+                        cURL Commands Work”</olink></para>
+            </listitem>
+        </itemizedlist>If you like, you can use cURL in one example and switch to the nova client in the next example. If you
+        choose to use a cURL command for any example, you must export the environment variables required to run the cURL
+        examples. See <olink targetdoc="cn-gettingstarted" targetptr="export_env_vars">“Step 3. (Optional) Export Environment
+            Variables to Run cURL Commands”</olink>. </para>
+    <para>Each example, whether nova client or cURL, points you to the next step in the process. </para>
+
+    <xi:include href="net_how_nova_works.xml"/>
+    <xi:include href="net_how_curl_works.xml"/>
+</chapter>

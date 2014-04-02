@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section [
+<!-- Some useful entities borrowed from HTML -->
+<!ENTITY ndash  "&#x2013;">
+<!ENTITY mdash  "&#x2014;">
+<!ENTITY hellip "&#x2026;">
+<!ENTITY plusmn "&#xB1;">
+
+<!-- Useful for describing APIs -->
+<!ENTITY GET    '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
+<!ENTITY PUT    '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
+<!ENTITY POST   '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
+<!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
+<!ENTITY virt_ext 'Cloud Networks virtual interface extension'>
+<!ENTITY Uvirt_ext 'Cloud Networks Virtual Interface Extension'>
+]>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="install_nova">
+
+    <title>Step 1. (Optional) Install the nova Client with the Cloud Networks Extension</title>
+    <para>To manage your servers from the command line, you can use the open-source nova client application called
+            <literal>python-novaclient</literal>. </para>
+    <para>To install the nova client, you first install the <literal>rackspace-novaclient</literal> package, which includes
+        the nova client and the Rackspace extensions including the Cloud Networks extension.</para>
+    <para>If you want to use the Cloud Networks virtual interface extension, you must also install the
+            <literal>os_virtual_interfacesv2_python_novaclient_ext</literal> package. </para>
+    <note>
+        <para>The python-novaclient is developed and maintained by the OpenStack community. While we do not directly support
+            python-novaclient, you can post in the comments below if you run into any difficulties.</para>
+    </note>
+    <para>Before you begin, install the following software:<table rules="all" width="90%">
+            <caption>Nova Client Prerequisite Software</caption>
+            <col width="25%"/>
+            <col width="75%"/>
+            <thead>
+                <tr>
+                    <th>Prerequisite</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td valign="top">
+                        <para>Python 2.6 or later</para>
+                    </td>
+                    <td>
+                        <para>Currently, the nova client does not support Python 3. </para>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <para><command>setuptools</command> package </para>
+                    </td>
+                    <td>
+                        <para>Installed by default on Mac OS X. </para>
+                        <para>Many Linux distributions provide packages to make <command>setuptools</command> easy to
+                            install.</para>
+                        <para>Search your package manager for <command>setuptools</command> to find an installation package.
+                            If you cannot find one, download the <command>setuptools</command> package directly from
+                            <link xlink:href="http://pypi.python.org/pypi/setuptools">http://pypi.python.org/pypi/setuptools</link>.
+                        </para>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top"><command>pip</command> package</td>
+                    <td>
+                        <para>To install the nova client on a Mac OS X or Linux system, use <command>pip</command> because it
+                            is easy and ensures that you get the latest version of the nova client from the
+                            <link xlink:href="http://pypi.python.org/pypi/python-novaclient/">Python Package Index</link>.
+                            Also, it lets you update the package later on.</para>
+                        <para>Install <command>pip</command> through the package manager for your system:<itemizedlist>
+                                <listitem>
+                                    <para>Mac OS X
+                                        <programlisting language="bash" role="gutter: false">
+                                            <prompt>$</prompt> sudo easy_install pip</programlisting></para>
+                                </listitem>
+                                <listitem>
+                                    <para>Ubuntu
+                                        <programlisting language="bash" role="gutter: false">
+                                            <prompt>$</prompt> aptitude install python-pip </programlisting></para>
+                                </listitem>
+                                <listitem>
+                                    <para>Debian
+                                        <programlisting language="bash" role="gutter: false">
+                                            <prompt>$</prompt> aptitude install python-pip </programlisting></para>
+                                </listitem>
+                                <listitem>
+                                    <para>Fedora
+                                        <programlisting language="bash" role="gutter: false">
+                                            <prompt>$</prompt> yum install python-pip</programlisting></para>
+                                </listitem>
+                                <listitem>
+                                    <para>CentOS, or RHEL (from EPEL or another 3rd party repository)
+                                        <programlisting language="bash" role="gutter: false">
+                                            <prompt>$</prompt> yum install python-pip</programlisting></para>
+                                </listitem>
+                            </itemizedlist>
+                        </para>
+                    </td>
+                </tr>
+            </tbody>
+        </table></para>
+
+    <procedure>
+        <title>To install the nova client with Rackspace extensions:</title>
+
+        <step>
+            <title>Install or update the nova client package with Rackspace extensions</title>
+            <para>The <literal>rackspace-novaclient</literal> package includes the nova client and Rackspace extensions,
+                including the Cloud Networks extension. </para>
+            <para>Run the following command for your operating system to install the <literal>rackspace-novaclient</literal>
+                package:</para>
+            <para>For Ubuntu, Debian, or OS X: </para>
+            <programlisting language="bash" role="gutter: false">
+                <prompt>$</prompt> sudo pip install rackspace-novaclient</programlisting>
+            <para>For RHEL, CentOS, or Fedora: </para>
+            <programlisting language="bash" role="gutter: false">
+                <prompt>$</prompt> sudo python-pip install rackspace-novaclient</programlisting>
+            <note>
+
+                <para>If you previously installed the <literal>rackspace-novaclient</literal> package, run the following
+                    command for your operating system to upgrade it:</para>
+                <para> For Ubuntu, Debian, or OS X:
+                    <programlisting language="bash" role="gutter: false">
+                        <prompt>$</prompt> sudo pip install --upgrade rackspace-novaclient</programlisting>
+                    For RHEL, CentOS, or Fedora:
+                    <programlisting language="bash" role="gutter: false">
+                        <prompt>$</prompt> sudo python-pip install --upgrade rackspace-novaclient</programlisting>
+                </para>
+            </note>
+            <important>
+                <itemizedlist>
+                    <listitem>
+                        <para>If you previously installed the earlier <literal>rax_networks_python_novaclient_ext</literal>
+                            package, run the following command for your operating system to remove it: </para>
+                        <para> For Ubuntu, Debian, or OS X:
+                            <programlisting language="bash" role="gutter: false">
+                                <prompt>$</prompt> sudo pip uninstall rax_networks_python_novaclient_ext</programlisting>
+                            For RHEL, CentOS, or Fedora:
+                            <programlisting language="bash" role="gutter: false">
+                                <prompt>$</prompt> sudo python-pip uninstall rax_networks_python_novaclient_ext</programlisting>
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para>If you have trouble using pip to install the nova client, you can also download a nova client
+                            installation package from the
+                            <link xlink:href="http://pypi.python.org/pypi/rackspace-novaclient/">python package repository</link>.
+                            Or, you can use pip to individually install the <literal>python-novaclient</literal> and
+                                <literal>rackspace-auth-openstack</literal> packages.</para>
+                    </listitem>
+                </itemizedlist>
+            </important>
+        </step>
+
+        <step>
+            <title>Set environment variables</title>
+            <para>Edit your bash profile to add and set environment variables that enable the nova client to connect to your
+                Rackspace Cloud account. Use nano or an editor of your choice to edit your <filename>.bash_profile</filename>
+                file:</para>
+            <programlisting language="bash" role="gutter: false"><prompt>$</prompt> nano ~/.bash_profile </programlisting>
+            <para>Depending on your account location, add one of the following sets of lines to your bash profile and save
+                the file:<example>
+                    <title>US Data Center Example</title>
+                    <screen><computeroutput><?db-font-size 65%?>export OS_AUTH_URL=https://identity.api.rackspacecloud.com/v2.0/
+export OS_AUTH_SYSTEM=rackspace
+export OS_REGION_NAME=DFW
+export OS_USERNAME=&lt;username>
+export OS_TENANT_NAME=&lt;tenant_id>
+export NOVA_RAX_AUTH=1
+export OS_PASSWORD=&lt;api_key>
+export OS_PROJECT_ID=&lt;tenant_id>
+export OS_NO_CACHE=1</computeroutput></screen>
+                </example><example>
+                    <title>UK Data Center Example</title>
+                    <screen><computeroutput><?db-font-size 65%?>export OS_AUTH_URL=https://lon.identity.api.rackspacecloud.com/v2.0/
+export OS_AUTH_SYSTEM=rackspace_uk
+export OS_REGION_NAME=LON
+export OS_USERNAME=&lt;username>
+export OS_TENANT_NAME=&lt;tenant_id>
+export NOVA_RAX_AUTH=1
+export OS_PASSWORD=&lt;apikey>
+export OS_PROJECT_ID=&lt;tenant_id>
+export OS_NO_CACHE=1</computeroutput></screen>
+                </example></para>
+        </step>
+        <step>
+            <title>Set permissions on the bash profile</title>
+            <para>Because the bash profile contains a password, set permissions on it so other people cannot read it:</para>
+            <programlisting language="bash" role="gutter: false"><prompt>$</prompt>  chmod 600 ~/.bash_profile </programlisting>
+        </step>
+        <step>
+            <title>Source the environment variables</title>
+            <para>To source the variables to make them available in your current shell, run the following command:</para>
+            <programlisting language="bash" role="gutter: false"><prompt>$</prompt> source ~/.bash_profile </programlisting>
+        </step>
+        <step>
+            <title>Test the nova client</title>
+            <para>To verify that you can talk to the API server, authenticate and list
+                images:<programlisting language="bash" role="gutter: false"><prompt>$</prompt> nova credentials 
+<prompt>$</prompt> nova image-list </programlisting></para>
+            <para>Then, list networks:
+                <programlisting language="bash" role="gutter: false"><prompt>$</prompt> nova network-list </programlisting></para>
+        </step>
+        <step>
+            <title>Get help for nova client commands</title>
+            <para>To get help for nova client commands, run the following command:</para>
+            <programlisting language="bash" role="gutter: false"><prompt>$</prompt> nova help </programlisting>
+            <para>To get help for a specific command, type the command name after the <parameter>help</parameter> parameter,
+                as follows:</para>
+            <programlisting language="bash" role="gutter: false"><prompt>$</prompt> nova help &lt;command_name> </programlisting>
+            <para>You cannot use every command that is listed. The nova client was written for use with recent development
+                versions of OpenStack, so it includes support for some features that are not available in the Rackspace
+                Cloud.</para>
+            <note>
+                <para>To show and become familiar with the underlying API v2 request for a command, specify the
+                        <literal>--debug</literal> parameter as the first parameter on any command. For example:
+                    <programlisting language="bash" role="gutter: false">
+                        <prompt>$</prompt> nova --debug list</programlisting></para>
+            </note>
+        </step>
+        <step>
+            <title>Troubleshooting</title>
+            <para>The python-novaclient is developed and maintained by the OpenStack community. </para>
+            <itemizedlist>
+                <listitem>
+                    <para>If you cannot run commands successfully, make sure that you entered your user name, password, and
+                        account number correctly in the bash profile file. </para>
+                </listitem>
+                <listitem>
+                    <para>If you change any environment variables, either log out and back in or source your bash profile
+                        again. </para>
+                </listitem>
+                <listitem>
+                    <para>To override some environment variable settings, you can use the options that are listed at the end
+                        of the <command>nova help</command> output. For example, you can override the
+                            <literal>OS_PASSWORD</literal> setting in the bash profile by specifying a password on a nova
+                        command, as follows: </para>
+                    <programlisting language="bash" role="gutter: false">
+                        <prompt>$</prompt> nova --password &lt;password> image-list </programlisting>
+                    <para>Where <parameter>password</parameter> is your Rackspace password.</para>
+                </listitem>
+                <listitem>
+                    <para> While Rackspace does not directly support python-novaclient, if the above steps don't help, you
+                        can post a question in the comments below.</para>
+                </listitem>
+            </itemizedlist>
+        </step>
+    </procedure>
+    <sidebar>
+        <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted" targetptr="install_neutron"
+                >“Step 2. (Optional) Install the neutron Client with the Cloud Networks Extension”</olink></para>
+    </sidebar>
+</section>

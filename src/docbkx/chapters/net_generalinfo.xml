@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter [
+<!-- changing authentication endpoints; define entities for US & UK rather than maintaining in text -->
+<!ENTITY ENDPOINT-US "https://identity.api.rackspacecloud.com/v3.0/">
+<!ENTITY ENDPOINT-UK "https://lon.identity.api.rackspacecloud.com/v3.0/">
+<!-- Some entities borrowed from HTML -->
+<!ENTITY ndash  "&#x2013;">
+<!ENTITY mdash  "&#x2014;">
+<!ENTITY hellip "&#x2026;">
+<!-- Useful for describing APIs -->
+<!ENTITY GET    '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
+<!ENTITY PUT    '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
+<!ENTITY POST   '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
+<!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
+<!ENTITY HEAD    '<command xmlns="http://docbook.org/ns/docbook">HEAD</command>'>
+<!ENTITY CODES       'Normal Response Code(s):'>
+<!ENTITY ERROR_CODES 'Error Response Code(s):'>
+<!ENTITY NO_REQUEST '<para xmlns="http://docbook.org/ns/docbook">
+This operation does not require a request body.</para>'>
+<!ENTITY LONG_URI_REFHEAD '
+<thead xmlns="http://docbook.org/ns/docbook">
+<tr>
+<td colspan="1">Verb</td>
+<td colspan="4">URI</td>
+<td colspan="3">Description</td>
+</tr>
+</thead>'>
+<!ENTITY URI_REFHEAD '
+<thead xmlns="http://docbook.org/ns/docbook">
+<tr>
+<td colspan="1">Verb</td>
+<td colspan="1">URI</td>
+<td colspan="4">Description</td>
+</tr>
+</thead>'>
+]>
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="General-Keystone-API-d1e62">
+    <title>General API Information</title>
+    <info>
+        <raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
+            <raxm:type>concept</raxm:type>
+            <raxm:product version="v3.0">auth</raxm:product>
+            <raxm:priority>1</raxm:priority>
+        </raxm:metadata>
+    </info>
+    <para>The Cloud Networks API v2.0 is a RESTful HTTP service that uses all aspects of the HTTP protocol including methods,
+        URIs, media types, and response codes. This section provides more information about authentication, cURL, and
+        filtering and pagination of requests. </para>
+
+    <xi:include href="net_auth.xml"/>
+    <xi:include href="net_identity_3roles.xml"/> 
+    <xi:include href="net_how_curl_works.xml"/>
+    <xi:include href="net_filtering.xml"/>
+    <xi:include href="net_pagination.xml"/>
+</chapter>

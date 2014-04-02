@@ -1,0 +1,315 @@
+<?xml version="1.0"?>
+
+<article>
+<info>
+<abstract>
+<para><emphasis role="strong">Note:</emphasis> This
+            document lists changes only since the 1.78.0 release.
+            If you instead want a record of the complete list of
+            changes for the codebase over its entire history, you
+            can obtain one by running the following commands:
+            
+<screen>  <code>svn checkout https://docbook.svn.sourceforge.net/svnroot/docbook/trunk/xsl</code>
+  <code>svn log --xml --verbose xsl &gt; ChangeHistory.xml</code></screen></para>
+</abstract>
+</info><title>Changes since the 1.78.0 release</title>
+
+<sect1 xml:id="Vsnapshot_9779">
+<title>Release Notes: snapshot_9779</title>
+<para>The following is a list of changes that have been made
+        since the 1.78.0 release.</para>
+
+<sect2 xml:id="Vsnapshot_9779_Gentext">
+<title>Gentext</title>
+<para>The following changes have been made to the
+            <filename>gentext</filename> code
+            since the 1.78.0 release.</para>
+<itemizedlist>
+<listitem>
+<para><literal>tom_schr: locale/ca.xml; locale/da.xml; locale/cs.xml; locale/es.xml; locale/fr.xml; local⋯</literal></para><screen><phrase role="commit-message">Added missing <tag>keycap</tag> context for ca, cs, da, es, et, eu, and fr</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>tom_schr: locale/en.xml; locale/de.xml</literal></para><screen><phrase role="commit-message">Added option key for <tag>keycap</tag> context</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>tom_schr: locale/de.xml</literal></para><screen><phrase role="commit-message">Added key="optional-step" as done in r9745</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>Robert Stayton: locale/en.xml</literal></para><screen><phrase role="commit-message">Add key="optional-step".</phrase></screen>
+</listitem>
+</itemizedlist>
+</sect2><!--end of Gentext changes for snapshot_9779-->
+
+<sect2 xml:id="Vsnapshot_9779_Common">
+<title>Common</title>
+<para>The following changes have been made to the
+            <filename>common</filename> code
+            since the 1.78.0 release.</para>
+<itemizedlist>
+<listitem>
+<para><literal>Robert Stayton: titles.xsl</literal></para><screen><phrase role="commit-message">Make sure part and set <tag>titleabbrev</tag> are used in mode="titleabbrev.markup"</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>Robert Stayton: titles.xsl</literal></para><screen><phrase role="commit-message">Add empty default template for <tag>titleabbrev</tag> since it is always processed in a mode.</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>Robert Stayton: gentext.xsl</literal></para><screen><phrase role="commit-message">Make consistent handling of <tag>titleabbrev</tag> in xrefs.</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>Robert Stayton: titles.xsl</literal></para><screen><phrase role="commit-message">for missing <tag>title</tag> in <tag>xref</tag>, provide parent information of target to help locate problem element.
+Process <tag>bridgehead</tag> in mode="title.markup", not normal mode.</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>Jirka Kosek: l10n.xsl</literal></para><screen><phrase role="commit-message">Fixed bug #3598963</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>Robert Stayton: gentext.xsl; labels.xsl</literal></para><screen><phrase role="commit-message">Make sure bridgeheads are not numbered in all contexts, including html <tag>title</tag> attributes.</phrase></screen>
+</listitem>
+</itemizedlist>
+</sect2><!--end of Common changes for snapshot_9779-->
+
+<sect2 xml:id="Vsnapshot_9779_FO">
+<title>FO</title>
+<para>The following changes have been made to the
+            <filename>fo</filename> code
+            since the 1.78.0 release.</para>
+<itemizedlist>
+<listitem>
+<para><literal>Robert Stayton: inline.xsl</literal></para><screen><phrase role="commit-message">Adjust exception for fop for <tag>menuchoice</tag> separator to
+use the $symbol.font.family if it is set.</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>Robert Stayton: division.xsl</literal></para><screen><phrase role="commit-message">Fix comment.</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>Robert Stayton: param.ent</literal></para><screen><phrase role="commit-message">Fix typo that prevents param.xsl update.</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>Robert Stayton: lists.xsl; param.xweb; param.ent</literal></para><screen><phrase role="commit-message">Add <parameter>mark.optional.procedure.steps</parameter> param.</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>Robert Stayton: qandaset.xsl</literal></para><screen><phrase role="commit-message">Fix bug in <tag>question</tag> template that output empty list-item-label when
+defaultlabel = 'none'.</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>Robert Stayton: division.xsl</literal></para><screen><phrase role="commit-message">Fix bug where part <tag>TOC</tag> not generated when <tag>partintro</tag> is present.</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>Jirka Kosek: xref.xsl</literal></para><screen><phrase role="commit-message">Footnotes can't be placed into fo:float</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>Robert Stayton: titlepage.templates.xml</literal></para><screen><phrase role="commit-message">Remove margin-left when start-indent is used because they interfere
+with each other.</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>Robert Stayton: fo.xsl; pagesetup.xsl</literal></para><screen><phrase role="commit-message">Use dingbat.fontset rather than <parameter>dingbat.font.family</parameter> so it falls
+back to <tag>symbol</tag> font if glyph not found, like other font properties.</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>Robert Stayton: inline.xsl</literal></para><screen><phrase role="commit-message">Change last instance of inline.charseq in inline <tag>glossterm</tag> to 
+inline.italicseq so it is consistent with the others.</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>Robert Stayton: xref.xsl</literal></para><screen><phrase role="commit-message">Make consistent handling of <tag>titleabbrev</tag> in xrefs.</phrase></screen>
+</listitem>
+</itemizedlist>
+</sect2><!--end of FO changes for snapshot_9779-->
+
+<sect2 xml:id="Vsnapshot_9779_HTML">
+<title>HTML</title>
+<para>The following changes have been made to the
+            <filename>html</filename> code
+            since the 1.78.0 release.</para>
+<itemizedlist>
+<listitem>
+<para><literal>Jirka Kosek: chunk-code.xsl</literal></para><screen><phrase role="commit-message">Enumarete separate file for <tag>revhistory</tag> if <parameter>generate.revhistory.link</parameter>=1</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>Robert Stayton: inline.xsl</literal></para><screen><phrase role="commit-message">Update the inline.charseq template to also call 'common.html.attributes'
+instead of using local-name for class value.</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>Jirka Kosek: docbook.xsl; html.xsl</literal></para><screen><phrase role="commit-message">Enabling ITS processing again</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>Robert Stayton: its.xsl</literal></para><screen><phrase role="commit-message">Change syntax for selecting @its:* attributes so it works
+in xsltproc (which should work with the original, but doesn't).</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>Robert Stayton: docbook.xsl; html.xsl</literal></para><screen><phrase role="commit-message">Turn off its.xsl update which is generating attribute insertion errors.</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>Jirka Kosek: its.xsl; docbook.xsl; html.xsl</literal></para><screen><phrase role="commit-message">Added basic support for ITS 2.0 markup. It gets propagated into HTML
+For more <tag>info</tag> about ITS see http://www.w3.org/<tag>TR</tag>/its20/</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>Robert Stayton: docbook.xsl</literal></para><screen><phrase role="commit-message">Added a comment line to test checkin process.</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>Robert Stayton: xref.xsl</literal></para><screen><phrase role="commit-message">Fix bug in mode=remove-ids that put <tag>link</tag> content outside the &lt;a&gt; element.</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>tom_schr: chunktoc.xsl</literal></para><screen><phrase role="commit-message">Fixed SF ticket#3611689: added missing DocBook namespace declarations</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>Robert Stayton: chunker.xsl</literal></para><screen><phrase role="commit-message">Change the internal chunk.base.dir from a param to a variable.</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>Robert Stayton: inline.xsl</literal></para><screen><phrase role="commit-message">Turn off id attribute on <tag>glossterm</tag> <tag>anchor</tag>, because it is on the element itself.</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>Robert Stayton: admon.xsl</literal></para><screen><phrase role="commit-message">Turn off $admon.style if $make.clean.html is set to non-zero.</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>Jirka Kosek: highlight.xsl</literal></para><screen><phrase role="commit-message">Added new definitions for syntax highlighting</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>Robert Stayton: chunk-common.xsl</literal></para><screen><phrase role="commit-message">Make active.olink.hrefs param work for chunked output too.</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>Robert Stayton: xref.xsl</literal></para><screen><phrase role="commit-message">Make consistent handling of <tag>titleabbrev</tag> in xrefs.</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>Robert Stayton: graphics.xsl</literal></para><screen><phrase role="commit-message">Add round() <tag>function</tag> when pixel counts are used for image width and height.</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>Robert Stayton: glossary.xsl</literal></para><screen><phrase role="commit-message">fix missing class and id attributes on <tag>glossterm</tag> and <tag>glossdef</tag>.</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>Robert Stayton: autoidx.xsl</literal></para><screen><phrase role="commit-message">Fix bug where prefer.index.titleabbrev ignored <tag>info</tag>/<tag>titleabbrev</tag>.</phrase></screen>
+</listitem>
+</itemizedlist>
+</sect2><!--end of HTML changes for snapshot_9779-->
+
+<sect2 xml:id="Vsnapshot_9779_Manpages">
+<title>Manpages</title>
+<para>The following changes have been made to the
+            <filename>manpages</filename> code
+            since the 1.78.0 release.</para>
+<itemizedlist>
+<listitem>
+<para><literal>dleidert: info.xsl</literal></para><screen><phrase role="commit-message">Fix a typo (http://bugs.debian.org/698962).</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>Robert Stayton: utility.xsl</literal></para><screen><phrase role="commit-message">Fix bug 3599520: spurious newline in <tag>para</tag> when starts with
+whitespace and inline element.</phrase></screen>
+</listitem>
+</itemizedlist>
+</sect2><!--end of Manpages changes for snapshot_9779-->
+
+<sect2 xml:id="Vsnapshot_9779_Epub">
+<title>Epub</title>
+<para>The following changes have been made to the
+            <filename>epub</filename> code
+            since the 1.78.0 release.</para>
+<itemizedlist>
+<listitem>
+<para><literal>tom_schr: docbook.xsl</literal></para><screen><phrase role="commit-message">Introduced  variable in opf.guide</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>tom_schr: docbook.xsl</literal></para><screen><phrase role="commit-message">Improved modularization in opf.spine and created new spine.cover template</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>tom_schr: docbook.xsl</literal></para><screen><phrase role="commit-message">Improved opf.spine with <tag>info</tag> variable</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>tom_schr: docbook.xsl</literal></para><screen><phrase role="commit-message">Bugfix in opf.spine: removed double <tag>refentry</tag> entries</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>tom_schr: docbook.xsl</literal></para><screen><phrase role="commit-message">* Template package-identifier: introduced $info variable to simplify
+  code (similar to the EPUB3 stylesheets) 
+* Template opf.calloutlist: only call opf.reference.callout if
+  <parameter>callout.graphics</parameter> is set</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>tom_schr: docbook.xsl</literal></para><screen><phrase role="commit-message">Backported Bob's EPUB3 changes to EPUB2 from r9740 -&gt; r9742 -&gt; r9743:
+
+* Implement <parameter>base.dir</parameter>/OEBPS using internal chunk.base.dir instead of
+  new param epub.base.dir.
+
+* Additional changes, specific to this stylesheet:
+  - Construct parameter epub.metainf.dir from <parameter>base.dir</parameter> + 'META-INF/'
+  - Changed parameter epub.cover.filename epub.oebps.dir to
+    chunk.base.dir
+  - Template opf: concat <parameter>base.dir</parameter> with epub.opf.filename
+  - Replaced two subsequent xsl:value-of's with concat()</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>Robert Stayton: docbook.xsl</literal></para><screen><phrase role="commit-message">Fix bug in <tag>author</tag> template generating a span element inside an attribute value.</phrase></screen>
+</listitem>
+</itemizedlist>
+</sect2><!--end of Epub changes for snapshot_9779-->
+
+<sect2 xml:id="Vsnapshot_9779_Slides">
+<title>Slides</title>
+<para>The following changes have been made to the
+            <filename>slides</filename> code
+            since the 1.78.0 release.</para>
+<itemizedlist>
+<listitem>
+<para><literal>dleidert: images/callouts/gen.sh</literal></para><screen><phrase role="commit-message">Leave executable permissions for script.</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>dleidert: s5/ui/default/pretty.css; slidy/graphics/w3c-logo-blue.gif; s5/ui/default/notes.⋯</literal></para><screen><phrase role="commit-message">Drop executable permissions from files.</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>Jirka Kosek: doc/Makefile</literal></para><screen><phrase role="commit-message">Corrected path</phrase></screen>
+</listitem>
+</itemizedlist>
+</sect2><!--end of Slides changes for snapshot_9779-->
+
+<sect2 xml:id="Vsnapshot_9779_Webhelp">
+<title>Webhelp</title>
+<para>The following changes have been made to the
+            <filename>webhelp</filename> code
+            since the 1.78.0 release.</para>
+<itemizedlist>
+<listitem>
+<para><literal>David Cramer: xsl/webhelp-common.xsl</literal></para><screen><phrase role="commit-message">Webhelp: Fix test for <parameter>webhelp.include.search.tab</parameter> param</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>David Cramer: Makefile.sample</literal></para><screen><phrase role="commit-message">Webhelp: Fix order of args to xsltproc</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>David Cramer: docsrc/readme.xml</literal></para><screen><phrase role="commit-message">Webhelp: Turn on xinclude-test.xml in readme to demo xinclude functionality</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>David Cramer: Makefile; Makefile.sample</literal></para><screen><phrase role="commit-message">Webhelp: In Makefiles, do xinclude in first pass at document</phrase></screen>
+</listitem>
+</itemizedlist>
+</sect2><!--end of Webhelp changes for snapshot_9779-->
+
+<sect2 xml:id="Vsnapshot_9779_Params">
+<title>Params</title>
+<para>The following changes have been made to the
+            <filename>params</filename> code
+            since the 1.78.0 release.</para>
+<itemizedlist>
+<listitem>
+<para><literal>Robert Stayton: mark.optional.procedure.steps.xml</literal></para><screen><phrase role="commit-message">New param to turn off Optional text for optional steps.</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>David Cramer: webhelp.include.search.tab.xml</literal></para><screen><phrase role="commit-message">Webhelp: Fix test for <parameter>webhelp.include.search.tab</parameter> param</phrase></screen>
+</listitem>
+<listitem>
+<para><literal>Robert Stayton: article.appendix.title.properties.xml</literal></para><screen><phrase role="commit-message">Remove unneeded margin-left property from <tag>article</tag> <tag>appendix</tag> <tag>title</tag>.
+It interferes with the start-indent property.</phrase></screen>
+</listitem>
+</itemizedlist>
+</sect2><!--end of Params changes for snapshot_9779-->
+
+<sect2 xml:id="Vsnapshot_9779_Highlighting">
+<title>Highlighting</title>
+<para>The following changes have been made to the
+            <filename>highlighting</filename> code
+            since the 1.78.0 release.</para>
+<itemizedlist>
+<listitem>
+<para><literal>Jirka Kosek: c-hl.xml; cpp-hl.xml; sql2003-hl.xml; php-hl.xml; upc-hl.xml; bourne-hl.xml; ⋯</literal></para><screen><phrase role="commit-message">Added new definitions for syntax highlighting</phrase></screen>
+</listitem>
+</itemizedlist>
+</sect2><!--end of Highlighting changes for snapshot_9779-->
+
+</sect1>
+</article>
+

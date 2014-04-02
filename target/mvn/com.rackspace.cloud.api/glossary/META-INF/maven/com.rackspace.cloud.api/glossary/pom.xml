@@ -1,0 +1,82 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.rackspace.cloud.api</groupId>
+  <artifactId>glossary</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  <name>Rackspace Glossary</name>
+
+  <build>
+    <plugins>
+      <plugin>
+	<groupId>com.rackspace.cloud.api</groupId>
+	<artifactId>clouddocs-maven-plugin</artifactId>
+	<version>1.7.0</version>
+	<executions>
+	  <execution>
+	    <goals>
+	      <goal>generate-webhelp</goal>
+	    </goals>
+	    <phase>generate-sources</phase>
+	  </execution>
+	</executions>
+	<configuration>
+	  <xincludeSupported>true</xincludeSupported>
+	  <sourceDirectory>src/main/resources</sourceDirectory>
+	  <includes>rackspace-glossary.xml</includes>	  
+	  <glossaryCollection>src/main/resources/glossary.xml</glossaryCollection>
+	  <canonicalUrlBase>http://docs-beta.rackspace.com/rackspace-glossary/content</canonicalUrlBase>
+	  <pdfUrl>rackspace-glossary.pdf</pdfUrl>
+	  <enableDisqus>intranet</enableDisqus>
+	  <feedbackEmail>david.cramer@rackspace.com</feedbackEmail>	  
+	  <branding>rackspace</branding>
+	  <chapterAutolabel>0</chapterAutolabel>
+	</configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <profiles>
+    <profile>
+      <id>Rackspace Research Repositories</id>
+      <activation>
+	<activeByDefault>true</activeByDefault>
+      </activation>
+      <repositories>
+	<repository>
+	  <id>rackspace-research</id>
+	  <name>Rackspace Research Repository</name>
+	  <url>http://maven.research.rackspacecloud.com/content/groups/public/</url>
+	</repository>
+      </repositories>
+      <pluginRepositories>
+	<pluginRepository>
+	  <id>rackspace-research</id>
+	  <name>Rackspace Research Repository</name>
+	  <url>http://maven.research.rackspacecloud.com/content/groups/public/</url>
+	</pluginRepository>
+      </pluginRepositories>
+    </profile>
+  </profiles>
+  
+  <scm>
+    <connection>scm:git:ssh://git@git-n01.rcloudtech.rackspacecloud.com/rs-doc-glossary.git</connection>
+  </scm>
+  
+  <distributionManagement>
+    <repository>
+      <id>releases.maven.research.rackspacecloud.com</id>
+      
+      <name>Rackspace Cloud Research Releases</name>
+      <url>http://maven.research.rackspacecloud.com/content/repositories/releases/</url>
+    </repository>
+    
+    <snapshotRepository>
+      <id>snapshots.maven.research.rackspacecloud.com</id>
+      
+      <name>Rackspace Cloud Research Snapshots</name>
+      <url>http://maven.research.rackspacecloud.com/content/repositories/snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
+
+</project>

@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!-- Some useful entities borrowed from HTML -->
+        <!ENTITY ndash "&#x2013;">
+        <!ENTITY mdash "&#x2014;">
+        <!ENTITY hellip "&#x2026;">
+        <!ENTITY plusmn "&#xB1;">
+        
+        <!-- Useful for describing APIs -->
+        <!ENTITY GET '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
+        <!ENTITY PUT '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
+        <!ENTITY POST '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
+        <!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
+        
+        <!ENTITY CHECK '<inlinemediaobject xmlns="http://docbook.org/ns/docbook">
+                 <imageobject>
+                  <imagedata fileref="figures/Check_mark_23x20_02.svg"
+                             format="SVG" scale="60"/>
+                </imageobject>
+              </inlinemediaobject>'>
+              
+        <!ENTITY ARROW '<inlinemediaobject xmlns="http://docbook.org/ns/docbook">
+                 <imageobject>
+                  <imagedata fileref="figures/Arrow_east.svg"
+                             format="SVG" scale="60"/>
+                </imageobject>
+              </inlinemediaobject>'>
+<!ENTITY CN 'Cloud Networks'>
+<!ENTITY HOST 'dfw.servers.api.rackspacecloud.com'>
+<!ENTITY virt_ext 'Cloud Networks virtual interface extension'>
+<!ENTITY Uvirt_ext 'Cloud Networks Virtual Interface Extension'>
+<!ENTITY URL 'https://&HOST;/v2/'>
+]>
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg"
+    xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:db="http://docbook.org/ns/docbook" version="5.0" xml:id="cn-devguide">
+    <title>Cloud Networks™ Developer Guide</title>
+    <?rax title.font.size="37px" pdf.url="../../cn-devguide.pdf" canonical.url.base="http://docs.rackspace.com/servers/api/v2/cn-devguide/content"?>
+    <titleabbrev>Cloud Networks Developer Guide</titleabbrev>
+    <info>
+        <author>
+            <personname>
+                <firstname/>
+                <surname/>
+            </personname>
+            <affiliation>
+                <orgname>Rackspace Cloud</orgname>
+            </affiliation>
+        </author>
+        <copyright>
+            <year>2012</year>
+            <year>2013</year>
+            <year>2014</year>
+            <holder>Rackspace US, Inc.</holder>
+        </copyright>
+        <releaseinfo>Cloud Networks API v2</releaseinfo>
+        <productname>Cloud Networks™</productname>
+        <pubdate/>
+        <legalnotice role="rs-api">
+            <annotation>
+                <para>
+                    <remark security="reviewer">Copyright details are filled in by the template.</remark>
+                </para>
+            </annotation>
+        </legalnotice>
+        <abstract>
+            <para>This document is intended for software developers who want to develop applications using Rackspace Cloud
+                Networks™, which is powered by the OpenStack Networking code base. In addition to the core features of the
+                OpenStack Networking Application Programming Interface (API) v2, Rackspace has also deployed certain
+                extensions as permitted by the OpenStack Quantum API contract and the OpenStack Neutron API contract.</para>
+        </abstract>
+        <revhistory>
+            <revision>
+                <date>2014-02-14</date>
+                <revdescription>
+                    <para>Reorganized document and added Neutron API calls.</para>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2014-01-17</date>
+                <revdescription>
+                    <para>Fixed XML response example for list virtual interfaces.</para>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2013-12-10</date>
+                <revdescription>
+                    <para>Fixed Identity operation links in <xref linkend="section_assign_roles_3"/>.</para>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2013-12-4</date>
+                <revdescription>
+                    <para>Updated the name for Managed Cloud Service Level. </para>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2013-10-08</date>
+                <revdescription>
+                    <para>Added <xref linkend="section_rbac_3" xrefstyle="select: title"/>. </para>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2013-06-24</date>
+                <revdescription>
+                    <para>Added important note that the customer can choose any endpoint regardless of account origin.</para>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2013-05-23</date>
+                <revdescription>
+                    <para>Updated "control panel" to "Control Panel."</para>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2013-05-15</date>
+                <revdescription>
+                    <para>Updated the successful return code for the Delete Virtual Interface API operation.</para>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2013-05-13</date>
+                <revdescription>
+                    <para>Added the &virt_ext;, which enables you to create virtual interfaces for, list virtual interfaces
+                        for, and delete virtual interfaces from existing server instances.</para>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2013-02-27</date>
+                <revdescription>
+                    <para>Removed the 421 error code.</para>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2012-12-04</date>
+                <revdescription>
+                    <para>Corrected the <literal>NOVA_RACK_AUTH</literal> environment variable to
+                            <literal>NOVA_RAX_AUTH</literal>.</para>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2012-11-13</date>
+                <revdescription>
+                    <para>Corrected formatting in the PDF. </para>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2012-10-31</date>
+                <revdescription>
+                    <para>Corrected link to request Cloud Networks access. </para>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2012-10-30</date>
+                <revdescription>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Cloud Networks phased-release launch.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added a preface. </para>
+                        </listitem>
+                        <listitem>
+                            <para>Added JSON and XML request and response examples to the "API operations" chapter.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2012-10-19</date>
+                <revdescription>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Added a note about how to attach an isolated network to an existing server.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added information about programmatically querying limits to determine if you are enabled to
+                                use Cloud Networks.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2012-10-17</date>
+                <revdescription>
+                    <para>Added a note about the error message received by RackConnect and Managed Cloud Service Level
+                        customers who opt out of attaching to PublicNet or ServiceNet network when they create a
+                        server.</para>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2012-10-12</date>
+                <revdescription>
+                    <para>Moved Appendix A to the back of this guide.</para>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2012-10-09</date>
+                <revdescription>
+                    <para>Updated information about ServiceNet.</para>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2012-10-08</date>
+                <revdescription>
+                    <para>Updated the section about how cURL works.</para>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2012-10-05</date>
+                <revdescription>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Updated the authentication topic to describe the fields in the response.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Created a separate
+                                <link xlink:href="http://docs.rackspace.com/servers/api/v2/cn-devguide/content/index.html"><citetitle>Cloud Networks
+                                   Developer Guide</citetitle></link>.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added the supernova client installation instructions.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Updated the descriptions of the <command>nova boot</command> command parameters.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+        </revhistory>
+        <raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
+            <raxm:displayname>API&#160;Developer&#160;Guide</raxm:displayname>
+            <raxm:product version="v2">networks</raxm:product>
+            <raxm:priority>60</raxm:priority>
+        </raxm:metadata>
+    </info>
+    <xi:include href="chapters/net_preface.xml"/>
+    <xi:include href="chapters/net_overview.xml"/>
+    <xi:include href="chapters/net_concepts.xml"/>
+    <xi:include href="chapters/net_generalinfo.xml"/>
+    <xi:include href="chapters/net_operations_neutron.xml"/>
+    <xi:include href="chapters/net_operations_nova.xml"/>
+</book>

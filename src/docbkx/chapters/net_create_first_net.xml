@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter [
+        <!-- Some useful entities borrowed from HTML -->
+        <!ENTITY ndash  "&#x2013;">
+        <!ENTITY mdash  "&#x2014;">
+        <!ENTITY hellip "&#x2026;">
+        
+        <!-- Useful for describing APIs -->
+        <!ENTITY GET    '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
+        <!ENTITY PUT    '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
+        <!ENTITY POST   '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
+        <!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
+        
+        <!-- Product references -->
+        
+        <!ENTITY CS 'Cloud Servers'>
+<!ENTITY HOST 'dfw.servers.api.rackspacecloud.com'>
+<!ENTITY virt_ext 'Cloud Networks virtual interface extension'>
+<!ENTITY Uvirt_ext 'Cloud Networks Virtual Interface Extension'>
+<!ENTITY URL 'https://&HOST;/v2/'>
+]>
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+        xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="create_first_net">
+        <title>Create Your First Cloud Network</title>
+        <para>Before creating your first network, choose whether to use the Neutron API or the nova-network API. For help
+                deciding, see <olink targetdoc="cn-gettingstarted" targetptr="section_nova_v_neutron">“Networking:
+                        nova-network versus Neutron”</olink>. The sections in this chapter provide examples of creating a
+                network using each API.</para>
+        <xi:include href="net_cfn_neutron.xml"/>
+        <xi:include href="net_cfn_nova.xml"/>
+</chapter>

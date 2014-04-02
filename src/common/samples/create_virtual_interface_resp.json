@@ -1,0 +1,15 @@
+{
+   "virtual_interfaces":[
+      {
+         "mac_address":"FE:ED:FA:00:08:93",
+         "id":"045f195f-3347-487b-8e80-8ee3390eda56",
+         "ip_addresses":[
+            {
+               "address":"192.168.0.1",
+               "network_id":"196a0246-86cc-46fa-9ecf-850f67c2cb7c",
+               "network_label":"added_network"
+            }
+         ]
+      }
+   ]
+}

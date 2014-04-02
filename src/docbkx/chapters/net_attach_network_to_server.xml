@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter [
+        <!-- Some useful entities borrowed from HTML -->
+        <!ENTITY ndash  "&#x2013;">
+        <!ENTITY mdash  "&#x2014;">
+        <!ENTITY hellip "&#x2026;">
+        
+        <!-- Useful for describing APIs -->
+        <!ENTITY GET    '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
+        <!ENTITY PUT    '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
+        <!ENTITY POST   '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
+        <!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
+        
+        <!-- Useful for specs -->
+        <!ENTITY MAY    '<emphasis xmlns="http://docbook.org/ns/docbook" role="strong">MAY</emphasis>'>
+        <!ENTITY SHOULD '<emphasis xmlns="http://docbook.org/ns/docbook" role="strong">SHOULD</emphasis>'>
+        <!ENTITY MUST   '<emphasis xmlns="http://docbook.org/ns/docbook" role="strong">MUST</emphasis>'>
+        <!ENTITY MUST_NOT   '<emphasis xmlns="http://docbook.org/ns/docbook" role="strong">MUST NOT</emphasis>'>
+        <!ENTITY CIS 'Rackspace Cloud Identity Service'>
+<!ENTITY fgCS 'first generation Cloud Servers'>
+<!ENTITY ngCS 'next generation Cloud Servers'>
+<!ENTITY cnresource1 'rax-networks'>
+<!ENTITY virt_ext 'Cloud Networks virtual interface extension'>
+<!ENTITY Uvirt_ext 'Cloud Networks Virtual Interface Extension'>
+<!ENTITY cnresource2 'os-networksv2'>
+]>
+
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="ch_gs_attach_network_to_server">
+    <title>Attach Your Network to an Existing Server</title>
+    <para>Before attaching your first network to a server, choose whether to use the Neutron API or the Nova-network API. For
+        help deciding, see <olink targetdoc="cn-gettingstarted" targetptr="section_nova_v_neutron">“Networking: Nova-network
+            versus Neutron”</olink>. The sections in this chapter provide examples of attaching a network to an existing
+        server using each API.</para>
+    <xi:include href="net_attach_network_neutron.xml"/>
+    <xi:include href="net_attach_network_nova.xml"/>
+</chapter>

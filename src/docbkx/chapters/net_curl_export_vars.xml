@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section [
+        <!-- Some useful entities borrowed from HTML -->
+        <!ENTITY ndash  "&#x2013;">
+        <!ENTITY mdash  "&#x2014;">
+        <!ENTITY hellip "&#x2026;">
+        
+        <!-- Useful for describing APIs -->
+        <!ENTITY GET    '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
+        <!ENTITY PUT    '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
+        <!ENTITY POST   '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
+        <!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
+        
+        <!-- Useful for specs -->
+        <!ENTITY MAY    '<emphasis xmlns="http://docbook.org/ns/docbook" role="strong">MAY</emphasis>'>
+        <!ENTITY SHOULD '<emphasis xmlns="http://docbook.org/ns/docbook" role="strong">SHOULD</emphasis>'>
+        <!ENTITY MUST   '<emphasis xmlns="http://docbook.org/ns/docbook" role="strong">MUST</emphasis>'>
+        <!ENTITY MUST_NOT   '<emphasis xmlns="http://docbook.org/ns/docbook" role="strong">MUST NOT</emphasis>'>
+        <!ENTITY CS 'Cloud Servers'>
+        <!ENTITY HOST 'dfw.servers.api.rackspacecloud.com'>
+        <!ENTITY URL 'https://&HOST;/v2/'>
+]>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="export_env_vars">
+    <title>Step 3. (Optional) Export Environment Variables to Run cURL Commands</title>
+    <para>To run the cURL command examples in this guide, follow this procedure to export environment variables. </para>
+    <para>Export your tenant ID and authentication token to environment variables. All cURL examples in this guide use these
+        environment variables.</para>
+    <procedure>
+        <title>To export environment variables:</title>
+        <step>
+            <para>Export your tenant ID to the <literal>account</literal> environment variable:</para>
+            <screen><computeroutput><prompt>$</prompt> export account="&lt;tenantId&gt;"</computeroutput></screen>
+            <para>Where <parameter>tenantId</parameter> is the value in the <literal>tenantId</literal> field in the
+                authentication response. </para>
+        </step>
+        <step>
+            <para>Export your authentication token to the <literal>token</literal> environment variable:
+                <screen><computeroutput>
+                    <prompt>$</prompt> export token="&lt;id&gt;"</computeroutput></screen>
+                Where <parameter>id</parameter> is the authentication token value in the <literal>id</literal> field in the
+                    <literal>token</literal> element in the authentication response. </para>
+            <sidebar>
+                <para><emphasis role="bold">Next step:</emphasis>
+                    <olink targetdoc="cn-gettingstarted" targetptr="net_auth">“Get Authentication Token”</olink></para>
+            </sidebar>
+        </step>
+    </procedure>
+</section>

@@ -1,0 +1,5 @@
+<network>
+    <cidr>192.168.0.0/24</cidr>
+    <id>f212726e-6321-4210-9bae-a13f5a33f83f</id>
+    <label>superprivate_xml</label>
+</network>

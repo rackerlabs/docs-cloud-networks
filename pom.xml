@@ -1,0 +1,192 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.rackspace.cloud.apidocs</groupId>
+  <artifactId>cloud-networks</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  <name>Cloud Networks API Documentation</name>
+  <!-- ################################################ -->
+  <!-- USE "mvn clean generate-sources" to run this POM -->
+  <!-- ################################################ -->
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.rackspace.cloud.api</groupId>
+        <artifactId>olink-maven-plugin</artifactId>
+        <version>1.1.0</version>
+        <executions>
+          <execution>
+            <phase>initialize</phase>
+            <goals>
+              <goal>olink</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>unpack-dependencies</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>unpack</goal>
+            </goals>
+            <configuration>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>com.rackspace.cloud.api</groupId>
+                  <artifactId>glossary</artifactId>
+                  <version>1.0.0-SNAPSHOT</version>
+                  <outputDirectory>${project.build.directory}/mvn/com.rackspace.cloud.api/glossary</outputDirectory>
+                </artifactItem>
+              </artifactItems>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>com.rackspace.cloud.api</groupId>
+        <artifactId>clouddocs-maven-plugin</artifactId>
+        <version>1.15.0</version>
+        <executions>
+          <!-- Configuration for Release Notes External -->
+          <execution>
+            <id>cn-releasenotes-external</id>
+            <goals>
+              <goal>generate-webhelp</goal>
+            </goals>
+            <phase>generate-sources</phase>
+            <configuration>
+              <sourceDirectory>src/docbkx</sourceDirectory>
+              <includes>cn-releasenotes.xml</includes>
+              <chapterAutolabel>0</chapterAutolabel>
+              <security>external</security>
+              <profileOs>rack</profileOs>
+              <profileCondition>cn</profileCondition>
+              <profileAudience>gs</profileAudience>
+              <generateToc> appendix toc,title article/appendix nop article toc,title book title,figure,table,equation
+                chapter toc part toc,title preface toc,title qandadiv toc qandaset toc reference toc,title set toc,title </generateToc>
+              <tocSectionDepth>1</tocSectionDepth>
+            </configuration>
+          </execution>
+          
+          <!-- Configuration for Rackspace Dev Guide PDF -->
+        <execution>
+            <id>cn-devguide-external</id>
+            <goals>
+              <goal>generate-webhelp</goal>
+            </goals>
+            <phase>generate-sources</phase>
+            <configuration>
+              <includes>cn-devguide.xml</includes>
+              <profileOs>rack</profileOs>
+              <profileCondition>cn</profileCondition>
+              <!--<profileAudience>gs</profileAudience>-->
+              <profileAudience>dg</profileAudience>
+              <security>external</security>
+              <tocSectionDepth>1</tocSectionDepth>
+              <generateToc> appendix toc,title article/appendix nop article toc,title book toc,title,figure,table,equation
+                chapter toc part toc,title preface nop qandadiv toc qandaset toc reference toc,title section toc set
+                toc,title </generateToc>
+            </configuration>
+          </execution>
+          
+          <!-- Configuration for Rackspace Getting Started Guide PDF -->
+          <execution>
+            <id>cn-gettingstarted-external</id>
+            <goals>
+              <goal>generate-webhelp</goal>
+            </goals>
+            <phase>generate-sources</phase>
+            <configuration>
+              <sourceDirectory>src/docbkx</sourceDirectory>
+              <includes>cn-gettingstarted.xml</includes>
+              <profileOs>rack</profileOs>
+              <profileAudience>gs</profileAudience>
+              <profileCondition>cn</profileCondition>
+              <chapterAutolabel>0</chapterAutolabel>
+              <sectionAutolabel>0</sectionAutolabel>
+              <appendixAutolabel>0</appendixAutolabel>
+              <tocSectionDepth>1</tocSectionDepth>
+              <security>external</security>
+              <formalProcedures>0</formalProcedures>
+              <generateToc> appendix toc,title article/appendix nop article toc,title book toc,title,figure,table,equation
+                chapter toc part toc,title preface nop qandadiv toc qandaset toc reference toc,title section toc set
+                toc,title </generateToc>
+            </configuration>
+          </execution>
+        </executions>
+        <configuration>
+          <highlightSource>false</highlightSource>
+          <xincludeSupported>true</xincludeSupported>
+          <showXslMessages>true</showXslMessages>
+          <profileOs>rack</profileOs>
+          <profileAudience>gs</profileAudience>
+          <profileCondition>cn</profileCondition>
+          <!--<sourceDirectory>src</sourceDirectory>-->
+          <enableDisqus>internet</enableDisqus>
+          <feedbackEmail>cat.lookabaugh@rackspace.com</feedbackEmail>
+          <!-- <security>external</security> -->
+          <branding>rackspace</branding>
+          <socialIcons>1</socialIcons>
+          <enableGoogleAnalytics>1</enableGoogleAnalytics>
+          <suppressFooterNavigation>0</suppressFooterNavigation>
+          <!-- <failOnValidationError>no</failOnValidationError> -->
+          <formalProcedures>0</formalProcedures>
+          <sectionAutolabel>0</sectionAutolabel>
+          <appendixAutolabel>0</appendixAutolabel>
+          <tocSectionDepth>1</tocSectionDepth>
+          <useLatestSuffixInPdfUrl>1</useLatestSuffixInPdfUrl>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>2.3</version>
+        <configuration>
+          <descriptors>
+            <descriptor>includewars.xml</descriptor>
+          </descriptors>
+        </configuration>
+        <executions>
+          <execution>
+            <id>assembly</id>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <phase>package</phase>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  <profiles>
+    <profile>
+      <id>Rackspace Research Repositories</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <repositories>
+        <repository>
+          <id>rackspace-research</id>
+          <name>Rackspace Research Repository</name>
+          <url>http://maven.research.rackspacecloud.com/content/groups/public/</url>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>rackspace-research</id>
+          <name>Rackspace Research Repository</name>
+          <url>http://maven.research.rackspacecloud.com/content/groups/public/</url>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
+  </profiles>
+  <scm>
+    <connection>scm:git:ssh://git@github.rackspace.com:IX/cloud-networks.git</connection>
+  </scm>
+</project>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- (C) 2013-2014 OpenStack Foundation, All Rights Reserved -->
+<!--*******************************************************-->
+<!--         Import Common XML Entities                    -->
+<!--                                                       -->
+<!--     You can resolve the entites with xmllint          -->
+<!--                                                       -->
+<!--        xmllint -noent os-networks.wadl               -->
+<!--*******************************************************-->
+<!DOCTYPE application [<!ENTITY % common  SYSTEM "../common/common.ent">
+%common;]>
+<application xmlns="http://wadl.dev.java.net/2009/02" xmlns:wadl="http://wadl.dev.java.net/2009/02"
+    xmlns:capi="http://docs.openstack.org/common/api/v1.0" xmlns:csapi="http://docs.openstack.org/compute/api/v1.1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsdxt="http://docs.rackspacecloud.com/xsd-ext/v1.0" xmlns:xlink="http://www.w3.org/1999/xlink"
+    xsi:schemaLocation="http://docs.openstack.org/identity/api/v3.0 
+    http://docs.openstack.org/common/api/v1.0 
+    http://wadl.dev.java.net/2009/02 http://www.w3.org/Submission/wadl/wadl.xsd
+    ">
+    <!--*******************************************************-->
+    <!--             All Resources                             -->
+    <!--*******************************************************-->
+    <resources base="https://neutron.example.com/" xml:id="networks-v2.0">
+        <resource id="version" path="v2.0/">
+            <resource id="Networks" path="networks">
+                <method href="#createNetwork"/>
+                <method href="#listNetworks"/>
+                <method href="#bulkCreateNetwork"/>
+                <resource id="networkID" path="{network_id}">
+                    <param name="network_id" style="template" type="csapi:UUID">
+                        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Network ID">The UUID for the
+                            network.</wadl:doc>
+                    </param>
+                    <method href="#showNetwork"/>
+                    <method href="#updateNetwork"/>
+                    <method href="#deleteNetwork"/>
+                </resource>
+            </resource>
+        </resource>
+    </resources>
+    <!--*******************************************************-->
+    <!--               All Methods                             -->
+    <!--*******************************************************-->
+
+    <!-- List Networks -->
+    <method name="GET" id="listNetworks">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="List Networks">
+            <para role="shortdesc">Lists networks to which the specified tenant has access.</para>
+            <para>This operation lists networks to which the specified tenant has access. You can control which attributes
+                are returned by using the <parameter>fields</parameter> query parameter, and you can specify how many results
+                to return per page. For information, see 
+                <link xlink:href="http://docs.rackspace.com/networks/api/v2/cn-devguide/content/section_filtering.html">Filtering 
+                    Requests</link>
+                or
+                <link xlink:href="http://docs.rackspace.com/networks/api/v2/cn-devguide/content/section_pagination.html">Pagination 
+                    of Requests</link>
+                in the <citetitle>Cloud Networks API Developer Guide</citetitle>.</para>
+        </wadl:doc>
+        <response status="200">
+            <representation mediaType="application/json" element="csapi:network">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+                    <xsdxt:code href="../common/samples/networks-get-resp.json"/>
+                </wadl:doc>&networkListParameters; </representation>
+            <representation mediaType="application/xml" element="csapi:network">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+                    <xsdxt:code href="../common/samples/networks-get-resp.xml"/>
+                </wadl:doc>
+            </representation>
+        </response> &fault401;</method>
+
+    <!-- Create Network -->
+    <method name="POST" id="createNetwork">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Create Network">
+            <para role="shortdesc">Creates a network.</para>
+            <para>This operation creates a network. The tenant ID that you specify in the URI is the tenant who creates the
+                network. An admin user can specify another tenant ID in the optional request body, which is the tenant who
+                owns the network.</para>
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json" element="csapi:network">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+                    <xsdxt:code href="../common/samples/network-post-req.json"/>
+                </wadl:doc> &networkCreateParameters; </representation>
+            <representation mediaType="application/xml" element="csapi:network">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+                    <xsdxt:code href="../common/samples/network-post-req.xml"/>
+                </wadl:doc>
+            </representation>
+        </request>
+        <response status="201">
+            <representation mediaType="application/json" element="csapi:network">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+                    <xsdxt:code href="../common/samples/network-post-resp.json"/>
+                </wadl:doc> &networkListParameters; </representation>
+            <representation mediaType="application/xml" element="csapi:network">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+                    <xsdxt:code href="../common/samples/network-post-resp.xml"/>
+                </wadl:doc>
+            </representation>
+        </response> &fault400; &fault401; </method>
+
+    <!-- Bulk Create Networks -->
+    <method name="POST" id="bulkCreateNetwork">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Bulk Create Networks">
+            <para role="shortdesc">Creates multiple networks in a single request.</para>
+            <para>This operation creates multiple networks with one request. In the request body, specify a list of
+                networks.</para>
+            <note><para>Bulk create operations are always atomic, meaning that either all or no networks in the request body are
+                    created.</para></note>
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json" element="csapi:network">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+                    <xsdxt:code href="../common/samples/networks-post-create-bulk-req.json"/>
+                </wadl:doc> &networkCreateParameters; </representation>
+            <representation mediaType="application/xml" element="csapi:network">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+                    <xsdxt:code href="../common/samples/networks-post-create-bulk-req.xml"/>
+                </wadl:doc>
+            </representation>
+        </request>
+        <response status="201">
+            <representation mediaType="application/json" element="csapi:network">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+                    <xsdxt:code href="../common/samples/networks-create-bulk-resp.json"/>
+                </wadl:doc>&networkListParameters; </representation>
+            <representation mediaType="application/xml" element="csapi:network">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+                    <xsdxt:code href="../common/samples/networks-create-bulk-resp.xml"/>
+                </wadl:doc>
+            </representation>
+        </response> &fault400; &fault401; </method>
+
+    <!-- Show Networks -->
+    <method name="GET" id="showNetwork">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Show Network">
+            <para role="shortdesc">Shows information for a specified network.</para>
+            <para>This operation displays details for a specified network. You can control which attributes are returned by
+                using the <parameter>fields</parameter> query parameter. For information, see
+                <link xlink:href="http://docs.rackspace.com/networks/api/v2/cn-devguide/content/section_filtering.html">Filtering 
+                    Requests</link>
+                in the <citetitle>Cloud Networks API Developer Guide</citetitle>.</para>
+        </wadl:doc>
+        <response status="200">
+            <representation mediaType="application/json" element="csapi:network">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+                    <xsdxt:code href="../common/samples/networks-get-detail-resp.json"/>
+                </wadl:doc>&networkListParameters; </representation>
+            <representation mediaType="application/xml" element="csapi:network">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+                    <xsdxt:code href="../common/samples/networks-get-detail-resp.xml"/>
+                </wadl:doc>
+            </representation>
+        </response> &fault401; &fault404; </method>
+
+    <!-- Update Network -->
+    <method name="PUT" id="updateNetwork">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Update Network">
+            <para role="shortdesc">Updates a specified network.</para>
+            <para>This operation updates an existing network.</para>
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json" element="csapi:network">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+                    <xsdxt:code href="../common/samples/network-put-update.req.json"/>
+                </wadl:doc> &networkCreateParameters; </representation>
+            <representation mediaType="application/xml" element="csapi:network">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+                    <xsdxt:code href="../common/samples/network-put-update.req.xml"/>
+                </wadl:doc>
+            </representation>
+        </request>
+        <response status="200">
+            <representation mediaType="application/json" element="csapi:network">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+                    <xsdxt:code href="../common/samples/network-put-update-resp.json"/>
+                </wadl:doc>&networkListParameters; </representation>
+            <representation mediaType="application/xml" element="csapi:network">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+                    <xsdxt:code href="../common/samples/network-put-update-resp.xml"/>
+                </wadl:doc>
+            </representation>
+        </response> &fault400; &fault401; &fault403; &fault404; </method>
+
+    <!-- Delete Network -->
+    <method name="DELETE" id="deleteNetwork">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Delete Network">
+            <para role="shortdesc">Deletes a specified network and its associated resources.</para>
+            <para>This operation deletes an existing network and its associated resources.</para>
+        </wadl:doc>
+        <response status="204"/> &fault401; &fault404; &fault409conflict; </method>
+</application>

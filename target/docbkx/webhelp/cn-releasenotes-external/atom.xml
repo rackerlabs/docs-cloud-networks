@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
+   <title>Cloud Networks™ Release Notes OpenStack Quantum API v2 revision history</title>
+   <link href="http://docs.rackspace.com/servers/api/v2/cn-releasenotes/atom.xml" rel="self"/>
+   <link href="http://docs.rackspace.com/servers/api/v2/cn-releasenotes/content/index.html"/>
+   <id>cn-releasenotes</id>
+   <updated>2014-04-02T09:30:24-05:00</updated>
+   <entry>
+      <title>2014-02-14</title>
+      <link href="http://docs.rackspace.com/servers/api/v2/cn-releasenotes/content/index.html" type="text/html"/>
+      <id>cn-releasenotes-2014-02-14</id>
+      <updated>2014-02-14</updated>
+      <content type="xhtml">
+         <div xmlns="http://www.w3.org/1999/xhtml">
+          
+            <p>Reorganized doc and added neutron api calls</p>
+        
+         </div>
+      </content>
+   </entry>
+   <entry>
+      <title>2013-12-4</title>
+      <link href="http://docs.rackspace.com/servers/api/v2/cn-releasenotes/content/index.html" type="text/html"/>
+      <id>cn-releasenotes-2013-12-4</id>
+      <updated>2013-12-4</updated>
+      <content type="xhtml">
+         <div xmlns="http://www.w3.org/1999/xhtml">
+          
+            <div class="itemizedlist">
+               <ul class="itemizedlist" type="disc">
+                  <li class="listitem">
+                     <p>Updated the name for Managed Cloud Service Level.</p>
+                  </li>
+               </ul>
+            </div>
+        
+         </div>
+      </content>
+   </entry>
+   <entry>
+      <title>2013-05-13</title>
+      <link href="http://docs.rackspace.com/servers/api/v2/cn-releasenotes/content/index.html" type="text/html"/>
+      <id>cn-releasenotes-2013-05-13</id>
+      <updated>2013-05-13</updated>
+      <content type="xhtml">
+         <div xmlns="http://www.w3.org/1999/xhtml">
+          
+            <div class="itemizedlist">
+               <ul class="itemizedlist" type="disc">
+                  <li class="listitem">
+                     <p>Added the Cloud Networks virtual interface extension, which enables you to create and list virtual interfaces for and delete virtual
+                interfaces from existing server instances.</p>
+                  </li>
+               </ul>
+            </div>
+        
+         </div>
+      </content>
+   </entry>
+   <entry>
+      <title>2012-10-31</title>
+      <link href="http://docs.rackspace.com/servers/api/v2/cn-releasenotes/content/index.html" type="text/html"/>
+      <id>cn-releasenotes-2012-10-31</id>
+      <updated>2012-10-31</updated>
+      <content type="xhtml">
+         <div xmlns="http://www.w3.org/1999/xhtml">
+          
+            <div class="itemizedlist">
+               <ul class="itemizedlist" type="disc">
+                  <li class="listitem">
+                     <p>Fixed the link for requesting Cloud Networks access to
+                <a class="link" href="http://www.iwantcloudnetworks.com/" target="_top">http://www.iwantcloudnetworks.com/</a>.</p>
+                  </li>
+               </ul>
+            </div>
+        
+         </div>
+      </content>
+   </entry>
+   <entry>
+      <title>2012-10-30</title>
+      <link href="http://docs.rackspace.com/servers/api/v2/cn-releasenotes/content/index.html" type="text/html"/>
+      <id>cn-releasenotes-2012-10-30</id>
+      <updated>2012-10-30</updated>
+      <content type="xhtml">
+         <div xmlns="http://www.w3.org/1999/xhtml">
+          
+            <div class="itemizedlist">
+               <ul class="itemizedlist" type="disc">
+                  <li class="listitem">
+                     <p>Cloud Networks phased-release launch.</p>
+                  </li>
+               </ul>
+            </div>
+        
+         </div>
+      </content>
+   </entry>
+   <entry>
+      <title>2012-10-19</title>
+      <link href="http://docs.rackspace.com/servers/api/v2/cn-releasenotes/content/index.html" type="text/html"/>
+      <id>cn-releasenotes-2012-10-19</id>
+      <updated>2012-10-19</updated>
+      <content type="xhtml">
+         <div xmlns="http://www.w3.org/1999/xhtml">
+          
+            <div class="itemizedlist">
+               <ul class="itemizedlist" type="disc">
+                  <li class="listitem">
+                     <p>Added note about how to attach an isolated network to an existing server.</p>
+                  </li>
+                  <li class="listitem">
+                     <p>Added information about how to programmatically detect whether you are enabled for Cloud Networks.</p>
+                  </li>
+               </ul>
+            </div>
+        
+         </div>
+      </content>
+   </entry>
+   <entry>
+      <title>2012-10-17</title>
+      <link href="http://docs.rackspace.com/servers/api/v2/cn-releasenotes/content/index.html" type="text/html"/>
+      <id>cn-releasenotes-2012-10-17</id>
+      <updated>2012-10-17</updated>
+      <content type="xhtml">
+         <div xmlns="http://www.w3.org/1999/xhtml">
+          
+            <div class="itemizedlist">
+               <ul class="itemizedlist" type="disc">
+                  <li class="listitem">
+                     <p>Added note about error message received by Rack Connect and Managed Cloud Service Level customers who opt
+                out of attaching to PublicNet or ServiceNet when they create a server.</p>
+                  </li>
+               </ul>
+            </div>
+        
+         </div>
+      </content>
+   </entry>
+   <entry>
+      <title>2012-10-12</title>
+      <link href="http://docs.rackspace.com/servers/api/v2/cn-releasenotes/content/index.html" type="text/html"/>
+      <id>cn-releasenotes-2012-10-12</id>
+      <updated>2012-10-12</updated>
+      <content type="xhtml">
+         <div xmlns="http://www.w3.org/1999/xhtml">
+          
+            <div class="itemizedlist">
+               <ul class="itemizedlist" type="disc">
+                  <li class="listitem">
+                     <p>Updated list of limitations.</p>
+                  </li>
+                  <li class="listitem">
+                     <p>Updated information about ServiceNet.</p>
+                  </li>
+               </ul>
+            </div>
+        
+         </div>
+      </content>
+   </entry>
+   <entry>
+      <title>2012-10-08</title>
+      <link href="http://docs.rackspace.com/servers/api/v2/cn-releasenotes/content/index.html" type="text/html"/>
+      <id>cn-releasenotes-2012-10-08</id>
+      <updated>2012-10-08</updated>
+      <content type="xhtml">
+         <div xmlns="http://www.w3.org/1999/xhtml">
+          
+            <div class="itemizedlist">
+               <ul class="itemizedlist" type="disc">
+                  <li class="listitem">
+                     <p>Updated the preface.</p>
+                  </li>
+               </ul>
+            </div>
+        
+         </div>
+      </content>
+   </entry>
+   <entry>
+      <title>2012-10-05</title>
+      <link href="http://docs.rackspace.com/servers/api/v2/cn-releasenotes/content/index.html" type="text/html"/>
+      <id>cn-releasenotes-2012-10-05</id>
+      <updated>2012-10-05</updated>
+      <content type="xhtml">
+         <div xmlns="http://www.w3.org/1999/xhtml">
+          
+            <div class="itemizedlist">
+               <ul class="itemizedlist" type="disc">
+                  <li class="listitem">
+                     <p>Creation of separate
+                <a class="link" href="http://docs.rackspace.com/servers/api/v2/cn-devguide/content/index.html" target="_top">
+                           <em class="citetitle">Cloud Networks Developer
+                    Guide</em>
+                        </a>.</p>
+                  </li>
+                  <li class="listitem">
+                     <p>Updated description of the new feature for adding or omitting the ServiceNet and PublicNet networks when
+                you create a server.</p>
+                  </li>
+               </ul>
+            </div>
+        
+         </div>
+      </content>
+   </entry>
+   <entry>
+      <title>2012-09-25</title>
+      <link href="http://docs.rackspace.com/servers/api/v2/cn-releasenotes/content/index.html" type="text/html"/>
+      <id>cn-releasenotes-2012-09-25</id>
+      <updated>2012-09-25</updated>
+      <content type="xhtml">
+         <div xmlns="http://www.w3.org/1999/xhtml">
+          
+            <div class="itemizedlist">
+               <ul class="itemizedlist" type="disc">
+                  <li class="listitem">
+                     <p>Updated instructions for installing the nova client and the Cloud Networks extension.
+                </p>
+                  </li>
+               </ul>
+            </div>
+        
+         </div>
+      </content>
+   </entry>
+   <entry>
+      <title>2012-09-21</title>
+      <link href="http://docs.rackspace.com/servers/api/v2/cn-releasenotes/content/index.html" type="text/html"/>
+      <id>cn-releasenotes-2012-09-21</id>
+      <updated>2012-09-21</updated>
+      <content type="xhtml">
+         <div xmlns="http://www.w3.org/1999/xhtml">
+          
+            <div class="itemizedlist">
+               <ul class="itemizedlist" type="disc">
+                  <li class="listitem">
+                     <p>Noted that the <code class="option">--no-public</code>, <code class="option">--no-service-net</code> parameters are mutually
+                exclusive. However, this bug has been fixed so these parameters are no longer mutually
+                exclusive.</p>
+                  </li>
+               </ul>
+            </div>
+        
+         </div>
+      </content>
+   </entry>
+   <entry>
+      <title>2012-09-20</title>
+      <link href="http://docs.rackspace.com/servers/api/v2/cn-releasenotes/content/index.html" type="text/html"/>
+      <id>cn-releasenotes-2012-09-20</id>
+      <updated>2012-09-20</updated>
+      <content type="xhtml">
+         <div xmlns="http://www.w3.org/1999/xhtml">
+          
+            <div class="itemizedlist">
+               <ul class="itemizedlist" type="disc">
+                  <li class="listitem">
+                     <p>Updated the nova client example for provisioning a server with an isolated network to add the
+                  <code class="option">--no-public</code>, <code class="option">--no-service-net</code> parameters. </p>
+                  </li>
+               </ul>
+            </div>
+        
+         </div>
+      </content>
+   </entry>
+   <entry>
+      <title>2012-09-18</title>
+      <link href="http://docs.rackspace.com/servers/api/v2/cn-releasenotes/content/index.html" type="text/html"/>
+      <id>cn-releasenotes-2012-09-18</id>
+      <updated>2012-09-18</updated>
+      <content type="xhtml">
+         <div xmlns="http://www.w3.org/1999/xhtml">
+          
+            <div class="itemizedlist">
+               <ul class="itemizedlist" type="disc">
+                  <li class="listitem">
+                     <p>Updated the <code class="literal">rax_networks_python_novaclient_ext</code> package to the
+                  <code class="literal">os_networksv2_python_novaclient_ext</code> package.</p>
+                  </li>
+                  <li class="listitem">
+                     <p>Updated the <code class="literal">rax-networks</code> resource to the <code class="literal">os-networksv2</code>
+                resource.</p>
+                  </li>
+                  <li class="listitem">
+                     <p>Updated installation procedures for the nova and supernova clients.</p>
+                  </li>
+               </ul>
+            </div>
+        
+         </div>
+      </content>
+   </entry>
+   <entry>
+      <title>2012-09-07</title>
+      <link href="http://docs.rackspace.com/servers/api/v2/cn-releasenotes/content/index.html" type="text/html"/>
+      <id>cn-releasenotes-2012-09-07</id>
+      <updated>2012-09-07</updated>
+      <content type="xhtml">
+         <div xmlns="http://www.w3.org/1999/xhtml">
+          
+            <div class="itemizedlist">
+               <ul class="itemizedlist" type="disc">
+                  <li class="listitem">
+                     <p>Updated authentication topic to clarify concept of identity endpoints.</p>
+                  </li>
+                  <li class="listitem">
+                     <p>Updated formatting in examples to show variables in italics.</p>
+                  </li>
+               </ul>
+            </div>
+        
+         </div>
+      </content>
+   </entry>
+   <entry>
+      <title>2012-08-17</title>
+      <link href="http://docs.rackspace.com/servers/api/v2/cn-releasenotes/content/index.html" type="text/html"/>
+      <id>cn-releasenotes-2012-08-17</id>
+      <updated>2012-08-17</updated>
+      <content type="xhtml">
+         <div xmlns="http://www.w3.org/1999/xhtml">
+          
+            <div class="itemizedlist">
+               <ul class="itemizedlist" type="disc">
+                  <li class="listitem">
+                     <p>Added the OS_REGION_NAME environment variable. </p>
+                  </li>
+                  <li class="listitem">
+                     <p>Updated the create server example.</p>
+                  </li>
+               </ul>
+            </div>
+        
+         </div>
+      </content>
+   </entry>
+   <entry>
+      <title>2012-08-15</title>
+      <link href="http://docs.rackspace.com/servers/api/v2/cn-releasenotes/content/index.html" type="text/html"/>
+      <id>cn-releasenotes-2012-08-15</id>
+      <updated>2012-08-15</updated>
+      <content type="xhtml">
+         <div xmlns="http://www.w3.org/1999/xhtml">
+          
+            <div class="itemizedlist">
+               <ul class="itemizedlist" type="disc">
+                  <li class="listitem">
+                     <p>Added authentication endpoint for UK accounts and updated the authentication section to remove mention of
+                first generation Cloud Servers.</p>
+                  </li>
+               </ul>
+            </div>
+        
+         </div>
+      </content>
+   </entry>
+   <entry>
+      <title>2012-08-01</title>
+      <link href="http://docs.rackspace.com/servers/api/v2/cn-releasenotes/content/index.html" type="text/html"/>
+      <id>cn-releasenotes-2012-08-01</id>
+      <updated>2012-08-01</updated>
+      <content type="xhtml">
+         <div xmlns="http://www.w3.org/1999/xhtml">
+          
+            <div class="itemizedlist">
+               <ul class="itemizedlist" compact="compact" type="disc">
+                  <li class="listitem">
+                     <p>Updated contact information in preface.</p>
+                  </li>
+               </ul>
+            </div>
+        
+         </div>
+      </content>
+   </entry>
+   <entry>
+      <title>2012-07-11</title>
+      <link href="http://docs.rackspace.com/servers/api/v2/cn-releasenotes/content/index.html" type="text/html"/>
+      <id>cn-releasenotes-2012-07-11</id>
+      <updated>2012-07-11</updated>
+      <content type="xhtml">
+         <div xmlns="http://www.w3.org/1999/xhtml">
+          
+            <div class="itemizedlist">
+               <ul class="itemizedlist" compact="compact" type="disc">
+                  <li class="listitem">
+                     <p>Preview release of Cloud Networks. </p>
+                  </li>
+                  <li class="listitem">
+                     <p>First edition of this document.</p>
+                  </li>
+               </ul>
+            </div>
+        
+         </div>
+      </content>
+   </entry>
+</feed>

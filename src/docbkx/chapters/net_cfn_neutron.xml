@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section [
+        <!-- Some useful entities borrowed from HTML -->
+        <!ENTITY ndash  "&#x2013;">
+        <!ENTITY mdash  "&#x2014;">
+        <!ENTITY hellip "&#x2026;">
+]>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0"
+    xml:id="create_first_net_neutron">
+    <title>Create Your First Cloud Network Using Neutron</title>
+    <para>These examples, using the Neutron API, walk you through the steps to create an isolated network and create a server
+        that is attached your isolated network, showing you how to access the Cloud Networks API through nova client commands
+        or cURL commands so that you can quickly create isolated networks and servers.</para>
+    <para>The exercises also help you learn how cURL commands and the Cloud Networks API work. </para>
+
+    <xi:include href="net_task_flow_neutron.xml"/>
+    <xi:include href="net_cfn_create_network_neutron.xml"/>
+    <xi:include href="net_cfn_list_networks_neutron.xml"/>
+    <xi:include href="net_cfn_show_network_neutron.xml"/>
+    <xi:include href="net_cfn_delete_network_neutron.xml"/>
+</section>

@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:exsl="http://exslt.org/common" xmlns:ng="http://docbook.org/docbook-ng" xmlns:fb="http://ogp.me/ns/fb#"><head>
+<link type="text/css" rel="stylesheet" href="styles/shCoreDefault.css"/><script type="text/javascript" src="scripts/shCore.js"><!----></script><script type="text/javascript">
+               SyntaxHighlighter.config.space = ' ';
+               SyntaxHighlighter.all();
+    </script>
+<title>Authenticate with cURL - Cloud Networks™ Developer Guide
+   - Cloud Networks API v2</title><meta name="generator" content="DocBook XSL-NS Stylesheets V1.76.1"/><meta name="mavenGroupId" content="com.rackspace.cloud.apidocs"/><meta name="mavenArtifactId" content="cloud-networks"/><meta name="mavenVersionId" content="1.0.0-SNAPSHOT"/><link rel="home" href="index.html" title="Cloud Networks™ Developer Guide"/><link rel="up" href="net_auth.html" title="Get Authentication Token"/><link rel="prev" href="net_auth.html" title="Get Authentication Token"/><link rel="next" href="section_rbac_3.html" title="Role Based Access Control"/><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><meta name="git-sha" content="7b5f4643cb5bece9e377d6083a8df649c9980dcb"/><meta name="buildTime" content="2014-04-02T09:30:41-05:00"/><script type="text/javascript">
+            //The id for tree cookie
+            var treeCookieId = "treeview-9728";
+            var language = "en";
+            var w = new Object();
+            //Localization
+            txt_filesfound = 'Results';
+            txt_enter_at_least_1_char = "You must enter at least one character.";
+            txt_browser_not_supported = "Your browser is not supported. Use of Mozilla Firefox is recommended.";
+            txt_please_wait = "Please wait. Search in progress...";
+            txt_results_for = "Results for: ";
+        </script><style type="text/css">
+            input {
+            margin-bottom: 5px;
+            margin-top: 2px;
+            }
+
+            .folder {
+            display: block;
+            height: 22px;
+            padding-left: 20px;
+            background: transparent url(../common/jquery/treeview/images/folder.gif) 0 0px no-repeat;
+            }
+            
+        </style><link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/><link rel="stylesheet" type="text/css" href="../common/css/positioning.css"/><link rel="stylesheet" type="text/css" href="../common/css/custom.css"/><link href="../atom.xml" type="application/atom+xml" rel="alternate" title="Document ATOM Feed"/><link rel="canonical" href="http://docs.rackspace.com/servers/api/v2/cn-devguide/content/curl_auth.html"/><!--[if IE]>
+	<link rel="stylesheet" type="text/css" href="../common/css/ie.css"/>
+	<![endif]--><link rel="stylesheet" type="text/css" href="../common/jquery/theme-redmond/jquery-ui-1.8.2.custom.css"/><link rel="stylesheet" type="text/css" href="../common/jquery/treeview/jquery.treeview.css"/><script type="text/javascript" src="../common/jquery/jquery-1.4.3.min.js"><!----></script><script type="text/javascript" src="../common/jquery/jquery-ui-1.8.2.custom.min.js"><!----></script><script type="text/javascript" src="../common/jquery/jquery.cookie.js"><!----></script><script type="text/javascript" src="../common/jquery/treeview/jquery.treeview.min.js"><!----></script><script type="text/javascript" src="../common/jquery/jquery.qtip-1.0.0-rc3/jquery.qtip-1.0.0-rc3.min.js"><!--jQuery plugin for glossary popups. --></script><script type="text/javascript" src="search/htmlFileList.js"><!----></script><script type="text/javascript" src="search/htmlFileInfoList.js"><!----></script><script type="text/javascript" src="search/nwSearchFnt.js"><!----></script><script type="text/javascript" src="search/stemmers/en_stemmer.js"><!--//make this scalable to other languages as well.--></script><script type="text/javascript" src="search/index-1.js"><!----></script><script type="text/javascript" src="search/index-2.js"><!----></script><script type="text/javascript" src="search/index-3.js"><!----></script><script type="text/javascript">
+	    var _gaq = _gaq || [];
+	    _gaq.push(['_setAccount', 'UA-23102455-4']);
+	    
+	    _gaq.push(['_setDomainName', '.rackspace.com']);	        
+	        </script><script type="text/javascript" src="../common/ga.js"><!----></script><script>
+	    (function(){var twitterWidgets = document.createElement('script');
+        twitterWidgets.type = 'text/javascript';
+        twitterWidgets.async = true;
+        twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+        // Setup a callback to track once the script loads.
+        twitterWidgets.onload = _ga.trackTwitter;
+        document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+        })();
+	  </script></head><body><div id="header"><a onclick="_gaq.push(['_trackEvent', 'Header', 'logo', 'click', 1]);" target="_blank" href="http://www.rackspace.com"><img src="../common/images/rackspace-logo.png" alt="Rackspace Documentation" width="157" height="47"/></a><h1>Authenticate with cURL</h1><div id="navheader" align="right"><!----><table class="navLinks"><tr><td><a id="showHideButton" onclick="showHideToc(); _gaq.push(['_trackEvent', 'Header', 'show/hide', 'click', 1]);" class="pointLeft" title="Hide TOC tree">Sidebar
+                            </a></td><td><a accesskey="p" class="navLinkPrevious" onclick="_gaq.push(['_trackEvent', 'Header', 'prevLink', 'click', 1]);" tabindex="5" href="net_auth.html">Prev</a>
+				      |
+                                        <a accesskey="u" class="navLinkUp" onclick="_gaq.push(['_trackEvent', 'Header', 'upLink', 'click', 1]);" tabindex="5" href="net_auth.html">Up</a>
+				  |
+                                    <a accesskey="n" class="navLinkNext" onclick="_gaq.push(['_trackEvent', 'Header', 'nextLink', 'click', 1]);" tabindex="5" href="section_rbac_3.html">Next</a></td></tr></table></div></div><div id="toolbar" class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all"><div id="toolbar-left"><p class="breadcrumbs"><a href="http://docs.rackspace.com/api/">Rackspace Manuals</a><a href="index.html">Cloud Networks™ Developer Guide
+   - Cloud Networks API v2</a></p><a onclick="_gaq.push(['_trackEvent', 'Header', 'pdfDownload', 'click', 1]);" alt="Download a pdf of this document" class="pdficon" href="../cn-devguide-latest.pdf"><img src="../common/images/pdf.png"/></a>
+       
+      <a href="../atom.xml"><img alt="Atom feed of this document" src="../common/images/feed-icon.png"/></a></div></div><div id="content"><div class="statustext"> </div><div class="section"><div xmlns="" class="titlepage"><div><div><h3 xmlns="http://www.w3.org/1999/xhtml" class="title"><a id="curl_auth"> </a>Authenticate with cURL</h3></div></div></div><p>To authenticate, you issue a <span class="command"><strong>POST</strong></span> <span class="command"><strong>/tokens</strong></span> request to the appropriate Rackspace Cloud
+            Identity Service endpoint. </p><p>In the request body, supply one of the following sets of credentials:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>user name and password</p></li><li class="listitem"><p>user name and API key</p></li></ul></div><p>Your username and password are the ones that you use to log into the Rackspace Cloud Control Panel. </p><p>To obtain your API key, log into
+            <a class="link" href="http://mycloud.rackspace.com." target="_top"/><a id="newwin"> </a><a class="link" href="http://mycloud.rackspace.com." target="_top">http://mycloud.rackspace.com</a>, click your
+            username, and select <span class="guilabel"><strong>API Keys</strong></span> to get your key.</p><div class="procedure"><a id="d6e994"> </a><p class="title"><strong>To authenticate with cURL:</strong></p><ol class="procedure" type="1"><li class="step"><p>Get an authentication token and a service catalog with a list of endpoints. </p><p>Use one of the following cURL commands to authenticate to the US Identity endpoint:</p><div class="example"><a id="d6e999"> </a><p class="title"><strong>Example 4.1. Authenticate with Username and Password: JSON Request</strong></p><div class="example-contents"><pre class="programlisting brush: bash; gutter: false">$ curl -s https://identity.api.rackspacecloud.com/v2.0/tokens -X 'POST' \
+       -d '{"auth":{"passwordCredentials":{"username":"theUserName", "password":"thePassword"}}}' \
+       -H "Content-Type: application/json" | python -m json.tool</pre></div></div><br class="example-break"/><div class="example"><a id="d6e1002"> </a><p class="title"><strong>Example 4.2. Authenticate with Username and API Key: JSON Request</strong></p><div class="example-contents"><pre class="programlisting brush: bash; gutter: false">$ curl -s https://identity.api.rackspacecloud.com/v2.0/tokens -X 'POST' \
+       -d '{"auth":{"RAX-KSKEY:apiKeyCredentials":{"username":"theUserName", "apiKey":"0000000000000000000"}}}' \
+       -H "Content-Type: application/json" | python -m json.tool</pre></div></div><br class="example-break"/><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../common/images/admon/note.png"/></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>For information about the json.tool, see Note about JSON tool in <span class="olinkdocname">Cloud Networks™ Getting Started</span>.</p></td></tr></table></div><p>In response to valid credentials, your request returns an authentication token and a service catalog
+                    with the endpoints to request services. </p><p>Do not include explicit API endpoints in your scripts and applications. Instead, find the endpoint for
+                    your service and region. </p><p>The following output shows a partial authentication response in JSON format: </p><div class="example"><a id="d6e1011"> </a><p class="title"><strong>Example 4.3. Authenticate: JSON Response</strong></p><div class="example-contents"><div class="programlistingco"><pre class="programlisting brush: json; ">{
+    "access": {
+        "serviceCatalog": [
+            {
+                "endpoints": [
+                    {
+                        "publicURL": "https://ord.loadbalancers.api.rackspacecloud.com/v1.0/010101", 
+                        "region": "ORD", 
+                        "tenantId": "010101"
+                    }, 
+                    {
+                        "publicURL": "https://dfw.loadbalancers.api.rackspacecloud.com/v1.0/010101", 
+                        "region": "DFW", 
+                        "tenantId": "010101"
+                    }
+                ], 
+                "name": "cloudLoadBalancers", 
+                "type": "rax:load-balancer"
+            }, 
+            {
+                "endpoints": [
+                    {
+                        "publicURL": "https://monitoring.api.rackspacecloud.com/v1.0/010101", 
+                        "tenantId": "010101"
+                    }
+                ], 
+                "name": "cloudMonitoring", 
+                "type": "rax:monitor"
+            }, 
+            {
+                "endpoints": [
+                    {
+                        "publicURL": "https://preprod.dfw.servers.api.rackspacecloud.com/v2/010101", 
+                        "region": "DFW", 
+                        "tenantId": "010101"
+                    }
+                ],             <span xmlns="" class="co" id="37 32"><img src="../common/images/callouts/1.png" alt="(1)"/></span>
+                "name": "cloudServersPreprod", 
+                "type": "compute"
+            }, 
+            {                                 <span xmlns="" class="co" id="41 47"><img src="../common/images/callouts/2.png" alt="(2)"/></span>
+                "endpoints": [
+                    {
+                        "internalURL": "https://snet-storage101.dfw1.clouddrive.com/v1/MossoCloudFS_530f8649-324c-499c-a075-2195854d52a7", 
+                        "publicURL": "https://storage101.dfw1.clouddrive.com/v1/MossoCloudFS_530f8649-324c-499c-a075-2195854d52a7", 
+                        "region": "DFW", 
+                        "tenantId": "MossoCloudFS_530f8649-324c-499c-a075-2195854d52a7"
+                    }
+                ], 
+                "name": "cloudFiles", 
+                "type": "object-store"
+            }, 
+            {
+                "endpoints": [
+                    {                            <span xmlns="" class="co" id="55 50"><img src="../common/images/callouts/3.png" alt="(3)"/></span>
+                        "publicURL": "https://servers.api.rackspacecloud.com/v1.0/010101", 
+                        "tenantId": "010101", 
+                        "versionId": "1.0", 
+                        "versionInfo": "https://servers.api.rackspacecloud.com/v1.0", 
+                        "versionList": "https://servers.api.rackspacecloud.com/"
+                    }                                   <span xmlns="" class="co" id="61 57"><img src="../common/images/callouts/4.png" alt="(4)"/></span>
+                ],                                        <span xmlns="" class="co" id="62 59"><img src="../common/images/callouts/5.png" alt="(5)"/></span>
+                "name": "cloudServers", 
+                "type": "compute"
+            }, 
+            {
+                "endpoints": [
+                    {
+                        "publicURL": "https://dfw.servers.api.rackspacecloud.com/v2/010101", 
+                        "region": "DFW", 
+                        "tenantId": "010101", 
+                        "versionId": "2", 
+                        "versionInfo": "https://dfw.servers.api.rackspacecloud.com/v2", 
+                        "versionList": "https://dfw.servers.api.rackspacecloud.com/"
+                    }, 
+                    {
+                        "publicURL": "https://ord.servers.api.rackspacecloud.com/v2/010101", 
+                        "region": "ORD", 
+                        "tenantId": "010101", 
+                        "versionId": "2", 
+                        "versionInfo": "https://ord.servers.api.rackspacecloud.com/v2", 
+                        "versionList": "https://ord.servers.api.rackspacecloud.com/"
+                    }
+                ], 
+                "name": "cloudServersOpenStack", 
+                "type": "compute"
+            }, 
+            {
+                "endpoints": [
+                    {
+                        "publicURL": "https://dns.api.rackspacecloud.com/v1.0/010101", 
+                        "tenantId": "010101"
+                    }
+                ], 
+                "name": "cloudDNS", 
+                "type": "rax:dns"
+            }, 
+            {
+                "endpoints": [
+                    {
+                        "publicURL": "https://ord.databases.api.rackspacecloud.com/v1.0/010101", 
+                        "region": "ORD", 
+                        "tenantId": "010101"
+                    }, 
+                    {
+                        "publicURL": "https://dfw.databases.api.rackspacecloud.com/v1.0/010101", 
+                        "region": "DFW", 
+                        "tenantId": "010101"
+                    }
+                ], 
+                "name": "cloudDatabases", 
+                "type": "rax:database"
+            }, 
+            {
+                "endpoints": [
+                    {
+                        "publicURL": "https://cdn1.clouddrive.com/v1/MossoCloudFS_530f8649-324c-499c-a075-2195854d52a7", 
+                        "region": "DFW", 
+                        "tenantId": "MossoCloudFS_530f8649-324c-499c-a075-2195854d52a7"
+                    }
+                ], 
+                "name": "cloudFilesCDN", 
+                "type": "rax:object-cdn"
+            }
+        ], 
+        "token": {
+            "expires": "2012-08-14T12:31:16.000-05:00", 
+            "id": "459a28e0-777f-416c-8f22-9f6598fabd2f", 
+            "tenant": {
+                "id": "010101", 
+                "name": "010101"
+            }
+        }, 
+        "user": {
+            "id": "01010156", 
+            "name": "MyRackspaceAcct", 
+            "roles": [
+                {
+                    "description": "User Admin Role.", 
+                    "id": "3", 
+                    "name": "identity:user-admin"
+                }
+            ]
+        }
+    }
+}</pre></div></div></div><p><br class="example-break"/>
+                </p><p>Successful authentication returns the following information: </p><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><img src="../common/images/callouts/1.png" alt="1" border="0"/></p></td><td valign="top" align="left"><p><span class="bold"><strong>Endpoints to request Rackspace Cloud services</strong></span>. Appears in
+                                the <code class="code">endpoints</code> element in the <code class="code">serviceCatalog</code> element. </p><p>Endpoints information includes the public URL, which is the endpoint that you use to access
+                                the service, region, tenant ID, and version information. </p><p>To access the Cloud Networks or next generation Cloud Servers service, use
+                                the endpoint for the <code class="literal">cloudServersOpenStack</code> service.</p></td></tr><tr><td width="5%" valign="top" align="left"><p><img src="../common/images/callouts/2.png" alt="2" border="0"/></p></td><td valign="top" align="left"><p><span class="bold"><strong>Tenant ID</strong></span>. Appears in the <code class="literal">tenantId</code>
+                                field in the <code class="literal">endpoints</code> element. Also known as the account number. </p><p>You include the tenant ID in the endpoint URL when you call a Cloud service. </p><p>In the following example, you export the tenant ID, <code class="literal">010101</code>, to the
+                                    <code class="literal">account</code> environment variable and the authentication token to the
+                                    <code class="literal">token</code> environment variable. Then, you issue a cURL command, as
+                                follows:</p><pre class="programlisting brush: bash; gutter: false">$ export account="010101"
+$ export token="00000000-0000-0000-000000000000"
+$ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
+     -H "X-Auth-Token: $token" | python -m json.tool</pre></td></tr><tr><td width="5%" valign="top" align="left"><p><img src="../common/images/callouts/3.png" alt="3" border="0"/></p></td><td valign="top" align="left"><p><span class="bold"><strong>The name of the service</strong></span>. Appears in the <code class="code">name</code>
+                                field. </p><p>Locate the correct service name in the service catalog, as follows: </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p><span class="bold"><strong>First generation Cloud Servers</strong></span>. Named
+                                            <code class="literal">cloudServers</code> in the catalog.</p><p>If you use the authentication token to access this service, you can view and
+                                        perform first generation Cloud Servers API operations against your first generation Cloud Servers. </p></li><li class="listitem"><p><span class="bold"><strong>Cloud Networks or next generation Cloud Servers</strong></span>.
+                                        Named <code class="literal">cloudServersOpenStack</code> in the catalog.</p><p>To access the Cloud Networks or next generation Cloud Servers service, use the
+                                            <code class="code">publicURL</code> value for the <code class="literal">cloudServersOpenStack</code>
+                                        service.</p><p>Might show multiple endpoints to enable regional choice. Select the appropriate
+                                        endpoint for the region that you want to interact with by examining the
+                                            <code class="literal">region</code> field.</p><p>If you use the authentication token to access this service, you can view and
+                                        perform Cloud Networks or next generation Cloud Servers API operations against your next generation Cloud Servers. To complete
+                                        Cloud Networks API operations, you must also get access to this service. To request
+                                        access, click
+                                        <a class="link" href="http://www.iwantcloudnetworks.com/" target="_top">here</a>.</p></li></ul></div></td></tr><tr><td width="5%" valign="top" align="left"><p><img src="../common/images/callouts/4.png" alt="4" border="0"/></p></td><td valign="top" align="left"><p><span class="bold"><strong>Expiration date and time for authentication token</strong></span>. Appears
+                                in the <code class="code">expires</code> field in the <code class="code">token</code> element.</p><p>After this date and time, the token is no longer valid. </p><p>This field predicts the maximum lifespan for a token, but does not guarantee that the token
+                                reaches that lifespan. </p><p>Clients are encouraged to cache a token until it expires. </p><p>Because the authentication token expires after 24 hours, you must generate a token once a
+                                day. </p></td></tr><tr><td width="5%" valign="top" align="left"><p><img src="../common/images/callouts/5.png" alt="5" border="0"/></p></td><td valign="top" align="left"><p><span class="bold"><strong>Authentication token</strong></span>. Appears in the <code class="code">id</code> field
+                                in the <code class="code">token</code> element. </p><p>You pass the authentication token in the <code class="code">X-Auth-Token</code> header each time that
+                                you send a request to a service. </p><p>In the following example, you export the tenant ID, <code class="literal">010101</code>, to the
+                                    <code class="literal">account</code> environment variable. You also export the authentication
+                                token, <code class="literal">00000000-0000-0000-000000000000</code>, to the <code class="literal">token</code>
+                                environment variable. Then, you issue a cURL command, as
+                                follows:</p><pre class="programlisting brush: bash; gutter: false">$ export account="010101"
+$ export token="00000000-0000-0000-000000000000"
+$ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
+     -H "X-Auth-Token: $token" | python -m json.tool</pre></td></tr></table></div></li><li class="step"><p>Copy the values in the <code class="literal">publicURL</code> and <code class="literal">tenantId</code> fields for the
+                        <code class="literal">cloudServersOpenStack</code> service for your region. </p><p>Copy the authentication token from the <code class="literal">id</code> field in the <code class="literal">token</code>
+                    element. </p><p>In the next step, you set environment variables to these values. </p></li></ol></div></div><script type="text/javascript" src="../common/main.js"><!----></script><hr/><div id="disqus_thread"><script type="text/javascript">
+	      if(window.location.protocol.substring(0,4) == 'http'){
+	        var disqus_shortname = 'rc-api-docs';
+	      
+	        var disqus_identifier = 'cn-devguidecurl_auth';
+	      
+	      }
+	    </script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><script type="text/javascript" src="../common/comments.js"><!----></script></div><hr/><div class="legal"><a href="index.html">Legal notices</a></div><div class="navfooter"><hr/><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="net_auth.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="net_auth.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="section_rbac_3.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top"> </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> </td></tr></table></div></div><div><div id="leftnavigation" style="padding-top:3px; background-color:white;"><div id="tabs"><ul><li><a href="#treeDiv" tabindex="1"><span class="contentsTab">Contents</span></a></li><li><a href="#searchDiv" tabindex="1"><span class="searchTab">Search</span></a></li></ul><div id="treeDiv"><img src="../common/images/loading.gif" alt="loading table of contents..." id="tocLoading" style="display:block;"/><div id="ulTreeDiv" style="display:none" class="thisisthat"><ul id="tree" class="filetree"><li tabindex="2"><span class="file"><a href="ch_preface.html">1. Preface</a></span><ul><li tabindex="2"><span class="file"><a href="Intended_Audience-d1e85.html">Intended Audience</a></span></li><li tabindex="2"><span class="file"><a href="Pricing_SLA.html">Pricing and Service Level</a></span></li><li tabindex="2"><span class="file"><a href="Document_Change_History.html">Document Change History</a></span></li><li tabindex="2"><span class="file"><a href="Additional_Resources.html">Resources</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="ch_overview.html">2. Overview</a></span><ul><li tabindex="2"><span class="file"><a href="section_nova_v_neutron.html">Networking: Nova-network versus Neutron</a></span></li><li tabindex="2"><span class="file"><a href="networks.html">Limitations of Detaching from Rackspace Networks</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="Concepts.html">3. Concepts</a></span><ul><li tabindex="2"><span class="file"><a href="conceptNetwork.html">Network</a></span></li><li tabindex="2"><span class="file"><a href="conceptSubnet.html">Subnet</a></span></li><li tabindex="2"><span class="file"><a href="conceptPort.html">Port</a></span></li><li tabindex="2"><span class="file"><a href="conceptRouter.html">Router</a></span></li><li tabindex="2"><span class="file"><a href="Concepts.html#d6e941">Glossary</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="General-Keystone-API-d1e62.html">4. General API Information</a></span><ul><li tabindex="2"><span class="file"><a href="net_auth.html">Get Authentication Token</a></span><ul><li tabindex="2" id="webhelp-currentid"><span class="file"><a href="curl_auth.html">Authenticate with cURL</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="section_rbac_3.html">Role Based Access Control</a></span><ul><li tabindex="2"><span class="file"><a href="section_assign_roles_3.html">Assigning Roles to Account Users</a></span></li><li tabindex="2"><span class="file"><a href="section_roles_for_products_3.html">Roles Available for Cloud Networks</a></span></li><li tabindex="2"><span class="file"><a href="RBAC_Role_Conflict_3.html">Resolving Conflicts between RBAC Multiproduct and Custom (Product-Specific) Roles</a></span></li><li tabindex="2"><span class="file"><a href="RBAC_API_XREF_3.html">RBAC Permissions Cross-Reference to Cloud Networks API Operations</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="curl.html">How cURL Commands Work</a></span><ul><li tabindex="2"><span class="file"><a href="curl_summary_xml.html">XML Requests and Responses</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="section_filtering.html">Filtering Requests</a></span></li><li tabindex="2"><span class="file"><a href="section_pagination.html">Pagination of Requests</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="api_operations_nuetron.html">5. API Operations - Neutron</a></span><ul><li tabindex="2"><span class="file"><a href="api_networks.html">Networks</a></span><ul><li tabindex="2"><span class="file"><a href="GET_listNetworks_v2.0_networks_api_networks.html">List Networks</a></span><ul><li tabindex="2"><span class="file"><a href="GET_listNetworks_v2.0_networks_api_networks.html#GET_listNetworks_v2.0_networks_api_networks-Request">Request</a></span></li><li tabindex="2"><span class="file"><a href="GET_listNetworks_v2.0_networks_api_networks.html#GET_listNetworks_v2.0_networks_api_networks-Response">Response</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="POST_createNetwork_v2.0_networks_api_networks.html">Create Network</a></span><ul><li tabindex="2"><span class="file"><a href="POST_createNetwork_v2.0_networks_api_networks.html#POST_createNetwork_v2.0_networks_api_networks-Request">Request</a></span></li><li tabindex="2"><span class="file"><a href="POST_createNetwork_v2.0_networks_api_networks.html#POST_createNetwork_v2.0_networks_api_networks-Response">Response</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="POST_bulkCreateNetwork_v2.0_networks_api_networks.html">Bulk Create Networks</a></span><ul><li tabindex="2"><span class="file"><a href="POST_bulkCreateNetwork_v2.0_networks_api_networks.html#POST_bulkCreateNetwork_v2.0_networks_api_networks-Request">Request</a></span></li><li tabindex="2"><span class="file"><a href="POST_bulkCreateNetwork_v2.0_networks_api_networks.html#POST_bulkCreateNetwork_v2.0_networks_api_networks-Response">Response</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="GET_showNetwork_v2.0_networks__network_id__api_networks.html">Show Network</a></span><ul><li tabindex="2"><span class="file"><a href="GET_showNetwork_v2.0_networks__network_id__api_networks.html#GET_showNetwork_v2.0_networks__network_id__api_networks-Request">Request</a></span></li><li tabindex="2"><span class="file"><a href="GET_showNetwork_v2.0_networks__network_id__api_networks.html#GET_showNetwork_v2.0_networks__network_id__api_networks-Response">Response</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="PUT_updateNetwork_v2.0_networks__network_id__api_networks.html">Update Network</a></span><ul><li tabindex="2"><span class="file"><a href="PUT_updateNetwork_v2.0_networks__network_id__api_networks.html#PUT_updateNetwork_v2.0_networks__network_id__api_networks-Request">Request</a></span></li><li tabindex="2"><span class="file"><a href="PUT_updateNetwork_v2.0_networks__network_id__api_networks.html#PUT_updateNetwork_v2.0_networks__network_id__api_networks-Response">Response</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="DELETE_deleteNetwork_v2.0_networks__network_id__api_networks.html">Delete Network</a></span><ul><li tabindex="2"><span class="file"><a href="DELETE_deleteNetwork_v2.0_networks__network_id__api_networks.html#DELETE_deleteNetwork_v2.0_networks__network_id__api_networks-Request">Request</a></span></li></ul></li></ul></li><li tabindex="2"><span class="file"><a href="api_subnets_neutron.html">Subnets</a></span><ul><li tabindex="2"><span class="file"><a href="GET_listSubnets_v2__tenant_id__subnets_api_subnets_neutron.html">List Subnets</a></span><ul><li tabindex="2"><span class="file"><a href="GET_listSubnets_v2__tenant_id__subnets_api_subnets_neutron.html#GET_listSubnets_v2__tenant_id__subnets_api_subnets_neutron-Request">Request</a></span></li><li tabindex="2"><span class="file"><a href="GET_listSubnets_v2__tenant_id__subnets_api_subnets_neutron.html#GET_listSubnets_v2__tenant_id__subnets_api_subnets_neutron-Response">Response</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="POST_createSubnet_v2__tenant_id__subnets_api_subnets_neutron.html">Create Subnet</a></span><ul><li tabindex="2"><span class="file"><a href="POST_createSubnet_v2__tenant_id__subnets_api_subnets_neutron.html#POST_createSubnet_v2__tenant_id__subnets_api_subnets_neutron-Request">Request</a></span></li><li tabindex="2"><span class="file"><a href="POST_createSubnet_v2__tenant_id__subnets_api_subnets_neutron.html#POST_createSubnet_v2__tenant_id__subnets_api_subnets_neutron-Response">Response</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="POST_bulkCreateSubnet_v2__tenant_id__subnets_api_subnets_neutron.html">Bulk Create Subnet</a></span><ul><li tabindex="2"><span class="file"><a href="POST_bulkCreateSubnet_v2__tenant_id__subnets_api_subnets_neutron.html#POST_bulkCreateSubnet_v2__tenant_id__subnets_api_subnets_neutron-Request">Request</a></span></li><li tabindex="2"><span class="file"><a href="POST_bulkCreateSubnet_v2__tenant_id__subnets_api_subnets_neutron.html#POST_bulkCreateSubnet_v2__tenant_id__subnets_api_subnets_neutron-Response">Response</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="GET_showSubnet_v2__tenant_id__subnets__subnet_id__api_subnets_neutron.html">Show Subnet</a></span><ul><li tabindex="2"><span class="file"><a href="GET_showSubnet_v2__tenant_id__subnets__subnet_id__api_subnets_neutron.html#GET_showSubnet_v2__tenant_id__subnets__subnet_id__api_subnets_neutron-Request">Request</a></span></li><li tabindex="2"><span class="file"><a href="GET_showSubnet_v2__tenant_id__subnets__subnet_id__api_subnets_neutron.html#GET_showSubnet_v2__tenant_id__subnets__subnet_id__api_subnets_neutron-Response">Response</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="PUT_updateSubnet_v2__tenant_id__subnets__subnet_id__api_subnets_neutron.html">Update Subnet</a></span><ul><li tabindex="2"><span class="file"><a href="PUT_updateSubnet_v2__tenant_id__subnets__subnet_id__api_subnets_neutron.html#PUT_updateSubnet_v2__tenant_id__subnets__subnet_id__api_subnets_neutron-Request">Request</a></span></li><li tabindex="2"><span class="file"><a href="PUT_updateSubnet_v2__tenant_id__subnets__subnet_id__api_subnets_neutron.html#PUT_updateSubnet_v2__tenant_id__subnets__subnet_id__api_subnets_neutron-Response">Response</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="DELETE_removeSubnet_v2__tenant_id__subnets__subnet_id__api_subnets_neutron.html">Delete Subnet</a></span><ul><li tabindex="2"><span class="file"><a href="DELETE_removeSubnet_v2__tenant_id__subnets__subnet_id__api_subnets_neutron.html#DELETE_removeSubnet_v2__tenant_id__subnets__subnet_id__api_subnets_neutron-Request">Request</a></span></li></ul></li></ul></li><li tabindex="2"><span class="file"><a href="api_ports_neutron.html">Ports</a></span><ul><li tabindex="2"><span class="file"><a href="GET_listPorts_v2.0_ports_api_ports_neutron.html">List Ports</a></span><ul><li tabindex="2"><span class="file"><a href="GET_listPorts_v2.0_ports_api_ports_neutron.html#GET_listPorts_v2.0_ports_api_ports_neutron-Request">Request</a></span></li><li tabindex="2"><span class="file"><a href="GET_listPorts_v2.0_ports_api_ports_neutron.html#GET_listPorts_v2.0_ports_api_ports_neutron-Response">Response</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="POST_createPort_v2.0_ports_api_ports_neutron.html">Create Port</a></span><ul><li tabindex="2"><span class="file"><a href="POST_createPort_v2.0_ports_api_ports_neutron.html#POST_createPort_v2.0_ports_api_ports_neutron-Request">Request</a></span></li><li tabindex="2"><span class="file"><a href="POST_createPort_v2.0_ports_api_ports_neutron.html#POST_createPort_v2.0_ports_api_ports_neutron-Response">Response</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="POST_bulkCreatePorts_v2.0_ports_api_ports_neutron.html">Bulk Create Ports</a></span><ul><li tabindex="2"><span class="file"><a href="POST_bulkCreatePorts_v2.0_ports_api_ports_neutron.html#POST_bulkCreatePorts_v2.0_ports_api_ports_neutron-Request">Request</a></span></li><li tabindex="2"><span class="file"><a href="POST_bulkCreatePorts_v2.0_ports_api_ports_neutron.html#POST_bulkCreatePorts_v2.0_ports_api_ports_neutron-Response">Response</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="GET_showPort_v2.0_ports__port_id__api_ports_neutron.html">Show Port</a></span><ul><li tabindex="2"><span class="file"><a href="GET_showPort_v2.0_ports__port_id__api_ports_neutron.html#GET_showPort_v2.0_ports__port_id__api_ports_neutron-Request">Request</a></span></li><li tabindex="2"><span class="file"><a href="GET_showPort_v2.0_ports__port_id__api_ports_neutron.html#GET_showPort_v2.0_ports__port_id__api_ports_neutron-Response">Response</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="PUT_updatePort_v2.0_ports__port_id__api_ports_neutron.html">Update Port</a></span><ul><li tabindex="2"><span class="file"><a href="PUT_updatePort_v2.0_ports__port_id__api_ports_neutron.html#PUT_updatePort_v2.0_ports__port_id__api_ports_neutron-Request">Request</a></span></li><li tabindex="2"><span class="file"><a href="PUT_updatePort_v2.0_ports__port_id__api_ports_neutron.html#PUT_updatePort_v2.0_ports__port_id__api_ports_neutron-Response">Response</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="DELETE_removePort_v2.0_ports__port_id__api_ports_neutron.html">Delete Port</a></span><ul><li tabindex="2"><span class="file"><a href="DELETE_removePort_v2.0_ports__port_id__api_ports_neutron.html#DELETE_removePort_v2.0_ports__port_id__api_ports_neutron-Request">Request</a></span></li></ul></li></ul></li><li tabindex="2"><span class="file"><a href="api_ext_layer3_router.html">Extension - Layer-3 Networking (Router)</a></span><ul><li tabindex="2"><span class="file"><a href="GET_listRouters_v2.0_routers_api_ext_layer3_router.html">List Routers</a></span><ul><li tabindex="2"><span class="file"><a href="GET_listRouters_v2.0_routers_api_ext_layer3_router.html#GET_listRouters_v2.0_routers_api_ext_layer3_router-Request">Request</a></span></li><li tabindex="2"><span class="file"><a href="GET_listRouters_v2.0_routers_api_ext_layer3_router.html#GET_listRouters_v2.0_routers_api_ext_layer3_router-Response">Response</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="POST_createRouter_v2.0_routers_api_ext_layer3_router.html">Create Router</a></span><ul><li tabindex="2"><span class="file"><a href="POST_createRouter_v2.0_routers_api_ext_layer3_router.html#POST_createRouter_v2.0_routers_api_ext_layer3_router-Request">Request</a></span></li><li tabindex="2"><span class="file"><a href="POST_createRouter_v2.0_routers_api_ext_layer3_router.html#POST_createRouter_v2.0_routers_api_ext_layer3_router-Response">Response</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="GET_showRouter_v2.0_routers__router_id__api_ext_layer3_router.html">Show Router Details</a></span><ul><li tabindex="2"><span class="file"><a href="GET_showRouter_v2.0_routers__router_id__api_ext_layer3_router.html#GET_showRouter_v2.0_routers__router_id__api_ext_layer3_router-Request">Request</a></span></li><li tabindex="2"><span class="file"><a href="GET_showRouter_v2.0_routers__router_id__api_ext_layer3_router.html#GET_showRouter_v2.0_routers__router_id__api_ext_layer3_router-Response">Response</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="PUT_updateRouter_v2.0_routers__router_id__api_ext_layer3_router.html">Update Router</a></span><ul><li tabindex="2"><span class="file"><a href="PUT_updateRouter_v2.0_routers__router_id__api_ext_layer3_router.html#PUT_updateRouter_v2.0_routers__router_id__api_ext_layer3_router-Request">Request</a></span></li><li tabindex="2"><span class="file"><a href="PUT_updateRouter_v2.0_routers__router_id__api_ext_layer3_router.html#PUT_updateRouter_v2.0_routers__router_id__api_ext_layer3_router-Response">Response</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="DELETE_deleteRouter_v2.0_routers__router_id__api_ext_layer3_router.html">Delete Router</a></span><ul><li tabindex="2"><span class="file"><a href="DELETE_deleteRouter_v2.0_routers__router_id__api_ext_layer3_router.html#DELETE_deleteRouter_v2.0_routers__router_id__api_ext_layer3_router-Request">Request</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="PUT_addRouterInterface_v2.0_routers__router_id__add_router_interface_api_ext_layer3_router.html">Add Interface to Router</a></span><ul><li tabindex="2"><span class="file"><a href="PUT_addRouterInterface_v2.0_routers__router_id__add_router_interface_api_ext_layer3_router.html#PUT_addRouterInterface_v2.0_routers__router_id__add_router_interface_api_ext_layer3_router-Request">Request</a></span></li><li tabindex="2"><span class="file"><a href="PUT_addRouterInterface_v2.0_routers__router_id__add_router_interface_api_ext_layer3_router.html#PUT_addRouterInterface_v2.0_routers__router_id__add_router_interface_api_ext_layer3_router-Response">Response</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="PUT_removeRouterInterface_v2.0_routers__router_id__remove_router_interface_api_ext_layer3_router.html">Remove Interface from Router</a></span><ul><li tabindex="2"><span class="file"><a href="PUT_removeRouterInterface_v2.0_routers__router_id__remove_router_interface_api_ext_layer3_router.html#PUT_removeRouterInterface_v2.0_routers__router_id__remove_router_interface_api_ext_layer3_router-Request">Request</a></span></li><li tabindex="2"><span class="file"><a href="PUT_removeRouterInterface_v2.0_routers__router_id__remove_router_interface_api_ext_layer3_router.html#PUT_removeRouterInterface_v2.0_routers__router_id__remove_router_interface_api_ext_layer3_router-Response">Response</a></span></li></ul></li></ul></li></ul></li><li tabindex="2"><span class="file"><a href="api_operations_nova.html">6. API Operations - Nova-network</a></span><ul><li tabindex="2"><span class="file"><a href="api_networks_nova.html">Networks</a></span><ul><li tabindex="2"><span class="file"><a href="GET_listNetworks_os-networksv2_api_networks_nova.html">List Networks</a></span><ul><li tabindex="2"><span class="file"><a href="GET_listNetworks_os-networksv2_api_networks_nova.html#GET_listNetworks_os-networksv2_api_networks_nova-Request">Request</a></span></li><li tabindex="2"><span class="file"><a href="GET_listNetworks_os-networksv2_api_networks_nova.html#GET_listNetworks_os-networksv2_api_networks_nova-Response">Response</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="POST_createNetworks_os-networksv2_api_networks_nova.html">Create Networks</a></span><ul><li tabindex="2"><span class="file"><a href="POST_createNetworks_os-networksv2_api_networks_nova.html#POST_createNetworks_os-networksv2_api_networks_nova-Request">Request</a></span></li><li tabindex="2"><span class="file"><a href="POST_createNetworks_os-networksv2_api_networks_nova.html#POST_createNetworks_os-networksv2_api_networks_nova-Response">Response</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="POST_attachNetworks__servers_api_networks_nova.html">Provision Servers and Attach Networks</a></span><ul><li tabindex="2"><span class="file"><a href="POST_attachNetworks__servers_api_networks_nova.html#POST_attachNetworks__servers_api_networks_nova-Request">Request</a></span></li><li tabindex="2"><span class="file"><a href="POST_attachNetworks__servers_api_networks_nova.html#POST_attachNetworks__servers_api_networks_nova-Response">Response</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="GET_showNetwork_os-networksv2__id__api_networks_nova.html">Show Network</a></span><ul><li tabindex="2"><span class="file"><a href="GET_showNetwork_os-networksv2__id__api_networks_nova.html#GET_showNetwork_os-networksv2__id__api_networks_nova-Request">Request</a></span></li><li tabindex="2"><span class="file"><a href="GET_showNetwork_os-networksv2__id__api_networks_nova.html#GET_showNetwork_os-networksv2__id__api_networks_nova-Response">Response</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="DELETE_deleteNetwork_os-networksv2__id__api_networks_nova.html">Delete Network</a></span><ul><li tabindex="2"><span class="file"><a href="DELETE_deleteNetwork_os-networksv2__id__api_networks_nova.html#DELETE_deleteNetwork_os-networksv2__id__api_networks_nova-Request">Request</a></span></li></ul></li></ul></li><li tabindex="2"><span class="file"><a href="section_virt_ext.html">Extension - Cloud Networks Virtual Interfaces</a></span><ul><li tabindex="2"><span class="file"><a href="GET_listInterfaces__servers__instance_id__os-virtual-interfacesv2_section_virt_ext.html">List Virtual Interfaces</a></span><ul><li tabindex="2"><span class="file"><a href="GET_listInterfaces__servers__instance_id__os-virtual-interfacesv2_section_virt_ext.html#GET_listInterfaces__servers__instance_id__os-virtual-interfacesv2_section_virt_ext-Request">Request</a></span></li><li tabindex="2"><span class="file"><a href="GET_listInterfaces__servers__instance_id__os-virtual-interfacesv2_section_virt_ext.html#GET_listInterfaces__servers__instance_id__os-virtual-interfacesv2_section_virt_ext-Response">Response</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="POST_createInterface__servers__instance_id__os-virtual-interfacesv2_section_virt_ext.html">Create Virtual Interface</a></span><ul><li tabindex="2"><span class="file"><a href="POST_createInterface__servers__instance_id__os-virtual-interfacesv2_section_virt_ext.html#POST_createInterface__servers__instance_id__os-virtual-interfacesv2_section_virt_ext-Request">Request</a></span></li><li tabindex="2"><span class="file"><a href="POST_createInterface__servers__instance_id__os-virtual-interfacesv2_section_virt_ext.html#POST_createInterface__servers__instance_id__os-virtual-interfacesv2_section_virt_ext-Response">Response</a></span></li></ul></li><li tabindex="2"><span class="file"><a href="DELETE_deleteInterface__servers__instance_id__os-virtual-interfacesv2__interface_id__section_virt_ext.html">Delete Virtual Interface</a></span><ul><li tabindex="2"><span class="file"><a href="DELETE_deleteInterface__servers__instance_id__os-virtual-interfacesv2__interface_id__section_virt_ext.html#DELETE_deleteInterface__servers__instance_id__os-virtual-interfacesv2__interface_id__section_virt_ext-Request">Request</a></span></li></ul></li></ul></li></ul></li></ul></div></div><div id="searchDiv"><div id="search"><form onsubmit="Verifie(ditaSearch_Form);return false" name="ditaSearch_Form" class="searchForm"><fieldset class="searchFieldSet"><legend>Search</legend><center><input id="textToSearch" name="textToSearch" type="text" class="searchText"/> &nbsp; <input onclick="Verifie(ditaSearch_Form)" type="button" class="searchButton" value="Go" id="doSearch"/></center></fieldset></form></div><div id="searchResults"><center/></div><p class="searchHighlight"><a href="#" onclick="toggleHighlight()">Search Highlighter (On/Off)</a></p></div></div></div></div><script type="text/javascript" src="../common/jquery/jquery.qtip-1.0.0-rc3/jquery.qtip-1.0.0-rc3.min.js"><!--jQuery plugin for glossary popups. -->
+                   $('a[title]').qtip({ style: { name: 'cream', tip: true } })
+		</script></body></html>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter [
+        <!-- Some useful entities borrowed from HTML -->
+        <!ENTITY ndash  "&#x2013;">
+        <!ENTITY mdash  "&#x2014;">
+        <!ENTITY hellip "&#x2026;">
+        
+        <!-- Useful for describing APIs -->
+        <!ENTITY GET    '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
+        <!ENTITY PUT    '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
+        <!ENTITY POST   '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
+        <!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
+        
+      
+        <!ENTITY CIS 'Rackspace Cloud Identity Service'>
+<!ENTITY fgCS 'first generation Cloud Servers'>
+<!ENTITY ngCS 'next generation Cloud Servers'>
+<!ENTITY cnresource1 'rax-networks'>
+<!ENTITY virt_ext 'Cloud Networks virtual interface extension'>
+<!ENTITY cnresource2 'os-networksv2'>
+]>
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0"
+    xml:id="ch_gs_getting_set_up">
+    <info>
+        <title>Set Up the Environment and Authenticate</title>
+        <raxm:metadata>
+            <raxm:type>tutorial</raxm:type>
+            <raxm:product version="v2">servers</raxm:product>
+            <raxm:priority>1</raxm:priority>
+        </raxm:metadata>
+    </info>
+    <para>Steps 1 and 2 walk you through the steps to set up your working environment. You can choose to use
+        the nova client or cURL. Select the appropriate method to prepare for the exercises to create isolated networks and
+        servers. Step 3 walks you through getting authenticated.</para>
+
+    <xi:include href="net_install_nova.xml"/>
+    <xi:include href="net_install_neutron.xml"/>
+    <xi:include href="net_curl_export_vars.xml"/>
+    <!--need to add neutron client install here? -->
+    <xi:include href="net_auth.xml"/>
+</chapter>
