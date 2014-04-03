@@ -9,7 +9,7 @@
       xmlns:db="http://docbook.org/ns/docbook"
       version="5.0"
       xml:id="cn-devguide"
-      xml:base="file:/Users/cath6136/Documents/GithubDocs/cloud-networks2/src/docbkx/cn-devguide.xml">
+      xml:base="file:/Users/cath6136/Documents/GithubDocs/docs-cloud-networks/src/docbkx/cn-devguide.xml">
     <title>Cloud Networks™ Developer Guide</title>
     <?rax title.font.size="37px" pdf.url="../../cn-devguide.pdf" canonical.url.base="http://docs.rackspace.com/servers/api/v2/cn-devguide/content"?>
     <titleabbrev>Cloud Networks Developer Guide</titleabbrev>
@@ -31,7 +31,7 @@
         </copyright>
         <releaseinfo>Cloud Networks API v2</releaseinfo>
         <productname>Cloud Networks™</productname>
-        <pubdate>2014-04-02</pubdate>
+        <pubdate>2014-04-03</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <para>

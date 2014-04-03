@@ -29,10 +29,6 @@
     <sidebar>
         <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
                 <listitem>
-                    <para><olink targetdoc="cn-gettingstarted" targetptr="nova_create_network_neutron">“Create an Isolated
-                            Network with the nova Client ”</olink></para>
-                </listitem>
-                <listitem>
                     <para><olink targetdoc="cn-gettingstarted" targetptr="neutron_create_network_neutron">“Create an Isolated
                             Network with the neutron Client ”</olink></para>
                 </listitem>
@@ -42,55 +38,6 @@
                 </listitem>
             </itemizedlist></para>
     </sidebar>
-    <section xml:id="nova_create_network_neutron">
-        <title>Create an Isolated Network with the nova Client </title>
-        <para>
-            <procedure>
-                <title>To create an isolated network with the nova client</title>
-                <step>
-                    <para>Issue the following command:
-                        <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-                            <prompt>$</prompt> nova network-create &lt;name&gt; &lt;admin_state_up&gt;</programlisting></para>
-                    <para><emphasis role="bold">Positional arguments:</emphasis></para>
-                    <para>
-                        <itemizedlist>
-                            <listitem>
-                                <para><parameter>name</parameter>. The network name.</para>
-                            </listitem>
-                            <listitem>
-                                <para><parameter>admin_state_up</parameter>. The administrative state of the network
-                                        (<literal>True</literal> if up or <literal>False</literal> if down).</para>
-                            </listitem>
-                        </itemizedlist>
-                    </para>
-                    <para><emphasis role="bold">Output:</emphasis></para>
-                    <para>The command returns the response, as shown in the following output:</para>
-                    <informalexample>
-                        <screen><computeroutput><?db-font-size 75%?>+----------------+--------------------------------------+
-| Property       | Value                                |
-+----------------+--------------------------------------+
-| admin-state-up | false                                |
-| id             | 850d3f2c-f0a5-4f8b-b1cf-5836fc0be940 |
-| name           | sample_network                       |
-| shared         | false                                |
-| status         | ACTIVE                               |
-| subnets        |                                      |
-| tenant_id      | f667b69e4d6749749ef3bcba7251d9ce     |
-+----------------+--------------------------------------+</computeroutput></screen>
-                    </informalexample>
-
-                </step>
-                <step>
-                    <para>Copy the <literal>id</literal> value from the output. You will use this value when you provision
-                        your server.</para>
-                </step>
-            </procedure>
-        </para>
-        <sidebar>
-            <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="list_networks_neutron">“Step 2. List Networks”</olink></para>
-        </sidebar>
-    </section>
     <?hard-pagebreak?>
     <section xml:id="neutron_create_network_neutron">
         <title>Create an Isolated Network with the neutron Client </title>
@@ -105,8 +52,7 @@
                     <para>
                         <itemizedlist>
                             <listitem>
-                                <para><parameter>name</parameter>. The network name. In this example, the name is
-                                        <literal>amp</literal>.</para>
+                                <para>The network name. In this example, the name is <literal>amp</literal>.</para>
                             </listitem>
                         </itemizedlist>
                     </para>
@@ -128,14 +74,14 @@
                     </informalexample>
                 </step>
                 <step>
-                    <para>Copy the <literal>id</literal> value from the output. You will use this value when you provision
-                        your server.</para>
+                    <para>Copy the <literal>id</literal> value from the output. You will use this value when you create a
+                        subnet, provision your server, or perform other related activities.</para>
                 </step>
             </procedure>
         </para>
         <sidebar>
             <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="list_networks_neutron">“Step 2. List Networks”</olink></para>
+                targetptr="create_subnet_neutron">“Step 2. Create Subnets”</olink></para>
         </sidebar>
     </section>
     <?hard-pagebreak?>
@@ -166,13 +112,13 @@
                             <xi:include href="../../common/samples/network-post-resp.json" parse="text"/></programlisting></para>
                 </step>
                 <step>
-                    <para>Copy the <literal>id</literal> value from the output. You will use this value when you provision
-                        your server.</para>
+                    <para>Copy the <literal>id</literal> value from the output. You will use this value when you create a
+                        subnet, provision your server, or perform other related activities.</para>
                 </step>
             </procedure>
             <sidebar>
                 <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted"
-                        targetptr="list_networks_neutron">“Step 2. List Networks”</olink></para>
+                    targetptr="create_subnet_neutron">“Step 2. Create Subnets”</olink></para>
             </sidebar>
         </section>
         <section xml:id="xml_create_network_neutron">
@@ -194,13 +140,13 @@
                             <xi:include href="../../common/samples/network-post-resp.xml" parse="text"/></programlisting></para>
                 </step>
                 <step>
-                    <para>Copy the <literal>id</literal> value from the output. You will use this value when you provision
-                        your server.</para>
+                    <para>Copy the <literal>id</literal> value from the output. You will use this value when you create a
+                        subnet, provision your server, or perform other related activities.</para>
                 </step>
             </procedure>
             <sidebar>
                 <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted"
-                        targetptr="list_networks_neutron">“Step 2. List Networks”</olink></para>
+                    targetptr="create_subnet_neutron">“Step 2. Create Subnets”</olink></para>
             </sidebar>
         </section>
     </section>

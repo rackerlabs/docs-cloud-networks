@@ -13,7 +13,7 @@
                   xmlns:rax="http://docs.rackspace.com/api"
                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
                   xsi:schemaLocation="http://docs.openstack.org/identity/api/v3.0      http://docs.openstack.org/common/api/v1.0      http://wadl.dev.java.net/2009/02 http://www.w3.org/Submission/wadl/wadl.xsd     "
-                  rax:original-wadl="file:/Users/cath6136/Documents/GithubDocs/cloud-networks2/src/wadl/layer3.wadl">
+                  rax:original-wadl="file:/Users/cath6136/Documents/GithubDocs/docs-cloud-networks/src/wadl/layer3.wadl">
    <rax:types>
       <rax:type prefix="csapi"
                 namespace="http://docs.openstack.org/compute/api/v1.1"

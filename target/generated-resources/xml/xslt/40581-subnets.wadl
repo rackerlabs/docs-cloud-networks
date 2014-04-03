@@ -11,7 +11,7 @@
                   xmlns:wadl="http://wadl.dev.java.net/2009/02"
                   xmlns:rax="http://docs.rackspace.com/api"
                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                  rax:original-wadl="file:/Users/cath6136/Documents/GithubDocs/cloud-networks2/src/wadl/subnets.wadl">
+                  rax:original-wadl="file:/Users/cath6136/Documents/GithubDocs/docs-cloud-networks/src/wadl/subnets.wadl">
    <rax:types>
       <rax:type prefix="csapi"
                 namespace="http://docs.openstack.org/compute/api/v1.1"

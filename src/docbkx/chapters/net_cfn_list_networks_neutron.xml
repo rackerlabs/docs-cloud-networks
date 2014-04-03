@@ -21,7 +21,7 @@
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0"
     xml:id="list_networks_neutron">
-    <title>Step 2. List Networks</title>
+    <title>Step 3. List Networks</title>
     <para>After you create an isolated network, list networks to view your network and the Rackspace networks.</para>
     <para>For information about the Rackspace networks, see <olink targetdoc="cn-gettingstarted" targetptr="networks"
             >“Limitations of Detaching from Rackspace Networks”</olink>. </para>
