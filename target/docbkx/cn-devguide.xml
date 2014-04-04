@@ -4036,7 +4036,7 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
                      <command>GET</command>
                   </td>
                   <td>
-                     <code xlink:href="#GET_listSubnets_v2__tenant_id__subnets_api_subnets_neutron">/v2/{tenant_id}/subnets</code>
+                     <code xlink:href="#GET_listSubnets_v2.0__tenant_id__subnets_api_subnets_neutron">/v2.0/{tenant_id}/subnets</code>
                   </td>
                   <td>
                      <para>Lists subnets to which the specified tenant has access.</para>
@@ -4047,7 +4047,7 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
                      <command>POST</command>
                   </td>
                   <td>
-                     <code xlink:href="#POST_createSubnet_v2__tenant_id__subnets_api_subnets_neutron">/v2/{tenant_id}/subnets</code>
+                     <code xlink:href="#POST_createSubnet_v2.0__tenant_id__subnets_api_subnets_neutron">/v2.0/{tenant_id}/subnets</code>
                   </td>
                   <td>
                      <para>Creates a subnet on a specified network.</para>
@@ -4058,7 +4058,7 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
                      <command>POST</command>
                   </td>
                   <td>
-                     <code xlink:href="#POST_bulkCreateSubnet_v2__tenant_id__subnets_api_subnets_neutron">/v2/{tenant_id}/subnets</code>
+                     <code xlink:href="#POST_bulkCreateSubnet_v2.0__tenant_id__subnets_api_subnets_neutron">/v2.0/{tenant_id}/subnets</code>
                   </td>
                   <td>
                      <para>Creates multiple subnets in a single request. Specify a list of subnets in the request
@@ -4070,7 +4070,7 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
                      <command>GET</command>
                   </td>
                   <td>
-                     <code xlink:href="#GET_showSubnet_v2__tenant_id__subnets__subnet_id__api_subnets_neutron">/v2/{tenant_id}/subnets/{subnet_id}</code>
+                     <code xlink:href="#GET_showSubnet_v2.0__tenant_id__subnets__subnet_id__api_subnets_neutron">/v2.0/{tenant_id}/subnets/{subnet_id}</code>
                   </td>
                   <td>
                      <para>Shows information for a specified subnet.</para>
@@ -4081,7 +4081,7 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
                      <command>PUT</command>
                   </td>
                   <td>
-                     <code xlink:href="#PUT_updateSubnet_v2__tenant_id__subnets__subnet_id__api_subnets_neutron">/v2/{tenant_id}/subnets/{subnet_id}</code>
+                     <code xlink:href="#PUT_updateSubnet_v2.0__tenant_id__subnets__subnet_id__api_subnets_neutron">/v2.0/{tenant_id}/subnets/{subnet_id}</code>
                   </td>
                   <td>
                      <para>Updates a specified subnet.</para>
@@ -4092,7 +4092,7 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
                      <command>DELETE</command>
                   </td>
                   <td>
-                     <code xlink:href="#DELETE_removeSubnet_v2__tenant_id__subnets__subnet_id__api_subnets_neutron">/v2/{tenant_id}/subnets/{subnet_id}</code>
+                     <code xlink:href="#DELETE_removeSubnet_v2.0__tenant_id__subnets__subnet_id__api_subnets_neutron">/v2.0/{tenant_id}/subnets/{subnet_id}</code>
                   </td>
                   <td>
                      <para>Deletes a specified subnet.</para>
@@ -4102,9 +4102,9 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
          </informaltable>
          <?hard-pagebreak?>
          <section xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                  xml:id="GET_listSubnets_v2__tenant_id__subnets_api_subnets_neutron"><?dbhtml stop-chunking?>
+                  xml:id="GET_listSubnets_v2.0__tenant_id__subnets_api_subnets_neutron"><?dbhtml stop-chunking?>
             <title>List Subnets</title>
-            <anchor xml:id="GET_listSubnets_v2__tenant_id__subnets_"
+            <anchor xml:id="GET_listSubnets_v2.0__tenant_id__subnets_"
                     xreflabel="List Subnets"/>
             <informaltable rules="all" width="100%">
                <col width="10%"/>
@@ -4123,7 +4123,7 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
                         <command>GET</command>
                      </td>
                      <td>
-                        <code>/v2/{tenant_id}/subnets</code>
+                        <code>/v2.0/{tenant_id}/subnets</code>
                      </td>
                      <td>
                         <para>Lists subnets to which the specified tenant has access.</para>
@@ -4155,7 +4155,7 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
             <simpara>
                <emphasis role="bold">Error response codes: </emphasis>unauthorized (<errorcode>401</errorcode>)
    </simpara>
-            <section xml:id="GET_listSubnets_v2__tenant_id__subnets_api_subnets_neutron-Request">
+            <section xml:id="GET_listSubnets_v2.0__tenant_id__subnets_api_subnets_neutron-Request">
                <title>Request</title>
                <para>This table shows the URI parameters for the list subnets request:</para>
                <informaltable rules="all" width="100%">
@@ -4193,7 +4193,7 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
                </informaltable>
                <para>This operation does not require a request body.</para>
             </section>
-            <section xml:id="GET_listSubnets_v2__tenant_id__subnets_api_subnets_neutron-Response">
+            <section xml:id="GET_listSubnets_v2.0__tenant_id__subnets_api_subnets_neutron-Response">
                <title>Response</title>
                <para>This list shows the body parameters for the  response:</para>
                <itemizedlist role="paramList">
@@ -4449,9 +4449,9 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
          </section>
          <?hard-pagebreak?>
          <section xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                  xml:id="POST_createSubnet_v2__tenant_id__subnets_api_subnets_neutron"><?dbhtml stop-chunking?>
+                  xml:id="POST_createSubnet_v2.0__tenant_id__subnets_api_subnets_neutron"><?dbhtml stop-chunking?>
             <title>Create Subnet</title>
-            <anchor xml:id="POST_createSubnet_v2__tenant_id__subnets_"
+            <anchor xml:id="POST_createSubnet_v2.0__tenant_id__subnets_"
                     xreflabel="Create Subnet"/>
             <informaltable rules="all" width="100%">
                <col width="10%"/>
@@ -4470,7 +4470,7 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
                         <command>POST</command>
                      </td>
                      <td>
-                        <code>/v2/{tenant_id}/subnets</code>
+                        <code>/v2.0/{tenant_id}/subnets</code>
                      </td>
                      <td>
                         <para>Creates a subnet on a specified network.</para>
@@ -4522,7 +4522,7 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
             itemNotFound (<errorcode>404</errorcode>),
             conflict (<errorcode>409</errorcode>)
    </simpara>
-            <section xml:id="POST_createSubnet_v2__tenant_id__subnets_api_subnets_neutron-Request">
+            <section xml:id="POST_createSubnet_v2.0__tenant_id__subnets_api_subnets_neutron-Request">
                <title>Request</title>
                <para>This table shows the URI parameters for the create subnet request:</para>
                <informaltable rules="all" width="100%">
@@ -4746,7 +4746,7 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
                   </example>
                <para>This operation does not require a request body.</para>
             </section>
-            <section xml:id="POST_createSubnet_v2__tenant_id__subnets_api_subnets_neutron-Response">
+            <section xml:id="POST_createSubnet_v2.0__tenant_id__subnets_api_subnets_neutron-Response">
                <title>Response</title>
                <para>This list shows the body parameters for the  response:</para>
                <itemizedlist role="paramList">
@@ -5037,9 +5037,9 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
          </section>
          <?hard-pagebreak?>
          <section xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                  xml:id="POST_bulkCreateSubnet_v2__tenant_id__subnets_api_subnets_neutron"><?dbhtml stop-chunking?>
+                  xml:id="POST_bulkCreateSubnet_v2.0__tenant_id__subnets_api_subnets_neutron"><?dbhtml stop-chunking?>
             <title>Bulk Create Subnet</title>
-            <anchor xml:id="POST_bulkCreateSubnet_v2__tenant_id__subnets_"
+            <anchor xml:id="POST_bulkCreateSubnet_v2.0__tenant_id__subnets_"
                     xreflabel="Bulk Create Subnet"/>
             <informaltable rules="all" width="100%">
                <col width="10%"/>
@@ -5058,7 +5058,7 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
                         <command>POST</command>
                      </td>
                      <td>
-                        <code>/v2/{tenant_id}/subnets</code>
+                        <code>/v2.0/{tenant_id}/subnets</code>
                      </td>
                      <td>
                         <para>Creates multiple subnets in a single request. Specify a list of subnets in the request
@@ -5095,7 +5095,7 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
             itemNotFound (<errorcode>404</errorcode>),
             conflict (<errorcode>409</errorcode>)
    </simpara>
-            <section xml:id="POST_bulkCreateSubnet_v2__tenant_id__subnets_api_subnets_neutron-Request">
+            <section xml:id="POST_bulkCreateSubnet_v2.0__tenant_id__subnets_api_subnets_neutron-Request">
                <title>Request</title>
                <para>This table shows the URI parameters for the bulk create subnet request:</para>
                <informaltable rules="all" width="100%">
@@ -5319,7 +5319,7 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
                   </example>
                <para>This operation does not require a request body.</para>
             </section>
-            <section xml:id="POST_bulkCreateSubnet_v2__tenant_id__subnets_api_subnets_neutron-Response">
+            <section xml:id="POST_bulkCreateSubnet_v2.0__tenant_id__subnets_api_subnets_neutron-Response">
                <title>Response</title>
                <para>This list shows the body parameters for the  response:</para>
                <itemizedlist role="paramList">
@@ -5610,9 +5610,9 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
          </section>
          <?hard-pagebreak?>
          <section xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                  xml:id="GET_showSubnet_v2__tenant_id__subnets__subnet_id__api_subnets_neutron"><?dbhtml stop-chunking?>
+                  xml:id="GET_showSubnet_v2.0__tenant_id__subnets__subnet_id__api_subnets_neutron"><?dbhtml stop-chunking?>
             <title>Show Subnet</title>
-            <anchor xml:id="GET_showSubnet_v2__tenant_id__subnets__subnet_id__"
+            <anchor xml:id="GET_showSubnet_v2.0__tenant_id__subnets__subnet_id__"
                     xreflabel="Show Subnet"/>
             <informaltable rules="all" width="100%">
                <col width="10%"/>
@@ -5631,7 +5631,7 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
                         <command>GET</command>
                      </td>
                      <td>
-                        <code>/v2/{tenant_id}/subnets/{subnet_id}</code>
+                        <code>/v2.0/{tenant_id}/subnets/{subnet_id}</code>
                      </td>
                      <td>
                         <para>Shows information for a specified subnet.</para>
@@ -5658,7 +5658,7 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
                <emphasis role="bold">Error response codes: </emphasis>unauthorized (<errorcode>401</errorcode>),
             itemNotFound (<errorcode>404</errorcode>)
    </simpara>
-            <section xml:id="GET_showSubnet_v2__tenant_id__subnets__subnet_id__api_subnets_neutron-Request">
+            <section xml:id="GET_showSubnet_v2.0__tenant_id__subnets__subnet_id__api_subnets_neutron-Request">
                <title>Request</title>
                <para>This table shows the URI parameters for the show subnet request:</para>
                <informaltable rules="all" width="100%">
@@ -5715,7 +5715,7 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
                </informaltable>
                <para>This operation does not require a request body.</para>
             </section>
-            <section xml:id="GET_showSubnet_v2__tenant_id__subnets__subnet_id__api_subnets_neutron-Response">
+            <section xml:id="GET_showSubnet_v2.0__tenant_id__subnets__subnet_id__api_subnets_neutron-Response">
                <title>Response</title>
                <para>This list shows the body parameters for the  response:</para>
                <itemizedlist role="paramList">
@@ -5928,9 +5928,9 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
          </section>
          <?hard-pagebreak?>
          <section xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                  xml:id="PUT_updateSubnet_v2__tenant_id__subnets__subnet_id__api_subnets_neutron"><?dbhtml stop-chunking?>
+                  xml:id="PUT_updateSubnet_v2.0__tenant_id__subnets__subnet_id__api_subnets_neutron"><?dbhtml stop-chunking?>
             <title>Update Subnet</title>
-            <anchor xml:id="PUT_updateSubnet_v2__tenant_id__subnets__subnet_id__"
+            <anchor xml:id="PUT_updateSubnet_v2.0__tenant_id__subnets__subnet_id__"
                     xreflabel="Update Subnet"/>
             <informaltable rules="all" width="100%">
                <col width="10%"/>
@@ -5949,7 +5949,7 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
                         <command>PUT</command>
                      </td>
                      <td>
-                        <code>/v2/{tenant_id}/subnets/{subnet_id}</code>
+                        <code>/v2.0/{tenant_id}/subnets/{subnet_id}</code>
                      </td>
                      <td>
                         <para>Updates a specified subnet.</para>
@@ -5986,7 +5986,7 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
             forbidden (<errorcode>403</errorcode>),
             itemNotFound (<errorcode>404</errorcode>)
    </simpara>
-            <section xml:id="PUT_updateSubnet_v2__tenant_id__subnets__subnet_id__api_subnets_neutron-Request">
+            <section xml:id="PUT_updateSubnet_v2.0__tenant_id__subnets__subnet_id__api_subnets_neutron-Request">
                <title>Request</title>
                <para>This table shows the URI parameters for the update subnet request:</para>
                <informaltable rules="all" width="100%">
@@ -6221,7 +6221,7 @@ content-type: application/json
                   </example>
                <para>This operation does not require a request body.</para>
             </section>
-            <section xml:id="PUT_updateSubnet_v2__tenant_id__subnets__subnet_id__api_subnets_neutron-Response">
+            <section xml:id="PUT_updateSubnet_v2.0__tenant_id__subnets__subnet_id__api_subnets_neutron-Response">
                <title>Response</title>
                <para>This list shows the body parameters for the  response:</para>
                <itemizedlist role="paramList">
@@ -6450,9 +6450,9 @@ content-type: application/json
          </section>
          <?hard-pagebreak?>
          <section xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                  xml:id="DELETE_removeSubnet_v2__tenant_id__subnets__subnet_id__api_subnets_neutron"><?dbhtml stop-chunking?>
+                  xml:id="DELETE_removeSubnet_v2.0__tenant_id__subnets__subnet_id__api_subnets_neutron"><?dbhtml stop-chunking?>
             <title>Delete Subnet</title>
-            <anchor xml:id="DELETE_removeSubnet_v2__tenant_id__subnets__subnet_id__"
+            <anchor xml:id="DELETE_removeSubnet_v2.0__tenant_id__subnets__subnet_id__"
                     xreflabel="Delete Subnet"/>
             <informaltable rules="all" width="100%">
                <col width="10%"/>
@@ -6471,7 +6471,7 @@ content-type: application/json
                         <command>DELETE</command>
                      </td>
                      <td>
-                        <code>/v2/{tenant_id}/subnets/{subnet_id}</code>
+                        <code>/v2.0/{tenant_id}/subnets/{subnet_id}</code>
                      </td>
                      <td>
                         <para>Deletes a specified subnet.</para>
@@ -6495,7 +6495,7 @@ content-type: application/json
             itemNotFound (<errorcode>404</errorcode>),
             conflict (<errorcode>409</errorcode>)
    </simpara>
-            <section xml:id="DELETE_removeSubnet_v2__tenant_id__subnets__subnet_id__api_subnets_neutron-Request">
+            <section xml:id="DELETE_removeSubnet_v2.0__tenant_id__subnets__subnet_id__api_subnets_neutron-Request">
                <title>Request</title>
                <para>This table shows the URI parameters for the delete subnet request:</para>
                <informaltable rules="all" width="100%">

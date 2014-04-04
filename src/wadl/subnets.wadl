@@ -17,7 +17,7 @@
     <!--             All Resources                             -->
     <!--*******************************************************-->
     <resources base="https://neutron.example.com/" xml:id="os-subnets-v2">
-        <resource id="version" path="v2/">
+        <resource id="version" path="v2.0/">
             <resource id="tenant_id" path="{tenant_id}">
                 <param name="tenant_id" style="template" type="csapi:UUID">
                     <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">

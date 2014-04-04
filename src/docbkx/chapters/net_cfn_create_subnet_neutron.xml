@@ -106,7 +106,7 @@
                 <step>
                     <para>Issue the following cURL command:
                         <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
-                            <prompt>$</prompt> curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/subnets \
+                            <prompt>$</prompt> curl -s https://dfw.servers.api.rackspacecloud.com/v2.0/$account/subnets \
        -X POST \
        -H "Content-Type: application/json" \
        -H "Accept: application/json" \
@@ -138,7 +138,7 @@
                 <step>
                     <para>Issue the following cURL command:
                         <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
-                            <prompt>$</prompt> curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/subnets \
+                            <prompt>$</prompt> curl -s https://dfw.servers.api.rackspacecloud.com/v2.0/$account/subnets \
           -X POST -H "X-Auth-Project-Id: $account" -H "Content-Type: application/xml" \
           -H "Accept: application/xml" \
           -H "X-Auth-Token: $token" \

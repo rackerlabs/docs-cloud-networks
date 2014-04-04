@@ -95,9 +95,8 @@
                 <step>
                     <para>Issue the following cURL command:
                         <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
-                            <prompt>$</prompt> curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/&cnresource2; \
+                            <prompt>$</prompt> curl -s https://dfw.servers.api.rackspacecloud.com/v2.0/networks \
        -X POST \
-       -H "X-Auth-Project-Id: $account" \
        -H "Content-Type: application/json" \
        -H "Accept: application/json" \
        -H "X-Auth-Token: $token" \
@@ -128,11 +127,11 @@
                 <step>
                     <para>Issue the following cURL command:
                         <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
-                            <prompt>$</prompt> curl -i https://dfw.servers.api.rackspacecloud.com/v2/$account/os-networksv2.xml \
+                            <prompt>$</prompt> curl -i https://dfw.servers.api.rackspacecloud.com/v2.0/networks.xml \
           -X POST -H "X-Auth-Project-Id: $account" -H "Content-Type: application/xml" \
           -H "Accept: application/xml" \
           -H "X-Auth-Token: $token" \
-          -d '&lt;network name="sample_network" admin_state_up="false" /&gt;'</programlisting></para>
+          -d 'network name="sample_network" admin_state_up="false"'</programlisting></para>
                     <para><emphasis role="bold">Output:</emphasis>
                     </para>
                     <para>The operation returns the response body, as shown in the following XML response:

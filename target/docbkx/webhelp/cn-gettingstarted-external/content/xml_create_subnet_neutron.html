@@ -7,7 +7,7 @@
                SyntaxHighlighter.all();
     </script>
 <title>XML Request and Response - Cloud Networks™ Getting Started
-   - OpenStack Networking API v2</title><meta name="generator" content="DocBook XSL-NS Stylesheets V1.76.1"/><meta name="mavenGroupId" content="com.rackspace.cloud.apidocs"/><meta name="mavenArtifactId" content="cloud-networks"/><meta name="mavenVersionId" content="1.0.0-SNAPSHOT"/><link rel="home" href="index.html" title="Cloud Networks™ Getting Started"/><link rel="up" href="curl_create_subnet_neutron.html" title="Create a Subnet with cURL"/><link rel="prev" href="json_create_subnet_neutron.html" title="JSON Request and Response"/><link rel="next" href="list_networks_neutron.html" title="Step 3. List Networks"/><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><meta name="git-sha" content="39ce7d94261e072eabbe43a403aef4f06c43465b"/><meta name="buildTime" content="2014-04-03T14:58:29-05:00"/><script type="text/javascript">
+   - OpenStack Networking API v2</title><meta name="generator" content="DocBook XSL-NS Stylesheets V1.76.1"/><meta name="mavenGroupId" content="com.rackspace.cloud.apidocs"/><meta name="mavenArtifactId" content="cloud-networks"/><meta name="mavenVersionId" content="1.0.0-SNAPSHOT"/><link rel="home" href="index.html" title="Cloud Networks™ Getting Started"/><link rel="up" href="curl_create_subnet_neutron.html" title="Create a Subnet with cURL"/><link rel="prev" href="json_create_subnet_neutron.html" title="JSON Request and Response"/><link rel="next" href="list_networks_neutron.html" title="Step 3. List Networks"/><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><meta name="git-sha" content="3fa7d0f59c2161ff351b269eb32de66a5dffa074"/><meta name="buildTime" content="2014-04-03T15:49:50-05:00"/><script type="text/javascript">
             //The id for tree cookie
             var treeCookieId = "treeview-4832";
             var language = "en";
@@ -57,7 +57,7 @@
        
       <a href="../atom.xml"><img alt="Atom feed of this document" src="../common/images/feed-icon.png"/></a></div></div><div id="content"><div class="statustext"> </div><div class="section"><div xmlns="" class="titlepage"><div><div><h5 xmlns="http://www.w3.org/1999/xhtml" class="title"><a id="xml_create_subnet_neutron"> </a>XML Request and Response</h5></div></div></div><div class="procedure"><a id="d6e1289"> </a><p class="title"><strong>To create a subnet and request a XML response</strong></p><ol class="procedure" type="1"><li class="step"><p>Issue the following cURL command:
                         </p><pre class="programlisting brush: bash; gutter: false">
-                            $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/subnets \
+                            $ curl -s https://dfw.servers.api.rackspacecloud.com/v2.0/$account/subnets \
           -X POST -H "X-Auth-Project-Id: $account" -H "Content-Type: application/xml" \
           -H "Accept: application/xml" \
           -H "X-Auth-Token: $token" \

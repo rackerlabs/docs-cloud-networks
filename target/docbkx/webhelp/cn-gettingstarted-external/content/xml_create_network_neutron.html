@@ -7,7 +7,7 @@
                SyntaxHighlighter.all();
     </script>
 <title>XML Request and Response - Cloud Networks™ Getting Started
-   - OpenStack Networking API v2</title><meta name="generator" content="DocBook XSL-NS Stylesheets V1.76.1"/><meta name="mavenGroupId" content="com.rackspace.cloud.apidocs"/><meta name="mavenArtifactId" content="cloud-networks"/><meta name="mavenVersionId" content="1.0.0-SNAPSHOT"/><link rel="home" href="index.html" title="Cloud Networks™ Getting Started"/><link rel="up" href="curl_create_network_neutron.html" title="Create an Isolated Network with cURL"/><link rel="prev" href="json_create_network_neutron.html" title="JSON Request and Response"/><link rel="next" href="create_subnet_neutron.html" title="Step 2. Create a Subnet"/><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><meta name="git-sha" content="39ce7d94261e072eabbe43a403aef4f06c43465b"/><meta name="buildTime" content="2014-04-03T14:58:29-05:00"/><script type="text/javascript">
+   - OpenStack Networking API v2</title><meta name="generator" content="DocBook XSL-NS Stylesheets V1.76.1"/><meta name="mavenGroupId" content="com.rackspace.cloud.apidocs"/><meta name="mavenArtifactId" content="cloud-networks"/><meta name="mavenVersionId" content="1.0.0-SNAPSHOT"/><link rel="home" href="index.html" title="Cloud Networks™ Getting Started"/><link rel="up" href="curl_create_network_neutron.html" title="Create an Isolated Network with cURL"/><link rel="prev" href="json_create_network_neutron.html" title="JSON Request and Response"/><link rel="next" href="create_subnet_neutron.html" title="Step 2. Create a Subnet"/><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><meta name="git-sha" content="3fa7d0f59c2161ff351b269eb32de66a5dffa074"/><meta name="buildTime" content="2014-04-03T15:49:50-05:00"/><script type="text/javascript">
             //The id for tree cookie
             var treeCookieId = "treeview-4832";
             var language = "en";
@@ -57,11 +57,11 @@
        
       <a href="../atom.xml"><img alt="Atom feed of this document" src="../common/images/feed-icon.png"/></a></div></div><div id="content"><div class="statustext"> </div><div class="section"><div xmlns="" class="titlepage"><div><div><h5 xmlns="http://www.w3.org/1999/xhtml" class="title"><a id="xml_create_network_neutron"> </a>XML Request and Response</h5></div></div></div><div class="procedure"><a id="d6e1200"> </a><p class="title"><strong>To create an isolated network and request a XML response</strong></p><ol class="procedure" type="1"><li class="step"><p>Issue the following cURL command:
                         </p><pre class="programlisting brush: bash; gutter: false">
-                            $ curl -i https://dfw.servers.api.rackspacecloud.com/v2/$account/os-networksv2.xml \
+                            $ curl -i https://dfw.servers.api.rackspacecloud.com/v2.0/networks.xml \
           -X POST -H "X-Auth-Project-Id: $account" -H "Content-Type: application/xml" \
           -H "Accept: application/xml" \
           -H "X-Auth-Token: $token" \
-          -d '&lt;network name="sample_network" admin_state_up="false" /&gt;'</pre><p><span class="bold"><strong>Output:</strong></span>
+          -d 'network name="sample_network" admin_state_up="false"'</pre><p><span class="bold"><strong>Output:</strong></span>
                     </p><p>The operation returns the response body, as shown in the following XML response:
                         </p><pre class="programlisting brush: xml; ">
                             &lt;?xml version='1.0' encoding='UTF-8'?&gt;

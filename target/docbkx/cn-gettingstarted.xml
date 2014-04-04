@@ -2311,9 +2311,8 @@ $ neutron net-create &lt;amp&gt;</programlisting>
                      <step>
                         <para>Issue the following cURL command:
                         <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
-                            $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/os-networksv2 \
+                            $ curl -s https://dfw.servers.api.rackspacecloud.com/v2.0/networks \
        -X POST \
-       -H "X-Auth-Project-Id: $account" \
        -H "Content-Type: application/json" \
        -H "Accept: application/json" \
        -H "X-Auth-Token: $token" \
@@ -2363,11 +2362,11 @@ $ neutron net-create &lt;amp&gt;</programlisting>
                      <step>
                         <para>Issue the following cURL command:
                         <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
-                            $ curl -i https://dfw.servers.api.rackspacecloud.com/v2/$account/os-networksv2.xml \
+                            $ curl -i https://dfw.servers.api.rackspacecloud.com/v2.0/networks.xml \
           -X POST -H "X-Auth-Project-Id: $account" -H "Content-Type: application/xml" \
           -H "Accept: application/xml" \
           -H "X-Auth-Token: $token" \
-          -d '&lt;network name="sample_network" admin_state_up="false" /&gt;'</programlisting>
+          -d 'network name="sample_network" admin_state_up="false"'</programlisting>
                         </para>
                         <para>
                            <emphasis role="bold">Output:</emphasis>
@@ -2508,7 +2507,7 @@ $ neutron subnet-create &lt;amp&gt; &lt;120.1.2.0/24&gt; --name &lt;Subamp&gt;</
                      <step>
                         <para>Issue the following cURL command:
                         <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
-                            $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/subnets \
+                            $ curl -s https://dfw.servers.api.rackspacecloud.com/v2.0/$account/subnets \
        -X POST \
        -H "Content-Type: application/json" \
        -H "Accept: application/json" \
@@ -2542,7 +2541,7 @@ $ neutron subnet-create &lt;amp&gt; &lt;120.1.2.0/24&gt; --name &lt;Subamp&gt;</
                      <step>
                         <para>Issue the following cURL command:
                         <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
-                            $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/subnets \
+                            $ curl -s https://dfw.servers.api.rackspacecloud.com/v2.0/$account/subnets \
           -X POST -H "X-Auth-Project-Id: $account" -H "Content-Type: application/xml" \
           -H "Accept: application/xml" \
           -H "X-Auth-Token: $token" \

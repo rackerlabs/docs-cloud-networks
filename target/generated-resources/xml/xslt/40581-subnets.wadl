@@ -95,7 +95,7 @@
               xmlns="http://wadl.dev.java.net/2009/02"
               base="https://neutron.example.com/"
               xml:id="os-subnets-v2">
-        <resource id="Subnets" path="v2/{tenant_id}/subnets">
+        <resource id="Subnets" path="v2.0/{tenant_id}/subnets">
          <param name="tenant_id" style="template" type="csapi:UUID" rax:id="">
                     <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                         <para>The tenant ID in a multi-tenancy cloud.</para>
@@ -1212,7 +1212,7 @@
                     
                     
                     
-                    <resource path="v2/{tenant_id}/subnets/{subnet_id}" id="subnetID">
+                    <resource path="v2.0/{tenant_id}/subnets/{subnet_id}" id="subnetID">
          <param name="tenant_id" style="template" type="csapi:UUID" rax:id="">
                     <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                         <para>The tenant ID in a multi-tenancy cloud.</para>
