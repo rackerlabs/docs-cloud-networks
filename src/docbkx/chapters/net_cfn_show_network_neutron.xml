@@ -20,8 +20,8 @@
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0"
     xml:id="show_network_neutron">
-    <title>Step 3. Show Network Information</title>
-    <para>You can show details for a specified network ID.</para>
+    <title>Step 3. Show Network and Subnet Information</title>
+    <para>You can show details for a specified network, or subnet, using the ID.</para>
     <para>The response body returns the following fields: <table rules="all" width="100%">
             <caption>Show Network Response Fields</caption>
             <col width="20%"/>
@@ -66,41 +66,42 @@
     <sidebar>
         <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
                 <listitem>
-                    <para><olink targetdoc="cn-gettingstarted" targetptr="nova_show_network_neutron">“Show Network
-                            Information with the nova Client”</olink></para>
+                    <para><olink targetdoc="cn-gettingstarted" targetptr="neutron_show_network_neutron">“Show Network and
+                            Subnet Information with the neutron Client”</olink></para>
                 </listitem>
                 <listitem>
-                    <para><olink targetdoc="cn-gettingstarted" targetptr="curl_show_network_neutron">“Show Network with
-                            cURL”</olink></para>
+                    <para><olink targetdoc="cn-gettingstarted" targetptr="curl_show_network_neutron">“Show Network and Subnet
+                            Information with cURL”</olink></para>
                 </listitem>
             </itemizedlist></para>
     </sidebar>
     <?hard-pagebreak?>
-    <section xml:id="nova_show_network_neutron">
-        <title>Show Network Information with the nova Client</title>
+    <section xml:id="neutron_show_network_neutron">
+        <title>Show Network and Subnet Information with the neutron Client</title>
         <procedure>
             <title>To show information for a specified network ID</title>
             <step>
-                <para>Issue the following nova client command:
+                <para>Issue the following neutron client command:
                     <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-                        <prompt>$</prompt> nova network &lt;id&gt;</programlisting></para>
+                        <prompt>$</prompt> neutron net-details &lt;id&gt;</programlisting></para>
                 <para><emphasis role="bold">Positional argument:</emphasis></para>
                 <para>
                     <itemizedlist>
                         <listitem>
-                            <para><parameter>id</parameter>. The ID of the network for which you want to show information. To
-                                determine the network ID, issue a <command>nova</command>
-                                <option>network-list</option> command. </para>
+                            <para>The ID of the network for which you want to show information. To determine the network ID,
+                                issue a <command>neutron</command>
+                                <option>net-list</option> command. </para>
                         </listitem>
                     </itemizedlist>
                 </para>
                 <para><emphasis role="bold">Output:</emphasis>
                 </para>
                 <para>The command returns the result as shown in the following output:</para>
-                <informalexample>
-                    <screen><computeroutput>+----------------+------------------------------------------+
+                <!--                <informalexample>
+                    <screen><computeroutput>
++-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-+-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-+
 | Property       | Value                                    |
-+----------------+------------------------------------------+
++-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-+-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-+
 | status         | ACTIVE                                   |
 | subnets        | ["e12f0c45-46e3-446a-b207-9474b27687a6"] |
 | admin_state_up | true                                     |
@@ -108,8 +109,43 @@
 | tenant_id      | "625887121e364204873d362b553ab171"       |
 | id             | 9d83c053-b0a4-4682-ae80-c00df269ce0a     |
 | shared         | false                                    |
-+----------+--------------------------------------+</computeroutput></screen>
-                </informalexample>
++-\-\-\-\-\-\-\-\-\-+-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-+</computeroutput></screen>
+                </informalexample>-->
+            </step>
+        </procedure>
+        <procedure>
+            <title>To show information for a specified subnet ID</title>
+            <step>
+                <para>Issue the following neutron client command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                        <prompt>$</prompt> neutron subnet-details &lt;id&gt;</programlisting></para>
+                <para><emphasis role="bold">Positional argument:</emphasis></para>
+                <para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>The ID of the subnet for which you want to show information. To determine the subnet ID,
+                                issue a <command>neutron</command>
+                                <option>subnet-list</option> command. </para>
+                        </listitem>
+                    </itemizedlist>
+                </para>
+                <para><emphasis role="bold">Output:</emphasis>
+                </para>
+                <para>The command returns the result as shown in the following output:</para>
+                <!--                <informalexample>
+                    <screen><computeroutput>
++-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-+-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-+
+| Property       | Value                                    |
++-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-+-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-+
+| status         | ACTIVE                                   |
+| subnets        | ["e12f0c45-46e3-446a-b207-9474b27687a6"] |
+| admin_state_up | true                                     |
+| name           | private                                  |
+| tenant_id      | "625887121e364204873d362b553ab171"       |
+| id             | 9d83c053-b0a4-4682-ae80-c00df269ce0a     |
+| shared         | false                                    |
++-\-\-\-\-\-\-\-\-\-+-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-+</computeroutput></screen>
+                </informalexample>-->
             </step>
         </procedure>
         <sidebar>
@@ -119,7 +155,7 @@
     </section>
     <?hard-pagebreak?>
     <section xml:id="curl_show_network_neutron">
-        <title>Show Network with cURL</title>
+        <title>Show Network and Subnet Information with cURL</title>
         <para>You can request a JSON or XML response when you issue a request in a cURL command.</para>
         <section xml:id="json_show_network_curl_neutron">
             <title>JSON Request and Response</title>
@@ -139,7 +175,7 @@
                         <itemizedlist>
                             <listitem>
                                 <para><parameter>id</parameter>. The ID of the network for which you want to show
-                                    information. To determine the network ID, issue a <command>nova</command>
+                                    information. To determine the network ID, issue a <command>neutron</command>
                                     <option>network-list</option> command. </para>
                             </listitem>
                         </itemizedlist>
@@ -151,6 +187,34 @@
                         <xi:include href="../../common/samples/networks-get-detail-resp.json" parse="text"/></programlisting>
                 </step>
             </procedure>
+            <procedure>
+                <title>To show information for a specified subnet ID in a JSON response</title>
+                <step>
+                    <para>Issue the following cURL command:
+                        <programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
+                            <prompt>$</prompt> curl https://dfw.servers.api.rackspacecloud.com/v2.0/$account/subnets/{id} \
+        -X GET \
+        -H "X-Auth-Project-Id: $account" \
+        -H "Accept: application/json" \
+        -H "Content-Type: application/json"\
+        -H "X-Auth-Token: $token" | python -m json.tool</programlisting></para>
+                    <para><emphasis role="bold">Positional argument:</emphasis></para>
+                    <para>
+                        <itemizedlist>
+                            <listitem>
+                                <para>The ID of the subnet for which you want to show information. To determine the subnet
+                                    ID, issue a <command>neutron</command>
+                                    <option>subnet-list</option> command. </para>
+                            </listitem>
+                        </itemizedlist>
+                    </para>
+                    <para><emphasis role="bold">Output:</emphasis></para>
+                    <para>The API operation returns a response body as shown in the following output:</para>
+
+                    <!--<programlisting language="json"><?db-font-size 75%?>
+                        <xi:include href="../../common/samples/networks-get-detail-resp.json" parse="text"/></programlisting>-->
+                </step>
+            </procedure>
             <sidebar>
                 <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted"
                         targetptr="delete_network">“Step 4. Delete Your Network”</olink></para>
@@ -159,11 +223,11 @@
         <section xml:id="xml_show_network_curl_neutron">
             <title>XML Request and Response</title>
             <procedure>
-                <title>To show information in an XML response for a specified network ID</title>
+                <title>To show information for a specified subnet ID in an XML response</title>
                 <step>
                     <para>Issue the following cURL command:
                         <programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
-                            <prompt>$</prompt> curl https://dfw.servers.api.rackspacecloud.com/v2.0/$account/networks/{id}.xml \
+                            <prompt>$</prompt> curl https://dfw.servers.api.rackspacecloud.com/v2.0/$account/subnets/{id}.xml \
         -X GET \
         -H "X-Auth-Project-Id: $account" \
         -H "Accept: application/xml" \
@@ -173,17 +237,17 @@
                     <para>
                         <itemizedlist>
                             <listitem>
-                                <para><parameter>id</parameter>. The ID of the network for which you want to show
-                                    information. To determine the network ID, issue a <command>nova</command>
-                                    <option>network-list</option> command. </para>
+                                <para>The ID of the network for which you want to show information. To determine the network
+                                    ID, issue a <command>neutron</command>
+                                    <option>subnet-list</option> command. </para>
                             </listitem>
                         </itemizedlist>
                     </para>
                     <para><emphasis role="bold">Output:</emphasis></para>
                     <para>The API operation returns the response body as shown in the following output:</para>
 
-                    <programlisting language="xml"><?db-font-size 75%?>
-                        <xi:include href="../../common/samples/networks-get-detail-resp.xml" parse="text"/></programlisting>
+                    <!--<programlisting language="xml"><?db-font-size 75%?>
+                        <xi:include href="../../common/samples/networks-get-detail-resp.xml" parse="text"/></programlisting>-->
                 </step>
             </procedure>
             <sidebar>

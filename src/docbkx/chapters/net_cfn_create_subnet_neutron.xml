@@ -22,7 +22,8 @@
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0"
     xml:id="create_subnet_neutron">
     <title>Step 2. Create a Subnet</title>
-    <para>After creating a network, you can create a subnet. </para>
+    <para>this file is defunct and should be deleted.</para>
+<!--    <para>After creating a network, you can create a subnet. </para>
     <para>To create a subnet, you specify a network, an IP address, and a name for your subnet.</para>
     <para>After you create a subnet, copy its subnet ID for future reference.</para>
     <sidebar>
@@ -46,7 +47,7 @@
                 <step>
                     <para>Issue the following neutron command:
                         <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-<prompt>$</prompt> neutron subnet-create &lt;amp&gt; &lt;120.1.2.0/24&gt; --name &lt;Subamp&gt;</programlisting></para>
+<prompt>$</prompt> neutron subnet-create &lt;amp&gt; &lt;120.1.2.0/24&gt; -\-name &lt;Subamp&gt;</programlisting></para>
                     <para><emphasis role="bold">Positional arguments:</emphasis></para>
                     <para>
                         <itemizedlist>
@@ -68,9 +69,9 @@
                     <para>The command returns the response, as shown in the following output:</para>
                     <informalexample>
                         <screen><computeroutput><?db-font-size 75%?>
-+------------------+----------------------------------------------+
++-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-+-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-+
 | Field            | Value                                        |
-+------------------+----------------------------------------------+
++-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-+-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-+
 | allocation_pools | {"start": "120.1.2.2", "end": "120.1.2.254"} |
 | cidr             | 120.1.2.0/24                                 |
 | dns_nameservers  |                                              |
@@ -82,7 +83,7 @@
 | name             | Subamp                                       |
 | network_id       | 29f52c7e-6efd-4335-a14a-db77d32a2555         |
 | tenant_id        | 53501b3c25d34f8ea293c03298caed60             |
-+------------------+----------------------------------------------+</computeroutput></screen>
++-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-+-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-+</computeroutput></screen>
                     </informalexample>
                 </step>
                 <step>
@@ -90,10 +91,10 @@
                 </step>
             </procedure>
         </para>
-        <sidebar>
+        <!-\-<sidebar>
             <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted"
                     targetptr="list_networks_neutron">“Step 3. List Networks”</olink></para>
-        </sidebar>
+        </sidebar>-\->
     </section>
     <?hard-pagebreak?>
     <section xml:id="curl_create_subnet_neutron">
@@ -119,17 +120,17 @@
                     <para><emphasis role="bold">Output:</emphasis>
                     </para>
                     <para>The operation returns the response body, as shown in the following JSON response:
-                        <!--<programlisting language="json"><?db-font-size 65%?>
-                            <xi:include href="../../common/samples/network-post-resp.json" parse="text"/></programlisting>--></para>
+                        <!-\-<programlisting language="json"><?db-font-size 65%?>
+                            <xi:include href="../../common/samples/network-post-resp.json" parse="text"/></programlisting>-\-></para>
                 </step>
                 <step>
                     <para>Copy the <literal>id</literal> value from the output for future reference.</para>
                 </step>
             </procedure>
-            <sidebar>
+            <!-\-<sidebar>
                 <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted"
                         targetptr="list_networks_neutron">“Step 3. List Networks”</olink></para>
-            </sidebar>
+            </sidebar>-\->
         </section>
         <section xml:id="xml_create_subnet_neutron">
             <title>XML Request and Response</title>
@@ -147,17 +148,17 @@
                     <para><emphasis role="bold">Output:</emphasis>
                     </para>
                     <para>The operation returns the response body, as shown in the following XML response:
-                        <!--<programlisting language="xml"><?db-font-size 65%?>
-                            <xi:include href="../../common/samples/network-post-resp.xml" parse="text"/></programlisting>--></para>
+                        <!-\-<programlisting language="xml"><?db-font-size 65%?>
+                            <xi:include href="../../common/samples/network-post-resp.xml" parse="text"/></programlisting>-\-></para>
                 </step>
                 <step>
                     <para>Copy the <literal>id</literal> value from the output for future reference.</para>
                 </step>
             </procedure>
-            <sidebar>
+            <!-\-<sidebar>
                 <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted"
                         targetptr="list_networks_neutron">“Step 3. List Networks”</olink></para>
-            </sidebar>
+            </sidebar>-\->
         </section>
-    </section>
+    </section>-->
 </section>

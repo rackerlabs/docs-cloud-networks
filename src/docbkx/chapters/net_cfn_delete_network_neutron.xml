@@ -14,46 +14,57 @@
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0"
     xml:id="delete_network_neutron">
-    <title>Step 4. Delete Your Network</title>
-    <para>If you no longer need your network, you can delete it. </para>
-    <para>You cannot delete an isolated network unless the network is not attached to any server.</para>
-    <para>To detach a network from a server, you must delete the virtual interface for the network from the server. Then, you
-        can delete the network.</para>
-
-    <para>After the network is deleted, it no longer appears in the list of networks.</para>
+    <title>Step 4. Delete Your Network or Subnet</title>
+    <para>If you no longer need your network, or subnet, you can delete it. </para>
+    <para>To delete a network, specify the network ID. To delete a subnet, specify the subnet ID.</para>
     <sidebar>
         <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
                 <listitem>
-                    <para><olink targetdoc="cn-gettingstarted" targetptr="nova_delete_network_neutron">“Delete Network with the nova
-                            Client”</olink></para>
+                    <para><olink targetdoc="cn-gettingstarted" targetptr="neutron_delete_network_neutron">“Delete Network or
+                            Subnet with the neutron Client”</olink></para>
                 </listitem>
                 <listitem>
-                    <para><olink targetdoc="cn-gettingstarted" targetptr="curl_delete_network_neutron">“Delete Network with
-                            cURL”</olink></para>
+                    <para><olink targetdoc="cn-gettingstarted" targetptr="curl_delete_network_neutron">“Delete Network or
+                            Subnet with cURL”</olink></para>
                 </listitem>
             </itemizedlist></para>
     </sidebar>
-    <section xml:id="nova_delete_network_neutron">
-        <title>Delete Network with the nova Client</title>
+    <section xml:id="neutron_delete_network_neutron">
+        <title>Delete Network or Subnet with the neutron Client</title>
         <procedure>
             <title>To delete a specified network</title>
             <step>
-                <title>Delete the virtual interface for the network from the server</title>
-                <para>To detach a network from a server, first delete the virtual interface for the network from the server.
-                </para>
-            </step>
-            <step>
                 <title>Delete the network</title>
-                <para>Issue the following nova client command:
+                <para>Issue the following neutron client command:
                     <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-                        <prompt>$</prompt> nova network-delete &lt;id&gt;</programlisting></para>
+                        <prompt>$</prompt> neutron net-delete &lt;id&gt;</programlisting></para>
                 <para><emphasis role="bold">Positional argument:</emphasis></para>
                 <para>
                     <itemizedlist>
                         <listitem>
-                            <para><parameter>id</parameter>. The network ID of the network that you want to delete. To
-                                determine the network ID, issue a <command>nova</command>
-                                <option>network-list</option> command.</para>
+                            <para>The network ID of the network that you want to delete. To determine the network ID, issue a
+                                    <command>neutron</command>
+                                <option>net-list</option> command.</para>
+                        </listitem>
+                    </itemizedlist>
+                </para>
+                <para><emphasis role="bold">Output:</emphasis> None.</para>
+            </step>
+        </procedure>
+        <procedure>
+            <title>To delete a specified subnet</title>
+            <step>
+                <title>Delete the subnet</title>
+                <para>Issue the following neutron client command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                        <prompt>$</prompt> neutron subnet-delete &lt;id&gt;</programlisting></para>
+                <para><emphasis role="bold">Positional argument:</emphasis></para>
+                <para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>The subnet ID of the subnet that you want to delete. To determine the subnet ID, issue a
+                                <command>neutron</command>
+                                <option>subnet-list</option> command.</para>
                         </listitem>
                     </itemizedlist>
                 </para>
@@ -63,14 +74,9 @@
     </section>
     <?hard-pagebreak?>
     <section xml:id="curl_delete_network_neutron">
-        <title>Delete Network with cURL</title>
+        <title>Delete Network or Subnet with cURL</title>
         <procedure>
             <title>To delete a specified network</title>
-            <step>
-                <title>Delete the virtual interface for the network from the server</title>
-                <para>To detach a network from a server, first delete the virtual interface for the network from the server.
-                </para>
-            </step>
             <step>
                 <title>Delete the network</title>
                 <para>Issue the following cURL command:
@@ -110,6 +116,46 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
 The request is accepted for processing.</computeroutput></screen>
             </step>
         </procedure>
-    </section>
+        <procedure>
+            <title>To delete a specified subnet</title>
+            <step>
+                <title>Delete the subnet</title>
+                <para>Issue the following cURL command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
+                        <prompt>$</prompt> curl -i https://dfw.servers.api.rackspacecloud.com/v2.0/$account/subnets/{id} \
+       -X 'DELETE' \
+       -H "X-Auth-Token: $token" \
+       -H "X-Auth-Project-Id: $account" \
+       -H "Accept: application/json" </programlisting></para>
+                <note>
+                    <para>Include the <option>-i</option> option in the cURL command to show the response header. Omit the
+                        <code>| python -m json.tool</code> clause from the command because the API operation does not
+                        return a JSON response.</para>
+                </note>
+                <para><emphasis role="bold">Argument:</emphasis></para>
+                <para>
+                    <itemizedlist>
+                        <listitem>
+                            <para><parameter>id</parameter>. The subnet ID of the subnet that you want to delete. To
+                                determine the network ID, issue a <command>nova</command>
+                                <option>network-list</option> command.</para>
+                        </listitem>
+                    </itemizedlist>
+                </para>
+                <para><emphasis role="bold">Output:</emphasis>
+                </para>
+                <para>Successful deletion returns an <errortext>Accepted</errortext> (<returnvalue>202</returnvalue>)
+                    response code:</para>
+                <screen><computeroutput>HTTP/1.1 202 Accepted
+Date: Thu, 04 Oct 2012 16:23:30 GMT
+Content-Length: 58
+Content-Type: text/html;charset=UTF-8
+Server: Jetty(8.0.y.z-SNAPSHOT)
 
+202 Accepted
+
+The request is accepted for processing.</computeroutput></screen>
+            </step>
+        </procedure>
+    </section>
 </section>

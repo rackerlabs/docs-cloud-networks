@@ -21,62 +21,25 @@
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0"
     xml:id="list_networks_neutron">
-    <title>Step 3. List Networks</title>
-    <para>After you create an isolated network, list networks to view your network and the Rackspace networks.</para>
+    <title>Step 2. List Networks and Subnets</title>
+    <para>After you create networks or subnets, you may want to view your networks, subnets, and the Rackspace
+        networks.</para>
     <para>For information about the Rackspace networks, see <olink targetdoc="cn-gettingstarted" targetptr="networks"
             >“Limitations of Detaching from Rackspace Networks”</olink>. </para>
     <sidebar>
-        <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
-                <!--<listitem>
-                    <para><olink targetdoc="cn-gettingstarted" targetptr="nova_list_networks_neutron">“List Networks with the
-                            nova Client”</olink></para>
-                </listitem>-->
+        <para><emphasis role="bold">Next step: </emphasis>Choose one of the following methods:<itemizedlist>
                 <listitem>
-                    <para><olink targetdoc="cn-gettingstarted" targetptr="neutron_list_networks_neutron">“List Networks with
+                    <para><olink targetdoc="cn-gettingstarted" targetptr="neutron_list_networks_neutron">“List Networks and Subnets with
                             the neutron Client”</olink></para>
                 </listitem>
                 <listitem>
-                    <para><olink targetdoc="cn-gettingstarted" targetptr="curl_list_networks_neutron">“List Networks with
+                    <para><olink targetdoc="cn-gettingstarted" targetptr="curl_list_networks_neutron">“List Networks and Subnets with
                             cURL”</olink></para>
                 </listitem>
             </itemizedlist></para>
     </sidebar>
-<!--    <section xml:id="nova_list_networks_neutron">
-        <title>List Networks with the nova Client</title>
-        <procedure>
-            <title>To list networks with the nova client</title>
-            <step>
-                <para>Issue the following nova client command:
-                    <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-                        <prompt>$</prompt> nova network-list </programlisting></para>
-                <para><emphasis role="bold">Output:</emphasis></para>
-                <para>For each network, the command returns the result as shown in the following output</para>
-                <informalexample>
-                    <screen><computeroutput><?db-font-size 75%?>+-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-+-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-+
-| Property       | Value                                    |
-+-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-+-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-+
-| status         | ACTIVE                                   |
-| subnets        | ["e12f0c45-46e3-446a-b207-9474b27687a6"] |
-| admin_state_up | true                                     |
-| name           | private                                  |
-| tenant_id      | "625887121e364204873d362b553ab171"       |
-| id             | 9d83c053-b0a4-4682-ae80-c00df269ce0a     |
-| shared         | false                                    |
-+-\-\-\-\-\-\-\-\-\-+-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-+</computeroutput></screen>
-                </informalexample>
-
-                <para>In the network list, ServiceNet is labeled as <literal>private</literal>, and PublicNet is labeled as
-                        <literal>public</literal>.</para>
-            </step>
-        </procedure>
-        <sidebar>
-            <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="show_network_neutron">“Step 3. Show Network Information”</olink></para>
-        </sidebar>
-    </section>-->
-    <?hard-pagebreak?>
     <section xml:id="neutron_list_networks_neutron">
-        <title>List Networks with the neutron Client</title>
+        <title>List Networks and Subnets with the neutron Client</title>
         <procedure>
             <title>To list networks with the neutron client</title>
             <step>
@@ -95,15 +58,33 @@
                 </informalexample>
             </step>
         </procedure>
+        <procedure>
+            <title>To list subnets with the neutron client</title>
+            <step>
+                <para>Issue the following neutron client command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+<prompt>$</prompt> neutron subnet-list </programlisting></para>
+                <para><emphasis role="bold">Output:</emphasis></para>
+                <para>For each nsubnet, the command returns the result as shown in the following output</para>
+                <informalexample>
+                    <screen><computeroutput><?db-font-size 75%?>
++--------------------------------------+----------------+----------------+--------------------------------------------------+
+| id                                   | name           | cidr           | allocation_pools                                 |
++--------------------------------------+----------------+----------------+--------------------------------------------------+
+| 23e3059e-4f39-4f7f-8cf2-c326e5de6c37 | Subamp         | 120.1.2.0/24   | {"start": "120.1.2.2", "end": "120.1.2.254"}     |
++--------------------------------------+----------------+----------------+--------------------------------------------------+</computeroutput></screen>
+                </informalexample>
+            </step>
+        </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted"
-                targetptr="show_network_neutron">“Step 3. Show Network Information”</olink></para>
+            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+                targetptr="show_network_neutron">“Step 3. Show Network and Subnet Information”</olink></para>
         </sidebar>
     </section>
     <?hard-pagebreak?>
     <section xml:id="curl_list_networks_neutron">
         <?dbhtml stop-chunking?>
-        <title>List Networks with cURL</title>
+        <title>List Networks and Subnets with cURL</title>
         <para>You can request a JSON or XML response when you issue a request in a cURL command.</para>
         <section xml:id="list_networks_json_neutron">
             <title>JSON Request and Response</title>
@@ -111,18 +92,33 @@
                 <title>To list networks and request a JSON response</title>
                 <step>
                     <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-                        <prompt>$</prompt> curl https://dfw.servers.api.rackspacecloud.com/v2.0/$account/networks \
+                        <prompt>$</prompt> curl https://dfw.servers.api.rackspacecloud.com/v2.0/$account/subnets \
        -X GET -H "X-Auth-Token: $token" | python -m json.tool</programlisting>
                         <emphasis role="bold">Output:</emphasis>
                     </para>
                     <para>The API operation returns a response body as shown in the following output:
-                        <programlisting language="json"><?db-font-size 75%?>
-                            <xi:include href="../../common/samples/networks-get-resp.json" parse="text"/></programlisting></para>
+                        <!--<programlisting language="json"><?db-font-size 75%?>
+                            <xi:include href="../../common/samples/networks-get-resp.json" parse="text"/></programlisting>-->
+                    </para>
+                </step>
+            </procedure>
+            <procedure>
+                <title>To list subnets and request a JSON response</title>
+                <step>
+                    <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                        <prompt>$</prompt> curl https://dfw.servers.api.rackspacecloud.com/v2.0/$account/subnets \
+       -X GET -H "X-Auth-Token: $token" | python -m json.tool</programlisting>
+                        <emphasis role="bold">Output:</emphasis>
+                    </para>
+                    <para>The API operation returns a response body as shown in the following output:
+                        <!--<programlisting language="json"><?db-font-size 75%?>
+                            <xi:include href="../../common/samples/networks-get-resp.json" parse="text"/></programlisting>-->
+                    </para>
                 </step>
             </procedure>
             <sidebar>
-                <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted"
-                        targetptr="show_network_neutron">“Step 3. Show Network Information”</olink></para>
+                <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+                    targetptr="show_network_neutron">“Step 3. Show Network and Subnet Information”</olink></para>
             </sidebar>
         </section>
         <section xml:id="list_networks_xml_neutron">
@@ -145,8 +141,8 @@
                 </step>
             </procedure>
             <sidebar>
-                <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted"
-                        targetptr="show_network_neutron">“Step 3. Show Network Information”</olink></para>
+                <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+                    targetptr="show_network_neutron">“Step 3. Show Network and Subnet Information”</olink></para>
             </sidebar>
         </section>
     </section>

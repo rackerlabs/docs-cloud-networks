@@ -16,11 +16,9 @@
 
     <xi:include href="net_task_flow_neutron.xml"/>
     <xi:include href="net_cfn_create_network_neutron.xml"/>
-    <xi:include href="net_cfn_create_subnet_neutron.xml"/>
     <xi:include href="net_cfn_list_networks_neutron.xml"/>
-    <!--<xi:include href="net_cfn_list_subnets_neutron.xml"/>-->
+    <xi:include href="net_cfn_show_network_neutron.xml"/>
     <!--<xi:include href="net_cfn_provision_server_neutron.xml"/>-->
     <!--<xi:include href="net_cfn_add_port_neutron.xml"/>-->
-    <xi:include href="net_cfn_show_network_neutron.xml"/>
     <xi:include href="net_cfn_delete_network_neutron.xml"/>
 </section>
