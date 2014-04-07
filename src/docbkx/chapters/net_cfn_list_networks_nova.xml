@@ -21,24 +21,24 @@
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0"
     xml:id="list_networks">
-    <title>Step 2. List Networks</title>
+    <title>Step 2. List networks</title>
     <para>After you create an isolated network, list networks to view your network and the Rackspace networks.</para>
     <para>For information about the Rackspace networks, see <olink targetdoc="cn-gettingstarted" targetptr="networks"
-            >“Limitations of Detaching from Rackspace Networks”</olink>. </para>
+            >“Limitations of detaching from Rackspace networks”</olink>. </para>
     <sidebar>
         <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
                 <listitem>
-                    <para><olink targetdoc="cn-gettingstarted" targetptr="nova_list_networks">“List Networks with the nova
-                            Client”</olink></para>
+                    <para><olink targetdoc="cn-gettingstarted" targetptr="nova_list_networks">“List networks with the nova
+                            client”</olink></para>
                 </listitem>
                 <listitem>
-                    <para><olink targetdoc="cn-gettingstarted" targetptr="curl_list_networks">“List Networks with
+                    <para><olink targetdoc="cn-gettingstarted" targetptr="curl_list_networks">“List networks with
                             cURL”</olink></para>
                 </listitem>
             </itemizedlist></para>
     </sidebar>
     <section xml:id="nova_list_networks">
-        <title>List Networks with the nova Client</title>
+        <title>List networks with the nova client</title>
         <procedure>
             <title>To list networks with the nova client</title>
             <step>
@@ -63,18 +63,18 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="create_server_with_network">“Step 3. Provision a Server with an Isolated Network”</olink>
+            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted" targetptr="show_network"
+                >“Step 5. Show network details”</olink>
             </para>
         </sidebar>
     </section>
     <?hard-pagebreak?>
     <section xml:id="curl_list_networks">
         <?dbhtml stop-chunking?>
-        <title>List Networks with cURL</title>
+        <title>List networks with cURL</title>
         <para>You can request a JSON or XML response when you issue a request in a cURL command.</para>
-        <section xml:id="list_networks_json">
-            <title>JSON Response</title>
+        <section xml:id="json_show_network_curl">
+            <title>JSON request and response</title>
             <procedure>
                 <title>To list networks and request a JSON response</title>
                 <step>
@@ -90,34 +90,32 @@
                 </step>
             </procedure>
             <sidebar>
-                <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted"
-                        targetptr="create_server_with_network">“Step 3. Provision a Server with an Isolated Network”</olink>
+                <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted" targetptr="show_network"
+                    >“Step 5. Show network details”</olink>
                 </para>
             </sidebar>
         </section>
-        <section xml:id="list_networks_xml">
-            <title>XML Response</title>
+        <section xml:id="xml_show_network_curl">
+            <title>XML request and response</title>
             <procedure>
-                <title>To list networks and request an XML response</title>
+                <title>To list networks and request a XML response</title>
                 <step>
-                    <para>Issue the following cURL command:<programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-                        <prompt>$</prompt>curl -i https://dfw.servers.api.rackspacecloud.com/v2/$account/os-networksv2.xml \
-        -H "Content-Type: application/xml" \
-        -H "Accept: application/xml" \
-        -X GET -H "X-Auth-Token: $token" </programlisting>
+                    <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                        <prompt>$</prompt> curl https://dfw.servers.api.rackspacecloud.com/v2/$account/&cnresource2;.xml \
+       -H "Content-Type: application/xml" \ 
+       -H "Accept: application/xml" \
+       -X GET -H "X-Auth-Token: $token"</programlisting>
                         <emphasis role="bold">Output:</emphasis>
                     </para>
                     <para>For each isolated network, the response returns the <glossterm>CIDR</glossterm>. Additionally, for
                         isolated networks and Rackspace networks, the response returns the network ID and label.
-                        <programlisting language="xml"><?db-font-size 75%?>
+                        <programlisting language="json"><?db-font-size 75%?>
                             <xi:include href="../../common/samples/networks.xml" parse="text"/></programlisting></para>
-                    <para>ServiceNet is labeled as <literal>private</literal> and PublicNet is labeled as
-                            <literal>public</literal> in the network list.</para>
                 </step>
             </procedure>
             <sidebar>
-                <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted"
-                        targetptr="create_server_with_network">“Step 3. Provision a Server with an Isolated Network”</olink>
+                <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted" targetptr="show_network"
+                    >“Step 5. Show network details”</olink>
                 </para>
             </sidebar>
         </section>

@@ -8,17 +8,17 @@
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0"
     xml:id="create_first_net_neutron">
-    <title>Create Your First Cloud Network Using Neutron</title>
-    <para>These examples, using the Neutron API, walk you through the steps to create an isolated network and create a server
-        that is attached your isolated network, showing you how to access the Cloud Networks API through neutron client
-        commands or cURL commands so that you can quickly create isolated networks, subnets, and servers.</para>
-    <para>The exercises also help you learn how cURL commands and the Cloud Networks neutron and nova-network APIs work. </para>
+    <title>Create your first cloud network using neutron</title>
+    <para>These examples, using the neutron API, walk you through the steps to create an isolated network<!-- and create a server
+        that is attached your isolated network-->, showing you how to access the Cloud Networks API through neutron client
+        commands or cURL commands so that you can quickly create isolated networks and subnets<!--, and servers-->.</para>
+    <para>The exercises also help you learn about cURL commands and the cloud networks neutron API. </para>
 
-    <xi:include href="net_task_flow_neutron.xml"/>
+    <!--<xi:include href="net_task_flow_neutron.xml"/>-->
     <xi:include href="net_cfn_create_network_neutron.xml"/>
     <xi:include href="net_cfn_list_networks_neutron.xml"/>
     <xi:include href="net_cfn_show_network_neutron.xml"/>
     <!--<xi:include href="net_cfn_provision_server_neutron.xml"/>-->
     <!--<xi:include href="net_cfn_add_port_neutron.xml"/>-->
-    <xi:include href="net_cfn_delete_network_neutron.xml"/>
+    <!--<xi:include href="net_cfn_delete_network_neutron.xml"/>-->
 </section>

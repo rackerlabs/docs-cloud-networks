@@ -27,9 +27,9 @@
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0"
     xml:id="attach_network_to_server_nova">
-    <title>Attach Your Network to an Existing Server Using Nova-network</title>
+    <title>Attach your network to an existing server using nova-network</title>
     <para>Use the &virt_ext; to create a virtual interface to a specified network and attach the network to an existing
-        server instance with the Nova-network API. </para>
+        server instance with the nova-network API. </para>
     <para>You can create a maximum of one virtual interface per instance per network. </para>
     <para>You can also use the &virt_ext; to:</para>
     <itemizedlist>
@@ -47,19 +47,21 @@
 
     <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
         xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="section_gs_install_vir_interface">
-        <title>Step 1. Install the &Uvirt_ext;</title>
+        <title>Step 1. Install the &virt_ext;</title>
         <procedure>
             <title>To install the &virt_ext;</title>
             <step>
                 <title>Install the &virt_ext;</title>
-                <para>The <literal>os_virtual_interfacesv2_python_novaclient_ext</literal> package contains the &virt_ext;. </para>
+                <para>The <literal>os_virtual_interfacesv2_python_novaclient_ext</literal> package contains the
+                    &virt_ext;.</para>
                 <para>Run the following command to install the package:</para>
                 <programlisting language="bash" role="gutter: false">
                     <prompt>$</prompt> sudo pip install os_virtual_interfacesv2_python_novaclient_ext</programlisting>
                 <note>
                     <para>If you previously installed this package, run the following command to upgrade it:
                         <programlisting language="bash" role="gutter: false">
-                            <prompt>$</prompt> sudo pip install os_virtual_interfacesv2_python_novaclient_ext --upgrade</programlisting></para>
+                            <prompt>$</prompt> sudo pip install os_virtual_interfacesv2_python_novaclient_ext --upgrade
+                        </programlisting></para>
                 </note>
             </step>
             <?sbr?>
@@ -80,24 +82,24 @@
         </procedure>
     </section>
     <section xml:id="list_servers2">
-        <title>Step 2. List Servers</title>
+        <title>Step 2. List servers</title>
         <para>To get the ID of the server instance to which you want to attach a virtual interface, list the servers in your
             Cloud account. </para>
         <sidebar>
             <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
                     <listitem>
-                        <para><olink targetdoc="cn-gettingstarted" targetptr="nova_list_servers2">“List Servers with the nova
-                                Client”</olink></para>
+                        <para><olink targetdoc="cn-gettingstarted" targetptr="nova_list_servers2">“List servers with the nova
+                                client”</olink></para>
                     </listitem>
                     <listitem>
-                        <para><olink targetdoc="cn-gettingstarted" targetptr="curl_list_servers2">“List Servers with
+                        <para><olink targetdoc="cn-gettingstarted" targetptr="curl_list_servers2">“List servers with
                                 cURL”</olink></para>
                     </listitem>
                 </itemizedlist></para>
         </sidebar>
         <?hard-pagebreak?>
         <section xml:id="nova_list_servers2">
-            <title>List Servers with the nova Client</title>
+            <title>List servers with the nova client</title>
             <procedure>
                 <title>To list servers with the nova client:</title>
                 <step>
@@ -126,7 +128,7 @@
         </section>
         <?hard-pagebreak?>
         <section xml:id="curl_list_servers2">
-            <title>List Servers with cURL</title>
+            <title>List servers with cURL</title>
             <procedure>
                 <title>To list servers with cURL:</title>
                 <step>
@@ -278,29 +280,29 @@
             </procedure>
             <sidebar>
                 <para><emphasis role="bold">Next step:</emphasis>
-                    <olink targetdoc="cn-gettingstarted" targetptr="list_networks2">“Step 3. List Networks”</olink></para>
+                    <olink targetdoc="cn-gettingstarted" targetptr="list_networks2">“Step 3. List networks”</olink></para>
             </sidebar>
         </section>
 
     </section>
     <section xml:id="list_networks2">
-        <title>Step 3. List Networks</title>
+        <title>Step 3. List networks</title>
         <para>To get the ID of the network for which you want to create virtual interface, list the networks in your Cloud
             account. </para>
         <sidebar>
             <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
                     <listitem>
-                        <para><olink targetdoc="cn-gettingstarted" targetptr="nova_list_networks2">“List Networks with the
-                                nova Client”</olink></para>
+                        <para><olink targetdoc="cn-gettingstarted" targetptr="nova_list_networks2">“List networks with the
+                                nova client”</olink></para>
                     </listitem>
                     <listitem>
-                        <para><olink targetdoc="cn-gettingstarted" targetptr="curl_list_networks2">“List Networks with
+                        <para><olink targetdoc="cn-gettingstarted" targetptr="curl_list_networks2">“List networks with
                                 cURL”</olink></para>
                     </listitem>
                 </itemizedlist></para>
         </sidebar>
         <section xml:id="nova_list_networks2">
-            <title>List Networks with the nova Client</title>
+            <title>List networks with the nova client</title>
             <procedure>
                 <title>To list networks with the nova client</title>
                 <step>
@@ -328,16 +330,16 @@
             </procedure>
             <sidebar>
                 <para><emphasis role="bold">Next step:</emphasis>
-                    <olink targetdoc="cn-gettingstarted" targetptr="create_virt_interface">“Step 4. Create a Virtual
-                        Interface”</olink></para>
+                    <olink targetdoc="cn-gettingstarted" targetptr="create_virt_interface">“Step 4. Create a virtual
+                        interface”</olink></para>
             </sidebar>
         </section>
         <?hard-pagebreak?>
         <section xml:id="curl_list_networks2">
-            <title>List Networks with cURL</title>
+            <title>List networks with cURL</title>
             <para>You can request a JSON or XML response when you issue a request in a cURL command.</para>
             <section xml:id="list_networks2_json">
-                <title>JSON Request and Response</title>
+                <title>JSON request and response</title>
                 <procedure>
                     <title>To list networks and request a JSON response</title>
                     <step>
@@ -358,12 +360,12 @@
                 </procedure>
                 <sidebar>
                     <para><emphasis role="bold">Next step:</emphasis>
-                        <olink targetdoc="cn-gettingstarted" targetptr="create_virt_interface">“Step 4. Create a Virtual
-                            Interface”</olink></para>
+                        <olink targetdoc="cn-gettingstarted" targetptr="create_virt_interface">“Step 4. Create a virtual
+                            interface”</olink></para>
                 </sidebar>
             </section>
             <section xml:id="list_networks2_xml">
-                <title>XML Request and Response</title>
+                <title>XML request and response</title>
                 <procedure>
                     <title>To list networks and request an XML response</title>
                     <step>
@@ -386,14 +388,14 @@
                 </procedure>
                 <sidebar>
                     <para><emphasis role="bold">Next step:</emphasis>
-                        <olink targetdoc="cn-gettingstarted" targetptr="create_virt_interface">“Step 4. Create a Virtual
-                            Interface”</olink></para>
+                        <olink targetdoc="cn-gettingstarted" targetptr="create_virt_interface">“Step 4. Create a virtual
+                            interface”</olink></para>
                 </sidebar>
             </section>
         </section>
     </section>
     <section xml:id="create_virt_interface">
-        <title>Step 4. Create a Virtual Interface</title>
+        <title>Step 4. Create a virtual interface</title>
         <para>When you create a virtual interface, you specify the following information:<itemizedlist>
                 <listitem>
                     <para><emphasis role="bold">Network ID</emphasis>. The ID of the network for which you want to create a
@@ -407,17 +409,17 @@
         <sidebar>
             <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
                     <listitem>
-                        <para><olink targetdoc="cn-gettingstarted" targetptr="nova_create_virt_interface">“Create a Virtual
-                                Interface with the nova Client”</olink>Create a virtual interface with the nova client</para>
+                        <para><olink targetdoc="cn-gettingstarted" targetptr="nova_create_virt_interface">“Create a virtual
+                                interface with the nova client”</olink></para>
                     </listitem>
                     <listitem>
                         <para><olink targetdoc="cn-gettingstarted" targetptr="curl_create_virt_interfaces_for_server">“Create
-                                Virtual Interface with cURL”</olink>Create a virtual interface with cURL</para>
+                                a virtual interface with cURL”</olink></para>
                     </listitem>
                 </itemizedlist></para>
         </sidebar>
         <section xml:id="nova_create_virt_interface">
-            <title>Create a Virtual Interface with the nova Client</title>
+            <title>Create a virtual interface with the nova client</title>
             <procedure>
                 <title>To create a virtual interface with the nova client</title>
                 <step>
@@ -441,16 +443,16 @@
             </procedure>
             <sidebar>
                 <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted"
-                        targetptr="list_virt_interfaces_for_server">“Step 5. List Virtual Interfaces for a Server”</olink>
+                        targetptr="list_virt_interfaces_for_server">“Step 5. List virtual interfaces for a server”</olink>
                 </para>
             </sidebar>
         </section>
         <?hard-pagebreak?>
         <section xml:id="curl_create_virt_interfaces_for_server">
-            <title>Create Virtual Interface with cURL</title>
+            <title>Create a virtual interface with cURL</title>
             <para>You can issue a JSON or XML request in a cURL command.</para>
             <section xml:id="curl_create_virt_interface_json">
-                <title>JSON Request and Response</title>
+                <title>JSON request and response</title>
                 <procedure>
                     <title>To create a virtual interface and request a JSON response</title>
                     <step>
@@ -469,12 +471,12 @@
                             <listitem>
                                 <para><parameter>instance_id</parameter>. The ID of the server instance to which you want to
                                     connect the virtual interface. You copied this ID in <olink targetdoc="cn-gettingstarted"
-                                        targetptr="list_networks2">“Step 3. List Networks”</olink>.</para>
+                                        targetptr="list_networks2">“Step 3. List networks”</olink>.</para>
                             </listitem>
                             <listitem>
                                 <para><parameter>network_id</parameter>. The ID of the network for which you want to create a
                                     virtual interface. You copied this ID in <olink targetdoc="cn-gettingstarted"
-                                        targetptr="list_servers2">“Step 2. List Servers”</olink>.</para>
+                                        targetptr="list_servers2">“Step 2. List servers”</olink>.</para>
                             </listitem>
                         </itemizedlist>
                         <para><emphasis role="bold">Output:</emphasis>
@@ -485,13 +487,13 @@
                 </procedure>
                 <sidebar>
                     <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted"
-                            targetptr="list_virt_interfaces_for_server">“Step 5. List Virtual Interfaces for a
-                            Server”</olink>
+                            targetptr="list_virt_interfaces_for_server">“Step 5. List virtual interfaces for a
+                            server”</olink>
                     </para>
                 </sidebar>
             </section>
             <section xml:id="curl_create_virt_interface_xml">
-                <title>XML Request and Response</title>
+                <title>XML request and response</title>
                 <procedure>
                     <title>To create a virtual interface and request an XML response</title>
                     <step>
@@ -510,12 +512,12 @@
                             <listitem>
                                 <para><parameter>instance_id</parameter>. The ID of the server instance to which you want to
                                     connect the virtual interface. You copied this ID in <olink targetdoc="cn-gettingstarted"
-                                        targetptr="list_servers2">“Step 2. List Servers”</olink>.</para>
+                                        targetptr="list_servers2">“Step 2. List servers”</olink>.</para>
                             </listitem>
                             <listitem>
                                 <para><parameter>network_id</parameter>. The ID of the network for which you want to create a
                                     virtual interface. You copied this ID in <olink targetdoc="cn-gettingstarted"
-                                        targetptr="list_networks2">“Step 3. List Networks”</olink>.</para>
+                                        targetptr="list_networks2">“Step 3. List networks”</olink>.</para>
                             </listitem>
                         </itemizedlist>
                         <para><emphasis role="bold">Output:</emphasis>
@@ -526,15 +528,15 @@
                 </procedure>
                 <sidebar>
                     <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted"
-                            targetptr="list_virt_interfaces_for_server">“Step 5. List Virtual Interfaces for a
-                            Server”</olink>
+                            targetptr="list_virt_interfaces_for_server">“Step 5. List virtual interfaces for a
+                            server”</olink>
                     </para>
                 </sidebar>
             </section>
         </section>
     </section>
     <section xml:id="list_virt_interfaces_for_server">
-        <title>Step 5. List Virtual Interfaces for a Server</title>
+        <title>Step 5. List virtual interfaces for a server</title>
         <para>To validate that you created and connected the virtual interface to your server, you can list the virtual
             interfaces for your server. </para>
 
@@ -542,16 +544,16 @@
             <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
                     <listitem>
                         <para><olink targetdoc="cn-gettingstarted" targetptr="nova_list_virt_interfaces_for_server">“List
-                                Virtual Interfaces for a Server with the nova Client”</olink></para>
+                                virtual interfaces for a server with the nova client”</olink></para>
                     </listitem>
                     <listitem>
                         <para><olink targetdoc="cn-gettingstarted" targetptr="curl_list_virt_interfaces_for_server">“List
-                                Virtual Interfaces for a Server with cURL”</olink></para>
+                                virtual interfaces for a server with cURL”</olink></para>
                     </listitem>
                 </itemizedlist></para>
         </sidebar>
         <section xml:id="nova_list_virt_interfaces_for_server">
-            <title>List Virtual Interfaces for a Server with the nova Client</title>
+            <title>List virtual interfaces for a server with the nova client</title>
             <procedure>
                 <title>To list virtual interfaces for a server with the nova client</title>
                 <step>
@@ -587,16 +589,16 @@
             </procedure>
             <sidebar>
                 <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted"
-                        targetptr="delete_virt_interface">“Step 6. Delete a Virtual Interface from a Server”</olink>
+                        targetptr="delete_virt_interface">“Step 6. Delete a virtual interface from a server”</olink>
                 </para>
             </sidebar>
         </section>
         <?hard-pagebreak?>
         <section xml:id="curl_list_virt_interfaces_for_server">
-            <title>List Virtual Interfaces for a Server with cURL</title>
+            <title>List virtual interfaces for a server with cURL</title>
             <para>You can request a JSON or XML response when you issue a request in a cURL command.</para>
             <section xml:id="curl_list_virt_interfaces_json">
-                <title>JSON Request and Response</title>
+                <title>JSON request and response</title>
                 <procedure>
                     <title>To list virtual interfaces for a server and request a JSON response</title>
                     <step>
@@ -625,12 +627,12 @@
                 </procedure>
                 <sidebar>
                     <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted"
-                            targetptr="delete_virt_interface">“Step 6. Delete a Virtual Interface from a Server”</olink>
+                            targetptr="delete_virt_interface">“Step 6. Delete a virtual interface from a server”</olink>
                     </para>
                 </sidebar>
             </section>
             <section xml:id="curl_list_virt_interfaces_xml">
-                <title>XML Request and Response</title>
+                <title>XML request and response</title>
 
                 <procedure>
                     <title>To list virtual interfaces for a server and request a XML response</title>
@@ -661,7 +663,7 @@
                 </procedure>
                 <sidebar>
                     <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted"
-                            targetptr="delete_virt_interface">“Step 6. Delete a Virtual Interface from a Server”</olink>
+                            targetptr="delete_virt_interface">“Step 6. Delete a virtual interface from a server”</olink>
                     </para>
                 </sidebar>
             </section>
@@ -669,7 +671,7 @@
 
     </section>
     <section xml:id="delete_virt_interface">
-        <title>Step 6. Delete a Virtual Interface from a Server</title>
+        <title>Step 6. Delete a virtual interface from a server</title>
         <para>If your server no longer needs the virtual interface, you can delete and detach it from the server. </para>
         <para>To delete and detach your virtual interface from a server, you need the ID of your server instance and the ID
             for the virtual interface. </para>
@@ -679,18 +681,18 @@
         <sidebar>
             <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
                     <listitem>
-                        <para><olink targetdoc="cn-gettingstarted" targetptr="nova_delete_vir_interface">“Delete a Virtual
-                                Interface with the nova Client”</olink></para>
+                        <para><olink targetdoc="cn-gettingstarted" targetptr="nova_delete_vir_interface">“Delete a virtual
+                                interface with the nova client”</olink></para>
                     </listitem>
                     <listitem>
-                        <para><olink targetdoc="cn-gettingstarted" targetptr="curl_delete_vir_interface">“Delete a Virtual
-                                Interface with cURL”</olink></para>
+                        <para><olink targetdoc="cn-gettingstarted" targetptr="curl_delete_vir_interface">“Delete a virtual
+                                interface with cURL”</olink></para>
                     </listitem>
                 </itemizedlist></para>
         </sidebar>
 
         <section xml:id="nova_delete_vir_interface">
-            <title>Delete a Virtual Interface with the nova Client</title>
+            <title>Delete a virtual interface with the nova client</title>
             <procedure>
                 <title>To delete a virtual interface with the nova client:</title>
                 <step>
@@ -731,7 +733,7 @@
         </section>
         <?hard-pagebreak?>
         <section xml:id="curl_delete_vir_interface">
-            <title>Delete a Virtual Interface with cURL</title>
+            <title>Delete a virtual interface with cURL</title>
             <procedure>
                 <title>To delete a virtual interface with cURL:</title>
                 <step>

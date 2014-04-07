@@ -100,17 +100,19 @@
                         <listitem>
                             <para>updated examples for d2to1 in install and update nova client section.</para>
                         </listitem>
+                        <!--FIXME-->
                         <listitem>
-                            <para>removed v4-fixed-ip from <xref linkend="nova_provision_server"/></para>
+                            <para>removed v4-fixed-ip from <!--<xref linkend="nova_provision_server"/>--></para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
             </revision>
+            <!--FIXME-->
             <revision>
                 <date>2013-08-28</date>
                 <revdescription>
                     <para>Removed references to bandwidth since the RAX extension is no longer implemented. It causes an
-                        unsustainable load on Nova. See <xref linkend="list_servers"/>.</para>
+                        unsustainable load on Nova. See <!--<xref linkend="list_servers"/>-->.</para>
                 </revdescription>
             </revision>
             <revision>
@@ -138,10 +140,11 @@
                 </revdescription>
             </revision>
             <revision>
+                <!--FIXME-->
                 <date>2013-06-17</date>
                 <revdescription>
                     <para>Removed optional parameters, such as hint, block_device_mapping, availability_zone, and
-                        security_groups, from <xref linkend="create_server_with_network"/>. </para>
+                        security_groups, from <!--<xref linkend="create_server_with_network"/>-->. </para>
                 </revdescription>
             </revision>
             <revision>
@@ -251,6 +254,8 @@
     <xi:include href="chapters/net_use_examples.xml"/>
     <xi:include href="chapters/net_set_up.xml"/>
     <xi:include href="chapters/net_create_first_net.xml"/>
+    <xi:include href="chapters/net_boot_new_server.xml"/>
     <xi:include href="chapters/net_attach_network_to_server.xml"/>
+    <xi:include href="chapters/net_delete_network.xml"/>
     <glossary role="auto"/>
 </book>

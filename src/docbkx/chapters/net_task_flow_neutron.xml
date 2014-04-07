@@ -28,14 +28,14 @@ format="SVG" scale="60"/>
 ]>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="task_flow_neutron">
-    <title>High-Level Task Flow</title>
+    <title>High-level task flow</title>
     <para> The high-level task flow for Cloud Networks involves creating a network, associating a subnet with that network,
         and booting a server that is attached to the network. Network cleanup includes deleting the server, deleting any
         ports associated with the network, and deleting the networks. Cloud Networks automatically deletes any subnets
         associated with the deleted network.</para>
 
     <procedure>
-        <title>To Use Cloud Networks:  A High Level Flow</title>
+        <title>To use cloud networks:  A High Level Flow</title>
 
         <step>
             <title>Create a network.</title>

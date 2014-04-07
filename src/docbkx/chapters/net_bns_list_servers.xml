@@ -14,25 +14,25 @@
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0"
     xml:id="list_servers">
-    <title>Step 4. List Servers and Attached Networks</title>
+    <title>Step 2. List servers and attached networks</title>
     <para>To show all the servers in your Cloud account, you can list servers. When you list servers, the addresses for any
         attached networks are displayed. The networks include any isolated networks that you have created and Rackspace
         public and private networks.</para>
     <sidebar>
         <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
                 <listitem>
-                    <para><olink targetdoc="cn-gettingstarted" targetptr="nova_list_servers">“List Servers with the nova
-                            Client”</olink></para>
+                    <para><olink targetdoc="cn-gettingstarted" targetptr="nova_list_servers">“List servers with the nova
+                            client”</olink></para>
                 </listitem>
                 <listitem>
-                    <para><olink targetdoc="cn-gettingstarted" targetptr="curl_list_servers">“List Servers with
+                    <para><olink targetdoc="cn-gettingstarted" targetptr="curl_list_servers">“List servers with
                         cURL”</olink></para>
                 </listitem>
             </itemizedlist></para>
     </sidebar>
     <?hard-pagebreak?>
     <section xml:id="nova_list_servers">
-        <title>List Servers with the nova Client</title>
+        <title>List servers with the nova client</title>
         <procedure>
             <title>To list servers with the nova client:</title>
             <step>
@@ -57,13 +57,12 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted" targetptr="show_network"
-                    >“Step 5. Show Network Information”</olink></para>
+            <para><emphasis role="bold">Next step: </emphasis></para>
         </sidebar>
     </section>
     <?hard-pagebreak?>
     <section xml:id="curl_list_servers">
-        <title>List Servers with cURL</title>
+        <title>List servers with cURL</title>
         <procedure>
             <title>To list servers with cURL:</title>
             <step>
@@ -218,8 +217,7 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted" targetptr="show_network"
-                >“Step 5. Show Network Information”</olink></para>
+            <para><emphasis role="bold">Next step: </emphasis></para>
         </sidebar>
     </section>
 </section>

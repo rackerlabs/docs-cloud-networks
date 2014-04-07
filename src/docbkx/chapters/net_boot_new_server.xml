@@ -20,12 +20,10 @@
 <!ENTITY URL 'https://&HOST;/v2/'>
 ]>
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
-        xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="create_first_net">
-        <title>Create your first cloud network</title>
-        <para>Before creating your first network, choose whether to use the neutron API or the nova-network API. For help
-                deciding, see <olink targetdoc="cn-gettingstarted" targetptr="section_nova_v_neutron">“Networking:
-                        nova-network versus neutron”</olink>. The sections in this chapter provide examples of creating a
-                network using each API.</para>
-        <xi:include href="net_cfn_neutron.xml"/>
-        <xi:include href="net_cfn_nova.xml"/>
+        xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="boot_new_server">
+        <title>Boot a New Server With Your Cloud Network</title>
+        <para>Now that you have a Cloud Network, you can attach it a new server when you create the server. Use the nova-network
+                to create and list servers.</para>
+        <xi:include href="net_bns_boot_server.xml"/>
+        <xi:include href="net_bns_list_servers.xml"/>
 </chapter>

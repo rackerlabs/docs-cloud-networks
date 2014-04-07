@@ -21,25 +21,25 @@
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0"
     xml:id="list_networks_neutron">
-    <title>Step 2. List Networks or Subnets</title>
+    <title>Step 2. List networks or subnets</title>
     <para>After you create networks or subnets, you may want to view your networks, subnets, and the Rackspace
         networks.</para>
     <para>For information about the Rackspace networks, see <olink targetdoc="cn-gettingstarted" targetptr="networks"
-            >“Limitations of Detaching from Rackspace Networks”</olink>. </para>
+            >“Limitations of detaching from Rackspace networks”</olink>. </para>
     <sidebar>
         <para><emphasis role="bold">Next step: </emphasis>Choose one of the following methods:<itemizedlist>
                 <listitem>
-                    <para><olink targetdoc="cn-gettingstarted" targetptr="neutron_list_networks_neutron">“List Networks or Subnets with
-                            the neutron Client”</olink></para>
+                    <para><olink targetdoc="cn-gettingstarted" targetptr="neutron_list_networks_neutron">“List networks or
+                            subnets with the neutron client”</olink></para>
                 </listitem>
                 <listitem>
-                    <para><olink targetdoc="cn-gettingstarted" targetptr="curl_list_networks_neutron">“List Networks or Subnets with
-                            cURL”</olink></para>
+                    <para><olink targetdoc="cn-gettingstarted" targetptr="curl_list_networks_neutron">“List networks or
+                            subnets with cURL”</olink></para>
                 </listitem>
             </itemizedlist></para>
     </sidebar>
     <section xml:id="neutron_list_networks_neutron">
-        <title>List Networks or Subnets with the neutron Client</title>
+        <title>List networks or subnets with the neutron client</title>
         <procedure>
             <title>To list networks with the neutron client</title>
             <step>
@@ -78,86 +78,43 @@
         </procedure>
         <sidebar>
             <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                targetptr="show_network_neutron">“Step 3. Show Network or Subnet Information”</olink></para>
+                    targetptr="show_network_neutron">“Step 3. Show network or subnet details”</olink></para>
         </sidebar>
     </section>
     <section xml:id="curl_list_networks_neutron">
         <?dbhtml stop-chunking?>
-        <title>List Networks or Subnets with cURL</title>
-        <para>You can request a JSON or XML response when you issue a request in a cURL command.</para>
-        <section xml:id="list_networks_json_neutron">
-            <title>JSON Request and Response</title>
-            <procedure>
-                <title>To list networks and request a JSON response</title>
-                <step>
-                    <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+        <title>List networks or subnets with cURL</title>
+        <procedure>
+            <title>To list networks</title>
+            <step>
+                <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
                         <prompt>$</prompt> curl https://dfw.servers.api.rackspacecloud.com/v2.0/$account/subnets \
        -X GET -H "X-Auth-Token: $token" | python -m json.tool</programlisting>
-                        <emphasis role="bold">Output:</emphasis>
-                    </para>
-                    <para>The API operation returns a response body as shown in the following output:
-                        <!--<programlisting language="json"><?db-font-size 75%?>
+                    <emphasis role="bold">Output:</emphasis>
+                </para>
+                <para>The API operation returns a response body as shown in the following output:
+                    <!--<programlisting language="json"><?db-font-size 75%?>
                             <xi:include href="../../common/samples/networks-get-resp.json" parse="text"/></programlisting>-->
-                    </para>
-                </step>
-            </procedure>
-            <procedure>
-                <title>To list subnets and request a JSON response</title>
-                <step>
-                    <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                </para>
+            </step>
+        </procedure>
+        <procedure>
+            <title>To list subnets</title>
+            <step>
+                <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
                         <prompt>$</prompt> curl https://dfw.servers.api.rackspacecloud.com/v2.0/$account/subnets \
        -X GET -H "X-Auth-Token: $token" | python -m json.tool</programlisting>
-                        <emphasis role="bold">Output:</emphasis>
-                    </para>
-                    <para>The API operation returns a response body as shown in the following output:
-                        <!--<programlisting language="json"><?db-font-size 75%?>
+                    <emphasis role="bold">Output:</emphasis>
+                </para>
+                <para>The API operation returns a response body as shown in the following output:
+                    <!--<programlisting language="json"><?db-font-size 75%?>
                             <xi:include href="../../common/samples/networks-get-resp.json" parse="text"/></programlisting>-->
-                    </para>
-                </step>
-            </procedure>
-            <sidebar>
-                <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="show_network_neutron">“Step 3. Show Network or Subnet Information”</olink></para>
-            </sidebar>
-        </section>
-        <section xml:id="list_networks_xml_neutron">
-            <title>XML Request and Response</title>
-            <procedure>
-                <title>To list networks and request an XML response</title>
-                <step>
-                    <para>Issue the following cURL command:<programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-                        <prompt>$</prompt>curl -i https://dfw.servers.api.rackspacecloud.com/v2.0/$account/networks.xml \
-        -H "Content-Type: application/xml" \
-        -H "Accept: application/xml" \
-        -X GET -H "X-Auth-Token: $token" </programlisting>
-                        <emphasis role="bold">Output:</emphasis>
-                    </para>
-                    <para>The API operation returns a response body as shown in the following output:
-                        <!--<programlisting language="xml"><?db-font-size 75%?>
-                            <xi:include href="../../common/samples/networks-get-resp.xml" parse="text"/></programlisting>-->
-                    </para>
-                </step>
-            </procedure>
-            <procedure>
-                <title>To list subnets and request an XML response</title>
-                <step>
-                    <para>Issue the following cURL command:<programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-                        <prompt>$</prompt>curl -i https://dfw.servers.api.rackspacecloud.com/v2.0/$account/subnets.xml \
-        -H "Content-Type: application/xml" \
-        -H "Accept: application/xml" \
-        -X GET -H "X-Auth-Token: $token" </programlisting>
-                        <emphasis role="bold">Output:</emphasis>
-                    </para>
-                    <para>The API operation returns a response body as shown in the following output:
-                        <!--<programlisting language="xml"><?db-font-size 75%?>
-                            <xi:include href="../../common/samples/networks-get-resp.xml" parse="text"/></programlisting>-->
-                    </para>
-                </step>
-            </procedure>
-            <sidebar>
-                <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="show_network_neutron">“Step 3. Show Network or Subnet Information”</olink></para>
-            </sidebar>
-        </section>
+                </para>
+            </step>
+        </procedure>
+        <sidebar>
+            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+                    targetptr="show_network_neutron">“Step 3. Show network or subnet details”</olink></para>
+        </sidebar>
     </section>
 </section>

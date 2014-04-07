@@ -20,7 +20,7 @@
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0"
     xml:id="show_network">
-    <title>Step 5. Show Network Information</title>
+    <title>Step 3. Show network details</title>
     <para>You can show details for a specified network ID.</para>
     <para>The response body returns the following fields: <table rules="all" width="100%">
             <caption>Show Network Response Fields</caption>
@@ -63,7 +63,7 @@
     </sidebar>
     <?hard-pagebreak?>
     <section xml:id="nova_show_network">
-        <title>Show Network Information with the nova Client</title>
+        <title>Show network details with the nova client</title>
         <procedure>
             <title>To show information for a specified network ID</title>
             <step>
@@ -96,16 +96,16 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted" targetptr="delete_network"
-                    >“Step 6. Delete Your Network”</olink></para>
+            <para><emphasis role="bold">Next step: </emphasis></para>
         </sidebar>
     </section>
     <?hard-pagebreak?>
     <section xml:id="curl_show_network">
-        <title>Show Network with cURL</title>
+        <?dbhtml stop-chunking?>
+        <title>Show network details with cURL</title>
         <para>You can request a JSON or XML response when you issue a request in a cURL command.</para>
-        <section xml:id="json_show_network_curl">
-            <title>JSON Response</title>
+        <section xml:id="json_show_network_curl1">
+            <title>JSON request and response</title>
             <procedure>
                 <title>To show information in a JSON response for a specified network ID</title>
                 <step>
@@ -136,12 +136,11 @@
                 </step>
             </procedure>
             <sidebar>
-                <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted"
-                        targetptr="delete_network">“Step 6. Delete Your Network”</olink></para>
+                <para><emphasis role="bold">Next step: </emphasis></para>
             </sidebar>
         </section>
-        <section xml:id="xml_show_network_curl">
-            <title>XML Response</title>
+        <section xml:id="xml_show_network_curl1">
+            <title>XML request and response</title>
             <procedure>
                 <title>To show information in an XML response for a specified network ID</title>
                 <step>
@@ -172,8 +171,7 @@
                 </step>
             </procedure>
             <sidebar>
-                <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted"
-                        targetptr="delete_network">“Step 6. Delete Your Network”</olink></para>
+                <para><emphasis role="bold">Next step: </emphasis></para>
             </sidebar>
         </section>
     </section>

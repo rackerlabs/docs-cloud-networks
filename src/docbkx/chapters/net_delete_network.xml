@@ -20,12 +20,12 @@
 <!ENTITY URL 'https://&HOST;/v2/'>
 ]>
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
-        xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="create_first_net">
-        <title>Create your first cloud network</title>
-        <para>Before creating your first network, choose whether to use the neutron API or the nova-network API. For help
-                deciding, see <olink targetdoc="cn-gettingstarted" targetptr="section_nova_v_neutron">“Networking:
-                        nova-network versus neutron”</olink>. The sections in this chapter provide examples of creating a
-                network using each API.</para>
-        <xi:include href="net_cfn_neutron.xml"/>
-        <xi:include href="net_cfn_nova.xml"/>
+        xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="delete_net">
+        <title>Delete your cloud network</title>
+        <para>When you no longer need your cloud network, delete it. Choose whether to use the neutron API or the
+                nova-network API. For help deciding, see <olink targetdoc="cn-gettingstarted"
+                        targetptr="section_nova_v_neutron">“Networking: nova-network versus neutron”</olink>. The sections in
+                this chapter provide examples of deleting a network using each API.</para>
+        <xi:include href="net_dn_delete_network_neutron.xml"/>
+        <xi:include href="net_dn_delete_network_nova.xml"/>
 </chapter>

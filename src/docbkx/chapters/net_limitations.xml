@@ -20,7 +20,7 @@
 
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="networks">
-    <title>Limitations of Detaching from Rackspace Networks</title>
+    <title>Limitations of detaching from Rackspace networks</title>
     <para>When you provision a next generation Cloud Server, you can attach to one or more isolated networks and the
         Rackspace networks. You can also explicitly opt out of attaching the Rackspace networks to it, which introduces the
         following limitations: </para>

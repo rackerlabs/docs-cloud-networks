@@ -89,18 +89,19 @@
                         <listitem>
                             <para>updated examples for d2to1 in install and update nova client section.</para>
                         </listitem>
+                        <!--FIXME-->
                         <listitem>
-                            <para>removed v4-fixed-ip from <xref linkend="nova_provision_server"/>
-                     </para>
+                            <para>removed v4-fixed-ip from <!--<xref linkend="nova_provision_server"/>--></para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
             </revision>
+            <!--FIXME-->
             <revision>
                 <date>2013-08-28</date>
                 <revdescription>
                     <para>Removed references to bandwidth since the RAX extension is no longer implemented. It causes an
-                        unsustainable load on Nova. See <xref linkend="list_servers"/>.</para>
+                        unsustainable load on Nova. See <!--<xref linkend="list_servers"/>-->.</para>
                 </revdescription>
             </revision>
             <revision>
@@ -128,10 +129,11 @@
                 </revdescription>
             </revision>
             <revision>
+                <!--FIXME-->
                 <date>2013-06-17</date>
                 <revdescription>
                     <para>Removed optional parameters, such as hint, block_device_mapping, availability_zone, and
-                        security_groups, from <xref linkend="create_server_with_network"/>. </para>
+                        security_groups, from <!--<xref linkend="create_server_with_network"/>-->. </para>
                 </revdescription>
             </revision>
             <revision>
@@ -390,9 +392,9 @@
                         <listitem>
                             <para>updated examples for d2to1 in install and update nova client section.</para>
                         </listitem>
+                        <!--FIXME-->
                         <listitem>
-                            <para>removed v4-fixed-ip from <xref linkend="nova_provision_server"/>
-                           </para>
+                            <para>removed v4-fixed-ip from <!--<xref linkend="nova_provision_server"/>--></para>
                         </listitem>
                     </itemizedlist>
                   </td>
@@ -403,7 +405,7 @@
                   </td>
                   <td>
                      <para>Removed references to bandwidth since the RAX extension is no longer implemented. It causes an
-                        unsustainable load on Nova. See <xref linkend="list_servers"/>.</para>
+                        unsustainable load on Nova. See <!--<xref linkend="list_servers"/>-->.</para>
                   </td>
                </tr>
                <tr>
@@ -444,7 +446,7 @@
                   </td>
                   <td>
                      <para>Removed optional parameters, such as hint, block_device_mapping, availability_zone, and
-                        security_groups, from <xref linkend="create_server_with_network"/>. </para>
+                        security_groups, from <!--<xref linkend="create_server_with_network"/>-->. </para>
                   </td>
                </tr>
                <tr>
@@ -781,12 +783,12 @@
         <section version="5.0"
                xml:id="section_nova_v_neutron"
                xml:base="chapters/net_nova_v_neutron.xml">
-         <title>Networking: Nova-network versus Neutron</title>
-         <para>Rackspace first introduced networking services by using the Nova-network API based on OpenStack. Now we are
-        providing the Neutron API, also based on OpenStack, which offers more functionality and flexibility than the
-        Nova-network API. Both sets of APIs continue to work well, but the Neutron API will be the base for all the future
+         <title>Networking: nova-network versus neutron</title>
+         <para>Rackspace first introduced networking services by using the nova-network API based on OpenStack. Now we are
+        providing the neutron API, also based on OpenStack, which offers more functionality and flexibility than the
+        nova-network API. Both sets of APIs continue to work well, but the neutron API will be the base for all the future
         networking services that Rackspace offers. </para>
-         <para>The Neutron API provides three primary, top-level resources (networks, ports, and subnets) and includes the ability
+         <para>The neutron API provides three primary, top-level resources (networks, ports, and subnets) and includes the ability
         to perform the following functions: <itemizedlist>
                <listitem>
                   <para>Use all existing create, read, update, delete (CRUD) API operations for networks</para>
@@ -809,14 +811,14 @@
             </itemizedlist>
          </para>
          <note>
-            <para>The Neutron API operations return only JSON-formatted responses. There is no option to receive responses in
+            <para>The neutron API operations return only JSON-formatted responses. There is no option to receive responses in
             XML.</para>
          </note>
       </section> 
         <section version="5.0"
                xml:id="networks"
                xml:base="chapters/net_limitations.xml">
-         <title>Limitations of Detaching from Rackspace Networks</title>
+         <title>Limitations of detaching from Rackspace networks</title>
          <para>When you provision a next generation Cloud Server, you can attach to one or more isolated networks and the
         Rackspace networks. You can also explicitly opt out of attaching the Rackspace networks to it, which introduces the
         following limitations: </para>
@@ -2147,86 +2149,25 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
     <chapter version="5.0"
             xml:id="create_first_net"
             xml:base="chapters/net_create_first_net.xml">
-        <title>Create Your First Cloud Network</title>
-        <para>Before creating your first network, choose whether to use the Neutron API or the nova-network API. For help
+        <title>Create your first cloud network</title>
+        <para>Before creating your first network, choose whether to use the neutron API or the nova-network API. For help
                 deciding, see <xref linkend="section_nova_v_neutron"/>. The sections in this chapter provide examples of creating a
                 network using each API.</para>
         <section xmlns:raxm="http://docs.rackspace.com/api/metadata"
                version="5.0"
                xml:id="create_first_net_neutron"
                xml:base="chapters/net_cfn_neutron.xml">
-         <title>Create Your First Cloud Network Using Neutron</title>
-         <para>These examples, using the Neutron API, walk you through the steps to create an isolated network and create a server
-        that is attached your isolated network, showing you how to access the Cloud Networks API through neutron client
-        commands or cURL commands so that you can quickly create isolated networks, subnets, and servers.</para>
-         <para>The exercises also help you learn how cURL commands and the Cloud Networks neutron and nova-network APIs work. </para>
+         <title>Create your first cloud network using neutron</title>
+         <para>These examples, using the neutron API, walk you through the steps to create an isolated network<!-- and create a server
+        that is attached your isolated network-->, showing you how to access the Cloud Networks API through neutron client
+        commands or cURL commands so that you can quickly create isolated networks and subnets<!--, and servers-->.</para>
+         <para>The exercises also help you learn about cURL commands and the cloud networks neutron API. </para>
 
-         <section version="5.0"
-                  xml:id="task_flow_neutron"
-                  xml:base="net_task_flow_neutron.xml">
-            <title>High-Level Task Flow</title>
-            <para> The high-level task flow for Cloud Networks involves creating a network, associating a subnet with that network,
-        and booting a server that is attached to the network. Network cleanup includes deleting the server, deleting any
-        ports associated with the network, and deleting the networks. Cloud Networks automatically deletes any subnets
-        associated with the deleted network.</para>
-
-            <procedure>
-               <title>To Use Cloud Networks:  A High Level Flow</title>
-
-               <step>
-                  <title>Create a network.</title>
-                  <para>The tenant (user) creates a network. </para>
-                  <para>For example, the tenant creates the <code>net1</code> network. Its ID is <literal>net1_id</literal>.</para>
-               </step>
-
-               <step>
-                  <title>Associate a subnet with the network.</title>
-                  <para>The tenant associates a subnet with that network.</para>
-                  <para>For example, the tenant associates the 10.0.0.0/24 subnet with the <code>net1</code> network.</para>
-               </step>
-
-               <step>
-                  <title>Boot (or create) a server and attach it to the network.</title>
-                  <para>The tenant boots a server and specifies a single NIC that connects to the network.</para>
-                  <para>The following examples use the nova client to boot a server.</para>
-                  <para>In the following example, nova contacts Cloud Networks to create the NIC and attach it to the
-                    <code>net1</code> network, with the ID <literal>net1_id</literal>:</para>
-                  <programlisting>$ nova boot <replaceable>serverName</replaceable> --image <replaceable>image</replaceable> --flavor <replaceable>flavor</replaceable> --nic net-id=<replaceable>net1_id</replaceable>
-                  </programlisting>
-                  <para>In the following example, nova first creates the <code>port1</code> port, and then boots the server with a
-                specified port. Cloud Networks creates a NIC and attaches it to the port <code>port1</code>, with the ID
-                    <literal>port1_id</literal>:</para>
-                  <programlisting>$ nova boot <replaceable>serverName</replaceable> --image <replaceable>image</replaceable> --flavor <replaceable>flavor</replaceable> --nic port-id=<replaceable>port1_id</replaceable>
-                  </programlisting>
-                  <para>Cloud Networks chooses and assigns an IP address to the <code>port1</code> port.</para>
-
-               </step>
-
-               <step>
-                  <title>Delete the server.</title>
-                  <para>The tenant deletes the server.</para>
-                  <para>The Cloud Servers service contacts the Cloud Networks service and deletes the <code>port1</code>
-                port.</para>
-                  <para>Upon deletion, the allocated IP address is returned to the pool of available IP addresses.</para>
-               </step>
-
-               <step>
-                  <title>Delete any ports.</title>
-                  <para>If the tenant created any ports and associated them with the network, the tenant deletes the ports.</para>
-               </step>
-
-               <step>
-                  <title>Delete the network.</title>
-                  <para>The tenant deletes the network. This operation deletes a Cloud Networks network and its associated subnets,
-                provided that no port is currently configured on the network.</para>
-               </step>
-            </procedure>
-
-         </section>
+         <!--<xi:include href="net_task_flow_neutron.xml"/>-->
          <section version="5.0"
                   xml:id="create_network_neutron"
                   xml:base="net_cfn_create_network_neutron.xml">
-            <title>Step 1. Create a Network or a Sub-Network</title>
+            <title>Step 1. Create a network or a sub-network</title>
             <para>Before you create a server, you create a network, and an optional subnet, that you can attach to your new server. </para>
             <para>To create a network, you specify a name and an admin_state for your network. To create a subnet, you specify a
         network, an IP address, and a name for your subnet. </para>
@@ -2250,7 +2191,7 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
             </sidebar>
 
             <section xml:id="neutron_create_network_neutron">
-               <title>Create a Network or Subnet with the neutron Client</title>
+               <title>Create a network or subnet with the neutron client</title>
                <para>
                   <procedure>
                      <title>To create a network with the neutron client</title>
@@ -2328,28 +2269,25 @@ $ neutron net-create &lt;amp&gt;</programlisting>
             </section>
 
             <section xml:id="curl_create_network_neutron">
-               <title>Create a Network or Subnet with cURL</title>
-               <para>You can request a JSON or XML response when you issue a request in a cURL command.</para>
-               <section xml:id="json_create_network_neutron">
-                  <title>JSON Request and Response</title>
-                  <procedure>
-                     <title>To create a network and request a JSON response</title>
-                     <step>
-                        <para>Issue the following cURL command:
-                        <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
+               <title>Create a network or subnet with cURL</title>
+               <procedure>
+                  <title>To create a network</title>
+                  <step>
+                     <para>Issue the following cURL command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
                             $ curl -s https://dfw.servers.api.rackspacecloud.com/v2.0/networks \
        -X POST \
        -H "Content-Type: application/json" \
        -H "Accept: application/json" \
        -H "X-Auth-Token: $token" \
        -d '{"network": {"name": "sample_network", "admin_state_up": "false"}}' | python -m json.tool</programlisting>
-                        </para>
-                        <para>In this cURL command, you specify several options. For information about options, see <xref linkend="curl_options"/>.</para>
-                        <para>
-                           <emphasis role="bold">Output:</emphasis>
-                        </para>
-                        <para>The operation returns the response body, as shown in the following JSON response:
-                        <programlisting language="json"><?db-font-size 65%?>
+                     </para>
+                     <para>In this cURL command, you specify several options. For information about options, see <xref linkend="curl_options"/>.</para>
+                     <para>
+                        <emphasis role="bold">Output:</emphasis>
+                     </para>
+                     <para>The operation returns the response body, as shown in the following JSON response:
+                    <programlisting language="json"><?db-font-size 65%?>
                             {
    "network":{
       "status":"ACTIVE",
@@ -2367,18 +2305,18 @@ $ neutron net-create &lt;amp&gt;</programlisting>
    }
 }
 </programlisting>
-                        </para>
-                     </step>
-                     <step>
-                        <para>Copy the <literal>id</literal> value from the output. You will use this value when you create a
-                        subnet, provision your server, or perform other related activities.</para>
-                     </step>
-                  </procedure>
-                  <procedure>
-                     <title>To create a subnet and request a JSON response</title>
-                     <step>
-                        <para>Issue the following cURL command:
-                        <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
+                     </para>
+                  </step>
+                  <step>
+                     <para>Copy the <literal>id</literal> value from the output. You will use this value when you create a subnet,
+                    provision your server, or perform other related activities.</para>
+                  </step>
+               </procedure>
+               <procedure>
+                  <title>To create a subnet and request a JSON response</title>
+                  <step>
+                     <para>Issue the following cURL command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
                             $ curl -s https://dfw.servers.api.rackspacecloud.com/v2.0/$account/subnets \
        -X POST \
        -H "Content-Type: application/json" \
@@ -2386,104 +2324,31 @@ $ neutron net-create &lt;amp&gt;</programlisting>
        -H "X-Auth-Token: $token" \
        -d '{"subnets":[{"cidr":"120.1.2.0/24","ip_version":4,"network_id":"29f52c7e-6efd-4335-a14a-db77d32a2555"}]}' \
        | python -m json.tool</programlisting>
-                        </para>
-                        <para>In this cURL command, you specify several options. For information about options, see <xref linkend="curl_options"/>.</para>
-                        <para>
-                           <emphasis role="bold">Output:</emphasis>
-                        </para>
-                        <para>The operation returns the response body, as shown in the following JSON response:
-                        <!--<programlisting language="json"><?db-font-size 65%?>
+                     </para>
+                     <para>In this cURL command, you specify several options. For information about options, see <xref linkend="curl_options"/>.</para>
+                     <para>
+                        <emphasis role="bold">Output:</emphasis>
+                     </para>
+                     <para>The operation returns the response body, as shown in the following JSON response:
+                    <!--<programlisting language="json"><?db-font-size 65%?>
                             <xi:include href="../../common/samples/network-post-resp.json" parse="text"/></programlisting>--></para>
-                     </step>
-                     <step>
-                        <para>Copy the <literal>id</literal> value from the output for future reference.</para>
-                     </step>
-                  </procedure>
-                  <sidebar>
-                     <para>
-                        <emphasis role="bold">Next step:</emphasis>
-                        <xref linkend="list_networks_neutron"/>
-                     </para>
-                  </sidebar>
-               </section>
-               <section xml:id="xml_create_network_neutron">
-                  <title>XML Request and Response</title>
-                  <procedure>
-                     <title>To create a network and request a XML response</title>
-                     <step>
-                        <para>Issue the following cURL command:
-                        <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
-                            $ curl -i https://dfw.servers.api.rackspacecloud.com/v2.0/networks.xml \
-          -X POST -H "X-Auth-Project-Id: $account" -H "Content-Type: application/xml" \
-          -H "Accept: application/xml" \
-          -H "X-Auth-Token: $token" \
-          -d 'network name="sample_network" admin_state_up="false"'</programlisting>
-                        </para>
-                        <para>
-                           <emphasis role="bold">Output:</emphasis>
-                        </para>
-                        <para>The operation returns the response body, as shown in the following XML response:
-                        <programlisting language="xml"><?db-font-size 65%?>
-                            &lt;?xml version='1.0' encoding='UTF-8'?&gt;
-&lt;network xmlns="http://openstack.org/quantum/api/v2.0"
-    xmlns:provider="http://docs.openstack.org/ext/provider/api/v1.0"
-    xmlns:quantum="http://openstack.org/quantum/api/v2.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
-    &lt;status&gt;ACTIVE&lt;/status&gt;
-    &lt;subnets quantum:type="list"/&gt;
-    &lt;name&gt;sample_network2&lt;/name&gt;
-    &lt;provider:physical_network xsi:nil="true"/&gt;
-    &lt;admin_state_up quantum:type="bool"&gt;True&lt;/admin_state_up&gt;
-    &lt;tenant_id&gt;4fd44f30292945e481c7b8a0c8908869&lt;/tenant_id&gt;
-    &lt;provider:network_type&gt;local&lt;/provider:network_type&gt;
-    &lt;shared quantum:type="bool"&gt;False&lt;/shared&gt;
-    &lt;id&gt;c220b026-ece1-4ead-873f-83537f4c9f92&lt;/id&gt;
-    &lt;provider:segmentation_id xsi:nil="true"/&gt;
-&lt;/network&gt;
-</programlisting>
-                        </para>
-                     </step>
-                     <step>
-                        <para>Copy the <literal>id</literal> value from the output. You will use this value when you create a
-                        subnet, provision your server, or perform other related activities.</para>
-                     </step>
-                  </procedure>
-                  <procedure>
-                     <title>To create a subnet and request a XML response</title>
-                     <step>
-                        <para>Issue the following cURL command:
-                        <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
-                            $ curl -s https://dfw.servers.api.rackspacecloud.com/v2.0/$account/subnets \
-          -X POST -H "X-Auth-Project-Id: $account" -H "Content-Type: application/xml" \
-          -H "Accept: application/xml" \
-          -H "X-Auth-Token: $token" \
-          -d '{"subnets":[{"cidr":"120.1.2.0/24","ip_version":4,"network_id":"29f52c7e-6efd-4335-a14a-db77d32a2555"}]}' \
-       | python -m json.tool</programlisting>
-                        </para>
-                        <para>
-                           <emphasis role="bold">Output:</emphasis>
-                        </para>
-                        <para>The operation returns the response body, as shown in the following XML response:
-                        <!--<programlisting language="xml"><?db-font-size 65%?>
-                            <xi:include href="../../common/samples/network-post-resp.xml" parse="text"/></programlisting>--></para>
-                     </step>
-                     <step>
-                        <para>Copy the <literal>id</literal> value from the output for future reference.</para>
-                     </step>
-                  </procedure>
-                  <sidebar>
-                     <para>
-                        <emphasis role="bold">Next step:</emphasis>
-                        <xref linkend="list_networks_neutron"/>
-                     </para>
-                  </sidebar>
-               </section>
+                  </step>
+                  <step>
+                     <para>Copy the <literal>id</literal> value from the output for future reference.</para>
+                  </step>
+               </procedure>
+               <sidebar>
+                  <para>
+                     <emphasis role="bold">Next step:</emphasis>
+                     <xref linkend="list_networks_neutron"/>
+                  </para>
+               </sidebar>
             </section>
          </section>
          <section version="5.0"
                   xml:id="list_networks_neutron"
                   xml:base="net_cfn_list_networks_neutron.xml">
-            <title>Step 2. List Networks or Subnets</title>
+            <title>Step 2. List networks or subnets</title>
             <para>After you create networks or subnets, you may want to view your networks, subnets, and the Rackspace
         networks.</para>
             <para>For information about the Rackspace networks, see <xref linkend="networks"/>. </para>
@@ -2504,7 +2369,7 @@ $ neutron net-create &lt;amp&gt;</programlisting>
                </para>
             </sidebar>
             <section xml:id="neutron_list_networks_neutron">
-               <title>List Networks or Subnets with the neutron Client</title>
+               <title>List networks or subnets with the neutron client</title>
                <procedure>
                   <title>To list networks with the neutron client</title>
                   <step>
@@ -2556,92 +2421,47 @@ $ neutron subnet-list </programlisting>
             </section>
             <section xml:id="curl_list_networks_neutron">
         <?dbhtml stop-chunking?>
-               <title>List Networks or Subnets with cURL</title>
-               <para>You can request a JSON or XML response when you issue a request in a cURL command.</para>
-               <section xml:id="list_networks_json_neutron">
-                  <title>JSON Request and Response</title>
-                  <procedure>
-                     <title>To list networks and request a JSON response</title>
-                     <step>
-                        <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+               <title>List networks or subnets with cURL</title>
+               <procedure>
+                  <title>To list networks</title>
+                  <step>
+                     <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
                         $ curl https://dfw.servers.api.rackspacecloud.com/v2.0/$account/subnets \
        -X GET -H "X-Auth-Token: $token" | python -m json.tool</programlisting>
-                           <emphasis role="bold">Output:</emphasis>
-                        </para>
-                        <para>The API operation returns a response body as shown in the following output:
-                        <!--<programlisting language="json"><?db-font-size 75%?>
+                        <emphasis role="bold">Output:</emphasis>
+                     </para>
+                     <para>The API operation returns a response body as shown in the following output:
+                    <!--<programlisting language="json"><?db-font-size 75%?>
                             <xi:include href="../../common/samples/networks-get-resp.json" parse="text"/></programlisting>-->
-                    </para>
-                     </step>
-                  </procedure>
-                  <procedure>
-                     <title>To list subnets and request a JSON response</title>
-                     <step>
-                        <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                </para>
+                  </step>
+               </procedure>
+               <procedure>
+                  <title>To list subnets</title>
+                  <step>
+                     <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
                         $ curl https://dfw.servers.api.rackspacecloud.com/v2.0/$account/subnets \
        -X GET -H "X-Auth-Token: $token" | python -m json.tool</programlisting>
-                           <emphasis role="bold">Output:</emphasis>
-                        </para>
-                        <para>The API operation returns a response body as shown in the following output:
-                        <!--<programlisting language="json"><?db-font-size 75%?>
+                        <emphasis role="bold">Output:</emphasis>
+                     </para>
+                     <para>The API operation returns a response body as shown in the following output:
+                    <!--<programlisting language="json"><?db-font-size 75%?>
                             <xi:include href="../../common/samples/networks-get-resp.json" parse="text"/></programlisting>-->
-                    </para>
-                     </step>
-                  </procedure>
-                  <sidebar>
-                     <para>
-                        <emphasis role="bold">Next step: </emphasis>
-                        <xref linkend="show_network_neutron"/>
-                     </para>
-                  </sidebar>
-               </section>
-               <section xml:id="list_networks_xml_neutron">
-                  <title>XML Request and Response</title>
-                  <procedure>
-                     <title>To list networks and request an XML response</title>
-                     <step>
-                        <para>Issue the following cURL command:<programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-                        $curl -i https://dfw.servers.api.rackspacecloud.com/v2.0/$account/networks.xml \
-        -H "Content-Type: application/xml" \
-        -H "Accept: application/xml" \
-        -X GET -H "X-Auth-Token: $token" </programlisting>
-                           <emphasis role="bold">Output:</emphasis>
-                        </para>
-                        <para>The API operation returns a response body as shown in the following output:
-                        <!--<programlisting language="xml"><?db-font-size 75%?>
-                            <xi:include href="../../common/samples/networks-get-resp.xml" parse="text"/></programlisting>-->
-                    </para>
-                     </step>
-                  </procedure>
-                  <procedure>
-                     <title>To list subnets and request an XML response</title>
-                     <step>
-                        <para>Issue the following cURL command:<programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-                        $curl -i https://dfw.servers.api.rackspacecloud.com/v2.0/$account/subnets.xml \
-        -H "Content-Type: application/xml" \
-        -H "Accept: application/xml" \
-        -X GET -H "X-Auth-Token: $token" </programlisting>
-                           <emphasis role="bold">Output:</emphasis>
-                        </para>
-                        <para>The API operation returns a response body as shown in the following output:
-                        <!--<programlisting language="xml"><?db-font-size 75%?>
-                            <xi:include href="../../common/samples/networks-get-resp.xml" parse="text"/></programlisting>-->
-                    </para>
-                     </step>
-                  </procedure>
-                  <sidebar>
-                     <para>
-                        <emphasis role="bold">Next step: </emphasis>
-                        <xref linkend="show_network_neutron"/>
-                     </para>
-                  </sidebar>
-               </section>
+                </para>
+                  </step>
+               </procedure>
+               <sidebar>
+                  <para>
+                     <emphasis role="bold">Next step: </emphasis>
+                     <xref linkend="show_network_neutron"/>
+                  </para>
+               </sidebar>
             </section>
          </section>
          <section version="5.0"
                   xml:id="show_network_neutron"
                   xml:base="net_cfn_show_network_neutron.xml">
-            <title>Step 3. Show Network or Subnet Information</title>
+            <title>Step 3. Show network or subnet details</title>
             <para>You can show details for a specified network, or subnet, using the ID.</para>
             <para>The response body returns the following fields: <table rules="all" width="100%">
                   <caption>Show Network Response Fields</caption>
@@ -2703,7 +2523,7 @@ $ neutron subnet-list </programlisting>
             </sidebar>
             <?hard-pagebreak?>
             <section xml:id="neutron_show_network_neutron">
-               <title>Show Network or Subnet Information with the neutron Client</title>
+               <title>Show network or subnet details with the neutron client</title>
                <procedure>
                   <title>To show information for a specified network ID</title>
                   <step>
@@ -2784,48 +2604,45 @@ $ neutron subnet-list </programlisting>
                </procedure>
                <sidebar>
                   <para>
-                     <emphasis role="bold">Next step:</emphasis>
-                     <xref linkend="delete_network"/>
+                     <emphasis role="bold">Next step: </emphasis>
                   </para>
                </sidebar>
             </section>
             <?hard-pagebreak?>
             <section xml:id="curl_show_network_neutron">
-               <title>Show Network or Subnet Information with cURL</title>
+               <title>Show network or subnet details with cURL</title>
                <para>You can request a JSON or XML response when you issue a request in a cURL command.</para>
-               <section xml:id="json_show_network_curl_neutron">
-                  <title>JSON Request and Response</title>
-                  <procedure>
-                     <title>To show information in a JSON response for a specified network ID</title>
-                     <step>
-                        <para>Issue the following cURL command:
-                        <programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
+               <procedure>
+                  <title>To show information in a JSON response for a specified network ID</title>
+                  <step>
+                     <para>Issue the following cURL command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
                             $ curl https://dfw.servers.api.rackspacecloud.com/v2.0/$account/networks/{id} \
         -X GET \
         -H "X-Auth-Project-Id: $account" \
         -H "Accept: application/json" \
         -H "Content-Type: application/json"\
         -H "X-Auth-Token: $token" | python -m json.tool</programlisting>
-                        </para>
-                        <para>
-                           <emphasis role="bold">Positional argument:</emphasis>
-                        </para>
-                        <para>
-                           <itemizedlist>
-                              <listitem>
-                                <para>
-                                    <parameter>id</parameter>. The ID of the network for which you want to show
-                                    information. To determine the network ID, issue a <command>neutron</command>
-                                    <option>network-list</option> command. </para>
-                              </listitem>
-                           </itemizedlist>
-                        </para>
-                        <para>
-                           <emphasis role="bold">Output:</emphasis>
-                        </para>
-                        <para>The API operation returns a response body as shown in the following output:</para>
+                     </para>
+                     <para>
+                        <emphasis role="bold">Positional argument:</emphasis>
+                     </para>
+                     <para>
+                        <itemizedlist>
+                           <listitem>
+                              <para>
+                                 <parameter>id</parameter>. The ID of the network for which you want to show information. To
+                                determine the network ID, issue a <command>neutron</command>
+                                <option>network-list</option> command. </para>
+                           </listitem>
+                        </itemizedlist>
+                     </para>
+                     <para>
+                        <emphasis role="bold">Output:</emphasis>
+                     </para>
+                     <para>The API operation returns a response body as shown in the following output:</para>
 
-                        <programlisting language="json"><?db-font-size 75%?>
+                     <programlisting language="json"><?db-font-size 75%?>
                         {
    "network":{
       "status":"ACTIVE",
@@ -2844,315 +2661,69 @@ $ neutron subnet-list </programlisting>
    }
 }
 </programlisting>
-                     </step>
-                  </procedure>
-                  <procedure>
-                     <title>To show information for a specified subnet ID in a JSON response</title>
-                     <step>
-                        <para>Issue the following cURL command:
-                        <programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
+                  </step>
+               </procedure>
+               <procedure>
+                  <title>To show information for a specified subnet ID in a JSON response</title>
+                  <step>
+                     <para>Issue the following cURL command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
                             $ curl https://dfw.servers.api.rackspacecloud.com/v2.0/$account/subnets/{id} \
         -X GET \
         -H "X-Auth-Project-Id: $account" \
         -H "Accept: application/json" \
         -H "Content-Type: application/json"\
         -H "X-Auth-Token: $token" | python -m json.tool</programlisting>
-                        </para>
-                        <para>
-                           <emphasis role="bold">Positional argument:</emphasis>
-                        </para>
-                        <para>
-                           <itemizedlist>
-                              <listitem>
-                                <para>The ID of the subnet for which you want to show information. To determine the subnet
-                                    ID, issue a <command>neutron</command>
-                                    <option>subnet-list</option> command. </para>
-                              </listitem>
-                           </itemizedlist>
-                        </para>
-                        <para>
-                           <emphasis role="bold">Output:</emphasis>
-                        </para>
-                        <para>The API operation returns a response body as shown in the following output:</para>
+                     </para>
+                     <para>
+                        <emphasis role="bold">Positional argument:</emphasis>
+                     </para>
+                     <para>
+                        <itemizedlist>
+                           <listitem>
+                              <para>The ID of the subnet for which you want to show information. To determine the subnet ID,
+                                issue a <command>neutron</command>
+                                <option>subnet-list</option> command. </para>
+                           </listitem>
+                        </itemizedlist>
+                     </para>
+                     <para>
+                        <emphasis role="bold">Output:</emphasis>
+                     </para>
+                     <para>The API operation returns a response body as shown in the following output:</para>
 
-                        <!--<programlisting language="json"><?db-font-size 75%?>
+                     <!--<programlisting language="json"><?db-font-size 75%?>
                         <xi:include href="../../common/samples/networks-get-detail-resp.json" parse="text"/></programlisting>-->
-                     </step>
-                  </procedure>
-                  <sidebar>
-                     <para>
-                        <emphasis role="bold">Next step:</emphasis>
-                        <xref linkend="delete_network"/>
-                     </para>
-                  </sidebar>
-               </section>
-               <section xml:id="xml_show_network_curl_neutron">
-                  <title>XML Request and Response</title>
-                  <procedure>
-                     <title>To show information for a specified subnet ID in an XML response</title>
-                     <step>
-                        <para>Issue the following cURL command:
-                        <programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
-                            $ curl https://dfw.servers.api.rackspacecloud.com/v2.0/$account/networks/{id}.xml \
-        -X GET \
-        -H "X-Auth-Project-Id: $account" \
-        -H "Accept: application/xml" \
-        -H "Content-Type: application/xml"\
-        -H "X-Auth-Token: $token"</programlisting>
-                        </para>
-                        <para>
-                           <emphasis role="bold">Positional argument:</emphasis>
-                        </para>
-                        <para>
-                           <itemizedlist>
-                              <listitem>
-                                <para>The ID of the network for which you want to show information. To determine the network
-                                    ID, issue a <command>neutron</command>
-                                    <option>network-list</option> command. </para>
-                              </listitem>
-                           </itemizedlist>
-                        </para>
-                        <para>
-                           <emphasis role="bold">Output:</emphasis>
-                        </para>
-                        <para>The API operation returns the response body as shown in the following output:</para>
-                    
-                        <!--<programlisting language="xml"><?db-font-size 75%?>
-                        <xi:include href="../../common/samples/networks-get-detail-resp.xml" parse="text"/></programlisting>-->
-                     </step>
-                  </procedure>
-                  <procedure>
-                     <title>To show information for a specified subnet ID in an XML response</title>
-                     <step>
-                        <para>Issue the following cURL command:
-                        <programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
-                            $ curl https://dfw.servers.api.rackspacecloud.com/v2.0/$account/subnets/{id}.xml \
-        -X GET \
-        -H "X-Auth-Project-Id: $account" \
-        -H "Accept: application/xml" \
-        -H "Content-Type: application/xml"\
-        -H "X-Auth-Token: $token"</programlisting>
-                        </para>
-                        <para>
-                           <emphasis role="bold">Positional argument:</emphasis>
-                        </para>
-                        <para>
-                           <itemizedlist>
-                              <listitem>
-                                <para>The ID of the subnet for which you want to show information. To determine the subnet
-                                    ID, issue a <command>neutron</command>
-                                    <option>subnet-list</option> command. </para>
-                              </listitem>
-                           </itemizedlist>
-                        </para>
-                        <para>
-                           <emphasis role="bold">Output:</emphasis>
-                        </para>
-                        <para>The API operation returns the response body as shown in the following output:</para>
-
-                        <!--<programlisting language="xml"><?db-font-size 75%?>
-                        <xi:include href="../../common/samples/networks-get-detail-resp.xml" parse="text"/></programlisting>-->
-                     </step>
-                  </procedure>
-                  <sidebar>
-                     <para>
-                        <emphasis role="bold">Next step:</emphasis>
-                        <xref linkend="delete_network"/>
-                     </para>
-                  </sidebar>
-               </section>
+                  </step>
+               </procedure>
+               <sidebar>
+                  <para>
+                     <emphasis role="bold">Next step: </emphasis>
+                  </para>
+               </sidebar>
             </section>
          </section>
          <!--<xi:include href="net_cfn_provision_server_neutron.xml"/>-->
          <!--<xi:include href="net_cfn_add_port_neutron.xml"/>-->
-         <section version="5.0"
-                  xml:id="delete_network_neutron"
-                  xml:base="net_cfn_delete_network_neutron.xml">
-            <title>Step 4. Delete Your Network or Subnet</title>
-            <para>If you no longer need your network, or subnet, you can delete it. </para>
-            <para>To delete a network, specify the network ID. To delete a subnet, specify the subnet ID.</para>
-            <sidebar>
-               <para>
-                  <emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
-                     <listitem>
-                        <para>
-                           <xref linkend="neutron_delete_network_neutron"/>
-                        </para>
-                     </listitem>
-                     <listitem>
-                        <para>
-                           <xref linkend="curl_delete_network_neutron"/>
-                        </para>
-                     </listitem>
-                  </itemizedlist>
-               </para>
-            </sidebar>
-            <section xml:id="neutron_delete_network_neutron">
-               <title>Delete Network or Subnet with the neutron Client</title>
-               <procedure>
-                  <title>To delete a specified network</title>
-                  <step>
-                     <title>Delete the network</title>
-                     <para>Issue the following neutron client command:
-                    <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-                        $ neutron net-delete &lt;id&gt;</programlisting>
-                     </para>
-                     <para>
-                        <emphasis role="bold">Positional argument:</emphasis>
-                     </para>
-                     <para>
-                        <itemizedlist>
-                           <listitem>
-                              <para>The network ID of the network that you want to delete. To determine the network ID, issue a
-                                    <command>neutron</command>
-                                <option>net-list</option> command.</para>
-                           </listitem>
-                        </itemizedlist>
-                     </para>
-                     <para>
-                        <emphasis role="bold">Output:</emphasis> None.</para>
-                  </step>
-               </procedure>
-               <procedure>
-                  <title>To delete a specified subnet</title>
-                  <step>
-                     <title>Delete the subnet</title>
-                     <para>Issue the following neutron client command:
-                    <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-                        $ neutron subnet-delete &lt;id&gt;</programlisting>
-                     </para>
-                     <para>
-                        <emphasis role="bold">Positional argument:</emphasis>
-                     </para>
-                     <para>
-                        <itemizedlist>
-                           <listitem>
-                              <para>The subnet ID of the subnet that you want to delete. To determine the subnet ID, issue a
-                                <command>neutron</command>
-                                <option>subnet-list</option> command.</para>
-                           </listitem>
-                        </itemizedlist>
-                     </para>
-                     <para>
-                        <emphasis role="bold">Output:</emphasis> None.</para>
-                  </step>
-               </procedure>
-            </section>
-            <?hard-pagebreak?>
-            <section xml:id="curl_delete_network_neutron">
-               <title>Delete Network or Subnet with cURL</title>
-               <procedure>
-                  <title>To delete a specified network</title>
-                  <step>
-                     <title>Delete the network</title>
-                     <para>Issue the following cURL command:
-                    <programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
-                        $ curl -i https://dfw.servers.api.rackspacecloud.com/v2.0/$account/networks/{id} \
-       -X 'DELETE' \
-       -H "X-Auth-Token: $token" \
-       -H "X-Auth-Project-Id: $account" \
-       -H "Accept: application/json" </programlisting>
-                     </para>
-                     <note>
-                        <para>Include the <option>-i</option> option in the cURL command to show the response header. Omit the
-                            <code>| python -m json.tool</code> clause from the command because the API operation does not
-                        return a JSON response.</para>
-                     </note>
-                     <para>
-                        <emphasis role="bold">Argument:</emphasis>
-                     </para>
-                     <para>
-                        <itemizedlist>
-                           <listitem>
-                              <para>
-                                 <parameter>id</parameter>. The network ID of the network that you want to delete. To
-                                determine the network ID, issue a <command>nova</command>
-                                <option>network-list</option> command.</para>
-                           </listitem>
-                        </itemizedlist>
-                     </para>
-                     <para>
-                        <emphasis role="bold">Output:</emphasis>
-                     </para>
-                     <para>Successful deletion returns an <errortext>Accepted</errortext> (<returnvalue>202</returnvalue>)
-                    response code:</para>
-                     <screen>HTTP/1.1 202 Accepted
-Date: Thu, 04 Oct 2012 16:23:30 GMT
-Content-Length: 58
-Content-Type: text/html;charset=UTF-8
-Server: Jetty(8.0.y.z-SNAPSHOT)
-
-202 Accepted
-
-The request is accepted for processing.</screen>
-                  </step>
-               </procedure>
-               <procedure>
-                  <title>To delete a specified subnet</title>
-                  <step>
-                     <title>Delete the subnet</title>
-                     <para>Issue the following cURL command:
-                    <programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
-                        $ curl -i https://dfw.servers.api.rackspacecloud.com/v2.0/$account/subnets/{id} \
-       -X 'DELETE' \
-       -H "X-Auth-Token: $token" \
-       -H "X-Auth-Project-Id: $account" \
-       -H "Accept: application/json" </programlisting>
-                     </para>
-                     <note>
-                        <para>Include the <option>-i</option> option in the cURL command to show the response header. Omit the
-                        <code>| python -m json.tool</code> clause from the command because the API operation does not
-                        return a JSON response.</para>
-                     </note>
-                     <para>
-                        <emphasis role="bold">Argument:</emphasis>
-                     </para>
-                     <para>
-                        <itemizedlist>
-                           <listitem>
-                              <para>
-                                 <parameter>id</parameter>. The subnet ID of the subnet that you want to delete. To
-                                determine the network ID, issue a <command>nova</command>
-                                <option>network-list</option> command.</para>
-                           </listitem>
-                        </itemizedlist>
-                     </para>
-                     <para>
-                        <emphasis role="bold">Output:</emphasis>
-                     </para>
-                     <para>Successful deletion returns an <errortext>Accepted</errortext> (<returnvalue>202</returnvalue>)
-                    response code:</para>
-                     <screen>HTTP/1.1 202 Accepted
-Date: Thu, 04 Oct 2012 16:23:30 GMT
-Content-Length: 58
-Content-Type: text/html;charset=UTF-8
-Server: Jetty(8.0.y.z-SNAPSHOT)
-
-202 Accepted
-
-The request is accepted for processing.</screen>
-                  </step>
-               </procedure>
-            </section>
-         </section>
+         <!--<xi:include href="net_cfn_delete_network_neutron.xml"/>-->
       </section>
         <section xmlns:raxm="http://docs.rackspace.com/api/metadata"
                version="5.0"
                xml:id="create_first_net_nova"
                xml:base="chapters/net_cfn_nova.xml">
          <info>
-            <title>Create Your First Cloud Network Using Nova-network</title>
+            <title>Create your first cloud network using nova-network</title>
         
          </info>
-         <para>These examples, using the Nova-network API, walk you through the steps to create an isolated network and create a
-        server that is attached your isolated network, showing you how to access the Cloud Networks API through nova client
-        commands or cURL commands so that you can quickly create isolated networks and servers.</para>
-         <para>The exercises also help you learn how cURL commands and the Cloud Networks API work. </para>
+         <para>These examples, using the nova-network API, walk you through the steps to create an isolated network<!-- and create a
+        server that is attached your isolated network-->, showing you how to access the Cloud Networks API through nova client
+        commands or cURL commands so that you can quickly create isolated networks<!-- and servers-->.</para>
+         <para>The exercises also help you learn about cURL commands and the Cloud Networks nova-network API. </para>
 
          <section version="5.0"
                   xml:id="create_network"
                   xml:base="net_cfn_create_network_nova.xml">
-            <title>Step 1. Create an Isolated Network</title>
+            <title>Step 1. Create an isolated network</title>
             <para>Before you create a server, you create an isolated network that you can attach to your new server. </para>
             <para>To create an isolated network, you specify a name for your network and a Classless Inter-Domain Routing
             (<glossterm>CIDR</glossterm>). A CIDR is a range of IP addresses used by a network. A CIDR address looks like a
@@ -3198,7 +2769,7 @@ The request is accepted for processing.</screen>
                </para>
             </sidebar>
             <section xml:id="nova_create_network">
-               <title>Create an Isolated Network with the nova Client </title>
+               <title>Create an isolated network with the nova client </title>
                <para>
                   <procedure>
                      <title>To create an isolated network with the nova client</title>
@@ -3250,17 +2821,18 @@ The request is accepted for processing.</screen>
                </para>
                <sidebar>
                   <para>
-                     <emphasis role="bold">Next step:</emphasis>
+                     <emphasis role="bold">Next step: </emphasis>
                      <xref linkend="list_networks"/>
                   </para>
                </sidebar>
             </section>
             <?hard-pagebreak?>
             <section xml:id="curl_create_network">
-               <title>Create an Isolated Network with cURL</title>
+        <?dbhtml stop-chunking?>
+               <title>Create an isolated network with cURL</title>
                <para>You can request a JSON or XML response when you issue a request in a cURL command.</para>
                <section xml:id="json_create_network">
-                  <title>JSON Request and Response</title>
+                  <title>JSON request and response</title>
                   <procedure>
                      <title>To create an isolated network and request a JSON response</title>
                      <step>
@@ -3299,13 +2871,13 @@ The request is accepted for processing.</screen>
                   </procedure>
                   <sidebar>
                      <para>
-                        <emphasis role="bold">Next step:</emphasis>
+                        <emphasis role="bold">Next step: </emphasis>
                         <xref linkend="list_networks"/>
                      </para>
                   </sidebar>
                </section>
                <section xml:id="xml_create_network">
-                  <title>XML Request and Response</title>
+                  <title>XML request and response</title>
                   <procedure>
                      <title>To create an isolated network and request a XML response</title>
                      <step>
@@ -3340,7 +2912,7 @@ The request is accepted for processing.</screen>
                   </procedure>
                   <sidebar>
                      <para>
-                        <emphasis role="bold">Next step:</emphasis>
+                        <emphasis role="bold">Next step: </emphasis>
                         <xref linkend="list_networks"/>
                      </para>
                   </sidebar>
@@ -3350,7 +2922,7 @@ The request is accepted for processing.</screen>
          <section version="5.0"
                   xml:id="list_networks"
                   xml:base="net_cfn_list_networks_nova.xml">
-            <title>Step 2. List Networks</title>
+            <title>Step 2. List networks</title>
             <para>After you create an isolated network, list networks to view your network and the Rackspace networks.</para>
             <para>For information about the Rackspace networks, see <xref linkend="networks"/>. </para>
             <sidebar>
@@ -3370,7 +2942,7 @@ The request is accepted for processing.</screen>
                </para>
             </sidebar>
             <section xml:id="nova_list_networks">
-               <title>List Networks with the nova Client</title>
+               <title>List networks with the nova client</title>
                <procedure>
                   <title>To list networks with the nova client</title>
                   <step>
@@ -3399,18 +2971,18 @@ The request is accepted for processing.</screen>
                </procedure>
                <sidebar>
                   <para>
-                     <emphasis role="bold">Next step:</emphasis>
-                     <xref linkend="create_server_with_network"/>
+                     <emphasis role="bold">Next step: </emphasis>
+                     <xref linkend="show_network"/>
                   </para>
                </sidebar>
             </section>
             <?hard-pagebreak?>
             <section xml:id="curl_list_networks">
         <?dbhtml stop-chunking?>
-               <title>List Networks with cURL</title>
+               <title>List networks with cURL</title>
                <para>You can request a JSON or XML response when you issue a request in a cURL command.</para>
-               <section xml:id="list_networks_json">
-                  <title>JSON Response</title>
+               <section xml:id="json_show_network_curl">
+                  <title>JSON request and response</title>
                   <procedure>
                      <title>To list networks and request a JSON response</title>
                      <step>
@@ -3444,26 +3016,26 @@ The request is accepted for processing.</screen>
                   </procedure>
                   <sidebar>
                      <para>
-                        <emphasis role="bold">Next step:</emphasis>
-                        <xref linkend="create_server_with_network"/>
+                        <emphasis role="bold">Next step: </emphasis>
+                        <xref linkend="show_network"/>
                      </para>
                   </sidebar>
                </section>
-               <section xml:id="list_networks_xml">
-                  <title>XML Response</title>
+               <section xml:id="xml_show_network_curl">
+                  <title>XML request and response</title>
                   <procedure>
-                     <title>To list networks and request an XML response</title>
+                     <title>To list networks and request a XML response</title>
                      <step>
-                        <para>Issue the following cURL command:<programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-                        $curl -i https://dfw.servers.api.rackspacecloud.com/v2/$account/os-networksv2.xml \
-        -H "Content-Type: application/xml" \
-        -H "Accept: application/xml" \
-        -X GET -H "X-Auth-Token: $token" </programlisting>
+                        <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                        $ curl https://dfw.servers.api.rackspacecloud.com/v2/$account/os-networksv2.xml \
+       -H "Content-Type: application/xml" \ 
+       -H "Accept: application/xml" \
+       -X GET -H "X-Auth-Token: $token"</programlisting>
                            <emphasis role="bold">Output:</emphasis>
                         </para>
                         <para>For each isolated network, the response returns the <glossterm>CIDR</glossterm>. Additionally, for
                         isolated networks and Rackspace networks, the response returns the network ID and label.
-                        <programlisting language="xml"><?db-font-size 75%?>
+                        <programlisting language="json"><?db-font-size 75%?>
                             &lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;networks&gt;
     &lt;network&gt;
@@ -3482,104 +3054,312 @@ The request is accepted for processing.</screen>
 &lt;/networks&gt;
 </programlisting>
                         </para>
-                        <para>ServiceNet is labeled as <literal>private</literal> and PublicNet is labeled as
-                            <literal>public</literal> in the network list.</para>
                      </step>
                   </procedure>
                   <sidebar>
                      <para>
-                        <emphasis role="bold">Next step:</emphasis>
-                        <xref linkend="create_server_with_network"/>
+                        <emphasis role="bold">Next step: </emphasis>
+                        <xref linkend="show_network"/>
                      </para>
                   </sidebar>
                </section>
             </section>
          </section>
+         <!--    <xi:include href="net_cfn_boot_server_both.xml"/>
+    <xi:include href="net_cfn_list_servers_both.xml"/>-->
          <section version="5.0"
-                  xml:id="create_server_with_network"
-                  xml:base="net_cfn_boot_server_both.xml">
-            <title>Step 3. Provision a Server with an Isolated Network</title>
-            <para>To create your new server and attach an isolated network, you need the following information: </para>
-
-            <itemizedlist>
-               <listitem>
-                  <para>The name of the new server. Use a name of your choice.</para>
-               </listitem>
-               <listitem>
-                  <para>The image ID. For how to list images, see
-                <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-gettingstarted/content/list_images.html">
-                    List Images</link>.</para>
-               </listitem>
-               <listitem>
-                  <para>The flavor ID. For how to list flavors, see
-                <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-gettingstarted/content/list_flavors.html">
-                    List Flavors</link>.</para>
-               </listitem>
-               <listitem>
-                  <para>The network ID of your isolated network. This is the ID you copied in <xref linkend="create_network"/>
-                  </para>
-               </listitem>
-            </itemizedlist>
-
-            <para>You specify these values as parameters in a nova command or as attributes in the request body in a cURL
-        command.</para>
-            <note security="external">
-               <para>You cannot attach an isolated network to an existing server. However,
-            to work around this limitation, you can create an image of the server and build a new server based on that image.
-            When you build the new server, you can attach the isolated network. For information, see
-            <link xlink:href="http://www.rackspace.com/knowledge_center/article/attach-an-existing-cloud-server-to-a-cloud-network">
-                     <citetitle>Attach a Cloud Network to an Existing Cloud Server</citetitle>
-                  </link>.
-            To use the create image API, see
-            <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/Create_Image-d1e4655.html">
-                Create Image</link>.</para>
-            </note>
-            <note>
-               <para>You can use the Cloud Networks virtual interface extension to attach an isolated network to an existing
-            server. For information, see <xref linkend="ch_gs_attach_network_to_server"/>.</para>
-            </note>
+                  xml:id="show_network"
+                  xml:base="net_cfn_show_network_nova.xml">
+            <title>Step 3. Show network details</title>
+            <para>You can show details for a specified network ID.</para>
+            <para>The response body returns the following fields: <table rules="all" width="100%">
+                  <caption>Show Network Response Fields</caption>
+                  <col width="20%"/>
+                  <col width="80%"/>
+                  <thead>
+                     <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td>cidr</td>
+                        <td>The <glossterm>CIDR</glossterm> for an isolated private network.</td>
+                     </tr>
+                     <tr>
+                        <td>id</td>
+                        <td>The network ID.</td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <para>label</para>
+                        </td>
+                        <td>The name of the network. </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </para>
             <sidebar>
                <para>
                   <emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
                      <listitem>
                         <para>
-                           <xref linkend="nova_provision_server"/>Provision a server with an isolated network with
-                        the nova client</para>
+                           <xref linkend="nova_show_network"/>
+                        </para>
                      </listitem>
                      <listitem>
                         <para>
-                           <xref linkend="curl_provision_server"/>Provision a server with an isolated network with cURL</para>
+                           <xref linkend="curl_show_network"/>
+                        </para>
                      </listitem>
                   </itemizedlist>
                </para>
             </sidebar>
-
             <?hard-pagebreak?>
-            <section xml:id="nova_provision_server">
-               <title>Provision a Server with an Isolated Network with the nova Client</title>
-               <para>
-                  <procedure>
-                     <title>To provision a server and attach an isolated network</title>
-                     <step>
-                        <para>Issue the following nova client command:
-                        <programlisting language="bash" role="gutter: false"><?db-font-size 50%?>
-                            $ nova boot &lt;name&gt; --flavor &lt;flavor&gt; --image &lt;image&gt; --nic [net-id=&lt;private-net-uuid&gt; [--no-public] [--no-service-net]</programlisting>
-                        </para>
-                        <para>
-                           <emphasis role="bold">Positional arguments:</emphasis>
-                        </para>
+            <section xml:id="nova_show_network">
+               <title>Show network details with the nova client</title>
+               <procedure>
+                  <title>To show information for a specified network ID</title>
+                  <step>
+                     <para>Issue the following nova client command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                        $ nova network &lt;id&gt;</programlisting>
+                     </para>
+                     <para>
+                        <emphasis role="bold">Positional argument:</emphasis>
+                     </para>
+                     <para>
                         <itemizedlist>
                            <listitem>
                               <para>
-                                 <parameter>name</parameter>. The name of the server.</para>
+                                 <parameter>id</parameter>. The ID of the network for which you want to show information. To
+                                determine the network ID, issue a <command>nova</command>
+                                <option>network-list</option> command. </para>
                            </listitem>
                         </itemizedlist>
+                     </para>
+                     <para>
+                        <emphasis role="bold">Output:</emphasis>
+                     </para>
+                     <para>The command returns the <glossterm>CIDR</glossterm>, network ID, and label, as shown in the following
+                    output:</para>
+                     <informalexample>
+                        <screen>+----------+--------------------------------------+
+| Property | Value                                |
++----------+--------------------------------------+
+| cidr     | 172.16.0.0/24                        |
+| id       | e65accc0-1d98-45eb-af76-ab3d31edc7d2 |
+| label    | new_network                          |
++----------+--------------------------------------+</screen>
+                     </informalexample>
+                  </step>
+               </procedure>
+               <sidebar>
+                  <para>
+                     <emphasis role="bold">Next step: </emphasis>
+                  </para>
+               </sidebar>
+            </section>
+            <?hard-pagebreak?>
+            <section xml:id="curl_show_network">
+        <?dbhtml stop-chunking?>
+               <title>Show network details with cURL</title>
+               <para>You can request a JSON or XML response when you issue a request in a cURL command.</para>
+               <section xml:id="json_show_network_curl1">
+                  <title>JSON request and response</title>
+                  <procedure>
+                     <title>To show information in a JSON response for a specified network ID</title>
+                     <step>
+                        <para>Issue the following cURL command:
+                        <programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
+                            $ curl https://dfw.servers.api.rackspacecloud.com/v2/$account/os-networksv2/&lt;id&gt; \
+        -X GET \
+        -H "X-Auth-Project-Id: $account" \
+        -H "Accept: application/json" \
+        -H "Content-Type: application/json"\
+        -H "X-Auth-Token: $token" | python -m json.tool</programlisting>
+                        </para>
                         <para>
-                           <emphasis role="bold">Optional arguments:</emphasis>
+                           <emphasis role="bold">Positional argument:</emphasis>
+                        </para>
+                        <para>
                            <itemizedlist>
                               <listitem>
                                 <para>
-                                    <option>--no-service-net</option>. Optional. Opts out of attaching ServiceNet to your
+                                    <parameter>id</parameter>. The ID of the network for which you want to show
+                                    information. To determine the network ID, issue a <command>nova</command>
+                                    <option>network-list</option> command. </para>
+                              </listitem>
+                           </itemizedlist>
+                        </para>
+                        <para>
+                           <emphasis role="bold">Output:</emphasis>
+                        </para>
+                        <para>The API operation returns the <glossterm>CIDR</glossterm>, network ID, and label, as shown in the
+                        following output:</para>
+
+                        <programlisting language="json"><?db-font-size 75%?>
+                        {
+    "network": {
+        "cidr": "192.168.0.0/24", 
+        "id": "f212726e-6321-4210-9bae-a13f5a33f83f", 
+        "label": "superprivate_xml"
+    }
+}</programlisting>
+                     </step>
+                  </procedure>
+                  <sidebar>
+                     <para>
+                        <emphasis role="bold">Next step: </emphasis>
+                     </para>
+                  </sidebar>
+               </section>
+               <section xml:id="xml_show_network_curl1">
+                  <title>XML request and response</title>
+                  <procedure>
+                     <title>To show information in an XML response for a specified network ID</title>
+                     <step>
+                        <para>Issue the following cURL command:
+                        <programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
+                            $ curl https://dfw.servers.api.rackspacecloud.com/v2/$account/os-networksv2/&lt;id&gt;.xml \
+        -X GET \
+        -H "X-Auth-Project-Id: $account" \
+        -H "Accept: application/xml" \
+        -H "Content-Type: application/xml"\
+        -H "X-Auth-Token: $token"</programlisting>
+                        </para>
+                        <para>
+                           <emphasis role="bold">Positional argument:</emphasis>
+                        </para>
+                        <para>
+                           <itemizedlist>
+                              <listitem>
+                                <para>
+                                    <parameter>id</parameter>. The ID of the network for which you want to show
+                                    information. To determine the network ID, issue a <command>nova</command>
+                                    <option>network-list</option> command. </para>
+                              </listitem>
+                           </itemizedlist>
+                        </para>
+                        <para>
+                           <emphasis role="bold">Output:</emphasis>
+                        </para>
+                        <para>The API operation returns the <glossterm>CIDR</glossterm>, network ID, and label, as shown in the
+                        following output:</para>
+
+                        <programlisting language="xml"><?db-font-size 75%?>
+                        &lt;network&gt;
+    &lt;cidr&gt;192.168.0.0/24&lt;/cidr&gt;
+    &lt;id&gt;f212726e-6321-4210-9bae-a13f5a33f83f&lt;/id&gt;
+    &lt;label&gt;superprivate_xml&lt;/label&gt;
+&lt;/network&gt;
+</programlisting>
+                     </step>
+                  </procedure>
+                  <sidebar>
+                     <para>
+                        <emphasis role="bold">Next step: </emphasis>
+                     </para>
+                  </sidebar>
+               </section>
+            </section>
+         </section>
+      </section>
+   </chapter>
+    <chapter version="5.0"
+            xml:id="boot_new_server"
+            xml:base="chapters/net_boot_new_server.xml">
+        <title>Boot a New Server With Your Cloud Network</title>
+        <para>Now that you have a Cloud Network, you can attach it a new server when you create the server. Use the nova-network
+                to create and list servers.</para>
+        <section xmlns:raxm="http://docs.rackspace.com/api/metadata"
+               version="5.0"
+               xml:id="create_server_with_network"
+               xml:base="chapters/net_bns_boot_server.xml">
+         <title>Step 1. Provision a server with an isolated network</title>
+         <para>To create your new server and attach an isolated network, you need the following information: </para>
+
+         <itemizedlist>
+            <listitem>
+               <para>The name of the new server. Use a name of your choice.</para>
+            </listitem>
+            <listitem>
+               <para>The image ID. For how to list images, see
+                <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-gettingstarted/content/list_images.html">
+                    List Images</link>.</para>
+            </listitem>
+            <listitem>
+               <para>The flavor ID. For how to list flavors, see
+                <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-gettingstarted/content/list_flavors.html">
+                    List Flavors</link>.</para>
+            </listitem>
+            <listitem>
+               <para>The network ID of your isolated network. This is the ID you copied in <xref linkend="create_network"/>
+               </para>
+            </listitem>
+         </itemizedlist>
+
+         <para>You specify these values as parameters in a nova command or as attributes in the request body in a cURL
+        command.</para>
+         <note security="external">
+            <para>You cannot attach an isolated network to an existing server. However,
+            to work around this limitation, you can create an image of the server and build a new server based on that image.
+            When you build the new server, you can attach the isolated network. For information, see
+            <link xlink:href="http://www.rackspace.com/knowledge_center/article/attach-an-existing-cloud-server-to-a-cloud-network">
+                  <citetitle>Attach a Cloud Network to an Existing Cloud Server</citetitle>
+               </link>.
+            To use the create image API, see
+            <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/Create_Image-d1e4655.html">
+                Create Image</link>.</para>
+         </note>
+         <note>
+            <para>You can use the Cloud Networks virtual interface extension to attach an isolated network to an existing
+            server. For information, see <xref linkend="ch_gs_attach_network_to_server"/>.</para>
+         </note>
+         <sidebar>
+            <para>
+               <emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
+                  <listitem>
+                    <para>
+                        <xref linkend="nova_provision_server"/>
+                     </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                        <xref linkend="curl_provision_server"/>
+                     </para>
+                  </listitem>
+               </itemizedlist>
+            </para>
+         </sidebar>
+
+         <?hard-pagebreak?>
+         <section xml:id="nova_provision_server">
+            <title>Provision a server with an isolated network with the nova client</title>
+            <para>
+               <procedure>
+                  <title>To provision a server and attach an isolated network</title>
+                  <step>
+                    <para>Issue the following nova client command:
+                        <programlisting language="bash" role="gutter: false"><?db-font-size 50%?>
+                            $ nova boot &lt;name&gt; --flavor &lt;flavor&gt; --image &lt;image&gt; --nic [net-id=&lt;private-net-uuid&gt; [--no-public] [--no-service-net]</programlisting>
+                     </para>
+                    <para>
+                        <emphasis role="bold">Positional arguments:</emphasis>
+                     </para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>
+                              <parameter>name</parameter>. The name of the server.</para>
+                        </listitem>
+                    </itemizedlist>
+                    <para>
+                        <emphasis role="bold">Optional arguments:</emphasis>
+                        <itemizedlist>
+                            <listitem>
+                                <para>
+                                 <option>--no-service-net</option>. Optional. Opts out of attaching ServiceNet to your
                                     server.</para>
                                 <note>
                                     <para>RackConnect and Managed Cloud Service Level customers will receive an error if they
@@ -3589,11 +3369,11 @@ The request is accepted for processing.</screen>
                                     command:
                                     <programlisting language="bash" role="gutter: false"><?db-font-size 55%?>
                                         $ nova boot &lt;name&gt; --flavor &lt;flavor&gt; --image &lt;image&gt; --nic net-id=&lt;private-net-uuid&gt; --no-service-net</programlisting>
-                                 </para>
-                              </listitem>
-                              <listitem>
+                              </para>
+                            </listitem>
+                            <listitem>
                                 <para>
-                                    <option>--no-public</option>. Optional. Opts out of attaching PublicNet to your
+                                 <option>--no-public</option>. Optional. Opts out of attaching PublicNet to your
                                     server.</para>
                                 <note>
                                     <para>RackConnect and Managed Cloud Service Level customers will receive an error if they
@@ -3603,60 +3383,60 @@ The request is accepted for processing.</screen>
                                     command:
                                     <programlisting language="bash" role="gutter: false"><?db-font-size 55%?>
                                         $ nova boot &lt;name&gt; --flavor &lt;flavor&gt; --image &lt;image&gt; --nic net-id=&lt;private-net-uuid&gt; --no-public</programlisting>
-                                 </para>
-                              </listitem>
-                              <?sbr?>
-                              <listitem>
+                              </para>
+                            </listitem>
+                            <?sbr?>
+                            <listitem>
                                 <para>
-                                    <option>--disk-config</option> {<literal>auto</literal>|<literal>manual</literal>}.
+                                 <option>--disk-config</option> {<literal>auto</literal>|<literal>manual</literal>}.
                                     Specifies whether to expand the primary partition to fill the disk. This value overrides
                                     the value inherited from the image.</para>
-                              </listitem>
-                              <listitem>
+                            </listitem>
+                            <listitem>
                                 <para>
-                                    <option>--flavor</option>
+                                 <option>--flavor</option>
                                     <parameter>flavor</parameter>. Required. The flavor ID for the new server. To get a list
                                     of flavors, issue <command>nova flavor-list</command>.</para>
-                              </listitem>
-                              <listitem>
+                            </listitem>
+                            <listitem>
                                 <para>
-                                    <option>--image</option>
+                                 <option>--image</option>
                                     <parameter>image</parameter>. Required. The image ID for the new server. To get a list of
                                     images, issue <command>nova image-list</command>.</para>
-                              </listitem>
-                              <listitem>
+                            </listitem>
+                            <listitem>
                                 <para>
-                                    <option>--meta</option>
+                                 <option>--meta</option>
                                     <parameter>key</parameter>
-                                    <command>=</command>
-                                    <parameter>value</parameter>. Arbitrary key
+                                 <command>=</command>
+                                 <parameter>value</parameter>. Arbitrary key
                                     and value metadata that is written to <filename>/meta.js</filename> on the new server.
                                     Can be specified multiple times. </para>
-                              </listitem>
-                              <listitem>
+                            </listitem>
+                            <listitem>
                                 <para>
-                                    <option>--file</option>
+                                 <option>--file</option>
                                     <parameter>dst-path</parameter>=<parameter>src-path</parameter>. Stores arbitrary files
                                     from <parameter>src-path</parameter> locally to <parameter>dst- path</parameter> on the
                                     new server. You can store up to five files. </para>
-                              </listitem>
-                              <listitem>
+                            </listitem>
+                            <listitem>
                                 <para>
-                                    <option>--key_name</option>
+                                 <option>--key_name</option>
                                     <parameter>key_name</parameter>. Key name of key pair. First, create the key pair with
                                     the <command>keypair-add</command> command.</para>
-                              </listitem>
-                              <listitem>
+                            </listitem>
+                            <listitem>
                                 <para>
-                                    <option>--user_data</option>
+                                 <option>--user_data</option>
                                     <parameter>user-data</parameter>. User data file, which is exposed by the metadata
                                     server. </para>
-                              </listitem>
-                              <?sbr?>
-                              <listitem>
+                            </listitem>
+                            <?sbr?>
+                            <listitem>
                                 <para>
-                                    <option>--nic net-id=</option>
-                                    <parameter>private-net-id</parameter>&gt;. Creates a NIC on
+                                 <option>--nic net-id=</option>
+                                 <parameter>private-net-id</parameter>&gt;. Creates a NIC on
                                     the server. Specify this option multiple times to create multiple NICs. Optionally, to
                                     attach a NIC with a specified UUID to a network, specify the
                                         <option>net-id</option>=<parameter>private-net-id</parameter> parameter. </para>
@@ -3678,30 +3458,30 @@ The request is accepted for processing.</screen>
                                     your server.</para>
                                 <para>Specify the <option>--no-service-net</option> parameter to opt out of attaching
                                     ServiceNet to your server.</para>
-                              </listitem>
-                              <listitem>
+                            </listitem>
+                            <listitem>
                                 <para>
-                                    <option>--config-drive</option>
+                                 <option>--config-drive</option>
                                     <parameter>value</parameter>. Enables a configuration drive. </para>
-                              </listitem>
-                              <listitem>
+                            </listitem>
+                            <listitem>
                                 <para>
-                                    <option>--poll</option>. Blocks while the instance builds so progress can be reported.
+                                 <option>--poll</option>. Blocks while the instance builds so progress can be reported.
                                 </para>
-                              </listitem>
-                           </itemizedlist>
-                        </para>
-                        <para>For example, you might issue the following command to attach a NIC to your server. Additionally,
+                            </listitem>
+                        </itemizedlist>
+                     </para>
+                    <para>For example, you might issue the following command to attach a NIC to your server. Additionally,
                         PublicNet and ServiceNet are attached to your
                         server.<programlisting language="bash" role="gutter: false">
                             $ nova boot my_server_with_network --flavor 2 --image d42f821e-c2d1-4796-9f07-af5ed7912d0e --nic net-id=e65accc0-1d98-45eb-af76-ab3d31edc7d2</programlisting>
-                        </para>
-                        <?sbr?>
-                        <para>
-                           <emphasis role="bold">Output:</emphasis> The command returns information about the new server, as
+                     </para>
+                    <?sbr?>
+                    <para>
+                        <emphasis role="bold">Output:</emphasis> The command returns information about the new server, as
                         shown in the following output:</para>
-                        <informalexample>
-                           <screen>+-------------------------+--------------------------------------+
+                    <informalexample>
+                        <screen>+-------------------------+--------------------------------------+
 | Property                | Value                                |
 +-------------------------+--------------------------------------+
 | OS-DCF:diskConfig       | AUTO                                 |
@@ -3724,27 +3504,27 @@ The request is accepted for processing.</screen>
 | updated                 | 2012-10-04T18:07:56Z                 |
 | user_id                 | 170454                               |
 +-------------------------+--------------------------------------+</screen>
-                        </informalexample>
+                    </informalexample>
 
-                     </step>
-                  </procedure>
+                  </step>
+               </procedure>
+            </para>
+            <sidebar>
+               <para>
+                  <emphasis role="bold">Next step:</emphasis>
+                  <xref linkend="list_servers"/>
                </para>
-               <sidebar>
-                  <para>
-                     <emphasis role="bold">Next step:</emphasis>
-                     <xref linkend="list_servers"/>
-                  </para>
-               </sidebar>
-            </section>
-            <?hard-pagebreak?>
-            <section xml:id="curl_provision_server">
-               <title>Provision a Server with an Isolated Network with cURL</title>
-               <section xml:id="json_create_server">
-                  <title>JSON Request and Response</title>
-                  <procedure>
-                     <title>To provision a server with an isolated network to the server</title>
-                     <step>
-                        <para>Issue the following cURL
+            </sidebar>
+         </section>
+         <?hard-pagebreak?>
+         <section xml:id="curl_provision_server">
+            <title>Provision a server with an isolated network with cURL</title>
+            <section xml:id="json_create_server">
+               <title>JSON Request and Response</title>
+               <procedure>
+                  <title>To provision a server with an isolated network to the server</title>
+                  <step>
+                    <para>Issue the following cURL
                         command:<programlisting language="bash" role="gutter: false"><?db-font-size 55%?>
                             $ curl https://dfw.servers.api.rackspacecloud.com/v2/$account/servers \
          -X POST \
@@ -3754,13 +3534,13 @@ The request is accepted for processing.</screen>
          -H "X-Auth-Token: $token" \
          -d '{"server": {"name": "my_server_with_network", "imageRef": "d42f821e-c2d1-4796-9f07-af5ed7912d0e", "flavorRef": "2", "max_count": 1, "min_count": 1, "networks": [{"uuid": "538a112a-34d1-47ff-bf1e-c40639e886e2"}, {"uuid": "00000000-0000-0000-0000-000000000000"}, {"uuid": "11111111-1111-1111-1111-111111111111"}]}}' \
          | python -m json.tool</programlisting>
-                        </para>
-                        <para>In addition to the isolated network, PublicNet and ServiceNet are attached to the server. You must
+                     </para>
+                    <para>In addition to the isolated network, PublicNet and ServiceNet are attached to the server. You must
                         explicitly specify these networks to attach them to your server.</para>
-                        <para>
-                           <emphasis role="bold">Output:</emphasis> The API operation returns information about the new
+                    <para>
+                        <emphasis role="bold">Output:</emphasis> The API operation returns information about the new
                         server, as shown in the following output:</para>
-                        <programlisting language="json"><?db-font-size 65%?>
+                    <programlisting language="json"><?db-font-size 65%?>
                         {
     "server": {
         "OS-DCF:diskConfig": "AUTO", 
@@ -3779,21 +3559,21 @@ The request is accepted for processing.</screen>
     }
 }
 </programlisting>
-                     </step>
-                  </procedure>
-                  <sidebar>
-                     <para>
-                        <emphasis role="bold">Next step:</emphasis>
-                        <xref linkend="list_servers"/>
-                     </para>
-                  </sidebar>
-               </section>
-               <section xml:id="xml_create_server">
-                  <title>XML Request and Response</title>
-                  <procedure>
-                     <title>To provision a server and attach an isolated network to the server</title>
-                     <step>
-                        <para>Issue the following cURL
+                  </step>
+               </procedure>
+               <sidebar>
+                  <para>
+                     <emphasis role="bold">Next step:</emphasis>
+                    <xref linkend="list_servers"/>
+                  </para>
+               </sidebar>
+            </section>
+            <section xml:id="xml_create_server">
+               <title>XML Request and Response</title>
+               <procedure>
+                  <title>To provision a server and attach an isolated network to the server</title>
+                  <step>
+                    <para>Issue the following cURL
                         command:<programlisting language="bash" role="gutter: false"><?db-font-size 55%?>
                             $ curl -i https://dfw.servers.api.rackspacecloud.com/v2/$account/servers.xml \
         -X POST \
@@ -3802,13 +3582,13 @@ The request is accepted for processing.</screen>
         -H "Accept: application/xml" \
         -H "X-Auth-Token: $token" \
         -d '&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;server xmlns="http://docs.openstack.org/compute/api/v1.1" imageRef="3afe97b2-26dc-49c5-a2cc-a2fc8d80c001" flavorRef="2" name="api-test-server-xml2"&gt;&lt;metadata&gt;&lt;meta key="My Server Name"&gt;API Test Server XML&lt;/meta&gt;&lt;/metadata&gt;&lt;networks&gt;&lt;uuid&gt;0ef47ac7-6797-4e01-8a47-ed26ec3aaa56&lt;/uuid&gt;&lt;uuid&gt;00000000-0000-0000-0000-000000000000&lt;/uuid&gt;&lt;uuid&gt;11111111-1111-1111-1111-111111111111&lt;/uuid&gt;&lt;/networks&gt;&lt;/server&gt;'</programlisting>
-                        </para>
-                        <para>In addition to the isolated network, PublicNet and ServiceNet are attached to the server. You must
+                     </para>
+                    <para>In addition to the isolated network, PublicNet and ServiceNet are attached to the server. You must
                         explicitly specify these networks to attach them to your server.</para>
-                        <para>
-                           <emphasis role="bold">Output:</emphasis> The API operation returns information about the new
+                    <para>
+                        <emphasis role="bold">Output:</emphasis> The API operation returns information about the new
                         server, as shown in the following output:</para>
-                        <programlisting language="xml"><?db-font-size 65%?>&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+                    <programlisting language="xml"><?db-font-size 65%?>&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;server
     xmlns:OS-DCF="http://docs.openstack.org/compute/ext/disk_config/api/v1.1"
     xmlns:atom="http://www.w3.org/2005/Atom"
@@ -3824,91 +3604,90 @@ The request is accepted for processing.</screen>
         rel="bookmark"/&gt;
 &lt;/server&gt;
 </programlisting>
-                     </step>
-                  </procedure>
-                  <sidebar>
-                     <para>
-                        <emphasis role="bold">Next step:</emphasis>
-                        <xref linkend="list_servers"/>
-                     </para>
-                  </sidebar>
-               </section>
-            </section>
-            <?hard-pagebreak?>
-
-         </section>
-         <section version="5.0"
-                  xml:id="list_servers"
-                  xml:base="net_cfn_list_servers_both.xml">
-            <title>Step 4. List Servers and Attached Networks</title>
-            <para>To show all the servers in your Cloud account, you can list servers. When you list servers, the addresses for any
-        attached networks are displayed. The networks include any isolated networks that you have created and Rackspace
-        public and private networks.</para>
-            <sidebar>
-               <para>
-                  <emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
-                     <listitem>
-                        <para>
-                           <xref linkend="nova_list_servers"/>
-                        </para>
-                     </listitem>
-                     <listitem>
-                        <para>
-                           <xref linkend="curl_list_servers"/>
-                        </para>
-                     </listitem>
-                  </itemizedlist>
-               </para>
-            </sidebar>
-            <?hard-pagebreak?>
-            <section xml:id="nova_list_servers">
-               <title>List Servers with the nova Client</title>
-               <procedure>
-                  <title>To list servers with the nova client:</title>
-                  <step>
-                     <para>Issue the following command:</para>
-                     <programlisting language="bash" role="gutter: false">$ nova list</programlisting>
-                     <para>For each server, the command returns the server ID, name, status, and addresses for any attached
-                    networks, as shown in the following output:</para>
-
-                     <programlisting language="bash" role="gutter: false"><?db-font-size 40%?>+--------------------------------------+----------------+--------+---------------------------------------------------------------------------------------+
-| ID                                   | Name           | Status | Networks                                                                              |
-+--------------------------------------+----------------+--------+---------------------------------------------------------------------------------------+
-| 9da98125-0de8-4b84-880c-b42977c32773 | myUbuntuServer | ACTIVE | public=2001:4800:780d:0509:d87b:9cbc:ff04:488b, 198.101.231.59; private=10.179.224.74 |
-| a09e7493-7429-41e1-8d3f-384d7ece09c0 | UbuntuDevStack | ACTIVE | public=2001:4800:780e:0510:d87b:9cbc:ff04:3e81, 50.56.186.185; private=10.180.13.75   |
-+--------------------------------------+----------------+--------+---------------------------------------------------------------------------------------+</programlisting>
-                     <para>The networks include any isolated networks that you have created and Rackspace public and private
-                    networks.</para>
-                  </step>
-                  <step>
-                     <para>Look for your server in the list of servers. Servers are listed by server ID. </para>
-                     <para>Copy the server ID for your server. To update or delete your server, you need this ID.</para>
-                     <para>You use the public IP address when you log into your server.</para>
                   </step>
                </procedure>
                <sidebar>
                   <para>
                      <emphasis role="bold">Next step:</emphasis>
-                     <xref linkend="show_network"/>
+                    <xref linkend="list_servers"/>
                   </para>
                </sidebar>
             </section>
-            <?hard-pagebreak?>
-            <section xml:id="curl_list_servers">
-               <title>List Servers with cURL</title>
-               <procedure>
-                  <title>To list servers with cURL:</title>
-                  <step>
-                     <para>Issue the following command:</para>
-                     <programlisting language="bash" role="gutter: false"><?db-font-size 60%?>
+         </section>
+         <?hard-pagebreak?>
+      </section>
+        <section xmlns:raxm="http://docs.rackspace.com/api/metadata"
+               version="5.0"
+               xml:id="list_servers"
+               xml:base="chapters/net_bns_list_servers.xml">
+         <title>Step 2. List servers and attached networks</title>
+         <para>To show all the servers in your Cloud account, you can list servers. When you list servers, the addresses for any
+        attached networks are displayed. The networks include any isolated networks that you have created and Rackspace
+        public and private networks.</para>
+         <sidebar>
+            <para>
+               <emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
+                  <listitem>
+                    <para>
+                        <xref linkend="nova_list_servers"/>
+                     </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                        <xref linkend="curl_list_servers"/>
+                     </para>
+                  </listitem>
+               </itemizedlist>
+            </para>
+         </sidebar>
+         <?hard-pagebreak?>
+         <section xml:id="nova_list_servers">
+            <title>List servers with the nova client</title>
+            <procedure>
+               <title>To list servers with the nova client:</title>
+               <step>
+                  <para>Issue the following command:</para>
+                  <programlisting language="bash" role="gutter: false">$ nova list</programlisting>
+                  <para>For each server, the command returns the server ID, name, status, and addresses for any attached
+                    networks, as shown in the following output:</para>
+
+                  <programlisting language="bash" role="gutter: false"><?db-font-size 40%?>+--------------------------------------+----------------+--------+---------------------------------------------------------------------------------------+
+| ID                                   | Name           | Status | Networks                                                                              |
++--------------------------------------+----------------+--------+---------------------------------------------------------------------------------------+
+| 9da98125-0de8-4b84-880c-b42977c32773 | myUbuntuServer | ACTIVE | public=2001:4800:780d:0509:d87b:9cbc:ff04:488b, 198.101.231.59; private=10.179.224.74 |
+| a09e7493-7429-41e1-8d3f-384d7ece09c0 | UbuntuDevStack | ACTIVE | public=2001:4800:780e:0510:d87b:9cbc:ff04:3e81, 50.56.186.185; private=10.180.13.75   |
++--------------------------------------+----------------+--------+---------------------------------------------------------------------------------------+</programlisting>
+                  <para>The networks include any isolated networks that you have created and Rackspace public and private
+                    networks.</para>
+               </step>
+               <step>
+                  <para>Look for your server in the list of servers. Servers are listed by server ID. </para>
+                  <para>Copy the server ID for your server. To update or delete your server, you need this ID.</para>
+                  <para>You use the public IP address when you log into your server.</para>
+               </step>
+            </procedure>
+            <sidebar>
+               <para>
+                  <emphasis role="bold">Next step: </emphasis>
+               </para>
+            </sidebar>
+         </section>
+         <?hard-pagebreak?>
+         <section xml:id="curl_list_servers">
+            <title>List servers with cURL</title>
+            <procedure>
+               <title>To list servers with cURL:</title>
+               <step>
+                  <para>Issue the following command:</para>
+                  <programlisting language="bash" role="gutter: false"><?db-font-size 60%?>
                     $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/servers/detail \
        -H "X-Auth-Token: $token" | python -m json.tool</programlisting>
-                     <para>For each server, the command returns the disk configuration, the addresses of any attached networks,
+                  <para>For each server, the command returns the disk configuration, the addresses of any attached networks,
                     flavor and image information, the server ID, and the server status. The networks include any isolated
                     networks that you have created and Rackspace public and private networks.</para>
-                     <para>The following output shows the list servers information, including information for the Ubuntu server
+                  <para>The following output shows the list servers information, including information for the Ubuntu server
                     that you just created:</para>
-                     <programlisting language="json"><?db-font-size 60%?>{
+                  <programlisting language="json"><?db-font-size 60%?>{
     "servers": [
         {
             "OS-DCF:diskConfig": "AUTO", 
@@ -4042,336 +3821,18 @@ The request is accepted for processing.</screen>
         }
     ]
 }</programlisting>
-                  </step>
-                  <step>
-                     <para>Look for your server in the list of servers. Servers are listed by server ID. </para>
-                     <para>Copy the server ID for your server. To update or delete your server, you need this ID.</para>
-                     <para>You use the public IP address when you log into your server.</para>
-                  </step>
-               </procedure>
-               <sidebar>
-                  <para>
-                     <emphasis role="bold">Next step:</emphasis>
-                     <xref linkend="show_network"/>
-                  </para>
-               </sidebar>
-            </section>
-         </section>
-         <section version="5.0"
-                  xml:id="show_network"
-                  xml:base="net_cfn_show_network_nova.xml">
-            <title>Step 5. Show Network Information</title>
-            <para>You can show details for a specified network ID.</para>
-            <para>The response body returns the following fields: <table rules="all" width="100%">
-                  <caption>Show Network Response Fields</caption>
-                  <col width="20%"/>
-                  <col width="80%"/>
-                  <thead>
-                     <tr>
-                        <th>Name</th>
-                        <th>Description</th>
-                     </tr>
-                  </thead>
-                  <tbody>
-                     <tr>
-                        <td>cidr</td>
-                        <td>The <glossterm>CIDR</glossterm> for an isolated private network.</td>
-                     </tr>
-                     <tr>
-                        <td>id</td>
-                        <td>The network ID.</td>
-                     </tr>
-                     <tr>
-                        <td>
-                           <para>label</para>
-                        </td>
-                        <td>The name of the network. </td>
-                     </tr>
-                  </tbody>
-               </table>
-            </para>
+               </step>
+               <step>
+                  <para>Look for your server in the list of servers. Servers are listed by server ID. </para>
+                  <para>Copy the server ID for your server. To update or delete your server, you need this ID.</para>
+                  <para>You use the public IP address when you log into your server.</para>
+               </step>
+            </procedure>
             <sidebar>
                <para>
-                  <emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
-                     <listitem>
-                        <para>
-                           <xref linkend="nova_show_network"/>
-                        </para>
-                     </listitem>
-                     <listitem>
-                        <para>
-                           <xref linkend="curl_show_network"/>
-                        </para>
-                     </listitem>
-                  </itemizedlist>
+                  <emphasis role="bold">Next step: </emphasis>
                </para>
             </sidebar>
-            <?hard-pagebreak?>
-            <section xml:id="nova_show_network">
-               <title>Show Network Information with the nova Client</title>
-               <procedure>
-                  <title>To show information for a specified network ID</title>
-                  <step>
-                     <para>Issue the following nova client command:
-                    <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-                        $ nova network &lt;id&gt;</programlisting>
-                     </para>
-                     <para>
-                        <emphasis role="bold">Positional argument:</emphasis>
-                     </para>
-                     <para>
-                        <itemizedlist>
-                           <listitem>
-                              <para>
-                                 <parameter>id</parameter>. The ID of the network for which you want to show information. To
-                                determine the network ID, issue a <command>nova</command>
-                                <option>network-list</option> command. </para>
-                           </listitem>
-                        </itemizedlist>
-                     </para>
-                     <para>
-                        <emphasis role="bold">Output:</emphasis>
-                     </para>
-                     <para>The command returns the <glossterm>CIDR</glossterm>, network ID, and label, as shown in the following
-                    output:</para>
-                     <informalexample>
-                        <screen>+----------+--------------------------------------+
-| Property | Value                                |
-+----------+--------------------------------------+
-| cidr     | 172.16.0.0/24                        |
-| id       | e65accc0-1d98-45eb-af76-ab3d31edc7d2 |
-| label    | new_network                          |
-+----------+--------------------------------------+</screen>
-                     </informalexample>
-                  </step>
-               </procedure>
-               <sidebar>
-                  <para>
-                     <emphasis role="bold">Next step:</emphasis>
-                     <xref linkend="delete_network"/>
-                  </para>
-               </sidebar>
-            </section>
-            <?hard-pagebreak?>
-            <section xml:id="curl_show_network">
-               <title>Show Network with cURL</title>
-               <para>You can request a JSON or XML response when you issue a request in a cURL command.</para>
-               <section xml:id="json_show_network_curl">
-                  <title>JSON Response</title>
-                  <procedure>
-                     <title>To show information in a JSON response for a specified network ID</title>
-                     <step>
-                        <para>Issue the following cURL command:
-                        <programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
-                            $ curl https://dfw.servers.api.rackspacecloud.com/v2/$account/os-networksv2/&lt;id&gt; \
-        -X GET \
-        -H "X-Auth-Project-Id: $account" \
-        -H "Accept: application/json" \
-        -H "Content-Type: application/json"\
-        -H "X-Auth-Token: $token" | python -m json.tool</programlisting>
-                        </para>
-                        <para>
-                           <emphasis role="bold">Positional argument:</emphasis>
-                        </para>
-                        <para>
-                           <itemizedlist>
-                              <listitem>
-                                <para>
-                                    <parameter>id</parameter>. The ID of the network for which you want to show
-                                    information. To determine the network ID, issue a <command>nova</command>
-                                    <option>network-list</option> command. </para>
-                              </listitem>
-                           </itemizedlist>
-                        </para>
-                        <para>
-                           <emphasis role="bold">Output:</emphasis>
-                        </para>
-                        <para>The API operation returns the <glossterm>CIDR</glossterm>, network ID, and label, as shown in the
-                        following output:</para>
-
-                        <programlisting language="json"><?db-font-size 75%?>
-                        {
-    "network": {
-        "cidr": "192.168.0.0/24", 
-        "id": "f212726e-6321-4210-9bae-a13f5a33f83f", 
-        "label": "superprivate_xml"
-    }
-}</programlisting>
-                     </step>
-                  </procedure>
-                  <sidebar>
-                     <para>
-                        <emphasis role="bold">Next step:</emphasis>
-                        <xref linkend="delete_network"/>
-                     </para>
-                  </sidebar>
-               </section>
-               <section xml:id="xml_show_network_curl">
-                  <title>XML Response</title>
-                  <procedure>
-                     <title>To show information in an XML response for a specified network ID</title>
-                     <step>
-                        <para>Issue the following cURL command:
-                        <programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
-                            $ curl https://dfw.servers.api.rackspacecloud.com/v2/$account/os-networksv2/&lt;id&gt;.xml \
-        -X GET \
-        -H "X-Auth-Project-Id: $account" \
-        -H "Accept: application/xml" \
-        -H "Content-Type: application/xml"\
-        -H "X-Auth-Token: $token"</programlisting>
-                        </para>
-                        <para>
-                           <emphasis role="bold">Positional argument:</emphasis>
-                        </para>
-                        <para>
-                           <itemizedlist>
-                              <listitem>
-                                <para>
-                                    <parameter>id</parameter>. The ID of the network for which you want to show
-                                    information. To determine the network ID, issue a <command>nova</command>
-                                    <option>network-list</option> command. </para>
-                              </listitem>
-                           </itemizedlist>
-                        </para>
-                        <para>
-                           <emphasis role="bold">Output:</emphasis>
-                        </para>
-                        <para>The API operation returns the <glossterm>CIDR</glossterm>, network ID, and label, as shown in the
-                        following output:</para>
-
-                        <programlisting language="xml"><?db-font-size 75%?>
-                        &lt;network&gt;
-    &lt;cidr&gt;192.168.0.0/24&lt;/cidr&gt;
-    &lt;id&gt;f212726e-6321-4210-9bae-a13f5a33f83f&lt;/id&gt;
-    &lt;label&gt;superprivate_xml&lt;/label&gt;
-&lt;/network&gt;
-</programlisting>
-                     </step>
-                  </procedure>
-                  <sidebar>
-                     <para>
-                        <emphasis role="bold">Next step:</emphasis>
-                        <xref linkend="delete_network"/>
-                     </para>
-                  </sidebar>
-               </section>
-            </section>
-         </section>
-         <section version="5.0"
-                  xml:id="delete_network"
-                  xml:base="net_cfn_delete_network_nova.xml">
-            <title>Step 6. Delete Your Network</title>
-            <para>If you no longer need your network, you can delete it. </para>
-            <para>You cannot delete an isolated network unless the network is not attached to any server.</para>
-            <para>To detach a network from a server, you must delete the virtual interface for the network from the server. Then, you
-        can delete the network.</para>
-
-            <para>After the network is deleted, it no longer appears in the list of networks.</para>
-            <sidebar>
-               <para>
-                  <emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
-                     <listitem>
-                        <para>
-                           <xref linkend="nova_delete_network"/>
-                        </para>
-                     </listitem>
-                     <listitem>
-                        <para>
-                           <xref linkend="curl_delete_network"/>
-                        </para>
-                     </listitem>
-                  </itemizedlist>
-               </para>
-            </sidebar>
-            <section xml:id="nova_delete_network">
-               <title>Delete Network with the nova Client</title>
-               <procedure>
-                  <title>To delete a specified network</title>
-                  <step>
-                     <title>Delete the virtual interface for the network from the server</title>
-                     <para>To detach a network from a server, first delete the virtual interface for the network from the server.
-                </para>
-                  </step>
-                  <step>
-                     <title>Delete the network</title>
-                     <para>Issue the following nova client command:
-                    <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-                        $ nova network-delete &lt;id&gt;</programlisting>
-                     </para>
-                     <para>
-                        <emphasis role="bold">Positional argument:</emphasis>
-                     </para>
-                     <para>
-                        <itemizedlist>
-                           <listitem>
-                              <para>
-                                 <parameter>id</parameter>. The network ID of the network that you want to delete. To
-                                determine the network ID, issue a <command>nova</command>
-                                <option>network-list</option> command.</para>
-                           </listitem>
-                        </itemizedlist>
-                     </para>
-                     <para>
-                        <emphasis role="bold">Output:</emphasis> None.</para>
-                  </step>
-               </procedure>
-            </section>
-            <?hard-pagebreak?>
-            <section xml:id="curl_delete_network">
-               <title>Delete Network with cURL</title>
-               <procedure>
-                  <title>To delete a specified network</title>
-                  <step>
-                     <title>Delete the virtual interface for the network from the server</title>
-                     <para>To detach a network from a server, first delete the virtual interface for the network from the server.
-                </para>
-                  </step>
-                  <step>
-                     <title>Delete the network</title>
-                     <para>Issue the following cURL command:
-                    <programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
-                        $ curl -i https://dfw.servers.api.rackspacecloud.com/v2/$account/os-networksv2/&lt;id&gt; \
-       -X 'DELETE' \
-       -H "X-Auth-Token: $token" \
-       -H "X-Auth-Project-Id: $account" \
-       -H "Accept: application/json" </programlisting>
-                     </para>
-                     <note>
-                        <para>Include the <option>-i</option> option in the cURL command to show the response header. Omit the
-                            <code>| python -m json.tool</code> clause from the command because the API operation does not
-                        return a JSON response.</para>
-                     </note>
-                     <para>
-                        <emphasis role="bold">Argument:</emphasis>
-                     </para>
-                     <para>
-                        <itemizedlist>
-                           <listitem>
-                              <para>
-                                 <parameter>id</parameter>. The network ID of the network that you want to delete. To
-                                determine the network ID, issue a <command>nova</command>
-                                <option>network-list</option> command.</para>
-                           </listitem>
-                        </itemizedlist>
-                     </para>
-                     <para>
-                        <emphasis role="bold">Output:</emphasis>
-                     </para>
-                     <para>Successful deletion returns an <errortext>Accepted</errortext> (<returnvalue>202</returnvalue>)
-                    response code:</para>
-                     <screen>HTTP/1.1 202 Accepted
-Date: Thu, 04 Oct 2012 16:23:30 GMT
-Content-Length: 58
-Content-Type: text/html;charset=UTF-8
-Server: Jetty(8.0.y.z-SNAPSHOT)
-
-202 Accepted
-
-The request is accepted for processing.</screen>
-                  </step>
-               </procedure>
-            </section>
-
          </section>
       </section>
    </chapter>
@@ -4393,9 +3854,9 @@ The request is accepted for processing.</screen>
                version="5.0"
                xml:id="attach_network_to_server_nova"
                xml:base="chapters/net_attach_network_nova.xml">
-         <title>Attach Your Network to an Existing Server Using Nova-network</title>
+         <title>Attach your network to an existing server using nova-network</title>
          <para>Use the Cloud Networks virtual interface extension to create a virtual interface to a specified network and attach the network to an existing
-        server instance with the Nova-network API. </para>
+        server instance with the nova-network API. </para>
          <para>You can create a maximum of one virtual interface per instance per network. </para>
          <para>You can also use the Cloud Networks virtual interface extension to:</para>
          <itemizedlist>
@@ -4412,19 +3873,21 @@ The request is accepted for processing.</screen>
          <para>The exercises also help you learn how cURL commands and the Cloud Networks API work. </para>
 
          <section version="5.0" xml:id="section_gs_install_vir_interface">
-            <title>Step 1. Install the Cloud Networks Virtual Interface Extension</title>
+            <title>Step 1. Install the Cloud Networks virtual interface extension</title>
             <procedure>
                <title>To install the Cloud Networks virtual interface extension</title>
                <step>
                   <title>Install the Cloud Networks virtual interface extension</title>
-                  <para>The <literal>os_virtual_interfacesv2_python_novaclient_ext</literal> package contains the Cloud Networks virtual interface extension. </para>
+                  <para>The <literal>os_virtual_interfacesv2_python_novaclient_ext</literal> package contains the
+                    Cloud Networks virtual interface extension.</para>
                   <para>Run the following command to install the package:</para>
                   <programlisting language="bash" role="gutter: false">
                     $ sudo pip install os_virtual_interfacesv2_python_novaclient_ext</programlisting>
                   <note>
                     <para>If you previously installed this package, run the following command to upgrade it:
                         <programlisting language="bash" role="gutter: false">
-                            $ sudo pip install os_virtual_interfacesv2_python_novaclient_ext --upgrade</programlisting>
+                            $ sudo pip install os_virtual_interfacesv2_python_novaclient_ext --upgrade
+                        </programlisting>
                      </para>
                   </note>
                </step>
@@ -4449,7 +3912,7 @@ The request is accepted for processing.</screen>
             </procedure>
          </section>
          <section xml:id="list_servers2">
-            <title>Step 2. List Servers</title>
+            <title>Step 2. List servers</title>
             <para>To get the ID of the server instance to which you want to attach a virtual interface, list the servers in your
             Cloud account. </para>
             <sidebar>
@@ -4470,7 +3933,7 @@ The request is accepted for processing.</screen>
             </sidebar>
             <?hard-pagebreak?>
             <section xml:id="nova_list_servers2">
-               <title>List Servers with the nova Client</title>
+               <title>List servers with the nova client</title>
                <procedure>
                   <title>To list servers with the nova client:</title>
                   <step>
@@ -4501,7 +3964,7 @@ The request is accepted for processing.</screen>
             </section>
             <?hard-pagebreak?>
             <section xml:id="curl_list_servers2">
-               <title>List Servers with cURL</title>
+               <title>List servers with cURL</title>
                <procedure>
                   <title>To list servers with cURL:</title>
                   <step>
@@ -4661,7 +4124,7 @@ The request is accepted for processing.</screen>
 
          </section>
          <section xml:id="list_networks2">
-            <title>Step 3. List Networks</title>
+            <title>Step 3. List networks</title>
             <para>To get the ID of the network for which you want to create virtual interface, list the networks in your Cloud
             account. </para>
             <sidebar>
@@ -4681,7 +4144,7 @@ The request is accepted for processing.</screen>
                </para>
             </sidebar>
             <section xml:id="nova_list_networks2">
-               <title>List Networks with the nova Client</title>
+               <title>List networks with the nova client</title>
                <procedure>
                   <title>To list networks with the nova client</title>
                   <step>
@@ -4718,10 +4181,10 @@ The request is accepted for processing.</screen>
             </section>
             <?hard-pagebreak?>
             <section xml:id="curl_list_networks2">
-               <title>List Networks with cURL</title>
+               <title>List networks with cURL</title>
                <para>You can request a JSON or XML response when you issue a request in a cURL command.</para>
                <section xml:id="list_networks2_json">
-                  <title>JSON Request and Response</title>
+                  <title>JSON request and response</title>
                   <procedure>
                     <title>To list networks and request a JSON response</title>
                     <step>
@@ -4765,7 +4228,7 @@ The request is accepted for processing.</screen>
                   </sidebar>
                </section>
                <section xml:id="list_networks2_xml">
-                  <title>XML Request and Response</title>
+                  <title>XML request and response</title>
                   <procedure>
                     <title>To list networks and request an XML response</title>
                     <step>
@@ -4813,7 +4276,7 @@ The request is accepted for processing.</screen>
             </section>
          </section>
          <section xml:id="create_virt_interface">
-            <title>Step 4. Create a Virtual Interface</title>
+            <title>Step 4. Create a virtual interface</title>
             <para>When you create a virtual interface, you specify the following information:<itemizedlist>
                   <listitem>
                     <para>
@@ -4832,17 +4295,19 @@ The request is accepted for processing.</screen>
                   <emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
                     <listitem>
                         <para>
-                           <xref linkend="nova_create_virt_interface"/>Create a virtual interface with the nova client</para>
+                           <xref linkend="nova_create_virt_interface"/>
+                        </para>
                     </listitem>
                     <listitem>
                         <para>
-                           <xref linkend="curl_create_virt_interfaces_for_server"/>Create a virtual interface with cURL</para>
+                           <xref linkend="curl_create_virt_interfaces_for_server"/>
+                        </para>
                     </listitem>
                   </itemizedlist>
                </para>
             </sidebar>
             <section xml:id="nova_create_virt_interface">
-               <title>Create a Virtual Interface with the nova Client</title>
+               <title>Create a virtual interface with the nova client</title>
                <procedure>
                   <title>To create a virtual interface with the nova client</title>
                   <step>
@@ -4877,10 +4342,10 @@ The request is accepted for processing.</screen>
             </section>
             <?hard-pagebreak?>
             <section xml:id="curl_create_virt_interfaces_for_server">
-               <title>Create Virtual Interface with cURL</title>
+               <title>Create a virtual interface with cURL</title>
                <para>You can issue a JSON or XML request in a cURL command.</para>
                <section xml:id="curl_create_virt_interface_json">
-                  <title>JSON Request and Response</title>
+                  <title>JSON request and response</title>
                   <procedure>
                     <title>To create a virtual interface and request a JSON response</title>
                     <step>
@@ -4938,7 +4403,7 @@ The request is accepted for processing.</screen>
                   </sidebar>
                </section>
                <section xml:id="curl_create_virt_interface_xml">
-                  <title>XML Request and Response</title>
+                  <title>XML request and response</title>
                   <procedure>
                     <title>To create a virtual interface and request an XML response</title>
                     <step>
@@ -4993,7 +4458,7 @@ The request is accepted for processing.</screen>
             </section>
          </section>
          <section xml:id="list_virt_interfaces_for_server">
-            <title>Step 5. List Virtual Interfaces for a Server</title>
+            <title>Step 5. List virtual interfaces for a server</title>
             <para>To validate that you created and connected the virtual interface to your server, you can list the virtual
             interfaces for your server. </para>
 
@@ -5014,7 +4479,7 @@ The request is accepted for processing.</screen>
                </para>
             </sidebar>
             <section xml:id="nova_list_virt_interfaces_for_server">
-               <title>List Virtual Interfaces for a Server with the nova Client</title>
+               <title>List virtual interfaces for a server with the nova client</title>
                <procedure>
                   <title>To list virtual interfaces for a server with the nova client</title>
                   <step>
@@ -5063,10 +4528,10 @@ The request is accepted for processing.</screen>
             </section>
             <?hard-pagebreak?>
             <section xml:id="curl_list_virt_interfaces_for_server">
-               <title>List Virtual Interfaces for a Server with cURL</title>
+               <title>List virtual interfaces for a server with cURL</title>
                <para>You can request a JSON or XML response when you issue a request in a cURL command.</para>
                <section xml:id="curl_list_virt_interfaces_json">
-                  <title>JSON Request and Response</title>
+                  <title>JSON request and response</title>
                   <procedure>
                     <title>To list virtual interfaces for a server and request a JSON response</title>
                     <step>
@@ -5146,7 +4611,7 @@ The request is accepted for processing.</screen>
                   </sidebar>
                </section>
                <section xml:id="curl_list_virt_interfaces_xml">
-                  <title>XML Request and Response</title>
+                  <title>XML request and response</title>
 
                   <procedure>
                     <title>To list virtual interfaces for a server and request a XML response</title>
@@ -5201,7 +4666,7 @@ The request is accepted for processing.</screen>
 
          </section>
          <section xml:id="delete_virt_interface">
-            <title>Step 6. Delete a Virtual Interface from a Server</title>
+            <title>Step 6. Delete a virtual interface from a server</title>
             <para>If your server no longer needs the virtual interface, you can delete and detach it from the server. </para>
             <para>To delete and detach your virtual interface from a server, you need the ID of your server instance and the ID
             for the virtual interface. </para>
@@ -5226,7 +4691,7 @@ The request is accepted for processing.</screen>
             </sidebar>
 
             <section xml:id="nova_delete_vir_interface">
-               <title>Delete a Virtual Interface with the nova Client</title>
+               <title>Delete a virtual interface with the nova client</title>
                <procedure>
                   <title>To delete a virtual interface with the nova client:</title>
                   <step>
@@ -5274,7 +4739,7 @@ The request is accepted for processing.</screen>
             </section>
             <?hard-pagebreak?>
             <section xml:id="curl_delete_vir_interface">
-               <title>Delete a Virtual Interface with cURL</title>
+               <title>Delete a virtual interface with cURL</title>
                <procedure>
                   <title>To delete a virtual interface with cURL:</title>
                   <step>
@@ -5339,6 +4804,302 @@ Server: Jetty(8.0.y.z-SNAPSHOT)</programlisting>
                </procedure>
             </section>
          </section>
+      </section>
+   </chapter>
+    <chapter version="5.0"
+            xml:id="delete_net"
+            xml:base="chapters/net_delete_network.xml">
+        <title>Delete your cloud network</title>
+        <para>When you no longer need your cloud network, delete it. Choose whether to use the neutron API or the
+                nova-network API. For help deciding, see <xref linkend="section_nova_v_neutron"/>. The sections in
+                this chapter provide examples of deleting a network using each API.</para>
+        <section xmlns:raxm="http://docs.rackspace.com/api/metadata"
+               version="5.0"
+               xml:id="delete_network_neutron"
+               xml:base="chapters/net_dn_delete_network_neutron.xml">
+         <title>Delete your network or subnet using neutron</title>
+         <para>If you no longer need your network, or subnet, you can delete it. </para>
+         <para>To delete a network, specify the network ID. To delete a subnet, specify the subnet ID.</para>
+         <sidebar>
+            <para>
+               <emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
+                  <listitem>
+                    <para>
+                        <xref linkend="neutron_delete_network_neutron"/>
+                     </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                        <xref linkend="curl_delete_network_neutron"/>
+                     </para>
+                  </listitem>
+               </itemizedlist>
+            </para>
+         </sidebar>
+         <section xml:id="neutron_delete_network_neutron">
+            <title>Delete a network or subnet with the neutron client</title>
+            <procedure>
+               <title>To delete a specified network</title>
+               <step>
+                  <title>Delete the network</title>
+                  <para>Issue the following neutron client command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                        $ neutron net-delete &lt;id&gt;</programlisting>
+                  </para>
+                  <para>
+                     <emphasis role="bold">Positional argument:</emphasis>
+                  </para>
+                  <para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>The network ID of the network that you want to delete. To determine the network ID, issue a
+                                    <command>neutron</command>
+                                <option>net-list</option> command.</para>
+                        </listitem>
+                    </itemizedlist>
+                  </para>
+                  <para>
+                     <emphasis role="bold">Output:</emphasis> None.</para>
+               </step>
+            </procedure>
+            <procedure>
+               <title>To delete a specified subnet</title>
+               <step>
+                  <title>Delete the subnet</title>
+                  <para>Issue the following neutron client command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                        $ neutron subnet-delete &lt;id&gt;</programlisting>
+                  </para>
+                  <para>
+                     <emphasis role="bold">Positional argument:</emphasis>
+                  </para>
+                  <para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>The subnet ID of the subnet that you want to delete. To determine the subnet ID, issue a
+                                <command>neutron</command>
+                                <option>subnet-list</option> command.</para>
+                        </listitem>
+                    </itemizedlist>
+                  </para>
+                  <para>
+                     <emphasis role="bold">Output:</emphasis> None.</para>
+               </step>
+            </procedure>
+         </section>
+         <?hard-pagebreak?>
+         <section xml:id="curl_delete_network_neutron">
+            <title>Delete a network or subnet with cURL</title>
+            <procedure>
+               <title>To delete a specified network</title>
+               <step>
+                  <title>Delete the network</title>
+                  <para>Issue the following cURL command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
+                        $ curl -i https://dfw.servers.api.rackspacecloud.com/v2.0/$account/networks/{id} \
+       -X 'DELETE' \
+       -H "X-Auth-Token: $token" \
+       -H "X-Auth-Project-Id: $account" \
+       -H "Accept: application/json" </programlisting>
+                  </para>
+                  <note>
+                    <para>Include the <option>-i</option> option in the cURL command to show the response header. Omit the
+                            <code>| python -m json.tool</code> clause from the command because the API operation does not
+                        return a JSON response.</para>
+                  </note>
+                  <para>
+                     <emphasis role="bold">Argument:</emphasis>
+                  </para>
+                  <para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>
+                              <parameter>id</parameter>. The network ID of the network that you want to delete. To
+                                determine the network ID, issue a <command>nova</command>
+                                <option>network-list</option> command.</para>
+                        </listitem>
+                    </itemizedlist>
+                  </para>
+                  <para>
+                     <emphasis role="bold">Output:</emphasis>
+                  </para>
+                  <para>Successful deletion returns an <errortext>Accepted</errortext> (<returnvalue>202</returnvalue>)
+                    response code:</para>
+                  <screen>HTTP/1.1 202 Accepted
+Date: Thu, 04 Oct 2012 16:23:30 GMT
+Content-Length: 58
+Content-Type: text/html;charset=UTF-8
+Server: Jetty(8.0.y.z-SNAPSHOT)
+
+202 Accepted
+
+The request is accepted for processing.</screen>
+               </step>
+            </procedure>
+            <procedure>
+               <title>To delete a specified subnet</title>
+               <step>
+                  <title>Delete the subnet</title>
+                  <para>Issue the following cURL command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
+                        $ curl -i https://dfw.servers.api.rackspacecloud.com/v2.0/$account/subnets/{id} \
+       -X 'DELETE' \
+       -H "X-Auth-Token: $token" \
+       -H "X-Auth-Project-Id: $account" \
+       -H "Accept: application/json" </programlisting>
+                  </para>
+                  <note>
+                    <para>Include the <option>-i</option> option in the cURL command to show the response header. Omit the
+                        <code>| python -m json.tool</code> clause from the command because the API operation does not
+                        return a JSON response.</para>
+                  </note>
+                  <para>
+                     <emphasis role="bold">Argument:</emphasis>
+                  </para>
+                  <para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>
+                              <parameter>id</parameter>. The subnet ID of the subnet that you want to delete. To
+                                determine the network ID, issue a <command>nova</command>
+                                <option>network-list</option> command.</para>
+                        </listitem>
+                    </itemizedlist>
+                  </para>
+                  <para>
+                     <emphasis role="bold">Output:</emphasis>
+                  </para>
+                  <para>Successful deletion returns an <errortext>Accepted</errortext> (<returnvalue>202</returnvalue>)
+                    response code:</para>
+                  <screen>HTTP/1.1 202 Accepted
+Date: Thu, 04 Oct 2012 16:23:30 GMT
+Content-Length: 58
+Content-Type: text/html;charset=UTF-8
+Server: Jetty(8.0.y.z-SNAPSHOT)
+
+202 Accepted
+
+The request is accepted for processing.</screen>
+               </step>
+            </procedure>
+         </section>
+      </section>
+        <section xmlns:raxm="http://docs.rackspace.com/api/metadata"
+               version="5.0"
+               xml:id="delete_network"
+               xml:base="chapters/net_dn_delete_network_nova.xml">
+         <title>Delete your network using nova-network</title>
+         <para>If you no longer need your network, you can delete it. </para>
+         <para>You cannot delete an isolated network unless the network is not attached to any server.</para>
+         <para>To detach a network from a server, you must delete the virtual interface for the network from the server. Then, you
+        can delete the network.</para>
+
+         <para>After the network is deleted, it no longer appears in the list of networks.</para>
+         <sidebar>
+            <para>
+               <emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
+                  <listitem>
+                    <para>
+                        <xref linkend="nova_delete_network"/>
+                     </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                        <xref linkend="curl_delete_network"/>
+                     </para>
+                  </listitem>
+               </itemizedlist>
+            </para>
+         </sidebar>
+         <section xml:id="nova_delete_network">
+            <title>Delete network with the nova client</title>
+            <procedure>
+               <title>To delete a specified network</title>
+               <step>
+                  <title>Delete the virtual interface for the network from the server</title>
+                  <para>To detach a network from a server, first delete the virtual interface for the network from the server.
+                </para>
+               </step>
+               <step>
+                  <title>Delete the network</title>
+                  <para>Issue the following nova client command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                        $ nova network-delete &lt;id&gt;</programlisting>
+                  </para>
+                  <para>
+                     <emphasis role="bold">Positional argument:</emphasis>
+                  </para>
+                  <para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>
+                              <parameter>id</parameter>. The network ID of the network that you want to delete. To
+                                determine the network ID, issue a <command>nova</command>
+                                <option>network-list</option> command.</para>
+                        </listitem>
+                    </itemizedlist>
+                  </para>
+                  <para>
+                     <emphasis role="bold">Output:</emphasis> None.</para>
+               </step>
+            </procedure>
+         </section>
+         <?hard-pagebreak?>
+         <section xml:id="curl_delete_network">
+            <title>Delete network with cURL</title>
+            <procedure>
+               <title>To delete a specified network</title>
+               <step>
+                  <title>Delete the virtual interface for the network from the server</title>
+                  <para>To detach a network from a server, first delete the virtual interface for the network from the server.
+                </para>
+               </step>
+               <step>
+                  <title>Delete the network</title>
+                  <para>Issue the following cURL command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
+                        $ curl -i https://dfw.servers.api.rackspacecloud.com/v2/$account/os-networksv2/&lt;id&gt; \
+       -X 'DELETE' \
+       -H "X-Auth-Token: $token" \
+       -H "X-Auth-Project-Id: $account" \
+       -H "Accept: application/json" </programlisting>
+                  </para>
+                  <note>
+                    <para>Include the <option>-i</option> option in the cURL command to show the response header. Omit the
+                            <code>| python -m json.tool</code> clause from the command because the API operation does not
+                        return a JSON response.</para>
+                  </note>
+                  <para>
+                     <emphasis role="bold">Argument:</emphasis>
+                  </para>
+                  <para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>
+                              <parameter>id</parameter>. The network ID of the network that you want to delete. To
+                                determine the network ID, issue a <command>nova</command>
+                                <option>network-list</option> command.</para>
+                        </listitem>
+                    </itemizedlist>
+                  </para>
+                  <para>
+                     <emphasis role="bold">Output:</emphasis>
+                  </para>
+                  <para>Successful deletion returns an <errortext>Accepted</errortext> (<returnvalue>202</returnvalue>)
+                    response code:</para>
+                  <screen>HTTP/1.1 202 Accepted
+Date: Thu, 04 Oct 2012 16:23:30 GMT
+Content-Length: 58
+Content-Type: text/html;charset=UTF-8
+Server: Jetty(8.0.y.z-SNAPSHOT)
+
+202 Accepted
+
+The request is accepted for processing.</screen>
+               </step>
+            </procedure>
+         </section>
+
       </section>
    </chapter>
     <glossary role="auto"/>

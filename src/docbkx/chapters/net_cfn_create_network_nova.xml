@@ -21,7 +21,7 @@
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0"
     xml:id="create_network">
-    <title>Step 1. Create an Isolated Network</title>
+    <title>Step 1. Create an isolated network</title>
     <para>Before you create a server, you create an isolated network that you can attach to your new server. </para>
     <para>To create an isolated network, you specify a name for your network and a Classless Inter-Domain Routing
             (<glossterm>CIDR</glossterm>). A CIDR is a range of IP addresses used by a network. A CIDR address looks like a
@@ -50,17 +50,17 @@
     <sidebar>
         <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
                 <listitem>
-                    <para><olink targetdoc="cn-gettingstarted" targetptr="nova_create_network">“Create an Isolated Network
-                            with the nova Client ”</olink></para>
+                    <para><olink targetdoc="cn-gettingstarted" targetptr="nova_create_network">“Create an isolated network
+                            with the nova client ”</olink></para>
                 </listitem>
                 <listitem>
-                    <para><olink targetdoc="cn-gettingstarted" targetptr="curl_create_network">“Create an Isolated Network
+                    <para><olink targetdoc="cn-gettingstarted" targetptr="curl_create_network">“Create an isolated network
                             with cURL”</olink></para>
                 </listitem>
             </itemizedlist></para>
     </sidebar>
     <section xml:id="nova_create_network">
-        <title>Create an Isolated Network with the nova Client </title>
+        <title>Create an isolated network with the nova client </title>
         <para>
             <procedure>
                 <title>To create an isolated network with the nova client</title>
@@ -104,16 +104,17 @@
             </procedure>
         </para>
         <sidebar>
-            <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted" targetptr="list_networks"
-                    >“Step 2. List Networks”</olink></para>
+            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted" targetptr="list_networks"
+                    >“Step 2. List networks”</olink></para>
         </sidebar>
     </section>
     <?hard-pagebreak?>
     <section xml:id="curl_create_network">
-        <title>Create an Isolated Network with cURL</title>
+        <?dbhtml stop-chunking?>
+        <title>Create an isolated network with cURL</title>
         <para>You can request a JSON or XML response when you issue a request in a cURL command.</para>
         <section xml:id="json_create_network">
-            <title>JSON Request and Response</title>
+            <title>JSON request and response</title>
             <procedure>
                 <title>To create an isolated network and request a JSON response</title>
                 <step>
@@ -144,12 +145,12 @@
                 </step>
             </procedure>
             <sidebar>
-                <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted"
-                        targetptr="list_networks">“Step 2. List Networks”</olink></para>
+                <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+                        targetptr="list_networks">“Step 2. List networks”</olink></para>
             </sidebar>
         </section>
         <section xml:id="xml_create_network">
-            <title>XML Request and Response</title>
+            <title>XML request and response</title>
             <procedure>
                 <title>To create an isolated network and request a XML response</title>
                 <step>
@@ -175,8 +176,8 @@
                 </step>
             </procedure>
             <sidebar>
-                <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted"
-                        targetptr="list_networks">“Step 2. List Networks”</olink></para>
+                <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+                        targetptr="list_networks">“Step 2. List networks”</olink></para>
             </sidebar>
         </section>
     </section>

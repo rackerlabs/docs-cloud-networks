@@ -14,23 +14,23 @@
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0"
     xml:id="delete_network_neutron">
-    <title>Step 4. Delete Your Network or Subnet</title>
+    <title>Delete your network or subnet using neutron</title>
     <para>If you no longer need your network, or subnet, you can delete it. </para>
     <para>To delete a network, specify the network ID. To delete a subnet, specify the subnet ID.</para>
     <sidebar>
         <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
                 <listitem>
-                    <para><olink targetdoc="cn-gettingstarted" targetptr="neutron_delete_network_neutron">“Delete Network or
-                            Subnet with the neutron Client”</olink></para>
+                    <para><olink targetdoc="cn-gettingstarted" targetptr="neutron_delete_network_neutron">“Delete a network or
+                            subnet with the neutron client”</olink></para>
                 </listitem>
                 <listitem>
-                    <para><olink targetdoc="cn-gettingstarted" targetptr="curl_delete_network_neutron">“Delete Network or
-                            Subnet with cURL”</olink></para>
+                    <para><olink targetdoc="cn-gettingstarted" targetptr="curl_delete_network_neutron">“Delete a network or
+                            subnet with cURL”</olink></para>
                 </listitem>
             </itemizedlist></para>
     </sidebar>
     <section xml:id="neutron_delete_network_neutron">
-        <title>Delete Network or Subnet with the neutron Client</title>
+        <title>Delete a network or subnet with the neutron client</title>
         <procedure>
             <title>To delete a specified network</title>
             <step>
@@ -74,7 +74,7 @@
     </section>
     <?hard-pagebreak?>
     <section xml:id="curl_delete_network_neutron">
-        <title>Delete Network or Subnet with cURL</title>
+        <title>Delete a network or subnet with cURL</title>
         <procedure>
             <title>To delete a specified network</title>
             <step>

@@ -721,12 +721,12 @@
         <section version="5.0"
                xml:id="section_nova_v_neutron"
                xml:base="chapters/net_nova_v_neutron.xml">
-         <title>Networking: Nova-network versus Neutron</title>
-         <para>Rackspace first introduced networking services by using the Nova-network API based on OpenStack. Now we are
-        providing the Neutron API, also based on OpenStack, which offers more functionality and flexibility than the
-        Nova-network API. Both sets of APIs continue to work well, but the Neutron API will be the base for all the future
+         <title>Networking: nova-network versus neutron</title>
+         <para>Rackspace first introduced networking services by using the nova-network API based on OpenStack. Now we are
+        providing the neutron API, also based on OpenStack, which offers more functionality and flexibility than the
+        nova-network API. Both sets of APIs continue to work well, but the neutron API will be the base for all the future
         networking services that Rackspace offers. </para>
-         <para>The Neutron API provides three primary, top-level resources (networks, ports, and subnets) and includes the ability
+         <para>The neutron API provides three primary, top-level resources (networks, ports, and subnets) and includes the ability
         to perform the following functions: <itemizedlist>
                <listitem>
                   <para>Use all existing create, read, update, delete (CRUD) API operations for networks</para>
@@ -749,14 +749,14 @@
             </itemizedlist>
          </para>
          <note>
-            <para>The Neutron API operations return only JSON-formatted responses. There is no option to receive responses in
+            <para>The neutron API operations return only JSON-formatted responses. There is no option to receive responses in
             XML.</para>
          </note>
       </section> 
         <section version="5.0"
                xml:id="networks"
                xml:base="chapters/net_limitations.xml">
-         <title>Limitations of Detaching from Rackspace Networks</title>
+         <title>Limitations of detaching from Rackspace networks</title>
          <para>When you provision a next generation Cloud Server, you can attach to one or more isolated networks and the
         Rackspace networks. You can also explicitly opt out of attaching the Rackspace networks to it, which introduces the
         following limitations: </para>

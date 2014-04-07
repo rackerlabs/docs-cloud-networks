@@ -19,7 +19,7 @@
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0"
     xml:id="create_server_with_network">
-    <title>Step 3. Provision a Server with an Isolated Network</title>
+    <title>Step 1. Provision a server with an isolated network</title>
     <para>To create your new server and attach an isolated network, you need the following information: </para>
 
     <itemizedlist>
@@ -64,20 +64,19 @@
     <sidebar>
         <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
                 <listitem>
-                    <para><olink targetdoc="cn-gettingstarted" targetptr="nova_provision_server">“Provision a Server with an
-                            Isolated Network with the nova Client”</olink>Provision a server with an isolated network with
-                        the nova client</para>
+                    <para><olink targetdoc="cn-gettingstarted" targetptr="nova_provision_server">“Provision a server with an
+                            isolated network with the nova client”</olink></para>
                 </listitem>
                 <listitem>
-                    <para><olink targetdoc="cn-gettingstarted" targetptr="curl_provision_server">“Provision a Server with an
-                            Isolated Network with cURL”</olink>Provision a server with an isolated network with cURL</para>
+                    <para><olink targetdoc="cn-gettingstarted" targetptr="curl_provision_server">“Provision a server with an
+                            isolated network with cURL”</olink></para>
                 </listitem>
             </itemizedlist></para>
     </sidebar>
 
     <?hard-pagebreak?>
     <section xml:id="nova_provision_server">
-        <title>Provision a Server with an Isolated Network with the nova Client</title>
+        <title>Provision a server with an isolated network with the nova client</title>
         <para>
             <procedure>
                 <title>To provision a server and attach an isolated network</title>
@@ -232,13 +231,13 @@
         </para>
         <sidebar>
             <para><emphasis role="bold">Next step:</emphasis>
-                <olink targetdoc="cn-gettingstarted" targetptr="list_servers">“Step 4. List Servers and Attached
-                    Networks”</olink></para>
+                <olink targetdoc="cn-gettingstarted" targetptr="list_servers">“Step 2. List servers and attached
+                    networks”</olink></para>
         </sidebar>
     </section>
     <?hard-pagebreak?>
     <section xml:id="curl_provision_server">
-        <title>Provision a Server with an Isolated Network with cURL</title>
+        <title>Provision a server with an isolated network with cURL</title>
         <section xml:id="json_create_server">
             <title>JSON Request and Response</title>
             <procedure>
@@ -291,11 +290,10 @@
             </procedure>
             <sidebar>
                 <para><emphasis role="bold">Next step:</emphasis>
-                    <olink targetdoc="cn-gettingstarted" targetptr="list_servers">“Step 4. List Servers and Attached
-                        Networks”</olink></para>
+                    <olink targetdoc="cn-gettingstarted" targetptr="list_servers">“Step 2. List servers and attached
+                        networks”</olink></para>
             </sidebar>
         </section>
     </section>
     <?hard-pagebreak?>
-
 </section>

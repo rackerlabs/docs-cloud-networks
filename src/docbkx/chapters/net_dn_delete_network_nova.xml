@@ -14,7 +14,7 @@
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0"
     xml:id="delete_network">
-    <title>Step 6. Delete Your Network</title>
+    <title>Delete your network using nova-network</title>
     <para>If you no longer need your network, you can delete it. </para>
     <para>You cannot delete an isolated network unless the network is not attached to any server.</para>
     <para>To detach a network from a server, you must delete the virtual interface for the network from the server. Then, you
@@ -24,17 +24,17 @@
     <sidebar>
         <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
                 <listitem>
-                    <para><olink targetdoc="cn-gettingstarted" targetptr="nova_delete_network">“Delete Network with the nova
-                            Client”</olink></para>
+                    <para><olink targetdoc="cn-gettingstarted" targetptr="nova_delete_network">“Delete network with the nova
+                            client”</olink></para>
                 </listitem>
                 <listitem>
-                    <para><olink targetdoc="cn-gettingstarted" targetptr="curl_delete_network">“Delete Network with
+                    <para><olink targetdoc="cn-gettingstarted" targetptr="curl_delete_network">“Delete network with
                             cURL”</olink></para>
                 </listitem>
             </itemizedlist></para>
     </sidebar>
     <section xml:id="nova_delete_network">
-        <title>Delete Network with the nova Client</title>
+        <title>Delete network with the nova client</title>
         <procedure>
             <title>To delete a specified network</title>
             <step>
@@ -63,7 +63,7 @@
     </section>
     <?hard-pagebreak?>
     <section xml:id="curl_delete_network">
-        <title>Delete Network with cURL</title>
+        <title>Delete network with cURL</title>
         <procedure>
             <title>To delete a specified network</title>
             <step>

@@ -3,7 +3,7 @@
    <link href="http://docs.rackspace.com/servers/api/v2/cn-gettingstarted/atom.xml" rel="self"/>
    <link href="http://docs.rackspace.com/servers/api/v2/cn-gettingstarted/content/index.html"/>
    <id>cn-gettingstarted</id>
-   <updated>2014-04-07T06:42:26-05:00</updated>
+   <updated>2014-04-07T14:28:11-05:00</updated>
    <entry>
       <title>2014-03-14</title>
       <link href="http://docs.rackspace.com/servers/api/v2/cn-gettingstarted/content/index.html" type="text/html"/>
@@ -97,8 +97,7 @@
                      <p>updated examples for d2to1 in install and update nova client section.</p>
                   </li>
                   <li class="listitem">
-                     <p>removed v4-fixed-ip from <a xmlns:html="http://www.w3.org/1999/xhtml" class="xref" href="content/nova_provision_server.html" title="Provision a Server with an Isolated Network with the nova Client">the section called “Provision a Server with an Isolated Network with the nova Client”</a>
-                     </p>
+                     <p>removed v4-fixed-ip from </p>
                   </li>
                </ul>
             </div>
@@ -115,7 +114,7 @@
          <div xmlns="http://www.w3.org/1999/xhtml">
                     
             <p>Removed references to bandwidth since the RAX extension is no longer implemented. It causes an
-                        unsustainable load on Nova. See <a xmlns:html="http://www.w3.org/1999/xhtml" class="xref" href="content/list_servers.html" title="Step 4. List Servers and Attached Networks">the section called “Step 4. List Servers and Attached Networks”</a>.</p>
+                        unsustainable load on Nova. See .</p>
                 
          </div>
       </content>
@@ -181,7 +180,7 @@
          <div xmlns="http://www.w3.org/1999/xhtml">
                     
             <p>Removed optional parameters, such as hint, block_device_mapping, availability_zone, and
-                        security_groups, from <a xmlns:html="http://www.w3.org/1999/xhtml" class="xref" href="content/create_server_with_network.html" title="Step 3. Provision a Server with an Isolated Network">the section called “Step 3. Provision a Server with an Isolated Network”</a>. </p>
+                        security_groups, from . </p>
                 
          </div>
       </content>
@@ -234,7 +233,7 @@
       <content type="xhtml">
          <div xmlns="http://www.w3.org/1999/xhtml">
                     
-            <p>Corrected the JSON request to add missing slashes in <a xmlns:html="http://www.w3.org/1999/xhtml" class="xref" href="content/curl_create_network.html" title="Create an Isolated Network with cURL">the section called “Create an Isolated Network with cURL”</a>.</p>
+            <p>Corrected the JSON request to add missing slashes in <a xmlns:html="http://www.w3.org/1999/xhtml" class="xref" href="content/curl_create_network.html" title="Create an isolated network with cURL">the section called “Create an isolated network with cURL”</a>.</p>
                 
          </div>
       </content>
