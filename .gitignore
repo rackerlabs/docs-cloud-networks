@@ -1,0 +1,7 @@
+.DS_Store
+
+# Build directories
+target/
+
+# Editor files
+.bak

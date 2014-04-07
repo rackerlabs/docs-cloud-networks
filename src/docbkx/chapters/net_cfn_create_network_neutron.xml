@@ -21,7 +21,7 @@
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0"
     xml:id="create_network_neutron">
-    <title>Step 1. Create a Network and a Sub-Network</title>
+    <title>Step 1. Create a Network or a Sub-Network</title>
     <para>Before you create a server, you create a network, and an optional subnet, that you can attach to your new server. </para>
     <para>To create a network, you specify a name and an admin_state for your network. To create a subnet, you specify a
         network, an IP address, and a name for your subnet. </para>
@@ -31,17 +31,17 @@
         <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
                 <listitem>
                     <para><olink targetdoc="cn-gettingstarted" targetptr="neutron_create_network_neutron">“Create a Network
-                            and Subnet with the neutron Client”</olink></para>
+                            or Subnet with the neutron Client”</olink></para>
                 </listitem>
                 <listitem>
-                    <para><olink targetdoc="cn-gettingstarted" targetptr="curl_create_network_neutron">“Create a Network and
+                    <para><olink targetdoc="cn-gettingstarted" targetptr="curl_create_network_neutron">“Create a Network or
                             Subnet with cURL”</olink></para>
                 </listitem>
             </itemizedlist></para>
     </sidebar>
 
     <section xml:id="neutron_create_network_neutron">
-        <title>Create a Network and Subnet with the neutron Client</title>
+        <title>Create a Network or Subnet with the neutron Client</title>
         <para>
             <procedure>
                 <title>To create a network with the neutron client</title>
@@ -107,12 +107,12 @@
         </para>
         <sidebar>
             <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted"
-                targetptr="list_networks_neutron">“Step 2. List Networks and Subnets”</olink></para>
+                targetptr="list_networks_neutron">“Step 2. List Networks or Subnets”</olink></para>
         </sidebar>
     </section>
 
     <section xml:id="curl_create_network_neutron">
-        <title>Create a Network and Subnet with cURL</title>
+        <title>Create a Network or Subnet with cURL</title>
         <para>You can request a JSON or XML response when you issue a request in a cURL command.</para>
         <section xml:id="json_create_network_neutron">
             <title>JSON Request and Response</title>
@@ -168,7 +168,7 @@
             </procedure>
             <sidebar>
                 <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="list_networks_neutron">“Step 2. List Networks and Subnets”</olink></para>
+                    targetptr="list_networks_neutron">“Step 2. List Networks or Subnets”</olink></para>
             </sidebar>
         </section>
         <section xml:id="xml_create_network_neutron">
@@ -217,7 +217,7 @@
             </procedure>
             <sidebar>
                 <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="list_networks_neutron">“Step 2. List Networks and Subnets”</olink></para>
+                    targetptr="list_networks_neutron">“Step 2. List Networks or Subnets”</olink></para>
             </sidebar>
         </section>
     </section>
