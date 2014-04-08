@@ -75,7 +75,7 @@ format="SVG" scale="60"/>
         <link xlink:href="http://www.rackspace.com/support/">http://www.rackspace.com/support/</link>.</para>
 
     <section xml:id="Intended_Audience-d1e85">
-        <title>Intended Audience</title>
+        <title>Intended audience</title>
         <para>This guide assists software developers who want to develop applications by using Cloud Servers and Cloud
             Networks. </para>
         <para>To use this information, you should have access to an active Rackspace Cloud Servers account and access to
@@ -97,7 +97,7 @@ format="SVG" scale="60"/>
     </section>
 
     <section version="5.0" xml:id="Pricing_SLA">
-        <title>Pricing and Service Level</title>
+        <title>Pricing and service level</title>
         <para>Next generation Cloud Networks is part of the Rackspace Cloud and your use through the API is billed according
             to the pricing schedule for Cloud Servers at
             <link xlink:href="http://www.rackspace.com/cloud/servers/pricing/">http://www.rackspace.com/cloud/servers/pricing/</link>.</para>
@@ -106,7 +106,7 @@ format="SVG" scale="60"/>
     </section>
 
     <section xml:id="Document_Change_History">
-        <title>Document Change History</title>
+        <title>Document change history</title>
         <para> This version of the guide applies only to v3.0 of the API. The most recent changes are described in the
             following table: </para>
         <?rax revhistory?>

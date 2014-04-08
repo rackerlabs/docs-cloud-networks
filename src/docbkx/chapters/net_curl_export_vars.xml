@@ -22,7 +22,7 @@
 ]>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="export_env_vars">
-    <title>Step 3. (Optional) Export Environment Variables to Run cURL Commands</title>
+    <title>Step 3. (optional) Export environment variables to run cURL commands</title>
     <para>To run the cURL command examples in this guide, follow this procedure to export environment variables. </para>
     <para>Export your tenant ID and authentication token to environment variables. All cURL examples in this guide use these
         environment variables.</para>
@@ -42,7 +42,7 @@
                     <literal>token</literal> element in the authentication response. </para>
             <sidebar>
                 <para><emphasis role="bold">Next step:</emphasis>
-                    <olink targetdoc="cn-gettingstarted" targetptr="net_auth">“Get Authentication Token”</olink></para>
+                    <olink targetdoc="cn-gettingstarted" targetptr="net_auth">“Get authentication token”</olink></para>
             </sidebar>
         </step>
     </procedure>

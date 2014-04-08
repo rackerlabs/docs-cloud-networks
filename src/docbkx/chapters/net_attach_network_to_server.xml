@@ -27,7 +27,7 @@
 
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="ch_gs_attach_network_to_server">
-    <title>Attach Your Network to an Existing Server</title>
+    <title>Attach your network to an existing server</title>
     <para>Before attaching your first network to a server, choose whether to use the Neutron API or the Nova-network API. For
         help deciding, see <olink targetdoc="cn-gettingstarted" targetptr="section_nova_v_neutron">“Networking: Nova-network
             versus Neutron”</olink>. The sections in this chapter provide examples of attaching a network to an existing

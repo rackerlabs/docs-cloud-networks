@@ -17,7 +17,7 @@
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="install_nova">
 
-    <title>Step 1. (Optional) Install the nova Client with the Cloud Networks Extension</title>
+    <title>Step 1. (optional) Install the nova client with the Cloud Networks Extension</title>
     <para>To manage your servers from the command line, you can use the open-source nova client application called
             <literal>python-novaclient</literal>. </para>
     <para>To install the nova client, you first install the <literal>rackspace-novaclient</literal> package, which includes
@@ -248,6 +248,6 @@ export OS_NO_CACHE=1</computeroutput></screen>
     </procedure>
     <sidebar>
         <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted" targetptr="install_neutron"
-                >“Step 2. (Optional) Install the neutron Client with the Cloud Networks Extension”</olink></para>
+                >“Step 2. (Optional) Install the neutron client with the Cloud Networks Extension”</olink></para>
     </sidebar>
 </section>

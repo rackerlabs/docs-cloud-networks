@@ -27,6 +27,6 @@
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0"
     xml:id="attach_network_to_server_neutron">
-    <title>Attach Your Network to an Existing Server Using Neutron</title>
+    <title>Attach your network to an existing server using neutron</title>
     <para>How do we do this with Neutron? </para>
 </section>

@@ -40,6 +40,7 @@
     </sidebar>
     <section xml:id="neutron_list_networks_neutron">
         <title>List networks or subnets with the neutron client</title>
+        <para>The following steps shows you how to list networks and subnets using the neutron client.</para>
         <procedure>
             <title>To list networks with the neutron client</title>
             <step>
@@ -84,6 +85,7 @@
     <section xml:id="curl_list_networks_neutron">
         <?dbhtml stop-chunking?>
         <title>List networks or subnets with cURL</title>
+        <para>The following steps shows you how to list networks and subnets using cURL.</para>
         <procedure>
             <title>To list networks</title>
             <step>

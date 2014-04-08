@@ -39,6 +39,7 @@
     </sidebar>
     <section xml:id="nova_list_networks">
         <title>List networks with the nova client</title>
+        <para>The following step shows you how to list networks using the nova client.</para>
         <procedure>
             <title>To list networks with the nova client</title>
             <step>

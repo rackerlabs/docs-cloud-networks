@@ -61,48 +61,47 @@
     </sidebar>
     <section xml:id="nova_create_network">
         <title>Create an isolated network with the nova client </title>
-        <para>
-            <procedure>
-                <title>To create an isolated network with the nova client</title>
-                <step>
-                    <para>Issue the following command:
-                        <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+        <para>The following step shows you how to create an isolated network using the nova client.</para>
+        <procedure>
+            <title>To create an isolated network with the nova client</title>
+            <step>
+                <para>Issue the following command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
                             <prompt>$</prompt> nova network-create &lt;network_label&gt; &lt;cidr&gt;</programlisting></para>
-                    <para><emphasis role="bold">Positional arguments:</emphasis></para>
-                    <para>
-                        <itemizedlist>
-                            <listitem>
-                                <para><parameter>network_label</parameter>. The network label, such as
-                                        <literal>my_new_network</literal>, </para>
-                            </listitem>
-                            <listitem>
-                                <para><parameter>cidr</parameter>. The IP block from which to allocate, such as
-                                        <literal>172.16.0.0/24</literal> or <literal>2001:DB8::/64</literal>.</para>
-                            </listitem>
-                        </itemizedlist>
-                    </para>
-                    <para><emphasis role="bold">Output:</emphasis></para>
-                    <para>The command returns the CIDR, ID, and label for the new network, as shown in the following
-                        output:</para>
-                    <informalexample>
-                        <screen><computeroutput><?db-font-size 75%?>+----------+--------------------------------------+
+                <para><emphasis role="bold">Positional arguments:</emphasis></para>
+                <para>
+                    <itemizedlist>
+                        <listitem>
+                            <para><parameter>network_label</parameter>. The network label, such as
+                                    <literal>my_new_network</literal>, </para>
+                        </listitem>
+                        <listitem>
+                            <para><parameter>cidr</parameter>. The IP block from which to allocate, such as
+                                    <literal>172.16.0.0/24</literal> or <literal>2001:DB8::/64</literal>.</para>
+                        </listitem>
+                    </itemizedlist>
+                </para>
+                <para><emphasis role="bold">Output:</emphasis></para>
+                <para>The command returns the CIDR, ID, and label for the new network, as shown in the following
+                    output:</para>
+                <informalexample>
+                    <screen><computeroutput><?db-font-size 75%?>+----------+--------------------------------------+
 | Property | Value                                |
 +----------+--------------------------------------+
 | cidr     | 192.168.0.0/24                       |
 | id       | 1f84c238-b05a-4374-a0cb-aa6140032cd1 |
 | label    | new_network                          |
 +----------+--------------------------------------+</computeroutput></screen>
-                    </informalexample>
+                </informalexample>
 
-                </step>
-                <step>
-                    <para>Copy the <literal>id</literal> value from the output. In this example, the <literal>id</literal>
-                        value is <literal>1f84c238-b05a-4374-a0cb-aa6140032cd1</literal>, but use the value returned for your
-                        network.</para>
-                    <para>You will use this value when you provision your server in the next step.</para>
-                </step>
-            </procedure>
-        </para>
+            </step>
+            <step>
+                <para>Copy the <literal>id</literal> value from the output. In this example, the <literal>id</literal> value
+                    is <literal>1f84c238-b05a-4374-a0cb-aa6140032cd1</literal>, but use the value returned for your
+                    network.</para>
+                <para>You will use this value when you provision your server in the next step.</para>
+            </step>
+        </procedure>
         <sidebar>
             <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted" targetptr="list_networks"
                     >“Step 2. List networks”</olink></para>

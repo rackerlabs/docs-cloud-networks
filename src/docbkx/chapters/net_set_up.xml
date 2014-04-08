@@ -22,17 +22,11 @@
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0"
     xml:id="ch_gs_getting_set_up">
-    <info>
-        <title>Set Up the Environment and Authenticate</title>
-        <raxm:metadata>
-            <raxm:type>tutorial</raxm:type>
-            <raxm:product version="v2">servers</raxm:product>
-            <raxm:priority>1</raxm:priority>
-        </raxm:metadata>
-    </info>
-    <para>Steps 1 and 2 walk you through the steps to set up your working environment. You can choose to use
-        the nova client or cURL. Select the appropriate method to prepare for the exercises to create isolated networks and
-        servers. Step 3 walks you through getting authenticated.</para>
+    <title>Set up the environment and authenticate</title>
+
+    <para>Steps 1 and 2 walk you through the steps to set up your working environment. You can choose to use the nova client
+        or cURL. Select the appropriate method to prepare for the exercises to create isolated networks and servers. Step 3
+        walks you through getting authenticated.</para>
 
     <xi:include href="net_install_nova.xml"/>
     <xi:include href="net_install_neutron.xml"/>

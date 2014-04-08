@@ -19,7 +19,7 @@
 ]>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="novaclient">
-    <title>How the nova Client Works</title>
+    <title>How the nova client works</title>
     <para>The nova client is an open-source Python client that lets you run commands to make API calls. This client
         is easy to learn and use. Each nova client command runs cURL commands that embed API requests. You can run the
         nova client from a desktop machine or remote system, such as a Cloud Server. </para>

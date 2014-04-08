@@ -21,8 +21,8 @@
 ]>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="net_auth">
-    <title><phrase audience="dg">Get Authentication Token</phrase><phrase audience="gs">Step 4. Get Authentication
-            Token</phrase></title>
+    <title><phrase audience="dg">Get authentication token</phrase><phrase audience="gs">Step 4. Get authentication
+            token</phrase></title>
     <para>To authenticate access to Rackspace Cloud services, you issue an authentication request to the &CIS;, which is an
         implementation of the OpenStack Keystone Identity Service v2.0.</para>
     <important>
@@ -79,7 +79,7 @@
     <?hard-pagebreak?>
 
     <section xml:id="nova_auth" audience="gs">
-        <title>Authenticate with the nova Client</title>
+        <title>Authenticate with the nova client</title>
         <procedure>
             <title>To authenticate with the nova client:</title>
             <step>
@@ -149,8 +149,8 @@
         </procedure>
         <sidebar audience="gs">
             <para><emphasis role="bold">Next step:</emphasis>
-                <olink targetdoc="cn-gettingstarted" targetptr="create_first_net">Create Your First Cloud
-                    Network</olink></para>
+                <olink targetdoc="cn-gettingstarted" targetptr="create_first_net">Create your first cloud
+                    network</olink></para>
         </sidebar>
     </section>
     <?hard-pagebreak?>
@@ -300,8 +300,8 @@
 
         <sidebar audience="gs">
             <para><emphasis role="bold">Next step:</emphasis>
-                <olink targetdoc="cn-gettingstarted" targetptr="create_first_net">Create Your First Cloud
-                Network</olink></para>
+                <olink targetdoc="cn-gettingstarted" targetptr="create_first_net">Create your first cloud
+                network</olink></para>
         </sidebar>
     </section>
 </section>

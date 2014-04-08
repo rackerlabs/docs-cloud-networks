@@ -23,10 +23,6 @@
     xml:id="create_network_neutron">
     <title>Step 1. Create a network or a sub-network</title>
     <para>Before you create a server, you create a network, and an optional subnet, that you can attach to your new server. </para>
-    <para>To create a network, you specify a name and an admin_state for your network. To create a subnet, you specify a
-        network, an IP address, and a name for your subnet. </para>
-    <para>After you create a network, copy its network ID. You use this ID to create a subnet or attach the network to a
-        server. After you create a subnet, copy its subnet ID for future reference.</para>
     <sidebar>
         <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
                 <listitem>
@@ -42,6 +38,10 @@
 
     <section xml:id="neutron_create_network_neutron">
         <title>Create a network or subnet with the neutron client</title>
+        <para>To create a network, you specify a name for your network. To create a subnet, you specify a network, an IP
+            address, and a name for your subnet. </para>
+        <para>After you create a network, copy its network ID. You use this ID to create a subnet or attach the network to a
+            server. After you create a subnet, copy its subnet ID for future reference.</para>
         <para>
             <procedure>
                 <title>To create a network with the neutron client</title>
@@ -113,6 +113,9 @@
 
     <section xml:id="curl_create_network_neutron">
         <title>Create a network or subnet with cURL</title>
+        <para>To create a network, you specify a name and an admin_state for your network.</para>
+        <para>After you create a network, copy its network ID. You use this ID to create a subnet or attach the network to a
+            server.</para>
         <procedure>
             <title>To create a network</title>
             <step>
@@ -140,6 +143,8 @@
         </procedure>
         <procedure>
             <title>To create a subnet and request a JSON response</title>
+            <para>To create a subnet, you specify a network, an IP address, and a name for your subnet. </para>
+            <para>After you create a subnet, copy its subnet ID for future reference.</para>
             <step>
                 <para>Issue the following cURL command:
                     <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>

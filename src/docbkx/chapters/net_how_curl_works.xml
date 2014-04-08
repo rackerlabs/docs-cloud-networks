@@ -28,7 +28,7 @@ format="SVG" scale="60"/>
 ]>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="curl">
-    <title>How cURL Commands Work</title>
+    <title>How cURL commands work</title>
     <para>cURL is a command-line tool that you can use to interact with <glossterm>REST</glossterm> interfaces. cURL lets you
         to transmit and receive <glossterm>HTTP</glossterm> requests and responses from the command line or a shell script,
         which enables you to work with the API directly. It is available for Linux distributions, Mac OS X, and Windows. For

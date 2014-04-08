@@ -78,6 +78,7 @@
     <?hard-pagebreak?>
     <section xml:id="neutron_show_network_neutron">
         <title>Show network or subnet details with the neutron client</title>
+        <para>The following steps shows you how to view details for networks or subnets using the neutron client.</para>
         <procedure>
             <title>To show information for a specified network ID</title>
             <step>
@@ -155,9 +156,9 @@
     <?hard-pagebreak?>
     <section xml:id="curl_show_network_neutron">
         <title>Show network or subnet details with cURL</title>
-        <para>You can request a JSON or XML response when you issue a request in a cURL command.</para>
+        <para>The following steps shows you how to view details for networks or subnets using cURL.</para>
         <procedure>
-            <title>To show information in a JSON response for a specified network ID</title>
+            <title>To show information for a specified network ID</title>
             <step>
                 <para>Issue the following cURL command:
                     <programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
@@ -185,7 +186,7 @@
             </step>
         </procedure>
         <procedure>
-            <title>To show information for a specified subnet ID in a JSON response</title>
+            <title>To show information for a specified subnet ID</title>
             <step>
                 <para>Issue the following cURL command:
                     <programlisting language="bash" role="gutter: false"><?db-font-size 65%?>

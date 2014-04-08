@@ -15,7 +15,7 @@
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="curl_summary_xml">
 
-    <title>XML Requests and Responses</title>
+    <title>XML requests and responses</title>
     <para>The following example shows a cURL command that specifies an XML request body and returns an XML response. The
         command creates a server.</para>
     <example xml:id="xml_example">

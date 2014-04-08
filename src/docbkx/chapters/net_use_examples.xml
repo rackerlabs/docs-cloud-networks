@@ -21,7 +21,7 @@
 ]>
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="how_examples_work">
-    <title>Learn How to Use the Examples in This Guide</title>
+    <title>Learn how to use the examples in this guide</title>
     <para>For each exercise in this guide, you choose one of the following methods to make Cloud Networks API calls: <itemizedlist>
             <listitem>
                 <para><emphasis role="bold">The

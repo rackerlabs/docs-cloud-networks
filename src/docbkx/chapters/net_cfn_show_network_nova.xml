@@ -64,6 +64,7 @@
     <?hard-pagebreak?>
     <section xml:id="nova_show_network">
         <title>Show network details with the nova client</title>
+        <para>The following step shows you how to show network details using the nova client.</para>
         <procedure>
             <title>To show information for a specified network ID</title>
             <step>

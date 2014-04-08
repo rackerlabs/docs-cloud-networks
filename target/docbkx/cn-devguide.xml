@@ -1399,7 +1399,7 @@
 
       <section version="5.0" xml:id="net_auth" xml:base="chapters/net_auth.xml">
          <title>
-            <phrase audience="dg">Get Authentication Token</phrase>
+            <phrase audience="dg">Get authentication token</phrase>
          </title>
          <para>To authenticate access to Rackspace Cloud services, you issue an authentication request to the Rackspace Cloud Identity Service, which is an
         implementation of the OpenStack Keystone Identity Service v2.0.</para>
@@ -1906,7 +1906,7 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
       <section version="5.0"
                xml:id="curl"
                xml:base="chapters/net_how_curl_works.xml">
-         <title>How cURL Commands Work</title>
+         <title>How cURL commands work</title>
          <para>cURL is a command-line tool that you can use to interact with <glossterm>REST</glossterm> interfaces. cURL lets you
         to transmit and receive <glossterm>HTTP</glossterm> requests and responses from the command line or a shell script,
         which enables you to work with the API directly. It is available for Linux distributions, Mac OS X, and Windows. For
@@ -2045,7 +2045,7 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
                   xml:id="curl_summary_xml"
                   xml:base="net_how_curl_works_xml.xml">
 
-            <title>XML Requests and Responses</title>
+            <title>XML requests and responses</title>
             <para>The following example shows a cURL command that specifies an XML request body and returns an XML response. The
         command creates a server.</para>
             <example xml:id="xml_example">

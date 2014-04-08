@@ -871,7 +871,7 @@
     <chapter version="5.0"
             xml:id="how_examples_work"
             xml:base="chapters/net_use_examples.xml">
-      <title>Learn How to Use the Examples in This Guide</title>
+      <title>Learn how to use the examples in this guide</title>
       <para>For each exercise in this guide, you choose one of the following methods to make Cloud Networks API calls: <itemizedlist>
             <listitem>
                 <para>
@@ -901,7 +901,7 @@
       <section version="5.0"
                xml:id="novaclient"
                xml:base="chapters/net_how_nova_works.xml">
-         <title>How the nova Client Works</title>
+         <title>How the nova client works</title>
          <para>The nova client is an open-source Python client that lets you run commands to make API calls. This client
         is easy to learn and use. Each nova client command runs cURL commands that embed API requests. You can run the
         nova client from a desktop machine or remote system, such as a Cloud Server. </para>
@@ -919,7 +919,7 @@
       <section version="5.0"
                xml:id="curl"
                xml:base="chapters/net_how_curl_works.xml">
-         <title>How cURL Commands Work</title>
+         <title>How cURL commands work</title>
          <para>cURL is a command-line tool that you can use to interact with <glossterm>REST</glossterm> interfaces. cURL lets you
         to transmit and receive <glossterm>HTTP</glossterm> requests and responses from the command line or a shell script,
         which enables you to work with the API directly. It is available for Linux distributions, Mac OS X, and Windows. For
@@ -1058,7 +1058,7 @@
                   xml:id="curl_summary_xml"
                   xml:base="net_how_curl_works_xml.xml">
 
-            <title>XML Requests and Responses</title>
+            <title>XML requests and responses</title>
             <para>The following example shows a cURL command that specifies an XML request body and returns an XML response. The
         command creates a server.</para>
             <example xml:id="xml_example">
@@ -1159,19 +1159,17 @@
             version="5.0"
             xml:id="ch_gs_getting_set_up"
             xml:base="chapters/net_set_up.xml">
-      <info>
-        <title>Set Up the Environment and Authenticate</title>
-        
-      </info>
-      <para>Steps 1 and 2 walk you through the steps to set up your working environment. You can choose to use
-        the nova client or cURL. Select the appropriate method to prepare for the exercises to create isolated networks and
-        servers. Step 3 walks you through getting authenticated.</para>
+      <title>Set up the environment and authenticate</title>
+
+      <para>Steps 1 and 2 walk you through the steps to set up your working environment. You can choose to use the nova client
+        or cURL. Select the appropriate method to prepare for the exercises to create isolated networks and servers. Step 3
+        walks you through getting authenticated.</para>
 
       <section version="5.0"
                xml:id="install_nova"
                xml:base="chapters/net_install_nova.xml">
 
-         <title>Step 1. (Optional) Install the nova Client with the Cloud Networks Extension</title>
+         <title>Step 1. (optional) Install the nova client with the Cloud Networks Extension</title>
          <para>To manage your servers from the command line, you can use the open-source nova client application called
             <literal>python-novaclient</literal>. </para>
          <para>To install the nova client, you first install the <literal>rackspace-novaclient</literal> package, which includes
@@ -1424,7 +1422,7 @@ $ nova image-list </programlisting>
                xml:id="install_neutron"
                xml:base="chapters/net_install_neutron.xml">
 
-         <title>Step 2. (Optional) Install the neutron Client with the Cloud Networks Extension</title>
+         <title>Step 2. (Optional) Install the neutron client with the Cloud Networks Extension</title>
          <para>Follow the necessary steps to install the neutron client (TBD).</para>
          <!--<para>To manage your servers from the command line, you can use the open-source nova client application called
             <literal>python-novaclient</literal>. </para>
@@ -1664,7 +1662,7 @@ export OS_NO_CACHE=1</computeroutput></screen>
       <section version="5.0"
                xml:id="export_env_vars"
                xml:base="chapters/net_curl_export_vars.xml">
-         <title>Step 3. (Optional) Export Environment Variables to Run cURL Commands</title>
+         <title>Step 3. (optional) Export environment variables to run cURL commands</title>
          <para>To run the cURL command examples in this guide, follow this procedure to export environment variables. </para>
          <para>Export your tenant ID and authentication token to environment variables. All cURL examples in this guide use these
         environment variables.</para>
@@ -1694,8 +1692,8 @@ export OS_NO_CACHE=1</computeroutput></screen>
       <!--need to add neutron client install here? -->
       <section version="5.0" xml:id="net_auth" xml:base="chapters/net_auth.xml">
          <title>
-            <phrase audience="gs">Step 4. Get Authentication
-            Token</phrase>
+            <phrase audience="gs">Step 4. Get authentication
+            token</phrase>
          </title>
          <para>To authenticate access to Rackspace Cloud services, you issue an authentication request to the Rackspace Cloud Identity Service, which is an
         implementation of the OpenStack Keystone Identity Service v2.0.</para>
@@ -1761,7 +1759,7 @@ export OS_NO_CACHE=1</computeroutput></screen>
          <?hard-pagebreak?>
 
          <section xml:id="nova_auth" audience="gs">
-            <title>Authenticate with the nova Client</title>
+            <title>Authenticate with the nova client</title>
             <procedure>
                <title>To authenticate with the nova client:</title>
                <step>
@@ -2169,10 +2167,6 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
                   xml:base="net_cfn_create_network_neutron.xml">
             <title>Step 1. Create a network or a sub-network</title>
             <para>Before you create a server, you create a network, and an optional subnet, that you can attach to your new server. </para>
-            <para>To create a network, you specify a name and an admin_state for your network. To create a subnet, you specify a
-        network, an IP address, and a name for your subnet. </para>
-            <para>After you create a network, copy its network ID. You use this ID to create a subnet or attach the network to a
-        server. After you create a subnet, copy its subnet ID for future reference.</para>
             <sidebar>
                <para>
                   <emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
@@ -2192,6 +2186,10 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
 
             <section xml:id="neutron_create_network_neutron">
                <title>Create a network or subnet with the neutron client</title>
+               <para>To create a network, you specify a name for your network. To create a subnet, you specify a network, an IP
+            address, and a name for your subnet. </para>
+               <para>After you create a network, copy its network ID. You use this ID to create a subnet or attach the network to a
+            server. After you create a subnet, copy its subnet ID for future reference.</para>
                <para>
                   <procedure>
                      <title>To create a network with the neutron client</title>
@@ -2270,6 +2268,9 @@ $ neutron net-create &lt;amp&gt;</programlisting>
 
             <section xml:id="curl_create_network_neutron">
                <title>Create a network or subnet with cURL</title>
+               <para>To create a network, you specify a name and an admin_state for your network.</para>
+               <para>After you create a network, copy its network ID. You use this ID to create a subnet or attach the network to a
+            server.</para>
                <procedure>
                   <title>To create a network</title>
                   <step>
@@ -2314,6 +2315,8 @@ $ neutron net-create &lt;amp&gt;</programlisting>
                </procedure>
                <procedure>
                   <title>To create a subnet and request a JSON response</title>
+                  <para>To create a subnet, you specify a network, an IP address, and a name for your subnet. </para>
+                  <para>After you create a subnet, copy its subnet ID for future reference.</para>
                   <step>
                      <para>Issue the following cURL command:
                     <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
@@ -2370,6 +2373,7 @@ $ neutron net-create &lt;amp&gt;</programlisting>
             </sidebar>
             <section xml:id="neutron_list_networks_neutron">
                <title>List networks or subnets with the neutron client</title>
+               <para>The following steps shows you how to list networks and subnets using the neutron client.</para>
                <procedure>
                   <title>To list networks with the neutron client</title>
                   <step>
@@ -2422,6 +2426,7 @@ $ neutron subnet-list </programlisting>
             <section xml:id="curl_list_networks_neutron">
         <?dbhtml stop-chunking?>
                <title>List networks or subnets with cURL</title>
+               <para>The following steps shows you how to list networks and subnets using cURL.</para>
                <procedure>
                   <title>To list networks</title>
                   <step>
@@ -2524,6 +2529,7 @@ $ neutron subnet-list </programlisting>
             <?hard-pagebreak?>
             <section xml:id="neutron_show_network_neutron">
                <title>Show network or subnet details with the neutron client</title>
+               <para>The following steps shows you how to view details for networks or subnets using the neutron client.</para>
                <procedure>
                   <title>To show information for a specified network ID</title>
                   <step>
@@ -2611,9 +2617,9 @@ $ neutron subnet-list </programlisting>
             <?hard-pagebreak?>
             <section xml:id="curl_show_network_neutron">
                <title>Show network or subnet details with cURL</title>
-               <para>You can request a JSON or XML response when you issue a request in a cURL command.</para>
+               <para>The following steps shows you how to view details for networks or subnets using cURL.</para>
                <procedure>
-                  <title>To show information in a JSON response for a specified network ID</title>
+                  <title>To show information for a specified network ID</title>
                   <step>
                      <para>Issue the following cURL command:
                     <programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
@@ -2664,7 +2670,7 @@ $ neutron subnet-list </programlisting>
                   </step>
                </procedure>
                <procedure>
-                  <title>To show information for a specified subnet ID in a JSON response</title>
+                  <title>To show information for a specified subnet ID</title>
                   <step>
                      <para>Issue the following cURL command:
                     <programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
@@ -2770,55 +2776,54 @@ $ neutron subnet-list </programlisting>
             </sidebar>
             <section xml:id="nova_create_network">
                <title>Create an isolated network with the nova client </title>
-               <para>
-                  <procedure>
-                     <title>To create an isolated network with the nova client</title>
-                     <step>
-                        <para>Issue the following command:
-                        <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+               <para>The following step shows you how to create an isolated network using the nova client.</para>
+               <procedure>
+                  <title>To create an isolated network with the nova client</title>
+                  <step>
+                     <para>Issue the following command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
                             $ nova network-create &lt;network_label&gt; &lt;cidr&gt;</programlisting>
-                        </para>
-                        <para>
-                           <emphasis role="bold">Positional arguments:</emphasis>
-                        </para>
-                        <para>
-                           <itemizedlist>
-                              <listitem>
-                                <para>
-                                    <parameter>network_label</parameter>. The network label, such as
-                                        <literal>my_new_network</literal>, </para>
-                              </listitem>
-                              <listitem>
-                                <para>
-                                    <parameter>cidr</parameter>. The IP block from which to allocate, such as
-                                        <literal>172.16.0.0/24</literal> or <literal>2001:DB8::/64</literal>.</para>
-                              </listitem>
-                           </itemizedlist>
-                        </para>
-                        <para>
-                           <emphasis role="bold">Output:</emphasis>
-                        </para>
-                        <para>The command returns the CIDR, ID, and label for the new network, as shown in the following
-                        output:</para>
-                        <informalexample>
-                           <screen><?db-font-size 75%?>+----------+--------------------------------------+
+                     </para>
+                     <para>
+                        <emphasis role="bold">Positional arguments:</emphasis>
+                     </para>
+                     <para>
+                        <itemizedlist>
+                           <listitem>
+                              <para>
+                                 <parameter>network_label</parameter>. The network label, such as
+                                    <literal>my_new_network</literal>, </para>
+                           </listitem>
+                           <listitem>
+                              <para>
+                                 <parameter>cidr</parameter>. The IP block from which to allocate, such as
+                                    <literal>172.16.0.0/24</literal> or <literal>2001:DB8::/64</literal>.</para>
+                           </listitem>
+                        </itemizedlist>
+                     </para>
+                     <para>
+                        <emphasis role="bold">Output:</emphasis>
+                     </para>
+                     <para>The command returns the CIDR, ID, and label for the new network, as shown in the following
+                    output:</para>
+                     <informalexample>
+                        <screen><?db-font-size 75%?>+----------+--------------------------------------+
 | Property | Value                                |
 +----------+--------------------------------------+
 | cidr     | 192.168.0.0/24                       |
 | id       | 1f84c238-b05a-4374-a0cb-aa6140032cd1 |
 | label    | new_network                          |
 +----------+--------------------------------------+</screen>
-                        </informalexample>
+                     </informalexample>
 
-                     </step>
-                     <step>
-                        <para>Copy the <literal>id</literal> value from the output. In this example, the <literal>id</literal>
-                        value is <literal>1f84c238-b05a-4374-a0cb-aa6140032cd1</literal>, but use the value returned for your
-                        network.</para>
-                        <para>You will use this value when you provision your server in the next step.</para>
-                     </step>
-                  </procedure>
-               </para>
+                  </step>
+                  <step>
+                     <para>Copy the <literal>id</literal> value from the output. In this example, the <literal>id</literal> value
+                    is <literal>1f84c238-b05a-4374-a0cb-aa6140032cd1</literal>, but use the value returned for your
+                    network.</para>
+                     <para>You will use this value when you provision your server in the next step.</para>
+                  </step>
+               </procedure>
                <sidebar>
                   <para>
                      <emphasis role="bold">Next step: </emphasis>
@@ -2943,6 +2948,7 @@ $ neutron subnet-list </programlisting>
             </sidebar>
             <section xml:id="nova_list_networks">
                <title>List networks with the nova client</title>
+               <para>The following step shows you how to list networks using the nova client.</para>
                <procedure>
                   <title>To list networks with the nova client</title>
                   <step>
@@ -3119,6 +3125,7 @@ $ neutron subnet-list </programlisting>
             <?hard-pagebreak?>
             <section xml:id="nova_show_network">
                <title>Show network details with the nova client</title>
+               <para>The following step shows you how to show network details using the nova client.</para>
                <procedure>
                   <title>To show information for a specified network ID</title>
                   <step>
@@ -3270,9 +3277,9 @@ $ neutron subnet-list </programlisting>
     <chapter version="5.0"
             xml:id="boot_new_server"
             xml:base="chapters/net_boot_new_server.xml">
-        <title>Boot a New Server With Your Cloud Network</title>
-        <para>Now that you have a Cloud Network, you can attach it a new server when you create the server. Use the nova-network
-                to create and list servers.</para>
+        <title>Boot a new server with your cloud network</title>
+        <para>Now that you have a cloud network, you can attach it a new server when you create the server. Use the
+                nova-network API to create and list servers.</para>
         <section xmlns:raxm="http://docs.rackspace.com/api/metadata"
                version="5.0"
                xml:id="create_server_with_network"
@@ -3839,7 +3846,7 @@ $ neutron subnet-list </programlisting>
     <chapter version="5.0"
             xml:id="ch_gs_attach_network_to_server"
             xml:base="chapters/net_attach_network_to_server.xml">
-      <title>Attach Your Network to an Existing Server</title>
+      <title>Attach your network to an existing server</title>
       <para>Before attaching your first network to a server, choose whether to use the Neutron API or the Nova-network API. For
         help deciding, see <xref linkend="section_nova_v_neutron"/>. The sections in this chapter provide examples of attaching a network to an existing
         server using each API.</para>
@@ -3847,7 +3854,7 @@ $ neutron subnet-list </programlisting>
                version="5.0"
                xml:id="attach_network_to_server_neutron"
                xml:base="chapters/net_attach_network_neutron.xml">
-         <title>Attach Your Network to an Existing Server Using Neutron</title>
+         <title>Attach your network to an existing server using neutron</title>
          <para>How do we do this with Neutron? </para>
       </section>
       <section xmlns:raxm="http://docs.rackspace.com/api/metadata"

@@ -21,9 +21,9 @@
 ]>
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
         xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="boot_new_server">
-        <title>Boot a New Server With Your Cloud Network</title>
-        <para>Now that you have a Cloud Network, you can attach it a new server when you create the server. Use the nova-network
-                to create and list servers.</para>
+        <title>Boot a new server with your cloud network</title>
+        <para>Now that you have a cloud network, you can attach it a new server when you create the server. Use the
+                nova-network API to create and list servers.</para>
         <xi:include href="net_bns_boot_server.xml"/>
         <xi:include href="net_bns_list_servers.xml"/>
 </chapter>
