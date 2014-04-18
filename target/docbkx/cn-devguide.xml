@@ -31,7 +31,7 @@
         </copyright>
         <releaseinfo>Cloud Networks API v2</releaseinfo>
         <productname>Cloud Networks™</productname>
-        <pubdate>2014-04-07</pubdate>
+        <pubdate>2014-04-16</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <para>
@@ -220,9 +220,19 @@
         instances with Rackspace networks or the isolated networks that you created. </para>
       <para>When you create an isolated network, it is associated with your tenant ID.</para>
 
-      <para>Cloud Networks was originally released using the Cloud Servers Nova-network (see <xref linkend="api_operations_nova"/>). Now Cloud Networks has been released using
-        Neutron (see <xref linkend="api_operations_nuetron"/>).
-        Both sets of API operations work. For information that helps you determine which method is better for you, see <xref linkend="section_nova_v_neutron"/>.</para>
+      <para>Cloud Networks was originally released using the Cloud Servers the nova-network API (see <phrase condition="cn">
+            <xref linkend="api_operations_nova"/>
+         </phrase>
+        ).
+        Now Cloud Networks has been released using the neutron API (see <phrase condition="cn">
+            <xref linkend="api_operations_neutron"/>
+         </phrase>
+        ).
+        The nova-network API operations still work, but we recommend using the neutron API operations. For information that
+        helps you determine which method is better for you, see <phrase condition="cn">
+            <xref linkend="section_nova_v_neutron"/>
+         </phrase>
+        .</para>
       <para>To request access to Cloud Networks now, click
         <link xlink:href="http://www.iwantcloudnetworks.com/">"I want Cloud Networks"</link>.</para>
       <para>To detect if you are enabled to use Cloud Networks, issue a <command>GET</command> 
@@ -256,12 +266,13 @@
         </table>
       </para>
       <para>For more information about querying limits, see
-        <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/ProgrammaticLimits.html">Get Limits</link>.</para>
+        <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/ProgrammaticLimits.html">Get Limits</link>
+        in the <citetitle>Cloud Servers Developer Guide</citetitle>.</para>
       <para>We welcome feedback, comments, and bug reports. Login to the Rackspace customer portal at
         <link xlink:href="http://www.rackspace.com/support/">http://www.rackspace.com/support/</link>.</para>
 
       <section xml:id="Intended_Audience-d1e85">
-        <title>Intended Audience</title>
+        <title>Intended audience</title>
         <para>This guide assists software developers who want to develop applications by using Cloud Servers and Cloud
             Networks. </para>
         <para>To use this information, you should have access to an active Rackspace Cloud Servers account and access to
@@ -285,7 +296,7 @@
       </section>
 
       <section version="5.0" xml:id="Pricing_SLA">
-        <title>Pricing and Service Level</title>
+        <title>Pricing and service level</title>
         <para>Next generation Cloud Networks is part of the Rackspace Cloud and your use through the API is billed according
             to the pricing schedule for Cloud Servers at
             <link xlink:href="http://www.rackspace.com/cloud/servers/pricing/">http://www.rackspace.com/cloud/servers/pricing/</link>.</para>
@@ -294,7 +305,7 @@
       </section>
 
       <section xml:id="Document_Change_History">
-        <title>Document Change History</title>
+        <title>Document change history</title>
         <para> This version of the guide applies only to v3.0 of the API. The most recent changes are described in the
             following table: </para>
         <informaltable rules="all">
@@ -615,9 +626,13 @@
                 greater control and security when you deploy web applications. </para>
         <para>When you create a next generation Cloud Server, Cloud Networks enables you to attach one or more networks to
                 your server. You can attach an isolated network that you have created or a Rackspace network. </para>
-        <para>If you install the Cloud Networks virtual interface extension, you can create a virtual interface to a specified Rackspace or isolated network
-                and attach that network to an existing server instance. You can also list virtual interfaces for and delete
-                virtual interfaces from a server instance. For information about the Cloud Networks virtual interface extension, see <xref linkend="section_virt_ext"/>.</para>
+        <para>If you are using nova-network operations and you install the Cloud Networks virtual interface extension, you can create a virtual interface to
+                a specified Rackspace or isolated network and attach that network to an existing server instance. You can
+                also list virtual interfaces for and delete virtual interfaces from a server instance. For information about
+                the Cloud Networks virtual interface extension, see <phrase condition="cn">
+            <xref linkend="section_virt_ext"/>
+         </phrase>
+                .</para>
         <para>Cloud Networks enables you to attach one or more of the following networks to your server: <itemizedlist>
                         <listitem>
                                 <para>
@@ -659,11 +674,11 @@
                 you use to provision it: <itemizedlist>
                         <listitem>
                                 <para>
-                  <emphasis role="bold">The Cloud Servers API</emphasis>. You must specify the networks
-                                        that you want to attach to your server. If you do not specify any networks,
-                                        ServiceNet and PublicNet are attached by default. However, if you specify an isolated
-                                        network, you must explicitly specify the UUIDs for PublicNet and ServiceNet to attach
-                                        these networks to your server. The UUID for ServiceNet is
+                  <emphasis role="bold">The Cloud Servers neutron API or nova-network API</emphasis>. You
+                                        must specify the networks that you want to attach to your server. If you do not
+                                        specify any networks, ServiceNet and PublicNet are attached by default. However, if
+                                        you specify an isolated network, you must explicitly specify the UUIDs for PublicNet
+                                        and ServiceNet to attach these networks to your server. The UUID for ServiceNet is
                                                 <literal>11111111-1111-1111-1111-111111111111</literal>, and the UUID for
                                         PublicNet is <literal>00000000-0000-0000-0000-000000000000</literal>. </para>
                         </listitem>
@@ -686,9 +701,12 @@
       </para>
         <note>
                 <para>You can explicitly opt out of attaching to the Rackspace networks, which introduces certain potential
-                        complications. For more information, see <xref linkend="networks"/>.</para>
+                        complications. For more information, see <phrase condition="cn">
+               <xref linkend="networks"/>
+            </phrase>
+                        .</para>
         </note>
-        <para>You can use Cloud Networks to perform the following tasks: <itemizedlist>
+        <para>You can use the Cloud Networks service to perform the following tasks: <itemizedlist>
                         <listitem>
                                 <para>List networks to which the specified tenant has access.</para>
                         </listitem>
@@ -701,7 +719,10 @@
                         <listitem>
                                 <para>Delete an isolated network, but only if it is not associated with any server. </para>
                                 <para>To detach a network from a server, you must use the Cloud Networks virtual interface extension to delete the virtual
-                                        interface for the network from the server. See <xref linkend="section_virt_ext"/>.</para>
+                                        interface for the network from the server. See <phrase condition="cn">
+                     <xref linkend="networks"/>
+                  </phrase>
+                                        .</para>
                         </listitem>
                         <listitem>
                                 <para>Manage subnets.</para>
@@ -725,7 +746,8 @@
          <para>Rackspace first introduced networking services by using the nova-network API based on OpenStack. Now we are
         providing the neutron API, also based on OpenStack, which offers more functionality and flexibility than the
         nova-network API. Both sets of APIs continue to work well, but the neutron API will be the base for all the future
-        networking services that Rackspace offers. </para>
+        networking services that Rackspace offers. </para>  
+         <para>We recommend that you use the neutron API for your Cloud Networks API operations.</para>
          <para>The neutron API provides three primary, top-level resources (networks, ports, and subnets) and includes the ability
         to perform the following functions: <itemizedlist>
                <listitem>
@@ -752,7 +774,7 @@
             <para>The neutron API operations return only JSON-formatted responses. There is no option to receive responses in
             XML.</para>
          </note>
-      </section> 
+      </section>
         <section version="5.0"
                xml:id="networks"
                xml:base="chapters/net_limitations.xml">
@@ -784,14 +806,15 @@
         are provisioning the server: <itemizedlist>
                <listitem>
                   <para>
-                     <emphasis role="bold">nova boot command</emphasis>. Specify the optional
-                        <option>--no-public</option> and <option>--no-service-net</option> parameters. </para>
+                     <emphasis role="bold">nova boot command</emphasis>. Specify the optional <option>--no-public</option>
+                    and <option>--no-service-net</option> parameters. </para>
                </listitem>
                <listitem>
                   <para>
-                     <emphasis role="bold">Cloud Servers API</emphasis>. If you do not specify any networks, ServiceNet and
-                    PublicNet are attached by default. However, if you specify an isolated network, you must explicitly
-                    specify the UUIDs for PublicNet and ServiceNet to attach these networks to your server. </para>
+                     <emphasis role="bold">Cloud Servers neutron API or nova-network API</emphasis>. If you do not specify any
+                    networks, ServiceNet and PublicNet are attached by default. However, if you specify an isolated network,
+                    you must explicitly specify the UUIDs for PublicNet and ServiceNet to attach these networks to your
+                    server. </para>
                   <para>The UUID for ServiceNet is <literal>11111111-1111-1111-1111-111111111111</literal>, and the UUID for
                     PublicNet is <literal>00000000-0000-0000-0000-000000000000</literal>. </para>
                   <para>Omit these UUIDs from the request to detach from these networks.</para>
@@ -1385,7 +1408,7 @@
     <chapter version="5.0"
             xml:id="General-Keystone-API-d1e62"
             xml:base="chapters/net_generalinfo.xml">
-      <title>General API Information</title>
+      <title>General API information</title>
       <info>
         <raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
             <raxm:type>concept</raxm:type>
@@ -1398,9 +1421,7 @@
         filtering and pagination of requests. </para>
 
       <section version="5.0" xml:id="net_auth" xml:base="chapters/net_auth.xml">
-         <title>
-            <phrase audience="dg">Get authentication token</phrase>
-         </title>
+         <title>Get authentication token</title>
          <para>To authenticate access to Rackspace Cloud services, you issue an authentication request to the Rackspace Cloud Identity Service, which is an
         implementation of the OpenStack Keystone Identity Service v2.0.</para>
          <important>
@@ -1473,13 +1494,13 @@
                   <para>Get an authentication token and a service catalog with a list of endpoints. </para>
                   <para>Use one of the following cURL commands to authenticate to the US Identity endpoint:</para>
                   <example>
-                    <title>Authenticate with Username and Password: JSON Request</title>
+                    <title>Authenticate with username and password: JSON request</title>
                     <programlisting language="bash" role="gutter: false"><?db-font-size 50%?>$ curl -s https://identity.api.rackspacecloud.com/v2.0/tokens -X 'POST' \
        -d '{"auth":{"passwordCredentials":{"username":"theUserName", "password":"thePassword"}}}' \
        -H "Content-Type: application/json" | python -m json.tool</programlisting>
                   </example>
                   <example>
-                    <title>Authenticate with Username and API Key: JSON Request</title>
+                    <title>Authenticate with username and API key: JSON request</title>
                     <programlisting language="bash" role="gutter: false"><?db-font-size 50%?>$ curl -s https://identity.api.rackspacecloud.com/v2.0/tokens -X 'POST' \
        -d '{"auth":{"RAX-KSKEY:apiKeyCredentials":{"username":"theUserName", "apiKey":"0000000000000000000"}}}' \
        -H "Content-Type: application/json" | python -m json.tool</programlisting>
@@ -1492,7 +1513,7 @@
                   <para>Do not include explicit API endpoints in your scripts and applications. Instead, find the endpoint for
                     your service and region. </para>
                   <para>The following output shows a partial authentication response in JSON format: <example>
-                        <title>Authenticate: JSON Response</title>
+                        <title>Authenticate: JSON response</title>
                         <programlistingco>
                             <areaspec>
                                 <area xml:id="credentials.xml.endpoints"
@@ -1660,7 +1681,7 @@
                                 the <code>endpoints</code> element in the <code>serviceCatalog</code> element. </para>
                             <para>Endpoints information includes the public URL, which is the endpoint that you use to access
                                 the service, region, tenant ID, and version information. </para>
-                            <para condition="cn">To access the Cloud Networks or next generation Cloud Servers service, use
+                            <para>To access the Cloud Networks or next generation Cloud Servers service, use
                                 the endpoint for the <literal>cloudServersOpenStack</literal> service.</para>
                         </callout>
                         <callout arearefs="credentials.xml.tenant">
@@ -1755,7 +1776,7 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
       <section version="5.0"
                xml:id="section_rbac_3"
                xml:base="chapters/net_identity_3roles.xml">
-         <title>Role Based Access Control</title>
+         <title>Role based access control</title>
          <para> Role Based Access Control (RBAC) restricts access to the capabilities of Rackspace Cloud services, including the
         Cloud Networks API, to authorized users only. RBAC enables Rackspace Cloud customers to specify which account users
         of their Cloud account have access to which Cloud Networks API service capabilities, based on roles defined by
@@ -1764,7 +1785,7 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
         (multiproduct) or product-specific (for example, Cloud Networks), to account users. </para>
 
          <section version="5.0" xml:id="section_assign_roles_3">
-            <title>Assigning Roles to Account Users</title>
+            <title>Assigning roles to account users</title>
             <para> The account owner (identity:user-admin) can create account users on the account and then assign roles to those
             users. The roles grant the account users specific permissions for accessing the capabilities of the Cloud
             Networks service. Each account has only one account owner, and that role is assigned by default to any Rackspace
@@ -1801,11 +1822,11 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
          </section>
 
          <section version="5.0" xml:id="section_roles_for_products_3">
-            <title>Roles Available for Cloud Networks</title>
+            <title>Roles available for cloud networks</title>
             <para> Three roles (observer, creator, and admin) can be used to access the Cloud Networks API specifically. The
             following table describes these roles and their permissions. </para>
             <table rules="all" width="100%" xml:id="RBAC_product_roles_table_3">
-               <caption> Cloud Networks Product Roles and Permissions</caption>
+               <caption> Cloud Networks product roles and permissions</caption>
                <thead>
                   <tr>
                     <td colspan="1">Role name</td>
@@ -1833,7 +1854,7 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
             future products when those products become RBAC-enabled. The following table describes these roles and their
             permissions. </para>
             <table rules="all" width="100%" xml:id="RBAC_global_roles_table_3">
-               <caption> Multiproduct (Global) Roles and Permissions</caption>
+               <caption> Multiproduct (global) roles and permissions</caption>
                <thead>
                   <tr>
                     <td colspan="1">Role Name</td>
@@ -1855,7 +1876,7 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
          </section>
 
          <section version="5.0" xml:id="RBAC_Role_Conflict_3">
-            <title>Resolving Conflicts between RBAC Multiproduct and Custom (Product-Specific) Roles</title>
+            <title>Resolving conflicts between RBAC multiproduct and custom (product-specific) roles</title>
             <para> The account owner can set roles for both multiproduct and Cloud Networks scope, and it is important to
             understand how any potential conflicts among these roles are resolved. When two roles appear to conflict, the
             role that provides the more extensive permissions takes precedence. Therefore, admin roles take precedence over
@@ -1894,7 +1915,7 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
             </para>
          </section>
          <section version="5.0" xml:id="RBAC_API_XREF_3">
-            <title>RBAC Permissions Cross-Reference to Cloud Networks API Operations</title>
+            <title>RBAC permissions cross-reference to Cloud Networks API operations</title>
             <para> API operations for Cloud Networks may or may not be available to all roles. To see which operations are
             permitted to invoke which calls, please see the
             <link xlink:href="http://www.rackspace.com/knowledge_center/article/permissions-matrix-for-cloud-networks">
@@ -1919,7 +1940,7 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
          <para>The following command is an example cURL command that provisions a server with an isolated network:</para>
 
          <example xml:id="json_example">
-            <title>cURL Command Example: JSON Request</title>
+            <title>cURL command example: JSON request</title>
             <programlisting language="bash" role="gutter: false"><?db-font-size 60%?>
             $ curl https://dfw.servers.api.rackspacecloud.com/v2/$account/servers \
        -X POST \
@@ -1938,7 +1959,7 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
          <?hard-pagebreak?>
          <para>The cURL examples in this guide use the following command-line options:</para>
          <table xml:id="curl_options" rules="all" width="85%">
-            <caption>cURL Command-Line Options</caption>
+            <caption>cURL command-line options</caption>
 
             <thead>
                <tr>
@@ -2049,7 +2070,7 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
             <para>The following example shows a cURL command that specifies an XML request body and returns an XML response. The
         command creates a server.</para>
             <example xml:id="xml_example">
-               <title>cURL Command Example: XML Request</title>
+               <title>cURL command example: XML request</title>
                <programlistingco>
                   <areaspec>
                      <area xml:id="xml_curl.txt.endpoint" units="linecolumn" coords="1 87"/>
@@ -2119,7 +2140,7 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
 
             <para>The cURL command returns information about the new server in XML format, as shown in the following example.</para>
             <example xml:id="xml_example_reponse">
-               <title>cURL Command Example: XML Response</title>
+               <title>cURL command example: XML response</title>
                <programlisting language="xml"><?db-font-size 65%?>
             &lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;server
@@ -2144,7 +2165,7 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
       <section version="5.0"
                xml:id="section_filtering"
                xml:base="chapters/net_filtering.xml">
-         <title>Filtering Requests</title>
+         <title>Filtering requests</title>
          <para>The Cloud Networks API supports filtering based on all top-level attributes of a resource. Filters are applicable
         to all list requests.</para>
          <para>For example, the following request returns all networks named foobar:</para>
@@ -2160,7 +2181,7 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
       <section version="5.0"
                xml:id="section_pagination"
                xml:base="chapters/net_pagination.xml">
-         <title>Pagination of Requests</title>
+         <title>Pagination of requests</title>
          <para>To reduce load on the service, list operations returns a maximum number of items at a time. To help you navigate
         the collection, you can set the <parameter>limit</parameter>, <parameter>marker</parameter>, and
             <parameter>page_reverse</parameter> parameters in the URI.</para>
@@ -2175,11 +2196,11 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
         the last page in the list requested with <parameter>page_reverse=True</parameter> does not contain a
             <code>previous</code> link. The following examples illustrate two pages with three items.</para>
          <example xml:id="pageexfirstreq">
-            <title>Network Collection, First Page: JSON or XML Request</title>
+            <title>Network collection, first page: JSON or XML request</title>
             <programlisting>GET /v2.0/networks.json?limit=2 HTTP/1.1</programlisting>
          </example>
          <example xml:id="pageexfirstjsonrsp">
-            <title>Network Collection, First Page: JSON Response</title>
+            <title>Network collection, first page: JSON response</title>
             <programlisting language="json"><?db-font-size 65%?>
             {
     "networks": [
@@ -2224,7 +2245,7 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
         </programlisting>
          </example>
          <example xml:id="pageexfirstxmlrsp">
-            <title>Network Collection, First Page: XML Response</title>
+            <title>Network collection, first page: XML response</title>
             <programlisting language="xml"><?db-font-size 65%?>
             &lt;?xml version="1.0" ?&gt;
 &lt;networks xmlns="http://openstack.org/neutron/api/v2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:provider="http://docs.openstack.org/ext/provider/api/v1.0" xmlns:neutron="http://openstack.org/neutron/api/v2.0" xmlns:router="http://docs.openstack.org/ext/neutron/router/api/v1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
@@ -2260,11 +2281,11 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
         </programlisting>
          </example>
          <example xml:id="pageexlastreq">
-            <title>Network Collection, Last Page: JSON or XML Request</title>
+            <title>Network collection, last page: JSON or XML request</title>
             <programlisting>GET /v2.0/networks.json?limit=2&amp;marker=71c1e68c-171a-4aa2-aca5-50ea153a3718 HTTP/1.1</programlisting>
          </example>
          <example xml:id="pageexlastjsonrsp">
-            <title>Network Collection, Last Page: JSON Response</title>
+            <title>Network collection, last page: JSON response</title>
             <programlisting language="json"><?db-font-size 65%?>
             {
     "networks": [
@@ -2292,7 +2313,7 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
         </programlisting>
          </example>
          <example xml:id="pageexlastxmlrsp">
-            <title>Network Collection, Last Page: XML Response</title>
+            <title>Network collection, last page: XML response</title>
             <programlisting language="xml"><?db-font-size 65%?>
             &lt;?xml version="1.0" ?&gt;
 &lt;networks xmlns="http://openstack.org/neutron/api/v2.0" xmlns:atom="http://www.w3.org/2005/Atom"
@@ -2323,9 +2344,9 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
    </chapter>
     <chapter xmlns:raxm="http://docs.rackspace.com/api/metadata"
             version="5.0"
-            xml:id="api_operations_nuetron"
+            xml:id="api_operations_neutron"
             xml:base="chapters/net_operations_neutron.xml">
-      <title>API Operations - Neutron</title>
+      <title>API operations - neutron</title>
       <para>The Rackspace Cloud Networks API v2 serves the following functions: <itemizedlist>
             <listitem>
                 <para>Provides virtual networking services among devices that are managed by the Rackspace Cloud Servers
@@ -9128,7 +9149,7 @@ content-type: application/json
         </wadl:resources>
     </section>-->
       <section xml:id="api_ext_layer3_router">
-        <title>Extension - Layer-3 Networking (Router)</title>
+        <title>Extension - layer-3 networking (router)</title>
         <para>This section describes the API operations for creating and managing routers for Layer-3 (router)
             networking.</para>
         <para>The Layer-3 networking extension enables Cloud Networks API users to route packets between subnets, and forward
@@ -10635,7 +10656,7 @@ content-type: application/json
             version="5.0"
             xml:id="api_operations_nova"
             xml:base="chapters/net_operations_nova.xml">
-      <title>API Operations - Nova-network</title>
+      <title>API operations - nova-network</title>
       <para>So what are Nova operations and why use them?</para>
       <section xml:id="api_networks_nova">
         <title>Networks</title>
@@ -11876,7 +11897,7 @@ content-type: application/json
       <section version="5.0"
                xml:id="section_virt_ext"
                xml:base="chapters/net_virt_ext.xml">
-         <title>Extension - Cloud Networks Virtual Interfaces</title>
+         <title>Cloud Networks virtual interface extension</title>
          <para>Use the Cloud Networks virtual interface extension to create a virtual interface to a specified network and attach that network to an existing
         server instance. You can attach either an isolated network that you have created or a Rackspace network.</para>
          <para>A virtual interface works in the same way as the network interface card (NIC) inside your laptop. Like a NIC, a

@@ -17,7 +17,7 @@
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="install_nova">
 
-    <title>Step 1. (optional) Install the nova client with the Cloud Networks Extension</title>
+    <title>(optional) Install the nova client with the Cloud Networks extension</title>
     <para>To manage your servers from the command line, you can use the open-source nova client application called
             <literal>python-novaclient</literal>. </para>
     <para>To install the nova client, you first install the <literal>rackspace-novaclient</literal> package, which includes
@@ -29,7 +29,7 @@
             python-novaclient, you can post in the comments below if you run into any difficulties.</para>
     </note>
     <para>Before you begin, install the following software:<table rules="all" width="90%">
-            <caption>Nova Client Prerequisite Software</caption>
+            <caption>Nova client prerequisite software</caption>
             <col width="25%"/>
             <col width="75%"/>
             <thead>
@@ -160,7 +160,7 @@
             <programlisting language="bash" role="gutter: false"><prompt>$</prompt> nano ~/.bash_profile </programlisting>
             <para>Depending on your account location, add one of the following sets of lines to your bash profile and save
                 the file:<example>
-                    <title>US Data Center Example</title>
+                    <title>US data center example</title>
                     <screen><computeroutput><?db-font-size 65%?>export OS_AUTH_URL=https://identity.api.rackspacecloud.com/v2.0/
 export OS_AUTH_SYSTEM=rackspace
 export OS_REGION_NAME=DFW
@@ -171,7 +171,7 @@ export OS_PASSWORD=&lt;api_key>
 export OS_PROJECT_ID=&lt;tenant_id>
 export OS_NO_CACHE=1</computeroutput></screen>
                 </example><example>
-                    <title>UK Data Center Example</title>
+                    <title>UK data center example</title>
                     <screen><computeroutput><?db-font-size 65%?>export OS_AUTH_URL=https://lon.identity.api.rackspacecloud.com/v2.0/
 export OS_AUTH_SYSTEM=rackspace_uk
 export OS_REGION_NAME=LON
@@ -247,7 +247,7 @@ export OS_NO_CACHE=1</computeroutput></screen>
         </step>
     </procedure>
     <sidebar>
-        <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted" targetptr="install_neutron"
-                >“Step 2. (Optional) Install the neutron client with the Cloud Networks Extension”</olink></para>
+        <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted" targetptr="net_auth">“Get
+                authentication token”</olink></para>
     </sidebar>
 </section>

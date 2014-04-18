@@ -107,7 +107,7 @@
               <includes>cn-gettingstarted.xml</includes>
               <profileOs>rack</profileOs>
               <profileAudience>gs</profileAudience>
-              <profileCondition>cn</profileCondition>
+              <profileCondition>gs</profileCondition>
               <chapterAutolabel>0</chapterAutolabel>
               <sectionAutolabel>0</sectionAutolabel>
               <appendixAutolabel>0</appendixAutolabel>

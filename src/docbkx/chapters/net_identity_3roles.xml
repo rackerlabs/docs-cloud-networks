@@ -28,7 +28,7 @@ format="SVG" scale="60"/>
 ]>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="section_rbac_3">
-    <title>Role Based Access Control</title>
+    <title>Role based access control</title>
     <para> Role Based Access Control (RBAC) restricts access to the capabilities of Rackspace Cloud services, including the
         Cloud Networks API, to authorized users only. RBAC enables Rackspace Cloud customers to specify which account users
         of their Cloud account have access to which Cloud Networks API service capabilities, based on roles defined by
@@ -39,7 +39,7 @@ format="SVG" scale="60"/>
 
     <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
         xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="section_assign_roles_3">
-        <title>Assigning Roles to Account Users</title>
+        <title>Assigning roles to account users</title>
         <para> The account owner (identity:user-admin) can create account users on the account and then assign roles to those
             users. The roles grant the account users specific permissions for accessing the capabilities of the Cloud
             Networks service. Each account has only one account owner, and that role is assigned by default to any Rackspace
@@ -74,11 +74,11 @@ format="SVG" scale="60"/>
 
     <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
         xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="section_roles_for_products_3">
-        <title>Roles Available for Cloud Networks</title>
+        <title>Roles available for cloud networks</title>
         <para> Three roles (observer, creator, and admin) can be used to access the Cloud Networks API specifically. The
             following table describes these roles and their permissions. </para>
         <table rules="all" width="100%" xml:id="RBAC_product_roles_table_3">
-            <caption> Cloud Networks Product Roles and Permissions</caption>
+            <caption> Cloud Networks product roles and permissions</caption>
             <thead>
                 <tr>
                     <td colspan="1">Role name</td>
@@ -106,7 +106,7 @@ format="SVG" scale="60"/>
             future products when those products become RBAC-enabled. The following table describes these roles and their
             permissions. </para>
         <table rules="all" width="100%" xml:id="RBAC_global_roles_table_3">
-            <caption> Multiproduct (Global) Roles and Permissions</caption>
+            <caption> Multiproduct (global) roles and permissions</caption>
             <thead>
                 <tr>
                     <td colspan="1">Role Name</td>
@@ -129,7 +129,7 @@ format="SVG" scale="60"/>
 
     <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
         xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="RBAC_Role_Conflict_3">
-        <title>Resolving Conflicts between RBAC Multiproduct and Custom (Product-Specific) Roles</title>
+        <title>Resolving conflicts between RBAC multiproduct and custom (product-specific) roles</title>
         <para> The account owner can set roles for both multiproduct and Cloud Networks scope, and it is important to
             understand how any potential conflicts among these roles are resolved. When two roles appear to conflict, the
             role that provides the more extensive permissions takes precedence. Therefore, admin roles take precedence over
@@ -167,7 +167,7 @@ format="SVG" scale="60"/>
     </section>
     <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
         xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="RBAC_API_XREF_3">
-        <title>RBAC Permissions Cross-Reference to Cloud Networks API Operations</title>
+        <title>RBAC permissions cross-reference to Cloud Networks API operations</title>
         <para> API operations for Cloud Networks may or may not be available to all roles. To see which operations are
             permitted to invoke which calls, please see the
             <link xlink:href="http://www.rackspace.com/knowledge_center/article/permissions-matrix-for-cloud-networks">

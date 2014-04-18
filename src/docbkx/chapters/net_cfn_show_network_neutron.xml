@@ -20,10 +20,10 @@
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0"
     xml:id="show_network_neutron">
-    <title>Step 3. Show network or subnet details</title>
+    <title>Show network or subnet details</title>
     <para>You can show details for a specified network, or subnet, using the ID.</para>
     <para>The response body returns the following fields: <table rules="all" width="100%">
-            <caption>Show Network Response Fields</caption>
+            <caption>Show network response fields</caption>
             <col width="20%"/>
             <col width="80%"/>
             <thead>
@@ -150,7 +150,8 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis></para>
+            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+                    targetptr="boot_new_server">Boot a new server with your cloud network</olink></para>
         </sidebar>
     </section>
     <?hard-pagebreak?>
@@ -214,7 +215,8 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis></para>
+            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+                    targetptr="boot_new_server">Boot a new server with your cloud network</olink></para>
         </sidebar>
     </section>
 </section>

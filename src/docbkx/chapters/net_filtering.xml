@@ -29,7 +29,7 @@ format="SVG" scale="60"/>
 
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="section_filtering">
-    <title>Filtering Requests</title>
+    <title>Filtering requests</title>
     <para>The Cloud Networks API supports filtering based on all top-level attributes of a resource. Filters are applicable
         to all list requests.</para>
     <para>For example, the following request returns all networks named foobar:</para>

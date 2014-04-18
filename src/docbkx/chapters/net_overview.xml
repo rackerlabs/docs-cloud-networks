@@ -26,11 +26,15 @@
                 greater control and security when you deploy web applications. </para>
         <para>When you create a next generation Cloud Server, Cloud Networks enables you to attach one or more networks to
                 your server. You can attach an isolated network that you have created or a Rackspace network. </para>
-        <para>If you install the &virt_ext;, you can create a virtual interface to a specified Rackspace or isolated network
-                and attach that network to an existing server instance. You can also list virtual interfaces for and delete
-                virtual interfaces from a server instance. For information about the &virt_ext;, see <olink
-                        targetdoc="cn-devguide" targetptr="section_virt_ext">“Cloud Networks Virtual Interface
-                        Extension”</olink>.</para>
+        <para>If you are using nova-network operations and you install the &virt_ext;, you can create a virtual interface to
+                a specified Rackspace or isolated network and attach that network to an existing server instance. You can
+                also list virtual interfaces for and delete virtual interfaces from a server instance. For information about
+                the &virt_ext;, see <phrase condition="cn"><olink targetdoc="cn-devguide" targetptr="section_virt_ext">“Cloud
+                                Networks Virtual Interface Extension”</olink></phrase><phrase condition="gs"/>
+                <phrase condition="gs">
+                        <link xlink:href="http://docs.rackspace.com/networks/api/v2/cn-devguide/content/section_virt_ext.html">
+                Cloud Networks Virtual Interface Extension</link>
+                        in the <citetitle>Cloud Networks Developer Guide</citetitle></phrase>.</para>
         <para>Cloud Networks enables you to attach one or more of the following networks to your server: <itemizedlist>
                         <listitem>
                                 <para><emphasis role="bold"><glossterm>PublicNet</glossterm></emphasis>. Provides access to
@@ -63,11 +67,11 @@
         <para>When you provision a new server, the networks that are attached to it depend on which of the following methods
                 you use to provision it: <itemizedlist>
                         <listitem>
-                                <para><emphasis role="bold">The Cloud Servers API</emphasis>. You must specify the networks
-                                        that you want to attach to your server. If you do not specify any networks,
-                                        ServiceNet and PublicNet are attached by default. However, if you specify an isolated
-                                        network, you must explicitly specify the UUIDs for PublicNet and ServiceNet to attach
-                                        these networks to your server. The UUID for ServiceNet is
+                                <para><emphasis role="bold">The Cloud Servers neutron API or nova-network API</emphasis>. You
+                                        must specify the networks that you want to attach to your server. If you do not
+                                        specify any networks, ServiceNet and PublicNet are attached by default. However, if
+                                        you specify an isolated network, you must explicitly specify the UUIDs for PublicNet
+                                        and ServiceNet to attach these networks to your server. The UUID for ServiceNet is
                                                 <literal>11111111-1111-1111-1111-111111111111</literal>, and the UUID for
                                         PublicNet is <literal>00000000-0000-0000-0000-000000000000</literal>. </para>
                         </listitem>
@@ -87,10 +91,13 @@
                 </itemizedlist></para>
         <note>
                 <para>You can explicitly opt out of attaching to the Rackspace networks, which introduces certain potential
-                        complications. For more information, see <olink targetdoc="cn-devguide" targetptr="networks"
-                                >“Limitations of Detaching from Rackspace Networks”</olink>.</para>
+                        complications. For more information, see <phrase condition="cn"><olink targetdoc="cn-devguide"
+                                        targetptr="networks">“Limitations of detaching from Rackspace
+                                networks”</olink></phrase>
+                        <phrase condition="gs"><olink targetdoc="cn-gettingstarted" targetptr="networks">“Limitations of
+                                        detaching from Rackspace networks”</olink></phrase>.</para>
         </note>
-        <para>You can use Cloud Networks to perform the following tasks: <itemizedlist>
+        <para>You can use the Cloud Networks service to perform the following tasks: <itemizedlist>
                         <listitem>
                                 <para>List networks to which the specified tenant has access.</para>
                         </listitem>
@@ -103,9 +110,12 @@
                         <listitem>
                                 <para>Delete an isolated network, but only if it is not associated with any server. </para>
                                 <para>To detach a network from a server, you must use the &virt_ext; to delete the virtual
-                                        interface for the network from the server. See <olink targetdoc="cn-devguide"
-                                                targetptr="section_virt_ext">“Cloud Networks Virtual Interface
-                                                Extension”</olink>.</para>
+                                        interface for the network from the server. See <phrase condition="cn"><olink
+                                                        targetdoc="cn-devguide" targetptr="networks">“Limitations of
+                                                        detaching from Rackspace networks”</olink></phrase>
+                                        <phrase condition="gs"><olink targetdoc="cn-gettingstarted" targetptr="networks"
+                                                        >“Limitations of detaching from Rackspace
+                                        networks”</olink></phrase>.</para>
                         </listitem>
                         <listitem>
                                 <para>Manage subnets.</para>
@@ -121,6 +131,6 @@
                 information, see
                 <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/List_Servers-d1e2078.html">List Servers</link>
                 in the <citetitle>Cloud Servers Developer Guide</citetitle>.</para>
-        <xi:include href="net_nova_v_neutron.xml"/> 
+        <xi:include href="net_nova_v_neutron.xml"/>
         <xi:include href="net_limitations.xml"/>
 </chapter>

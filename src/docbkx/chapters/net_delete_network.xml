@@ -26,6 +26,6 @@
                 nova-network API. For help deciding, see <olink targetdoc="cn-gettingstarted"
                         targetptr="section_nova_v_neutron">“Networking: nova-network versus neutron”</olink>. The sections in
                 this chapter provide examples of deleting a network using each API.</para>
-        <xi:include href="net_dn_delete_network_neutron.xml"/>
-        <xi:include href="net_dn_delete_network_nova.xml"/>
+        <xi:include href="net_dn_neutron.xml"/>
+        <xi:include href="net_dn_nova.xml"/>
 </chapter>

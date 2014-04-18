@@ -21,7 +21,7 @@
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0"
     xml:id="create_network_neutron">
-    <title>Step 1. Create a network or a sub-network</title>
+    <title>Create a network or a sub-network</title>
     <para>Before you create a server, you create a network, and an optional subnet, that you can attach to your new server. </para>
     <sidebar>
         <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
@@ -107,7 +107,7 @@
         </para>
         <sidebar>
             <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="list_networks_neutron">“Step 2. List networks or subnets”</olink></para>
+                    targetptr="list_networks_neutron">“List networks or subnets”</olink></para>
         </sidebar>
     </section>
 
@@ -169,8 +169,8 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="list_networks_neutron">“Step 2. List networks or subnets”</olink></para>
+            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+                    targetptr="list_networks_neutron">“List networks or subnets”</olink></para>
         </sidebar>
     </section>
 </section>

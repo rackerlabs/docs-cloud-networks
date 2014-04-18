@@ -36,8 +36,8 @@ format="SVG" scale="60"/>
 
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xmlns:raxm="http://docs.rackspace.com/api/metadata"
-    xml:id="api_operations_nuetron">
-    <title>API Operations - Neutron</title>
+    xml:id="api_operations_neutron">
+    <title>API operations - neutron</title>
     <para>The Rackspace Cloud Networks API v2 serves the following functions: <itemizedlist>
             <listitem>
                 <para>Provides virtual networking services among devices that are managed by the Rackspace Cloud Servers
@@ -186,7 +186,7 @@ format="SVG" scale="60"/>
         </wadl:resources>
     </section>-->
     <section xml:id="api_ext_layer3_router">
-        <title>Extension - Layer-3 Networking (Router)</title>
+        <title>Extension - layer-3 networking (router)</title>
         <para>This section describes the API operations for creating and managing routers for Layer-3 (router)
             networking.</para>
         <para>The Layer-3 networking extension enables Cloud Networks API users to route packets between subnets, and forward

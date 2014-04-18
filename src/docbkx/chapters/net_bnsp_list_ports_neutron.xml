@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section [
+<!-- Some useful entities borrowed from HTML -->
+<!ENTITY ndash  "&#x2013;">
+<!ENTITY mdash  "&#x2014;">
+<!ENTITY hellip "&#x2026;">
+        
+<!-- Useful for describing APIs -->
+<!ENTITY GET    '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
+<!ENTITY PUT    '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
+<!ENTITY POST   '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
+<!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
+        
+        
+<!ENTITY fgCS 'first generation Cloud Servers'>
+<!ENTITY ngCS 'next generation Cloud Servers'>
+<!ENTITY cnresource1 'rax-networks'>
+<!ENTITY virt_ext 'Cloud Networks virtual interface extension'>
+<!ENTITY cnresource2 'os-networksv2'>
+]>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0"
+    xml:id="list_ports_neutron">
+    <title>List ports</title>
+    <para>After you create a port, you may want to view the details..</para>
+    <sidebar>
+        <para><emphasis role="bold">Next step: </emphasis>Choose one of the following methods:<itemizedlist>
+                <listitem>
+                    <para><olink targetdoc="cn-gettingstarted" targetptr="neutron_list_ports_neutron">“List ports with the
+                            neutron client”</olink></para>
+                </listitem>
+                <listitem>
+                    <para><olink targetdoc="cn-gettingstarted" targetptr="curl_list_ports_neutron">“List ports with
+                            cURL”</olink></para>
+                </listitem>
+            </itemizedlist></para>
+    </sidebar>
+    <section xml:id="neutron_list_ports_neutron">
+        <title>List ports with the neutron client</title>
+        <para>The following steps shows you how to list ports using the neutron client.</para>
+        <procedure>
+            <title>To list ports with the neutron client</title>
+            <step>
+                <para>Issue the following neutron client command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+<prompt>$</prompt> neutron port-list </programlisting></para>
+                <para><emphasis role="bold">Output:</emphasis></para>
+                <para>For each network, the command returns the result as shown in the following output</para>
+                <informalexample>
+                    <screen><computeroutput><?db-font-size 75%?>
++--------------------------------------+---------+-------------------+----------------------------------------------------------------------------------+
+| id                                   | name    | mac_address       | fixed_ips                                                                        |
++--------------------------------------+---------+-------------------+----------------------------------------------------------------------------------+
+| c23c2fff-c07f-4af0-bc37-8ad883231f7c | newport | fa:16:3e:a6:48:c4 | {"subnet_id": "23e3059e-4f39-4f7f-8cf2-c326e5de6c37", "ip_address": "120.1.2.4"} |
+| d272f4bf-06a7-419e-9f22-5ee4a3cbd7c2 |         | fa:16:3e:c1:a5:6a | {"subnet_id": "23e3059e-4f39-4f7f-8cf2-c326e5de6c37", "ip_address": "120.1.2.3"} |
+| f4a83984-8b96-4701-8ddd-a464caf4b14e |         | fa:16:3e:6e:dc:9a | {"subnet_id": "23e3059e-4f39-4f7f-8cf2-c326e5de6c37", "ip_address": "120.1.2.2"} |
++--------------------------------------+---------+-------------------+----------------------------------------------------------------------------------+
+                    </computeroutput></screen>
+                </informalexample>
+            </step>
+        </procedure>
+        <sidebar>
+            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+                    targetptr="boot_server_with_port_network_neutron">“Provision a server by attaching a port with an
+                    isolated network”</olink></para>
+        </sidebar>
+    </section>
+    <section xml:id="curl_list_ports_neutron">
+        <?dbhtml stop-chunking?>
+        <title>List ports with cURL</title>
+        <para>The following steps shows you how to list networks and subnets using cURL.</para>
+        <procedure>
+            <title>To list networks</title>
+            <step>
+                <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                        <prompt>$</prompt> curl https://dfw.servers.api.rackspacecloud.com/v2.0/$account/ports \
+       -X GET -H "X-Auth-Token: $token" | python -m json.tool</programlisting>
+                    <emphasis role="bold">Output:</emphasis>
+                </para>
+                <para>The API operation returns a response body as shown in the following output:
+                    <programlisting language="json"><?db-font-size 75%?>
+{
+   "ports":[
+      {
+         "status":"ACTIVE",
+         "name":"newport",
+         "admin_state_up":true,
+         "network_id":"29f52c7e-6efd-4335-a14a-db77d32a2555",
+         "tenant_id":"53501b3c25d34f8ea293c03298caed60",
+         "binding:vif_type":"ovs",
+         "device_owner":"compute:None",
+         "binding:capabilities":{
+            "port_filter":false
+         },
+         "mac_address":"fa:16:3e:a6:48:c4",
+         "fixed_ips":[
+            {
+               "subnet_id":"23e3059e-4f39-4f7f-8cf2-c326e5de6c37",
+               "ip_address":"120.1.2.4"
+            }
+         ],
+         "id":"c23c2fff-c07f-4af0-bc37-8ad883231f7c",
+         "device_id":"f288bb5f-920d-4276-8345-2c0319c16f58"
+      },
+      {
+         "status":"DOWN",
+         "name":"",
+         "admin_state_up":true,
+         "network_id":"29f52c7e-6efd-4335-a14a-db77d32a2555",
+         "tenant_id":"53501b3c25d34f8ea293c03298caed60",
+         "binding:vif_type":"ovs",
+         "device_owner":"network:router_gateway",
+         "binding:capabilities":{
+            "port_filter":false
+         },
+         "mac_address":"fa:16:3e:c1:a5:6a",
+         "fixed_ips":[
+            {
+               "subnet_id":"23e3059e-4f39-4f7f-8cf2-c326e5de6c37",
+               "ip_address":"120.1.2.3"
+            }
+         ],
+         "id":"d272f4bf-06a7-419e-9f22-5ee4a3cbd7c2",
+         "device_id":"0dc517bf-9169-4aa6-88b7-569219962881"
+      },
+      {
+         "status":"ACTIVE",
+         "name":"",
+         "admin_state_up":true,
+         "network_id":"29f52c7e-6efd-4335-a14a-db77d32a2555",
+         "tenant_id":"53501b3c25d34f8ea293c03298caed60",
+         "binding:vif_type":"ovs",
+         "device_owner":"network:router_interface",
+         "binding:capabilities":{
+            "port_filter":false
+         },
+         "mac_address":" fa:16:3e:6e:dc:9a",
+         "fixed_ips":[
+            {
+               "subnet_id":"23e3059e-4f39-4f7f-8cf2-c326e5de6c37",
+               "ip_address":"120.1.2.2"
+            }
+         ],
+         "id":"f4a83984-8b96-4701-8ddd-a464caf4b14e",
+         "device_id":"0dc517bf-9169-4aa6-88b7-569219962881"
+      }
+   ]
+}
+                    </programlisting>
+                </para>
+            </step>
+        </procedure>
+        <sidebar>
+            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+                    targetptr="boot_server_with_port_network_neutron">“Provision a server by attaching a port with an
+                    isolated network”</olink></para>
+        </sidebar>
+    </section>
+</section>

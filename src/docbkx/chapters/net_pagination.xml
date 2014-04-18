@@ -29,7 +29,7 @@ format="SVG" scale="60"/>
 
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="section_pagination">
-    <title>Pagination of Requests</title>
+    <title>Pagination of requests</title>
     <para>To reduce load on the service, list operations returns a maximum number of items at a time. To help you navigate
         the collection, you can set the <parameter>limit</parameter>, <parameter>marker</parameter>, and
             <parameter>page_reverse</parameter> parameters in the URI.</para>
@@ -44,33 +44,33 @@ format="SVG" scale="60"/>
         the last page in the list requested with <parameter>page_reverse=True</parameter> does not contain a
             <code>previous</code> link. The following examples illustrate two pages with three items.</para>
     <example xml:id="pageexfirstreq">
-        <title>Network Collection, First Page: JSON or XML Request</title>
+        <title>Network collection, first page: JSON or XML request</title>
         <programlisting>GET /v2.0/networks.json?limit=2 HTTP/1.1</programlisting>
     </example>
     <example xml:id="pageexfirstjsonrsp">
-        <title>Network Collection, First Page: JSON Response</title>
+        <title>Network collection, first page: JSON response</title>
         <programlisting language="json"><?db-font-size 65%?>
             <xi:include href="../../common/samples/pagefirstrsp.json" parse="text"/>
         </programlisting>
     </example>
     <example xml:id="pageexfirstxmlrsp">
-        <title>Network Collection, First Page: XML Response</title>
+        <title>Network collection, first page: XML response</title>
         <programlisting language="xml"><?db-font-size 65%?>
             <xi:include href="../../common/samples/pagefirstrsp.xml" parse="text"/>
         </programlisting>
     </example>
     <example xml:id="pageexlastreq">
-        <title>Network Collection, Last Page: JSON or XML Request</title>
+        <title>Network collection, last page: JSON or XML request</title>
         <programlisting>GET /v2.0/networks.json?limit=2&amp;marker=71c1e68c-171a-4aa2-aca5-50ea153a3718 HTTP/1.1</programlisting>
     </example>
     <example xml:id="pageexlastjsonrsp">
-        <title>Network Collection, Last Page: JSON Response</title>
+        <title>Network collection, last page: JSON response</title>
         <programlisting language="json"><?db-font-size 65%?>
             <xi:include href="../../common/samples/pagelastrsp.json" parse="text"/>
         </programlisting>
     </example>
     <example xml:id="pageexlastxmlrsp">
-        <title>Network Collection, Last Page: XML Response</title>
+        <title>Network collection, last page: XML response</title>
         <programlisting language="xml"><?db-font-size 65%?>
             <xi:include href="../../common/samples/pagelastrsp.xml" parse="text"/>
         </programlisting>

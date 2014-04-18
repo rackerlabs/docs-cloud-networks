@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE chapter [
+<!DOCTYPE section [
         <!-- Some useful entities borrowed from HTML -->
         <!ENTITY ndash  "&#x2013;">
         <!ENTITY mdash  "&#x2014;">
@@ -24,14 +24,13 @@
 <!ENTITY Uvirt_ext 'Cloud Networks Virtual Interface Extension'>
 <!ENTITY cnresource2 'os-networksv2'>
 ]>
-
-<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
-    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="ch_gs_attach_network_to_server">
-    <title>Attach your network to an existing server</title>
-    <para>Before attaching your first network to a server, choose whether to use the Neutron API or the Nova-network API. For
-        help deciding, see <olink targetdoc="cn-gettingstarted" targetptr="section_nova_v_neutron">“Networking: Nova-network
-            versus Neutron”</olink>. The sections in this chapter provide examples of attaching a network to an existing
-        server using each API.</para>
-    <xi:include href="net_ans_neutron.xml"/>
-    <xi:include href="net_ans_nova.xml"/>
-</chapter>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0"
+    xml:id="attach_network_to_server_neutron">
+    <title>Neutron: Attach your network to an existing server</title>
+    <para>How do we do this with Neutron? </para>
+    <sidebar>
+        <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+            targetptr="delete_net">Delete your cloud network</olink></para>
+    </sidebar>
+</section>

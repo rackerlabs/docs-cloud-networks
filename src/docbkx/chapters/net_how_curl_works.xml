@@ -41,7 +41,7 @@ format="SVG" scale="60"/>
     <para>The following command is an example cURL command that provisions a server with an isolated network:</para>
 
     <example xml:id="json_example">
-        <title>cURL Command Example: JSON Request</title>
+        <title>cURL command example: JSON request</title>
         <programlisting language="bash" role="gutter: false"><?db-font-size 60%?>
             <prompt>$</prompt> curl https://dfw.servers.api.rackspacecloud.com/v2/$account/servers \
        -X POST \
@@ -60,7 +60,7 @@ format="SVG" scale="60"/>
     <?hard-pagebreak?>
     <para>The cURL examples in this guide use the following command-line options:</para>
     <table xml:id="curl_options" rules="all" width="85%">
-        <caption>cURL Command-Line Options</caption>
+        <caption>cURL command-line options</caption>
 
         <thead>
             <tr>

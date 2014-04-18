@@ -21,8 +21,7 @@
 ]>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="net_auth">
-    <title><phrase audience="dg">Get authentication token</phrase><phrase audience="gs">Step 4. Get authentication
-            token</phrase></title>
+    <title>Get authentication token</title>
     <para>To authenticate access to Rackspace Cloud services, you issue an authentication request to the &CIS;, which is an
         implementation of the OpenStack Keystone Identity Service v2.0.</para>
     <important>
@@ -177,13 +176,13 @@
                 <para>Get an authentication token and a service catalog with a list of endpoints. </para>
                 <para>Use one of the following cURL commands to authenticate to the US Identity endpoint:</para>
                 <example>
-                    <title>Authenticate with Username and Password: JSON Request</title>
+                    <title>Authenticate with username and password: JSON request</title>
                     <programlisting language="bash" role="gutter: false"><?db-font-size 50%?><prompt>$</prompt> curl -s https://identity.api.rackspacecloud.com/v2.0/tokens -X 'POST' \
        -d '{"auth":{"passwordCredentials":{"username":"theUserName", "password":"thePassword"}}}' \
        -H "Content-Type: application/json" | python -m json.tool</programlisting>
                 </example>
                 <example>
-                    <title>Authenticate with Username and API Key: JSON Request</title>
+                    <title>Authenticate with username and API key: JSON request</title>
                     <programlisting language="bash" role="gutter: false"><?db-font-size 50%?><prompt>$</prompt> curl -s https://identity.api.rackspacecloud.com/v2.0/tokens -X 'POST' \
        -d '{"auth":{"RAX-KSKEY:apiKeyCredentials":{"username":"theUserName", "apiKey":"0000000000000000000"}}}' \
        -H "Content-Type: application/json" | python -m json.tool</programlisting>
@@ -197,7 +196,7 @@
                 <para>Do not include explicit API endpoints in your scripts and applications. Instead, find the endpoint for
                     your service and region. </para>
                 <para>The following output shows a partial authentication response in JSON format: <example>
-                        <title>Authenticate: JSON Response</title>
+                        <title>Authenticate: JSON response</title>
                         <programlistingco>
                             <areaspec>
                                 <area xml:id="credentials.xml.endpoints" units="linecolumn" coords="37 32"/>
@@ -217,7 +216,7 @@
                                 the <code>endpoints</code> element in the <code>serviceCatalog</code> element. </para>
                             <para>Endpoints information includes the public URL, which is the endpoint that you use to access
                                 the service, region, tenant ID, and version information. </para>
-                            <para condition="cn">To access the Cloud Networks or next generation Cloud Servers service, use
+                            <para>To access the Cloud Networks or next generation Cloud Servers service, use
                                 the endpoint for the <literal>cloudServersOpenStack</literal> service.</para>
                         </callout>
                         <callout arearefs="credentials.xml.tenant">

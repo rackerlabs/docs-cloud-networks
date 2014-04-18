@@ -21,7 +21,7 @@
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0"
     xml:id="list_networks_neutron">
-    <title>Step 2. List networks or subnets</title>
+    <title>List networks or subnets</title>
     <para>After you create networks or subnets, you may want to view your networks, subnets, and the Rackspace
         networks.</para>
     <para>For information about the Rackspace networks, see <olink targetdoc="cn-gettingstarted" targetptr="networks"
@@ -79,7 +79,7 @@
         </procedure>
         <sidebar>
             <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="show_network_neutron">“Step 3. Show network or subnet details”</olink></para>
+                    targetptr="show_network_neutron">“Show network or subnet details”</olink></para>
         </sidebar>
     </section>
     <section xml:id="curl_list_networks_neutron">
@@ -116,7 +116,7 @@
         </procedure>
         <sidebar>
             <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="show_network_neutron">“Step 3. Show network or subnet details”</olink></para>
+                    targetptr="show_network_neutron">“Show network or subnet details”</olink></para>
         </sidebar>
     </section>
 </section>

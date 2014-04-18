@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section [
+        <!-- Some useful entities borrowed from HTML -->
+        <!ENTITY ndash  "&#x2013;">
+        <!ENTITY mdash  "&#x2014;">
+        <!ENTITY hellip "&#x2026;">
+        
+        <!-- Useful for describing APIs -->
+        <!ENTITY GET    '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
+        <!ENTITY PUT    '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
+        <!ENTITY POST   '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
+        <!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
+     
+        <!ENTITY CIS 'Rackspace Cloud Identity Service'>
+<!ENTITY fgCS 'first generation Cloud Servers'>
+<!ENTITY ngCS 'next generation Cloud Servers'>
+<!ENTITY cnresource1 'rax-networks'>
+<!ENTITY virt_ext 'Cloud Networks virtual interface extension'>
+<!ENTITY cnresource2 'os-networksv2'>
+]>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0"
+    xml:id="create_network_neutron">
+    <title>Create a port</title>
+    <para>Before you can attach port and network to a server, you need to create the port. </para>
+    <sidebar>
+        <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
+                <listitem>
+                    <para><olink targetdoc="cn-gettingstarted" targetptr="neutron_create_port_neutron">“Create a port with
+                            the neutron client”</olink></para>
+                </listitem>
+                <listitem>
+                    <para><olink targetdoc="cn-gettingstarted" targetptr="curl_create_port_neutron">“Create a port with
+                            cURL”</olink></para>
+                </listitem>
+            </itemizedlist></para>
+    </sidebar>
+
+    <section xml:id="neutron_create_port_neutron">
+        <title>Create a port with the neutron client</title>
+        <para>To create a network, you specify a name for your port and the network name.</para>
+        <para>After you create a port, copy its port ID. You use this ID to attach it to a new server.</para>
+        <para>
+            <procedure>
+                <title>To create a port with the neutron client</title>
+                <step>
+                    <para>Issue the following neutron command:
+                        <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+<prompt>$</prompt> neutron port-create &lt;amp&gt; --name &lt;newport&gt;</programlisting></para>
+                    <para><emphasis role="bold">Positional arguments:</emphasis></para>
+                    <para>
+                        <itemizedlist>
+                            <listitem>
+                                <para>The network name. In this example, the name is <literal>amp</literal>.</para>
+                            </listitem>
+                            <listitem>
+                                <para>The port name. In this example, the port name is <literal>newport</literal>.</para>
+                            </listitem>
+                        </itemizedlist>
+                    </para>
+                    <para><emphasis role="bold">Output:</emphasis></para>
+                    <para>The command returns the response, as shown in the following output:</para>
+                    <informalexample>
+                        <screen><computeroutput><?db-font-size 75%?>
++-----------------------+----------------------------------------------------------------------------------+
+| Field                 | Value                                                                            |
++-----------------------+----------------------------------------------------------------------------------+
+| admin_state_up        | True                                                                             |
+| allowed_address_pairs |                                                                                  |
+| device_id             |                                                                                  |
+| device_owner          |                                                                                  |
+| fixed_ips             | {"subnet_id": "23e3059e-4f39-4f7f-8cf2-c326e5de6c37", "ip_address": "120.1.2.4"} |
+| id                    | c23c2fff-c07f-4af0-bc37-8ad883231f7c                                             |
+| mac_address           | fa:16:3e:a6:48:c4                                                                |
+| name                  | newport                                                                          |
+| network_id            | 29f52c7e-6efd-4335-a14a-db77d32a2555                                             |
+| security_groups       | 7e768af1-f9e9-431e-823d-9477e593e345                                             |
+| status                | DOWN                                                                             |
+| tenant_id             | 53501b3c25d34f8ea293c03298caed60                                                 |
++-----------------------+----------------------------------------------------------------------------------+</computeroutput></screen>
+                    </informalexample>
+                </step>
+                <step>
+                    <para>Copy the <literal>id</literal> value from the output. You will use this value when you provision
+                        your server. In this example, the port id is
+                        <literal>c23c2fff-c07f-4af0-bc37-8ad883231f7c</literal>.</para>
+                </step>
+            </procedure>
+        </para>
+        <sidebar>
+            <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted"
+                    targetptr="list_ports_neutron">“List ports”</olink></para>
+        </sidebar>
+    </section>
+
+    <section xml:id="curl_create_port_neutron">
+        <title>Create a port with cURL</title>
+        <para>To create a port, you specify a port name, and the network id for your network.</para>
+        <para>After you create a port, copy its ID. You use this ID to attach the port with a network to a server.</para>
+        <procedure>
+            <title>To create a port</title>
+            <step>
+                <para>Issue the following cURL command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
+                            <prompt>$</prompt> curl -s https://dfw.servers.api.rackspacecloud.com/v2.0/ports \
+       -X POST \
+       -H "Content-Type: application/json" \
+       -H "Accept: application/json" \
+       -H "X-Auth-Token: $token" \
+       -d '{"port": {"name":"newport","network_id": "29f52c7e-6efd-4335-a14a-db77d32a2555"}}| python -m json.tool</programlisting></para>
+                <para>In this cURL command, you specify several options. For information about options, see <olink
+                        targetdoc="cn-gettingstarted" targetptr="curl_options">Table 2, “cURL Command-Line
+                    Options”</olink>.</para>
+                <para><emphasis role="bold">Output:</emphasis>
+                </para>
+                <para>The operation returns the response body, as shown in the following JSON response:
+                    <programlisting language="json"><?db-font-size 65%?>
+{
+   "port":[
+      {
+         "status":"DOWN",
+         "binding:host_id":null,
+         "name":"newport",
+         "admin_state_up":true,
+         "network_id":"29f52c7e-6efd-4335-a14a-db77d32a2555",
+         "tenant_id":"53501b3c25d34f8ea293c03298caed60",
+         "binding:vif_type":"ovs",
+         "device_owner":"",
+         "binding:capabilities":{
+            "port_filter":true
+         },
+         "mac_address":"fa:16:3e:a6:48:c4",
+         "fixed_ips":[
+            {"subnet_id": "23e3059e-4f39-4f7f-8cf2-c326e5de6c37", 
+            "ip_address": "120.1.2.4"} 
+         ],
+         "id":"c23c2fff-c07f-4af0-bc37-8ad883231f7c",
+         "security_groups":[
+            "7e768af1-f9e9-431e-823d-9477e593e345"
+         ],
+         "device_id":""
+      }
+   ]
+}
+
+                    </programlisting></para>
+            </step>
+            <step>
+                <para>Copy the <literal>id</literal> value from the output. You will use this value when you provision your
+                    server. In this example, the port id is <literal>c23c2fff-c07f-4af0-bc37-8ad883231f7c</literal>.</para>
+            </step>
+        </procedure>
+        <sidebar>
+            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+                    targetptr="list_ports_neutron">“List ports”</olink></para>
+        </sidebar>
+    </section>
+</section>

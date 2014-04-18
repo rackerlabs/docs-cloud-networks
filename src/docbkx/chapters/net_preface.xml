@@ -33,12 +33,22 @@ format="SVG" scale="60"/>
         instances with Rackspace networks or the isolated networks that you created. </para>
     <para>When you create an isolated network, it is associated with your tenant ID.</para>
 
-    <para>Cloud Networks was originally released using the Cloud Servers Nova-network (see <olink targetdoc="cn-devguide"
-            targetptr="api_operations_nova">API Operations - Nova</olink>). Now Cloud Networks has been released using
-        Neutron (see <olink targetdoc="cn-devguide" targetptr="api_operations_nuetron">API Operations - Neutron</olink>).
-        Both sets of API operations work. For information that helps you determine which method is better for you, see <olink
-            targetdoc="cn-devguide" targetptr="section_nova_v_neutron">“Networking: Nova-network versus
-        Neutron”</olink>.</para>
+    <para>Cloud Networks was originally released using the Cloud Servers the nova-network API (see <phrase condition="cn"
+                ><olink targetdoc="cn-devguide" targetptr="api_operations_nova">API operations -
+            nova-network</olink></phrase>
+        <phrase condition="gs">
+            <link xlink:href="http://docs.rackspace.com/networks/api/v2/cn-devguide/content/api_operations_nova.html">
+                API operations - nova-network</link> in the <citetitle>Cloud Networks Developer Guide</citetitle></phrase>).
+        Now Cloud Networks has been released using the neutron API (see <phrase condition="cn"><olink targetdoc="cn-devguide"
+                targetptr="api_operations_neutron">API operations - neutron</olink></phrase>
+        <phrase condition="gs">
+            <link xlink:href="http://docs.rackspace.com/networks/api/v2/cn-devguide/content/api_operations_neutron.html">
+                API operations - neutron</link> in the <citetitle>Cloud Networks Developer Guide</citetitle></phrase>).
+        The nova-network API operations still work, but we recommend using the neutron API operations. For information that
+        helps you determine which method is better for you, see <phrase condition="cn"><olink targetdoc="cn-devguide"
+                targetptr="section_nova_v_neutron">“Networking: nova-network versus neutron”</olink></phrase>
+        <phrase condition="gs"><olink targetdoc="cn-gettingstarted" targetptr="section_nova_v_neutron">“Networking:
+                nova-network versus neutron”</olink></phrase>.</para>
     <para>To request access to Cloud Networks now, click
         <link xlink:href="http://www.iwantcloudnetworks.com/">"I want Cloud Networks"</link>.</para>
     <para>To detect if you are enabled to use Cloud Networks, issue a &GET; <command>/limits</command> call or a
@@ -70,7 +80,8 @@ format="SVG" scale="60"/>
             </tbody>
         </table></para>
     <para>For more information about querying limits, see
-        <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/ProgrammaticLimits.html">Get Limits</link>.</para>
+        <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/ProgrammaticLimits.html">Get Limits</link>
+        in the <citetitle>Cloud Servers Developer Guide</citetitle>.</para>
     <para>We welcome feedback, comments, and bug reports. Login to the Rackspace customer portal at
         <link xlink:href="http://www.rackspace.com/support/">http://www.rackspace.com/support/</link>.</para>
 

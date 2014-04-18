@@ -21,7 +21,7 @@
 ]>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="section_virt_ext">
-    <title>&Uvirt_ext;</title>
+    <title>&virt_ext;</title>
     <para>Use the &virt_ext; to create a virtual interface to a specified network and attach that network to an existing
         server instance. You can attach either an isolated network that you have created or a Rackspace network.</para>
     <para>A virtual interface works in the same way as the network interface card (NIC) inside your laptop. Like a NIC, a

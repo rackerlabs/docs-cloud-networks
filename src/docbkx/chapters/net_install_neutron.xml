@@ -17,7 +17,7 @@
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="install_neutron">
 
-    <title>Step 2. (Optional) Install the neutron client with the Cloud Networks Extension</title>
+    <title>(Optional) Install the neutron client</title>
     <para>Follow the necessary steps to install the neutron client (TBD).</para>
     <!--<para>To manage your servers from the command line, you can use the open-source nova client application called
             <literal>python-novaclient</literal>. </para>
@@ -248,7 +248,7 @@ export OS_NO_CACHE=1</computeroutput></screen>
         </step>
     </procedure>-->
     <sidebar>
-        <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted" targetptr="export_env_vars"
-                >“Step 3. (optional) Export environment variables to run cURL commands”</olink></para>
+        <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted" targetptr="net_auth">“Get
+                authentication token”</olink></para>
     </sidebar>
 </section>

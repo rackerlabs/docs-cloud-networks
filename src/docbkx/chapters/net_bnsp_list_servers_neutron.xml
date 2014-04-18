@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section [
+        <!-- Some useful entities borrowed from HTML -->
+        <!ENTITY ndash  "&#x2013;">
+        <!ENTITY mdash  "&#x2014;">
+        <!ENTITY hellip "&#x2026;">
+        
+        <!-- Useful for describing APIs -->
+        <!ENTITY GET    '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
+        <!ENTITY PUT    '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
+        <!ENTITY POST   '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
+        <!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
+]>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0"
+    xml:id="list_servers_port_neutron">
+    <title>List servers and attached networks</title>
+    <para>To show all the servers in your Cloud account, you can list servers. When you list servers, the addresses for any
+        attached networks are displayed. The networks include any isolated networks that you have created and Rackspace
+        public and private networks.</para>
+    <sidebar>
+        <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
+                <listitem>
+                    <para><olink targetdoc="cn-gettingstarted" targetptr="nova_list_servers_port">“List servers with the nova
+                            client”</olink></para>
+                </listitem>
+                <listitem>
+                    <para><olink targetdoc="cn-gettingstarted" targetptr="curl_list_servers_port">“List servers with
+                            cURL”</olink></para>
+                </listitem>
+            </itemizedlist></para>
+    </sidebar>
+    <?hard-pagebreak?>
+    <section xml:id="nova_list_servers_port">
+        <title>List servers with the nova client</title>
+        <procedure>
+            <title>To list servers with the nova client:</title>
+            <step>
+                <para>Issue the following command:</para>
+                <programlisting language="bash" role="gutter: false"><prompt>$</prompt> nova list</programlisting>
+                <para>For each server, the command returns the server ID, name, status, and addresses for any attached
+                    networks, as shown in the following output:</para>
+
+                <programlisting language="bash" role="gutter: false"><?db-font-size 40%?>
++--------------------------------------+------------+--------+------------+-------------+------------------+
+| ID                                   | Name       | Status | Task State | Power State | Networks         |
++--------------------------------------+------------+--------+------------+-------------+------------------+
+| 537805b0-7a04-4bbc-8040-812527b024bc | ServerAmp  | ACTIVE | -          | Running     | amp=120.1.2.4    |
++--------------------------------------+------------+--------+------------+-------------+------------------+</programlisting>
+            </step>
+            <step>
+                <para>Look for your server in the list of servers. Servers are listed by server ID. </para>
+            </step>
+        </procedure>
+        <sidebar>
+            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+                    targetptr="ch_gs_attach_network_to_server">Attach your network to an existing server</olink></para>
+        </sidebar>
+    </section>
+    <?hard-pagebreak?>
+    <section xml:id="curl_list_servers_port">
+        <title>List servers with cURL</title>
+        <procedure>
+            <title>To list servers with cURL:</title>
+            <step>
+                <para>Issue the following command:</para>
+                <programlisting language="bash" role="gutter: false"><?db-font-size 60%?>
+                    <prompt>$</prompt> curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/servers/detail \
+       -H "X-Auth-Token: $token" | python -m json.tool</programlisting>
+                <para>The following output shows the list servers information, including information for the server that you
+                    just created:</para>
+                <programlisting language="json"><?db-font-size 60%?>
+{
+    "servers": [
+        {
+            "OS-DCF:diskConfig": "AUTO", 
+            "OS-EXT-STS:power_state": 1, 
+            "OS-EXT-STS:task_state": null, 
+            "OS-EXT-STS:vm_state": "active", 
+            "accessIPv4": "", 
+            "accessIPv6": "", 
+            "addresses": {
+                "private": [
+                    {
+                        "addr": "10.180.13.75", 
+                        "version": 4
+                    }
+                ], 
+                "public": [
+                    {
+                        "addr": "2001:4800:780e:0510:d87b:9cbc:ff04:3e81", 
+                        "version": 6
+                    }, 
+                    {
+                        "addr": "50.56.186.185", 
+                        "version": 4
+                    }
+                ]
+            }, 
+            "created": "2012-05-15T15:47:37Z", 
+            "flavor": {
+                "id": "1", 
+                "links": [
+                    {
+                        "href": "https://dfw.servers.api.rackspacecloud.com/53501b3c25d34f8ea293c03298caed60/flavors/1", 
+                        "rel": "bookmark"
+                    }
+                ]
+            }, 
+            "hostId": "1d65b563fc573c2eb544319e0af598f2b2c5f84f75de252db3757cd3", 
+            "id": "537805b0-7a04-4bbc-8040-812527b024bc", 
+            "image": {
+                "id": "82e72de5-6366-4217-8c87-a570a9b17e73", 
+                "links": [
+                    {
+                        "href": "https://dfw.servers.api.rackspacecloud.com/53501b3c25d34f8ea293c03298caed60/images/82e72de5-6366-4217-8c87-a570a9b17e73", 
+                        "rel": "bookmark"
+                    }
+                ]
+            }, 
+            "links": [
+                {
+                    "href": "https://dfw.servers.api.rackspacecloud.com/v2/53501b3c25d34f8ea293c03298caed60/servers/537805b0-7a04-4bbc-8040-812527b024bc", 
+                    "rel": "self"
+                }, 
+                {
+                    "href": "https://dfw.servers.api.rackspacecloud.com/53501b3c25d34f8ea293c03298caed60/servers/537805b0-7a04-4bbc-8040-812527b024bc", 
+                    "rel": "bookmark"
+                }
+            ], 
+            "metadata": {}, 
+            "name": "ServerAmp", 
+            "progress": 100, 
+            "status": "ACTIVE", 
+            "tenant_id": "53501b3c25d34f8ea293c03298caed60", 
+            "updated": "2012-05-15T15:55:00Z", 
+            "user_id": "170454"
+        }
+    ]
+}</programlisting>
+            </step>
+            <step>
+                <para>Look for your server in the list of servers. Servers are listed by server ID. </para>
+                <para>Copy the server ID for your server. To update or delete your server, you need this ID.</para>
+                <para>You use the public IP address when you log into your server.</para>
+            </step>
+        </procedure>
+        <sidebar>
+            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+                    targetptr="ch_gs_attach_network_to_server">Attach your network to an existing server</olink></para>
+        </sidebar>
+    </section>
+</section>

@@ -24,13 +24,18 @@
     xml:id="ch_gs_getting_set_up">
     <title>Set up the environment and authenticate</title>
 
-    <para>Steps 1 and 2 walk you through the steps to set up your working environment. You can choose to use the nova client
-        or cURL. Select the appropriate method to prepare for the exercises to create isolated networks and servers. Step 3
-        walks you through getting authenticated.</para>
+    <para>To follow the examples in this guide, you can use cURL, nova, or neutron commands. If you plan to use the nova or
+        neutron clients, install them. Then get your authentication token. If you plan to use cURL commands, go ahead and get
+        your authentication token and then export your environment variables.</para>
+    <note>
+        <para>You can use any combination of methods to run the commands in this guide, switching back and forth if you like.
+            You are not locked into one method just because you started with it. All methods are available with cURL. Some
+            methods are not available in the nova or neutron clients.</para>
+    </note>
+    <para>Regardless of which method you choose to make API calls, don't forget to get that authentication token!</para>
 
-    <xi:include href="net_install_nova.xml"/>
     <xi:include href="net_install_neutron.xml"/>
-    <xi:include href="net_curl_export_vars.xml"/>
-    <!--need to add neutron client install here? -->
+    <xi:include href="net_install_nova.xml"/>
     <xi:include href="net_auth.xml"/>
+    <xi:include href="net_curl_export_vars.xml"/>
 </chapter>
