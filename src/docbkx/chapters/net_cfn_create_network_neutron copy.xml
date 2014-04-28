@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section [
+        <!-- Some useful entities borrowed from HTML -->
+        <!ENTITY ndash  "&#x2013;">
+        <!ENTITY mdash  "&#x2014;">
+        <!ENTITY hellip "&#x2026;">
+        
+        <!-- Useful for describing APIs -->
+        <!ENTITY GET    '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
+        <!ENTITY PUT    '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
+        <!ENTITY POST   '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
+        <!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
+     
+        <!ENTITY CIS 'Rackspace Cloud Identity Service'>
+<!ENTITY fgCS 'first generation Cloud Servers'>
+<!ENTITY ngCS 'next generation Cloud Servers'>
+<!ENTITY cnresource1 'rax-networks'>
+<!ENTITY virt_ext 'Cloud Networks virtual interface extension'>
+<!ENTITY cnresource2 'os-networksv2'>
+]>
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0"
+    xml:id="create_network_neutron">
+    <title>Create a network or a sub-network</title>
+    <para>Before you create a server, you create a network, and an optional subnet, that you can attach to your new server. </para>
+    <sidebar>
+        <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
+                <listitem>
+                    <para><olink targetdoc="cn-gettingstarted" targetptr="neutron_create_network_neutron">“Create a network
+                            or subnet with the neutron client”</olink></para>
+                </listitem>
+                <listitem>
+                    <para><olink targetdoc="cn-gettingstarted" targetptr="curl_create_network_neutron">“Create a network or
+                            subnet with cURL”</olink></para>
+                </listitem>
+            </itemizedlist></para>
+    </sidebar>
+
+    <section xml:id="neutron_create_network_neutron">
+        <title>Create a network or subnet with the neutron client</title>
+        <para>To create a network, you specify a name for your network. To create a subnet, you specify a network, an IP
+            address, and a name for your subnet. </para>
+        <para>After you create a network, copy its network ID. You use this ID to create a subnet or attach the network to a
+            server. After you create a subnet, copy its subnet ID for future reference.</para>
+        <para>
+            <procedure>
+                <title>To create a network with the neutron client</title>
+                <step>
+                    <para>Issue the following neutron command:
+                        <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+<prompt>$</prompt> neutron net-create &lt;amp&gt;</programlisting></para>
+                    <para><emphasis role="bold">Positional arguments:</emphasis></para>
+                    <para>
+                        <itemizedlist>
+                            <listitem>
+                                <para>The network name. In this example, the name is <literal>amp</literal>.</para>
+                            </listitem>
+                        </itemizedlist>
+                    </para>
+                    <para><emphasis role="bold">Output:</emphasis></para>
+                    <para>The command returns the response, as shown in the following output:</para>
+                    <informalexample>
+                        <screen><computeroutput><?db-font-size 75%?>
++----------------+--------------------------------------+
+| Field          | Value                                |
++----------------+--------------------------------------+
+| admin_state_up | True                                 |
+| id             | 29f52c7e-6efd-4335-a14a-db77d32a2555 |
+| name           | amp                                  |
+| shared         | False                                |
+| status         | ACTIVE                               |
+| subnets        |                                      |
+| tenant_id      | 53501b3c25d34f8ea293c03298caed60     |
++----------------+--------------------------------------+</computeroutput></screen>
+                    </informalexample>
+                </step>
+                <step>
+                    <para>Copy the <literal>id</literal> value from the output. You will use this value when you create a
+                        subnet, provision your server, or perform other related activities.</para>
+                </step>
+            </procedure>
+            <procedure>
+                <title>To create a subnet and request a JSON response</title>
+                <step>
+                    <para>Issue the following cURL command:
+                        <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
+                            <prompt>$</prompt> curl -s https://dfw.servers.api.rackspacecloud.com/v2.0/$account/subnets \
+       -X POST \
+       -H "Content-Type: application/json" \
+       -H "Accept: application/json" \
+       -H "X-Auth-Token: $token" \
+       -d '{"subnets":[{"cidr":"120.1.2.0/24","ip_version":4,"network_id":"29f52c7e-6efd-4335-a14a-db77d32a2555"}]}' \
+       | python -m json.tool</programlisting></para>
+                    <para>In this cURL command, you specify several options. For information about options, see <olink
+                            targetdoc="cn-gettingstarted" targetptr="curl_options">Table 2, “cURL Command-Line
+                            Options”</olink>.</para>
+                    <para><emphasis role="bold">Output:</emphasis>
+                    </para>
+                    <para>The operation returns the response body, as shown in the following JSON response:
+                        <!--<programlisting language="json"><?db-font-size 65%?>
+                            <xi:include href="../../common/samples/network-post-resp.json" parse="text"/></programlisting>--></para>
+                </step>
+                <step>
+                    <para>Copy the <literal>id</literal> value from the output for future reference.</para>
+                </step>
+            </procedure>
+        </para>
+        <sidebar>
+            <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted"
+                    targetptr="list_networks_neutron">“List networks or subnets”</olink></para>
+        </sidebar>
+    </section>
+
+    <section xml:id="curl_create_network_neutron">
+        <title>Create a network or subnet with cURL</title>
+        <para>To create a network, you specify a name and an admin_state for your network.</para>
+        <para>After you create a network, copy its network ID. You use this ID to create a subnet or attach the network to a
+            server.</para>
+        <procedure>
+            <title>To create a network</title>
+            <step>
+                <para>Issue the following cURL command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
+                            <prompt>$</prompt> curl -s https://dfw.servers.api.rackspacecloud.com/v2.0/networks \
+       -X POST \
+       -H "Content-Type: application/json" \
+       -H "Accept: application/json" \
+       -H "X-Auth-Token: $token" \
+       -d '{"network": {"name": "sample_network", "admin_state_up": "false"}}' | python -m json.tool</programlisting></para>
+                <para>In this cURL command, you specify several options. For information about options, see <olink
+                        targetdoc="cn-gettingstarted" targetptr="curl_options">Table 2, “cURL Command-Line
+                    Options”</olink>.</para>
+                <para><emphasis role="bold">Output:</emphasis>
+                </para>
+                <para>The operation returns the response body, as shown in the following JSON response:
+                    <programlisting language="json"><?db-font-size 65%?>
+                            <xi:include href="../../common/samples/network-post-resp.json" parse="text"/></programlisting></para>
+            </step>
+            <step>
+                <para>Copy the <literal>id</literal> value from the output. You will use this value when you create a subnet,
+                    provision your server, or perform other related activities.</para>
+            </step>
+        </procedure>
+        <procedure>
+            <title>To create a subnet and request a JSON response</title>
+            <para>To create a subnet, you specify a network, an IP address, and a name for your subnet. </para>
+            <para>After you create a subnet, copy its subnet ID for future reference.</para>
+            <step>
+                <para>Issue the following cURL command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
+                            <prompt>$</prompt> curl -s https://dfw.servers.api.rackspacecloud.com/v2.0/$account/subnets \
+       -X POST \
+       -H "Content-Type: application/json" \
+       -H "Accept: application/json" \
+       -H "X-Auth-Token: $token" \
+       -d '{"subnets":[{"cidr":"120.1.2.0/24","ip_version":4,"network_id":"29f52c7e-6efd-4335-a14a-db77d32a2555"}]}' \
+       | python -m json.tool</programlisting></para>
+                <para>In this cURL command, you specify several options. For information about options, see <olink
+                        targetdoc="cn-gettingstarted" targetptr="curl_options">Table 2, “cURL Command-Line
+                    Options”</olink>.</para>
+                <para><emphasis role="bold">Output:</emphasis>
+                </para>
+                <para>The operation returns the response body, as shown in the following JSON response:
+                    <!--<programlisting language="json"><?db-font-size 65%?>
+                            <xi:include href="../../common/samples/network-post-resp.json" parse="text"/></programlisting>--></para>
+            </step>
+            <step>
+                <para>Copy the <literal>id</literal> value from the output for future reference.</para>
+            </step>
+        </procedure>
+        <sidebar>
+            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+                    targetptr="list_networks_neutron">“List networks or subnets”</olink></para>
+        </sidebar>
+    </section>
+</section>

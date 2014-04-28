@@ -15,7 +15,7 @@
         Cloud Networks neutron API. </para>
 
     <xi:include href="net_bns_boot_server_neutron.xml"/>
+    <!--<xi:include href="net_bns_boot_server_neutron2.xml"/>-->
     <xi:include href="net_bns_boot_server_port_neutron.xml"/>
-    <!-- list server neutron -->
 
 </section>

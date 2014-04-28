@@ -5,26 +5,8 @@
 <!ENTITY mdash "&#x2014;">
 <!ENTITY hellip "&#x2026;">
 <!ENTITY plusmn "&#xB1;">
-
-<!-- Useful for describing APIs -->
-<!ENTITY GET '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
-<!ENTITY PUT '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
-<!ENTITY POST '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
-<!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
-
-<!ENTITY CHECK '<inlinemediaobject xmlns="http://docbook.org/ns/docbook">
-<imageobject>
-<imagedata fileref="figures/Check_mark_23x20_02.svg"
-format="SVG" scale="60"/>
-</imageobject>
-</inlinemediaobject>'>
-
-<!ENTITY ARROW '<inlinemediaobject xmlns="http://docbook.org/ns/docbook">
-<imageobject>
-<imagedata fileref="../figures/Arrow_east.svg"
-format="SVG" scale="60"/>
-</imageobject>
-</inlinemediaobject>'>
+<!ENTITY % common  SYSTEM "../../common/common.ent">
+%common;
 ]>
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="ch_preface">
@@ -33,22 +15,23 @@ format="SVG" scale="60"/>
         instances with Rackspace networks or the isolated networks that you created. </para>
     <para>When you create an isolated network, it is associated with your tenant ID.</para>
 
-    <para>Cloud Networks was originally released using the Cloud Servers the nova-network API (see <phrase condition="cn"
-                ><olink targetdoc="cn-devguide" targetptr="api_operations_nova">API operations -
-            nova-network</olink></phrase>
+    <para>Cloud Networks was originally released using the Cloud Servers the nova-network API (see <olink condition="cn"
+            targetdoc="cn-devguide" targetptr="api_operations_nova">API operations - nova-network</olink>
         <phrase condition="gs">
             <link xlink:href="http://docs.rackspace.com/networks/api/v2/cn-devguide/content/api_operations_nova.html">
-                API operations - nova-network</link> in the <citetitle>Cloud Networks Developer Guide</citetitle></phrase>).
-        Now Cloud Networks has been released using the neutron API (see <phrase condition="cn"><olink targetdoc="cn-devguide"
-                targetptr="api_operations_neutron">API operations - neutron</olink></phrase>
+                API operations - nova-network</link>
+            in the <citetitle>Cloud Networks Developer Guide</citetitle></phrase>). Now Cloud Networks has been released
+        using the neutron API (see <olink condition="cn" targetdoc="cn-devguide" targetptr="api_operations_neutron">API
+            operations - neutron</olink>
         <phrase condition="gs">
             <link xlink:href="http://docs.rackspace.com/networks/api/v2/cn-devguide/content/api_operations_neutron.html">
-                API operations - neutron</link> in the <citetitle>Cloud Networks Developer Guide</citetitle></phrase>).
-        The nova-network API operations still work, but we recommend using the neutron API operations. For information that
-        helps you determine which method is better for you, see <phrase condition="cn"><olink targetdoc="cn-devguide"
-                targetptr="section_nova_v_neutron">“Networking: nova-network versus neutron”</olink></phrase>
-        <phrase condition="gs"><olink targetdoc="cn-gettingstarted" targetptr="section_nova_v_neutron">“Networking:
-                nova-network versus neutron”</olink></phrase>.</para>
+                API operations - neutron</link>
+            in the <citetitle>Cloud Networks Developer Guide</citetitle></phrase>). The nova-network API operations still
+        work, but we recommend using the neutron API operations. For information that helps you determine which method is
+        better for you, see <olink condition="cn" targetdoc="cn-devguide" targetptr="section_nova_v_neutron">“Networking:
+            nova-network versus neutron”</olink>
+        <olink condition="gs" targetdoc="cn-gettingstarted" targetptr="section_nova_v_neutron">“Networking: nova-network
+            versus neutron”</olink>.</para>
     <para>To request access to Cloud Networks now, click
         <link xlink:href="http://www.iwantcloudnetworks.com/">"I want Cloud Networks"</link>.</para>
     <para>To detect if you are enabled to use Cloud Networks, issue a &GET; <command>/limits</command> call or a

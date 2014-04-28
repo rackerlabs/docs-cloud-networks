@@ -4,151 +4,364 @@
         <!ENTITY ndash  "&#x2013;">
         <!ENTITY mdash  "&#x2014;">
         <!ENTITY hellip "&#x2026;">
-        
-        <!-- Useful for describing APIs -->
-        <!ENTITY GET    '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
-        <!ENTITY PUT    '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
-        <!ENTITY POST   '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
-        <!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>     
-<!ENTITY fgCS 'first generation Cloud Servers'>
-<!ENTITY ngCS 'next generation Cloud Servers'>
-<!ENTITY cnresource1 'rax-networks'>
-<!ENTITY virt_ext 'Cloud Networks virtual interface extension'>
-<!ENTITY cnresource2 'os-networksv2'>
 ]>
-<section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
-    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0"
-    xml:id="boot_server_with_port_network_neutron">
-    <!-- Need to apply all of sameer's steps -->
-    <!-- =================================== -->
-    <!-- 1. create new port 
-         2. list ports
-         3. boot server
-         4. show port                        -->
-    
-    <title>Provision a server by attaching a port with an isolated network</title>
-    <para>To create your new server using this procedure, first create a port. </para>
 
+<section xml:id="boot_server_with_port_network_neutron" xmlns="http://docbook.org/ns/docbook">
+    <title>Provision a server with a port</title>
+    <para>To create your new server using a port with an attached network, you will perform the following steps: </para>
+    <para>
+        <orderedlist>
+            <listitem>
+                <para>Create a port with a network</para>
+            </listitem>
+            <listitem>
+                <para>List ports</para>
+            </listitem>
+            <listitem>
+                <para><olink targetdoc="cn-gettingstarted"
+                        targetptr="boot_server_with_port_network_nova">“Provision a server by attaching a port with an
+                        isolated network”</olink></para>
+            </listitem>
+            <listitem>
+                <para><olink targetdoc="cn-gettingstarted" targetptr="show_port_neutron">“Show
+                        port details”</olink></para>
+            </listitem>
+        </orderedlist>
+    </para>
     <sidebar>
-        <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
+        <para>
+            <emphasis role="bold">Next step:</emphasis>
+            <itemizedlist>
                 <listitem>
-                    <para><olink targetdoc="cn-gettingstarted" targetptr="neutron_boot_server_neutron">“Provision a server with an
-                            isolated network with the neutron client”</olink></para>
+                    <para>
+                        <olink targetdoc="cn-gettingstarted" targetptr="neutron_boot_server_neutron">“Provision a server with
+                            an isolated network with the nova client”</olink>
+                    </para>
                 </listitem>
-                <listitem>
-                    <para><olink targetdoc="cn-gettingstarted" targetptr="curl_boot_server_neutron">“Provision a server with an
-                            isolated network with cURL”</olink></para>
-                </listitem>
-            </itemizedlist></para>
+            </itemizedlist>
+        </para>
     </sidebar>
 
-    <?hard-pagebreak?>
-    <section xml:id="neutron_boot_server_neutron">
-        <title>Provision a server with an isolated network with the nova client</title>
-        <para>
-            <procedure>
-                <title>To provision a server and attach an isolated network</title>
-                <step>
-                    <para>Issue the following nova client command:
-                        <programlisting language="bash" role="gutter: false">
-                            <prompt>$</prompt> nova boot my_server_with_network --flavor 2 --image d42f821e-c2d1-4796-9f07-af5ed7912d0e --nic net-id=e65accc0-1d98-45eb-af76-ab3d31edc7d2</programlisting></para>
-                    <?sbr?>
-                    <para><emphasis role="bold">Output:</emphasis> The command returns information about the new server, as
-                        shown in the following output:</para>
-                    <informalexample>
-                        <screen><computeroutput>+-------------------------+--------------------------------------+
-| Property                | Value                                |
-+-------------------------+--------------------------------------+
-| OS-DCF:diskConfig       | AUTO                                 |
-| OS-EXT-STS:power_state  | 0                                    |
-| OS-EXT-STS:task_state   | scheduling                           |
-| OS-EXT-STS:vm_state     | building                             |
-| accessIPv4              |                                      |
-| accessIPv6              |                                      |
-| adminPass               | abababababab                         |
-| created                 | 2012-10-04T18:07:56Z                 |
-| flavor                  | 512MB Standard Instance              |
-| hostId                  |                                      |
-| id                      | 72859427-1e74-4a4f-b6b5-f547c1c3d452 |
-| image                   | Fedora 17 (Beefy Miracle)            |
-| metadata                | {}                                   |
-| name                    | my_server_with_network               |
-| progress                | 0                                    |
-| status                  | BUILD                                |
-| tenant_id               | 010101                               |
-| updated                 | 2012-10-04T18:07:56Z                 |
-| user_id                 | 170454                               |
-+-------------------------+--------------------------------------+</computeroutput></screen>
-                    </informalexample>
 
-                </step>
-            </procedure>
-        </para>
+    <section xml:id="boot_server_with_port_network_nova">
+        <title>Provision a server by attaching a port with an isolated network</title>
+        <para>To create your new server using this procedure, first create a port. </para>
+
         <sidebar>
-            <para><emphasis role="bold">Next step:</emphasis>
-                <olink targetdoc="cn-gettingstarted" targetptr="list_servers">“Step 2. List servers and attached
-                    networks”</olink></para>
+            <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
+                    <listitem>
+                        <para><olink targetdoc="cn-gettingstarted" targetptr="neutron_boot_server_neutron">“Provision a
+                                server with an isolated network with the nova client”</olink></para>
+                    </listitem>
+                    <listitem>
+                        <para><olink targetdoc="cn-gettingstarted" targetptr="curl_boot_server_neutron">“Provision a server
+                                with an isolated network with cURL”</olink></para>
+                    </listitem>
+                </itemizedlist></para>
         </sidebar>
-    </section>
-    <?hard-pagebreak?>
-    <section xml:id="curl_boot_server_neutron">
-        <title>Provision a server with an isolated network with cURL</title>
-        <section xml:id="json_boot_server_neutron">
-            <title>JSON request and response</title>
-            <procedure>
-                <title>To provision a server with an isolated network to the server</title>
-                <step>
-                    <para>Issue the following cURL
-                        command:<programlisting language="bash" role="gutter: false"><?db-font-size 55%?>
+        <!-- create port -->
+        <!-- list ports -->
+        <!-- Boot server -->
+        <?hard-pagebreak?>
+        <section xml:id="neutron_boot_server_neutron">
+            <title>Provision a server with an isolated network with the nova client</title>
+            <para>
+                <procedure>
+                    <title>To provision a server and attach a port with a network</title>
+                    <step>
+                        <para>Issue the following nova client command:
+                            <programlisting language="bash" role="gutter: false">
+<prompt>$</prompt> nova boot ServerAmp --image 82e72de5-6366-4217-8c87-a570a9b17e73 --nic port-id=c23c2fff-c07f-4af0-bc37-8ad883231f7c --flavor 1</programlisting></para>
+                        <?sbr?>
+                        <para><emphasis role="bold">Output:</emphasis> The command returns information about the new server,
+                            as shown in the following output:</para>
+                        <informalexample>
+                            <screen><computeroutput>
++--------------------------------------+-----------------------------------------------------------------+
+| Property                             | Value                                                           |
++--------------------------------------+-----------------------------------------------------------------+
+| OS-DCF:diskConfig                    | MANUAL                                                          |
+| OS-EXT-AZ:availability_zone          | nova                                                            |
+| OS-EXT-STS:power_state               | 0                                                               |
+| OS-EXT-STS:task_state                | scheduling                                                      |
+| OS-EXT-STS:vm_state                  | building                                                        |
+| OS-SRV-USG:launched_at               | -                                                               |
+| OS-SRV-USG:terminated_at             | -                                                               |
+| accessIPv4                           |                                                                 |
+| accessIPv6                           |                                                                 |
+| adminPass                            | 4PkrqfdmuuKy                                                    |
+| config_drive                         |                                                                 |
+| created                              | 2014-02-06T20:11:01Z                                            |
+| flavor                               | m1.tiny (1)                                                     |
+| hostId                               |                                                                 |
+| id                                   | 537805b0-7a04-4bbc-8040-812527b024bc                            |
+| image                                | cirros-0.3.0-x86_64-disk (82e72de5-6366-4217-8c87-a570a9b17e73) |
+| key_name                             | -                                                               |
+| metadata                             | {}                                                              |
+| name                                 | ServerAmp                                                       |
+| os-extended-volumes:volumes_attached | []                                                              |
+| progress                             | 0                                                               |
+| security_groups                      | default                                                         |
+| status                               | BUILD                                                           |
+| tenant_id                            | 53501b3c25d34f8ea293c03298caed60                                |
+| updated                              | 2014-02-06T20:11:01Z                                            |
+| user_id                              | 28be72f8fc5b45589c93f55274e459ce                                |
++--------------------------------------+-----------------------------------------------------------------+
+                            </computeroutput></screen>
+                        </informalexample>
+                    </step>
+                </procedure>
+            </para>
+            <sidebar>
+                <para>
+                    <emphasis role="bold">Next step:</emphasis>
+                    <olink targetdoc="cn-gettingstarted" targetptr="show_port_neutron">“Show port details”</olink>
+                </para>
+            </sidebar>
+        </section>
+        <?hard-pagebreak?>
+        <section xml:id="curl_boot_server_neutron">
+            <title>Provision a server and attach a port with a network with cURL</title>
+            <section xml:id="json_boot_server_neutron">
+                <title>JSON request and response</title>
+                <procedure>
+                    <title>To provision a server with an isolated network to the server</title>
+                    <step>
+                        <para>Issue the following cURL
+                            command:<programlisting language="bash" role="gutter: false"><?db-font-size 55%?>
                             <prompt>$</prompt> curl https://dfw.servers.api.rackspacecloud.com/v2/$account/servers \
          -X POST \
          -H "X-Auth-Project-Id: $account" \
          -H "Content-Type: application/json" \
          -H "Accept: application/json" \
          -H "X-Auth-Token: $token" \
-         -d '{"server": {"name": "my_server_with_network", "imageRef": "d42f821e-c2d1-4796-9f07-af5ed7912d0e", "flavorRef": "2", "max_count": 1, "min_count": 1, "networks": [{"uuid": "538a112a-34d1-47ff-bf1e-c40639e886e2"}, {"uuid": "00000000-0000-0000-0000-000000000000"}, {"uuid": "11111111-1111-1111-1111-111111111111"}]}}' \
+         -d '{"server": {"name": "ServerAmp", "imageRef": "82e72de5-6366-4217-8c87-a570a9b17e73", \
+         "flavorRef": "1", "max_count": 1, "min_count": 1, "nic":"port-id=c23c2fff-c07f-4af0-bc37-8ad883231f7c"\
          | python -m json.tool</programlisting></para>
-                    <para>In addition to the isolated network, PublicNet and ServiceNet are attached to the server. You must
-                        explicitly specify these networks to attach them to your server.</para>
-                    <para><emphasis role="bold">Output:</emphasis> The API operation returns information about the new
-                        server, as shown in the following output:</para>
-                    <programlisting language="json"><?db-font-size 65%?>
-                        <xi:include href="../../common/samples/server-post-resp.json" parse="text"/></programlisting>
-                </step>
-            </procedure>
-            <sidebar>
-                <para><emphasis role="bold">Next step:</emphasis>
-                    <olink targetdoc="cn-gettingstarted" targetptr="list_servers">“Step 2. List servers and attached
-                        networks”</olink></para>
-            </sidebar>
-        </section>
-        <section xml:id="xml_boot_server_neutron">
-            <title>XML request and response</title>
-            <procedure>
-                <title>To provision a server and attach an isolated network to the server</title>
-                <step>
-                    <para>Issue the following cURL
-                        command:<programlisting language="bash" role="gutter: false"><?db-font-size 55%?>
-                            <prompt>$</prompt> curl -i https://dfw.servers.api.rackspacecloud.com/v2/$account/servers.xml \
+                        <para><emphasis role="bold">Output:</emphasis> The API operation returns information about the new
+                            server, as shown in the following output:</para>
+                        <programlisting language="json"><?db-font-size 65%?>
+{
+    "server": {
+        "OS-DCF:diskConfig": "AUTO", 
+        "adminPass": "4PkrqfdmuuKy", 
+        "id": "537805b0-7a04-4bbc-8040-812527b024bc", 
+        "links": [
+            {
+                "href": "https://dfw.servers.api.rackspacecloud.com/v2/53501b3c25d34f8ea293c03298caed60/servers/537805b0-7a04-4bbc-8040-812527b024bc", 
+                "rel": "self"
+            }, 
+            {
+                "href": "https://dfw.servers.api.rackspacecloud.com/53501b3c25d34f8ea293c03298caed60/servers/537805b0-7a04-4bbc-8040-812527b024bc", 
+                "rel": "bookmark"
+            }
+        ]
+    }
+}                       
+                        </programlisting>
+                    </step>
+                </procedure>
+                <sidebar>
+                    <para>
+                        <emphasis role="bold">Next step:</emphasis>
+                        <olink targetdoc="cn-gettingstarted" targetptr="show_port_neutron">“Show port details”</olink>
+                    </para>
+                </sidebar>
+            </section>
+            <section xml:id="xml_boot_server_neutron">
+                <title>XML request and response</title>
+                <procedure>
+                    <title>To provision a server and attach an isolated network to the server</title>
+                    <step>
+                        <para>Issue the following cURL
+                            command:<programlisting language="bash" role="gutter: false"><?db-font-size 55%?>
+<prompt>$</prompt> curl -i https://dfw.servers.api.rackspacecloud.com/v2/$account/servers.xml \
         -X POST \
         -H "X-Auth-Project-Id: $account" \
         -H "Content-Type: application/xml" \
         -H "Accept: application/xml" \
         -H "X-Auth-Token: $token" \
-        -d '&lt;?xml version="1.0" encoding="UTF-8"?>&lt;server xmlns="http://docs.openstack.org/compute/api/v1.1" imageRef="3afe97b2-26dc-49c5-a2cc-a2fc8d80c001" flavorRef="2" name="api-test-server-xml2">&lt;metadata>&lt;meta key="My Server Name">API Test Server XML&lt;/meta>&lt;/metadata>&lt;networks>&lt;uuid>0ef47ac7-6797-4e01-8a47-ed26ec3aaa56&lt;/uuid>&lt;uuid>00000000-0000-0000-0000-000000000000&lt;/uuid>&lt;uuid>11111111-1111-1111-1111-111111111111&lt;/uuid>&lt;/networks>&lt;/server>'</programlisting></para>
-                    <para>In addition to the isolated network, PublicNet and ServiceNet are attached to the server. You must
-                        explicitly specify these networks to attach them to your server.</para>
-                    <para><emphasis role="bold">Output:</emphasis> The API operation returns information about the new
-                        server, as shown in the following output:</para>
-                    <programlisting language="xml"><?db-font-size 65%?><xi:include href="../../common/samples/server-post-resp.xml" parse="text"/></programlisting>
+        -d '&lt;?xml version="1.0" encoding="UTF-8"?>&lt;server xmlns="http://docs.openstack.org/compute/api/v1.1" \
+        imageRef="82e72de5-6366-4217-8c87-a570a9b17e73" flavorRef="1" name="ServerAmp" \
+        nic="port-id=c23c2fff-c07f-4af0-bc37-8ad883231f7c"&lt;/server>'</programlisting></para>
+                        <para>In addition to the isolated network, PublicNet and ServiceNet are attached to the server. You
+                            must explicitly specify these networks to attach them to your server.</para>
+                        <para><emphasis role="bold">Output:</emphasis> The API operation returns information about the new
+                            server, as shown in the following output:</para>
+                        <programlisting language="xml"><?db-font-size 65%?>
+&lt;server
+    xmlns:OS-DCF="http://docs.openstack.org/compute/ext/disk_config/api/v1.1"
+    xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns="http://docs.openstack.org/compute/api/v1.1"
+    id="537805b0-7a04-4bbc-8040-812527b024bc" adminPass="4PkrqfdmuuKy"
+    OS-DCF:diskConfig="AUTO">
+    &lt;metadata/>
+    &lt;atom:link
+        href="https://dfw.servers.api.rackspacecloud.com/v2/53501b3c25d34f8ea293c03298caed60/servers/537805b0-7a04-4bbc-8040-812527b024bc"
+        rel="self"/>
+    &lt;atom:link
+        href="https://dfw.servers.api.rackspacecloud.com/53501b3c25d34f8ea293c03298caed60/servers/537805b0-7a04-4bbc-8040-812527b024bc"
+        rel="bookmark"/>
+&lt;/server>                            
+                        </programlisting>
+                    </step>
+                </procedure>
+                <sidebar>
+                    <para>
+                        <emphasis role="bold">Next step:</emphasis>
+                        <olink targetdoc="cn-gettingstarted" targetptr="show_port_neutron">“Show port details”</olink>
+                    </para>
+                </sidebar>
+            </section>
+        </section>
+        <?hard-pagebreak?>
+    </section>
+
+    <!-- show port -->
+    <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+        xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0"
+        xml:id="show_port_neutron">
+        <title>Show port details</title>
+        <para>You can show details for a specified port, including servers using the port, by using the port ID.</para>
+        <sidebar>
+            <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
+                    <listitem>
+                        <para><olink targetdoc="cn-gettingstarted" targetptr="neutron_show_port_neutron">“Show port details
+                                with the neutron client”</olink></para>
+                    </listitem>
+                    <listitem>
+                        <para><olink targetdoc="cn-gettingstarted" targetptr="curl_show_port_neutron">“Show port details with
+                                cURL”</olink></para>
+                    </listitem>
+                </itemizedlist></para>
+        </sidebar>
+        <?hard-pagebreak?>
+        <section xml:id="neutron_show_port_neutron">
+            <title>Show port details with the neutron client</title>
+            <para>The following steps shows you how to view details for a port using the neutron client.</para>
+            <procedure>
+                <title>To show information for a specified port ID</title>
+                <step>
+                    <para>Issue the following neutron client command:
+                        <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                        <prompt>$</prompt> neutron port-show &lt;c23c2fff-c07f-4af0-bc37-8ad883231f7c&gt;</programlisting></para>
+                    <para>
+                        <emphasis role="bold">Positional argument:</emphasis>
+                    </para>
+                    <para>
+                        <itemizedlist>
+                            <listitem>
+                                <para>The ID of the port for which you want to show information. To determine the port ID,
+                                    issue a <command>neutron</command>
+                                    <option>port-list</option> command. </para>
+                            </listitem>
+                        </itemizedlist>
+                    </para>
+                    <para>
+                        <emphasis role="bold">Output:</emphasis>
+                    </para>
+                    <para>The command returns the result as shown in the following output:</para>
+                    <informalexample>
+                        <screen><computeroutput>
++-----------------------+----------------------------------------------------------------------------------+
+| Field                 | Value                                                                            |
++-----------------------+----------------------------------------------------------------------------------+
+| admin_state_up        | True                                                                             |
+| allowed_address_pairs |                                                                                  |
+| device_id             | 537805b0-7a04-4bbc-8040-812527b024bc                                             |
+| device_owner          | compute:None                                                                     |
+| extra_dhcp_opts       |                                                                                  |
+| fixed_ips             | {"subnet_id": "23e3059e-4f39-4f7f-8cf2-c326e5de6c37", "ip_address": "120.1.2.4"} |
+| id                    | c23c2fff-c07f-4af0-bc37-8ad883231f7c                                             |
+| mac_address           | fa:16:3e:a6:48:c4                                                                |
+| name                  | newport                                                                          |
+| network_id            | 29f52c7e-6efd-4335-a14a-db77d32a2555                                             |
+| security_groups       | 7e768af1-f9e9-431e-823d-9477e593e345                                             |
+| status                | ACTIVE                                                                           |
+| tenant_id             | 53501b3c25d34f8ea293c03298caed60                                                 |
++-----------------------+----------------------------------------------------------------------------------+
+                    </computeroutput></screen>
+                    </informalexample>
                 </step>
             </procedure>
             <sidebar>
-                <para><emphasis role="bold">Next step:</emphasis>
-                    <olink targetdoc="cn-gettingstarted" targetptr="list_servers">“Step 2. List servers and attached
-                        networks”</olink></para>
+                <para>
+                    <emphasis role="bold">Next step: </emphasis>
+                    <!--<olink targetdoc="cn-gettingstarted" targetptr="list_servers_port_neutron">List servers and attached
+                        networks</olink>-->
+                </para>
+            </sidebar>
+        </section>
+        <?hard-pagebreak?>
+        <section xml:id="curl_show_port_neutron">
+            <title>Show port details with cURL</title>
+            <para>The following steps shows you how to view details for a port using cURL.</para>
+            <procedure>
+                <title>To show information for a specified port ID</title>
+                <step>
+                    <para>Issue the following cURL command:
+                        <programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
+                            <prompt>$</prompt> curl https://dfw.servers.api.rackspacecloud.com/v2.0/$account/ports/c23c2fff-c07f-4af0-bc37-8ad883231f7c \
+        -X GET \
+        -H "X-Auth-Project-Id: $account" \
+        -H "Accept: application/json" \
+        -H "Content-Type: application/json"\
+        -H "X-Auth-Token: $token" | python -m json.tool</programlisting></para>
+                    <para>
+                        <emphasis role="bold">Positional argument:</emphasis>
+                    </para>
+                    <para>
+                        <itemizedlist>
+                            <listitem>
+                                <para><parameter>id</parameter>. The ID of the network for which you want to show
+                                    information. To determine the network ID, issue a <command>neutron</command>
+                                    <option>network-list</option> command. </para>
+                            </listitem>
+                        </itemizedlist>
+                    </para>
+                    <para>
+                        <emphasis role="bold">Output:</emphasis>
+                    </para>
+                    <para>The API operation returns a response body as shown in the following output:</para>
+
+                    <programlisting language="json"><?db-font-size 75%?>
+{
+   "port":[
+      {
+         "status":"ACTIVE",
+         "name":"newport",
+         "admin_state_up":true,
+         "network_id":"29f52c7e-6efd-4335-a14a-db77d32a2555",
+         "tenant_id":"53501b3c25d34f8ea293c03298caed60",
+         "binding:vif_type":"ovs",
+         "device_owner":"compute:None",
+         "binding:capabilities":{
+            "port_filter":false
+         },
+         "mac_address":"fa:16:3e:a6:48:c4",
+         "fixed_ips":[
+            {
+               "subnet_id":"23e3059e-4f39-4f7f-8cf2-c326e5de6c37",
+               "ip_address":"120.1.2.4"
+            }
+         ],
+         "id":"c23c2fff-c07f-4af0-bc37-8ad883231f7c",
+         "device_id":"537805b0-7a04-4bbc-8040-812527b024bc"
+      }
+   ]
+}
+                </programlisting>
+                </step>
+            </procedure>
+            <sidebar>
+                <para>
+                    <emphasis role="bold">Next step: </emphasis>
+                    <!--<olink targetdoc="cn-gettingstarted" targetptr="list_servers_port_neutron">List servers and attached
+                        networks</olink>-->
+                </para>
             </sidebar>
         </section>
     </section>
-    <?hard-pagebreak?>
+
+    <!-- list servers -->
 </section>

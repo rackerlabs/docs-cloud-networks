@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section [
+<!ENTITY % common  SYSTEM "../../common/common.ent">
+%common;
+]>
+<section xml:id="cfn_neutron_neutron" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0">
+    <title>Use neutron API and neutron client to create and list both networks and subnets</title>
+    <para>These sections walk you through creating your network and subnet and then listing them by using the neutron
+        client. </para>
+    <sidebar>
+        <para><emphasis role="bold">Start here: </emphasis><olink targetdoc="cn-gettingstarted"
+                targetptr="neutron_create_network_neutron">“Create a network with the neutron API and the neutron
+                client”</olink></para>
+    </sidebar>
+
+    <section xml:id="neutron_create_network_neutron">
+        <title>Create a network with the neutron API and the neutron client</title>
+        <para>To create a network, you specify a name for your network. After you create a network, copy its network ID. You
+            use this ID to create a subnet or attach the network to a server or port.</para>
+        <para>
+            <procedure>
+                <title>To create a network with the neutron client</title>
+                <step>
+                    <para>Issue the following neutron command:
+                        <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+<prompt>$</prompt> neutron net-create &lt;amp&gt;</programlisting></para>
+                    <para><emphasis role="bold">Positional arguments:</emphasis></para>
+                    <para>
+                        <itemizedlist>
+                            <listitem>
+                                <para>The network name. In this example, the name is <literal>amp</literal>.</para>
+                            </listitem>
+                        </itemizedlist>
+                    </para>
+                    <para><emphasis role="bold">Output:</emphasis></para>
+                    <para>The command returns the response, as shown in the following output:</para>
+                    <informalexample>
+                        <screen><computeroutput><?db-font-size 75%?>
++----------------+--------------------------------------+
+| Field          | Value                                |
++----------------+--------------------------------------+
+| admin_state_up | True                                 |
+| id             | 29f52c7e-6efd-4335-a14a-db77d32a2555 |
+| name           | amp                                  |
+| shared         | False                                |
+| status         | ACTIVE                               |
+| subnets        |                                      |
+| tenant_id      | 53501b3c25d34f8ea293c03298caed60     |
++----------------+--------------------------------------+</computeroutput></screen>
+                    </informalexample>
+                </step>
+                <step>
+                    <para>Copy the id value from the output. You will use this value when you create a subnet, provision your
+                        server, or perform other related activities. In this example, the id is
+                            <literal>29f52c7e-6efd-4335-a14a-db77d32a2555</literal>, but use the <parameter>id</parameter>
+                        from your response.</para>
+                </step>
+            </procedure>
+        </para>
+        <sidebar>
+            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+                    targetptr="neutron_create_subnet_neutron">“Create a subnet with the neutron API and the neutron
+                    client”</olink></para>
+        </sidebar>
+    </section>
+
+    <section xml:id="neutron_create_subnet_neutron">
+        <title>Create a subnet with the neutron API and the neutron client</title>
+        <para>To create a subnet, you specify a network, an IP address, and a name for your subnet. After you create a
+            subnet, copy its subnet ID for future reference.</para>
+        <para>
+            <procedure>
+                <title>To create a subnet with the neutron client</title>
+                <step>
+                    <para>Issue the following neutron command:
+                        <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+<prompt>$</prompt> neutron subnet-create &lt;amp&gt; &lt;120.1.2.0/24&gt; --name Subamp</programlisting></para>
+                    <para><emphasis role="bold">Positional arguments:</emphasis></para>
+                    <para>
+                        <itemizedlist>
+                            <listitem>
+                                <para>The network name. In this example, the name is <literal>amp</literal>.</para>
+                            </listitem>
+                            <listitem>
+                                <para>The network CIDR. In this example, the CIDR is <literal>120.1.2.0/24</literal>.</para>
+                            </listitem>
+                            <listitem>
+                                <para><emphasis role="bold">name</emphasis> The subnet name. In this example, the name is
+                                        <literal>Subamp</literal>.</para>
+                            </listitem>
+                        </itemizedlist>
+                    </para>
+                    <para><emphasis role="bold">Output:</emphasis></para>
+                    <para>The command returns the response, as shown in the following output:</para>
+                    <informalexample>
+                        <screen><computeroutput><?db-font-size 75%?>
++------------------+----------------------------------------------+
+| Field            | Value                                        |
++------------------+----------------------------------------------+
+| allocation_pools | {"start": "120.1.2.2", "end": "120.1.2.254"} |
+| cidr             | 120.1.2.0/24                                 |
+| dns_nameservers  |                                              |
+| enable_dhcp      | True                                         |
+| gateway_ip       | 120.1.2.1                                    |
+| host_routes      |                                              |
+| id               | 23e3059e-4f39-4f7f-8cf2-c326e5de6c37         |
+| ip_version       | 4                                            |
+| name             | Subamp                                       |
+| network_id       | 29f52c7e-6efd-4335-a14a-db77d32a2555         |
+| tenant_id        | 53501b3c25d34f8ea293c03298caed60             |
++------------------+----------------------------------------------+</computeroutput></screen>
+                    </informalexample>
+                </step>
+                <step>
+                    <para>Copy the id value from the output. You will use this value when you create a subnet, provision your
+                        server, or perform other related activities. In this example, the id is
+                            <literal>23e3059e-4f39-4f7f-8cf2-c326e5de6c37</literal>, but use the <parameter>id</parameter>
+                        from your response.</para>
+                </step>
+            </procedure>
+        </para>
+        <sidebar>
+            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+                    targetptr="neutron_list_networks_neutron">“List networks with the neutron API and the neutron
+                    client”</olink></para>
+        </sidebar>
+    </section>
+
+    <section xml:id="neutron_list_networks_neutron">
+        <title>List networks with the neutron API and the neutron client</title>
+        <para>The following steps shows you how to list networks and subnets using the neutron client.</para>
+        <procedure>
+            <title>To list networks with the neutron API and the neutron client</title>
+            <step>
+                <para>Issue the following neutron client command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+<prompt>$</prompt> neutron net-list </programlisting></para>
+                <para><emphasis role="bold">Output:</emphasis></para>
+                <para>For each network, the command returns the result as shown in the following output</para>
+                <informalexample>
+                    <screen><computeroutput><?db-font-size 75%?>
++--------------------------------------+---------+-----------------------------------------------------+
+| id                                   | name    | subnets                                             |
++--------------------------------------+---------+-----------------------------------------------------+
+| 29f52c7e-6efd-4335-a14a-db77d32a2555 | amp     | 23e3059e-4f39-4f7f-8cf2-c326e5de6c37 120.1.2.0/24   |
++--------------------------------------+---------+-----------------------------------------------------+</computeroutput></screen>
+                </informalexample>
+            </step>
+        </procedure>
+        <sidebar>
+            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+                    targetptr="neutron_list_subnets_neutron">List subnets with the neutron API and the neutron
+                client</olink></para>
+        </sidebar>
+    </section>
+    <section xml:id="neutron_list_subnets_neutron">
+        <title>List subnets with the neutron API and the neutron client</title>
+        <para>The following steps shows you how to list subnets using the neutron client.</para>
+        <procedure>
+            <title>To list subnets with the neutron client</title>
+            <step>
+                <para>Issue the following neutron client command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+<prompt>$</prompt> neutron subnet-list </programlisting></para>
+                <para><emphasis role="bold">Output:</emphasis></para>
+                <para>For each subnet, the command returns the result as shown in the following output</para>
+                <informalexample>
+                    <screen><computeroutput><?db-font-size 75%?>
++--------------------------------------+----------------+----------------+--------------------------------------------------+
+| id                                   | name           | cidr           | allocation_pools                                 |
++--------------------------------------+----------------+----------------+--------------------------------------------------+
+| 23e3059e-4f39-4f7f-8cf2-c326e5de6c37 | Subamp         | 120.1.2.0/24   | {"start": "120.1.2.2", "end": "120.1.2.254"}     |
++--------------------------------------+----------------+----------------+--------------------------------------------------+</computeroutput></screen>
+                </informalexample>
+            </step>
+        </procedure>
+        <sidebar>
+            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+                    targetptr="boot_new_server">Boot a new server with your cloud network</olink></para>
+        </sidebar>
+    </section>
+</section>

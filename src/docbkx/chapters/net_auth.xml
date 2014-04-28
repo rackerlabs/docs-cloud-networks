@@ -1,26 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE section [
-        <!-- Some useful entities borrowed from HTML -->
-        <!ENTITY ndash  "&#x2013;">
-        <!ENTITY mdash  "&#x2014;">
-        <!ENTITY hellip "&#x2026;">
-        
-        <!-- Useful for describing APIs -->
-        <!ENTITY GET    '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
-        <!ENTITY PUT    '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
-        <!ENTITY POST   '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
-        <!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
-        
-        <!-- Useful for specs -->
-        <!ENTITY CS 'Cloud Servers'>
-        <!ENTITY HOST 'dfw.servers.api.rackspacecloud.com'>
-        <!ENTITY URL 'https://&HOST;/v2/'>
-<!ENTITY CIS 'Rackspace Cloud Identity Service'>
-<!ENTITY fgCS 'first generation Cloud Servers'>
-<!ENTITY ngCS 'next generation Cloud Servers'>
+<!ENTITY % common  SYSTEM "../../common/common.ent">
+%common;
 ]>
-<section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
-    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="net_auth">
+<section xml:id="net_auth" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
     <title>Get authentication token</title>
     <para>To authenticate access to Rackspace Cloud services, you issue an authentication request to the &CIS;, which is an
         implementation of the OpenStack Keystone Identity Service v2.0.</para>
@@ -60,18 +44,19 @@
         authentication token expires after 24 hours, you must generate a token once a day. </para>
     <para>For detailed information about the OpenStack Keystone Identity Service v2.0, see
         <link xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/index.html"><citetitle>Cloud Identity Client Developer Guide API
-                v2.0</citetitle></link>.
-        For information about support for legacy identity endpoints, see
-        <link xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Endpoints-d1e180.html">Alternate Authentication Endpoints</link>.</para>
+                v2.0</citetitle></link>.</para>
     <sidebar audience="gs">
         <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
                 <listitem>
-                    <para><link linkend="nova_auth">Authenticate with
-                            the nova client</link></para>
+                    <para><olink condition="gs" targetdoc="cn-gettingstarted" targetptr="nova_auth">“Authenticate with the
+                            nova client”</olink><olink condition="dev" targetdoc="cn-devguide" targetptr="nova_auth"
+                            >“Authenticate with the nova client”</olink></para>
                 </listitem>
                 <listitem>
-                    <para><link linkend="curl_auth">Authenticate with
-                            cURL</link></para>
+                    <para><olink condition="gs" targetdoc="cn-gettingstarted" targetptr="curl_auth">“Authenticate with
+                            cURL”</olink>
+                        <olink condition="dev" targetdoc="cn-devguide" targetptr="curl_auth">“Authenticate with
+                        cURL”</olink></para>
                 </listitem>
             </itemizedlist></para>
     </sidebar>
@@ -149,7 +134,7 @@
         <sidebar audience="gs">
             <para><emphasis role="bold">Next step:</emphasis>
                 <olink targetdoc="cn-gettingstarted" targetptr="create_first_net">Create your first cloud
-                    network</olink></para>
+                network</olink></para>
         </sidebar>
     </section>
     <?hard-pagebreak?>
@@ -169,7 +154,7 @@
         <para>Your username and password are the ones that you use to log into the Rackspace Cloud Control Panel. </para>
         <para>To obtain your API key, log into
             <link xlink:href="http://mycloud.rackspace.com." xml:id="newwin">http://mycloud.rackspace.com</link>, click your
-            username, and select <guilabel>API Keys</guilabel> to get your key.</para>
+            user name, and select <guilabel>API Keys</guilabel> to get your key.</para>
         <procedure>
             <title>To authenticate with cURL:</title>
             <step>
@@ -187,10 +172,11 @@
        -d '{"auth":{"RAX-KSKEY:apiKeyCredentials":{"username":"theUserName", "apiKey":"0000000000000000000"}}}' \
        -H "Content-Type: application/json" | python -m json.tool</programlisting>
                 </example>
-                <note>
-                    <para>For information about the json.tool, see <olink targetdoc="cn-gettingstarted" targetptr="json_tool"
-                            >Note about JSON tool</olink>.</para>
-                </note>
+                <tip>
+                    <para>For information about the json.tool, see <olink condition="gs" targetdoc="cn-gettingstarted"
+                            targetptr="json_tool">Note</olink>
+                        <olink condition="dev" targetdoc="cn-devguide" targetptr="json_tool">Note</olink>.</para>
+                </tip>
                 <para>In response to valid credentials, your request returns an authentication token and a service catalog
                     with the endpoints to request services. </para>
                 <para>Do not include explicit API endpoints in your scripts and applications. Instead, find the endpoint for
@@ -216,8 +202,8 @@
                                 the <code>endpoints</code> element in the <code>serviceCatalog</code> element. </para>
                             <para>Endpoints information includes the public URL, which is the endpoint that you use to access
                                 the service, region, tenant ID, and version information. </para>
-                            <para>To access the Cloud Networks or next generation Cloud Servers service, use
-                                the endpoint for the <literal>cloudServersOpenStack</literal> service.</para>
+                            <para>To access the Cloud Networks or next generation Cloud Servers service, use the endpoint for
+                                the <literal>cloudServersOpenStack</literal> service.</para>
                         </callout>
                         <callout arearefs="credentials.xml.tenant">
                             <para><emphasis role="bold">Tenant ID</emphasis>. Appears in the <literal>tenantId</literal>
@@ -249,26 +235,25 @@
                                     <para>To access the Cloud Networks or next generation Cloud Servers service, use the
                                             <code>publicURL</code> value for the <literal>cloudServersOpenStack</literal>
                                         service.</para>
-                                    <para>Might show multiple endpoints to enable regional choice. Select the appropriate
-                                        endpoint for the region that you want to interact with by examining the
+                                    <para>The service might show multiple endpoints to enable regional choice. Select the
+                                        appropriate endpoint for the region that you want to interact with by examining the
                                             <literal>region</literal> field.</para>
                                     <para>If you use the authentication token to access this service, you can view and
                                         perform Cloud Networks or &ngCS; API operations against your &ngCS;. To complete
                                         Cloud Networks API operations, you must also get access to this service. To request
-                                        access, click
-                                        <link xlink:href="http://www.iwantcloudnetworks.com/">here</link>.</para>
+                                        access, click <link xlink:href="http://www.iwantcloudnetworks.com/">here</link>.
+                                    </para>
                                 </listitem>
                             </itemizedlist>
                         </callout>
                         <callout arearefs="credentials.xml.expires">
                             <para><emphasis role="bold">Expiration date and time for authentication token</emphasis>. Appears
                                 in the <code>expires</code> field in the <code>token</code> element.</para>
-                            <para>After this date and time, the token is no longer valid. </para>
+                            <para>The authentication token expires after this date and time, unless it is revoked earlier.
+                                After the token expires or is revoked, you must generate a new token if you want to continue
+                                accessing Rackspace cloud services.</para>
                             <para>This field predicts the maximum lifespan for a token, but does not guarantee that the token
-                                reaches that lifespan. </para>
-                            <para>Clients are encouraged to cache a token until it expires. </para>
-                            <para>Because the authentication token expires after 24 hours, you must generate a token once a
-                                day. </para>
+                                reaches that lifespan. Clients are encouraged to cache a token until it expires.</para>
                         </callout>
                         <callout arearefs="credentials.xml.token">
                             <para><emphasis role="bold">Authentication token</emphasis>. Appears in the <code>id</code> field
@@ -298,9 +283,19 @@
         </procedure>
 
         <sidebar audience="gs">
-            <para><emphasis role="bold">Next step:</emphasis>
-                <olink targetdoc="cn-gettingstarted" targetptr="create_first_net">Create your first cloud
-                network</olink></para>
+            <para><emphasis role="bold">Next step: Chose one of the following steps: </emphasis>
+                <itemizedlist>
+                    <listitem>
+                        <para><olink targetdoc="cn-gettingstarted" targetptr="export_env_vars">“(optional) Export environment
+                                variables to run cURL commands”</olink></para>
+                    </listitem>
+                    <listitem>
+                        <para>
+                            <olink targetdoc="cn-gettingstarted" targetptr="create_first_net">Create your first cloud
+                                network</olink></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </sidebar>
     </section>
 </section>

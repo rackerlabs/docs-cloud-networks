@@ -1,20 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE section [
-<!-- Some useful entities borrowed from HTML -->
-<!ENTITY ndash  "&#x2013;">
-<!ENTITY mdash  "&#x2014;">
-<!ENTITY hellip "&#x2026;">
-<!ENTITY plusmn "&#xB1;">
-
-<!-- Useful for describing APIs -->
-<!ENTITY GET    '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
-<!ENTITY PUT    '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
-<!ENTITY POST   '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
-<!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
+<!ENTITY % common  SYSTEM "../../common/common.ent">
+%common;
 ]>
-<section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
-    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="curl_summary_xml">
-
+<section xml:id="curl_summary_xml" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
     <title>XML requests and responses</title>
     <para>The following example shows a cURL command that specifies an XML request body and returns an XML response. The
         command creates a server.</para>
@@ -31,8 +21,10 @@
             <programlisting language="bash" role="gutter: false"><?db-font-size 65%?><prompt>$</prompt> <xi:include href="../../common/samples/xml_curl.txt" parse="text"/></programlisting>
         </programlistingco>
     </example>
-    <para>This example includes the following changes to the basic JSON request format in <olink targetdoc="cn-devguide"
-            targetptr="json_example">Example 5, “cURL Command Example: JSON Request”</olink>:<calloutlist>
+    <para>This example includes the following changes to the basic JSON request format in <olink condition="gs"
+            targetdoc="cn-gettingstarted" targetptr="json_example">Example 1, “cURL command example: JSON request”</olink>
+        <olink condition="dev"
+            targetdoc="cn-devguide" targetptr="json_example">Example 4.4, “cURL command example: JSON request”</olink>:<calloutlist>
             <callout arearefs="xml_curl.txt.endpoint">
                 <para>The endpoint in the cURL command has <literal>.xml</literal> appended to it to return an XML
                     response.</para>

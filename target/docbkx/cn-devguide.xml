@@ -31,7 +31,7 @@
         </copyright>
         <releaseinfo>Cloud Networks API v2</releaseinfo>
         <productname>Cloud Networks™</productname>
-        <pubdate>2014-04-16</pubdate>
+        <pubdate>2014-04-25</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <para>
@@ -220,18 +220,12 @@
         instances with Rackspace networks or the isolated networks that you created. </para>
       <para>When you create an isolated network, it is associated with your tenant ID.</para>
 
-      <para>Cloud Networks was originally released using the Cloud Servers the nova-network API (see <phrase condition="cn">
-            <xref linkend="api_operations_nova"/>
-         </phrase>
-        ).
-        Now Cloud Networks has been released using the neutron API (see <phrase condition="cn">
-            <xref linkend="api_operations_neutron"/>
-         </phrase>
-        ).
-        The nova-network API operations still work, but we recommend using the neutron API operations. For information that
-        helps you determine which method is better for you, see <phrase condition="cn">
-            <xref linkend="section_nova_v_neutron"/>
-         </phrase>
+      <para>Cloud Networks was originally released using the Cloud Servers the nova-network API (see <xref linkend="api_operations_nova"/>
+        ). Now Cloud Networks has been released
+        using the neutron API (see <xref linkend="api_operations_neutron"/>
+        ). The nova-network API operations still
+        work, but we recommend using the neutron API operations. For information that helps you determine which method is
+        better for you, see <xref linkend="section_nova_v_neutron"/>
         .</para>
       <para>To request access to Cloud Networks now, click
         <link xlink:href="http://www.iwantcloudnetworks.com/">"I want Cloud Networks"</link>.</para>
@@ -629,9 +623,7 @@
         <para>If you are using nova-network operations and you install the Cloud Networks virtual interface extension, you can create a virtual interface to
                 a specified Rackspace or isolated network and attach that network to an existing server instance. You can
                 also list virtual interfaces for and delete virtual interfaces from a server instance. For information about
-                the Cloud Networks virtual interface extension, see <phrase condition="cn">
-            <xref linkend="section_virt_ext"/>
-         </phrase>
+                the Cloud Networks virtual interface extension, see <xref linkend="section_virt_ext"/>
                 .</para>
         <para>Cloud Networks enables you to attach one or more of the following networks to your server: <itemizedlist>
                         <listitem>
@@ -701,9 +693,7 @@
       </para>
         <note>
                 <para>You can explicitly opt out of attaching to the Rackspace networks, which introduces certain potential
-                        complications. For more information, see <phrase condition="cn">
-               <xref linkend="networks"/>
-            </phrase>
+                        complications. For more information, see <xref linkend="networks"/>
                         .</para>
         </note>
         <para>You can use the Cloud Networks service to perform the following tasks: <itemizedlist>
@@ -719,9 +709,7 @@
                         <listitem>
                                 <para>Delete an isolated network, but only if it is not associated with any server. </para>
                                 <para>To detach a network from a server, you must use the Cloud Networks virtual interface extension to delete the virtual
-                                        interface for the network from the server. See <phrase condition="cn">
-                     <xref linkend="networks"/>
-                  </phrase>
+                                        interface for the network from the server. See <xref linkend="networks"/>
                                         .</para>
                         </listitem>
                         <listitem>
@@ -739,14 +727,14 @@
                 information, see
                 <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/List_Servers-d1e2078.html">List Servers</link>
                 in the <citetitle>Cloud Servers Developer Guide</citetitle>.</para>
-        <section version="5.0"
-               xml:id="section_nova_v_neutron"
+        <section xml:id="section_nova_v_neutron"
+               version="5.0"
                xml:base="chapters/net_nova_v_neutron.xml">
          <title>Networking: nova-network versus neutron</title>
          <para>Rackspace first introduced networking services by using the nova-network API based on OpenStack. Now we are
         providing the neutron API, also based on OpenStack, which offers more functionality and flexibility than the
         nova-network API. Both sets of APIs continue to work well, but the neutron API will be the base for all the future
-        networking services that Rackspace offers. </para>  
+        networking services that Rackspace offers. </para>
          <para>We recommend that you use the neutron API for your Cloud Networks API operations.</para>
          <para>The neutron API provides three primary, top-level resources (networks, ports, and subnets) and includes the ability
         to perform the following functions: <itemizedlist>
@@ -775,8 +763,8 @@
             XML.</para>
          </note>
       </section>
-        <section version="5.0"
-               xml:id="networks"
+        <section xml:id="networks"
+               version="5.0"
                xml:base="chapters/net_limitations.xml">
          <title>Limitations of detaching from Rackspace networks</title>
          <para>When you provision a next generation Cloud Server, you can attach to one or more isolated networks and the
@@ -811,10 +799,10 @@
                </listitem>
                <listitem>
                   <para>
-                     <emphasis role="bold">Cloud Servers neutron API or nova-network API</emphasis>. If you do not specify any
-                    networks, ServiceNet and PublicNet are attached by default. However, if you specify an isolated network,
-                    you must explicitly specify the UUIDs for PublicNet and ServiceNet to attach these networks to your
-                    server. </para>
+                     <emphasis role="bold">Cloud Servers neutron API or nova-network API</emphasis>. If you do not specify
+                    any networks, ServiceNet and PublicNet are attached by default. However, if you specify an isolated
+                    network, you must explicitly specify the UUIDs for PublicNet and ServiceNet to attach these networks to
+                    your server. </para>
                   <para>The UUID for ServiceNet is <literal>11111111-1111-1111-1111-111111111111</literal>, and the UUID for
                     PublicNet is <literal>00000000-0000-0000-0000-000000000000</literal>. </para>
                   <para>Omit these UUIDs from the request to detach from these networks.</para>
@@ -1420,12 +1408,12 @@
         URIs, media types, and response codes. This section provides more information about authentication, cURL, and
         filtering and pagination of requests. </para>
 
-      <section version="5.0" xml:id="net_auth" xml:base="chapters/net_auth.xml">
+      <section xml:id="net_auth" version="5.0" xml:base="chapters/net_auth.xml">
          <title>Get authentication token</title>
-         <para>To authenticate access to Rackspace Cloud services, you issue an authentication request to the Rackspace Cloud Identity Service, which is an
+         <para>To authenticate access to Rackspace Cloud services, you issue an authentication request to the Rackspace Cloud Identity service, which is an
         implementation of the OpenStack Keystone Identity Service v2.0.</para>
          <important>
-            <para> Multiple Rackspace Cloud Identity Service endpoints exist. You may use any endpoint, regardless of where your account was created.
+            <para> Multiple Rackspace Cloud Identity service endpoints exist. You may use any endpoint, regardless of where your account was created.
         </para>
          </important>
          <para> Use the chosen endpoint, as follows:</para>
@@ -1436,7 +1424,7 @@
                <thead>
                   <tr>
                     <th>National location</th>
-                    <th>Rackspace Cloud Identity Service endpoint</th>
+                    <th>Rackspace Cloud Identity service endpoint</th>
                   </tr>
                </thead>
                <tbody>
@@ -1455,16 +1443,14 @@
                </tbody>
             </informaltable>
          </para>
-         <para>In response to valid credentials, an authentication request to the Rackspace Cloud Identity Service returns an authentication token and a
+         <para>In response to valid credentials, an authentication request to the Rackspace Cloud Identity service returns an authentication token and a
         service catalog that contains a list of all services and endpoints available for this token. Because the
         authentication token expires after 24 hours, you must generate a token once a day. </para>
          <para>For detailed information about the OpenStack Keystone Identity Service v2.0, see
         <link xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/index.html">
                <citetitle>Cloud Identity Client Developer Guide API
                 v2.0</citetitle>
-            </link>.
-        For information about support for legacy identity endpoints, see
-        <link xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Endpoints-d1e180.html">Alternate Authentication Endpoints</link>.</para>
+            </link>.</para>
     
          <?hard-pagebreak?>
 
@@ -1487,7 +1473,7 @@
             <para>Your username and password are the ones that you use to log into the Rackspace Cloud Control Panel. </para>
             <para>To obtain your API key, log into
             <link xlink:href="http://mycloud.rackspace.com." xml:id="newwin">http://mycloud.rackspace.com</link>, click your
-            username, and select <guilabel>API Keys</guilabel> to get your key.</para>
+            user name, and select <guilabel>API Keys</guilabel> to get your key.</para>
             <procedure>
                <title>To authenticate with cURL:</title>
                <step>
@@ -1505,9 +1491,10 @@
        -d '{"auth":{"RAX-KSKEY:apiKeyCredentials":{"username":"theUserName", "apiKey":"0000000000000000000"}}}' \
        -H "Content-Type: application/json" | python -m json.tool</programlisting>
                   </example>
-                  <note>
-                    <para>For information about the json.tool, see <olink targetdoc="cn-gettingstarted" targetptr="json_tool">Note about JSON tool</olink>.</para>
-                  </note>
+                  <tip>
+                    <para>For information about the json.tool, see 
+                        <xref linkend="json_tool"/>.</para>
+                  </tip>
                   <para>In response to valid credentials, your request returns an authentication token and a service catalog
                     with the endpoints to request services. </para>
                   <para>Do not include explicit API endpoints in your scripts and applications. Instead, find the endpoint for
@@ -1681,8 +1668,8 @@
                                 the <code>endpoints</code> element in the <code>serviceCatalog</code> element. </para>
                             <para>Endpoints information includes the public URL, which is the endpoint that you use to access
                                 the service, region, tenant ID, and version information. </para>
-                            <para>To access the Cloud Networks or next generation Cloud Servers service, use
-                                the endpoint for the <literal>cloudServersOpenStack</literal> service.</para>
+                            <para>To access the Cloud Networks or next generation Cloud Servers service, use the endpoint for
+                                the <literal>cloudServersOpenStack</literal> service.</para>
                         </callout>
                         <callout arearefs="credentials.xml.tenant">
                             <para>
@@ -1718,14 +1705,14 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
                                     <para>To access the Cloud Networks or next generation Cloud Servers service, use the
                                             <code>publicURL</code> value for the <literal>cloudServersOpenStack</literal>
                                         service.</para>
-                                    <para>Might show multiple endpoints to enable regional choice. Select the appropriate
-                                        endpoint for the region that you want to interact with by examining the
+                                    <para>The service might show multiple endpoints to enable regional choice. Select the
+                                        appropriate endpoint for the region that you want to interact with by examining the
                                             <literal>region</literal> field.</para>
                                     <para>If you use the authentication token to access this service, you can view and
                                         perform Cloud Networks or next generation Cloud Servers API operations against your next generation Cloud Servers. To complete
                                         Cloud Networks API operations, you must also get access to this service. To request
-                                        access, click
-                                        <link xlink:href="http://www.iwantcloudnetworks.com/">here</link>.</para>
+                                        access, click <link xlink:href="http://www.iwantcloudnetworks.com/">here</link>.
+                                    </para>
                                 </listitem>
                             </itemizedlist>
                         </callout>
@@ -1733,12 +1720,11 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
                             <para>
                               <emphasis role="bold">Expiration date and time for authentication token</emphasis>. Appears
                                 in the <code>expires</code> field in the <code>token</code> element.</para>
-                            <para>After this date and time, the token is no longer valid. </para>
+                            <para>The authentication token expires after this date and time, unless it is revoked earlier.
+                                After the token expires or is revoked, you must generate a new token if you want to continue
+                                accessing Rackspace cloud services.</para>
                             <para>This field predicts the maximum lifespan for a token, but does not guarantee that the token
-                                reaches that lifespan. </para>
-                            <para>Clients are encouraged to cache a token until it expires. </para>
-                            <para>Because the authentication token expires after 24 hours, you must generate a token once a
-                                day. </para>
+                                reaches that lifespan. Clients are encouraged to cache a token until it expires.</para>
                         </callout>
                         <callout arearefs="credentials.xml.token">
                             <para>
@@ -1924,20 +1910,21 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
             article in the Rackspace Knowledge Center.</para>
          </section>
       </section> 
-      <section version="5.0"
-               xml:id="curl"
+      <section xml:id="curl"
+               version="5.0"
                xml:base="chapters/net_how_curl_works.xml">
          <title>How cURL commands work</title>
          <para>cURL is a command-line tool that you can use to interact with <glossterm>REST</glossterm> interfaces. cURL lets you
         to transmit and receive <glossterm>HTTP</glossterm> requests and responses from the command line or a shell script,
         which enables you to work with the API directly. It is available for Linux distributions, Mac OS X, and Windows. For
         information about cURL, see <link xlink:href="http://curl.haxx.se/">http://curl.haxx.se/</link>. </para>
-         <para>To use XML requests and responses, see <xref linkend="curl_summary_xml"/>.</para>
+         <para>To use XML, see <olink targetdoc="cn-gettingstarted" targetptr="curl_summary_xml">“XML
+            requests and responses”</olink>.</para>
 
          <para>To run the cURL request examples shown in this guide, copy each example from the HTML version of this guide
         directly to the command line or a script.</para>
 
-         <para>The following command is an example cURL command that provisions a server with an isolated network:</para>
+         <para>The following command is an example cURL command that provisions a server with an isolated network using JSON:</para>
 
          <example xml:id="json_example">
             <title>cURL command example: JSON request</title>
@@ -2051,10 +2038,11 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
             </tbody>
          </table>
          <note xml:id="json_tool">
+            <title>More about json.tool</title>
             <para>For commands that return a response, you can append the following code to the command to call json.tool to
             pretty-print output: </para>
             <programlisting language="bash" role="gutter: false">| python -m json.tool</programlisting>
-            <para>To use json.tool, import the json module. For information about json.tool, see
+            <para>To use json.tool, import the JSON module. For information about json.tool, see
             <link xlink:href="http://docs.python.org/2/library/json.html">json — JSON encoder and decoder</link>. </para>
             <para>If you run a Python version older than 2.6, import the simplejson module and use simplejson.tool. For
             information about simplejson.tool, see
@@ -2062,10 +2050,9 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
             <para>If you do not want to pretty-print JSON output, omit this code. </para>
          </note>
          <?hard-pagebreak?>
-         <section version="5.0"
-                  xml:id="curl_summary_xml"
+         <section xml:id="curl_summary_xml"
+                  version="5.0"
                   xml:base="net_how_curl_works_xml.xml">
-
             <title>XML requests and responses</title>
             <para>The following example shows a cURL command that specifies an XML request body and returns an XML response. The
         command creates a server.</para>
@@ -2088,7 +2075,8 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
      -T server_post_req.xml | ppxml          </programlisting>
                </programlistingco>
             </example>
-            <para>This example includes the following changes to the basic JSON request format in <xref linkend="json_example"/>:<calloutlist>
+            <para>This example includes the following changes to the basic JSON request format in 
+        <xref linkend="json_example"/>:<calloutlist>
                   <callout arearefs="xml_curl.txt.endpoint">
                      <para>The endpoint in the cURL command has <literal>.xml</literal> appended to it to return an XML
                     response.</para>

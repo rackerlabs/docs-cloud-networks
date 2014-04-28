@@ -30,7 +30,7 @@
         </copyright>
         <releaseinfo>OpenStack Networking API v2</releaseinfo>
         <productname>Cloud Networks™</productname>
-        <pubdate>2014-04-16</pubdate>
+        <pubdate>2014-04-25</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <para>
@@ -156,9 +156,10 @@
                 </revdescription>
             </revision>
             <revision>
+                <!--FIXME-->
                 <date>2013-02-07</date>
                 <revdescription>
-                    <para>Corrected the JSON request to add missing slashes in <xref linkend="curl_create_network"/>.</para>
+                    <para>Corrected the JSON request to add missing slashes in <!--<xref linkend="curl_create_network"/>-->.</para>
                 </revdescription>
             </revision>
             <revision>
@@ -249,18 +250,18 @@
       <para>Cloud Networks was originally released using the Cloud Servers the nova-network API (see 
         <phrase condition="gs">
             <link xlink:href="http://docs.rackspace.com/networks/api/v2/cn-devguide/content/api_operations_nova.html">
-                API operations - nova-network</link> in the <citetitle>Cloud Networks Developer Guide</citetitle>
-         </phrase>).
-        Now Cloud Networks has been released using the neutron API (see 
+                API operations - nova-network</link>
+            in the <citetitle>Cloud Networks Developer Guide</citetitle>
+         </phrase>). Now Cloud Networks has been released
+        using the neutron API (see 
         <phrase condition="gs">
             <link xlink:href="http://docs.rackspace.com/networks/api/v2/cn-devguide/content/api_operations_neutron.html">
-                API operations - neutron</link> in the <citetitle>Cloud Networks Developer Guide</citetitle>
-         </phrase>).
-        The nova-network API operations still work, but we recommend using the neutron API operations. For information that
-        helps you determine which method is better for you, see 
-        <phrase condition="gs">
-            <xref linkend="section_nova_v_neutron"/>
-         </phrase>.</para>
+                API operations - neutron</link>
+            in the <citetitle>Cloud Networks Developer Guide</citetitle>
+         </phrase>). The nova-network API operations still
+        work, but we recommend using the neutron API operations. For information that helps you determine which method is
+        better for you, see 
+        <xref linkend="section_nova_v_neutron"/>.</para>
       <para>To request access to Cloud Networks now, click
         <link xlink:href="http://www.iwantcloudnetworks.com/">"I want Cloud Networks"</link>.</para>
       <para>To detect if you are enabled to use Cloud Networks, issue a <command>GET</command> 
@@ -491,7 +492,7 @@
                      <para>February 7, 2013</para>
                   </td>
                   <td>
-                     <para>Corrected the JSON request to add missing slashes in <xref linkend="curl_create_network"/>.</para>
+                     <para>Corrected the JSON request to add missing slashes in <!--<xref linkend="curl_create_network"/>-->.</para>
                   </td>
                </tr>
                <tr>
@@ -765,9 +766,7 @@
         <note>
                 <para>You can explicitly opt out of attaching to the Rackspace networks, which introduces certain potential
                         complications. For more information, see 
-                        <phrase condition="gs">
-               <xref linkend="networks"/>
-            </phrase>.</para>
+                        <xref linkend="networks"/>.</para>
         </note>
         <para>You can use the Cloud Networks service to perform the following tasks: <itemizedlist>
                         <listitem>
@@ -783,9 +782,7 @@
                                 <para>Delete an isolated network, but only if it is not associated with any server. </para>
                                 <para>To detach a network from a server, you must use the Cloud Networks virtual interface extension to delete the virtual
                                         interface for the network from the server. See 
-                                        <phrase condition="gs">
-                     <xref linkend="networks"/>
-                  </phrase>.</para>
+                                        <xref linkend="networks"/>.</para>
                         </listitem>
                         <listitem>
                                 <para>Manage subnets.</para>
@@ -802,14 +799,14 @@
                 information, see
                 <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/List_Servers-d1e2078.html">List Servers</link>
                 in the <citetitle>Cloud Servers Developer Guide</citetitle>.</para>
-        <section version="5.0"
-               xml:id="section_nova_v_neutron"
+        <section xml:id="section_nova_v_neutron"
+               version="5.0"
                xml:base="chapters/net_nova_v_neutron.xml">
          <title>Networking: nova-network versus neutron</title>
          <para>Rackspace first introduced networking services by using the nova-network API based on OpenStack. Now we are
         providing the neutron API, also based on OpenStack, which offers more functionality and flexibility than the
         nova-network API. Both sets of APIs continue to work well, but the neutron API will be the base for all the future
-        networking services that Rackspace offers. </para>  
+        networking services that Rackspace offers. </para>
          <para>We recommend that you use the neutron API for your Cloud Networks API operations.</para>
          <para>The neutron API provides three primary, top-level resources (networks, ports, and subnets) and includes the ability
         to perform the following functions: <itemizedlist>
@@ -838,8 +835,8 @@
             XML.</para>
          </note>
       </section>
-        <section version="5.0"
-               xml:id="networks"
+        <section xml:id="networks"
+               version="5.0"
                xml:base="chapters/net_limitations.xml">
          <title>Limitations of detaching from Rackspace networks</title>
          <para>When you provision a next generation Cloud Server, you can attach to one or more isolated networks and the
@@ -874,10 +871,10 @@
                </listitem>
                <listitem>
                   <para>
-                     <emphasis role="bold">Cloud Servers neutron API or nova-network API</emphasis>. If you do not specify any
-                    networks, ServiceNet and PublicNet are attached by default. However, if you specify an isolated network,
-                    you must explicitly specify the UUIDs for PublicNet and ServiceNet to attach these networks to your
-                    server. </para>
+                     <emphasis role="bold">Cloud Servers neutron API or nova-network API</emphasis>. If you do not specify
+                    any networks, ServiceNet and PublicNet are attached by default. However, if you specify an isolated
+                    network, you must explicitly specify the UUIDs for PublicNet and ServiceNet to attach these networks to
+                    your server. </para>
                   <para>The UUID for ServiceNet is <literal>11111111-1111-1111-1111-111111111111</literal>, and the UUID for
                     PublicNet is <literal>00000000-0000-0000-0000-000000000000</literal>. </para>
                   <para>Omit these UUIDs from the request to detach from these networks.</para>
@@ -892,8 +889,8 @@
          </para>
       </section>
    </chapter>
-    <chapter version="5.0"
-            xml:id="how_examples_work"
+    <chapter xml:id="how_examples_work"
+            version="5.0"
             xml:base="chapters/net_use_examples.xml">
       <title>Learn how to use the examples in this guide</title>
       <para>For each exercise in this guide, you choose one of the following methods to make Cloud Networks API calls: <itemizedlist>
@@ -932,8 +929,8 @@
       <para>Each example, whether neutron client, nova client or cURL, points you to the next step in the process. </para>
 
       <!--<xi:include href="net_how_neutron_works.xml"/>-->
-      <section version="5.0"
-               xml:id="novaclient"
+      <section xml:id="novaclient"
+               version="5.0"
                xml:base="chapters/net_how_nova_works.xml">
          <title>How the nova client works</title>
          <para>The nova client is an open-source Python client that lets you run commands to make API calls. This client
@@ -950,20 +947,20 @@
             reinstall nova.</para>
          </warning>
       </section>
-      <section version="5.0"
-               xml:id="curl"
+      <section xml:id="curl"
+               version="5.0"
                xml:base="chapters/net_how_curl_works.xml">
          <title>How cURL commands work</title>
          <para>cURL is a command-line tool that you can use to interact with <glossterm>REST</glossterm> interfaces. cURL lets you
         to transmit and receive <glossterm>HTTP</glossterm> requests and responses from the command line or a shell script,
         which enables you to work with the API directly. It is available for Linux distributions, Mac OS X, and Windows. For
         information about cURL, see <link xlink:href="http://curl.haxx.se/">http://curl.haxx.se/</link>. </para>
-         <para>To use XML requests and responses, see <xref linkend="curl_summary_xml"/>.</para>
+         <para>To use XML, see <xref linkend="curl_summary_xml"/>.</para>
 
          <para>To run the cURL request examples shown in this guide, copy each example from the HTML version of this guide
         directly to the command line or a script.</para>
 
-         <para>The following command is an example cURL command that provisions a server with an isolated network:</para>
+         <para>The following command is an example cURL command that provisions a server with an isolated network using JSON:</para>
 
          <example xml:id="json_example">
             <title>cURL command example: JSON request</title>
@@ -1077,10 +1074,11 @@
             </tbody>
          </table>
          <note xml:id="json_tool">
+            <title>More about json.tool</title>
             <para>For commands that return a response, you can append the following code to the command to call json.tool to
             pretty-print output: </para>
             <programlisting language="bash" role="gutter: false">| python -m json.tool</programlisting>
-            <para>To use json.tool, import the json module. For information about json.tool, see
+            <para>To use json.tool, import the JSON module. For information about json.tool, see
             <link xlink:href="http://docs.python.org/2/library/json.html">json — JSON encoder and decoder</link>. </para>
             <para>If you run a Python version older than 2.6, import the simplejson module and use simplejson.tool. For
             information about simplejson.tool, see
@@ -1088,10 +1086,9 @@
             <para>If you do not want to pretty-print JSON output, omit this code. </para>
          </note>
          <?hard-pagebreak?>
-         <section version="5.0"
-                  xml:id="curl_summary_xml"
+         <section xml:id="curl_summary_xml"
+                  version="5.0"
                   xml:base="net_how_curl_works_xml.xml">
-
             <title>XML requests and responses</title>
             <para>The following example shows a cURL command that specifies an XML request body and returns an XML response. The
         command creates a server.</para>
@@ -1114,7 +1111,8 @@
      -T server_post_req.xml | ppxml          </programlisting>
                </programlistingco>
             </example>
-            <para>This example includes the following changes to the basic JSON request format in <olink targetdoc="cn-devguide" targetptr="json_example">Example 5, “cURL Command Example: JSON Request”</olink>:<calloutlist>
+            <para>This example includes the following changes to the basic JSON request format in <xref linkend="json_example"/>
+        :<calloutlist>
                   <callout arearefs="xml_curl.txt.endpoint">
                      <para>The endpoint in the cURL command has <literal>.xml</literal> appended to it to return an XML
                     response.</para>
@@ -1446,8 +1444,8 @@ export OS_NO_CACHE=1</computeroutput></screen>
             </para>
          </sidebar>
       </section>
-      <section version="5.0"
-               xml:id="install_nova"
+      <section xml:id="install_nova"
+               version="5.0"
                xml:base="chapters/net_install_nova.xml">
 
          <title>(optional) Install the nova client with the Cloud Networks extension</title>
@@ -1699,12 +1697,12 @@ $ nova image-list </programlisting>
             </para>
          </sidebar>
       </section>
-      <section version="5.0" xml:id="net_auth" xml:base="chapters/net_auth.xml">
+      <section xml:id="net_auth" version="5.0" xml:base="chapters/net_auth.xml">
          <title>Get authentication token</title>
-         <para>To authenticate access to Rackspace Cloud services, you issue an authentication request to the Rackspace Cloud Identity Service, which is an
+         <para>To authenticate access to Rackspace Cloud services, you issue an authentication request to the Rackspace Cloud Identity service, which is an
         implementation of the OpenStack Keystone Identity Service v2.0.</para>
          <important>
-            <para> Multiple Rackspace Cloud Identity Service endpoints exist. You may use any endpoint, regardless of where your account was created.
+            <para> Multiple Rackspace Cloud Identity service endpoints exist. You may use any endpoint, regardless of where your account was created.
         </para>
          </important>
          <para> Use the chosen endpoint, as follows:</para>
@@ -1715,7 +1713,7 @@ $ nova image-list </programlisting>
                <thead>
                   <tr>
                     <th>National location</th>
-                    <th>Rackspace Cloud Identity Service endpoint</th>
+                    <th>Rackspace Cloud Identity service endpoint</th>
                   </tr>
                </thead>
                <tbody>
@@ -1734,30 +1732,26 @@ $ nova image-list </programlisting>
                </tbody>
             </informaltable>
          </para>
-         <para>In response to valid credentials, an authentication request to the Rackspace Cloud Identity Service returns an authentication token and a
+         <para>In response to valid credentials, an authentication request to the Rackspace Cloud Identity service returns an authentication token and a
         service catalog that contains a list of all services and endpoints available for this token. Because the
         authentication token expires after 24 hours, you must generate a token once a day. </para>
          <para>For detailed information about the OpenStack Keystone Identity Service v2.0, see
         <link xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/index.html">
                <citetitle>Cloud Identity Client Developer Guide API
                 v2.0</citetitle>
-            </link>.
-        For information about support for legacy identity endpoints, see
-        <link xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/Endpoints-d1e180.html">Alternate Authentication Endpoints</link>.</para>
+            </link>.</para>
          <sidebar audience="gs">
             <para>
                <emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
                   <listitem>
                     <para>
-                        <link linkend="nova_auth">Authenticate with
-                            the nova client</link>
+                        <xref linkend="nova_auth"/>
                      </para>
                   </listitem>
                   <listitem>
                     <para>
-                        <link linkend="curl_auth">Authenticate with
-                            cURL</link>
-                     </para>
+                        <xref linkend="curl_auth"/>
+                        </para>
                   </listitem>
                </itemizedlist>
             </para>
@@ -1858,7 +1852,7 @@ $ nova image-list </programlisting>
             <para>Your username and password are the ones that you use to log into the Rackspace Cloud Control Panel. </para>
             <para>To obtain your API key, log into
             <link xlink:href="http://mycloud.rackspace.com." xml:id="newwin">http://mycloud.rackspace.com</link>, click your
-            username, and select <guilabel>API Keys</guilabel> to get your key.</para>
+            user name, and select <guilabel>API Keys</guilabel> to get your key.</para>
             <procedure>
                <title>To authenticate with cURL:</title>
                <step>
@@ -1876,9 +1870,10 @@ $ nova image-list </programlisting>
        -d '{"auth":{"RAX-KSKEY:apiKeyCredentials":{"username":"theUserName", "apiKey":"0000000000000000000"}}}' \
        -H "Content-Type: application/json" | python -m json.tool</programlisting>
                   </example>
-                  <note>
-                    <para>For information about the json.tool, see <xref linkend="json_tool"/>.</para>
-                  </note>
+                  <tip>
+                    <para>For information about the json.tool, see <xref linkend="json_tool"/>
+                        .</para>
+                  </tip>
                   <para>In response to valid credentials, your request returns an authentication token and a service catalog
                     with the endpoints to request services. </para>
                   <para>Do not include explicit API endpoints in your scripts and applications. Instead, find the endpoint for
@@ -2052,8 +2047,8 @@ $ nova image-list </programlisting>
                                 the <code>endpoints</code> element in the <code>serviceCatalog</code> element. </para>
                             <para>Endpoints information includes the public URL, which is the endpoint that you use to access
                                 the service, region, tenant ID, and version information. </para>
-                            <para>To access the Cloud Networks or next generation Cloud Servers service, use
-                                the endpoint for the <literal>cloudServersOpenStack</literal> service.</para>
+                            <para>To access the Cloud Networks or next generation Cloud Servers service, use the endpoint for
+                                the <literal>cloudServersOpenStack</literal> service.</para>
                         </callout>
                         <callout arearefs="credentials.xml.tenant">
                             <para>
@@ -2089,14 +2084,14 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
                                     <para>To access the Cloud Networks or next generation Cloud Servers service, use the
                                             <code>publicURL</code> value for the <literal>cloudServersOpenStack</literal>
                                         service.</para>
-                                    <para>Might show multiple endpoints to enable regional choice. Select the appropriate
-                                        endpoint for the region that you want to interact with by examining the
+                                    <para>The service might show multiple endpoints to enable regional choice. Select the
+                                        appropriate endpoint for the region that you want to interact with by examining the
                                             <literal>region</literal> field.</para>
                                     <para>If you use the authentication token to access this service, you can view and
                                         perform Cloud Networks or next generation Cloud Servers API operations against your next generation Cloud Servers. To complete
                                         Cloud Networks API operations, you must also get access to this service. To request
-                                        access, click
-                                        <link xlink:href="http://www.iwantcloudnetworks.com/">here</link>.</para>
+                                        access, click <link xlink:href="http://www.iwantcloudnetworks.com/">here</link>.
+                                    </para>
                                 </listitem>
                             </itemizedlist>
                         </callout>
@@ -2104,12 +2099,11 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
                             <para>
                               <emphasis role="bold">Expiration date and time for authentication token</emphasis>. Appears
                                 in the <code>expires</code> field in the <code>token</code> element.</para>
-                            <para>After this date and time, the token is no longer valid. </para>
+                            <para>The authentication token expires after this date and time, unless it is revoked earlier.
+                                After the token expires or is revoked, you must generate a new token if you want to continue
+                                accessing Rackspace cloud services.</para>
                             <para>This field predicts the maximum lifespan for a token, but does not guarantee that the token
-                                reaches that lifespan. </para>
-                            <para>Clients are encouraged to cache a token until it expires. </para>
-                            <para>Because the authentication token expires after 24 hours, you must generate a token once a
-                                day. </para>
+                                reaches that lifespan. Clients are encouraged to cache a token until it expires.</para>
                         </callout>
                         <callout arearefs="credentials.xml.token">
                             <para>
@@ -2143,14 +2137,25 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
 
             <sidebar audience="gs">
                <para>
-                  <emphasis role="bold">Next step:</emphasis>
-                  <xref linkend="create_first_net"/>
+                  <emphasis role="bold">Next step: Chose one of the following steps: </emphasis>
+                  <itemizedlist>
+                    <listitem>
+                        <para>
+                           <xref linkend="export_env_vars"/>
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para>
+                            <xref linkend="create_first_net"/>
+                        </para>
+                    </listitem>
+                  </itemizedlist>
                </para>
             </sidebar>
          </section>
       </section>
-      <section version="5.0"
-               xml:id="export_env_vars"
+      <section xml:id="export_env_vars"
+               version="5.0"
                xml:base="chapters/net_curl_export_vars.xml">
          <title>(optional) Export environment variables to run cURL commands</title>
          <para>To run the cURL command examples in this guide, follow this procedure to export environment variables. </para>
@@ -2180,74 +2185,86 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
          </procedure>
       </section>
    </chapter>
-    <chapter version="5.0"
-            xml:id="create_first_net"
+    <chapter xml:id="create_first_net"
+            version="5.0"
             xml:base="chapters/net_create_first_net.xml">
         <title>Create your first cloud network</title>
-        <para>Before creating your first network, choose whether to use the neutron API or the nova-network API. For help
-                deciding, see <xref linkend="section_nova_v_neutron"/>. The sections in this chapter provide examples of creating a
-                network using each API.</para>
-        <section xmlns:raxm="http://docs.rackspace.com/api/metadata"
-               version="5.0"
-               xml:id="create_first_net_neutron"
-               xml:base="chapters/net_cfn_neutron.xml">
-         <title>Neutron: Create your first cloud network</title>
-         <para>These examples, using the neutron API, walk you through the steps to create an isolated network, showing you how to
-        access the Cloud Networks API through neutron client commands or cURL commands so that you can quickly create
-        isolated networks and subnets.</para>
-
-         <!--<xi:include href="net_task_flow_neutron.xml"/>-->
-         <section xml:id="create_network_neutron">
-            <title>Create a network or a sub-network</title>
-            <para>Before you can create a server with a network, you create a network, and an optional subnet, that you can
-            attach to your new server. </para>
-            <sidebar>
-               <para>
-                  <emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
-                    <listitem>
-                        <para>
-                           <xref linkend="neutron_create_network_neutron"/>
-                        </para>
-                    </listitem>
-                    <listitem>
-                        <para>
-                           <xref linkend="curl_create_network_neutron"/>
-                        </para>
-                    </listitem>
-                  </itemizedlist>
-               </para>
-            </sidebar>
-
-            <section xml:id="neutron_create_network_neutron">
-               <title>Create a network or subnet with the neutron client</title>
-               <para>To create a network, you specify a name for your network. To create a subnet, you specify a network, an IP
-                address, and a name for your subnet. </para>
-               <para>After you create a network, copy its network ID. You use this ID to create a subnet or attach the network
-                to a server. After you create a subnet, copy its subnet ID for future reference.</para>
-               <para>
-                  <procedure>
-                    <title>To create a network with the neutron client</title>
-                    <step>
-                        <para>Issue the following neutron command:
-                            <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-$ neutron net-create &lt;amp&gt;</programlisting>
-                        </para>
-                        <para>
-                           <emphasis role="bold">Positional arguments:</emphasis>
-                        </para>
-                        <para>
-                            <itemizedlist>
+        <para>Before creating your first network, choose whether to use the neutron API or the nova-network API, because the
+                sections in this chapter provide examples of creating a network depending on which API you choose. For help
+                deciding, see <xref linkend="section_nova_v_neutron"/>.</para>
+        <para>The following flow chart shows the steps for creating a network by using the neutron API and by using the
+                nova-network API. These steps are detailed in this guide.<figure>
+                        <title>Steps to create a network</title>
+                        <mediaobject>
+                                <imageobject>
+                                        <imagedata contentwidth="3in" fileref="figures/2/a/figures/cfn-both-api.png"/>
+                                </imageobject>
+                        </mediaobject>
+                </figure>
+        </para>
+        <para>The sections are also organized by example type. To simplify your path through this chapter, decide whether you
+                prefer neutron-client or nova-client examples, or cURL examples.</para>
+        <sidebar>
+                <para>
+            <emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
                                 <listitem>
-                                    <para>The network name. In this example, the name is <literal>amp</literal>.</para>
+                                        <para>
+                     <xref linkend="cfn_neutron_neutron"/>
+                  </para>
                                 </listitem>
-                            </itemizedlist>
-                        </para>
-                        <para>
-                           <emphasis role="bold">Output:</emphasis>
-                        </para>
-                        <para>The command returns the response, as shown in the following output:</para>
-                        <informalexample>
-                            <screen><?db-font-size 75%?>
+                                <!--<listitem>
+                                        <para><olink targetdoc="cn-gettingstarted" targetptr="neutron_create_network_neutron"
+                                                        >“Create a network or subnet with the neutron client”</olink></para>
+                                </listitem>
+                                <listitem>
+                                        <para><olink targetdoc="cn-gettingstarted" targetptr="curl_create_network_neutron"
+                                                        >“Create a network or subnet with cURL”</olink></para>
+                                </listitem>-->
+                        </itemizedlist>
+         </para>
+        </sidebar>
+        <section xmlns:raxm="http://docs.rackspace.com/api/metadata"
+               xml:id="cfn_neutron_neutron"
+               version="5.0"
+               xml:base="chapters/net_cfn_neutron_neutron.xml">
+         <title>Use neutron API and neutron client to create and list both networks and subnets</title>
+         <para>These sections walk you through creating your network and subnet and then listing them by using the neutron
+        client. </para>
+         <sidebar>
+            <para>
+               <emphasis role="bold">Start here: </emphasis>
+               <xref linkend="neutron_create_network_neutron"/>
+            </para>
+         </sidebar>
+
+         <section xml:id="neutron_create_network_neutron">
+            <title>Create a network with the neutron API and the neutron client</title>
+            <para>To create a network, you specify a name for your network. After you create a network, copy its network ID. You
+            use this ID to create a subnet or attach the network to a server or port.</para>
+            <para>
+               <procedure>
+                  <title>To create a network with the neutron client</title>
+                  <step>
+                    <para>Issue the following neutron command:
+                        <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+$ neutron net-create &lt;amp&gt;</programlisting>
+                     </para>
+                    <para>
+                        <emphasis role="bold">Positional arguments:</emphasis>
+                     </para>
+                    <para>
+                        <itemizedlist>
+                            <listitem>
+                                <para>The network name. In this example, the name is <literal>amp</literal>.</para>
+                            </listitem>
+                        </itemizedlist>
+                    </para>
+                    <para>
+                        <emphasis role="bold">Output:</emphasis>
+                     </para>
+                    <para>The command returns the response, as shown in the following output:</para>
+                    <informalexample>
+                        <screen><?db-font-size 75%?>
 +----------------+--------------------------------------+
 | Field          | Value                                |
 +----------------+--------------------------------------+
@@ -2259,47 +2276,60 @@ $ neutron net-create &lt;amp&gt;</programlisting>
 | subnets        |                                      |
 | tenant_id      | 53501b3c25d34f8ea293c03298caed60     |
 +----------------+--------------------------------------+</screen>
-                        </informalexample>
-                    </step>
-                    <step>
-                        <para>Copy the <literal>id</literal> value from the output. You will use this value when you create a
-                            subnet, provision your server, or perform other related activities. In this example, the id is
-                                <literal>29f52c7e-6efd-4335-a14a-db77d32a2555</literal>, but use the
-                                <parameter>id</parameter> from your response.</para>
-                    </step>
-                  </procedure>
-                  <procedure>
-                    <title>To create a subnet with the neutron client</title>
-                    <step>
-                        <para>Issue the following neutron command:
-                            <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                    </informalexample>
+                  </step>
+                  <step>
+                    <para>Copy the id value from the output. You will use this value when you create a subnet, provision your
+                        server, or perform other related activities. In this example, the id is
+                            <literal>29f52c7e-6efd-4335-a14a-db77d32a2555</literal>, but use the <parameter>id</parameter>
+                        from your response.</para>
+                  </step>
+               </procedure>
+            </para>
+            <sidebar>
+               <para>
+                  <emphasis role="bold">Next step: </emphasis>
+                  <xref linkend="neutron_create_subnet_neutron"/>
+               </para>
+            </sidebar>
+         </section>
+
+         <section xml:id="neutron_create_subnet_neutron">
+            <title>Create a subnet with the neutron API and the neutron client</title>
+            <para>To create a subnet, you specify a network, an IP address, and a name for your subnet. After you create a
+            subnet, copy its subnet ID for future reference.</para>
+            <para>
+               <procedure>
+                  <title>To create a subnet with the neutron client</title>
+                  <step>
+                    <para>Issue the following neutron command:
+                        <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
 $ neutron subnet-create &lt;amp&gt; &lt;120.1.2.0/24&gt; --name Subamp</programlisting>
-                        </para>
-                        <para>
-                           <emphasis role="bold">Positional arguments:</emphasis>
-                        </para>
-                        <para>
-                            <itemizedlist>
-                                <listitem>
-                                    <para>The network name. In this example, the name is <literal>amp</literal>.</para>
-                                </listitem>
-                                <listitem>
-                                    <para>The network CIDR. In this example, the CIDR is
-                                        <literal>120.1.2.0/24</literal>.</para>
-                                </listitem>
-                                <listitem>
-                                    <para>
-                                    <emphasis role="bold">name</emphasis> The subnet name. In this example, the name is
-                                            <literal>Subamp</literal>.</para>
-                                </listitem>
-                            </itemizedlist>
-                        </para>
-                        <para>
-                           <emphasis role="bold">Output:</emphasis>
-                        </para>
-                        <para>The command returns the response, as shown in the following output:</para>
-                        <informalexample>
-                            <screen><?db-font-size 75%?>
+                     </para>
+                    <para>
+                        <emphasis role="bold">Positional arguments:</emphasis>
+                     </para>
+                    <para>
+                        <itemizedlist>
+                            <listitem>
+                                <para>The network name. In this example, the name is <literal>amp</literal>.</para>
+                            </listitem>
+                            <listitem>
+                                <para>The network CIDR. In this example, the CIDR is <literal>120.1.2.0/24</literal>.</para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                 <emphasis role="bold">name</emphasis> The subnet name. In this example, the name is
+                                        <literal>Subamp</literal>.</para>
+                            </listitem>
+                        </itemizedlist>
+                    </para>
+                    <para>
+                        <emphasis role="bold">Output:</emphasis>
+                     </para>
+                    <para>The command returns the response, as shown in the following output:</para>
+                    <informalexample>
+                        <screen><?db-font-size 75%?>
 +------------------+----------------------------------------------+
 | Field            | Value                                        |
 +------------------+----------------------------------------------+
@@ -2315,52 +2345,126 @@ $ neutron subnet-create &lt;amp&gt; &lt;120.1.2.0/24&gt; --name Subamp</programl
 | network_id       | 29f52c7e-6efd-4335-a14a-db77d32a2555         |
 | tenant_id        | 53501b3c25d34f8ea293c03298caed60             |
 +------------------+----------------------------------------------+</screen>
-                        </informalexample>
-                    </step>
-                    <step>
-                        <para>Copy the <literal>id</literal> value from the output. You will use this value when you create a
-                            subnet, provision your server, or perform other related activities. In this example, the id is
-                                <literal>23e3059e-4f39-4f7f-8cf2-c326e5de6c37</literal>, but use the
-                                <parameter>id</parameter> from your response.</para>
-                    </step>
-                  </procedure>
-               </para>
-               <sidebar>
-                  <para>
-                     <emphasis role="bold">Next step:</emphasis>
-                     <xref linkend="list_networks_neutron"/>
-                  </para>
-               </sidebar>
-            </section>
-
-            <section xml:id="curl_create_network_neutron">
-               <title>Create a network or subnet with cURL</title>
-               <para>To create a network, you specify a name and an admin_state for your network.</para>
-               <para>After you create a network, copy its network ID. You use this ID to create a subnet or attach the network
-                to a server.</para>
-               <procedure>
-                  <title>To create a network</title>
+                    </informalexample>
+                  </step>
                   <step>
-                    <para>Issue the following cURL command:
-                        <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
+                    <para>Copy the id value from the output. You will use this value when you create a subnet, provision your
+                        server, or perform other related activities. In this example, the id is
+                            <literal>23e3059e-4f39-4f7f-8cf2-c326e5de6c37</literal>, but use the <parameter>id</parameter>
+                        from your response.</para>
+                  </step>
+               </procedure>
+            </para>
+            <sidebar>
+               <para>
+                  <emphasis role="bold">Next step: </emphasis>
+                  <xref linkend="neutron_list_networks_neutron"/>
+               </para>
+            </sidebar>
+         </section>
+
+         <section xml:id="neutron_list_networks_neutron">
+            <title>List networks with the neutron API and the neutron client</title>
+            <para>The following steps shows you how to list networks and subnets using the neutron client.</para>
+            <procedure>
+               <title>To list networks with the neutron API and the neutron client</title>
+               <step>
+                  <para>Issue the following neutron client command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+$ neutron net-list </programlisting>
+                  </para>
+                  <para>
+                     <emphasis role="bold">Output:</emphasis>
+                  </para>
+                  <para>For each network, the command returns the result as shown in the following output</para>
+                  <informalexample>
+                    <screen><?db-font-size 75%?>
++--------------------------------------+---------+-----------------------------------------------------+
+| id                                   | name    | subnets                                             |
++--------------------------------------+---------+-----------------------------------------------------+
+| 29f52c7e-6efd-4335-a14a-db77d32a2555 | amp     | 23e3059e-4f39-4f7f-8cf2-c326e5de6c37 120.1.2.0/24   |
++--------------------------------------+---------+-----------------------------------------------------+</screen>
+                  </informalexample>
+               </step>
+            </procedure>
+            <sidebar>
+               <para>
+                  <emphasis role="bold">Next step: </emphasis>
+                  <xref linkend="neutron_list_subnets_neutron"/>
+               </para>
+            </sidebar>
+         </section>
+         <section xml:id="neutron_list_subnets_neutron">
+            <title>List subnets with the neutron API and the neutron client</title>
+            <para>The following steps shows you how to list subnets using the neutron client.</para>
+            <procedure>
+               <title>To list subnets with the neutron client</title>
+               <step>
+                  <para>Issue the following neutron client command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+$ neutron subnet-list </programlisting>
+                  </para>
+                  <para>
+                     <emphasis role="bold">Output:</emphasis>
+                  </para>
+                  <para>For each subnet, the command returns the result as shown in the following output</para>
+                  <informalexample>
+                    <screen><?db-font-size 75%?>
++--------------------------------------+----------------+----------------+--------------------------------------------------+
+| id                                   | name           | cidr           | allocation_pools                                 |
++--------------------------------------+----------------+----------------+--------------------------------------------------+
+| 23e3059e-4f39-4f7f-8cf2-c326e5de6c37 | Subamp         | 120.1.2.0/24   | {"start": "120.1.2.2", "end": "120.1.2.254"}     |
++--------------------------------------+----------------+----------------+--------------------------------------------------+</screen>
+                  </informalexample>
+               </step>
+            </procedure>
+            <sidebar>
+               <para>
+                  <emphasis role="bold">Next step: </emphasis>
+                  <xref linkend="boot_new_server"/>
+               </para>
+            </sidebar>
+         </section>
+      </section>
+        <section xmlns:raxm="http://docs.rackspace.com/api/metadata"
+               xml:id="cfn_neutron_curl"
+               version="5.0"
+               xml:base="chapters/net_cfn_neutron_curl.xml">
+         <title>Use neutron API and cURL to create and list both networks and subnets</title>
+         <para>These sections walk you through creating your network and subnet and then listing them by using cURL.</para>
+         <sidebar>
+            <para>
+               <emphasis role="bold">Start here: </emphasis>
+               <xref linkend="neutron_create_network_curl"/>
+            </para>
+         </sidebar>
+
+         <section xml:id="neutron_create_network_curl">
+            <title>Create a network with the neutron API and cURL</title>
+            <para>After you create a network, copy its network ID. You use this ID to create a subnet or attach the network to a
+            server.</para>
+            <procedure>
+               <title>To create a network with the neutron API and cURL</title>
+               <step>
+                  <para>Issue the following cURL command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
                             $ curl -s https://dfw.servers.api.rackspacecloud.com/v2.0/networks \
        -X POST \
        -H "Content-Type: application/json" \
        -H "Accept: application/json" \
        -H "X-Auth-Token: $token" \
        -d '{"network": {"name": "sample_network", "admin_state_up": "false"}}' | python -m json.tool</programlisting>
-                     </para>
-                    <para>In this cURL command, you specify several options. For information about options, see <xref linkend="curl_options"/>.</para>
-                    <para>
-                        <emphasis role="bold">Output:</emphasis>
-                    </para>
-                    <para>The operation returns the response body, as shown in the following JSON response:
-                        <programlisting language="json"><?db-font-size 65%?>
-  {
+                  </para>
+                  <para>In this cURL command, you specify several options. For information about options, see <xref linkend="curl_options"/>.</para>
+                  <para>
+                     <emphasis role="bold">Output:</emphasis>
+                  </para>
+                  <para>The operation returns the response body, as shown in the following JSON response:
+                    <programlisting language="json"><?db-font-size 65%?>
+{
    "network":{
       "status":"ACTIVE",
       "subnets":[
-      
       ],
       "name":"amp",
       "provider:physical_network":null,
@@ -2373,22 +2477,32 @@ $ neutron subnet-create &lt;amp&gt; &lt;120.1.2.0/24&gt; --name Subamp</programl
    }
 }
                             </programlisting>
-                     </para>
-                  </step>
-                  <step>
-                    <para>Copy the <literal>id</literal> value from the output. You will use this value when you create a
-                        subnet, provision your server, or perform other related activities. In this example, the id is
-                            <literal>29f52c7e-6efd-4335-a14a-db77d32a2555</literal>, but use the <parameter>id</parameter>
-                        from your response.</para>
-                  </step>
-               </procedure>
-               <procedure>
-                  <title>To create a subnet and request a JSON response</title>
-                  <para>To create a subnet, you specify a network, an IP address, and a name for your subnet. </para>
-                  <para>After you create a subnet, copy its subnet ID for future reference.</para>
-                  <step>
-                    <para>Issue the following cURL command:
-                        <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
+                  </para>
+               </step>
+               <step>
+                  <para>Copy the <literal>id</literal> value from the output. You will use this value when you create a subnet,
+                    provision your server, or perform other related activities. In this example, the id is
+                        <literal>29f52c7e-6efd-4335-a14a-db77d32a2555</literal>, but use the <parameter>id</parameter> from
+                    your response.</para>
+               </step>
+            </procedure>
+            <sidebar>
+               <para>
+                  <emphasis role="bold">Next step: </emphasis>
+                  <xref linkend="neutron_create_subnet_curl"/>
+               </para>
+            </sidebar>
+         </section>
+
+         <section xml:id="neutron_create_subnet_curl">
+            <title>Create a subnet with the neutron API and cURL</title>
+            <para>To create a subnet, you specify a network, an IP address, and a name for your subnet. After you create a
+            subnet, copy its subnet ID for future reference.</para>
+            <procedure>
+               <title>To create a subnet with the neutron API and cURL</title>
+               <step>
+                  <para>Issue the following cURL command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
                             $ curl -s https://dfw.servers.api.rackspacecloud.com/v2.0/$account/subnets \
        -X POST \
        -H "Content-Type: application/json" \
@@ -2396,352 +2510,149 @@ $ neutron subnet-create &lt;amp&gt; &lt;120.1.2.0/24&gt; --name Subamp</programl
        -H "X-Auth-Token: $token" \
        -d '{"subnets":[{"cidr":"120.1.2.0/24","ip_version":4,"network_id":"29f52c7e-6efd-4335-a14a-db77d32a2555"}]}' \
        | python -m json.tool</programlisting>
-                     </para>
-                    <para>In this cURL command, you specify several options. For information about options, see <xref linkend="curl_options"/>.</para>
-                    <para>
-                        <emphasis role="bold">Output:</emphasis>
-                    </para>
-                    <para>The operation returns the response body, as shown in the following JSON response:
-                        <!--<programlisting language="json"><?db-font-size 65%?>
-                            </programlisting>--></para>
-                  </step>
-                  <step>
-                    <para>Copy the <literal>id</literal> value from the output. You will use this value when you create a
-                        subnet, provision your server, or perform other related activities. In this example, the id is
-                            <literal>23e3059e-4f39-4f7f-8cf2-c326e5de6c37</literal>, but use the <parameter>id</parameter>
-                        from your response.</para>
-                  </step>
-               </procedure>
-               <sidebar>
-                  <para>
-                     <emphasis role="bold">Next step: </emphasis>
-                     <xref linkend="list_networks_neutron"/>
                   </para>
-               </sidebar>
-            </section>
-         </section>
-         <section xml:id="list_networks_neutron">
-            <title>List networks or subnets</title>
-            <para>After you create networks or subnets, you can list those networks, subnets, and the Rackspace networks to make
-            sure they are shown as expected.</para>
-            <para>For information about the Rackspace networks, see <xref linkend="networks"/>.</para>
+                  <para>In this cURL command, you specify several options. For information about options, see <xref linkend="curl_options"/>.</para>
+                  <para>
+                     <emphasis role="bold">Output:</emphasis>
+                  </para>
+                  <para>The operation returns the response body, as shown in the following JSON response:
+                    <programlisting language="json"><?db-font-size 65%?>
+{
+   "subnet":
+      {
+      	"cidr":"120.1.2.0/24",
+      	"ip_version":4,
+      	"network_id":"29f52c7e-6efd-4335-a14a-db77d32a2555",
+      	"allocation_pools":[
+      	{
+	        "end":"120.1.2.254",
+	        "start":"120.1.2.2"
+      	},
+      	"dns_nameservers":[
+      	],
+      	"host_routes":[
+      	],
+      	"enable_dhcp":true,
+      	"gateway_ip":"120.1.2.1",
+      	"id":"23e3059e-4f39-4f7f-8cf2-c326e5de6c37",
+      	"name":"Subamp",
+      	"tenant_id":"53501b3c25d34f8ea293c03298caed60"
+     }
+}
+                            </programlisting>
+                  </para>
+               </step>
+               <step>
+                  <para>Copy the <literal>id</literal> value from the output for future reference. In this example, the id is
+                        <literal>23e3059e-4f39-4f7f-8cf2-c326e5de6c37</literal>, but use the <parameter>id</parameter> from
+                    your response.</para>
+               </step>
+            </procedure>
             <sidebar>
                <para>
-                  <emphasis role="bold">Next step: </emphasis>Choose one of the following methods:<itemizedlist>
-                    <listitem>
-                        <para>
-                           <xref linkend="neutron_list_networks_neutron"/>
-                        </para>
-                    </listitem>
-                    <listitem>
-                        <para>
-                           <xref linkend="curl_list_networks_neutron"/>
-                        </para>
-                    </listitem>
-                  </itemizedlist>
+                  <emphasis role="bold">Next step: </emphasis>
+                  <xref linkend="neutron_list_networks_curl"/>
                </para>
             </sidebar>
-            <section xml:id="neutron_list_networks_neutron">
-               <title>List networks or subnets with the neutron client</title>
-               <para>The following steps shows you how to list networks and subnets using the neutron client.</para>
-               <procedure>
-                  <title>To list networks with the neutron client</title>
-                  <step>
-                    <para>Issue the following neutron client command:
-                        <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-$ neutron net-list </programlisting>
-                     </para>
-                    <para>
-                        <emphasis role="bold">Output:</emphasis>
-                     </para>
-                    <para>For each network, the command returns the result as shown in the following output</para>
-                    <informalexample>
-                        <screen><?db-font-size 75%?>
-+--------------------------------------+---------+-----------------------------------------------------+
-| id                                   | name    | subnets                                             |
-+--------------------------------------+---------+-----------------------------------------------------+
-| 29f52c7e-6efd-4335-a14a-db77d32a2555 | amp     | 23e3059e-4f39-4f7f-8cf2-c326e5de6c37 120.1.2.0/24   |
-+--------------------------------------+---------+-----------------------------------------------------+</screen>
-                    </informalexample>
-                  </step>
-               </procedure>
-               <procedure>
-                  <title>To list subnets with the neutron client</title>
-                  <step>
-                    <para>Issue the following neutron client command:
-                        <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-$ neutron subnet-list </programlisting>
-                     </para>
-                    <para>
-                        <emphasis role="bold">Output:</emphasis>
-                     </para>
-                    <para>For each subnet, the command returns the result as shown in the following output</para>
-                    <informalexample>
-                        <screen><?db-font-size 75%?>
-+--------------------------------------+----------------+----------------+--------------------------------------------------+
-| id                                   | name           | cidr           | allocation_pools                                 |
-+--------------------------------------+----------------+----------------+--------------------------------------------------+
-| 23e3059e-4f39-4f7f-8cf2-c326e5de6c37 | Subamp         | 120.1.2.0/24   | {"start": "120.1.2.2", "end": "120.1.2.254"}     |
-+--------------------------------------+----------------+----------------+--------------------------------------------------+</screen>
-                    </informalexample>
-                  </step>
-               </procedure>
-               <!--            <sidebar>
-                <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                        targetptr="show_network_neutron">“Show network or subnet details”</olink></para>
-            </sidebar>-->
-               <sidebar>
-                  <para>
-                     <emphasis role="bold">Next step: </emphasis>
-                     <xref linkend="boot_new_server"/>
-                  </para>
-               </sidebar>
-            </section>
-            <section xml:id="curl_list_networks_neutron">
-            <?dbhtml stop-chunking?>
-               <title>List networks or subnets with cURL</title>
-               <para>The following steps shows you how to list networks and subnets using cURL.</para>
-               <procedure>
-                  <title>To list networks</title>
-                  <step>
-                    <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-                        $ curl https://dfw.servers.api.rackspacecloud.com/v2.0/$account/subnets \
-       -X GET -H "X-Auth-Token: $token" | python -m json.tool</programlisting>
-                        <emphasis role="bold">Output:</emphasis>
-                    </para>
-                    <para>The API operation returns a response body as shown in the following output:
-                        <!--<programlisting language="json"><?db-font-size 75%?>
-                            <xi:include href="../../common/samples/networks-get-resp.json" parse="text"/></programlisting>-->
-                    </para>
-                  </step>
-               </procedure>
-               <procedure>
-                  <title>To list subnets</title>
-                  <step>
-                    <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-                        $ curl https://dfw.servers.api.rackspacecloud.com/v2.0/$account/subnets \
-       -X GET -H "X-Auth-Token: $token" | python -m json.tool</programlisting>
-                        <emphasis role="bold">Output:</emphasis>
-                    </para>
-                    <para>The API operation returns a response body as shown in the following output:
-                        <!--<programlisting language="json"><?db-font-size 75%?>
-                            <xi:include href="../../common/samples/networks-get-resp.json" parse="text"/></programlisting>-->
-                    </para>
-                  </step>
-               </procedure>
-               <!--            <sidebar>
-                <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                        targetptr="show_network_neutron">“Show network or subnet details”</olink></para>
-            </sidebar>-->
-               <sidebar>
-                  <para>
-                     <emphasis role="bold">Next step: </emphasis>
-                     <xref linkend="boot_new_server"/>
-                  </para>
-               </sidebar>
-            </section>
          </section>
-         <!--show net and subnet section commented out because I don't have commands or examples yet -->
-         <!--<section xml:id="show_network_neutron">
-        <title>Show network or subnet details</title>
-        <para>You can show details for a specified network, or subnet, using the ID to verify the information.</para>
-        <para>The response body returns the following fields: <table rules="all" width="100%">
-                <caption>Show network response fields</caption>
-                <col width="20%"/>
-                <col width="80%"/>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>status</td>
-                        <td>The status for an isolated private network.</td>
-                    </tr>
-                    <tr>
-                        <td>subnets</td>
-                        <td>An array of subnets for an isolated private network.</td>
-                    </tr>
-                    <tr>
-                        <td>name</td>
-                        <td>The name of an isolated private network.</td>
-                    </tr>
-                    <tr>
-                        <td>admin_state_up</td>
-                        <td>The status for an isolated private network.</td>
-                    </tr>
-                    <tr>
-                        <td>tenant_id</td>
-                        <td>The tenant_id of the network owner.</td>
-                    </tr>
-                    <tr>
-                        <td>id</td>
-                        <td>The network ID.</td>
-                    </tr>
-                    <tr>
-                        <td>shared</td>
-                        <td>Indicates whether this network is shared across all tenants.</td>
-                    </tr>
-                </tbody>
-            </table></para>
-        <sidebar>
-            <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
-                    <listitem>
-                        <para><olink targetdoc="cn-gettingstarted" targetptr="neutron_show_network_neutron">“Show network or
-                                subnet details with the neutron client”</olink></para>
-                    </listitem>
-                    <listitem>
-                        <para><olink targetdoc="cn-gettingstarted" targetptr="curl_show_network_neutron">“Show network or
-                                subnet details with cURL”</olink></para>
-                    </listitem>
-                </itemizedlist></para>
-        </sidebar>
-        <section xml:id="neutron_show_network_neutron">
-            <title>Show network or subnet details with the neutron client</title>
-            <para>The following steps shows you how to view details for networks or subnets using the neutron client.</para>
-            <procedure>
-                <title>To show information for a specified network ID</title>
-                <step>
-                    <para>Issue the following neutron client command:
-                        <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-                        <prompt>$</prompt> neutron net-details &lt;id&gt;</programlisting></para>
-                    <para><emphasis role="bold">Positional argument:</emphasis></para>
-                    <para>
-                        <itemizedlist>
-                            <listitem>
-                                <para>The ID of the network for which you want to show information. To determine the network
-                                    ID, issue a <command>neutron</command>
-                                    <option>net-list</option> command. </para>
-                            </listitem>
-                        </itemizedlist>
-                    </para>
-                    <para><emphasis role="bold">Output:</emphasis>
-                    </para>
-                    <para>The command returns the result as shown in the following output:</para>
-                    <!-\-                <informalexample>
-                    <screen><computeroutput>
-+-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-+-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-+
-| Property       | Value                                    |
-+-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-+-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-+
-| status         | ACTIVE                                   |
-| subnets        | ["e12f0c45-46e3-446a-b207-9474b27687a6"] |
-| admin_state_up | true                                     |
-| name           | private                                  |
-| tenant_id      | "625887121e364204873d362b553ab171"       |
-| id             | 9d83c053-b0a4-4682-ae80-c00df269ce0a     |
-| shared         | false                                    |
-+-\-\-\-\-\-\-\-\-\-+-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-+</computeroutput></screen>
-                </informalexample>-\->
-                </step>
-            </procedure>
-            <procedure>
-                <title>To show information for a specified subnet ID</title>
-                <step>
-                    <para>Issue the following neutron client command:
-                        <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-                        <prompt>$</prompt> neutron subnet-details &lt;id&gt;</programlisting></para>
-                    <para><emphasis role="bold">Positional argument:</emphasis></para>
-                    <para>
-                        <itemizedlist>
-                            <listitem>
-                                <para>The ID of the subnet for which you want to show information. To determine the subnet
-                                    ID, issue a <command>neutron</command>
-                                    <option>subnet-list</option> command. </para>
-                            </listitem>
-                        </itemizedlist>
-                    </para>
-                    <para><emphasis role="bold">Output:</emphasis>
-                    </para>
-                    <para>The command returns the result as shown in the following output:</para>
-                    <!-\-                <informalexample>
-                    <screen><computeroutput>
-+-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-+-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-+
-| Property       | Value                                    |
-+-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-+-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-+
-| status         | ACTIVE                                   |
-| subnets        | ["e12f0c45-46e3-446a-b207-9474b27687a6"] |
-| admin_state_up | true                                     |
-| name           | private                                  |
-| tenant_id      | "625887121e364204873d362b553ab171"       |
-| id             | 9d83c053-b0a4-4682-ae80-c00df269ce0a     |
-| shared         | false                                    |
-+-\-\-\-\-\-\-\-\-\-+-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-+</computeroutput></screen>
-                </informalexample>-\->
-                </step>
-            </procedure>
-            <sidebar>
-                <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                        targetptr="boot_new_server">Boot a new server with your cloud network</olink></para>
-            </sidebar>
-        </section>
-        <section xml:id="curl_show_network_neutron">
-            <title>Show network or subnet details with cURL</title>
-            <para>The following steps shows you how to view details for networks or subnets using cURL.</para>
-            <procedure>
-                <title>To show information for a specified network ID</title>
-                <step>
-                    <para>Issue the following cURL command:
-                        <programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
-                            <prompt>$</prompt> curl https://dfw.servers.api.rackspacecloud.com/v2.0/$account/networks/{id} \
-        -X GET \
-        -H "X-Auth-Project-Id: $account" \
-        -H "Accept: application/json" \
-        -H "Content-Type: application/json"\
-        -H "X-Auth-Token: $token" | python -m json.tool</programlisting></para>
-                    <para><emphasis role="bold">Positional argument:</emphasis></para>
-                    <para>
-                        <itemizedlist>
-                            <listitem>
-                                <para><parameter>id</parameter>. The ID of the network for which you want to show
-                                    information. To determine the network ID, issue a <command>neutron</command>
-                                    <option>network-list</option> command. </para>
-                            </listitem>
-                        </itemizedlist>
-                    </para>
-                    <para><emphasis role="bold">Output:</emphasis></para>
-                    <para>The API operation returns a response body as shown in the following output:</para>
 
+         <section xml:id="neutron_list_networks_curl">
+            <title>List networks with the neutron API and cURL</title>
+            <para>The following step shows you how to list networks using cURL.</para>
+            <procedure>
+               <title>To list networks with the neutron API and cURL</title>
+               <step>
+                  <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                        $ curl https://dfw.servers.api.rackspacecloud.com/v2.0/$account/subnets \
+       -X GET -H "X-Auth-Token: $token" | python -m json.tool</programlisting>
+                    <emphasis role="bold">Output:</emphasis>
+                  </para>
+                  <para>The API operation returns a response body as shown in the following output:
                     <programlisting language="json"><?db-font-size 75%?>
-                        <xi:include href="../../common/samples/networks-get-detail-resp.json" parse="text"/></programlisting>
-                </step>
-            </procedure>
-            <procedure>
-                <title>To show information for a specified subnet ID</title>
-                <step>
-                    <para>Issue the following cURL command:
-                        <programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
-                            <prompt>$</prompt> curl https://dfw.servers.api.rackspacecloud.com/v2.0/$account/subnets/{id} \
-        -X GET \
-        -H "X-Auth-Project-Id: $account" \
-        -H "Accept: application/json" \
-        -H "Content-Type: application/json"\
-        -H "X-Auth-Token: $token" | python -m json.tool</programlisting></para>
-                    <para><emphasis role="bold">Positional argument:</emphasis></para>
-                    <para>
-                        <itemizedlist>
-                            <listitem>
-                                <para>The ID of the subnet for which you want to show information. To determine the subnet
-                                    ID, issue a <command>neutron</command>
-                                    <option>subnet-list</option> command. </para>
-                            </listitem>
-                        </itemizedlist>
-                    </para>
-                    <para><emphasis role="bold">Output:</emphasis></para>
-                    <para>The API operation returns a response body as shown in the following output:</para>
-
-                    <!-\-<programlisting language="json"><?db-font-size 75%?>
-                        <xi:include href="../../common/samples/networks-get-detail-resp.json" parse="text"/></programlisting>-\->
-                </step>
+{
+   "networks":[
+      {
+	     "status":"ACTIVE",
+	     "subnets":[
+	       "23e3059e-4f39-4f7f-8cf2-c326e5de6c37 120.1.2.0/24"
+	      ],
+          "name":"amp",
+          "provider:physical_network":null,
+          "admin_state_up":true,
+          "tenant_id":"53501b3c25d34f8ea293c03298caed60",
+          "provider:network_type":"local"
+          "router:external":true,
+          "shared":true,
+          "id":"29f52c7e-6efd-4335-a14a-db77d32a2555",
+          "provider:segmentation_id":null
+      }
+   ]
+}
+                        </programlisting>
+                  </para>
+               </step>
             </procedure>
             <sidebar>
-                <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                        targetptr="boot_new_server">Boot a new server with your cloud network</olink></para>
+               <para>
+                  <emphasis role="bold">Next step: </emphasis>
+                  <xref linkend="neutron_list_subnets_curl"/>
+               </para>
             </sidebar>
-        </section>
-    </section>-->
+         </section>
+
+         <section xml:id="neutron_list_subnets_curl">
+            <title>List subnets with the neutron API and cURL</title>
+            <procedure>
+               <title>To list subnets with the neutron API and cURL</title>
+               <step>
+                  <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                        $ curl https://dfw.servers.api.rackspacecloud.com/v2.0/$account/subnets \
+       -X GET -H "X-Auth-Token: $token" | python -m json.tool</programlisting>
+                    <emphasis role="bold">Output:</emphasis>
+                  </para>
+                  <para>The API operation returns a response body as shown in the following output:
+                    <programlisting language="json"><?db-font-size 75%?>
+{
+   "subnets":[
+      {
+	    "allocation_pools":[
+       	   {
+	          "end":"120.1.2.254",
+	          "start":"120.1.2.2"
+	       }
+        ],
+	   "cidr":"120.1.2.0/24",
+	   "dns_nameservers":[
+   	    ],
+   	    "enable_dhcp":true,
+   	    "gateway_ip":"120.1.2.1",
+   	    "host_routes":[
+   	    ],
+   	    "id":"23e3059e-4f39-4f7f-8cf2-c326e5de6c37",
+   	    "ip_version":4,    
+	   "name":"Subamp",
+   	    "network_id":"29f52c7e-6efd-4335-a14a-db77d32a2555",
+   	    "tenant_id":"53501b3c25d34f8ea293c03298caed60"
+      }
+   ]
+}
+                        </programlisting>
+                  </para>
+               </step>
+            </procedure>
+            <!--            <sidebar>
+                <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+                        targetptr="show_network_neutron">“Show network or subnet details”</olink></para>
+            </sidebar>-->
+            <sidebar>
+               <para>
+                  <emphasis role="bold">Next step: </emphasis>
+                  <xref linkend="boot_new_server"/>
+               </para>
+            </sidebar>
+         </section>
       </section>
+        <!--<xi:include href="net_cfn_neutron.xml"/>-->
         <section xmlns:raxm="http://docs.rackspace.com/api/metadata"
                version="5.0"
                xml:id="create_first_net_nova"
@@ -3332,7 +3243,7 @@ $ neutron subnet-list </programlisting>
                     List Flavors</link>.</para>
                </listitem>
                <listitem>
-                  <para>The network ID of your isolated network. This is the ID you copied in <xref linkend="create_network_neutron"/>
+                  <para>The network ID of your isolated network. This is the ID you copied in <xref linkend="neutron_create_network_neutron"/>
                   </para>
                </listitem>
             </itemizedlist>
@@ -3442,7 +3353,9 @@ $ neutron subnet-list </programlisting>
          -H "Content-Type: application/json" \
          -H "Accept: application/json" \
          -H "X-Auth-Token: $token" \
-         -d '{"server": {"name": "ServerAmp", "imageRef": "82e72de5-6366-4217-8c87-a570a9b17e73", "flavorRef": "1", "max_count": 1, "min_count": 1, "networks": [{"uuid": "29f52c7e-6efd-4335-a14a-db77d32a2555"}, {"uuid": "00000000-0000-0000-0000-000000000000"}, {"uuid": "11111111-1111-1111-1111-111111111111"}]}}' \
+         -d '{"server": {"name": "ServerAmp", "imageRef": "82e72de5-6366-4217-8c87-a570a9b17e73", "flavorRef": "1", \
+         "max_count": 1, "min_count": 1, \
+         "networks": [{"uuid": "29f52c7e-6efd-4335-a14a-db77d32a2555"}, {"uuid": "00000000-0000-0000-0000-000000000000"}, {"uuid": "11111111-1111-1111-1111-111111111111"}]}}' \
          | python -m json.tool</programlisting>
                         </para>
                         <para>In addition to the isolated network, PublicNet and ServiceNet are attached to the server. You must
@@ -3526,188 +3439,382 @@ $ neutron subnet-list </programlisting>
             </section>
             <?hard-pagebreak?>
          </section>
-         <section version="5.0"
-                  xml:id="boot_server_with_port_network_neutron"
+         <!--<xi:include href="net_bns_boot_server_neutron2.xml"/>-->
+         <section xml:id="boot_server_with_port_network_neutron"
                   xml:base="net_bns_boot_server_port_neutron.xml">
-    <!-- Need to apply all of sameer's steps -->
-    <!-- =================================== -->
-    <!-- 1. create new port 
-         2. list ports
-         3. boot server
-         4. show port                        -->
-    
-            <title>Provision a server by attaching a port with an isolated network</title>
-            <para>To create your new server using this procedure, first create a port. </para>
-
+            <title>Provision a server with a port</title>
+            <para>To create your new server using a port with an attached network, you will perform the following steps: </para>
+            <para>
+               <orderedlist>
+                  <listitem>
+                     <para>Create a port with a network</para>
+                  </listitem>
+                  <listitem>
+                     <para>List ports</para>
+                  </listitem>
+                  <listitem>
+                     <para>
+                        <xref linkend="boot_server_with_port_network_nova"/>
+                     </para>
+                  </listitem>
+                  <listitem>
+                     <para>
+                        <xref linkend="show_port_neutron"/>
+                     </para>
+                  </listitem>
+               </orderedlist>
+            </para>
             <sidebar>
                <para>
-                  <emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
+                  <emphasis role="bold">Next step:</emphasis>
+                  <itemizedlist>
                      <listitem>
                         <para>
                            <xref linkend="neutron_boot_server_neutron"/>
-                        </para>
-                     </listitem>
-                     <listitem>
-                        <para>
-                           <xref linkend="curl_boot_server_neutron"/>
                         </para>
                      </listitem>
                   </itemizedlist>
                </para>
             </sidebar>
 
-            <?hard-pagebreak?>
-            <section xml:id="neutron_boot_server_neutron">
-               <title>Provision a server with an isolated network with the nova client</title>
-               <para>
-                  <procedure>
-                     <title>To provision a server and attach an isolated network</title>
-                     <step>
-                        <para>Issue the following nova client command:
-                        <programlisting language="bash" role="gutter: false">
-                            $ nova boot my_server_with_network --flavor 2 --image d42f821e-c2d1-4796-9f07-af5ed7912d0e --nic net-id=e65accc0-1d98-45eb-af76-ab3d31edc7d2</programlisting>
-                        </para>
-                        <?sbr?>
-                        <para>
-                           <emphasis role="bold">Output:</emphasis> The command returns information about the new server, as
-                        shown in the following output:</para>
-                        <informalexample>
-                           <screen>+-------------------------+--------------------------------------+
-| Property                | Value                                |
-+-------------------------+--------------------------------------+
-| OS-DCF:diskConfig       | AUTO                                 |
-| OS-EXT-STS:power_state  | 0                                    |
-| OS-EXT-STS:task_state   | scheduling                           |
-| OS-EXT-STS:vm_state     | building                             |
-| accessIPv4              |                                      |
-| accessIPv6              |                                      |
-| adminPass               | abababababab                         |
-| created                 | 2012-10-04T18:07:56Z                 |
-| flavor                  | 512MB Standard Instance              |
-| hostId                  |                                      |
-| id                      | 72859427-1e74-4a4f-b6b5-f547c1c3d452 |
-| image                   | Fedora 17 (Beefy Miracle)            |
-| metadata                | {}                                   |
-| name                    | my_server_with_network               |
-| progress                | 0                                    |
-| status                  | BUILD                                |
-| tenant_id               | 010101                               |
-| updated                 | 2012-10-04T18:07:56Z                 |
-| user_id                 | 170454                               |
-+-------------------------+--------------------------------------+</screen>
-                        </informalexample>
 
-                     </step>
-                  </procedure>
-               </para>
+            <section xml:id="boot_server_with_port_network_nova">
+               <title>Provision a server by attaching a port with an isolated network</title>
+               <para>To create your new server using this procedure, first create a port. </para>
+
                <sidebar>
                   <para>
-                     <emphasis role="bold">Next step:</emphasis>
-                     <xref linkend="list_servers"/>
+                     <emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
+                        <listitem>
+                           <para>
+                              <xref linkend="neutron_boot_server_neutron"/>
+                           </para>
+                        </listitem>
+                        <listitem>
+                           <para>
+                              <xref linkend="curl_boot_server_neutron"/>
+                           </para>
+                        </listitem>
+                     </itemizedlist>
                   </para>
                </sidebar>
-            </section>
-            <?hard-pagebreak?>
-            <section xml:id="curl_boot_server_neutron">
-               <title>Provision a server with an isolated network with cURL</title>
-               <section xml:id="json_boot_server_neutron">
-                  <title>JSON request and response</title>
-                  <procedure>
-                     <title>To provision a server with an isolated network to the server</title>
-                     <step>
-                        <para>Issue the following cURL
-                        command:<programlisting language="bash" role="gutter: false"><?db-font-size 55%?>
+               <!-- create port -->
+               <!-- list ports -->
+               <!-- Boot server -->
+               <?hard-pagebreak?>
+               <section xml:id="neutron_boot_server_neutron">
+                  <title>Provision a server with an isolated network with the nova client</title>
+                  <para>
+                     <procedure>
+                        <title>To provision a server and attach a port with a network</title>
+                        <step>
+                           <para>Issue the following nova client command:
+                            <programlisting language="bash" role="gutter: false">
+$ nova boot ServerAmp --image 82e72de5-6366-4217-8c87-a570a9b17e73 --nic port-id=c23c2fff-c07f-4af0-bc37-8ad883231f7c --flavor 1</programlisting>
+                           </para>
+                           <?sbr?>
+                           <para>
+                              <emphasis role="bold">Output:</emphasis> The command returns information about the new server,
+                            as shown in the following output:</para>
+                           <informalexample>
+                              <screen>
++--------------------------------------+-----------------------------------------------------------------+
+| Property                             | Value                                                           |
++--------------------------------------+-----------------------------------------------------------------+
+| OS-DCF:diskConfig                    | MANUAL                                                          |
+| OS-EXT-AZ:availability_zone          | nova                                                            |
+| OS-EXT-STS:power_state               | 0                                                               |
+| OS-EXT-STS:task_state                | scheduling                                                      |
+| OS-EXT-STS:vm_state                  | building                                                        |
+| OS-SRV-USG:launched_at               | -                                                               |
+| OS-SRV-USG:terminated_at             | -                                                               |
+| accessIPv4                           |                                                                 |
+| accessIPv6                           |                                                                 |
+| adminPass                            | 4PkrqfdmuuKy                                                    |
+| config_drive                         |                                                                 |
+| created                              | 2014-02-06T20:11:01Z                                            |
+| flavor                               | m1.tiny (1)                                                     |
+| hostId                               |                                                                 |
+| id                                   | 537805b0-7a04-4bbc-8040-812527b024bc                            |
+| image                                | cirros-0.3.0-x86_64-disk (82e72de5-6366-4217-8c87-a570a9b17e73) |
+| key_name                             | -                                                               |
+| metadata                             | {}                                                              |
+| name                                 | ServerAmp                                                       |
+| os-extended-volumes:volumes_attached | []                                                              |
+| progress                             | 0                                                               |
+| security_groups                      | default                                                         |
+| status                               | BUILD                                                           |
+| tenant_id                            | 53501b3c25d34f8ea293c03298caed60                                |
+| updated                              | 2014-02-06T20:11:01Z                                            |
+| user_id                              | 28be72f8fc5b45589c93f55274e459ce                                |
++--------------------------------------+-----------------------------------------------------------------+
+                            </screen>
+                           </informalexample>
+                        </step>
+                     </procedure>
+                  </para>
+                  <sidebar>
+                     <para>
+                        <emphasis role="bold">Next step:</emphasis>
+                        <xref linkend="show_port_neutron"/>
+                     </para>
+                  </sidebar>
+               </section>
+               <?hard-pagebreak?>
+               <section xml:id="curl_boot_server_neutron">
+                  <title>Provision a server and attach a port with a network with cURL</title>
+                  <section xml:id="json_boot_server_neutron">
+                     <title>JSON request and response</title>
+                     <procedure>
+                        <title>To provision a server with an isolated network to the server</title>
+                        <step>
+                           <para>Issue the following cURL
+                            command:<programlisting language="bash" role="gutter: false"><?db-font-size 55%?>
                             $ curl https://dfw.servers.api.rackspacecloud.com/v2/$account/servers \
          -X POST \
          -H "X-Auth-Project-Id: $account" \
          -H "Content-Type: application/json" \
          -H "Accept: application/json" \
          -H "X-Auth-Token: $token" \
-         -d '{"server": {"name": "my_server_with_network", "imageRef": "d42f821e-c2d1-4796-9f07-af5ed7912d0e", "flavorRef": "2", "max_count": 1, "min_count": 1, "networks": [{"uuid": "538a112a-34d1-47ff-bf1e-c40639e886e2"}, {"uuid": "00000000-0000-0000-0000-000000000000"}, {"uuid": "11111111-1111-1111-1111-111111111111"}]}}' \
+         -d '{"server": {"name": "ServerAmp", "imageRef": "82e72de5-6366-4217-8c87-a570a9b17e73", \
+         "flavorRef": "1", "max_count": 1, "min_count": 1, "nic":"port-id=c23c2fff-c07f-4af0-bc37-8ad883231f7c"\
          | python -m json.tool</programlisting>
-                        </para>
-                        <para>In addition to the isolated network, PublicNet and ServiceNet are attached to the server. You must
-                        explicitly specify these networks to attach them to your server.</para>
-                        <para>
-                           <emphasis role="bold">Output:</emphasis> The API operation returns information about the new
-                        server, as shown in the following output:</para>
-                        <programlisting language="json"><?db-font-size 65%?>
-                        {
+                           </para>
+                           <para>
+                              <emphasis role="bold">Output:</emphasis> The API operation returns information about the new
+                            server, as shown in the following output:</para>
+                           <programlisting language="json"><?db-font-size 65%?>
+{
     "server": {
         "OS-DCF:diskConfig": "AUTO", 
-        "adminPass": "LMoheHauXt8w", 
-        "id": "ef08aa7a-b5e4-4bb8-86df-5ac56230f841", 
+        "adminPass": "4PkrqfdmuuKy", 
+        "id": "537805b0-7a04-4bbc-8040-812527b024bc", 
         "links": [
             {
-                "href": "https://dfw.servers.api.rackspacecloud.com/v2/010101/servers/ef08aa7a-b5e4-4bb8-86df-5ac56230f841", 
+                "href": "https://dfw.servers.api.rackspacecloud.com/v2/53501b3c25d34f8ea293c03298caed60/servers/537805b0-7a04-4bbc-8040-812527b024bc", 
                 "rel": "self"
             }, 
             {
-                "href": "https://dfw.servers.api.rackspacecloud.com/010101/servers/ef08aa7a-b5e4-4bb8-86df-5ac56230f841", 
+                "href": "https://dfw.servers.api.rackspacecloud.com/53501b3c25d34f8ea293c03298caed60/servers/537805b0-7a04-4bbc-8040-812527b024bc", 
                 "rel": "bookmark"
             }
         ]
     }
-}
-</programlisting>
-                     </step>
-                  </procedure>
-                  <sidebar>
-                     <para>
-                        <emphasis role="bold">Next step:</emphasis>
-                        <xref linkend="list_servers"/>
-                     </para>
-                  </sidebar>
-               </section>
-               <section xml:id="xml_boot_server_neutron">
-                  <title>XML request and response</title>
-                  <procedure>
-                     <title>To provision a server and attach an isolated network to the server</title>
-                     <step>
-                        <para>Issue the following cURL
-                        command:<programlisting language="bash" role="gutter: false"><?db-font-size 55%?>
-                            $ curl -i https://dfw.servers.api.rackspacecloud.com/v2/$account/servers.xml \
+}                       
+                        </programlisting>
+                        </step>
+                     </procedure>
+                     <sidebar>
+                        <para>
+                           <emphasis role="bold">Next step:</emphasis>
+                           <xref linkend="show_port_neutron"/>
+                        </para>
+                     </sidebar>
+                  </section>
+                  <section xml:id="xml_boot_server_neutron">
+                     <title>XML request and response</title>
+                     <procedure>
+                        <title>To provision a server and attach an isolated network to the server</title>
+                        <step>
+                           <para>Issue the following cURL
+                            command:<programlisting language="bash" role="gutter: false"><?db-font-size 55%?>
+$ curl -i https://dfw.servers.api.rackspacecloud.com/v2/$account/servers.xml \
         -X POST \
         -H "X-Auth-Project-Id: $account" \
         -H "Content-Type: application/xml" \
         -H "Accept: application/xml" \
         -H "X-Auth-Token: $token" \
-        -d '&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;server xmlns="http://docs.openstack.org/compute/api/v1.1" imageRef="3afe97b2-26dc-49c5-a2cc-a2fc8d80c001" flavorRef="2" name="api-test-server-xml2"&gt;&lt;metadata&gt;&lt;meta key="My Server Name"&gt;API Test Server XML&lt;/meta&gt;&lt;/metadata&gt;&lt;networks&gt;&lt;uuid&gt;0ef47ac7-6797-4e01-8a47-ed26ec3aaa56&lt;/uuid&gt;&lt;uuid&gt;00000000-0000-0000-0000-000000000000&lt;/uuid&gt;&lt;uuid&gt;11111111-1111-1111-1111-111111111111&lt;/uuid&gt;&lt;/networks&gt;&lt;/server&gt;'</programlisting>
-                        </para>
-                        <para>In addition to the isolated network, PublicNet and ServiceNet are attached to the server. You must
-                        explicitly specify these networks to attach them to your server.</para>
-                        <para>
-                           <emphasis role="bold">Output:</emphasis> The API operation returns information about the new
-                        server, as shown in the following output:</para>
-                        <programlisting language="xml"><?db-font-size 65%?>&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+        -d '&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;server xmlns="http://docs.openstack.org/compute/api/v1.1" \
+        imageRef="82e72de5-6366-4217-8c87-a570a9b17e73" flavorRef="1" name="ServerAmp" \
+        nic="port-id=c23c2fff-c07f-4af0-bc37-8ad883231f7c"&lt;/server&gt;'</programlisting>
+                           </para>
+                           <para>In addition to the isolated network, PublicNet and ServiceNet are attached to the server. You
+                            must explicitly specify these networks to attach them to your server.</para>
+                           <para>
+                              <emphasis role="bold">Output:</emphasis> The API operation returns information about the new
+                            server, as shown in the following output:</para>
+                           <programlisting language="xml"><?db-font-size 65%?>
 &lt;server
     xmlns:OS-DCF="http://docs.openstack.org/compute/ext/disk_config/api/v1.1"
     xmlns:atom="http://www.w3.org/2005/Atom"
     xmlns="http://docs.openstack.org/compute/api/v1.1"
-    id="ed5c7754-29b6-45fa-96cb-ab64958c8c0a" adminPass="Dd5pNZtpVVQ3"
+    id="537805b0-7a04-4bbc-8040-812527b024bc" adminPass="4PkrqfdmuuKy"
     OS-DCF:diskConfig="AUTO"&gt;
     &lt;metadata/&gt;
     &lt;atom:link
-        href="https://dfw.servers.api.rackspacecloud.com/v2/010101/servers/ed5c7754-29b6-45fa-96cb-ab64958c8c0a"
+        href="https://dfw.servers.api.rackspacecloud.com/v2/53501b3c25d34f8ea293c03298caed60/servers/537805b0-7a04-4bbc-8040-812527b024bc"
         rel="self"/&gt;
     &lt;atom:link
-        href="https://dfw.servers.api.rackspacecloud.com/010101/servers/ed5c7754-29b6-45fa-96cb-ab64958c8c0a"
+        href="https://dfw.servers.api.rackspacecloud.com/53501b3c25d34f8ea293c03298caed60/servers/537805b0-7a04-4bbc-8040-812527b024bc"
         rel="bookmark"/&gt;
-&lt;/server&gt;
-</programlisting>
+&lt;/server&gt;                            
+                        </programlisting>
+                        </step>
+                     </procedure>
+                     <sidebar>
+                        <para>
+                           <emphasis role="bold">Next step:</emphasis>
+                           <xref linkend="show_port_neutron"/>
+                        </para>
+                     </sidebar>
+                  </section>
+               </section>
+               <?hard-pagebreak?>
+            </section>
+
+            <!-- show port -->
+            <section version="5.0" xml:id="show_port_neutron">
+               <title>Show port details</title>
+               <para>You can show details for a specified port, including servers using the port, by using the port ID.</para>
+               <sidebar>
+                  <para>
+                     <emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
+                        <listitem>
+                           <para>
+                              <xref linkend="neutron_show_port_neutron"/>
+                           </para>
+                        </listitem>
+                        <listitem>
+                           <para>
+                              <xref linkend="curl_show_port_neutron"/>
+                           </para>
+                        </listitem>
+                     </itemizedlist>
+                  </para>
+               </sidebar>
+               <?hard-pagebreak?>
+               <section xml:id="neutron_show_port_neutron">
+                  <title>Show port details with the neutron client</title>
+                  <para>The following steps shows you how to view details for a port using the neutron client.</para>
+                  <procedure>
+                     <title>To show information for a specified port ID</title>
+                     <step>
+                        <para>Issue the following neutron client command:
+                        <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                        $ neutron port-show &lt;c23c2fff-c07f-4af0-bc37-8ad883231f7c&gt;</programlisting>
+                        </para>
+                        <para>
+                           <emphasis role="bold">Positional argument:</emphasis>
+                        </para>
+                        <para>
+                           <itemizedlist>
+                              <listitem>
+                                <para>The ID of the port for which you want to show information. To determine the port ID,
+                                    issue a <command>neutron</command>
+                                    <option>port-list</option> command. </para>
+                              </listitem>
+                           </itemizedlist>
+                        </para>
+                        <para>
+                           <emphasis role="bold">Output:</emphasis>
+                        </para>
+                        <para>The command returns the result as shown in the following output:</para>
+                        <informalexample>
+                           <screen>
++-----------------------+----------------------------------------------------------------------------------+
+| Field                 | Value                                                                            |
++-----------------------+----------------------------------------------------------------------------------+
+| admin_state_up        | True                                                                             |
+| allowed_address_pairs |                                                                                  |
+| device_id             | 537805b0-7a04-4bbc-8040-812527b024bc                                             |
+| device_owner          | compute:None                                                                     |
+| extra_dhcp_opts       |                                                                                  |
+| fixed_ips             | {"subnet_id": "23e3059e-4f39-4f7f-8cf2-c326e5de6c37", "ip_address": "120.1.2.4"} |
+| id                    | c23c2fff-c07f-4af0-bc37-8ad883231f7c                                             |
+| mac_address           | fa:16:3e:a6:48:c4                                                                |
+| name                  | newport                                                                          |
+| network_id            | 29f52c7e-6efd-4335-a14a-db77d32a2555                                             |
+| security_groups       | 7e768af1-f9e9-431e-823d-9477e593e345                                             |
+| status                | ACTIVE                                                                           |
+| tenant_id             | 53501b3c25d34f8ea293c03298caed60                                                 |
++-----------------------+----------------------------------------------------------------------------------+
+                    </screen>
+                        </informalexample>
                      </step>
                   </procedure>
                   <sidebar>
                      <para>
-                        <emphasis role="bold">Next step:</emphasis>
-                        <xref linkend="list_servers"/>
+                        <emphasis role="bold">Next step: </emphasis>
+                        <!--<olink targetdoc="cn-gettingstarted" targetptr="list_servers_port_neutron">List servers and attached
+                        networks</olink>-->
+                     </para>
+                  </sidebar>
+               </section>
+               <?hard-pagebreak?>
+               <section xml:id="curl_show_port_neutron">
+                  <title>Show port details with cURL</title>
+                  <para>The following steps shows you how to view details for a port using cURL.</para>
+                  <procedure>
+                     <title>To show information for a specified port ID</title>
+                     <step>
+                        <para>Issue the following cURL command:
+                        <programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
+                            $ curl https://dfw.servers.api.rackspacecloud.com/v2.0/$account/ports/c23c2fff-c07f-4af0-bc37-8ad883231f7c \
+        -X GET \
+        -H "X-Auth-Project-Id: $account" \
+        -H "Accept: application/json" \
+        -H "Content-Type: application/json"\
+        -H "X-Auth-Token: $token" | python -m json.tool</programlisting>
+                        </para>
+                        <para>
+                           <emphasis role="bold">Positional argument:</emphasis>
+                        </para>
+                        <para>
+                           <itemizedlist>
+                              <listitem>
+                                <para>
+                                    <parameter>id</parameter>. The ID of the network for which you want to show
+                                    information. To determine the network ID, issue a <command>neutron</command>
+                                    <option>network-list</option> command. </para>
+                              </listitem>
+                           </itemizedlist>
+                        </para>
+                        <para>
+                           <emphasis role="bold">Output:</emphasis>
+                        </para>
+                        <para>The API operation returns a response body as shown in the following output:</para>
+
+                        <programlisting language="json"><?db-font-size 75%?>
+{
+   "port":[
+      {
+         "status":"ACTIVE",
+         "name":"newport",
+         "admin_state_up":true,
+         "network_id":"29f52c7e-6efd-4335-a14a-db77d32a2555",
+         "tenant_id":"53501b3c25d34f8ea293c03298caed60",
+         "binding:vif_type":"ovs",
+         "device_owner":"compute:None",
+         "binding:capabilities":{
+            "port_filter":false
+         },
+         "mac_address":"fa:16:3e:a6:48:c4",
+         "fixed_ips":[
+            {
+               "subnet_id":"23e3059e-4f39-4f7f-8cf2-c326e5de6c37",
+               "ip_address":"120.1.2.4"
+            }
+         ],
+         "id":"c23c2fff-c07f-4af0-bc37-8ad883231f7c",
+         "device_id":"537805b0-7a04-4bbc-8040-812527b024bc"
+      }
+   ]
+}
+                </programlisting>
+                     </step>
+                  </procedure>
+                  <sidebar>
+                     <para>
+                        <emphasis role="bold">Next step: </emphasis>
+                        <!--<olink targetdoc="cn-gettingstarted" targetptr="list_servers_port_neutron">List servers and attached
+                        networks</olink>-->
                      </para>
                   </sidebar>
                </section>
             </section>
-            <?hard-pagebreak?>
+
+            <!-- list servers -->
          </section>
-         <!-- list server neutron -->
 
       </section>
         <section xmlns:raxm="http://docs.rackspace.com/api/metadata"

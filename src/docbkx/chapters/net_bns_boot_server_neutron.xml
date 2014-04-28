@@ -38,7 +38,8 @@
         </listitem>
         <listitem>
             <para>The network ID of your isolated network. This is the ID you copied in <olink targetdoc="cn-gettingstarted"
-                    targetptr="create_network_neutron">“Create a network or a sub-network”</olink></para>
+                    targetptr="neutron_create_network_neutron">“Create a network with the neutron API and the neutron
+                    client”</olink></para>
         </listitem>
     </itemizedlist>
 
@@ -139,7 +140,9 @@
          -H "Content-Type: application/json" \
          -H "Accept: application/json" \
          -H "X-Auth-Token: $token" \
-         -d '{"server": {"name": "ServerAmp", "imageRef": "82e72de5-6366-4217-8c87-a570a9b17e73", "flavorRef": "1", "max_count": 1, "min_count": 1, "networks": [{"uuid": "29f52c7e-6efd-4335-a14a-db77d32a2555"}, {"uuid": "00000000-0000-0000-0000-000000000000"}, {"uuid": "11111111-1111-1111-1111-111111111111"}]}}' \
+         -d '{"server": {"name": "ServerAmp", "imageRef": "82e72de5-6366-4217-8c87-a570a9b17e73", "flavorRef": "1", \
+         "max_count": 1, "min_count": 1, \
+         "networks": [{"uuid": "29f52c7e-6efd-4335-a14a-db77d32a2555"}, {"uuid": "00000000-0000-0000-0000-000000000000"}, {"uuid": "11111111-1111-1111-1111-111111111111"}]}}' \
          | python -m json.tool</programlisting></para>
                     <para>In addition to the isolated network, PublicNet and ServiceNet are attached to the server. You must
                         explicitly specify these networks to attach them to your server.</para>
