@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section [
+<!ENTITY % common  SYSTEM "../../common/common.ent">
+%common;
+]>
+<section xml:id="cfn_nova_nova" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0">
+    <title>Use nova-network API and nova client to create and list both networks and subnets</title>
+    <para>These sections walk you through creating your network and subnet and then listing them and showing network details
+        by using the nova-network client. </para>
+    <sidebar>
+        <para><emphasis role="bold">Start here: </emphasis><olink targetdoc="cn-gettingstarted"
+                targetptr="nova_create_network_nova">“Create a network with the nova-network API and the nova
+            client”</olink></para>
+    </sidebar>
+    <section xml:id="nova_create_network_nova">
+        <title>Create a network with the nova-network API and the nova client</title>
+        <para>To create a network, you specify a name for your network. After you create a network, copy its network ID. You
+            use this ID to create a subnet or attach the network to a server or port.</para>
+        <para>To create an isolated network, you specify a name for your network and a Classless Inter-Domain Routing
+                (<glossterm>CIDR</glossterm>), which is a range of IP addresses used by a network. A CIDR address looks like
+            a normal IP address except that it ends with a slash followed by a number. The number after the slash represents
+            the number of addresses in the range. For more information, see
+            <link xlink:href="http://www.rackspace.com/knowledge_center/article/using-cidr-notation"><citetitle>CIDR
+                Notation</citetitle></link>.</para>
+        <para>The following is a partial list of limitations for network creation. For a full list of limitations for
+            creating networks, see the Limitations section in
+            <link xlink:href="http://docs.rackspace.com/servers/api/v2/cn-releasenotes/content/nova-boot.html">
+            <citetitle>Cloud Networks Release Notes</citetitle></link>.</para>
+        <itemizedlist>
+            <title>Limitations for creating networks</title>
+            <listitem>
+                <para>The isolated network must exist in the same region as the Cloud Server.</para>
+            </listitem>
+            <listitem>
+                <para>You can create up to three isolated networks with up to 64 servers attached to each one.</para>
+            </listitem>
+            <listitem>
+                <para>After you create an isolated network, you cannot rename it.</para>
+            </listitem>
+        </itemizedlist>
+        <para>The following step shows you how to create an isolated network by using the nova client.</para>
+        <procedure>
+            <title>To create an isolated network with the nova client</title>
+            <step>
+                <para>Issue the following command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                            <prompt>$</prompt> nova network-create amp 120.1.2.0/24</programlisting></para>
+                <para><emphasis role="bold">Positional arguments:</emphasis></para>
+                <para>
+                    <itemizedlist>
+                        <listitem>
+                            <para><parameter>network_name</parameter>. In this example, the network name is
+                                    <literal>amp</literal>.</para>
+                        </listitem>
+                        <listitem>
+                            <para><parameter>cidr</parameter>. The IP block from which to allocate addresses. In this
+                                example, the CIDR is <literal>120.1.2.0/24</literal>.</para>
+                        </listitem>
+                    </itemizedlist>
+                </para>
+                <para><emphasis role="bold">Output:</emphasis></para>
+                <para>The command returns the CIDR, ID, and name for the new network, as shown in the following
+                    output:</para>
+                <informalexample>
+                    <screen><computeroutput><?db-font-size 75%?>
++----------+--------------------------------------+
+| Property | Value                                |
++----------+--------------------------------------+
+| cidr     | 120.1.2.0/24                         |
+| id       | 29f52c7e-6efd-4335-a14a-db77d32a2555 |
+| label    | amp                                  |
++----------+--------------------------------------+</computeroutput></screen>
+                </informalexample>
+
+            </step>
+            <step>
+                <para>Copy the id value from the output. In this example, the id value is
+                        <literal>29f52c7e-6efd-4335-a14a-db77d32a2555</literal>, but use the value returned for your
+                    network.</para>
+                <para>You will use this value when you provision your server.</para>
+            </step>
+        </procedure>
+        <sidebar>
+            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+                    targetptr="nova_list_networks_nova">“List networks with the nova-network API and the nova
+                client”</olink></para>
+        </sidebar>
+    </section>
+
+    <section xml:id="nova_list_networks_nova">
+        <title>List networks with the nova-network API and the nova client</title>
+        <para>After you create an isolated network, list networks to make sure it is listed along with the Rackspace
+            networks.</para>
+        <para>For information about the Rackspace networks, see <olink targetdoc="cn-gettingstarted" targetptr="networks"
+                >“Limitations of detaching from Rackspace networks”</olink>.</para>
+        <para>The following steps shows you how to list networks by using the nova client.</para>
+        <procedure>
+            <title>To list networks with the nova client</title>
+            <step>
+                <para>Issue the following nova client command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                        <prompt>$</prompt> nova network-list </programlisting></para>
+                <para><emphasis role="bold">Output:</emphasis></para>
+                <para>For each network, the command returns the network ID, label, and <glossterm>CIDR</glossterm>, as shown
+                    in the following output:</para>
+                <informalexample>
+                    <screen><computeroutput><?db-font-size 75%?>
++--------------------------------------+-------------+----------------+
+| ID                                   | Label       | CIDR           |
++--------------------------------------+-------------+----------------+
+| 00000000-0000-0000-0000-000000000000 | public      |                |
+| 11111111-1111-1111-1111-111111111111 | private     |                |
+| 29f52c7e-6efd-4335-a14a-db77d32a2555 | amp         | 120.1.2.0/24   |
++--------------------------------------+-------------+----------------+</computeroutput></screen>
+                </informalexample>
+
+                <para>In the network list, ServiceNet is labeled as <literal>private</literal>, and PublicNet is labeled as
+                        <literal>public</literal>.</para>
+            </step>
+        </procedure>
+        <sidebar>
+            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+                    targetptr="nova_show_networks_nova">Show network details with the nova-network API and the nova
+                    client</olink></para>
+        </sidebar>
+    </section>
+    <section xml:id="neutron_list_subnets_neutron">
+        <title>List subnets with the neutron API and the neutron client</title>
+        <para>The following steps shows you how to list subnets using the neutron client.</para>
+        <procedure>
+            <title>To list subnets with the neutron client</title>
+            <step>
+                <para>Issue the following neutron client command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+<prompt>$</prompt> neutron subnet-list </programlisting></para>
+                <para><emphasis role="bold">Output:</emphasis></para>
+                <para>For each subnet, the command returns the result as shown in the following output</para>
+                <informalexample>
+                    <screen><computeroutput><?db-font-size 75%?>
++--------------------------------------+----------------+----------------+--------------------------------------------------+
+| id                                   | name           | cidr           | allocation_pools                                 |
++--------------------------------------+----------------+----------------+--------------------------------------------------+
+| 23e3059e-4f39-4f7f-8cf2-c326e5de6c37 | Subamp         | 120.1.2.0/24   | {"start": "120.1.2.2", "end": "120.1.2.254"}     |
++--------------------------------------+----------------+----------------+--------------------------------------------------+</computeroutput></screen>
+                </informalexample>
+            </step>
+        </procedure>
+        <sidebar>
+            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+                    targetptr="boot_new_server">Boot a new server with your cloud network</olink></para>
+        </sidebar>
+    </section>
+</section>

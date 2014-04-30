@@ -24,7 +24,7 @@
                 <step>
                     <para>Issue the following neutron command:
                         <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-<prompt>$</prompt> neutron net-create &lt;amp&gt;</programlisting></para>
+                              <prompt>$</prompt> neutron net-create amp</programlisting></para>
                     <para><emphasis role="bold">Positional arguments:</emphasis></para>
                     <para>
                         <itemizedlist>
@@ -75,7 +75,7 @@
                 <step>
                     <para>Issue the following neutron command:
                         <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-<prompt>$</prompt> neutron subnet-create &lt;amp&gt; &lt;120.1.2.0/24&gt; --name Subamp</programlisting></para>
+                               <prompt>$</prompt> neutron subnet-create amp 120.1.2.0/24 --name Subamp</programlisting></para>
                     <para><emphasis role="bold">Positional arguments:</emphasis></para>
                     <para>
                         <itemizedlist>
@@ -135,7 +135,7 @@
             <step>
                 <para>Issue the following neutron client command:
                     <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-<prompt>$</prompt> neutron net-list </programlisting></para>
+                            <prompt>$</prompt> neutron net-list </programlisting></para>
                 <para><emphasis role="bold">Output:</emphasis></para>
                 <para>For each network, the command returns the result as shown in the following output</para>
                 <informalexample>
@@ -162,7 +162,7 @@
             <step>
                 <para>Issue the following neutron client command:
                     <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-<prompt>$</prompt> neutron subnet-list </programlisting></para>
+                           <prompt>$</prompt> neutron subnet-list </programlisting></para>
                 <para><emphasis role="bold">Output:</emphasis></para>
                 <para>For each subnet, the command returns the result as shown in the following output</para>
                 <informalexample>

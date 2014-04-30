@@ -30,7 +30,7 @@
         </copyright>
         <releaseinfo>OpenStack Networking API v2</releaseinfo>
         <productname>Cloud Networks™</productname>
-        <pubdate>2014-04-25</pubdate>
+        <pubdate>2014-04-29</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <para>
@@ -2212,13 +2212,20 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
                      <xref linkend="cfn_neutron_neutron"/>
                   </para>
                                 </listitem>
+                                <listitem>
+                                        <para>
+                     <xref linkend="cfn_neutron_curl"/>
+                                        </para>
+                                </listitem>
                                 <!--<listitem>
-                                        <para><olink targetdoc="cn-gettingstarted" targetptr="neutron_create_network_neutron"
-                                                        >“Create a network or subnet with the neutron client”</olink></para>
+                                        <para><olink targetdoc="cn-gettingstarted" targetptr="nova_create_network_nova"
+                                                        >“Use nova-network API and the nova client to create, list, and show 
+                                                        networks”</olink></para>
                                 </listitem>
                                 <listitem>
-                                        <para><olink targetdoc="cn-gettingstarted" targetptr="curl_create_network_neutron"
-                                                        >“Create a network or subnet with cURL”</olink></para>
+                                        <para><olink targetdoc="cn-gettingstarted" targetptr="nova_create_network_curl"
+                                                        >“Use nova-network API and cURL to create, list, and show 
+                                                        networks”</olink></para>
                                 </listitem>-->
                         </itemizedlist>
          </para>
@@ -2247,7 +2254,7 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
                   <step>
                     <para>Issue the following neutron command:
                         <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-$ neutron net-create &lt;amp&gt;</programlisting>
+                              $ neutron net-create amp</programlisting>
                      </para>
                     <para>
                         <emphasis role="bold">Positional arguments:</emphasis>
@@ -2304,7 +2311,7 @@ $ neutron net-create &lt;amp&gt;</programlisting>
                   <step>
                     <para>Issue the following neutron command:
                         <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-$ neutron subnet-create &lt;amp&gt; &lt;120.1.2.0/24&gt; --name Subamp</programlisting>
+                               $ neutron subnet-create amp 120.1.2.0/24 --name Subamp</programlisting>
                      </para>
                     <para>
                         <emphasis role="bold">Positional arguments:</emphasis>
@@ -2371,7 +2378,7 @@ $ neutron subnet-create &lt;amp&gt; &lt;120.1.2.0/24&gt; --name Subamp</programl
                <step>
                   <para>Issue the following neutron client command:
                     <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-$ neutron net-list </programlisting>
+                            $ neutron net-list </programlisting>
                   </para>
                   <para>
                      <emphasis role="bold">Output:</emphasis>
@@ -2402,7 +2409,7 @@ $ neutron net-list </programlisting>
                <step>
                   <para>Issue the following neutron client command:
                     <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-$ neutron subnet-list </programlisting>
+                           $ neutron subnet-list </programlisting>
                   </para>
                   <para>
                      <emphasis role="bold">Output:</emphasis>
@@ -2652,7 +2659,8 @@ $ neutron subnet-list </programlisting>
             </sidebar>
          </section>
       </section>
-        <!--<xi:include href="net_cfn_neutron.xml"/>-->
+        <!--<xi:include href="net_cfn_nova_nova.xml"/>-->
+        <!--<xi:include href="net_cfn_nova_curl.xml"/>-->
         <section xmlns:raxm="http://docs.rackspace.com/api/metadata"
                version="5.0"
                xml:id="create_first_net_nova"
