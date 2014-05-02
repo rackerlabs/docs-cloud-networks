@@ -43,8 +43,9 @@
                     List Flavors</link>.</para>
             </listitem>
             <listitem>
-                <para>The network ID of your isolated network. This is the ID you copied in <olink targetdoc="cn-gettingstarted"
-                    targetptr="create_network">“Step 1. Create an Isolated Network”</olink></para>
+                <para>The network ID of your isolated network. This is the ID you copied in <olink
+                        targetdoc="cn-gettingstarted" targetptr="nova_create_network_nova">“Create a network with the
+                        nova-network API and the nova client”</olink></para>
             </listitem>
         </itemizedlist>
         

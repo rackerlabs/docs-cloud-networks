@@ -125,24 +125,38 @@
                     client</olink></para>
         </sidebar>
     </section>
-    <section xml:id="neutron_list_subnets_neutron">
-        <title>List subnets with the neutron API and the neutron client</title>
-        <para>The following steps shows you how to list subnets using the neutron client.</para>
+    <section xml:id="nova_show_networks_nova">
+        <title>Show network details with the nova-network API and the nova client</title>
+        <para>The following step shows you how to show network details using the nova client.</para>
         <procedure>
-            <title>To list subnets with the neutron client</title>
+            <title>To show information for a specified network ID</title>
             <step>
-                <para>Issue the following neutron client command:
+                <para>Issue the following nova client command:
                     <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-<prompt>$</prompt> neutron subnet-list </programlisting></para>
-                <para><emphasis role="bold">Output:</emphasis></para>
-                <para>For each subnet, the command returns the result as shown in the following output</para>
+                        <prompt>$</prompt> nova network 29f52c7e-6efd-4335-a14a-db77d32a2555</programlisting></para>
+                <para><emphasis role="bold">Positional argument:</emphasis></para>
+                <para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>The ID of the network for which you want to show information. In this case, the ID is
+                                    <literal>29f52c7e-6efd-4335-a14a-db77d32a2555</literal>, but use your own network ID.
+                            </para>
+                        </listitem>
+                    </itemizedlist>
+                </para>
+                <para><emphasis role="bold">Output:</emphasis>
+                </para>
+                <para>The command returns the <glossterm>CIDR</glossterm>, network ID, and label, as shown in the following
+                    output:</para>
                 <informalexample>
-                    <screen><computeroutput><?db-font-size 75%?>
-+--------------------------------------+----------------+----------------+--------------------------------------------------+
-| id                                   | name           | cidr           | allocation_pools                                 |
-+--------------------------------------+----------------+----------------+--------------------------------------------------+
-| 23e3059e-4f39-4f7f-8cf2-c326e5de6c37 | Subamp         | 120.1.2.0/24   | {"start": "120.1.2.2", "end": "120.1.2.254"}     |
-+--------------------------------------+----------------+----------------+--------------------------------------------------+</computeroutput></screen>
+                    <screen><computeroutput>
++----------+--------------------------------------+
+| Property | Value                                |
++----------+--------------------------------------+
+| cidr     | 120.1.2.0/24                         |
+| id       | 29f52c7e-6efd-4335-a14a-db77d32a2555 |
+| label    | amp                                  |
++----------+--------------------------------------+</computeroutput></screen>
                 </informalexample>
             </step>
         </procedure>

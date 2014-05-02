@@ -38,8 +38,8 @@
         </listitem>
         <listitem>
             <para>The network ID of your isolated network. This is the ID you copied in <olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_create_network_neutron">“Create a network with the neutron API and the neutron
-                    client”</olink></para>
+                    targetptr="cfn_neutron_neutron">“Use neutron API and neutron client to create and list both networks and
+                    subnets”</olink></para>
         </listitem>
     </itemizedlist>
 

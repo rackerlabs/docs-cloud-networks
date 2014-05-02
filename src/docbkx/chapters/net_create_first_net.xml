@@ -34,12 +34,12 @@
                                                         API and cURL to create and list both networks and subnets”</olink>
                                         </para>
                                 </listitem>
-                                <!--<listitem>
-                                        <para><olink targetdoc="cn-gettingstarted" targetptr="nova_create_network_nova"
-                                                        >“Use nova-network API and the nova client to create, list, and show 
-                                                        networks”</olink></para>
-                                </listitem>
                                 <listitem>
+                                        <para><olink targetdoc="cn-gettingstarted" targetptr="cfn_nova_nova">“Use
+                                                        nova-network API and nova client to create and list both networks and
+                                                        subnets”</olink></para>
+                                </listitem>
+                                <!--<listitem>
                                         <para><olink targetdoc="cn-gettingstarted" targetptr="nova_create_network_curl"
                                                         >“Use nova-network API and cURL to create, list, and show 
                                                         networks”</olink></para>
@@ -48,7 +48,7 @@
         </sidebar>
         <xi:include href="net_cfn_neutron_neutron.xml"/>
         <xi:include href="net_cfn_neutron_curl.xml"/>
-        <!--<xi:include href="net_cfn_nova_nova.xml"/>-->
+        <xi:include href="net_cfn_nova_nova.xml"/>
         <!--<xi:include href="net_cfn_nova_curl.xml"/>-->
-        <xi:include href="net_cfn_nova.xml"/>
+       <!-- <xi:include href="net_cfn_nova.xml"/>-->
 </chapter>
