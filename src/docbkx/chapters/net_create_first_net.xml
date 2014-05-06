@@ -26,29 +26,24 @@
                 <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
                                 <listitem>
                                         <para><olink targetdoc="cn-gettingstarted" targetptr="cfn_neutron_neutron">“Use
-                                                        neutron API and neutron client to create and list both networks and
-                                                        subnets”</olink></para>
+                                                        neutron API and neutron client”</olink></para>
                                 </listitem>
                                 <listitem>
                                         <para><olink targetdoc="cn-gettingstarted" targetptr="cfn_neutron_curl">“Use neutron
-                                                        API and cURL to create and list both networks and subnets”</olink>
-                                        </para>
+                                                        API and cURL”</olink></para>
                                 </listitem>
                                 <listitem>
                                         <para><olink targetdoc="cn-gettingstarted" targetptr="cfn_nova_nova">“Use
-                                                        nova-network API and nova client to create and list both networks and
-                                                        subnets”</olink></para>
+                                                        nova-network API and nova client”</olink></para>
                                 </listitem>
-                                <!--<listitem>
-                                        <para><olink targetdoc="cn-gettingstarted" targetptr="nova_create_network_curl"
-                                                        >“Use nova-network API and cURL to create, list, and show 
-                                                        networks”</olink></para>
-                                </listitem>-->
+                                <listitem>
+                                        <para><olink targetdoc="cn-gettingstarted" targetptr="cfn_nova_curl">“Use
+                                                        nova-network API and cURL”</olink></para>
+                                </listitem>
                         </itemizedlist></para>
         </sidebar>
         <xi:include href="net_cfn_neutron_neutron.xml"/>
         <xi:include href="net_cfn_neutron_curl.xml"/>
         <xi:include href="net_cfn_nova_nova.xml"/>
-        <!--<xi:include href="net_cfn_nova_curl.xml"/>-->
-       <!-- <xi:include href="net_cfn_nova.xml"/>-->
+        <xi:include href="net_cfn_nova_curl.xml"/>
 </chapter>

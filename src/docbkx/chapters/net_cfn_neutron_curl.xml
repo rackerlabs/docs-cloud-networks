@@ -5,7 +5,7 @@
 ]>
 <section xml:id="cfn_neutron_curl" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0">
-    <title>Use neutron API and cURL to create and list both networks and subnets</title>
+    <title>Use neutron API and cURL</title>
     <para>These sections walk you through creating your network and subnet and then listing them by using cURL.</para>
     <sidebar>
         <para><emphasis role="bold">Start here: </emphasis><olink targetdoc="cn-gettingstarted"
@@ -16,6 +16,7 @@
         <title>Create a network with the neutron API and cURL</title>
         <para>After you create a network, copy its network ID. You use this ID to create a subnet or attach the network to a
             server.</para>
+        <para>The neutron API allows only JSON formatting.</para>
         <procedure>
             <title>To create a network with the neutron API and cURL</title>
             <step>
@@ -26,7 +27,7 @@
        -H "Content-Type: application/json" \
        -H "Accept: application/json" \
        -H "X-Auth-Token: $token" \
-       -d '{"network": {"name": "sample_network", "admin_state_up": "false"}}' | python -m json.tool</programlisting></para>
+       -d '{"network": {"name": "amp", "admin_state_up": "false"}}' | python -m json.tool</programlisting></para>
                 <para>In this cURL command, you specify several options. For information about options, see <olink
                         targetdoc="cn-gettingstarted" targetptr="curl_options">Table 2, “cURL Command-Line
                     Options”</olink>.</para>

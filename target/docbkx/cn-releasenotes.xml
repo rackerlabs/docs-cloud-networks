@@ -8,7 +8,7 @@
       xmlns:html="http://www.w3.org/1999/xhtml"
       version="5.0"
       xml:id="cn-releasenotes"
-      xml:base="file:/Users/cath6136/Documents/GithubDocs/docs-cloud-networks/src/docbkx/cn-releasenotes.xml">
+      xml:base="file:/Users/cath6136/Box%20Documents/DocumentsMacDropAny/GithubDocs/docs-cloud-networks/src/docbkx/cn-releasenotes.xml">
   <title>Cloud Networks™ Release Notes</title>
   <?rax title.font.size="37px" pdf.url="../../cn-releasenotes.pdf" canonical.url.base="http://docs.rackspace.com/servers/api/v2/cn-releasenotes/content"?>
   <titleabbrev>Cloud Networks™ Release Notes</titleabbrev>
@@ -30,7 +30,7 @@
       </copyright>
       <releaseinfo>OpenStack Quantum API v2</releaseinfo>
       <productname>Cloud Networks™</productname>
-      <pubdate>2014-05-02</pubdate>
+      <pubdate>2014-05-06</pubdate>
       <legalnotice role="rs-api">
          <annotation>
             <para>

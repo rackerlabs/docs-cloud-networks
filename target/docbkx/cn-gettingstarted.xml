@@ -9,7 +9,7 @@
       xmlns:db="http://docbook.org/ns/docbook"
       version="5.0"
       xml:id="cn-gettingstarted"
-      xml:base="file:/Users/cath6136/Documents/GithubDocs/docs-cloud-networks/src/docbkx/cn-gettingstarted.xml">
+      xml:base="file:/Users/cath6136/Box%20Documents/DocumentsMacDropAny/GithubDocs/docs-cloud-networks/src/docbkx/cn-gettingstarted.xml">
     <title>Cloud Networks™ Getting Started</title>
     <?rax title.font.size="37px" pdf.url="../../cn-gettingstarted.pdf" canonical.url.base="http://docs.rackspace.com/servers/api/v2/cn-gettingstarted/content"?>
     <titleabbrev>Cloud Networks™ Getting Started</titleabbrev>
@@ -30,7 +30,7 @@
         </copyright>
         <releaseinfo>OpenStack Networking API v2</releaseinfo>
         <productname>Cloud Networks™</productname>
-        <pubdate>2014-05-02</pubdate>
+        <pubdate>2014-05-06</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <para>
@@ -2215,18 +2215,18 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
                                 <listitem>
                                         <para>
                      <xref linkend="cfn_neutron_curl"/>
-                                        </para>
+                  </para>
                                 </listitem>
                                 <listitem>
                                         <para>
                      <xref linkend="cfn_nova_nova"/>
                   </para>
                                 </listitem>
-                                <!--<listitem>
-                                        <para><olink targetdoc="cn-gettingstarted" targetptr="nova_create_network_curl"
-                                                        >“Use nova-network API and cURL to create, list, and show 
-                                                        networks”</olink></para>
-                                </listitem>-->
+                                <listitem>
+                                        <para>
+                     <xref linkend="cfn_nova_curl"/>
+                  </para>
+                                </listitem>
                         </itemizedlist>
          </para>
         </sidebar>
@@ -2234,7 +2234,7 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
                xml:id="cfn_neutron_neutron"
                version="5.0"
                xml:base="chapters/net_cfn_neutron_neutron.xml">
-         <title>Use neutron API and neutron client to create and list both networks and subnets</title>
+         <title>Use neutron API and neutron client</title>
          <para>These sections walk you through creating your network and subnet and then listing them by using the neutron
         client. </para>
          <sidebar>
@@ -2437,7 +2437,7 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
                xml:id="cfn_neutron_curl"
                version="5.0"
                xml:base="chapters/net_cfn_neutron_curl.xml">
-         <title>Use neutron API and cURL to create and list both networks and subnets</title>
+         <title>Use neutron API and cURL</title>
          <para>These sections walk you through creating your network and subnet and then listing them by using cURL.</para>
          <sidebar>
             <para>
@@ -2450,6 +2450,7 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
             <title>Create a network with the neutron API and cURL</title>
             <para>After you create a network, copy its network ID. You use this ID to create a subnet or attach the network to a
             server.</para>
+            <para>The neutron API allows only JSON formatting.</para>
             <procedure>
                <title>To create a network with the neutron API and cURL</title>
                <step>
@@ -2460,7 +2461,7 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
        -H "Content-Type: application/json" \
        -H "Accept: application/json" \
        -H "X-Auth-Token: $token" \
-       -d '{"network": {"name": "sample_network", "admin_state_up": "false"}}' | python -m json.tool</programlisting>
+       -d '{"network": {"name": "amp", "admin_state_up": "false"}}' | python -m json.tool</programlisting>
                   </para>
                   <para>In this cURL command, you specify several options. For information about options, see <xref linkend="curl_options"/>.</para>
                   <para>
@@ -2663,7 +2664,7 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
                xml:id="cfn_nova_nova"
                version="5.0"
                xml:base="chapters/net_cfn_nova_nova.xml">
-         <title>Use nova-network API and nova client to create and list both networks and subnets</title>
+         <title>Use nova-network API and nova client</title>
          <para>These sections walk you through creating your network and subnet and then listing them and showing network details
         by using the nova-network client. </para>
          <sidebar>
@@ -2684,23 +2685,10 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
                   <citetitle>CIDR
                 Notation</citetitle>
                </link>.</para>
-            <para>The following is a partial list of limitations for network creation. For a full list of limitations for
-            creating networks, see the Limitations section in
+            <para>For a full list of limitations for creating networks, see the Limitations section in
             <link xlink:href="http://docs.rackspace.com/servers/api/v2/cn-releasenotes/content/nova-boot.html">
                   <citetitle>Cloud Networks Release Notes</citetitle>
                </link>.</para>
-            <itemizedlist>
-               <title>Limitations for creating networks</title>
-               <listitem>
-                  <para>The isolated network must exist in the same region as the Cloud Server.</para>
-               </listitem>
-               <listitem>
-                  <para>You can create up to three isolated networks with up to 64 servers attached to each one.</para>
-               </listitem>
-               <listitem>
-                  <para>After you create an isolated network, you cannot rename it.</para>
-               </listitem>
-            </itemizedlist>
             <para>The following step shows you how to create an isolated network by using the nova client.</para>
             <procedure>
                <title>To create an isolated network with the nova client</title>
@@ -2757,7 +2745,6 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
                </para>
             </sidebar>
          </section>
-
          <section xml:id="nova_list_networks_nova">
             <title>List networks with the nova-network API and the nova client</title>
             <para>After you create an isolated network, list networks to make sure it is listed along with the Rackspace
@@ -2845,8 +2832,284 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
             </sidebar>
          </section>
       </section>
-        <!--<xi:include href="net_cfn_nova_curl.xml"/>-->
-       <!-- <xi:include href="net_cfn_nova.xml"/>-->
+        <section xmlns:raxm="http://docs.rackspace.com/api/metadata"
+               xml:id="cfn_nova_curl"
+               version="5.0"
+               xml:base="chapters/net_cfn_nova_curl.xml">
+         <title>Use nova-network API and cURL</title>
+         <para>These sections walk you through creating your network and then listing networks and showing network details by
+        using cURL.</para>
+         <sidebar>
+            <para>
+               <emphasis role="bold">Start here: </emphasis>
+               <xref linkend="nova_create_network_curl"/>
+            </para>
+         </sidebar>
+         <section xml:id="nova_create_network_curl">
+            <title>Create a network with the nova-network API and the nova client</title>
+            <para>To create a network, you specify a name for your network. After you create a network, copy its network ID. You
+            use this ID to create a subnet or attach the network to a server or port.</para>
+            <para>To create an isolated network, you specify a name for your network and a Classless Inter-Domain Routing
+                (<glossterm>CIDR</glossterm>), which is a range of IP addresses used by a network. A CIDR address looks like
+            a normal IP address except that it ends with a slash followed by a number. The number after the slash represents
+            the number of addresses in the range. For more information, see
+            <link xlink:href="http://www.rackspace.com/knowledge_center/article/using-cidr-notation">
+                  <citetitle>CIDR
+                Notation</citetitle>
+               </link>.</para>
+            <para>For a full list of limitations for creating networks, see the Limitations section in
+            <link xlink:href="http://docs.rackspace.com/servers/api/v2/cn-releasenotes/content/nova-boot.html">
+                  <citetitle>Cloud Networks Release Notes</citetitle>
+               </link>.</para>
+            <para>You can request a JSON or XML response when you issue a request in a cURL command with the nova-network
+            API.</para>
+            <para>The following procedures show you how to create an isolated network by using cURL.</para>
+            <procedure>
+               <title>To create an isolated network with JSON</title>
+               <step>
+                  <para>Issue the following cURL command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
+                            $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/os-networksv2 \
+       -X POST \
+       -H "X-Auth-Project-Id: $account" \
+       -H "Content-Type: application/json" \
+       -H "Accept: application/json" \
+       -H "X-Auth-Token: $token" \
+       -d '{"network": {"cidr": "120.1.2.0/24", "label": "amp"}}' | python -m json.tool</programlisting>
+                  </para>
+                  <para>In this cURL command, you specify several options. For information about options, see <xref linkend="curl_options"/>.</para>
+                  <para>
+                     <emphasis role="bold">Output:</emphasis>
+                  </para>
+                  <para>The response returns the <glossterm>CIDR</glossterm>, ID, and label for the isolated network, as shown
+                    in the following JSON response:
+                    <programlisting language="json"><?db-font-size 85%?>
+{
+    "network": {
+        "cidr": "120.1.2.0/24",
+        "id": "29f52c7e-6efd-4335-a14a-db77d32a2555",
+        "label": "amp"
+    }
+}                        
+                    </programlisting>
+                  </para>
+               </step>
+               <step>
+                  <para>Copy the ID value from the output. In this example, the ID value is
+                        <literal>29f52c7e-6efd-4335-a14a-db77d32a2555</literal>, but use the value returned for your
+                    network.</para>
+                  <para>You will use this value when you show network details or create a new server.</para>
+               </step>
+            </procedure>
+            <procedure>
+               <title>To create an isolated network with XML</title>
+               <step>
+                  <para>Issue the following cURL command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
+                            $ curl -i https://dfw.servers.api.rackspacecloud.com/v2/$account/os-networksv2.xml \
+          -X POST -H "X-Auth-Project-Id: $account" -H "Content-Type: application/xml" \
+          -H "Accept: application/xml" \
+          -H "X-Auth-Token: $token" \
+          -d '&lt;network cidr="120.1.2.0/24" label="amp" /&gt;'</programlisting>
+                  </para>
+                  <para>
+                     <emphasis role="bold">Output:</emphasis>
+                  </para>
+                  <para>The response returns the <glossterm>CIDR</glossterm>, ID, and label for the isolated network, as shown
+                    in the following XML response:
+                    <programlisting language="xml"><?db-font-size 85%?>
+&lt;network&gt;
+    &lt;cidr&gt;120.1.2.0/24&lt;/cidr&gt;
+    &lt;id&gt;29f52c7e-6efd-4335-a14a-db77d32a2555&lt;/id&gt;
+    &lt;label&gt;amp&lt;/label&gt;
+&lt;/network&gt;                        
+                    </programlisting>
+                  </para>
+               </step>
+               <step>
+                  <para>Copy the ID value from the output. In this example, the ID value is
+                        <literal>29f52c7e-6efd-4335-a14a-db77d32a2555</literal>, but use the value returned for your
+                    network.</para>
+                  <para>You will use this value when you show network details or create a new server.</para>
+               </step>
+            </procedure>
+            <sidebar>
+               <para>
+                  <emphasis role="bold">Next step: </emphasis>
+                  <xref linkend="nova_list_networks_nova"/>
+               </para>
+            </sidebar>
+         </section>
+
+         <section xml:id="nova_list_networks_curl">
+            <title>List networks with the nova-network API and cURL</title>
+            <para>After you create an isolated network, list networks to make sure it is listed along with the Rackspace
+            networks.</para>
+            <para>For information about the Rackspace networks, see <xref linkend="networks"/>.</para>
+            <para>You can request a JSON or XML response when you issue a request in a cURL command with the nova-network
+            API.</para>
+            <para>The following steps shows you how to list networks by using cURL.</para>
+            <procedure>
+               <title>To list networks with JSON</title>
+               <step>
+                  <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                        $ curl https://dfw.servers.api.rackspacecloud.com/v2/$account/os_networksv2 \
+       -X GET -H "X-Auth-Token: $token" | python -m json.tool</programlisting>
+                    <emphasis role="bold">Output:</emphasis>
+                  </para>
+                  <para>For each isolated network, the response returns the <glossterm>CIDR</glossterm>. Additionally, for
+                    isolated networks and Rackspace networks, the response returns the network ID and label.
+                    <programlisting language="json"><?db-font-size 85%?>
+{
+    "networks":[
+        {
+            "cidr":"120.1.2.0/24",
+            "id":"29f52c7e-6efd-4335-a14a-db77d32a2555",
+            "label":"amp"
+        },
+        {
+            "id":"00000000-0000-0000-0000-000000000000",
+            "label":"public"
+        },
+        {
+            "id":"11111111-1111-1111-1111-111111111111",
+            "label":"private"
+        }
+    ]
+}                        
+                    </programlisting>
+                  </para>
+               </step>
+            </procedure>
+            <procedure>
+               <title>To list networks with XML</title>
+               <step>
+                  <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                        $ curl https://dfw.servers.api.rackspacecloud.com/v2/$account/os_networksv2.xml \
+       -H "Content-Type: application/xml" \ 
+       -H "Accept: application/xml" \
+       -X GET -H "X-Auth-Token: $token"</programlisting>
+                    <emphasis role="bold">Output:</emphasis>
+                  </para>
+                  <para>For each isolated network, the response returns the <glossterm>CIDR</glossterm>. Additionally, for
+                    isolated networks and Rackspace networks, the response returns the network ID and label.
+                    <programlisting language="xml"><?db-font-size 85%?>
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;networks&gt;
+    &lt;network&gt;
+        &lt;cidr&gt;120.1.2.0/24&lt;/cidr&gt;
+        &lt;id&gt;29f52c7e-6efd-4335-a14a-db77d32a2555&lt;/id&gt;
+        &lt;label&gt;amp&lt;/label&gt;
+    &lt;/network&gt;
+    &lt;network&gt;
+        &lt;id&gt;00000000-0000-0000-0000-000000000000&lt;/id&gt;
+        &lt;label&gt;public&lt;/label&gt;
+    &lt;/network&gt;
+    &lt;network&gt;
+        &lt;id&gt;11111111-1111-1111-1111-111111111111&lt;/id&gt;
+        &lt;label&gt;private&lt;/label&gt;
+    &lt;/network&gt;
+&lt;/networks&gt;                    
+                    </programlisting>
+                  </para>
+               </step>
+            </procedure>
+            <sidebar>
+               <para>
+                  <emphasis role="bold">Next step: </emphasis>
+                  <xref linkend="nova_show_networks_curl"/>
+               </para>
+            </sidebar>
+         </section>
+         <section xml:id="nova_show_networks_curl">
+            <title>Show network details with the nova-network API and cURL</title>
+            <para>The following step shows you how to show network details using cURL.</para>
+            <para>You can request a JSON or XML response when you issue a request in a cURL command with the nova-network
+            API.</para>
+            <procedure>
+               <title>To show information for a specified network ID with JSON</title>
+               <step>
+                  <para>Issue the following cURL command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
+                            $ curl https://dfw.servers.api.rackspacecloud.com/v2/$account/os-networksv2/29f52c7e-6efd-4335-a14a-db77d32a2555 \
+        -X GET \
+        -H "X-Auth-Project-Id: $account" \
+        -H "Accept: application/json" \
+        -H "Content-Type: application/json"\
+        -H "X-Auth-Token: $token" | python -m json.tool</programlisting>
+                  </para>
+                  <para>
+                     <emphasis role="bold">Positional argument:</emphasis>
+                  </para>
+                  <para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>The ID of the network for which you want to show information.</para>
+                        </listitem>
+                    </itemizedlist>
+                  </para>
+                  <para>
+                     <emphasis role="bold">Output:</emphasis>
+                  </para>
+                  <para>The API operation returns the <glossterm>CIDR</glossterm>, network ID, and label, as shown in the
+                    following output:</para>
+
+                  <programlisting language="json"><?db-font-size 85%?>
+{
+    "network": {
+        "cidr": "120.1.2.0/24",
+        "id": "29f52c7e-6efd-4335-a14a-db77d32a2555",
+        "label": "amp"
+    }
+}                
+                </programlisting>
+               </step>
+            </procedure>
+            <procedure>
+               <title>To show information for a specified network ID with XML</title>
+               <step>
+                  <para>Issue the following cURL command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
+                            $ curl https://dfw.servers.api.rackspacecloud.com/v2/$account/os-networksv2/29f52c7e-6efd-4335-a14a-db77d32a2555.xml \
+        -X GET \
+        -H "X-Auth-Project-Id: $account" \
+        -H "Accept: application/xml" \
+        -H "Content-Type: application/xml"\
+        -H "X-Auth-Token: $token"</programlisting>
+                  </para>
+                  <para>
+                     <emphasis role="bold">Positional argument:</emphasis>
+                  </para>
+                  <para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>The ID of the network for which you want to show information.</para>
+                        </listitem>
+                    </itemizedlist>
+                  </para>
+                  <para>
+                     <emphasis role="bold">Output:</emphasis>
+                  </para>
+                  <para>The API operation returns the <glossterm>CIDR</glossterm>, network ID, and label, as shown in the
+                    following output:</para>
+
+                  <programlisting language="xml"><?db-font-size 85%?>
+&lt;network&gt;
+    &lt;cidr&gt;120.1.2.0/24&lt;/cidr&gt;
+    &lt;id&gt;29f52c7e-6efd-4335-a14a-db77d32a2555&lt;/id&gt;
+    &lt;label&gt;amp&lt;/label&gt;
+&lt;/network&gt;                    
+                </programlisting>
+               </step>
+            </procedure>
+            <sidebar>
+               <para>
+                  <emphasis role="bold">Next step: </emphasis>
+                  <xref linkend="boot_new_server"/>
+               </para>
+            </sidebar>
+         </section>
+      </section>
    </chapter>
     <chapter version="5.0"
             xml:id="boot_new_server"
@@ -2855,6 +3118,47 @@ $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
         <para>Now that you have a cloud network, you can attach it a new server. Before booting your new server, choose
                 whether to use the neutron API or the nova-network API. For help deciding, see <xref linkend="section_nova_v_neutron"/>. The sections in this chapter provide examples of creating a network using each
                 API.</para>
+        <para>The following flow chart shows the steps for provisioning a server by using the neutron API and by using the
+                nova-network API. These steps are detailed in this guide. </para>
+        <note>
+                <para>Both neutron and nova-network procedures include steps to actually provision a server and to
+                        list servers. These two steps can be done only with the nova-network API. There is no neutron API
+                        equivalent. </para>
+        </note>
+        <figure>
+                <title>Steps to provision a server</title>
+                <mediaobject>
+                        <imageobject>
+                                <imagedata contentwidth="3in" fileref="figures/3/a/figures/bns-both-api.png"/>
+                        </imageobject>
+                </mediaobject>
+        </figure>
+        <para>The sections are also organized by example type. To simplify your path through this chapter, decide whether you
+                prefer neutron-client or nova-client examples, or cURL examples.</para>
+      <!--        <sidebar>
+                <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
+                        <!-\-<listitem>
+                                <para><olink targetdoc="cn-gettingstarted" targetptr="bns_neutron_neutron">“Use
+                                        neutron API and neutron client”</olink></para>
+                        </listitem>-\->
+                        <!-\-<listitem>
+                                <para><olink targetdoc="cn-gettingstarted" targetptr="bns_neutron_curl">“Use neutron
+                                        API and cURL”</olink></para>
+                        </listitem>-\->
+                        <!-\-<listitem>
+                                <para><olink targetdoc="cn-gettingstarted" targetptr="bns_nova_nova">“Use
+                                        nova-network API and nova client”</olink></para>
+                        </listitem>-\->
+                        <!-\-<listitem>
+                                <para><olink targetdoc="cn-gettingstarted" targetptr="bns_nova_curl">“Use
+                                        nova-network API and cURL”</olink></para>
+                        </listitem>-\->
+                </itemizedlist></para>
+        </sidebar>-->
+        <!--<xi:include href="net_bns_neutron_neutron.xml"/>-->
+        <!--<xi:include href="net_bns_neutron_curl.xml"/>-->
+        <!--<xi:include href="net_bns_nova_nova.xml"/>-->
+        <!--<xi:include href="net_bns_nova_curl.xml"/>-->
         <section xmlns:raxm="http://docs.rackspace.com/api/metadata"
                version="5.0"
                xml:id="boot_server_neutron"

@@ -5,7 +5,7 @@
 ]>
 <section xml:id="cfn_neutron_neutron" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0">
-    <title>Use neutron API and neutron client to create and list both networks and subnets</title>
+    <title>Use neutron API and neutron client</title>
     <para>These sections walk you through creating your network and subnet and then listing them by using the neutron
         client. </para>
     <sidebar>
