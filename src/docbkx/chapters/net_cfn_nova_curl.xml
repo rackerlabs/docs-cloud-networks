@@ -5,7 +5,7 @@
 ]>
 <section xml:id="cfn_nova_curl" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0">
-    <title>Use nova-network API and cURL</title>
+    <title>Create network with nova-network API and cURL</title>
     <para>These sections walk you through creating your network and then listing networks and showing network details by
         using cURL.</para>
     <sidebar>
@@ -13,7 +13,7 @@
                 targetptr="nova_create_network_curl">“Create a network with the nova-network API and cURL”</olink></para>
     </sidebar>
     <section xml:id="nova_create_network_curl">
-        <title>Create a network with the nova-network API and the nova client</title>
+        <title>Create a network (nova-network API/cURL)</title>
         <para>To create a network, you specify a name for your network. After you create a network, copy its network ID. You
             use this ID to create a subnet or attach the network to a server or port.</para>
         <para>To create an isolated network, you specify a name for your network and a Classless Inter-Domain Routing
@@ -95,12 +95,12 @@
         </procedure>
         <sidebar>
             <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="nova_list_networks_nova">“List networks with the nova-network API and cURL”</olink></para>
+                    targetptr="nova_list_networks_curl">“List networks (nova-network API/cURL)”</olink></para>
         </sidebar>
     </section>
 
     <section xml:id="nova_list_networks_curl">
-        <title>List networks with the nova-network API and cURL</title>
+        <title>List networks (nova-network API/cURL)</title>
         <para>After you create an isolated network, list networks to make sure it is listed along with the Rackspace
             networks.</para>
         <para>For information about the Rackspace networks, see <olink targetdoc="cn-gettingstarted" targetptr="networks"
@@ -173,12 +173,12 @@
         </procedure>
         <sidebar>
             <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="nova_show_networks_curl">Show network details with the nova-network API and
-                cURL</olink></para>
+                    targetptr="nova_show_networks_curl">Show network details (nova-network API/cURL)L</olink></para>
         </sidebar>
     </section>
+
     <section xml:id="nova_show_networks_curl">
-        <title>Show network details with the nova-network API and cURL</title>
+        <title>Show network details (nova-network API/cURL)</title>
         <para>The following step shows you how to show network details using cURL.</para>
         <para>You can request a JSON or XML response when you issue a request in a cURL command with the nova-network
             API.</para>

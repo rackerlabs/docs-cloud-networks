@@ -20,27 +20,6 @@
             {
                 "endpoints": [
                     {
-                        "publicURL": "https://monitoring.api.rackspacecloud.com/v1.0/010101", 
-                        "tenantId": "010101"
-                    }
-                ], 
-                "name": "cloudMonitoring", 
-                "type": "rax:monitor"
-            }, 
-            {
-                "endpoints": [
-                    {
-                        "publicURL": "https://preprod.dfw.servers.api.rackspacecloud.com/v2/010101", 
-                        "region": "DFW", 
-                        "tenantId": "010101"
-                    }
-                ], 
-                "name": "cloudServersPreprod", 
-                "type": "compute"
-            }, 
-            {
-                "endpoints": [
-                    {
                         "internalURL": "https://snet-storage101.dfw1.clouddrive.com/v1/MossoCloudFS_530f8649-324c-499c-a075-2195854d52a7", 
                         "publicURL": "https://storage101.dfw1.clouddrive.com/v1/MossoCloudFS_530f8649-324c-499c-a075-2195854d52a7", 
                         "region": "DFW", 
@@ -94,33 +73,6 @@
                 ], 
                 "name": "cloudDNS", 
                 "type": "rax:dns"
-            }, 
-            {
-                "endpoints": [
-                    {
-                        "publicURL": "https://ord.databases.api.rackspacecloud.com/v1.0/010101", 
-                        "region": "ORD", 
-                        "tenantId": "010101"
-                    }, 
-                    {
-                        "publicURL": "https://dfw.databases.api.rackspacecloud.com/v1.0/010101", 
-                        "region": "DFW", 
-                        "tenantId": "010101"
-                    }
-                ], 
-                "name": "cloudDatabases", 
-                "type": "rax:database"
-            }, 
-            {
-                "endpoints": [
-                    {
-                        "publicURL": "https://cdn1.clouddrive.com/v1/MossoCloudFS_530f8649-324c-499c-a075-2195854d52a7", 
-                        "region": "DFW", 
-                        "tenantId": "MossoCloudFS_530f8649-324c-499c-a075-2195854d52a7"
-                    }
-                ], 
-                "name": "cloudFilesCDN", 
-                "type": "rax:object-cdn"
             }
         ], 
         "token": {

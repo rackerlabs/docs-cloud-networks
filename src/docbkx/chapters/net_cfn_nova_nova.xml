@@ -5,16 +5,16 @@
 ]>
 <section xml:id="cfn_nova_nova" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0">
-    <title>Use nova-network API and nova client</title>
+    <title>Create network with nova-network API and nova client</title>
     <para>These sections walk you through creating your network and subnet and then listing them and showing network details
         by using the nova-network client. </para>
     <sidebar>
         <para><emphasis role="bold">Start here: </emphasis><olink targetdoc="cn-gettingstarted"
-                targetptr="nova_create_network_nova">“Create a network with the nova-network API and the nova
-            client”</olink></para>
+                targetptr="nova_create_network_nova">“Create a network (nova-network API/nova)”</olink></para>
     </sidebar>
+    
     <section xml:id="nova_create_network_nova">
-        <title>Create a network with the nova-network API and the nova client</title>
+        <title>Create a network (nova-network API/nova)</title>
         <para>To create a network, you specify a name for your network. After you create a network, copy its network ID. You
             use this ID to create a subnet or attach the network to a server or port.</para>
         <para>To create an isolated network, you specify a name for your network and a Classless Inter-Domain Routing
@@ -28,7 +28,7 @@
             <citetitle>Cloud Networks Release Notes</citetitle></link>.</para>
         <para>The following step shows you how to create an isolated network by using the nova client.</para>
         <procedure>
-            <title>To create an isolated network with the nova client</title>
+            <title>To create an isolated network</title>
             <step>
                 <para>Issue the following command:
                     <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
@@ -74,15 +74,16 @@
                 client”</olink></para>
         </sidebar>
     </section>
+    
     <section xml:id="nova_list_networks_nova">
-        <title>List networks with the nova-network API and the nova client</title>
+        <title>List networks (nova-network API/nova)</title>
         <para>After you create an isolated network, list networks to make sure it is listed along with the Rackspace
             networks.</para>
         <para>For information about the Rackspace networks, see <olink targetdoc="cn-gettingstarted" targetptr="networks"
                 >“Limitations of detaching from Rackspace networks”</olink>.</para>
         <para>The following steps shows you how to list networks by using the nova client.</para>
         <procedure>
-            <title>To list networks with the nova client</title>
+            <title>To list networks</title>
             <step>
                 <para>Issue the following nova client command:
                     <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
@@ -111,8 +112,9 @@
                     client</olink></para>
         </sidebar>
     </section>
+    
     <section xml:id="nova_show_networks_nova">
-        <title>Show network details with the nova-network API and the nova client</title>
+        <title>Show network details (nova-network API/nova)</title>
         <para>The following step shows you how to show network details using the nova client.</para>
         <procedure>
             <title>To show information for a specified network ID</title>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section [
+<!ENTITY % common  SYSTEM "../../common/common.ent">
+%common;
+]>
+<section xml:id="bns_listserv_nova" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0">
+    <title>List servers (nova-network API/nova client)</title>
+    <para>After you provision your server, list servers to make sure the server and attached network are listed.</para>
+    <procedure>
+        <title>To list servers with the nova client</title>
+        <step>
+            <para>Issue the following command:</para>
+            <programlisting language="bash" role="gutter: false"><prompt>$</prompt> nova list</programlisting>
+            <para>For each server, the command returns the server ID, name, status, and addresses for any attached networks,
+                as shown in the following output:</para>
+
+            <programlisting language="bash" role="gutter: false"><?db-font-size 60%?>
++--------------------------------------+----------------+--------+---------------------------------------------------------------------------------------+
+| ID                                   | Name           | Status | Networks                                                                              |
++--------------------------------------+----------------+--------+---------------------------------------------------------------------------------------+
+| 9da98125-0de8-4b84-880c-b42977c32773 | myUbuntuServer | ACTIVE | public=2001:4800:780d:0509:d87b:9cbc:ff04:488b, 198.101.231.59; private=10.179.224.74 |
+| fbcebd8c-5b4f-4087-a778-f5a6ffc4530f | ServerAmp      | ACTIVE | public=2001:4800:780e:0510:d87b:9cbc:ff04:3e81, 120.1.2.0; private=10.180.13.75       |
++--------------------------------------+----------------+--------+---------------------------------------------------------------------------------------+</programlisting>
+            <para>The networks include any isolated networks that you have created and Rackspace public and private
+                networks.</para>
+        </step>
+        <step>
+            <para>Servers are listed by server ID, and the addresses for any attached networks are displayed. Copy the server
+                ID for your server in case you need to update or delete your server.</para>
+            <para>Use the public IP address when you log into your server.</para>
+        </step>
+    </procedure>
+    <sidebar>
+        <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+                targetptr="ch_gs_attach_network_to_server">Attach your network to an existing server</olink></para>
+    </sidebar>
+</section>

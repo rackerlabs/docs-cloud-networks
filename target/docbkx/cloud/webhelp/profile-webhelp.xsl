@@ -43,11 +43,13 @@
        apply the chunking version instead of the original
        non-chunking version to format an element.  -->
   <xsl:include href="urn:docbkx:stylesheet-base/xhtml/profile-chunk-code.xsl" />
+  <!--<xsl:include href="/home/dcramer/.m2/repository/net/sf/docbook/docbook-xsl/1.76.1/unzipped/docbook/xhtml/profile-chunk-code.xsl" />-->
 
+  <xsl:param name="branding">not set</xsl:param>
 
   <xsl:param name="builtForOpenStack">
     <xsl:choose>
-      <xsl:when test="$branding = 'rackspace-private-cloud'">1</xsl:when>
+      <xsl:when test="$branding = 'rackspace-private-cloud'">0</xsl:when>
       <xsl:otherwise>0</xsl:otherwise>
     </xsl:choose>
   </xsl:param>
@@ -78,24 +80,37 @@
 	</xsl:when>
       </xsl:choose>
       
-      <xsl:if test="$builtForOpenStack != 0 and not(preceding-sibling::d:legalnotice)">
-        <d:link xlink:href="http://www.openstack.org">
-          <d:informalfigure>
-            <d:mediaobject>
-              <d:imageobject>
-                <d:imagedata fileref="{$webhelp.common.dir}images/built-for-openstack.png"/>
-              </d:imageobject>
-            </d:mediaobject>
-          </d:informalfigure>
-        </d:link>
-      </xsl:if>
+      <xsl:choose>
+        <xsl:when test="$builtForOpenStack != 0 and not(preceding-sibling::d:legalnotice)">
+          <d:link xlink:href="http://www.openstack.org">
+            <d:informalfigure>
+              <d:mediaobject>
+                <d:imageobject>
+                  <d:imagedata fileref="{$webhelp.common.dir}images/built-for-openstack.png"/>
+                </d:imageobject>
+              </d:mediaobject>
+            </d:informalfigure>
+          </d:link>
+        </xsl:when>
+        <xsl:when test="$branding = 'rackspace-private-cloud' and not(preceding-sibling::d:legalnotice)">
+          <d:link xlink:href="http://www.openstack.org">
+            <d:informalfigure>
+              <d:mediaobject>
+                <d:imageobject>
+                  <d:imagedata fileref="{$webhelp.common.dir}images/powered-by-openstack.png"/>
+                </d:imageobject>
+              </d:mediaobject>
+            </d:informalfigure>
+          </d:link>
+        </xsl:when>
+      </xsl:choose>
       
     </d:legalnotice>	  
 
   </xsl:template>
 
   <!--
-      The abstract is supressed if the rs-api legal notice is used, as
+      The abstract is suppressed if the rs-api legal notice is used, as
       it's incorporated into the document in this case.
   -->
   <xsl:template match="d:abstract" mode="preprocess">

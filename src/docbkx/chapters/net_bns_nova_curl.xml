@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section [
+<!ENTITY % common  SYSTEM "../../common/common.ent">
+%common;
+]>
+<section xml:id="bns_nova_curl" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0">
+    <title>Boot server with nova-network API and cURL</title>
+    <para>These examples walk you through the steps to boot a new server, attaching the network directly to the server, and
+        to list your servers by using the nova-network API.</para>
+    <sidebar>
+        <para><emphasis role="bold">Start here: </emphasis><olink targetdoc="cn-gettingstarted"
+            targetptr="nova_create_server_curl">“Provision a server with an isolated network (nova-network API/cURL)”</olink></para>
+    </sidebar>
+    
+    <!--Writer:  Keep this sections in sync with xml:id="neutron_create_server_curl". Content is basically same but command, 
+        heading, and links are different-->
+    <section xml:id="nova_create_server_curl">
+        <title>Provision a server with an isolated network (nova-network API/cURL)</title>
+        <para>To create your new server and attach an isolated network, you need the following information: </para>
+
+        <itemizedlist>
+            <listitem>
+                <para>The name of the new server. Use a name of your choice.</para>
+            </listitem>
+            <listitem>
+                <para>The image ID. For how to list images, see
+                    <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-gettingstarted/content/list_images.html">
+                    List Images</link>.</para>
+            </listitem>
+            <listitem>
+                <para>The flavor ID. For how to list flavors, see
+                    <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-gettingstarted/content/list_flavors.html">
+                    List Flavors</link>.</para>
+            </listitem>
+            <listitem>
+                <para>The network ID of your isolated network. This is the ID you copied in <olink
+                        targetdoc="cn-gettingstarted" targetptr="nova_create_network_nova">“Create a network with the
+                        nova-network API and the nova client”</olink></para>
+            </listitem>
+        </itemizedlist>
+
+        <para>You specify these values as parameters in a nova command or as attributes in the request body in a cURL
+            command.</para>
+        <note security="external">
+            <para xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML"
+                xmlns:html="http://www.w3.org/1999/xhtml">You cannot attach an isolated network to an existing server.
+                However, to work around this limitation, you can create an image of the server and build a new server based
+                on that image. When you build the new server, you can attach the isolated network. For information, see
+                <link xlink:href="http://www.rackspace.com/knowledge_center/article/attach-an-existing-cloud-server-to-a-cloud-network">
+                <citetitle>Attach a Cloud Network to an Existing Cloud Server</citetitle></link>.
+                To use the create image API, see
+                <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/Create_Image-d1e4655.html">
+                Create Image</link>.</para>
+        </note>
+        <note>
+            <para xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML"
+                xmlns:html="http://www.w3.org/1999/xhtml">You can use the &virt_ext; to attach an isolated network to an
+                existing server. For information, see <olink targetdoc="cn-gettingstarted"
+                    targetptr="ch_gs_attach_network_to_server">Attach Your Network to an Existing Server</olink>.</para>
+        </note>
+        <para>The following procedures show you how to create an isolated network by using cURL.</para>
+
+        <procedure>
+            <title>To provision a server and attach an isolated network with JSON</title>
+            <step>
+                <para>Issue the following cURL
+                    command:<programlisting language="bash" role="gutter: false"><?db-font-size 55%?>
+                            <prompt>$</prompt> curl https://dfw.servers.api.rackspacecloud.com/v2/$account/servers \
+         -X POST \
+         -H "X-Auth-Project-Id: $account" \
+         -H "Content-Type: application/json" \
+         -H "Accept: application/json" \
+         -H "X-Auth-Token: $token" \
+         -d '{"server": {"name": "ServerAmp", "imageRef": "82e72de5-6366-4217-8c87-a570a9b17e73", "flavorRef": "1", "max_count": 1, "min_count": 1, "networks": [{"uuid": "29f52c7e-6efd-4335-a14a-db77d32a2555"}, {"uuid": "00000000-0000-0000-0000-000000000000"}, {"uuid": "11111111-1111-1111-1111-111111111111"}]}}' \
+         | python -m json.tool</programlisting></para>
+                <para>In addition to the isolated network, PublicNet and ServiceNet are attached to the server. You must
+                    explicitly specify these networks to attach them to your server.</para>
+                <para><emphasis role="bold">Output:</emphasis> The API operation returns information about the new server, as
+                    shown in the following output:</para>
+                <programlisting language="json"><?db-font-size 85%?>
+{
+    "server": {
+        "OS-DCF:diskConfig": "AUTO", 
+        "adminPass": "K3kviaHwhKqS", 
+        "id": "fbcebd8c-5b4f-4087-a778-f5a6ffc4530f", 
+        "links": [
+            {
+                "href": "https://dfw.servers.api.rackspacecloud.com/v2/53501b3c25d34f8ea293c03298caed60/servers/fbcebd8c-5b4f-4087-a778-f5a6ffc4530f", 
+                "rel": "self"
+            }, 
+            {
+                "href": "https://dfw.servers.api.rackspacecloud.com/53501b3c25d34f8ea293c03298caed60/servers/fbcebd8c-5b4f-4087-a778-f5a6ffc4530f", 
+                "rel": "bookmark"
+            }
+        ]
+    }
+}                    
+                </programlisting>
+            </step>
+        </procedure>
+        <procedure>
+            <title>To provision a server and attach an isolated network with XML</title>
+            <step>
+                <para>Issue the following cURL
+                    command:<programlisting language="bash" role="gutter: false"><?db-font-size 55%?>
+                            <prompt>$</prompt> curl -i https://dfw.servers.api.rackspacecloud.com/v2/$account/servers.xml \
+        -X POST \
+        -H "X-Auth-Project-Id: $account" \
+        -H "Content-Type: application/xml" \
+        -H "Accept: application/xml" \
+        -H "X-Auth-Token: $token" \
+        -d '&lt;?xml version="1.0" encoding="UTF-8"?>&lt;server xmlns="http://docs.openstack.org/compute/api/v1.1" imageRef="82e72de5-6366-4217-8c87-a570a9b17e73" flavorRef="1" name="ServerAmp">&lt;metadata>&lt;meta key="My Server Name">API Test Server XML&lt;/meta>&lt;/metadata>&lt;networks>&lt;uuid>29f52c7e-6efd-4335-a14a-db77d32a2555&lt;/uuid>&lt;uuid>00000000-0000-0000-0000-000000000000&lt;/uuid>&lt;uuid>11111111-1111-1111-1111-111111111111&lt;/uuid>&lt;/networks>&lt;/server>'</programlisting></para>
+                <para>In addition to the isolated network, PublicNet and ServiceNet are attached to the server. You must
+                    explicitly specify these networks to attach them to your server.</para>
+                <para><emphasis role="bold">Output:</emphasis> The API operation returns information about the new server, as
+                    shown in the following output:</para>
+                <programlisting language="xml"><?db-font-size 85%?>
+&lt;?xml version='1.0' encoding='UTF-8'?>
+&lt;server
+    xmlns:OS-DCF="http://docs.openstack.org/compute/ext/disk_config/api/v1.1"
+    xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns="http://docs.openstack.org/compute/api/v1.1"
+    id="fbcebd8c-5b4f-4087-a778-f5a6ffc4530f" adminPass="K3kviaHwhKqS"
+    OS-DCF:diskConfig="AUTO">
+    &lt;metadata/>
+    &lt;atom:link
+        href="https://dfw.servers.api.rackspacecloud.com/v2/53501b3c25d34f8ea293c03298caed60/servers/fbcebd8c-5b4f-4087-a778-f5a6ffc4530f"
+        rel="self"/>
+    &lt;atom:link
+        href="https://dfw.servers.api.rackspacecloud.com/53501b3c25d34f8ea293c03298caed60/servers/fbcebd8c-5b4f-4087-a778-f5a6ffc4530f"
+        rel="bookmark"/>
+&lt;/server>
+                </programlisting>
+            </step>
+        </procedure>
+        <sidebar>
+            <para><emphasis role="bold">Next step:</emphasis>
+                <olink targetdoc="cn-gettingstarted" targetptr="bns_listserv_curl">“List servers and attached networks
+                    (nova-network API/cURL)”</olink></para>
+        </sidebar>
+    </section>
+
+    <!--The following section to list servers is same for neutron/neutron and nova-network-nova so it is included-->
+    <xi:include href="net_bns_listserv_curl.xml"/>
+</section>

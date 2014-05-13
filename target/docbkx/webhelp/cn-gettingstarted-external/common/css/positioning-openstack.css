@@ -217,7 +217,7 @@ h2 { font: normal 12pt Arial, Helvetica, geneva;
     font-size: 10pt
 }
 
-.title, div.toc>p{
+.term, .title, div.toc>p{
 	font-weight: bold;
 	}
 	
@@ -267,6 +267,11 @@ a.navLinkPrevious {
 a.navLinkNext {
 	padding-right: 12px;
 	background: url(../images/next-arrow.png) no-repeat right center;
+}
+
+a.gloss, a.gloss:hover, a.gloss:link, a.gloss:visited{
+    border: thin dotted green !important;
+    background-color: #FFFFEE !important;
 }
 
 a#showHideButton {

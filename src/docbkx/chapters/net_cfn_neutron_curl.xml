@@ -5,20 +5,20 @@
 ]>
 <section xml:id="cfn_neutron_curl" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0">
-    <title>Use neutron API and cURL</title>
+    <title>Create network with neutron API and cURL</title>
     <para>These sections walk you through creating your network and subnet and then listing them by using cURL.</para>
     <sidebar>
         <para><emphasis role="bold">Start here: </emphasis><olink targetdoc="cn-gettingstarted"
-                targetptr="neutron_create_network_curl">“Create a network with the neutron API and cURL”</olink></para>
+                targetptr="neutron_create_network_curl">“Create a network (neutron API/cURL)”</olink></para>
     </sidebar>
 
     <section xml:id="neutron_create_network_curl">
-        <title>Create a network with the neutron API and cURL</title>
+        <title>Create a network (neutron API/cURL)</title>
         <para>After you create a network, copy its network ID. You use this ID to create a subnet or attach the network to a
             server.</para>
         <para>The neutron API allows only JSON formatting.</para>
         <procedure>
-            <title>To create a network with the neutron API and cURL</title>
+            <title>To create a network</title>
             <step>
                 <para>Issue the following cURL command:
                     <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
@@ -61,16 +61,16 @@
         </procedure>
         <sidebar>
             <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_create_subnet_curl">“Create a subnet with the neutron API and cURL”</olink></para>
+                    targetptr="neutron_create_subnet_curl">“Create a subnet (neutron API/cURL)”</olink></para>
         </sidebar>
     </section>
 
     <section xml:id="neutron_create_subnet_curl">
-        <title>Create a subnet with the neutron API and cURL</title>
+        <title>Create a subnet (neutron API/cURL)</title>
         <para>To create a subnet, you specify a network, an IP address, and a name for your subnet. After you create a
             subnet, copy its subnet ID for future reference.</para>
         <procedure>
-            <title>To create a subnet with the neutron API and cURL</title>
+            <title>To create a subnet</title>
             <step>
                 <para>Issue the following cURL command:
                     <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
@@ -120,15 +120,15 @@
         </procedure>
         <sidebar>
             <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_list_networks_curl">“List networks with the neutron API and cURL”</olink></para>
+                    targetptr="neutron_list_networks_curl">“List networks (neutron API/cURL)”</olink></para>
         </sidebar>
     </section>
 
     <section xml:id="neutron_list_networks_curl">
-        <title>List networks with the neutron API and cURL</title>
+        <title>List networks (neutron API/cURL)</title>
         <para>The following step shows you how to list networks using cURL.</para>
         <procedure>
-            <title>To list networks with the neutron API and cURL</title>
+            <title>To list networks</title>
             <step>
                 <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
                         <prompt>$</prompt> curl https://dfw.servers.api.rackspacecloud.com/v2.0/$account/subnets \
@@ -162,14 +162,14 @@
         </procedure>
         <sidebar>
             <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_list_subnets_curl">List subnets with the neutron API and cURL</olink></para>
+                    targetptr="neutron_list_subnets_curl">List subnets (neutron API/cURL)</olink></para>
         </sidebar>
     </section>
 
     <section xml:id="neutron_list_subnets_curl">
-        <title>List subnets with the neutron API and cURL</title>
+        <title>List subnets (neutron API/cURL)</title>
         <procedure>
-            <title>To list subnets with the neutron API and cURL</title>
+            <title>To list subnets</title>
             <step>
                 <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
                         <prompt>$</prompt> curl https://dfw.servers.api.rackspacecloud.com/v2.0/$account/subnets \

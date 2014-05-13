@@ -185,11 +185,11 @@
                         <title>Authenticate: JSON response</title>
                         <programlistingco>
                             <areaspec>
-                                <area xml:id="credentials.xml.endpoints" units="linecolumn" coords="37 32"/>
-                                <area xml:id="credentials.xml.tenant" units="linecolumn" coords="41 47"/>
-                                <area xml:id="credentials.xml.name" units="linecolumn" coords="55 50"/>
-                                <area xml:id="credentials.xml.expires" units="linecolumn" coords="61 57"/>
-                                <area xml:id="credentials.xml.token" units="linecolumn" coords="62 59"/>
+                                <area xml:id="credentials.xml.endpoints" units="linecolumn" coords="46 32"/>
+                                <area xml:id="credentials.xml.tenant" units="linecolumn" coords="50 47"/>
+                                <area xml:id="credentials.xml.name" units="linecolumn" coords="64 50"/>
+                                <area xml:id="credentials.xml.expires" units="linecolumn" coords="79 57"/>
+                                <area xml:id="credentials.xml.token" units="linecolumn" coords="80 59"/>
 
                             </areaspec>
                             <programlisting language="json"><?db-font-size 55%?><xi:include href="../../common/samples/authv2.json" parse="text"/></programlisting>

@@ -31,7 +31,7 @@
         </copyright>
         <releaseinfo>Cloud Networks API v2</releaseinfo>
         <productname>Cloud Networks™</productname>
-        <pubdate>2014-05-06</pubdate>
+        <pubdate>2014-05-09</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <para>
@@ -1505,11 +1505,11 @@
                             <areaspec>
                                 <area xml:id="credentials.xml.endpoints"
                                     units="linecolumn"
-                                    coords="37 32"/>
-                                <area xml:id="credentials.xml.tenant" units="linecolumn" coords="41 47"/>
-                                <area xml:id="credentials.xml.name" units="linecolumn" coords="55 50"/>
-                                <area xml:id="credentials.xml.expires" units="linecolumn" coords="61 57"/>
-                                <area xml:id="credentials.xml.token" units="linecolumn" coords="62 59"/>
+                                    coords="46 32"/>
+                                <area xml:id="credentials.xml.tenant" units="linecolumn" coords="50 47"/>
+                                <area xml:id="credentials.xml.name" units="linecolumn" coords="64 50"/>
+                                <area xml:id="credentials.xml.expires" units="linecolumn" coords="79 57"/>
+                                <area xml:id="credentials.xml.token" units="linecolumn" coords="80 59"/>
 
                             </areaspec>
                             <programlisting language="json"><?db-font-size 55%?>{
@@ -1530,27 +1530,6 @@
                 ], 
                 "name": "cloudLoadBalancers", 
                 "type": "rax:load-balancer"
-            }, 
-            {
-                "endpoints": [
-                    {
-                        "publicURL": "https://monitoring.api.rackspacecloud.com/v1.0/010101", 
-                        "tenantId": "010101"
-                    }
-                ], 
-                "name": "cloudMonitoring", 
-                "type": "rax:monitor"
-            }, 
-            {
-                "endpoints": [
-                    {
-                        "publicURL": "https://preprod.dfw.servers.api.rackspacecloud.com/v2/010101", 
-                        "region": "DFW", 
-                        "tenantId": "010101"
-                    }
-                ], 
-                "name": "cloudServersPreprod", 
-                "type": "compute"
             }, 
             {
                 "endpoints": [
@@ -1608,33 +1587,6 @@
                 ], 
                 "name": "cloudDNS", 
                 "type": "rax:dns"
-            }, 
-            {
-                "endpoints": [
-                    {
-                        "publicURL": "https://ord.databases.api.rackspacecloud.com/v1.0/010101", 
-                        "region": "ORD", 
-                        "tenantId": "010101"
-                    }, 
-                    {
-                        "publicURL": "https://dfw.databases.api.rackspacecloud.com/v1.0/010101", 
-                        "region": "DFW", 
-                        "tenantId": "010101"
-                    }
-                ], 
-                "name": "cloudDatabases", 
-                "type": "rax:database"
-            }, 
-            {
-                "endpoints": [
-                    {
-                        "publicURL": "https://cdn1.clouddrive.com/v1/MossoCloudFS_530f8649-324c-499c-a075-2195854d52a7", 
-                        "region": "DFW", 
-                        "tenantId": "MossoCloudFS_530f8649-324c-499c-a075-2195854d52a7"
-                    }
-                ], 
-                "name": "cloudFilesCDN", 
-                "type": "rax:object-cdn"
             }
         ], 
         "token": {

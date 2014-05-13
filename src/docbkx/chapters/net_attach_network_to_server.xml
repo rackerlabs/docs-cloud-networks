@@ -34,4 +34,6 @@
         server using each API.</para>
     <xi:include href="net_ans_neutron.xml"/>
     <xi:include href="net_ans_nova.xml"/>
+    <!-- Cat:  keep in mind.  there is a cross link to targetdoc="cn-gettingstarted"
+                    targetptr="ch_gs_attach_network_to_server" in bns_nova_nova (and maybe others).  if you change xml_id, fix links-->
 </chapter>
