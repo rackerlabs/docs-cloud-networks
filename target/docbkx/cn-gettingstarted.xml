@@ -30,7 +30,7 @@
         </copyright>
         <releaseinfo>OpenStack Networking API v2</releaseinfo>
         <productname>Cloud Networks™</productname>
-        <pubdate>2014-05-09</pubdate>
+        <pubdate>2014-05-14</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <para>
@@ -3239,7 +3239,8 @@ $ neutron port-list </programlisting>
         heading, and links are different-->
          <section xml:id="neutron_create_server_nova">
             <title>Provision a server with a port and an isolated network (nova-network API/nova)</title>
-            <para>To create your new server and attach a port with an isolated network, you need the following information:</para>
+            <para>To create your new server and attach a port with an isolated network, you need the following
+            information:</para>
 
             <itemizedlist>
                <listitem>
@@ -3385,12 +3386,29 @@ $ nova boot ServerAmp --image 82e72de5-6366-4217-8c87-a570a9b17e73 --nic port-id
 
          <!--The following section to list servers is same for neutron/neutron and nova-network-nova so it is linked-->
          <!--<xi:include href="net_bns_listserv_nova.xml"/>-->
-    
+
          <section xml:id="fakesectionclient">
-            <title>fake section client</title>  
-            <para>
-               <xref linkend="bns_listserv_nova"/>
-            </para>
+            <title>fake section client</title>
+            <!--<para><olink targetdoc="cn-gettingstarted" targetptr="bns_listserv_nova">“List servers (nova-network API/nova
+                client)”</olink></para>-->
+
+        
+                <para>missing content here</para>
+            
+
+            <!--        <xi:include href="net_bns_listserv_nova.xml" xpointer="bns_listserv_nova" xmlns:xi="http://www.w3.org/2001/XInclude">
+            <xi:fallback>
+                <para>missing content there</para>
+            </xi:fallback>
+        </xi:include>-->
+
+            <!--<xi:include href="net_bns_listserv_nova.xml" xpointer="(xml:id='bns_listserv_nova')" xmlns:xi="http://www.w3.org/2001/XInclude">
+            <xi:fallback>
+                <para>missing content</para>
+            </xi:fallback>
+        </xi:include>-->
+
+            <para/>
          </section>
 
       </section>
