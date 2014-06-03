@@ -1,9 +1,0 @@
-fil = new Array();
-fil["0"]= "apiupdates_1030.html@@@API v2 Updates, October 30, 2012 - Cloud Networks™ Release Notes  - OpenStack Quantum API v2@@@null";
-fil["1"]= "apiupdates_1107.html@@@API v2 Updates, May 13, 2013 - Cloud Networks™ Release Notes  - OpenStack Quantum API v2@@@null";
-fil["2"]= "auth_updates.html@@@API v2 Updates, August 15, 2012 - Cloud Networks™ Release Notes  - OpenStack Quantum API v2@@@null";
-fil["3"]= "ch_preface.html@@@Preface - Cloud Networks™ Release Notes  - OpenStack Quantum API v2@@@null";
-fil["4"]= "changes1019.html@@@API v2 Updates, October 19, 2012 - Cloud Networks™ Release Notes  - OpenStack Quantum API v2@@@null";
-fil["5"]= "cn-v2.html@@@API v2, July 11, 2012 - Cloud Networks™ Release Notes  - OpenStack Quantum API v2@@@null";
-fil["6"]= "nova-boot.html@@@API v2 Updates, September 20, 2012 - Cloud Networks™ Release Notes  - OpenStack Quantum API v2@@@null";
-fil["7"]= "rax-networks_updates.html@@@API v2 Updates, September 18, 2012 - Cloud Networks™ Release Notes  - OpenStack Quantum API v2@@@null";
