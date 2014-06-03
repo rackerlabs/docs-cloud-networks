@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <products xmlns:xlink="http://www.w3.org/1999/xlink">
    <latestpdf>cn-devguide-latest.pdf</latestpdf>
-   <pdfoutname>cn-devguide-20140514.pdf</pdfoutname>
+   <pdfoutname>cn-devguide-20140530.pdf</pdfoutname>
    <docname>Cloud Networks™ Developer Guide</docname>
    <productname>Cloud Networks</productname>
    <webappname>cn-devguide</webappname>

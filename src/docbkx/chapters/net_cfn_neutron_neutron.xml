@@ -7,7 +7,7 @@
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0">
     <title>Create network with neutron API and neutron client</title>
     <para>These sections walk you through creating your network and subnet and then listing them by using the neutron
-        client. </para>
+        client.</para>
     <sidebar>
         <para><emphasis role="bold">Start here: </emphasis><olink targetdoc="cn-gettingstarted"
             targetptr="neutron_create_network_neutron">“Create a network (neutron API/neutron)”</olink></para>

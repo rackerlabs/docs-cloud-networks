@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section [
+        <!-- Some useful entities borrowed from HTML -->
+        <!ENTITY ndash  "&#x2013;">
+        <!ENTITY mdash  "&#x2014;">
+        <!ENTITY hellip "&#x2026;">
+        
+        <!-- Useful for describing APIs -->
+        <!ENTITY GET    '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
+        <!ENTITY PUT    '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
+        <!ENTITY POST   '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
+        <!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
+]>
+<section xml:id="dn_neutron_neutron" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0">
+    <title>Neutron: Delete your network</title>
+    <para>These sections walk you through deleting your subnet and network.</para>
+    <sidebar>
+        <para><emphasis role="bold">Start here: </emphasis><olink targetdoc="cn-gettingstarted"
+            targetptr="neutron_delete_subnet_neutron">“Delete a subnet (neutron API/neutron)”</olink></para>
+    </sidebar>
+    <section xml:id="neutron_delete_subnet_neutron">
+        <title>Delete a subnet (neutron API/neutron)</title>
+        <para>To delete a subnet, specify the subnet ID.</para>
+        <procedure>
+            <title>To delete a specified subnet</title>
+            <step>
+                <title>Delete the subnet</title>
+                <para>Issue the following neutron client command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                        <prompt>$</prompt> neutron subnet-delete &lt;id&gt;</programlisting></para>
+                <para><emphasis role="bold">Positional argument:</emphasis></para>
+                <para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>The subnet ID of the subnet that you want to delete. To determine the subnet ID, issue a
+                                <command>neutron</command>
+                                <option>subnet-list</option> command.</para>
+                        </listitem>
+                    </itemizedlist>
+                </para>
+                <para><emphasis role="bold">Output:</emphasis> None.</para>
+            </step>
+        </procedure>
+        <sidebar>
+            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+                targetptr="neutron_delete_network_neutron">“Delete a network (neutron API/neutron)”</olink></para>
+        </sidebar>
+    </section>
+    <section xml:id="neutron_delete_network_neutron">
+        <title>Delete a network (neutron API/neutron)</title>
+        <para>To delete a network, specify the network ID.</para>
+        <procedure>
+            <title>To delete a specified network</title>
+            <step>
+                <title>Delete the network</title>
+                <para>Issue the following neutron client command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                        <prompt>$</prompt> neutron net-delete &lt;id&gt;</programlisting></para>
+                <para><emphasis role="bold">Positional argument:</emphasis></para>
+                <para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>The network ID of the network that you want to delete. To determine the network ID, issue a
+                                <command>neutron</command>
+                                <option>net-list</option> command.</para>
+                        </listitem>
+                    </itemizedlist>
+                </para>
+                <para><emphasis role="bold">Output:</emphasis> None.</para>
+            </step>
+        </procedure>
+    </section>
+</section>

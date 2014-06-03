@@ -13,7 +13,7 @@
 ]>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0"
-    xml:id="delete_network_neutron">
+    xml:id="delete_network_neutron2">
     <title>Neutron: Delete your network or subnet</title>
     <para>If you no longer need your network, or subnet, you can delete it. </para>
     <para>To delete a network, specify the network ID. To delete a subnet, specify the subnet ID.</para>
@@ -29,7 +29,7 @@
                 </listitem>
             </itemizedlist></para>
     </sidebar>
-    <section xml:id="neutron_delete_network_neutron">
+    <section xml:id="neutron_delete_network_neutron2">
         <title>Delete a network or subnet with the neutron client</title>
         <procedure>
             <title>To delete a specified network</title>
@@ -73,7 +73,7 @@
         </procedure>
     </section>
     <?hard-pagebreak?>
-    <section xml:id="curl_delete_network_neutron">
+    <section xml:id="curl_delete_network_neutron2">
         <title>Delete a network or subnet with cURL</title>
         <procedure>
             <title>To delete a specified network</title>

@@ -26,6 +26,42 @@
                 nova-network API. For help deciding, see <olink targetdoc="cn-gettingstarted"
                         targetptr="section_nova_v_neutron">“Networking: nova-network versus neutron”</olink>. The sections in
                 this chapter provide examples of deleting a network using each API.</para>
-        <xi:include href="net_dn_neutron.xml"/>
+        <para>The following flow chart shows the steps for deleting a network by using the neutron API and by using the
+                nova-network API. These steps are detailed in this guide.<figure>
+                        <title>Steps to create a network</title>
+                        <mediaobject>
+                                <imageobject>
+                                        <imagedata fileref="../figures/dn-both-api.png" contentwidth="3in"/>
+                                </imageobject>
+                        </mediaobject>
+                </figure>
+        </para>
+        <para>The sections are also organized by example type. To simplify your path through this chapter, decide whether you
+                prefer neutron-client or nova-client examples, or cURL examples.</para>
+        <sidebar>
+                <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
+                        <listitem>
+                                <para><olink targetdoc="cn-gettingstarted" targetptr="dn_neutron_neutron">“Use
+                                        neutron API and neutron client”</olink></para>
+                        </listitem>
+                        <!--<listitem>
+                                <para><olink targetdoc="cn-gettingstarted" targetptr="dn_neutron_curl">“Use neutron
+                                        API and cURL”</olink></para>
+                        </listitem>-->
+                        <!--<listitem>
+                                <para><olink targetdoc="cn-gettingstarted" targetptr="dn_nova_nova">“Use
+                                        nova-network API and nova client”</olink></para>
+                        </listitem>-->
+                        <!--<listitem>
+                                <para><olink targetdoc="cn-gettingstarted" targetptr="dn_nova_curl">“Use
+                                        nova-network API and cURL”</olink></para>
+                        </listitem>-->
+                </itemizedlist></para>
+        </sidebar>
+        <!--<xi:include href="net_dn_neutron.xml"/>-->
         <xi:include href="net_dn_nova.xml"/>
+        <xi:include href="net_dn_neutron_neutron.xml"/> 
+        <!--<xi:include href="net_dn_neutron_curl.xml"/>-->
+        <!--<xi:include href="net_dn_nova_nova.xml"/>-->
+        <!--<xi:include href="net_dn_nova_curl.xml"/>-->
 </chapter>
