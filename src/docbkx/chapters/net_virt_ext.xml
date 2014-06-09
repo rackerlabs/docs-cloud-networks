@@ -43,15 +43,15 @@
     <!--- this section comes from these WADLs: networksnova.wadl -->
     <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
         <!-- list virtual interfaces -->
-        <wadl:resource href="../../../wadl/networksnova.wadl#interfaces">
+        <wadl:resource href="../../wadl/networksnova.wadl#interfaces">
             <wadl:method href="listInterfaces"/>
         </wadl:resource>
         <!-- create virtual interface -->
-        <wadl:resource href="../../../wadl/networksnova.wadl#interfaces">
+        <wadl:resource href="../../wadl/networksnova.wadl#interfaces">
             <wadl:method href="createInterface"/>
         </wadl:resource>
         <!-- delete virtual interface -->
-        <wadl:resource href="../../../wadl/networksnova.wadl#interfaceID">
+        <wadl:resource href="../../wadl/networksnova.wadl#interfaceID">
             <wadl:method href="deleteInterface"/>
         </wadl:resource>
     </wadl:resources>

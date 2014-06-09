@@ -263,7 +263,7 @@
 
         <xi:include href="net_bns_listserv_nova.xml"
             xpointer="xmlns(db=http://docbook.org/ns/docbook)
-            xpath(//*[@xml:id = 'bns_listserv_nova']/*[not(self::db::title)])">
+            xpath(//*[@xml:id = 'bns_listserv_nova']/*[not(self::db:title)])">
             <xi:fallback>
                 <para>missing content here</para>
             </xi:fallback>
