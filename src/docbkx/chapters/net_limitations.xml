@@ -25,7 +25,7 @@
     <para>The following graphic depicts the services that are available only when you attach the Rackspace networks to your
         server: <mediaobject>
             <imageobject>
-                <imagedata fileref="../../figures/cloud-networks-infographic-revised4.png" contentwidth="3in"/>
+                <imagedata fileref="../figures/cloud-networks-infographic-revised4.png" contentwidth="3in"/>
             </imageobject>
         </mediaobject></para>
     <para>To opt out of attaching the Rackspace networks to your server, perform the following action depending on how you
