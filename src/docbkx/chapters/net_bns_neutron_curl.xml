@@ -219,8 +219,8 @@
         </note>
         <note>
             <para>You can use the &virt_ext; to attach an isolated network to an existing server. For information, see <olink
-                    targetdoc="cn-gettingstarted" targetptr="ch_gs_attach_network_to_server">Attach Your Network to an
-                    Existing Server</olink>.</para>
+                    targetdoc="cn-gettingstarted" targetptr="attach_net">Attach Your Network to an Existing
+                Server</olink>.</para>
         </note>
         <procedure>
             <title>To provision a server and attach a port with a network by using JSON</title>

@@ -173,7 +173,7 @@
         </procedure>
         <sidebar>
             <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="nova_show_networks_curl">Show network details (nova-network API/cURL)L</olink></para>
+                    targetptr="nova_show_networks_curl">Show network details (nova-network API/cURL)</olink></para>
         </sidebar>
     </section>
 

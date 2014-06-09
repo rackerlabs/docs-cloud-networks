@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section [
+        <!-- Some useful entities borrowed from HTML -->
+        <!ENTITY ndash  "&#x2013;">
+        <!ENTITY mdash  "&#x2014;">
+        <!ENTITY hellip "&#x2026;">
+        
+        <!-- Useful for describing APIs -->
+        <!ENTITY GET    '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
+        <!ENTITY PUT    '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
+        <!ENTITY POST   '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
+        <!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
+]>
+<section xml:id="dn_nova_nova" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0">
+    <title>Delete your network with nova-network API and nova client</title>
+    <para>If you no longer need your network, you can delete it. </para>
+    <para>You cannot delete an isolated network unless the network is not attached to any server.</para>
+    <para>To detach a network from a server, you must delete the virtual interface for the network from the server. Then, you
+        can delete the network.</para>
+    <para>After the network is deleted, it no longer appears in the list of networks.</para>
+    <sidebar>
+        <para><emphasis role="bold">Start here: </emphasis><itemizedlist>
+                <listitem>
+                    <para><olink targetdoc="cn-gettingstarted" targetptr="nova_delete_network_nova">“Delete network (virtual
+                            interface) (nova-network API/nova)”</olink></para>
+                </listitem>
+            </itemizedlist></para>
+    </sidebar>
+    <section xml:id="nova_delete_network_nova">
+        <title>Delete network (virtual interface) (nova-network API/nova)</title>
+        <procedure>
+            <title>To delete a specified network</title>
+            <step>
+                <title>Delete the virtual interface for the network from the server</title>
+                <para>To detach a network from a server, first delete the virtual interface for the network from the server.
+                </para>
+            </step>
+            <step>
+                <title>Delete the network</title>
+                <para>Issue the following nova client command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                        <prompt>$</prompt> nova network-delete 29f52c7e-6efd-4335-a14a-db77d32a2555</programlisting></para>
+                <para><emphasis role="bold">Positional argument:</emphasis></para>
+                <para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>The network ID of the network that you want to delete. In this example, the network ID is
+                                    <literal>29f52c7e-6efd-4335-a14a-db77d32a2555</literal>. To determine the network ID,
+                                issue a <command>nova</command>
+                                <option>network-list</option> command.</para>
+                        </listitem>
+                    </itemizedlist>
+                </para>
+                <para><emphasis role="bold">Output:</emphasis>
+                </para>
+                <para>Successful deletion returns an <errortext>Accepted</errortext> (<returnvalue>202</returnvalue>)
+                    response code:</para>
+            </step>
+        </procedure>
+    </section>
+</section>

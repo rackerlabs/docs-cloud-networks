@@ -10,8 +10,8 @@
                 sections in this chapter provide examples of creating a network depending on which API you choose. For help
                 deciding, see <olink targetdoc="cn-gettingstarted" targetptr="section_nova_v_neutron">“Networking:
                         nova-network versus neutron”</olink>.</para>
-        <para>The following flow chart shows the steps for creating a network by using the neutron API and by using the
-                nova-network API. These steps are detailed in this guide.<figure>
+        <para>The following flow chart shows the steps for creating a network by using the neutron API and the nova-network
+                API. These steps are detailed in this guide.<figure>
                         <title>Steps to create a network</title>
                         <mediaobject>
                                 <imageobject>

@@ -10,9 +10,10 @@
         to list your servers by using the nova-network API.</para>
     <sidebar>
         <para><emphasis role="bold">Start here: </emphasis><olink targetdoc="cn-gettingstarted"
-            targetptr="nova_create_server_curl">“Provision a server with an isolated network (nova-network API/cURL)”</olink></para>
+                targetptr="nova_create_server_curl">“Provision a server with an isolated network (nova-network
+                API/cURL)”</olink></para>
     </sidebar>
-    
+
     <!--Writer:  Keep this sections in sync with xml:id="neutron_create_server_curl". Content is basically same but command, 
         heading, and links are different-->
     <section xml:id="nova_create_server_curl">
@@ -56,8 +57,8 @@
         <note>
             <para xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML"
                 xmlns:html="http://www.w3.org/1999/xhtml">You can use the &virt_ext; to attach an isolated network to an
-                existing server. For information, see <olink targetdoc="cn-gettingstarted"
-                    targetptr="ch_gs_attach_network_to_server">Attach Your Network to an Existing Server</olink>.</para>
+                existing server. For information, see <olink targetdoc="cn-gettingstarted" targetptr="attach_net">Attach Your
+                    Network to an Existing Server</olink>.</para>
         </note>
         <para>The following procedures show you how to create an isolated network by using cURL.</para>
 

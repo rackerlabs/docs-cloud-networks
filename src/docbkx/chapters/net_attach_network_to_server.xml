@@ -1,39 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE chapter [
-        <!-- Some useful entities borrowed from HTML -->
-        <!ENTITY ndash  "&#x2013;">
-        <!ENTITY mdash  "&#x2014;">
-        <!ENTITY hellip "&#x2026;">
-        
-        <!-- Useful for describing APIs -->
-        <!ENTITY GET    '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
-        <!ENTITY PUT    '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
-        <!ENTITY POST   '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
-        <!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
-        
-        <!-- Useful for specs -->
-        <!ENTITY MAY    '<emphasis xmlns="http://docbook.org/ns/docbook" role="strong">MAY</emphasis>'>
-        <!ENTITY SHOULD '<emphasis xmlns="http://docbook.org/ns/docbook" role="strong">SHOULD</emphasis>'>
-        <!ENTITY MUST   '<emphasis xmlns="http://docbook.org/ns/docbook" role="strong">MUST</emphasis>'>
-        <!ENTITY MUST_NOT   '<emphasis xmlns="http://docbook.org/ns/docbook" role="strong">MUST NOT</emphasis>'>
-        <!ENTITY CIS 'Rackspace Cloud Identity Service'>
-<!ENTITY fgCS 'first generation Cloud Servers'>
-<!ENTITY ngCS 'next generation Cloud Servers'>
-<!ENTITY cnresource1 'rax-networks'>
-<!ENTITY virt_ext 'Cloud Networks virtual interface extension'>
-<!ENTITY Uvirt_ext 'Cloud Networks Virtual Interface Extension'>
-<!ENTITY cnresource2 'os-networksv2'>
+<!ENTITY % common  SYSTEM "../../common/common.ent">
+%common;
 ]>
 
-<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
-    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="ch_gs_attach_network_to_server">
+<chapter xml:id="attach_net" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
     <title>Attach your network to an existing server</title>
     <para>Before attaching your first network to a server, choose whether to use the Neutron API or the Nova-network API. For
         help deciding, see <olink targetdoc="cn-gettingstarted" targetptr="section_nova_v_neutron">“Networking: Nova-network
             versus Neutron”</olink>. The sections in this chapter provide examples of attaching a network to an existing
         server using each API.</para>
+    <para>The following flow chart shows the steps for attaching a network to an existing server by using the neutron API and
+        the nova-network API. These steps are detailed in this guide.<figure>
+            <title>Steps to attach a network to an existing server</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="../figures/dn-both-api.png" contentwidth="3in"/>
+                </imageobject>
+            </mediaobject>
+        </figure>
+    </para>
+    <para>The sections are also organized by example type. To simplify your path through this chapter, decide whether you
+        prefer neutron-client or nova-client examples, or cURL examples.</para>
+    <sidebar>
+        <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
+                <listitem>
+                    <para>placeholder</para>
+                </listitem>
+                <!--<listitem>
+                <para><olink targetdoc="cn-gettingstarted" targetptr="ans_neutron_neutron">“Use
+                    neutron API and neutron client”</olink></para>
+            </listitem>-->
+                <!--<listitem>
+                <para><olink targetdoc="cn-gettingstarted" targetptr="ans_neutron_curl">“Use neutron
+                    API and cURL”</olink></para>
+            </listitem>-->
+                <!--<listitem>
+                <para><olink targetdoc="cn-gettingstarted" targetptr="ans_nova_nova">“Use
+                    nova-network API and nova client”</olink></para>
+            </listitem>-->
+                <!--<listitem>
+                <para><olink targetdoc="cn-gettingstarted" targetptr="ans_nova_curl">“Use
+                    nova-network API and cURL”</olink></para>
+            </listitem>-->
+            </itemizedlist></para>
+    </sidebar>
+    <!--<xi:include href="net_ans_neutron_neutron.xml"/>-->
+    <!--<xi:include href="net_ans_neutron_curl.xml"/>-->
+    <!--<xi:include href="net_ans_nova_nova.xml"/>-->
+    <!--<xi:include href="net_ans_nova_curl.xml"/>-->
+
+
+
     <xi:include href="net_ans_neutron.xml"/>
     <xi:include href="net_ans_nova.xml"/>
-    <!-- Cat:  keep in mind.  there is a cross link to targetdoc="cn-gettingstarted"
-                    targetptr="ch_gs_attach_network_to_server" in bns_nova_nova (and maybe others).  if you change xml_id, fix links-->
 </chapter>

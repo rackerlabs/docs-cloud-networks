@@ -12,7 +12,7 @@
                         neutron”</olink>. The sections in this chapter provide examples of creating a network using each
                 API.</para>
         <para>The following flow chart shows the steps to attach a network and provision a server by using the neutron API
-                and by using the nova-network API. These steps are detailed in this guide. </para>
+                and the nova-network API. These steps are detailed in this guide. </para>
         <note>
                 <para>Both neutron and nova-network procedures include steps to provision a server and to list servers. These
                         two steps can be done only with the nova-network API. There is no neutron API equivalent. </para>
@@ -34,9 +34,9 @@
                                                         neutron API and neutron client”</olink></para>
                                 </listitem>
                                 <listitem>
-                                <para><olink targetdoc="cn-gettingstarted" targetptr="bns_neutron_curl">“Use neutron
-                                        API and cURL”</olink></para>
-                        </listitem>
+                                        <para><olink targetdoc="cn-gettingstarted" targetptr="bns_neutron_curl">“Use neutron
+                                                        API and cURL”</olink></para>
+                                </listitem>
                                 <listitem>
                                         <para><olink targetdoc="cn-gettingstarted" targetptr="bns_nova_nova">“Use
                                                         nova-network API and nova client”</olink></para>
@@ -51,8 +51,4 @@
         <xi:include href="net_bns_neutron_curl.xml"/>
         <xi:include href="net_bns_nova_nova.xml"/>
         <xi:include href="net_bns_nova_curl.xml"/>
-
-
-        <!--<xi:include href="net_bns_neutron.xml"/>-->
-        <!--<xi:include href="net_bns_nova.xml"/>-->
 </chapter>

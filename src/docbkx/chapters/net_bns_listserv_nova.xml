@@ -33,6 +33,6 @@
     </procedure>
     <sidebar>
         <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                targetptr="ch_gs_attach_network_to_server">Attach your network to an existing server</olink></para>
+                targetptr="attach_net">Attach your network to an existing server</olink></para>
     </sidebar>
 </section>
