@@ -31,6 +31,64 @@
             </itemizedlist>
         </para>
     </sidebar>
+    <section xml:id="nova_delete_virtual_interface_curl">
+        <title>Delete virtual interface (nova-network API/cURL)</title>
+        <procedure>
+            <title>To delete a virtual interface</title>
+            <step>
+                <para>Issue the following command. In the command, specify the ID for the server that you want to
+                    delete.</para>
+                <programlisting language="bash" role="gutter: false"><?db-font-size 60%?>
+                        <prompt>$</prompt> curl -i https://dfw.servers.api.rackspacecloud.com/v2/$account/servers/$instance_id/os-virtual-interfacesv2/$interface_id \
+     -X DELETE \
+     -H "X-Auth-Token: $token"</programlisting>
+                <para><emphasis role="bold">Positional arguments:</emphasis></para>
+                <itemizedlist>
+                    <listitem>
+                        <para><parameter>instance_id</parameter>. The ID of the server instance from which you want to detach
+                            the virtual interface.</para>
+                    </listitem>
+                    <listitem>
+                        <para><parameter>interface_id</parameter>. The ID of the virtual interface that you want to
+                            delete.</para>
+                    </listitem>
+                </itemizedlist>
+                <para><emphasis role="bold">Output:</emphasis>
+                </para>
+                <para>Successful deletion returns <returnvalue>204</returnvalue> response code as shown in the following
+                    output:</para>
+                <programlisting language="bash" role="gutter: false"><?db-font-size 65%?>HTTP/1.1 204 No Content
+Date: Thu, 16 Aug 2012 17:19:53 GMT
+Content-Length: 0
+Content-Type: application/json
+X-Compute-Request-Id: req-3bdafeb2-d4b1-41c3-ab19-d310f3f270d3
+Server: Jetty(8.0.y.z-SNAPSHOT)</programlisting>
+            </step>
+            <step>
+                <para>Issue the following cURL command to determine if your virtual interface was deleted:</para>
+                <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                        <prompt>$</prompt> curl https://dfw.servers.api.rackspacecloud.com/v2/$account/servers/$instance_id/os-virtual-interfacesv2  \
+       -X GET \
+       -H "X-Auth-Token: $token" | python -m json.tool</programlisting>
+                <para><emphasis role="bold">Positional argument:</emphasis></para>
+                <itemizedlist>
+                    <listitem>
+                        <para>The ID of the server instance for which you want to list virtual interfaces. You copied this ID
+                            in <olink targetdoc="cn-gettingstarted" targetptr="list_servers2">“List servers”</olink>.</para>
+                    </listitem>
+                </itemizedlist>
+                <para>After the virtual interface is deleted, it no longer appears in the list of virtual interfaces. </para>
+            </step>
+        </procedure>
+        <sidebar>
+            <para><emphasis role="bold">Next: </emphasis><itemizedlist>
+                    <listitem>
+                        <para><olink targetdoc="cn-gettingstarted" targetptr="nova_delete_network_nova">“Delete network
+                                (nova-network API/nova)”</olink></para>
+                    </listitem>
+                </itemizedlist></para>
+        </sidebar>
+    </section>
     <section xml:id="nova_delete_network_curl">
         <title>Delete network (nova-network API/cURL)</title>
         <note>
@@ -80,64 +138,5 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
 The request is accepted for processing.</computeroutput></screen>
             </step>
         </procedure>
-    </section>
-    <section xml:id="nova_delete_virtual_interface_curl">
-        <title>Delete virtual interface (nova-network API/cURL)</title>
-        <procedure>
-            <title>To delete a virtual interface</title>
-            <step>
-                <para>Issue the following command. In the command, specify the ID for the server that you want to
-                    delete.</para>
-                <programlisting language="bash" role="gutter: false"><?db-font-size 60%?>
-                        <prompt>$</prompt> curl -i https://dfw.servers.api.rackspacecloud.com/v2/$account/servers/$instance_id/os-virtual-interfacesv2/$interface_id \
-     -X DELETE \
-     -H "X-Auth-Token: $token"</programlisting>
-                <para><emphasis role="bold">Positional arguments:</emphasis></para>
-                <itemizedlist>
-                    <listitem>
-                        <para><parameter>instance_id</parameter>. The ID of the server instance from which you want to detach
-                            the virtual interface.</para>
-                    </listitem>
-                    <listitem>
-                        <para><parameter>interface_id</parameter>. The ID of the virtual interface that you want to
-                            delete.</para>
-                    </listitem>
-                </itemizedlist>
-                <para><emphasis role="bold">Output:</emphasis>
-                </para>
-                <para>Successful deletion returns <returnvalue>204</returnvalue> response code as shown in the following
-                    output:</para>
-                <programlisting language="bash" role="gutter: false"><?db-font-size 65%?>HTTP/1.1 204 No Content
-Date: Thu, 16 Aug 2012 17:19:53 GMT
-Content-Length: 0
-Content-Type: application/json
-X-Compute-Request-Id: req-3bdafeb2-d4b1-41c3-ab19-d310f3f270d3
-Server: Jetty(8.0.y.z-SNAPSHOT)</programlisting>
-            </step>
-            <step>
-                <para>Issue the following cURL command to determine if your virtual interface was deleted:</para>
-                <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-                        <prompt>$</prompt> curl https://dfw.servers.api.rackspacecloud.com/v2/$account/servers/$instance_id/os-virtual-interfacesv2  \
-       -X GET \
-       -H "X-Auth-Token: $token" | python -m json.tool</programlisting>
-                <para><emphasis role="bold">Positional argument:</emphasis></para>
-                <itemizedlist>
-                    <listitem>
-                        <para><parameter>instance_id</parameter>. The ID of the server instance for which you want to list
-                            virtual interfaces. You copied this ID in <olink targetdoc="cn-gettingstarted"
-                                targetptr="list_servers2">“List servers”</olink>.</para>
-                    </listitem>
-                </itemizedlist>
-                <para>After the virtual interface is deleted, it no longer appears in the list of virtual interfaces. </para>
-            </step>
-        </procedure>
-        <sidebar>
-            <para><emphasis role="bold">Next: </emphasis><itemizedlist>
-                    <listitem>
-                        <para><olink targetdoc="cn-gettingstarted" targetptr="nova_delete_network_nova">“Delete network
-                                (nova-network API/nova)”</olink></para>
-                    </listitem>
-                </itemizedlist></para>
-        </sidebar>
     </section>
 </section>

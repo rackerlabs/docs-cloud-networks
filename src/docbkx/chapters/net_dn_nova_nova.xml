@@ -15,27 +15,69 @@
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0">
     <title>Delete your network with nova-network API and nova client</title>
     <para>If you no longer need your network, you can delete it. </para>
-    <para>You cannot delete an isolated network unless the network is not attached to any server.</para>
-    <para>To detach a network from a server, you must delete the virtual interface for the network from the server. Then, you
-        can delete the network.</para>
-    <para>After the network is deleted, it no longer appears in the list of networks.</para>
+    <para>These sections walk you through deleting your network, or virtual interface, by using the nova client.</para>
     <sidebar>
-        <para><emphasis role="bold">Start here: </emphasis><itemizedlist>
+        <para><emphasis role="bold">Choose one of the following methods: </emphasis>
+            <itemizedlist>
                 <listitem>
-                    <para><olink targetdoc="cn-gettingstarted" targetptr="nova_delete_network_nova">“Delete network (virtual
-                            interface) (nova-network API/nova)”</olink></para>
+                    <para>If you created a network and booted a new server with that network, choose <olink
+                            targetdoc="cn-gettingstarted" targetptr="nova_delete_network_nova">“Delete network (nova-network
+                            API/nova)”</olink></para>
                 </listitem>
-            </itemizedlist></para>
+                <listitem>
+                    <para>If you created a network, created a virtual interface, and attached the interface to an existing
+                        server, choose <olink targetdoc="cn-gettingstarted" targetptr="nova_delete_virtual_interface_nova"
+                            >“Delete virtual interface (nova-network API/nova)”</olink></para>
+                </listitem>
+            </itemizedlist>
+        </para>
     </sidebar>
+    <section xml:id="nova_delete_virtual_interface_nova">
+        <title>Delete virtual interface (nova-network API/nova)</title>
+        <procedure>
+            <title>To delete a virtual interface with the nova client:</title>
+            <step>
+                <para>Issue the following command:</para>
+                <programlisting language="bash" role="gutter: false">
+                        <prompt>$</prompt> nova virtual-interface-delete <replaceable>instance_id</replaceable> <replaceable>interface_id</replaceable></programlisting>
+                <para><emphasis role="bold">Positional arguments:</emphasis></para>
+                <itemizedlist>
+                    <listitem>
+                        <para>The ID of the server instance from which you want to detach the virtual interface.</para>
+                    </listitem>
+                    <listitem>
+                        <para>The ID of the virtual interface that you want to delete.</para>
+                    </listitem>
+                </itemizedlist>
+            </step>
+            <step>
+                <para>Issue the following nova client command to determine if your virtual interface was deleted:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                            <prompt>$</prompt> nova virtual-interface-list <replaceable>instance_id</replaceable></programlisting></para>
+                <para><emphasis role="bold">Positional argument:</emphasis></para>
+                <itemizedlist>
+                    <listitem>
+                        <para>The ID of the server instance for which you want to list virtual interfaces. </para>
+                    </listitem>
+                </itemizedlist>
+                <para>After the virtual interface is deleted, it no longer appears in the list of virtual interfaces. See
+                        <olink targetdoc="cn-gettingstarted" targetptr="list_virt_interfaces_for_server">“List virtual
+                        interfaces for a server”</olink>.</para>
+            </step>
+        </procedure>
+        <sidebar>
+            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted" targetptr="delete_net"
+                    >Delete your cloud network</olink></para>
+        </sidebar>
+    </section>
     <section xml:id="nova_delete_network_nova">
-        <title>Delete network (virtual interface) (nova-network API/nova)</title>
+        <title>Delete network (nova-network API/nova)</title>
+        <note><para>If you have created a virtual interface with your network, you must delete the virtual interface before
+            deleting the network (see <olink targetdoc="cn-gettingstarted"
+                targetptr="nova_delete_virtual_interface_nova">“Delete virtual interface (nova-network
+                API/nova)”</olink>).</para></note>
         <procedure>
             <title>To delete a specified network</title>
-            <step>
-                <title>Delete the virtual interface for the network from the server</title>
-                <para>To detach a network from a server, first delete the virtual interface for the network from the server.
-                </para>
-            </step>
             <step>
                 <title>Delete the network</title>
                 <para>Issue the following nova client command:
