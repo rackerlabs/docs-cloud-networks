@@ -81,7 +81,6 @@
                         <xsdxt:code href="../common/samples/networks.json"/>
                     </xsdxt:sample>
                 </wadl:doc>
-                <param name="." style="plain" path="$.parameters "/>
                 <param name="id" style="plain" type="xsd:string" required="true" path="$.parameters.id">
                     <wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" title="id">
                         <p>The network ID.</p>
@@ -121,7 +120,6 @@
                         <xsdxt:code href="../common/samples/create_network_req.json"/>
                     </xsdxt:sample>
                 </wadl:doc>
-                <param name="." style="plain" path="$.parameters "/>
                 <param name="cidr" style="plain" type="capi:UUID" required="true" path="$.parameters.cidr">
                     <wadl:doc xmlns="http://docbook.org/ns/docbook">
                         <para>The IP block from which to allocate the network. For example, <emphasis role="bold"
@@ -154,7 +152,6 @@
                         <xsdxt:code href="../common/samples/create_network_resp.json"/>
                     </xsdxt:sample>
                 </wadl:doc>
-                <param name="." style="plain" path="$.parameters "/>
                 <param name="id" style="plain" type="xsd:string" path="$.parameters.id">
                     <wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" title="id">
                         <p>The network ID.</p>
@@ -235,7 +232,6 @@
                         <xsdxt:code href="../common/samples/server-post-req.json"/>
                     </xsdxt:sample>
                 </wadl:doc>
-                <param name="." style="plain" path="$.parameters "/>
                 <param name="name" style="plain" type="string" required="true" path="$.parameters.name">
                     <wadl:doc xmlns="http://docbook.org/ns/docbook">
                         <para>The server name.</para>
@@ -320,7 +316,6 @@
                         <xsdxt:code href="../common/samples/server-post-resp.json"/>
                     </xsdxt:sample>
                 </wadl:doc>
-                <param name="." style="plain" path="$.parameters "/>
                 <param name="OS-DCF:diskConfig" style="plain" type="string" required="true"
                     path="$.parameters.OS-DCF:diskConfig">
                     <wadl:doc xmlns="http://docbook.org/ns/docbook">
@@ -377,7 +372,6 @@
                         <xsdxt:code href="../common/samples/network.json"/>
                     </xsdxt:sample>
                 </wadl:doc>
-                <param name="." style="plain" path="$.parameters "/>
                 <param name="id" style="plain" type="xsd:string" path="$.parameters.id">
                     <wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" title="id">
                         <p>The network ID.</p>
@@ -459,7 +453,6 @@
                         <xsdxt:code href="../common/samples/create_virtual_interface_req.json"/>
                     </xsdxt:sample>
                 </wadl:doc>
-                <param name="." style="plain" path="$.parameters "/>
                 <param name="network_id" style="plain" type="xsd:UUID" required="true" path="$.parameters.network_id">
                     <wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" title="network_id">
                         <p>The ID of the network for which you want to create a virtual interface. You can create a virtual

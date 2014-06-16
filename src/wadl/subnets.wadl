@@ -179,10 +179,9 @@
             <para role="shortdesc">Updates a specified subnet.</para>
             <para>This operation updates a specified subnet.</para>
             <warning>
-                <para>Some parameters, such as IP version (<parameter>ip_version</parameter>), CIDR
-                        (<parameter>cidr</parameter>), and IP allocation pools (<parameter>allocation_pools</parameter>)
-                    cannot be updated. Attempting to update these parameters results in a <errorcode>400 Bad Request</errorcode>
-                    error.</para>
+                <para>Some parameters, such as IP version (<parameter>ip_version</parameter>), and CIDR
+                        (<parameter>cidr</parameter>) cannot be updated. Attempting to update these parameters results in a
+                        <errorcode>400 Bad Request</errorcode> error.</para>
             </warning>
         </wadl:doc>
         <request>

@@ -7,52 +7,38 @@
 <chapter xml:id="attach_net" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
     <title>Attach your network to an existing server</title>
-    <para>Before attaching your first network to a server, choose whether to use the Neutron API or the Nova-network API. For
-        help deciding, see <olink targetdoc="cn-gettingstarted" targetptr="section_nova_v_neutron">“Networking: Nova-network
-            versus Neutron”</olink>. The sections in this chapter provide examples of attaching a network to an existing
-        server using each API.</para>
-    <para>The following flow chart shows the steps for attaching a network to an existing server by using the neutron API and
-        the nova-network API. These steps are detailed in this guide.<figure>
+    <para>Unlike other activities described in this guide, you can attach your network to existing servers using only the
+        Nova-network API. There is no Neutron API equivalent. The sections in this chapter provide examples of attaching a
+        network to an existing server using the Nova-network API and the &virt_ext;</para>
+    <para>The following flow chart shows the steps for attaching a network to an existing server by using the Nova-network
+        API. These steps are detailed in this guide.<figure>
             <title>Steps to attach a network to an existing server</title>
             <mediaobject>
                 <imageobject>
-                    <imagedata fileref="../figures/dn-both-api.png" contentwidth="3in"/>
+                    <imagedata fileref="../figures/aes-both-api.png" contentwidth="3in"/>
                 </imageobject>
             </mediaobject>
         </figure>
     </para>
     <para>The sections are also organized by example type. To simplify your path through this chapter, decide whether you
-        prefer neutron-client or nova-client examples, or cURL examples.</para>
+        prefer nova-client examples or cURL examples.</para>
+    <para>If you haven't already installed the virtual interface extension, do that first.</para>
     <sidebar>
-        <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
+        <para><emphasis role="bold">If you need to install the virtual interface extension: </emphasis> Go to <olink
+                targetdoc="cn-gettingstarted" targetptr="aes_install_interface">“Install the &virt_ext;”</olink></para>
+        <para><emphasis role="bold">If you've installed the virtual interface extension:</emphasis> Choose one of the
+            following methods:<itemizedlist>
                 <listitem>
-                    <para>placeholder</para>
+                    <para><olink targetdoc="cn-gettingstarted" targetptr="aes_nova_nova">“Use nova-network API and nova
+                            client”</olink></para>
                 </listitem>
-                <!--<listitem>
-                <para><olink targetdoc="cn-gettingstarted" targetptr="ans_neutron_neutron">“Use
-                    neutron API and neutron client”</olink></para>
-            </listitem>-->
-                <!--<listitem>
-                <para><olink targetdoc="cn-gettingstarted" targetptr="ans_neutron_curl">“Use neutron
-                    API and cURL”</olink></para>
-            </listitem>-->
-                <!--<listitem>
-                <para><olink targetdoc="cn-gettingstarted" targetptr="ans_nova_nova">“Use
-                    nova-network API and nova client”</olink></para>
-            </listitem>-->
-                <!--<listitem>
-                <para><olink targetdoc="cn-gettingstarted" targetptr="ans_nova_curl">“Use
-                    nova-network API and cURL”</olink></para>
-            </listitem>-->
+                <listitem>
+                    <para><olink targetdoc="cn-gettingstarted" targetptr="aes_nova_curl">“Use nova-network API and
+                            cURL”</olink></para>
+                </listitem>
             </itemizedlist></para>
     </sidebar>
-    <!--<xi:include href="net_ans_neutron_neutron.xml"/>-->
-    <!--<xi:include href="net_ans_neutron_curl.xml"/>-->
-    <!--<xi:include href="net_ans_nova_nova.xml"/>-->
-    <!--<xi:include href="net_ans_nova_curl.xml"/>-->
-
-
-
-    <xi:include href="net_ans_neutron.xml"/>
-    <xi:include href="net_ans_nova.xml"/>
+    <xi:include href="net_aes_install_interface.xml"/>
+    <xi:include href="net_aes_nova_nova.xml"/>
+    <xi:include href="net_aes_nova_curl.xml"/>
 </chapter>

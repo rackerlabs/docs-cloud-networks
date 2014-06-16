@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section [
+<!ENTITY % common  SYSTEM "../../common/common.ent">
+%common;
+]>
+<section xml:id="aes_install_interface" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0">
+    <title>Install the &virt_ext;</title>
+    <para>Before you can attach a network to an existing server instance, you need to install the virtual interface
+        extension.</para>
+    <procedure>
+        <title>To install the &virt_ext;</title>
+        <step>
+            <title>Install the &virt_ext;</title>
+            <para>The <literal>os_virtual_interfacesv2_python_novaclient_ext</literal> package contains the
+                &virt_ext;.</para>
+            <para>Run the following command to install the package:</para>
+            <programlisting language="bash" role="gutter: false">
+                    <prompt>$</prompt> sudo pip install os_virtual_interfacesv2_python_novaclient_ext</programlisting>
+            <note>
+                <para>If you previously installed this package, run the following command to upgrade it:
+                    <programlisting language="bash" role="gutter: false">
+                            <prompt>$</prompt> sudo pip install os_virtual_interfacesv2_python_novaclient_ext --upgrade
+                        </programlisting></para>
+            </note>
+        </step>
+    </procedure>
+    <sidebar>
+        <para><emphasis role="bold">Choose one of the following methods: </emphasis></para>
+        <itemizedlist>
+            <listitem>
+                <para><olink targetdoc="cn-gettingstarted" targetptr="nova_create_virt_interface_nova">“Create virtual
+                        interface with the nova-network API and the nova client”</olink></para>
+            </listitem>
+            <listitem>
+                <para><olink targetdoc="cn-gettingstarted" targetptr="nova_create_virt_interface_curl">“Create virtual
+                        interface with the nova-network API and cURL”</olink></para>
+            </listitem>
+        </itemizedlist>
+    </sidebar>
+</section>

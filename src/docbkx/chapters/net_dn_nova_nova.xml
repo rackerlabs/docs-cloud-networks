@@ -60,9 +60,7 @@
                         <para>The ID of the server instance for which you want to list virtual interfaces. </para>
                     </listitem>
                 </itemizedlist>
-                <para>After the virtual interface is deleted, it no longer appears in the list of virtual interfaces. See
-                        <olink targetdoc="cn-gettingstarted" targetptr="list_virt_interfaces_for_server">“List virtual
-                        interfaces for a server”</olink>.</para>
+                <para>After the virtual interface is deleted, it no longer appears in the list of virtual interfaces.</para>
             </step>
         </procedure>
         <sidebar>

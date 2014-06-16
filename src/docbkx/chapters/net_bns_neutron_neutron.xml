@@ -108,7 +108,7 @@
     </section>
 
     <!--Writer:  Keep this sections in sync with xml:id="nova_create_server_nova". Content is basically same but command, 
-        heading, and links are different-->
+        title, and sidebar are different-->
     <section xml:id="neutron_create_server_nova">
         <title>Provision a server with a port and an isolated network (nova-network API/nova)</title>
         <para>To create your new server and attach a port with an isolated network, you need the following
@@ -249,18 +249,13 @@
         </procedure>
         <sidebar>
             <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="bns_listserv_nova">“List servers”</olink></para>
+                    targetptr="neutron_list_server_nova">“List servers (nova-network API/nova client)”</olink></para>
         </sidebar>
     </section>
 
-    <!--The following section to list servers is same for neutron/neutron and nova-network-nova so it is linked-->
-    <!--<xi:include href="net_bns_listserv_nova.xml"/>-->
-
-    <section xml:id="fakesectionclient">
-        <title>fake section client</title>
-        <!--<para><olink targetdoc="cn-gettingstarted" targetptr="bns_listserv_nova">“List servers (nova-network API/nova
-                client)”</olink></para>-->
-
+    <!--The following section to list servers is same for neutron/neutron and nova/network-nova so it is linked-->
+    <section xml:id="neutron_list_server_nova">
+        <title>List servers (nova-network API/nova client)</title>
         <xi:include href="net_bns_listserv_nova.xml"
             xpointer="xmlns(db=http://docbook.org/ns/docbook)
             xpath(//*[@xml:id = 'bns_listserv_nova']/*[not(self::db:title)])">
@@ -268,20 +263,5 @@
                 <para>missing content here</para>
             </xi:fallback>
         </xi:include>
-
-        <!--        <xi:include href="net_bns_listserv_nova.xml" xpointer="bns_listserv_nova" xmlns:xi="http://www.w3.org/2001/XInclude">
-            <xi:fallback>
-                <para>missing content there</para>
-            </xi:fallback>
-        </xi:include>-->
-
-        <!--<xi:include href="net_bns_listserv_nova.xml" xpointer="(xml:id='bns_listserv_nova')" xmlns:xi="http://www.w3.org/2001/XInclude">
-            <xi:fallback>
-                <para>missing content</para>
-            </xi:fallback>
-        </xi:include>-->
-
-        <para/>
     </section>
-
 </section>

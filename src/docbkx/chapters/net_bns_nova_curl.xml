@@ -15,7 +15,7 @@
     </sidebar>
 
     <!--Writer:  Keep this sections in sync with xml:id="neutron_create_server_curl". Content is basically same but command, 
-        heading, and links are different-->
+        title, and sidebar are different-->
     <section xml:id="nova_create_server_curl">
         <title>Provision a server with an isolated network (nova-network API/cURL)</title>
         <para>To create your new server and attach an isolated network, you need the following information: </para>
@@ -137,11 +137,20 @@
         </procedure>
         <sidebar>
             <para><emphasis role="bold">Next step:</emphasis>
-                <olink targetdoc="cn-gettingstarted" targetptr="bns_listserv_curl">“List servers and attached networks
+                <olink targetdoc="cn-gettingstarted" targetptr="nova_list_server_curl">“List servers and attached networks
                     (nova-network API/cURL)”</olink></para>
         </sidebar>
     </section>
 
     <!--The following section to list servers is same for neutron/neutron and nova-network-nova so it is included-->
-    <xi:include href="net_bns_listserv_curl.xml"/>
+    <section xml:id="nova_list_server_curl">
+        <title>List servers and attached networks (nova-network API/cURL)</title>
+        <xi:include href="net_bns_listserv_curl.xml"
+            xpointer="xmlns(db=http://docbook.org/ns/docbook)
+            xpath(//*[@xml:id = 'bns_listserv_curl']/*[not(self::db:title)])">
+            <xi:fallback>
+                <para>missing content here</para>
+            </xi:fallback>
+        </xi:include>
+    </section>
 </section>

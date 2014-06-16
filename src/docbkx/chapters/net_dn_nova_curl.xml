@@ -73,8 +73,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)</programlisting>
                 <para><emphasis role="bold">Positional argument:</emphasis></para>
                 <itemizedlist>
                     <listitem>
-                        <para>The ID of the server instance for which you want to list virtual interfaces. You copied this ID
-                            in <olink targetdoc="cn-gettingstarted" targetptr="list_servers2">“List servers”</olink>.</para>
+                        <para>The ID of the server instance for which you want to list virtual interfaces.</para>
                     </listitem>
                 </itemizedlist>
                 <para>After the virtual interface is deleted, it no longer appears in the list of virtual interfaces. </para>

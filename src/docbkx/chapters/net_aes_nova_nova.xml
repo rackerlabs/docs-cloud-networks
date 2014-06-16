@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section [
+<!ENTITY % common  SYSTEM "../../common/common.ent">
+%common;
+]>
+<section xml:id="aes_nova_nova" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0">
+    <title>Attach your network to an existing server with nova-network API and nova client</title>
+    <para>These sections walk you through the steps to create a virtual interface to a specified network and attach the
+        network to an existing server instance.</para>
+    <note>
+        <para>You can create a maximum of one virtual interface per instance per network.</para>
+    </note>
+    <sidebar>
+        <para><emphasis role="bold">Start here: </emphasis><olink targetdoc="cn-gettingstarted"
+                targetptr="nova_create_virt_interface_nova">Create virtual interface with the nova-network API and the nova
+                client</olink></para>
+    </sidebar>
+    <section xml:id="nova_create_virt_interface_nova">
+        <title>Create virtual interface with the nova-network API and the nova client</title>
+        <para>When you create a virtual interface, you specify the following information:<itemizedlist>
+                <listitem>
+                    <para><emphasis role="bold">Network ID</emphasis>. The ID of the network for which you want to create a
+                        virtual interface.</para>
+                </listitem>
+                <listitem>
+                    <para><emphasis role="bold">Server ID</emphasis>. The ID of the server instance to which you want to
+                        connect the virtual interface. </para>
+                </listitem>
+            </itemizedlist></para>
+        <procedure>
+            <title>To create a virtual interface with the nova client</title>
+            <step>
+                <para>Issue the following nova client command:</para>
+                <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                        <prompt>$</prompt> nova virtual-interface-create <replaceable>network_id</replaceable> <replaceable>instance_id</replaceable></programlisting>
+                <para><emphasis role="bold">Positional arguments:</emphasis></para>
+                <itemizedlist>
+                    <listitem>
+                        <para><parameter>network_id</parameter>. The ID of the network for which you want to create a virtual
+                            interface.</para>
+                    </listitem>
+                    <listitem>
+                        <para><parameter>instance_id</parameter>. The ID of the server instance to which you want to connect
+                            the virtual interface.</para>
+                    </listitem>
+                </itemizedlist>
+            </step>
+        </procedure>
+        <sidebar>
+            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+                    targetptr="nova_list_virt_interfaces_nova">“List virtual interfaces for a server with the nova-network
+                    API and the nova client”</olink>
+            </para>
+        </sidebar>
+    </section>
+    <section xml:id="nova_list_virt_interfaces_nova">
+        <title>List virtual interfaces for a server with the nova-network API and the nova client</title>
+        <para>To validate that you created and connected the virtual interface to your server, you can list the virtual
+            interfaces for your server. </para>
+        <procedure>
+            <title>To list virtual interfaces for a server with the nova client</title>
+            <step>
+                <para>Issue the following nova client command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                            <prompt>$</prompt> nova virtual-interface-list <replaceable>instance_id</replaceable></programlisting></para>
+                <para><emphasis role="bold">Positional argument:</emphasis></para>
+                <itemizedlist>
+                    <listitem>
+                        <para><parameter>instance_id</parameter>. The ID of the server instance for which you want to list
+                            virtual interfaces.</para>
+                    </listitem>
+                </itemizedlist>
+                <para><emphasis role="bold">Output:</emphasis></para>
+                <para>For any virtual interfaces that are connected to the specified server, the command returns the network
+                    ID, MAC address, and IP addresses, as shown in the following output:</para>
+                <informalexample>
+                    <screen><computeroutput><?db-font-size 65%?>+--------------------------------------+-------------------+---------------------------------------------------------------------------------------+
+| id                                   | mac_address       | ip_addresses                                                                          |
++--------------------------------------+-------------------+---------------------------------------------------------------------------------------+
+| 398f4189-5a60-4a5e-8a68-71e4fa014313 | 00:00:00:00:00:01 | label=private, network_id=39a43ded-7a9b-4a50-8633-e70d48363305, ip_address=172.16.0.2 |
+| d5e3c9b6-bd5d-46c9-ba7b-114df3f37fb3 | 00:00:00:00:00:00 | label=mypriv, network_id=1f7920d3-0e63-4fec-a1cb-f7916671e8eb, ip_address=10.1.0.3      |
+| d8a1baa8-3b51-4a74-9e33-f885e438a468 | 00:00:00:00:00:02 | label=public, network_id=69ebc6a6-27fc-4f47-aeca-de7c3b4685e7, ip_address=10.0.0.3    |
++--------------------------------------+-------------------+---------------------------------------------------------------------------------------+</computeroutput>
+                    </screen>
+                </informalexample>
+
+            </step>
+            <step>
+                <para>If you want to delete this interface later on, copy the ID for the virtual interface. </para>
+            </step>
+        </procedure>
+        <sidebar>
+            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted" targetptr="delete_net"
+                    >“Delete your cloud network”</olink>
+            </para>
+        </sidebar>
+    </section>
+</section>

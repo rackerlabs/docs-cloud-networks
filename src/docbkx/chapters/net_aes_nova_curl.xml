@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section [
+<!ENTITY % common  SYSTEM "../../common/common.ent">
+%common;
+]>
+<section xml:id="aes_nova_curl" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0">
+    <title>Attach your network to an existing server with nova-network API curl</title>
+    <para>These sections walk you through the steps to create a virtual interface to a specified network and attach the
+        network to an existing server instance.</para>
+    <note>
+        <para>You can create a maximum of one virtual interface per instance per network.</para>
+    </note>
+    <sidebar>
+        <para><emphasis role="bold">Start here: </emphasis><olink targetdoc="cn-gettingstarted"
+                targetptr="nova_create_virt_interface_curl">Create virtual interface with the nova-network API and
+                cURL</olink></para>
+    </sidebar>
+
+    <section xml:id="nova_create_virt_interface_curl">
+        <title>Create virtual interface with the nova-network API and cURL</title>
+        <para>When you create a virtual interface, you specify the following information:<itemizedlist>
+                <listitem>
+                    <para><emphasis role="bold">Network ID</emphasis>. The ID of the network for which you want to create a
+                        virtual interface.</para>
+                </listitem>
+                <listitem>
+                    <para><emphasis role="bold">Server ID</emphasis>. The ID of the server instance to which you want to
+                        connect the virtual interface. </para>
+                </listitem>
+            </itemizedlist></para>
+        <procedure>
+            <title>To create a virtual interface with cURL</title>
+            <step>
+                <para>To create a virtual interface, you must specify the server ID in the request URI, and include a request
+                    body that specifies the network ID for which you want to create a virtual interface. </para>
+                <para>For example, issue the following cURL command:</para>
+                <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                            <prompt>$</prompt> curl https://dfw.servers.api.rackspacecloud.com/v2/$account/servers/$instance_id/os-virtual-interfacesv2 \
+     -X POST \
+     -H "Content-Type: application/json" \
+     -H "Accept: application/json" \
+     -H "X-Auth-Token: $token" \
+     -d '{"virtual_interface": {"network_id": "<replaceable>network_id</replaceable>"}}'| python -m json.tool</programlisting>
+                <para><emphasis role="bold">Arguments:</emphasis></para>
+                <itemizedlist>
+                    <listitem>
+                        <para><parameter>instance_id</parameter>. The ID of the server instance to which you want to connect
+                            the virtual interface.</para>
+                    </listitem>
+                    <listitem>
+                        <para><parameter>network_id</parameter>. The ID of the network for which you want to create a virtual
+                            interface.</para>
+                    </listitem>
+                </itemizedlist>
+                <para><emphasis role="bold">Output:</emphasis>
+                </para>
+                <programlisting language="json"><?db-font-size 65%?>
+                            <xi:include href="../../common/samples/create_virtual_interface_resp.json" parse="text"/></programlisting>
+            </step>
+        </procedure>
+        <sidebar>
+            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+                    targetptr="nova_list_virt_interfaces_curl">“List virtual interfaces for a server with the nova-network
+                    API and cURL”</olink>
+            </para>
+        </sidebar>
+    </section>
+    <section xml:id="nova_list_virt_interfaces_curl">
+        <title>List virtual interfaces for a server with the nova-network API and cURL</title>
+        <para>To validate that you created and connected the virtual interface to your server, you can list the virtual
+            interfaces for your server. </para>
+
+        <procedure>
+            <title>To list virtual interfaces for a server with cURL</title>
+            <step>
+                <para>Issue the following cURL command:</para>
+                <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                            <prompt>$</prompt> curl https://dfw.servers.api.rackspacecloud.com/v2/$account/servers/$instance_id/os-virtual-interfacesv2  \
+       -X GET \
+       -H "X-Auth-Token: $token" | python -m json.tool</programlisting>
+                <para><emphasis role="bold">Argument:</emphasis></para>
+                <itemizedlist>
+                    <listitem>
+                        <para><parameter>instance_id</parameter>. The ID of the server instance for which you want to list
+                            virtual interfaces.</para>
+                    </listitem>
+                </itemizedlist>
+                <para><emphasis role="bold">Output:</emphasis>
+                </para>
+
+                <programlisting language="json"><?db-font-size 65%?>
+                            <xi:include href="../../common/samples/virtual_interfaces.json" parse="text"/></programlisting>
+            </step>
+            <step>
+                <para>If you want to delete this interface later on, copy the ID for the virtual interface. </para>
+            </step>
+        </procedure>
+        <sidebar>
+            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted" targetptr="delete_net"
+                    >“Delete your cloud network”</olink>
+            </para>
+        </sidebar>
+    </section>
+</section>
