@@ -6,7 +6,8 @@
 <section xml:id="bns_listserv_nova" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0">
     <title>List servers (nova-network API/nova client)</title>
-    <para>After you provision your server, list servers to make sure the server and attached network are listed.</para>
+    <para>After you provision your server, list servers to make sure the server and attached network are
+        listed.</para>
     <procedure>
         <title>To list servers with the nova client</title>
         <step>
@@ -31,8 +32,4 @@
             <para>Use the public IP address when you log into your server.</para>
         </step>
     </procedure>
-    <sidebar>
-        <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                targetptr="attach_net">Attach your network to an existing server</olink></para>
-    </sidebar>
 </section>

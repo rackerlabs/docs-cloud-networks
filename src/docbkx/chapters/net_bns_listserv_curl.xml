@@ -160,8 +160,4 @@
             <para>Use the public IP address when you log into your server.</para>
         </step>
     </procedure>
-    <sidebar>
-        <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                targetptr="attach_net">Attach your network to an existing server</olink></para>
-    </sidebar>
 </section>

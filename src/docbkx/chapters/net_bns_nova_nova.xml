@@ -41,9 +41,8 @@
             </listitem>
         </itemizedlist>
 
-        <para>You specify these values as parameters in a nova command or as attributes in the request body in a cURL
-            command.</para>
-        <note security="external">
+        <para>You specify these values as parameters in a nova command.</para>
+<!--        <note security="external">
             <para>You cannot attach an isolated network to an existing server. However, to work around this limitation, you
                 can create an image of the server and build a new server based on that image. When you build the new server,
                 you can attach the isolated network. For information, see
@@ -57,7 +56,21 @@
             <para>You can use the &virt_ext; to attach an isolated network to an existing server. For information, see <olink
                     targetdoc="cn-gettingstarted" targetptr="attach_net">Attach Your Network to an Existing
                 Server</olink>.</para>
-        </note>
+        </note>-->
+        <xi:include href="net_bns_provserv_nova.xml"
+            xpointer="xmlns(db=http://docbook.org/ns/docbook)
+            xpath(//*[@xml:id = 'bns_ps_note1']/*[not(self::db:title)])">
+            <xi:fallback>
+                <para>missing content here</para>
+            </xi:fallback>
+        </xi:include>
+        <xi:include href="net_bns_provserv_nova.xml"
+            xpointer="xmlns(db=http://docbook.org/ns/docbook)
+            xpath(//*[@xml:id = 'bns_ps_note2']/*[not(self::db:title)])">
+            <xi:fallback>
+                <para>missing content here</para>
+            </xi:fallback>
+        </xi:include>
 
         <procedure>
             <title>To provision a server and attach an isolated network</title>
@@ -115,5 +128,9 @@
                 <para>missing content here</para>
             </xi:fallback>
         </xi:include>
+        <sidebar>
+            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted" targetptr="attach_net">Attach
+                your network to an existing server</olink></para>
+        </sidebar>
     </section>
 </section>

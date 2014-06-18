@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section [
+<!ENTITY % common  SYSTEM "../../common/common.ent">
+%common;
+]>
+<!-- This page has piecemeal sections about provisioning servers that is NOT intended to display as is.
+    Instead, bits and pieces will be pulled as needed -->
+<section xml:id="bns_provserv_nova" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0">
+    <title>Provision a server with an isolated network (nova-network API/nova client)</title>
+    <note xml:id="bns_ps_note1">
+        <para>You cannot attach an isolated network to an existing server. However, to work around this limitation, you
+            can create an image of the server and build a new server based on that image. When you build the new server,
+            you can attach the isolated network. For information, see
+            <link xlink:href="http://www.rackspace.com/knowledge_center/article/attach-an-existing-cloud-server-to-a-cloud-network">
+                <citetitle>Attach a Cloud Network to an Existing Cloud Server</citetitle></link>.
+            To use the create image API, see
+            <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/Create_Image-d1e4655.html">
+                Create Image</link>.</para>
+    </note>
+    <note xml:id="bns_ps_note2">
+        <para>You can use the &virt_ext; to attach an isolated network to an existing server. For information, see <olink
+            targetdoc="cn-gettingstarted" targetptr="attach_net">Attach Your Network to an Existing
+            Server</olink>.</para>
+    </note>
+</section>

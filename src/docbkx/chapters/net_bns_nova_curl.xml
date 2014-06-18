@@ -41,8 +41,7 @@
             </listitem>
         </itemizedlist>
 
-        <para>You specify these values as parameters in a nova command or as attributes in the request body in a cURL
-            command.</para>
+        <para>You specify these values as attributes in the request body in a cURL command.</para>
         <note security="external">
             <para xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML"
                 xmlns:html="http://www.w3.org/1999/xhtml">You cannot attach an isolated network to an existing server.
@@ -152,5 +151,9 @@
                 <para>missing content here</para>
             </xi:fallback>
         </xi:include>
+        <sidebar>
+            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted" targetptr="attach_net"
+                    >Attach your network to an existing server</olink></para>
+        </sidebar>
     </section>
 </section>
