@@ -20,45 +20,22 @@
         <title>Provision a server with an isolated network (nova-network API/cURL)</title>
         <para>To create your new server and attach an isolated network, you need the following information: </para>
 
-        <itemizedlist>
-            <listitem>
-                <para>The name of the new server. Use a name of your choice.</para>
-            </listitem>
-            <listitem>
-                <para>The image ID. For how to list images, see
-                    <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-gettingstarted/content/list_images.html">
-                    List Images</link>.</para>
-            </listitem>
-            <listitem>
-                <para>The flavor ID. For how to list flavors, see
-                    <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-gettingstarted/content/list_flavors.html">
-                    List Flavors</link>.</para>
-            </listitem>
-            <listitem>
-                <para>The network ID of your isolated network. This is the ID you copied in <olink
-                        targetdoc="cn-gettingstarted" targetptr="nova_create_network_nova">“Create a network with the
-                        nova-network API and the nova client”</olink></para>
-            </listitem>
-        </itemizedlist>
-
-        <para>You specify these values as attributes in the request body in a cURL command.</para>
-        <note security="external">
-            <para xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML"
-                xmlns:html="http://www.w3.org/1999/xhtml">You cannot attach an isolated network to an existing server.
-                However, to work around this limitation, you can create an image of the server and build a new server based
-                on that image. When you build the new server, you can attach the isolated network. For information, see
-                <link xlink:href="http://www.rackspace.com/knowledge_center/article/attach-an-existing-cloud-server-to-a-cloud-network">
-                <citetitle>Attach a Cloud Network to an Existing Cloud Server</citetitle></link>.
-                To use the create image API, see
-                <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/Create_Image-d1e4655.html">
-                Create Image</link>.</para>
-        </note>
-        <note>
-            <para xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML"
-                xmlns:html="http://www.w3.org/1999/xhtml">You can use the &virt_ext; to attach an isolated network to an
-                existing server. For information, see <olink targetdoc="cn-gettingstarted" targetptr="attach_net">Attach Your
-                    Network to an Existing Server</olink>.</para>
-        </note>
+        <xi:include href="net_bns_provserv_all.xml"
+            xpointer="xmlns(db=http://docbook.org/ns/docbook)
+            xpath(//*[@xml:id = 'bns_ps_params_nova']/*[not(self::db:title)])">
+            <xi:fallback>
+                <para>Missing content here.  Please let us know by making a DISQUS comment.</para>
+            </xi:fallback>
+        </xi:include>
+        
+        <xi:include href="net_bns_provserv_all.xml"
+            xpointer="xmlns(db=http://docbook.org/ns/docbook)
+            xpath(//*[@xml:id = 'bns_ps_notes']/*[not(self::db:title)])">
+            <xi:fallback>
+                <para>Missing content here. Please let us know by making a DISQUS comment.</para>
+            </xi:fallback>
+        </xi:include>
+        
         <para>The following procedures show you how to create an isolated network by using cURL.</para>
 
         <procedure>
@@ -76,7 +53,15 @@
          | python -m json.tool</programlisting></para>
                 <para>In addition to the isolated network, PublicNet and ServiceNet are attached to the server. You must
                     explicitly specify these networks to attach them to your server.</para>
-                <para><emphasis role="bold">Output:</emphasis> The API operation returns information about the new server, as
+                <!--output example-->
+                <xi:include href="net_bns_provserv_all.xml"
+                    xpointer="xmlns(db=http://docbook.org/ns/docbook)
+                    xpath(//*[@xml:id = 'bns_ps_output_curl']/*[not(self::db:title)])">
+                    <xi:fallback>
+                        <para>Missing content here. Please let us know by making a DISQUS comment.</para>
+                    </xi:fallback>
+                </xi:include>
+                <!--<para><emphasis role="bold">Output:</emphasis> The API operation returns information about the new server, as
                     shown in the following output:</para>
                 <programlisting language="json"><?db-font-size 85%?>
 {
@@ -96,10 +81,12 @@
         ]
     }
 }                    
-                </programlisting>
+                </programlisting>-->
             </step>
         </procedure>
-        <procedure>
+        <!-- Commented out since neutron doesn't use xml at all, it made sense to not show the xml here, even though
+            this is nova-network API and xml does work.  Unhide at will -->
+        <!--<procedure>
             <title>To provision a server and attach an isolated network with XML</title>
             <step>
                 <para>Issue the following cURL
@@ -133,7 +120,7 @@
 &lt;/server>
                 </programlisting>
             </step>
-        </procedure>
+        </procedure>-->
         <sidebar>
             <para><emphasis role="bold">Next step:</emphasis>
                 <olink targetdoc="cn-gettingstarted" targetptr="nova_list_server_curl">“List servers and attached networks
@@ -148,7 +135,7 @@
             xpointer="xmlns(db=http://docbook.org/ns/docbook)
             xpath(//*[@xml:id = 'bns_listserv_curl']/*[not(self::db:title)])">
             <xi:fallback>
-                <para>missing content here</para>
+                <para>Missing content here. Please let us know by making a DISQUS comment.</para>
             </xi:fallback>
         </xi:include>
         <sidebar>

@@ -42,11 +42,10 @@
     <method name="GET" id="listPorts">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="List Ports">
             <para role="shortdesc">Lists ports to which the tenant has access.</para>
-            <para>This operation lists ports to which the tenant has access. Default policy settings return only those
-                subnets that are owned by the tenant who submits the request, unless the request is submitted by a user with
-                administrative rights. You can control which attributes are returned by using the
-                    <parameter>fields</parameter> query parameter, and you can specify how man results to return per page.
-                For information, see
+            <para>Default policy settings for this operation return only those subnets that are owned by the tenant who
+                submits the request, unless the request is submitted by a user with administrative rights. You can control
+                which attributes are returned by using the <parameter>fields</parameter> query parameter, and you can specify
+                how man results to return per page. For information, see
                 <link xlink:href="http://docs.rackspace.com/networks/api/v2/cn-devguide/content/section_filtering.html">Filtering 
                     Requests</link>
                 or
@@ -64,7 +63,7 @@
                     <xsdxt:code href="../common/samples/ports-get-resp.xml"/>
                 </wadl:doc>
             </representation>
-        </response> &fault401; </method>
+        </response>&fault401;</method>
 
     <!-- Create Port -->
     <method name="POST" id="createPort">
@@ -189,8 +188,8 @@
     <method name="DELETE" id="removePort">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Delete Port">
             <para role="shortdesc">Deletes a specified port.</para>
-            <para>This operation deletes the specified port. Any IP addresses that are associated with the port are returned to
-                the appropriate subnet's allocation pools.</para>
+            <para>This operation deletes the specified port. Any IP addresses that are associated with the port are returned
+                to the appropriate subnet's allocation pools.</para>
         </wadl:doc>
         <response status="204"/> &fault401; &fault403; &fault404; </method>
 </application>

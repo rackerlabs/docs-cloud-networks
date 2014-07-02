@@ -2,7 +2,7 @@
 <subnet xmlns="http://openstack.org/quantum/api/v2.0"
     xmlns:quantum="http://openstack.org/quantum/api/v2.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <name>my_subnet</name>
+    <name>test_subnet_1</name>
     <enable_dhcp quantum:type="bool">True</enable_dhcp>
     <network_id>d32019d3-bc6e-4319-9c1d-6722fc136a22</network_id>
     <tenant_id>4fd44f30292945e481c7b8a0c8908869</tenant_id>

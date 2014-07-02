@@ -114,93 +114,36 @@
         <para>To create your new server and attach a port with an isolated network, you need the following
             information:</para>
 
-        <itemizedlist>
-            <listitem>
-                <para>The name of the new server. Use a name of your choice.</para>
-            </listitem>
-            <listitem>
-                <para>The image ID. For how to list images, see
-                    <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-gettingstarted/content/list_images.html">
-                    List Images</link>.</para>
-            </listitem>
-            <listitem>
-                <para>The flavor ID. For how to list flavors, see
-                    <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-gettingstarted/content/list_flavors.html">
-                    List Flavors</link>.</para>
-            </listitem>
-            <listitem>
-                <para>The port ID of your isolated network. This is the ID you copied in <olink targetdoc="cn-gettingstarted"
-                        targetptr="neutron_create_port_neutron">“Create a port (neutron API/neutron)”</olink></para>
-            </listitem>
-        </itemizedlist>
+        <xi:include href="net_bns_provserv_all.xml"
+            xpointer="xmlns(db=http://docbook.org/ns/docbook)
+            xpath(//*[@xml:id = 'bns_ps_params_neutron']/*[not(self::db:title)])">
+            <xi:fallback>
+                <para>Missing content here. Please let us know by making a DISQUS comment.</para>
+            </xi:fallback>
+        </xi:include>
 
-        <para>You specify these values as parameters in a nova command.</para>
-<!--        <note security="external">
-            <para>You cannot attach an isolated network to an existing server. However, to work around this limitation, you
-                can create an image of the server and build a new server based on that image. When you build the new server,
-                you can attach the isolated network. For information, see
-                <link xlink:href="http://www.rackspace.com/knowledge_center/article/attach-an-existing-cloud-server-to-a-cloud-network">
-                <citetitle>Attach a Cloud Network to an Existing Cloud Server</citetitle></link>.
-                To use the create image API, see
-                <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/Create_Image-d1e4655.html">
-                Create Image</link>.</para>
-        </note>
-        <note>
-            <para>You can use the &virt_ext; to attach an isolated network to an existing server. For information, see <olink
-                    targetdoc="cn-gettingstarted" targetptr="attach_net">Attach Your Network to an Existing
-                Server</olink>.</para>
-        </note>-->
-        <para>inserting notes here</para>
-        <xi:include href="net_bns_provserv_nova.xml"
+        <xi:include href="net_bns_provserv_all.xml"
             xpointer="xmlns(db=http://docbook.org/ns/docbook)
-            xpath(//*[@xml:id = 'bns_ps_note1']/*[not(self::db:title)])">
+            xpath(//*[@xml:id = 'bns_ps_notes']/*[not(self::db:title)])">
             <xi:fallback>
-                <para>missing content here</para>
+                <para>Missing content here. Please let us know by making a DISQUS comment.</para>
             </xi:fallback>
         </xi:include>
-        <xi:include href="net_bns_provserv_nova.xml"
-            xpointer="xmlns(db=http://docbook.org/ns/docbook)
-            xpath(//*[@xml:id = 'bns_ps_note2']/*[not(self::db:title)])">
-            <xi:fallback>
-                <para>missing content here</para>
-            </xi:fallback>
-        </xi:include>
+
         <procedure>
             <title>To provision a server and attach a port with a network</title>
             <step>
                 <para>Issue the following nova client command:
                     <programlisting language="bash" role="gutter: false"><?db-font-size 80%?>
 <prompt>$</prompt> nova boot ServerAmp --image 82e72de5-6366-4217-8c87-a570a9b17e73 --nic port-id=c23c2fff-c07f-4af0-bc37-8ad883231f7c --flavor 1</programlisting></para>
-                <?sbr?>
-                <para><emphasis role="bold">Output:</emphasis> The command returns information about the new server, as shown
-                    in the following output:</para>
-                <informalexample>
-                    <screen><computeroutput><?db-font-size 80%?>
-+-------------------------+-----------------------------------------------------------------+
-| Property                | Value                                                           |
-+-------------------------+-----------------------------------------------------------------+
-| OS-DCF:diskConfig       | AUTO                                                            |
-| OS-EXT-STS:power_state  | 0                                                               |
-| OS-EXT-STS:task_state   | scheduling                                                      |
-| OS-EXT-STS:vm_state     | building                                                        |
-| accessIPv4              |                                                                 |
-| accessIPv6              |                                                                 |
-| adminPass               | K3kviaHwhKqS                                                    |
-| created                 | 2014-02-06T20:05:12Z                                            |
-| flavor                  | m1.tiny (1)                                                     |
-| hostId                  |                                                                 |
-| id                      | fbcebd8c-5b4f-4087-a778-f5a6ffc4530f                            |
-| image                   | cirros-0.3.0-x86_64-disk (82e72de5-6366-4217-8c87-a570a9b17e73) |
-| metadata                | {}                                                              |
-| name                    | ServerAmp                                                       |
-| progress                | 0                                                               |
-| security_groups         | default                                                         |
-| status                  | BUILD                                                           |
-| tenant_id               | 53501b3c25d34f8ea293c03298caed60                                |
-| updated                 | 2014-02-06T20:05:12Z                                            |
-| user_id                 | 28be72f8fc5b45589c93f55274e459ce                                |
-+-------------------------+-----------------------------------------------------------------+</computeroutput></screen>
-                </informalexample>
+                <!--output example-->
+                <xi:include href="net_bns_provserv_all.xml"
+                    xpointer="xmlns(db=http://docbook.org/ns/docbook)
+                    xpath(//*[@xml:id = 'bns_ps_output_client']/*[not(self::db:title)])">
+                    <xi:fallback>
+                        <para>Missing content here. Please let us know by making a DISQUS comment.</para>
+                    </xi:fallback>
+                </xi:include>
             </step>
         </procedure>
 
@@ -273,7 +216,7 @@
             xpointer="xmlns(db=http://docbook.org/ns/docbook)
             xpath(//*[@xml:id = 'bns_listserv_nova']/*[not(self::db:title)])">
             <xi:fallback>
-                <para>missing content here</para>
+                <para>Missing content here. Please let us know by making a DISQUS comment.</para>
             </xi:fallback>
         </xi:include>
         <sidebar>

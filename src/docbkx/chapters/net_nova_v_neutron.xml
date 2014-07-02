@@ -33,8 +33,7 @@
             </listitem>
         </itemizedlist>
     </para>
-    <note>
-        <para>The neutron API operations return only JSON-formatted responses. There is no option to receive responses in
-            XML.</para>
-    </note>
+    <para>Both neutron and nova-network APIs support the JSON data serialization format and XML format for requests and
+        responses</para>
+
 </section>

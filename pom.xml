@@ -12,6 +12,7 @@
   <!-- ################################################ -->
   <build>
     <plugins>
+      <!-- Olink -->
       <plugin>
         <groupId>com.rackspace.cloud.api</groupId>
         <artifactId>olink-maven-plugin</artifactId>
@@ -25,6 +26,7 @@
           </execution>
         </executions>
       </plugin>
+      <!-- Maven Dependency -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
@@ -48,10 +50,11 @@
           </execution>
         </executions>
       </plugin>
+      <!-- Maven Clouddocs -->
       <plugin>
         <groupId>com.rackspace.cloud.api</groupId>
         <artifactId>clouddocs-maven-plugin</artifactId>
-        <version>2.0.4</version>
+        <version>2.1.1</version><!--old 2.0.4-->
         <executions>
           <!-- Configuration for Release Notes External -->
           <execution>
@@ -143,6 +146,7 @@
           <useLatestSuffixInPdfUrl>1</useLatestSuffixInPdfUrl>
         </configuration>
       </plugin>
+      <!-- Maven Assembly -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-assembly-plugin</artifactId>
