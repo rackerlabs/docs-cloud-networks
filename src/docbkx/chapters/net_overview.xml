@@ -9,8 +9,8 @@
         <para>Cloud Networks enables you to create a virtual Layer 2 network, known as an isolated network, which gives you
                 greater control and security when you deploy web applications. </para>
         <para>When you create a next generation Cloud Server, Cloud Networks enables you to attach one or more networks to
-                your server. You can attach an isolated network that you have created or a Rackspace network. </para>
-        <para>If you are using nova-network operations and you install the &virt_ext;, you can create a virtual interface to
+                your server.</para>
+        <!--<para>If you are using nova-network operations and you install the &virt_ext;, you can create a virtual interface to
                 a specified Rackspace or isolated network and attach that network to an existing server instance. You can
                 also list virtual interfaces for and delete virtual interfaces from a server instance. For information about
                 the &virt_ext;, see <olink condition="cn" targetdoc="cn-devguide" targetptr="section_virt_ext">“Cloud
@@ -18,7 +18,7 @@
                 <phrase condition="gs">
                         <link xlink:href="http://docs.rackspace.com/networks/api/v2/cn-devguide/content/section_virt_ext.html">
                 Cloud Networks Virtual Interface Extension</link>
-                        in the <citetitle>Cloud Networks Developer Guide</citetitle></phrase>.</para>
+                        in the <citetitle>Cloud Networks Developer Guide</citetitle></phrase>.</para>-->
         <para>Cloud Networks enables you to attach one or more of the following networks to your server: <itemizedlist>
                         <listitem>
                                 <para><emphasis role="bold"><glossterm>PublicNet</glossterm></emphasis>. Provides access to
@@ -82,7 +82,8 @@
         </note>
         <para>You can use the Cloud Networks service to perform the following tasks: <itemizedlist>
                         <listitem>
-                                <para>List networks to which the specified tenant has access.</para>
+                                <para>List <glossterm baseform="network">networks</glossterm> to which the specified tenant
+                                        has access.</para>
                         </listitem>
                         <listitem>
                                 <para>Create isolated networks.</para>
@@ -100,14 +101,14 @@
                                                 of detaching from Rackspace networks”</olink>.</para>
                         </listitem>
                         <listitem>
-                                <para>Manage subnets.</para>
+                                <para>Manage <glossterm baseform="subnet">subnets</glossterm>.</para>
                         </listitem>
                         <listitem>
-                                <para>Manage ports.</para>
+                                <para>Manage <glossterm baseform="port">ports</glossterm>.</para>
                         </listitem>
-                        <listitem>
+                        <!--                        <listitem>
                                 <para>Manage Layer-3 routers.</para>
-                        </listitem>
+                        </listitem>-->
                 </itemizedlist></para>
         <para>To list the networks that are attached to servers, issue a Cloud Servers List Servers operation. For more
                 information, see

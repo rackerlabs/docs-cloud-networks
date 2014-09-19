@@ -9,12 +9,12 @@
     <para>These sections walk you through creating a port for your network, listing the ports and showing the port details by
         using the neutron API. They also show the steps for provisioning a server with an attached port and for listing
         servers by using the nova-network API.</para>
-    <note>
+<!--    <note>
         <para>If you prefer to attach the network directly to a new server without using a port, see <olink
                 targetdoc="cn-gettingstarted" targetptr="bns_nova_nova">“Use nova-network API and nova-client”</olink> or
                 <olink targetdoc="cn-gettingstarted" targetptr="bns_nova_curl">“Use nova-network API and cURL”</olink>. There
             are no neutron API operations for direct attachment of a network to the server without using ports.</para>
-    </note>
+    </note>-->
     <sidebar>
         <para><emphasis role="bold">Start here: </emphasis><olink targetdoc="cn-gettingstarted"
                 targetptr="neutron_create_port_curl">“Create a port (neutron API/cURL)”</olink></para>

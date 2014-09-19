@@ -7,15 +7,15 @@
 <chapter xml:id="attach_net" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
     <title>Attach your network to an existing server</title>
-    <para>Unlike other activities described in this guide, you can attach your network to existing servers using only the
-        Nova-network API. There is no Neutron API equivalent. The sections in this chapter provide examples of attaching a
-        network to an existing server using the Nova-network API and the &virt_ext;</para>
+    <para><!--Unlike other activities described in this guide, y-->You can attach your network to existing servers using only
+        the Nova-network API. There is no Neutron API equivalent. The sections in this chapter provide examples of attaching
+        a network to an existing server using the Nova-network API and the &virt_ext;</para>
     <para>The following flow chart shows the steps for attaching a network to an existing server by using the Nova-network
         API. These steps are detailed in this guide.<figure>
             <title>Steps to attach a network to an existing server</title>
             <mediaobject>
                 <imageobject>
-                    <imagedata fileref="../figures/aes-both-api.png" contentwidth="3in"/>
+                    <imagedata fileref="../figures/aes-neutron-api.png" contentwidth="3in"/>
                 </imageobject>
             </mediaobject>
         </figure>

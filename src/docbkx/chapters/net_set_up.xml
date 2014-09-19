@@ -34,8 +34,8 @@
     </note>
     <para>Regardless of which method you choose to make API calls, don't forget to get that authentication token!</para>
 
-    <xi:include href="net_install_neutron.xml"/>
     <xi:include href="net_install_nova.xml"/>
+    <xi:include href="net_install_neutron.xml"/>
     <xi:include href="net_auth.xml"/>
     <xi:include href="net_curl_export_vars.xml"/>
 </chapter>

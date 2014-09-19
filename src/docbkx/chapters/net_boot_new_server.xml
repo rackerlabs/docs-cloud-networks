@@ -6,27 +6,27 @@
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
         xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="boot_new_server">
         <title>Boot a new server with your cloud network</title>
-        <para>Now that you have a cloud network, you can attach it a new server. Before booting your new server, choose
+        <para>Now that you have a cloud network, you can attach it a new server. <!--Before booting your new server, choose
                 whether to use the neutron API or the nova-network API. For help deciding, see <olink
                         targetdoc="cn-gettingstarted" targetptr="section_nova_v_neutron">“Networking: nova-network versus
                         neutron”</olink>. The sections in this chapter provide examples of creating a network using each
-                API.</para>
-        <para>The following flow chart shows the steps to attach a network and provision a server by using the neutron API
-                and the nova-network API. These steps are detailed in this guide. </para>
+                API.--></para>
+        <para>The following flow chart shows the steps to attach a network and provision a server by using the neutron API<!--
+                and the nova-network API-->. These steps are detailed in this guide. </para>
         <note>
-                <para>Both neutron and nova-network procedures include steps to provision a server and to list servers. These
-                        two steps can be done only with the nova-network API. There is no neutron API equivalent. </para>
+                <para><!--Both neutron and nova-network procedures include s-->Steps to provision a server and to list servers<!--. These
+                        two steps--> can be done only with the nova-network API. There is no neutron API equivalent. </para>
         </note>
         <figure>
                 <title>Steps to provision a server with a network</title>
                 <mediaobject>
                         <imageobject>
-                                <imagedata fileref="../figures/bns-both-api.png" contentwidth="3in"/>
+                                <imagedata fileref="../figures/bns-neutron-api.png" contentwidth="3in"/>
                         </imageobject>
                 </mediaobject>
         </figure>
         <para>The sections are also organized by example type. To simplify your path through this chapter, decide whether you
-                prefer neutron-client or nova-client examples, or cURL examples.</para>
+                prefer neutron-client <!--or nova-client examples,--> or cURL examples.</para>
         <sidebar>
                 <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
                                 <listitem>
@@ -37,18 +37,18 @@
                                         <para><olink targetdoc="cn-gettingstarted" targetptr="bns_neutron_curl">“Use neutron
                                                         API and cURL”</olink></para>
                                 </listitem>
-                                <listitem>
+                                <!--<listitem>
                                         <para><olink targetdoc="cn-gettingstarted" targetptr="bns_nova_nova">“Use
                                                         nova-network API and nova client”</olink></para>
                                 </listitem>
                                 <listitem>
                                         <para><olink targetdoc="cn-gettingstarted" targetptr="bns_nova_curl">“Use
                                                         nova-network API and cURL”</olink></para>
-                                </listitem>
+                                </listitem>-->
                         </itemizedlist></para>
         </sidebar>
         <xi:include href="net_bns_neutron_neutron.xml"/>
         <xi:include href="net_bns_neutron_curl.xml"/>
-        <xi:include href="net_bns_nova_nova.xml"/>
-        <xi:include href="net_bns_nova_curl.xml"/>
+        <!--<xi:include href="net_bns_nova_nova.xml"/>
+        <xi:include href="net_bns_nova_curl.xml"/>-->
 </chapter>

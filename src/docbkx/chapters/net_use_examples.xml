@@ -32,13 +32,12 @@
                     bodies that are in JSON and XML formats. See <olink targetdoc="cn-gettingstarted" targetptr="curl">“How
                         cURL Commands Work”</olink></para>
             </listitem>
-        </itemizedlist>If you like, you can use cURL in one example and switch to the nova client in the next example. If you
-        choose to use a cURL command for any example, you must export the environment variables required to run the cURL
+        </itemizedlist>If you like, you can use cURL in one example and switch to the neutron client in the next example. If
+        you choose to use a cURL command for any example, you must export the environment variables required to run the cURL
         examples. See <olink targetdoc="cn-gettingstarted" targetptr="export_env_vars">“(optional) Export Environment
             Variables to Run cURL Commands”</olink>.</para>
     <para>Each example, whether neutron client, nova client or cURL, points you to the next step in the process. </para>
 
-    <!--<xi:include href="net_how_neutron_works.xml"/>-->
-    <xi:include href="net_how_nova_works.xml"/>
+    <xi:include href="net_how_client_works.xml"/>
     <xi:include href="net_how_curl_works.xml"/>
 </chapter>

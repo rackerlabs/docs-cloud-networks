@@ -18,19 +18,11 @@
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="install_neutron">
 
     <title>(Optional) Install the neutron client</title>
-    <para>Follow the necessary steps to install the neutron client (TBD).</para>
-    <!--<para>To manage your servers from the command line, you can use the open-source nova client application called
-            <literal>python-novaclient</literal>. </para>
-    <para>To install the nova client, you first install the <literal>rackspace-novaclient</literal> package, which includes
-        the nova client and the Rackspace extensions including the Cloud Networks extension.</para>
-    <para>If you want to use the Cloud Networks virtual interface extension, you must also install the
-            <literal>os_virtual_interfacesv2_python_novaclient_ext</literal> package. </para>
-    <note>
-        <para>The python-novaclient is developed and maintained by the OpenStack community. While we do not directly support
-            python-novaclient, you can post in the comments below if you run into any difficulties.</para>
-    </note>
-    <para>Before you begin, install the following software:<table rules="all" width="90%">
-            <caption>Nova Client Prerequisite Software</caption>
+    <para>Follow the necessary steps to install the neutron client</para>
+    <para>To manage your network from the command line, you can use the open-source neutron client application called
+            <literal>rackspace-python-neutronclient</literal>. </para>
+    <para>Before you install the neutron client, install the following software:<table rules="all" width="90%">
+            <caption>Neutron Client Prerequisite Software</caption>
             <col width="25%"/>
             <col width="75%"/>
             <thead>
@@ -45,7 +37,7 @@
                         <para>Python 2.6 or later</para>
                     </td>
                     <td>
-                        <para>Currently, the nova client does not support Python 3. </para>
+                        <para>Currently, the neutron client does not support Python 3. </para>
                     </td>
                 </tr>
                 <tr>
@@ -65,9 +57,9 @@
                 <tr>
                     <td valign="top"><command>pip</command> package</td>
                     <td>
-                        <para>To install the nova client on a Mac OS X or Linux system, use <command>pip</command> because it
-                            is easy and ensures that you get the latest version of the nova client from the
-                            <link xlink:href="http://pypi.python.org/pypi/python-novaclient/">Python Package Index</link>.
+                        <para>To install the neutron client on a Mac OS X or Linux system, use <command>pip</command> because
+                            it is easy and ensures that you get the latest version of the nova client from the
+                            <link xlink:href="http://pypi.python.org/pypi/python-neutronclient/">Python Package Index</link>.
                             Also, it lets you update the package later on.</para>
                         <para>Install <command>pip</command> through the package manager for your system:<itemizedlist>
                                 <listitem>
@@ -103,61 +95,38 @@
         </table></para>
 
     <procedure>
-        <title>To install the nova client with Rackspace extensions:</title>
+        <title>To install the neutron client:</title>
 
         <step>
-            <title>Install or update the nova client package with Rackspace extensions</title>
-            <para>The <literal>rackspace-novaclient</literal> package includes the nova client and Rackspace extensions,
-                including the Cloud Networks extension. </para>
-            <para>Run the following command for your operating system to install the <literal>rackspace-novaclient</literal>
-                package:</para>
+            <title>Install or update the neutron client package</title>
+            <para>The <literal>rackspace-python-neutronclient</literal> package includes the neutron client. </para>
+            <para>Run the following command for your operating system to install the
+                    <literal>rackspace-python-neutronclient</literal> package:</para>
             <para>For Ubuntu, Debian, or OS X: </para>
             <programlisting language="bash" role="gutter: false">
-                <prompt>$</prompt> sudo pip install rackspace-novaclient</programlisting>
+                <prompt>$</prompt> sudo pip install rackspace-python-neutronclient</programlisting>
             <para>For RHEL, CentOS, or Fedora: </para>
             <programlisting language="bash" role="gutter: false">
-                <prompt>$</prompt> sudo python-pip install rackspace-novaclient</programlisting>
+                <prompt>$</prompt> sudo python-pip install rackspace-python-neutronclient</programlisting>
             <note>
 
-                <para>If you previously installed the <literal>rackspace-novaclient</literal> package, run the following
-                    command for your operating system to upgrade it:</para>
+                <para>If you previously installed the <literal>rackspace-python-neutronclient</literal> package, run the
+                    following command for your operating system to upgrade it:</para>
                 <para> For Ubuntu, Debian, or OS X:
                     <programlisting language="bash" role="gutter: false">
-                        <prompt>$</prompt> sudo pip install -\-upgrade rackspace-novaclient</programlisting>
+                        <prompt>$</prompt> sudo pip install --upgrade rackspace-python-neutronclient</programlisting>
                     For RHEL, CentOS, or Fedora:
                     <programlisting language="bash" role="gutter: false">
-                        <prompt>$</prompt> sudo python-pip install -\-upgrade rackspace-novaclient</programlisting>
+                        <prompt>$</prompt> sudo python-pip install --upgrade rackspace-python-neutronclient</programlisting>
                 </para>
             </note>
-            <important>
-                <itemizedlist>
-                    <listitem>
-                        <para>If you previously installed the earlier <literal>rax_networks_python_novaclient_ext</literal>
-                            package, run the following command for your operating system to remove it: </para>
-                        <para> For Ubuntu, Debian, or OS X:
-                            <programlisting language="bash" role="gutter: false">
-                                <prompt>$</prompt> sudo pip uninstall rax_networks_python_novaclient_ext</programlisting>
-                            For RHEL, CentOS, or Fedora:
-                            <programlisting language="bash" role="gutter: false">
-                                <prompt>$</prompt> sudo python-pip uninstall rax_networks_python_novaclient_ext</programlisting>
-                        </para>
-                    </listitem>
-                    <listitem>
-                        <para>If you have trouble using pip to install the nova client, you can also download a nova client
-                            installation package from the
-                            <link xlink:href="http://pypi.python.org/pypi/rackspace-novaclient/">python package repository</link>.
-                            Or, you can use pip to individually install the <literal>python-novaclient</literal> and
-                                <literal>rackspace-auth-openstack</literal> packages.</para>
-                    </listitem>
-                </itemizedlist>
-            </important>
         </step>
 
         <step>
             <title>Set environment variables</title>
-            <para>Edit your bash profile to add and set environment variables that enable the nova client to connect to your
-                Rackspace Cloud account. Use nano or an editor of your choice to edit your <filename>.bash_profile</filename>
-                file:</para>
+            <para>Edit your bash profile to add and set environment variables that enable the neutron client to connect to
+                your Rackspace Cloud account. Use nano or an editor of your choice to edit your
+                    <filename>.bash_profile</filename> file:</para>
             <programlisting language="bash" role="gutter: false"><prompt>$</prompt> nano ~/.bash_profile </programlisting>
             <para>Depending on your account location, add one of the following sets of lines to your bash profile and save
                 the file:<example>
@@ -195,33 +164,32 @@ export OS_NO_CACHE=1</computeroutput></screen>
             <programlisting language="bash" role="gutter: false"><prompt>$</prompt> source ~/.bash_profile </programlisting>
         </step>
         <step>
-            <title>Test the nova client</title>
-            <para>To verify that you can talk to the API server, authenticate and list
-                images:<programlisting language="bash" role="gutter: false"><prompt>$</prompt> nova credentials 
-<prompt>$</prompt> nova image-list </programlisting></para>
-            <para>Then, list networks:
-                <programlisting language="bash" role="gutter: false"><prompt>$</prompt> nova network-list </programlisting></para>
+            <title>Test the neutron client</title>
+            <para>To verify that you can talk to the API server, authenticate using nova
+                client:<programlisting language="bash" role="gutter: false"><prompt>$</prompt> nova credentials</programlisting></para>
+            <para>Then, list networks, using the neutron client:
+                <programlisting language="bash" role="gutter: false"><prompt>$</prompt> neutron net-list </programlisting></para>
         </step>
         <step>
-            <title>Get help for nova client commands</title>
-            <para>To get help for nova client commands, run the following command:</para>
-            <programlisting language="bash" role="gutter: false"><prompt>$</prompt> nova help </programlisting>
+            <title>Get help for neutron client commands</title>
+            <para>To get help for neutron client commands, run the following command:</para>
+            <programlisting language="bash" role="gutter: false"><prompt>$</prompt> neutron help </programlisting>
             <para>To get help for a specific command, type the command name after the <parameter>help</parameter> parameter,
                 as follows:</para>
-            <programlisting language="bash" role="gutter: false"><prompt>$</prompt> nova help &lt;command_name> </programlisting>
-            <para>You cannot use every command that is listed. The nova client was written for use with recent development
+            <programlisting language="bash" role="gutter: false"><prompt>$</prompt> neutron help &lt;command_name> </programlisting>
+            <para>You cannot use every command that is listed. The neutron client was written for use with recent development
                 versions of OpenStack, so it includes support for some features that are not available in the Rackspace
                 Cloud.</para>
             <note>
                 <para>To show and become familiar with the underlying API v2 request for a command, specify the
-                        <literal>-\-debug</literal> parameter as the first parameter on any command. For example:
+                        <literal>--debug</literal> parameter as the first parameter on any command. For example:
                     <programlisting language="bash" role="gutter: false">
-                        <prompt>$</prompt> nova -\-debug list</programlisting></para>
+                        <prompt>$</prompt> neutron --debug net-list</programlisting></para>
             </note>
         </step>
         <step>
             <title>Troubleshooting</title>
-            <para>The python-novaclient is developed and maintained by the OpenStack community. </para>
+            <para>The python-neutronclient is developed and maintained by the OpenStack community. </para>
             <itemizedlist>
                 <listitem>
                     <para>If you cannot run commands successfully, make sure that you entered your user name, password, and
@@ -233,20 +201,20 @@ export OS_NO_CACHE=1</computeroutput></screen>
                 </listitem>
                 <listitem>
                     <para>To override some environment variable settings, you can use the options that are listed at the end
-                        of the <command>nova help</command> output. For example, you can override the
-                            <literal>OS_PASSWORD</literal> setting in the bash profile by specifying a password on a nova
+                        of the <command>neutron help</command> output. For example, you can override the
+                            <literal>OS_PASSWORD</literal> setting in the bash profile by specifying a password on a neutron
                         command, as follows: </para>
                     <programlisting language="bash" role="gutter: false">
-                        <prompt>$</prompt> nova -\-password &lt;password> image-list </programlisting>
+                        <prompt>$</prompt> neutron --password &lt;password> net-list </programlisting>
                     <para>Where <parameter>password</parameter> is your Rackspace password.</para>
                 </listitem>
                 <listitem>
-                    <para> While Rackspace does not directly support python-novaclient, if the above steps don't help, you
+                    <para> While Rackspace does not directly support python-neutronclient, if the above steps don't help, you
                         can post a question in the comments below.</para>
                 </listitem>
             </itemizedlist>
         </step>
-    </procedure>-->
+    </procedure>
     <sidebar>
         <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted" targetptr="net_auth">“Get
                 authentication token”</olink></para>

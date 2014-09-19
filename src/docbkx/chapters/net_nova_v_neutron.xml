@@ -5,14 +5,14 @@
 ]>
 <section xml:id="section_nova_v_neutron" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
-    <title>Networking: nova-network versus neutron</title>
-    <para>Rackspace first introduced networking services by using the nova-network API based on OpenStack. Now we are
-        providing the neutron API, also based on OpenStack, which offers more functionality and flexibility than the
-        nova-network API. Both sets of APIs continue to work well, but the neutron API will be the base for all the future
-        networking services that Rackspace offers. </para>
-    <para>We recommend that you use the neutron API for your Cloud Networks API operations.</para>
-    <para>The neutron API provides three primary, top-level resources (networks, ports, and subnets) and includes the ability
-        to perform the following functions: <itemizedlist>
+    <title>Networking: neutron versus nova-network</title>
+    <para>Rackspace first introduced networking services by using the nova-network API based on OpenStack. This is now
+        superseded by the neutron API, also based on OpenStack, which offers more functionality and flexibility than the
+        nova-network API. Both APIs continue to work well, but the neutron API will be the base for all the future networking
+        services that Rackspace offers. </para>
+    <para>We recommend that you use the neutron API for your Cloud Networks API operations. The neutron API provides three
+        primary, top-level resources (networks, ports, and subnets) and includes the ability to perform the following
+        functions: <itemizedlist>
             <listitem>
                 <para>Use all existing create, read, update, delete (CRUD) API operations for networks</para>
             </listitem>
@@ -28,12 +28,13 @@
             <listitem>
                 <para>Set the default gateway on cloud networks</para>
             </listitem>
-            <listitem>
+            <!--<listitem>
                 <para>View quotas related to networks</para>
-            </listitem>
+            </listitem>-->
         </itemizedlist>
     </para>
-    <para>Both neutron and nova-network APIs support the JSON data serialization format and XML format for requests and
-        responses</para>
-
+    <para>The neutron API supports JSON data serialization format for requests and responses.</para>
+    <para>For guidance on the nova-network API networking operations, see
+        <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/ch_extensions.html">
+                Cloud Servers API Developers Guide Extensions</link>.</para>
 </section>

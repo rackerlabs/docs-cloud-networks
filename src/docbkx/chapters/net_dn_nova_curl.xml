@@ -38,7 +38,7 @@
             <step>
                 <para>Issue the following command. In the command, specify the ID for the server that you want to
                     delete.</para>
-                <programlisting language="bash" role="gutter: false"><?db-font-size 60%?>
+                <programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
                         <prompt>$</prompt> curl -i https://dfw.servers.api.rackspacecloud.com/v2/$account/servers/$instance_id/os-virtual-interfacesv2/$interface_id \
      -X DELETE \
      -H "X-Auth-Token: $token"</programlisting>
