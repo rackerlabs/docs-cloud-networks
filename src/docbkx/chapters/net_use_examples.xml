@@ -7,21 +7,21 @@
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
     <title>Learn how to use the examples in this guide</title>
     <para>For each exercise in this guide, you choose one of the following methods to make Cloud Networks API calls: <itemizedlist>
-            <listitem>
+            <!-- <listitem>
                 <para><emphasis role="bold">The neutron client</emphasis>. We recommend that you use the neutron client to
                     run simple commands that make neutron API calls. This open-source Python client runs on Linux or Mac OS X
                     systems and is easy to learn and use. You can specify a debug parameter on any neutron command to show
                     the underlying API request for the command. This is a good way to become familiar with API requests. </para>
-                <!--<para>See <olink targetdoc="cn-gettingstarted" targetptr="novaclient">“How the nova Client
-                    Works”</olink>.</para>-->
-            </listitem>
+                <!-\-<para>See <olink targetdoc="cn-gettingstarted" targetptr="novaclient">“How the nova Client
+                    Works”</olink>.</para>-\->
+            </listitem>-->
             <listitem>
                 <para><emphasis role="bold">The
                         <link xlink:href="http://www.rackspace.com/knowledge_center/article/using-python-novaclient-with-the-rackspace-cloud">
                             nova client</link></emphasis>.
-                    Use the nova client to run simple commands that make nova-network API calls. This open-source Python
-                    client runs on Linux or Mac OS X systems and is easy to learn and use. You can specify a debug parameter
-                    on any nova command to show the underlying API request for the command.</para>
+                    Use the nova client to run simple commands such as those required to boot servers. This open-source
+                    Python client runs on Linux or Mac OS X systems and is easy to learn and use. You can specify a debug
+                    parameter on any nova command to show the underlying API request for the command.</para>
                 <para>See <olink targetdoc="cn-gettingstarted" targetptr="novaclient">“How the nova Client
                     Works”</olink>.</para>
             </listitem>

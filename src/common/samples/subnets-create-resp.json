@@ -13,7 +13,7 @@
         ],
         "host_routes": [],
         "ip_version": 4,
-        "gateway_ip": "192.168.199.1",  
+        "gateway_ip": null,  
         "cidr": "192.168.199.0/24",
         "id": "3b80198d-4f7b-4f77-9ef5-774d54e17126"
     }
