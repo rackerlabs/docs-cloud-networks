@@ -11,16 +11,6 @@
     <!-- notes common to neutron and nova & client and curl -->
     <para xml:id="bns_ps_notes">
         <note>
-            <para>You cannot attach an isolated network to an existing server. However, to work around this limitation, you
-                can create an image of the server and build a new server based on that image. When you build the new server,
-                you can attach the isolated network. For information, see
-                <link xlink:href="http://www.rackspace.com/knowledge_center/article/attach-an-existing-cloud-server-to-a-cloud-network">
-                <citetitle>Attach a Cloud Network to an Existing Cloud Server</citetitle></link>.
-                To use the create image API, see
-                <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/Create_Image-d1e4655.html">
-                Create Image</link>.</para>
-        </note>
-        <note>
             <para>You can use the &virt_ext; to attach an isolated network to an existing server. For information, see <olink
                     targetdoc="cn-gettingstarted" targetptr="attach_net">Attach Your Network to an Existing
                 Server</olink>.</para>
@@ -45,14 +35,22 @@
                     List Flavors</link>.</para>
                 </listitem>
                 <listitem>
-                    <para>The port ID of your isolated network. This is the ID you copied in either <olink
+                    <para>The port ID of your isolated network. This is the ID you copied in <!--either <olink
                             targetdoc="cn-gettingstarted" targetptr="neutron_create_port_neutron">“Create a port (neutron
-                            API/neutron)”</olink> or <olink targetdoc="cn-gettingstarted"
-                            targetptr="neutron_create_port_curl">“Create a port (neutron API/cURL)”</olink></para>
+                            API/neutron)”</olink> or-->
+                        <olink targetdoc="cn-gettingstarted" targetptr="neutron_create_port_curl">“Create a port
+                            (cURL)”</olink></para>
+                    <note>
+                        <para>Instead of port ID, you can also pass the network ID of the isolated (Cloud) network.</para>
+                    </note>
+                </listitem>
+                <listitem>
+                    <para>The network ID of PublicNet and ServiceNet. These are
+                            <literal>00000000-0000-0000-0000-000000000000</literal> and
+                            <literal>11111111-1111-1111-1111-111111111111</literal> respectively. </para>
                 </listitem>
             </itemizedlist>
         </para>
-        <para>You specify these values as parameters in a nova command.</para>
     </epigraph>
 
     <!-- nova paramaters for call, client and curl -->

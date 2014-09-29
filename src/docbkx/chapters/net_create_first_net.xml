@@ -11,8 +11,7 @@
                 deciding, see <olink targetdoc="cn-gettingstarted" targetptr="section_nova_v_neutron">“Networking:
                         nova-network versus neutron”</olink>.</para>-->
         <para>The following flow chart shows the steps for creating a network by using the neutron
-                API<!-- and the nova-network
-                API-->. These steps are detailed in this guide.<figure>
+                API<!-- and the nova-network API-->. These steps are detailed in this guide.<figure>
                         <title>Steps to create a network</title>
                         <mediaobject>
                                 <imageobject>
@@ -21,15 +20,8 @@
                         </mediaobject>
                 </figure>
         </para>
-        <para>The sections are also organized by example type. To simplify your path through this chapter, decide whether you
-                prefer neutron-client <!--or nova-client examples, -->or cURL examples.</para>
-        <para>To create an isolated network<!-- (using the nova-network API) or a subnet (using the neutron API)-->, you
-                specify a Classless Inter-Domain Routing (<glossterm>CIDR</glossterm>). A CIDR is a range of IP addresses
-                used by a network. A CIDR address looks like a normal IP address except that it ends with a slash followed by
-                a number. The number after the slash represents the number of addresses in the range. For more information,
-                see
-                <link xlink:href="http://www.rackspace.com/knowledge_center/article/using-cidr-notation"><citetitle>CIDR
-                Notation</citetitle></link>.</para>
+        <!--<para>The sections are also organized by example type. To simplify your path through this chapter, decide whether you
+                prefer neutron-client <!-\-or nova-client examples, -\->or cURL examples.</para>-->
         <note>
                 <itemizedlist>
                         <title>Network Limitations:</title>
@@ -43,14 +35,14 @@
                 </itemizedlist>
         </note>
         <sidebar>
-                <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
-                                <listitem>
+                <para><emphasis role="bold">Next step:</emphasis> <!--Choose one of the following methods:--><itemizedlist>
+                                <!--<listitem>
                                         <para><olink targetdoc="cn-gettingstarted" targetptr="cfn_neutron_neutron">“Use
-                                                        neutron API and neutron client”</olink></para>
-                                </listitem>
+                                                        neutron client”</olink></para>
+                                </listitem>-->
                                 <listitem>
-                                        <para><olink targetdoc="cn-gettingstarted" targetptr="cfn_neutron_curl">“Use neutron
-                                                        API and cURL”</olink></para>
+                                        <para><olink targetdoc="cn-gettingstarted" targetptr="cfn_neutron_curl">“Use
+                                                        cURL”</olink></para>
                                 </listitem>
                                 <!--<listitem>
                                         <para><olink targetdoc="cn-gettingstarted" targetptr="cfn_nova_nova">“Use
@@ -62,7 +54,7 @@
                                 </listitem>-->
                         </itemizedlist></para>
         </sidebar>
-        <xi:include href="net_cfn_neutron_neutron.xml"/>
+        <!--<xi:include href="net_cfn_neutron_neutron.xml"/>-->
         <xi:include href="net_cfn_neutron_curl.xml"/>
         <!--<xi:include href="net_cfn_nova_nova.xml"/>
         <xi:include href="net_cfn_nova_curl.xml"/>-->

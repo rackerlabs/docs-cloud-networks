@@ -13,14 +13,14 @@
 ]>
 <section xml:id="dn_neutron_neutron" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0">
-    <title>Delete your network with neutron API and neutron client</title>
+    <title>Delete your network with neutron client</title>
     <para>These sections walk you through deleting your subnet and network by using the neutron client.</para>
     <sidebar>
         <para><emphasis role="bold">Start here: </emphasis><olink targetdoc="cn-gettingstarted"
-                targetptr="neutron_delete_subnet_neutron">“Delete a subnet (neutron API/neutron)”</olink></para>
+            targetptr="neutron_delete_subnet_neutron">“Delete a subnet (neutron client)”</olink></para>
     </sidebar>
     <section xml:id="neutron_delete_subnet_neutron">
-        <title>Delete a subnet (neutron API/neutron)</title>
+        <title>Delete a subnet (neutron client)</title>
         <para>To delete a subnet, specify the subnet ID.</para>
         <procedure>
             <title>To delete a specified subnet</title>
@@ -48,11 +48,11 @@
         </procedure>
         <sidebar>
             <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_delete_network_neutron">“Delete a network (neutron API/neutron)”</olink></para>
+                targetptr="neutron_delete_network_neutron">“Delete a network (neutron client)”</olink></para>
         </sidebar>
     </section>
     <section xml:id="neutron_delete_network_neutron">
-        <title>Delete a network (neutron API/neutron)</title>
+        <title>Delete a network (neutron client)</title>
         <para>To delete a network, specify the network ID.</para>
         <procedure>
             <title>To delete a specified network</title>

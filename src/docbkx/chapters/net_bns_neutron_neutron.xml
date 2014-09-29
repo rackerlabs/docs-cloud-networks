@@ -5,7 +5,7 @@
 ]>
 <section xml:id="bns_neutron_neutron" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0">
-    <title>Boot server with neutron API and neutron client</title>
+    <title>Boot server with neutron client</title>
     <para>These sections walk you through creating a port for your network, listing the ports and showing the port details by
         using the neutron API. They also show the steps for provisioning a server with an attached port and for listing
         servers by using the nova-network API.</para>
@@ -17,11 +17,11 @@
     </note>-->
     <sidebar>
         <para><emphasis role="bold">Start here: </emphasis><olink targetdoc="cn-gettingstarted"
-                targetptr="neutron_create_port_neutron">“Create a port (neutron API/neutron client)”</olink></para>
+            targetptr="neutron_create_port_neutron">“Create a port (neutron client)”</olink></para>
     </sidebar>
 
     <section xml:id="neutron_create_port_neutron">
-        <title>Create a port (neutron API/neutron)</title>
+        <title>Create a port (neutron client)</title>
         <para>Before you can attach port and network to a server, you need to create the port.</para>
         <para>To create a network, you specify a name for your port and the network name. After you create a port, copy its
             port ID. Use this ID to attach it to a new server.</para>
@@ -72,12 +72,12 @@
 
         <sidebar>
             <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_list_ports_neutron">“List ports”</olink></para>
+                targetptr="neutron_list_ports_neutron">“List ports (neutron client)”</olink></para>
         </sidebar>
     </section>
 
     <section xml:id="neutron_list_ports_neutron">
-        <title>List ports (neutron API/neutron)</title>
+        <title>List ports (neutron client)</title>
         <para>After you create a port, you may want to list ports to confirm creation.</para>
         <procedure>
             <title>To list ports</title>
@@ -103,14 +103,14 @@
         <sidebar>
             <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
                     targetptr="neutron_create_server_nova">“Provision a server by attaching a port with an isolated
-                    network”</olink></para>
+                    network (nova client)”</olink></para>
         </sidebar>
     </section>
 
     <!--Writer:  Keep this sections in sync with xml:id="nova_create_server_nova". Content is basically same but command, 
         title, and sidebar are different-->
     <section xml:id="neutron_create_server_nova">
-        <title>Provision a server with a port and an isolated network (nova-network API/nova)</title>
+        <title>Provision a server with a port and an isolated network (nova client)</title>
         <para>To create your new server and attach a port with an isolated network, you need the following
             information:</para>
 
@@ -150,13 +150,13 @@
         <sidebar>
             <para>
                 <emphasis role="bold">Next step:</emphasis>
-                <olink targetdoc="cn-gettingstarted" targetptr="neutron_show_port_neutron">“Show port details”</olink>
+                <olink targetdoc="cn-gettingstarted" targetptr="neutron_show_port_neutron">“Show port details (neutron client)”</olink>
             </para>
         </sidebar>
     </section>
 
     <section xml:id="neutron_show_port_neutron">
-        <title>Show port details (neutron API/neutron)</title>
+        <title>Show port details (neutron client)</title>
         <para>The following procedure shows you how to view details for a port.</para>
         <procedure>
             <title>To show information for a specified port ID</title>
@@ -205,13 +205,13 @@
         </procedure>
         <sidebar>
             <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_list_server_nova">“List servers (nova-network API/nova client)”</olink></para>
+                    targetptr="neutron_list_server_nova">“List servers (nova client)”</olink></para>
         </sidebar>
     </section>
 
     <!--The following section to list servers is same for neutron/neutron and nova/network-nova so it is linked-->
     <section xml:id="neutron_list_server_nova">
-        <title>List servers (nova-network API/nova client)</title>
+        <title>List servers (nova client)</title>
         <xi:include href="net_bns_listserv_nova.xml"
             xpointer="xmlns(db=http://docbook.org/ns/docbook)
             xpath(//*[@xml:id = 'bns_listserv_nova']/*[not(self::db:title)])">

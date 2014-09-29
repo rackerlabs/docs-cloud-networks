@@ -5,16 +5,16 @@
 ]>
 <section xml:id="cfn_neutron_neutron" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0">
-    <title>Create network with neutron API and neutron client</title>
+    <title>Create network with neutron client</title>
     <para>These sections walk you through creating your network and subnet and then listing them by using the neutron
         client.</para>
     <sidebar>
         <para><emphasis role="bold">Start here: </emphasis><olink targetdoc="cn-gettingstarted"
-            targetptr="neutron_create_network_neutron">“Create a network (neutron API/neutron)”</olink></para>
+            targetptr="neutron_create_network_neutron">“Create a network (neutron client)”</olink></para>
     </sidebar>
 
     <section xml:id="neutron_create_network_neutron">
-        <title>Create a network (neutron API/neutron)</title>
+        <title>Create a network (neutron client)</title>
         <para>To create a network, you specify a name for your network. After you create a network, copy its network ID. You
             use this ID to create a subnet or attach the network to a server or port.</para>
         <para>
@@ -59,12 +59,12 @@
         </para>
         <sidebar>
             <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                targetptr="neutron_create_subnet_neutron">“Create a subnet (neutron API/neutron)”</olink></para>
+                targetptr="neutron_create_subnet_neutron">“Create a subnet (neutron client)”</olink></para>
         </sidebar>
     </section>
     
     <section xml:id="neutron_create_subnet_neutron">
-        <title>Create a subnet (neutron API/neutron)</title>
+        <title>Create a subnet (neutron client)</title>
         <para>To create a subnet, you specify a network, an IP address, and a name for your subnet. After you create a
             subnet, copy its subnet ID for future reference.</para>
         <para>
@@ -120,12 +120,12 @@
         </para>
         <sidebar>
             <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                targetptr="neutron_list_networks_neutron">“List networks (neutron API/neutron)”</olink></para>
+                targetptr="neutron_list_networks_neutron">“List networks (neutron client)”</olink></para>
         </sidebar>
     </section>
     
     <section xml:id="neutron_list_networks_neutron">
-        <title>List networks (neutron API/neutron)</title>
+        <title>List networks (neutron client)</title>
         <para>The following steps shows you how to list networks and subnets using the neutron client.</para>
         <procedure>
             <title>To list networks</title>
@@ -147,12 +147,12 @@
         </procedure>
         <sidebar>
             <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                targetptr="neutron_list_subnets_neutron">List subnets (neutron API/neutron)</olink></para>
+                targetptr="neutron_list_subnets_neutron">List subnets (neutron client)</olink></para>
         </sidebar>
     </section>
     
     <section xml:id="neutron_list_subnets_neutron">
-        <title>List subnets (neutron API/neutron)</title>
+        <title>List subnets (neutron client)</title>
         <para>The following steps shows you how to list subnets using the neutron client.</para>
         <procedure>
             <title>To list subnets</title>

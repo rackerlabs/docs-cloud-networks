@@ -5,21 +5,21 @@
 ]>
 <section xml:id="novaclient" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
-    <title>How the neutron and nova clients work</title>
-    <para>The neutron and nova clients are open-source Python clients that let you run commands to make API calls. These
-        clients are easy to learn and use. Each client command runs cURL commands that embed API requests. You can run either
+    <title>How the <!--neutron and -->nova client works</title>
+    <para>The <!--neutron and -->nova client is an open-source Python client that let you run commands to make API calls. The
+        client is easy to learn and use. Each client command runs cURL commands that embed API requests. You can run the
         client from a desktop machine or remote system, such as a Cloud Server. </para>
     <para>To install the nova client on a Linux distribution or on Mac OS X, see <olink targetdoc="cn-gettingstarted"
             targetptr="install_nova">“(Optional) Install the nova client with the Cloud Networks extension”</olink>. </para>
-    <para>To install the neutron client on a Linux distribution or on Mac OS X, see <olink targetdoc="cn-gettingstarted"
-        targetptr="install_neutron">“(Optional) Install the neutron client”</olink>. </para>
-    <para>To configure the clients, you update your bash profile to set and export environment variables. </para>
+    <!--    <para>To install the neutron client on a Linux distribution or on Mac OS X, see <olink targetdoc="cn-gettingstarted"
+        targetptr="install_neutron">“(Optional) Install the neutron client”</olink>. </para>-->
+    <para>To configure the client, update your bash profile to set and export environment variables. </para>
     <note>
-        <para>You can specify a debug parameter on any neutron or nova command to show the underlying API request for the
-            command. This is a good way to become familiar with the API requests. </para>
+        <para>You can specify a debug parameter on any <!--neutron or--> nova command to show the underlying API request for
+            the command. This is a good way to become familiar with the API requests. </para>
     </note>
     <warning>
         <para>If you upgrade the operating system of the desktop or remote machine where you installed them, you may need to
-            reinstall the neutron or nova clients.</para>
+            reinstall the <!--neutron or-->nova client.</para>
     </warning>
 </section>

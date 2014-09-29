@@ -50,41 +50,38 @@
     <method name="GET" id="listSubnets">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="List Subnets">
             <para role="shortdesc">Lists subnets to which the specified tenant has access.</para>
-            <para>Default policy settings return only subnets owned by the tenant submitting the request, unless the request
-                is submitted by a user with administrative rights. You can control which attributes are returned by using the
-                    <parameter>fields</parameter> query parameter, and you can specify how many results to return per page.
+            <para>This operations lists the subnets owned by the tenant submitting the request. You can control which
+                attributes are returned by using the <parameter>fields</parameter> query
+                parameter<!--, and you can specify how many results to return per page.
                 For information, see
                 <link xlink:href="http://docs.rackspace.com/networks/api/v2/cn-devguide/content/section_filtering.html">Filtering 
                     Requests</link>
                 or
                 <link xlink:href="http://docs.rackspace.com/networks/api/v2/cn-devguide/content/section_pagination.html">Pagination 
                     of Requests</link>
-                in the <citetitle>Cloud Networks API Developer Guide</citetitle>.</para>
+                in the <citetitle>Cloud Networks API Developer Guide</citetitle>.--></para>
         </wadl:doc>
         <response status="200">
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/subnets-get-resp.json"/>
                 </wadl:doc>&subnetListParameters; </representation>
-            <representation mediaType="application/xml">
+            <!--<representation mediaType="application/xml">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/subnets-get-resp.xml"/>
                 </wadl:doc>
-            </representation>
+            </representation>-->
         </response> &fault401; </method>
 
     <!--Create Subnet-->
     <method name="POST" id="createSubnet">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Create Subnet">
             <para role="shortdesc">Creates a subnet on a specified network.</para>
-            <para>By default, the Cloud Networks API creates IPv4 subnets. To create an IPv6 subnet, you must specify the
-                value <code>6</code> for the <parameter>ip_version</parameter> parameter in the request body. Cloud Networks
-                does not try to derive the correct IP version from the provided CIDR. If the
-                    <parameter>gateway_ip</parameter> parameter is not specified, Cloud Networks allocates an address from
-                the CIDR for the gateway for the subnet.</para>
-            <para>To specify a subnet without a gateway, specify the value <code>null</code> for the
-                    <parameter>gateway_ip</parameter> parameter in the request body. If the
-                    <parameter>allocation_pools</parameter> parameter is not specified, Cloud Networks automatically
+            <para>This opperation creates subnets on the specified network. You cannot create subnets on PublicNet and
+                ServiceNet. Only one IPv4 subnet and one IPv6 subnet are permitted per network.</para>
+            <para>If the <parameter>gateway_ip</parameter> parameter is not specified, it is set to
+                <literal>null</literal>.</para>
+            <para>If the <parameter>allocation_pools</parameter> parameter is not specified, Cloud Networks automatically
                 allocates pools for covering all IP addresses in the CIDR, excluding the address reserved for the subnet
                 gateway. Otherwise, you can explicitly specify allocation pools as shown in the following example.</para>
             <warning>
@@ -98,22 +95,46 @@
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/subnets-create-req.json"/>
                 </wadl:doc>&subnetCreateParameters; </representation>
-            <representation mediaType="application/xml">
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+                    title="Create Subnet with host routes: JSON request">
+                    <xsdxt:code href="../common/samples/subnets-create-route-req.json"/>
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+                    title="Create Subnet with allocation pools and gateway IP: JSON request">
+                    <xsdxt:code href="../common/samples/subnets-create-pools-req.json"/>
+                </wadl:doc>
+            </representation>
+            <!--<representation mediaType="application/xml">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/subnets-create-req.xml"/>
                 </wadl:doc>
-            </representation>
+            </representation>-->
         </request>
         <response status="201">
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/subnets-create-resp.json"/>
                 </wadl:doc>&subnetCreateRspParameters;</representation>
-            <representation mediaType="application/xml">
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+                    title="Create Subnet with host routes: JSON response">
+                    <xsdxt:code href="../common/samples/subnets-create-route-resp.json"/>
+                </wadl:doc>
+            </representation>
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+                    title="Create Subnet with allocation pools and gateway IP: JSON response">
+                    <xsdxt:code href="../common/samples/subnets-create-pools-resp.json"/>
+                </wadl:doc>
+            </representation>
+            <!--<representation mediaType="application/xml">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/subnets-create-resp.xml"/>
                 </wadl:doc>
-            </representation>
+            </representation>-->
         </response> &fault400; &fault401; &fault403; &fault404; &fault409conflict; </method>
 
     <!--Create Bulk (Multiple) Subnets-->
@@ -129,22 +150,22 @@
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/subnets-post-create-bulk-req.json"/>
                 </wadl:doc>&subnetCreateParameters;</representation>
-            <representation mediaType="application/xml">
+            <!--<representation mediaType="application/xml">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/subnets-post-create-bulk-req.xml"/>
                 </wadl:doc>
-            </representation>
+            </representation>-->
         </request>
         <response status="201">
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/subnets-create-bulk-resp.json"/>
                 </wadl:doc>&subnetListParameters;</representation>
-            <representation mediaType="application/xml">
+            <!--<representation mediaType="application/xml">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/subnets-create-bulk-resp.xml"/>
                 </wadl:doc>
-            </representation>
+            </representation>-->
         </response> &fault400; &fault401; &fault403; &fault404; &fault409conflict; </method>
 
     <!--Show Subnet-->
@@ -162,42 +183,48 @@
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/subnet-show-resp.json"/>
                 </wadl:doc>&subnetCreateRspParameters;</representation>
-            <representation mediaType="application/xml">
+            <!--<representation mediaType="application/xml">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/subnet-show-resp.xml"/>
                 </wadl:doc>
-            </representation>
+            </representation>-->
         </response> &fault401; &fault404; </method>
 
     <!--Update Subnet-->
     <method name="PUT" id="updateSubnet">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Update Subnet">
             <para role="shortdesc">Updates a specified subnet.</para>
-            <para>This operation updates a specified subnet, but some parameters, such as IP version
-                    (<parameter>ip_version</parameter>), and CIDR (<parameter>cidr</parameter>) cannot be updated. Attempting
-                to update these parameters results in a <errorcode>400 Bad Request</errorcode> error.</para>
+            <para>This operation updates a specified subnet.</para>
+            <para>Limitations exist on updating the following parameters: </para>
+            <para>IP version (<parameter>ip_version</parameter>), network ID (<parameter>network_id</parameter>), and CIDR
+                    (<parameter>cidr</parameter>) cannot be updated. Attempting to update these parameters results in a
+                    <errorcode>400 Bad Request</errorcode> error.</para>
+            <para>Users cannot update allocation pools that are attached to a port.</para>
+            <para>If <parameter>host_routes</parameter> is updated, it will only take effect for ports or Cloud Servers using
+                this subnet that are created after this modification. Any existing ports or Cloud Servers will not be
+                updated.</para>
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/subnet-post-req.json"/>
                 </wadl:doc>&subnetUpdateParameters; </representation>
-            <representation mediaType="application/xml">
+            <!--<representation mediaType="application/xml">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/subnet-post-req.xml"/>
                 </wadl:doc>
-            </representation>
+            </representation>-->
         </request>
         <response status="201">
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/subnet-post-resp.json"/>
                 </wadl:doc>&subnetCreateRspParameters;</representation>
-            <representation mediaType="application/xml">
+            <!--<representation mediaType="application/xml">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/subnet-post-resp.xml"/>
                 </wadl:doc>
-            </representation>
+            </representation>-->
         </response> &fault400; &fault401; &fault403; &fault404; </method>
 
     <!--Remove Subnet-->

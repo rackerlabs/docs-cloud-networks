@@ -1,34 +1,33 @@
 {
-   "networks":[
-      {
-         "status":"ACTIVE",
-         "subnets":[
-            "54d6f61d-db07-451c-9ab3-b9609b6b6f0b"
-         ],
-         "name":"private-network",
-         "provider:physical_network":null,
-         "admin_state_up":true,
-         "tenant_id":"4fd44f30292945e481c7b8a0c8908869",
-         "provider:network_type":"local",
-         "router:external":true,
-         "shared":true,
-         "id":"d32019d3-bc6e-4319-9c1d-6722fc136a22",
-         "provider:segmentation_id":null
-      },
-      {
-         "status":"ACTIVE",
-         "subnets":[
-            "08eae331-0402-425a-923c-34f7cfe39c1b"
-         ],
-         "name":"private",
-         "provider:physical_network":null,
-         "admin_state_up":true,
-         "tenant_id":"26a7980765d0414dbc1fc1f88cdb7e6e",
-         "provider:network_type":"local",
-         "router:external":true,
-         "shared":true,
-         "id":"db193ab3-96e3-4cb3-8fc5-05f4296d0324",
-         "provider:segmentation_id":null
-      }
-   ]
+    "networks": [
+        {
+            "admin_state_up": null,
+            "id": "00000000-0000-0000-0000-000000000000",
+            "name": "public",
+            "shared": true,
+            "status": "ACTIVE",
+            "subnets": [],
+            "tenant_id": "rackspace"
+        },
+        {
+            "admin_state_up": null,
+            "id": "11111111-1111-1111-1111-111111111111",
+            "name": "private",
+            "shared": true,
+            "status": "ACTIVE",
+            "subnets": [],
+            "tenant_id": "rackspace"
+        },
+        {
+            "admin_state_up": null,
+            "id": "2993e407-5531-4ca8-9d2a-0d13b5cac904",
+            "name": "RackNet",
+            "shared": false,
+            "status": "ACTIVE",
+            "subnets": [
+                "017d8997-70ec-4448-91d9-a8097d6d60f3"
+            ],
+            "tenant_id": "123456"
+        }
+    ]
 }

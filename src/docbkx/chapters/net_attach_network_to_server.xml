@@ -8,10 +8,12 @@
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
     <title>Attach your network to an existing server</title>
     <para><!--Unlike other activities described in this guide, y-->You can attach your network to existing servers using only
-        the Nova-network API. There is no Neutron API equivalent. The sections in this chapter provide examples of attaching
-        a network to an existing server using the Nova-network API and the &virt_ext;</para>
-    <para>The following flow chart shows the steps for attaching a network to an existing server by using the Nova-network
-        API. These steps are detailed in this guide.<figure>
+        the Nova-network API. There is no Neutron API equivalent. See the
+        <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-gettingstarted/content/ch_gs_getting_started_with_nova.html">
+                Cloud Servers Getting Started Guide</link>
+        for examples of attaching a network to an existing server using the Nova-network API and the &virt_ext;</para>
+   <!-- <para>The following flow chart shows the steps for attaching a network to an existing server by using the Nova-network
+        API.<figure>
             <title>Steps to attach a network to an existing server</title>
             <mediaobject>
                 <imageobject>
@@ -19,8 +21,8 @@
                 </imageobject>
             </mediaobject>
         </figure>
-    </para>
-    <para>The sections are also organized by example type. To simplify your path through this chapter, decide whether you
+    </para>-->
+    <!--<para>The sections are also organized by example type. To simplify your path through this chapter, decide whether you
         prefer nova-client examples or cURL examples.</para>
     <para>If you haven't already installed the virtual interface extension, do that first.</para>
     <sidebar>
@@ -37,8 +39,8 @@
                             cURL”</olink></para>
                 </listitem>
             </itemizedlist></para>
-    </sidebar>
-    <xi:include href="net_aes_install_interface.xml"/>
+    </sidebar>-->
+    <!--<xi:include href="net_aes_install_interface.xml"/>
     <xi:include href="net_aes_nova_nova.xml"/>
-    <xi:include href="net_aes_nova_curl.xml"/>
+    <xi:include href="net_aes_nova_curl.xml"/>-->
 </chapter>

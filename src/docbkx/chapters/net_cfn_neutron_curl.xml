@@ -5,24 +5,24 @@
 ]>
 <section xml:id="cfn_neutron_curl" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0">
-    <title>Create network with neutron API and cURL</title>
+    <title>Create network with cURL</title>
     <para>These sections walk you through creating your network and subnet and then listing them by using cURL.</para>
     <sidebar>
         <para><emphasis role="bold">Start here: </emphasis><olink targetdoc="cn-gettingstarted"
-                targetptr="neutron_create_network_curl">“Create a network (neutron API/cURL)”</olink></para>
+                targetptr="neutron_create_network_curl">“Create a network (cURL)”</olink></para>
     </sidebar>
 
     <section xml:id="neutron_create_network_curl">
-        <title>Create a network (neutron API/cURL)</title>
+        <title>Create a network (cURL)</title>
         <para>After you create a network, copy its network ID. You use this ID to create a subnet or attach the network to a
             server.</para>
-        <para>The neutron API allows only JSON formatting.</para>
+        <para>The Rackspace Networking API supports only JSON formatting. XML is not supported.</para>
         <procedure>
             <title>To create a network</title>
             <step>
                 <para>Issue the following cURL command:
                     <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
-                            <prompt>$</prompt> curl -s https://dfw.servers.api.rackspacecloud.com/v2.0/networks \
+                            <prompt>$</prompt> curl -s https://dfw.networks.api.rackspacecloud.com/v2.0/networks \
        -X POST \
        -H "Content-Type: application/json" \
        -H "Accept: application/json" \
@@ -41,13 +41,10 @@
       "subnets":[
       ],
       "name":"amp",
-      "provider:physical_network":null,
       "admin_state_up":true,
       "tenant_id":"53501b3c25d34f8ea293c03298caed60",
-      "provider:network_type":"local",
       "shared":false,
       "id":"29f52c7e-6efd-4335-a14a-db77d32a2555",
-      "provider:segmentation_id":null
    }
 }
                             </programlisting></para>
@@ -61,12 +58,12 @@
         </procedure>
         <sidebar>
             <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_create_subnet_curl">“Create a subnet (neutron API/cURL)”</olink></para>
+                    targetptr="neutron_create_subnet_curl">“Create a subnet (cURL)”</olink></para>
         </sidebar>
     </section>
 
     <section xml:id="neutron_create_subnet_curl">
-        <title>Create a subnet (neutron API/cURL)</title>
+        <title>Create a subnet (cURL)</title>
         <para>To create a subnet, you specify a network, an IP address, and a name for your subnet. After you create a
             subnet, copy its subnet ID for future reference.</para>
         <procedure>
@@ -74,7 +71,7 @@
             <step>
                 <para>Issue the following cURL command:
                     <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
-                            <prompt>$</prompt> curl -s https://dfw.servers.api.rackspacecloud.com/v2.0/$account/subnets \
+                            <prompt>$</prompt> curl -s https://dfw.networks.api.rackspacecloud.com/v2.0/$account/subnets \
        -X POST \
        -H "Content-Type: application/json" \
        -H "Accept: application/json" \
@@ -97,14 +94,14 @@
       	"allocation_pools":[
       	{
 	        "end":"120.1.2.254",
-	        "start":"120.1.2.2"
+	        "start":"120.1.2.1"
       	},
       	"dns_nameservers":[
       	],
       	"host_routes":[
       	],
       	"enable_dhcp":true,
-      	"gateway_ip":"120.1.2.1",
+      	"gateway_ip":null,
       	"id":"23e3059e-4f39-4f7f-8cf2-c326e5de6c37",
       	"name":"Subamp",
       	"tenant_id":"53501b3c25d34f8ea293c03298caed60"
@@ -120,18 +117,18 @@
         </procedure>
         <sidebar>
             <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_list_networks_curl">“List networks (neutron API/cURL)”</olink></para>
+                    targetptr="neutron_list_networks_curl">“List networks (cURL)”</olink></para>
         </sidebar>
     </section>
 
     <section xml:id="neutron_list_networks_curl">
-        <title>List networks (neutron API/cURL)</title>
+        <title>List networks (cURL)</title>
         <para>The following step shows you how to list networks using cURL.</para>
         <procedure>
             <title>To list networks</title>
             <step>
                 <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-                        <prompt>$</prompt> curl https://dfw.servers.api.rackspacecloud.com/v2.0/$account/subnets \
+                        <prompt>$</prompt> curl https://dfw.networks.api.rackspacecloud.com/v2.0/$account/networks \
        -X GET -H "X-Auth-Token: $token" | python -m json.tool</programlisting>
                     <emphasis role="bold">Output:</emphasis>
                 </para>
@@ -145,14 +142,10 @@
 	       "23e3059e-4f39-4f7f-8cf2-c326e5de6c37 120.1.2.0/24"
 	      ],
           "name":"amp",
-          "provider:physical_network":null,
           "admin_state_up":true,
           "tenant_id":"53501b3c25d34f8ea293c03298caed60",
-          "provider:network_type":"local"
-          "router:external":true,
           "shared":true,
           "id":"29f52c7e-6efd-4335-a14a-db77d32a2555",
-          "provider:segmentation_id":null
       }
    ]
 }
@@ -162,36 +155,36 @@
         </procedure>
         <sidebar>
             <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_list_subnets_curl">List subnets (neutron API/cURL)</olink></para>
+                    targetptr="neutron_list_subnets_curl">List subnets (cURL)</olink></para>
         </sidebar>
     </section>
 
     <section xml:id="neutron_list_subnets_curl">
-        <title>List subnets (neutron API/cURL)</title>
+        <title>List subnets (cURL)</title>
         <procedure>
             <title>To list subnets</title>
             <step>
                 <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-                        <prompt>$</prompt> curl https://dfw.servers.api.rackspacecloud.com/v2.0/$account/subnets \
+                        <prompt>$</prompt> curl https://dfw.networks.api.rackspacecloud.com/v2.0/$account/subnets \
        -X GET -H "X-Auth-Token: $token" | python -m json.tool</programlisting>
                     <emphasis role="bold">Output:</emphasis>
                 </para>
                 <para>The API operation returns a response body as shown in the following output:
                     <programlisting language="json"><?db-font-size 75%?>
 {
-   "subnets":[
+   "subnet":
       {
 	    "allocation_pools":[
        	   {
 	          "end":"120.1.2.254",
-	          "start":"120.1.2.2"
+	          "start":"120.1.2.1"
 	       }
         ],
 	   "cidr":"120.1.2.0/24",
 	   "dns_nameservers":[
    	    ],
    	    "enable_dhcp":true,
-   	    "gateway_ip":"120.1.2.1",
+   	    "gateway_ip":"null",
    	    "host_routes":[
    	    ],
    	    "id":"23e3059e-4f39-4f7f-8cf2-c326e5de6c37",
@@ -200,7 +193,6 @@
    	    "network_id":"29f52c7e-6efd-4335-a14a-db77d32a2555",
    	    "tenant_id":"53501b3c25d34f8ea293c03298caed60"
       }
-   ]
 }
                         </programlisting>
                 </para>

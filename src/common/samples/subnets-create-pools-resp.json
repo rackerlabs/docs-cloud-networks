@@ -1,0 +1,22 @@
+{
+    "allocation_pools": [
+        {
+            "end": "192.168.62.21",
+            "start": "192.168.62.11"
+        },
+        {
+            "end": "192.168.62.251",
+            "start": "192.168.62.241"
+        }
+    ],
+    "cidr": "192.168.62.0/24",
+    "dns_nameservers": [],
+    "enable_dhcp": null,
+    "gateway_ip": "192.168.62.1",
+    "host_routes": [],
+    "id": "bbda1637-79df-4ec6-8399-baa8e01dda22",
+    "ip_version": 4,
+    "name": "",
+    "network_id": "c23f2b6c-efa1-4b66-8bdf-34cda87b8102",
+    "tenant_id": "546428"
+}

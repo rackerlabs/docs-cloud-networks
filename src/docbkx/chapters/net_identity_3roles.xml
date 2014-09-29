@@ -37,8 +37,8 @@ format="SVG" scale="60"/>
         read, update, delete – are assigned to specific roles. The account owner user assigns these roles, either global
         (multiproduct) or product-specific (for example, Cloud Networks), to account users. </para>
 
-    <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
-        xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="section_assign_roles_3">
+    <section xml:id="section_assign_roles_3" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+        xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
         <title>Assigning roles to account users</title>
         <para> The account owner (identity:user-admin) can create account users on the account and then assign roles to those
             users. The roles grant the account users specific permissions for accessing the capabilities of the Cloud
@@ -72,8 +72,8 @@ format="SVG" scale="60"/>
         </note>
     </section>
 
-    <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
-        xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="section_roles_for_products_3">
+    <section xml:id="section_roles_for_products_3" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+        xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
         <title>Roles available for cloud networks</title>
         <para> Three roles (observer, creator, and admin) can be used to access the Cloud Networks API specifically. The
             following table describes these roles and their permissions. </para>
@@ -87,17 +87,17 @@ format="SVG" scale="60"/>
             </thead>
             <tbody>
                 <tr>
-                    <td colspan="1">cn:admin</td>
+                    <td colspan="1">cloudNetworks:admin</td>
                     <td colspan="2">This role provides Create, Read, Update, and Delete permissions in Cloud Networks, where
                         access is granted.</td>
                 </tr>
                 <tr>
-                    <td colspan="1">cn:creator</td>
+                    <td colspan="1">cloudNetworks:creator</td>
                     <td colspan="2">This role provides Create, Read, and Update permissions in Cloud Networks, where access
                         is granted.</td>
                 </tr>
                 <tr>
-                    <td colspan="1">cn:observer</td>
+                    <td colspan="1">cloudNetworks:observer</td>
                     <td colspan="2">This role provides Read permission in Cloud Networks, where access is granted.</td>
                 </tr>
             </tbody>
@@ -127,8 +127,8 @@ format="SVG" scale="60"/>
         </table>
     </section>
 
-    <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
-        xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="RBAC_Role_Conflict_3">
+    <section xml:id="RBAC_Role_Conflict_3" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+        xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
         <title>Resolving conflicts between RBAC multiproduct and custom (product-specific) roles</title>
         <para> The account owner can set roles for both multiproduct and Cloud Networks scope, and it is important to
             understand how any potential conflicts among these roles are resolved. When two roles appear to conflict, the
@@ -165,6 +165,7 @@ format="SVG" scale="60"/>
             </informaltable>
         </para>
     </section>
+    
     <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
         xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="RBAC_API_XREF_3">
         <title>RBAC permissions cross-reference to Cloud Networks API operations</title>

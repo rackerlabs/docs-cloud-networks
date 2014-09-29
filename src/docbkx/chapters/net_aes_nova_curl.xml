@@ -5,7 +5,7 @@
 ]>
 <section xml:id="aes_nova_curl" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0">
-    <title>Attach your network to an existing server with nova-network API curl</title>
+    <title>Attach your network to an existing server with cURL</title>
     <para>These sections walk you through the steps to create a virtual interface to a specified network and attach the
         network to an existing server instance.</para>
     <note>
@@ -13,12 +13,11 @@
     </note>
     <sidebar>
         <para><emphasis role="bold">Start here: </emphasis><olink targetdoc="cn-gettingstarted"
-                targetptr="nova_create_virt_interface_curl">Create virtual interface with the nova-network API and
-                cURL</olink></para>
+                targetptr="nova_create_virt_interface_curl">Create virtual interface with cURL</olink></para>
     </sidebar>
 
     <section xml:id="nova_create_virt_interface_curl">
-        <title>Create virtual interface with the nova-network API and cURL</title>
+        <title>Create virtual interface with cURL</title>
         <para>When you create a virtual interface, you specify the following information:<itemizedlist>
                 <listitem>
                     <para><emphasis role="bold">Network ID</emphasis>. The ID of the network for which you want to create a
@@ -61,13 +60,12 @@
         </procedure>
         <sidebar>
             <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="nova_list_virt_interfaces_curl">“List virtual interfaces for a server with the nova-network
-                    API and cURL”</olink>
+                    targetptr="nova_list_virt_interfaces_curl">“List virtual interfaces for a server with cURL”</olink>
             </para>
         </sidebar>
     </section>
     <section xml:id="nova_list_virt_interfaces_curl">
-        <title>List virtual interfaces for a server with the nova-network API and cURL</title>
+        <title>List virtual interfaces for a server with cURL</title>
         <para>To validate that you created and connected the virtual interface to your server, you can list the virtual
             interfaces for your server. </para>
 

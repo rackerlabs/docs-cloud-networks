@@ -82,7 +82,7 @@
                 <para><glossterm>HTTP</glossterm>/1.1</para>
             </listitem>
             <listitem>
-                <para>JSON or XML data serialization formats</para>
+                <para>JSON data serialization formats</para>
             </listitem>
         </itemizedlist>
     </section>
@@ -123,15 +123,15 @@
                             <para>
                                 <itemizedlist>
                                     <listitem>
-                                        <para><link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-releasenotes/content/index.html" xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml">
+                                        <para><link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-releasenotes/content/index.html">
                                             <citetitle>Next Generation Cloud Servers Release Notes</citetitle></link></para>
                                     </listitem>
                                     <listitem>
-                                        <para><link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-gettingstarted/content/index.html" xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml">
+                                        <para><link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-gettingstarted/content/index.html">
                                             <citetitle>Next Generation Cloud Servers Getting Started</citetitle></link></para>
                                     </listitem>
                                     <listitem>
-                                        <para><link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/index.html" xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml">
+                                        <para><link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/index.html">
                                             <citetitle>Next Generation Cloud Servers Developer Guide</citetitle></link></para>
                                     </listitem>
                                 </itemizedlist>
@@ -141,15 +141,15 @@
                             <para>
                                 <itemizedlist role="compact">
                                     <listitem>
-                                        <para><link xlink:href="http://docs.rackspace.com/servers/api/v2/cn-releasenotes/content/index.html" xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml">
+                                        <para><link xlink:href="http://docs.rackspace.com/servers/api/v2/cn-releasenotes/content/index.html">
                                             <citetitle>Cloud Networks Release Notes</citetitle></link></para>
                                     </listitem>
                                     <listitem>
-                                        <para><link xlink:href="http://docs.rackspace.com/servers/api/v2/cn-gettingstarted/content/index.html" xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml">
+                                        <para><link xlink:href="http://docs.rackspace.com/servers/api/v2/cn-gettingstarted/content/index.html">
                                             <citetitle>Cloud Networks Getting Started</citetitle></link></para>
                                     </listitem>
                                     <listitem>
-                                        <para><link xlink:href="http://docs.rackspace.com/servers/api/v2/cn-devguide/content/index.html" xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml">
+                                        <para><link xlink:href="http://docs.rackspace.com/servers/api/v2/cn-devguide/content/index.html">
                                             <citetitle>Cloud Networks Developer Guide</citetitle></link></para>
                                     </listitem>
                                 </itemizedlist>
@@ -158,7 +158,7 @@
                         <td>
                             <itemizedlist>
                                 <listitem>
-                                    <para><link xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/index.html" xmlns:svg="http://www.w3.org/2000/svg" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml">
+                                    <para><link xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/index.html">
                                         <citetitle>Cloud Identity Client Developer Guide v2.0</citetitle></link></para>
                                 </listitem>
                             </itemizedlist>

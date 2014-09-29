@@ -44,7 +44,7 @@ format="SVG" scale="60"/>
         the last page in the list requested with <parameter>page_reverse=True</parameter> does not contain a
             <code>previous</code> link. The following examples illustrate two pages with three items.</para>
     <example xml:id="pageexfirstreq">
-        <title>Network collection, first page: JSON or XML request</title>
+        <title>Network collection, first page: JSON request</title>
         <programlisting>GET /v2.0/networks.json?limit=2 HTTP/1.1</programlisting>
     </example>
     <example xml:id="pageexfirstjsonrsp">
@@ -53,26 +53,14 @@ format="SVG" scale="60"/>
             <xi:include href="../../common/samples/pagefirstrsp.json" parse="text"/>
         </programlisting>
     </example>
-    <example xml:id="pageexfirstxmlrsp">
-        <title>Network collection, first page: XML response</title>
-        <programlisting language="xml"><?db-font-size 65%?>
-            <xi:include href="../../common/samples/pagefirstrsp.xml" parse="text"/>
-        </programlisting>
-    </example>
     <example xml:id="pageexlastreq">
-        <title>Network collection, last page: JSON or XML request</title>
+        <title>Network collection, last page: JSON request</title>
         <programlisting>GET /v2.0/networks.json?limit=2&amp;marker=71c1e68c-171a-4aa2-aca5-50ea153a3718 HTTP/1.1</programlisting>
     </example>
     <example xml:id="pageexlastjsonrsp">
         <title>Network collection, last page: JSON response</title>
         <programlisting language="json"><?db-font-size 65%?>
             <xi:include href="../../common/samples/pagelastrsp.json" parse="text"/>
-        </programlisting>
-    </example>
-    <example xml:id="pageexlastxmlrsp">
-        <title>Network collection, last page: XML response</title>
-        <programlisting language="xml"><?db-font-size 65%?>
-            <xi:include href="../../common/samples/pagelastrsp.xml" parse="text"/>
         </programlisting>
     </example>
 </section>

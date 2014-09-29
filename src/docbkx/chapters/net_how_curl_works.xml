@@ -10,13 +10,14 @@
         to transmit and receive <glossterm>HTTP</glossterm> requests and responses from the command line or a shell script,
         which enables you to work with the API directly. It is available for Linux distributions, Mac OS X, and Windows. For
         information about cURL, see <link xlink:href="http://curl.haxx.se/">http://curl.haxx.se/</link>. </para>
-    <para>To use XML, see <olink targetdoc="cn-gettingstarted" targetptr="curl_summary_xml">“XML
-            requests and responses”</olink>.</para>
+    <!--    <para>To use XML, see <olink targetdoc="cn-gettingstarted" targetptr="curl_summary_xml">“XML
+            requests and responses”</olink>.</para>-->
 
     <para>To run the cURL request examples shown in this guide, copy each example from the HTML version of this guide
         directly to the command line or a script.</para>
 
-    <para>The following command is an example cURL command that provisions a server with an isolated network using JSON:</para>
+    <para>The following command is an example cURL command that provisions a server with an isolated network using
+        JSON:</para>
 
     <example xml:id="json_example">
         <title>cURL command example: JSON request</title>
@@ -32,8 +33,8 @@
     </example>
     <note>
         <para>The carriage returns in the cURL request examples use a backslash (<literal>\</literal>) as an escape
-            character. The escape character allows continuation of the command across multiple lines. However, do not include
-            the escape character in the JSON or XML request body within the cURL command.</para>
+            character. The escape character allows continuation of the command across multiple lines. <!--However, do not include
+            the escape character in the JSON request body within the cURL command.--></para>
     </note>
     <?hard-pagebreak?>
     <para>The cURL examples in this guide use the following command-line options:</para>
@@ -52,8 +53,8 @@
                     <option>-d</option>
                 </td>
                 <td>
-                    <para>Sends the specified data in a &POST; request to the HTTP server. Use this option to send a JSON or
-                        XML request body to the server.</para>
+                    <para>Sends the specified data in a &POST; request to the HTTP server. Use this option to send a JSON
+                        request body to the server.</para>
                 </td>
             </tr>
             <tr>
@@ -67,8 +68,7 @@
                             <listitem>
                                 <para><literal>Content-Type</literal>. Required for operations with a request body. </para>
                                 <para>Specifies the format of the request body. Following is the syntax for the header where
-                                        <parameter>format</parameter> is either <literal>json</literal> or
-                                        <literal>xml</literal>.</para>
+                                        <parameter>format</parameter> is <literal>json</literal>.</para>
                                 <screen><computeroutput>Content-Type: application/<parameter>format</parameter></computeroutput></screen>
                             </listitem>
                             <listitem>
@@ -81,8 +81,8 @@
                             <listitem>
                                 <para><literal>Accept</literal>. Optional. </para>
                                 <para>Specifies the format of the response body. Following is the syntax for the header where
-                                        <parameter>format</parameter> is either <literal>json</literal> or
-                                        <literal>xml</literal>. The default is <literal>json</literal>.</para>
+                                    the <parameter>format</parameter> is <literal>json</literal>, which is the
+                                    default.</para>
                                 <screen><computeroutput>Accept: application/<parameter>format</parameter></computeroutput></screen>
                             </listitem>
                         </itemizedlist></para>
@@ -137,5 +137,5 @@
         <para>If you do not want to pretty-print JSON output, omit this code. </para>
     </note>
     <?hard-pagebreak?>
-    <xi:include href="net_how_curl_works_xml.xml"/>
+    <!--<xi:include href="net_how_curl_works_xml.xml"/>-->
 </section>

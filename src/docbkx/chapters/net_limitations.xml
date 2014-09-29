@@ -35,10 +35,10 @@
                     and <option>--no-service-net</option> parameters. </para>
             </listitem>
             <listitem>
-                <para><emphasis role="bold">Cloud Servers neutron API or nova-network API</emphasis>. If you do not specify
-                    any networks, ServiceNet and PublicNet are attached by default. However, if you specify an isolated
-                    network, you must explicitly specify the UUIDs for PublicNet and ServiceNet to attach these networks to
-                    your server. </para>
+                <para><emphasis role="bold">Cloud Servers neutron API<!-- or nova-network API--></emphasis>. If you do not
+                    specify any networks, ServiceNet and PublicNet are attached by default. However, if you specify an
+                    isolated network, you must explicitly specify the UUIDs for PublicNet and ServiceNet to attach these
+                    networks to your server. </para>
                 <para>The UUID for ServiceNet is <literal>11111111-1111-1111-1111-111111111111</literal>, and the UUID for
                     PublicNet is <literal>00000000-0000-0000-0000-000000000000</literal>. </para>
                 <para>Omit these UUIDs from the request to detach from these networks.</para>
