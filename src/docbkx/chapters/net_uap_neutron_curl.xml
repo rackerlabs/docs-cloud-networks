@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section [
+<!ENTITY % common  SYSTEM "../../common/common.ent">
+%common;
+]>
+<section xml:id="uap_neutron_curl" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0">
+    <title>Use allocation pools to control dynamic IP address allocation with cURL</title>
+    <para>These sections walk you through using allocation pools to control dynamic IP address allocation by using
+        cURL.</para>
+    <sidebar>
+        <para><emphasis role="bold">Start here: </emphasis><olink targetdoc="cn-gettingstarted"
+                targetptr="neutron_create_network_curl">“Create a network (cURL)”</olink></para>
+    </sidebar>
+
+    <section xml:id="neutron_create_network_uap_curl">
+        <title>Create a network (cURL)</title>
+        <para>After you create a network, copy its network ID. You use this ID to create a subnet or attach the network to a
+            server.</para>
+        <para>The Rackspace Networking API supports only JSON formatting. XML is not supported.</para>
+        <procedure>
+            <title>To create a network</title>
+            <step>
+                <para>Issue the following cURL command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
+                            <prompt>$</prompt> curl -s https://dfw.networks.api.rackspacecloud.com/v2.0/networks \
+       -X POST \
+       -H "Content-Type: application/json" \
+       -H "Accept: application/json" \
+       -H "X-Auth-Token: $token" \
+       -d '{"network": {"name": "amp", "admin_state_up": "false"}}' | python -m json.tool</programlisting></para>
+                <para>In this cURL command, you specify several options. For information about options, see <olink
+                        targetdoc="cn-gettingstarted" targetptr="curl_options">Table 2, “cURL Command-Line
+                    Options”</olink>.</para>
+                <para><emphasis role="bold">Output:</emphasis>
+                </para>
+                <para>The operation returns the response body, as shown in the following JSON response:
+                    <programlisting language="json"><?db-font-size 65%?>
+{
+   "network":{
+      "status":"ACTIVE",
+      "subnets":[
+      ],
+      "name":"amp",
+      "admin_state_up":true,
+      "tenant_id":"53501b3c25d34f8ea293c03298caed60",
+      "shared":false,
+      "id":"29f52c7e-6efd-4335-a14a-db77d32a2555",
+   }
+}
+                            </programlisting></para>
+            </step>
+            <step>
+                <para>Copy the <literal>id</literal> value from the output. You will use this value when you create a subnet,
+                    provision your server, or perform other related activities. In this example, the id is
+                        <literal>29f52c7e-6efd-4335-a14a-db77d32a2555</literal>, but use the <parameter>id</parameter> from
+                    your response.</para>
+            </step>
+        </procedure>
+        <sidebar>
+            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+                    targetptr="neutron_create_subnet_curl">“Create a subnet (cURL)”</olink></para>
+        </sidebar>
+    </section>
+
+    <section xml:id="neutron_create_subnet_uap_curl">
+        <title>Create a subnet (cURL)</title>
+        <para>To create a subnet, you specify a network, an IP address, and a name for your subnet. After you create a
+            subnet, copy its subnet ID for future reference.</para>
+        <procedure>
+            <title>To create a subnet</title>
+            <step>
+                <para>Issue the following cURL command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
+                            <prompt>$</prompt> curl -s https://dfw.networks.api.rackspacecloud.com/v2.0/$account/subnets \
+       -X POST \
+       -H "Content-Type: application/json" \
+       -H "Accept: application/json" \
+       -H "X-Auth-Token: $token" \
+       -d '{"subnets":[{"cidr":"120.1.2.0/24","ip_version":4,"network_id":"29f52c7e-6efd-4335-a14a-db77d32a2555"}]}' \
+       | python -m json.tool</programlisting></para>
+                <para>In this cURL command, you specify several options. For information about options, see <olink
+                        targetdoc="cn-gettingstarted" targetptr="curl_options">Table 2, “cURL Command-Line
+                    Options”</olink>.</para>
+                <para><emphasis role="bold">Output:</emphasis>
+                </para>
+                <para>The operation returns the response body, as shown in the following JSON response:
+                    <programlisting language="json"><?db-font-size 65%?>
+{
+   "subnet":
+      {
+      	"cidr":"120.1.2.0/24",
+      	"ip_version":4,
+      	"network_id":"29f52c7e-6efd-4335-a14a-db77d32a2555",
+      	"allocation_pools":[
+      	{
+	        "end":"120.1.2.254",
+	        "start":"120.1.2.1"
+      	},
+      	"dns_nameservers":[
+      	],
+      	"host_routes":[
+      	],
+      	"enable_dhcp":true,
+      	"gateway_ip":null,
+      	"id":"23e3059e-4f39-4f7f-8cf2-c326e5de6c37",
+      	"name":"Subamp",
+      	"tenant_id":"53501b3c25d34f8ea293c03298caed60"
+     }
+}
+                            </programlisting></para>
+            </step>
+            <step>
+                <para>Copy the <literal>id</literal> value from the output for future reference. In this example, the id is
+                        <literal>23e3059e-4f39-4f7f-8cf2-c326e5de6c37</literal>, but use the <parameter>id</parameter> from
+                    your response.</para>
+            </step>
+        </procedure>
+        <sidebar>
+            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+                    targetptr="neutron_list_networks_curl">“List networks (cURL)”</olink></para>
+        </sidebar>
+    </section>
+
+    <section xml:id="neutron_list_networks_uap_curl">
+        <title>List networks (cURL)</title>
+        <para>The following step shows you how to list networks using cURL.</para>
+        <procedure>
+            <title>To list networks</title>
+            <step>
+                <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                        <prompt>$</prompt> curl https://dfw.networks.api.rackspacecloud.com/v2.0/$account/networks \
+       -X GET -H "X-Auth-Token: $token" | python -m json.tool</programlisting>
+                    <emphasis role="bold">Output:</emphasis>
+                </para>
+                <para>The API operation returns a response body as shown in the following output:
+                    <programlisting language="json"><?db-font-size 75%?>
+{
+   "networks":[
+      {
+	     "status":"ACTIVE",
+	     "subnets":[
+	       "23e3059e-4f39-4f7f-8cf2-c326e5de6c37 120.1.2.0/24"
+	      ],
+          "name":"amp",
+          "admin_state_up":true,
+          "tenant_id":"53501b3c25d34f8ea293c03298caed60",
+          "shared":true,
+          "id":"29f52c7e-6efd-4335-a14a-db77d32a2555",
+      }
+   ]
+}
+                        </programlisting>
+                </para>
+            </step>
+        </procedure>
+        <sidebar>
+            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+                    targetptr="neutron_list_subnets_curl">List subnets (cURL)</olink></para>
+        </sidebar>
+    </section>
+
+    <section xml:id="neutron_list_subnets_uap_curl">
+        <title>List subnets (cURL)</title>
+        <procedure>
+            <title>To list subnets</title>
+            <step>
+                <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                        <prompt>$</prompt> curl https://dfw.networks.api.rackspacecloud.com/v2.0/$account/subnets \
+       -X GET -H "X-Auth-Token: $token" | python -m json.tool</programlisting>
+                    <emphasis role="bold">Output:</emphasis>
+                </para>
+                <para>The API operation returns a response body as shown in the following output:
+                    <programlisting language="json"><?db-font-size 75%?>
+{
+   "subnet":
+      {
+	    "allocation_pools":[
+       	   {
+	          "end":"120.1.2.254",
+	          "start":"120.1.2.1"
+	       }
+        ],
+	   "cidr":"120.1.2.0/24",
+	   "dns_nameservers":[
+   	    ],
+   	    "enable_dhcp":true,
+   	    "gateway_ip":"null",
+   	    "host_routes":[
+   	    ],
+   	    "id":"23e3059e-4f39-4f7f-8cf2-c326e5de6c37",
+   	    "ip_version":4,    
+	   "name":"Subamp",
+   	    "network_id":"29f52c7e-6efd-4335-a14a-db77d32a2555",
+   	    "tenant_id":"53501b3c25d34f8ea293c03298caed60"
+      }
+}
+                        </programlisting>
+                </para>
+            </step>
+        </procedure>
+        <!--            <sidebar>
+                <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+                        targetptr="show_network_neutron">“Show network or subnet details”</olink></para>
+            </sidebar>-->
+        <sidebar>
+            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+                    targetptr="boot_new_server">Boot a new server with your cloud network</olink></para>
+        </sidebar>
+    </section>
+</section>
