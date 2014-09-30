@@ -42,10 +42,8 @@
                 <para>
                     <itemizedlist>
                         <listitem>
-                            <para><parameter>id</parameter>. The subnet ID of the subnet that you want to delete. In this
-                                example, the subnet ID is <literal>23e3059e-4f39-4f7f-8cf2-c326e5de6c37</literal>. To
-                                determine the network ID, issue a <command>nova</command>
-                                <option>network-list</option> command.</para>
+                            <para><parameter>id</parameter>. The ID of the network that you want to delete. In this example,
+                                the network ID is <literal>29f52c7e-6efd-4335-a14a-db77d32a2555</literal>.</para>
                         </listitem>
                     </itemizedlist>
                 </para>
@@ -92,8 +90,8 @@ The request is accepted for processing.</computeroutput></screen>
                 <para>
                     <itemizedlist>
                         <listitem>
-                            <para><parameter>id</parameter>. The ID of the subnet that you want to delete. In this
-                                example, the subnet ID is <literal>23e3059e-4f39-4f7f-8cf2-c326e5de6c37</literal>.</para>
+                            <para><parameter>id</parameter>. The ID of the subnet that you want to delete. In this example,
+                                the subnet ID is <literal>23e3059e-4f39-4f7f-8cf2-c326e5de6c37</literal>.</para>
                         </listitem>
                     </itemizedlist>
                 </para>

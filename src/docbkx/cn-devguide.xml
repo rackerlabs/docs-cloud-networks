@@ -52,7 +52,7 @@
             <year>2014</year>
             <holder>Rackspace US, Inc.</holder>
         </copyright>
-        <releaseinfo>Cloud Networks API v2</releaseinfo>
+        <releaseinfo>OpenStack Neutron API v2</releaseinfo>
         <productname>Cloud Networks™</productname>
         <pubdate/>
         <legalnotice role="rs-api">
@@ -70,12 +70,11 @@
         </abstract>
         <revhistory>
             <revision>
-                <date>2014-10-01</date>
+                <date>2014-09-30</date>
                 <revdescription>
                     <itemizedlist>
                         <listitem>
-                            <para>Published document with neutron API calls. The older nova-network API calls were moved to
-                                the Cloud Servers API Developer's Guide. (ADD LINK)</para>
+                            <para>Published document with neutron API calls.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
