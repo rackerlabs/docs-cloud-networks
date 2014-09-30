@@ -98,7 +98,7 @@
 
     <section xml:id="Document_Change_History">
         <title>Document change history</title>
-        <para> This version of the guide applies only to v3.0 of the API. The most recent changes are described in the
+        <para> This version of the guide applies only to v2.0 of the API. The most recent changes are described in the
             following table: </para>
         <?rax revhistory?>
     </section>

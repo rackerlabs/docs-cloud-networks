@@ -102,6 +102,13 @@ format="PNG" />
     <para>This document describes new features, limitations, and known issues for Rackspace Cloud Networks.</para>
     <para>We welcome feedback, comments, and bug reports at
       <link xlink:href="http://feedback.rackspace.com/">http://feedback.rackspace.com/</link>. </para>
+    
+    <section xml:id="Document_Change_History">
+      <title>Document change history</title>
+      <para> This version of the guide applies only to v2.0 of the API. The most recent changes are described in the
+        following table: </para>
+      <?rax revhistory?>
+    </section>
   </preface>
 
   <chapter xml:id="apiupdates_1107">
