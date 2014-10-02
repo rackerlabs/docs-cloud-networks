@@ -6,25 +6,67 @@
 <section xml:id="bns_neutron_curl" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0">
     <title>Boot server with cURL</title>
-    <para>These sections walk you through creating a port for your network, listing the ports and showing the port details by
-        using the neutron API. They also show the steps for provisioning a server with an attached port and for listing
-        servers by using the nova-network API.</para>
-    <!--    <note>
-        <para>If you prefer to attach the network directly to a new server without using a port, see <olink
-                targetdoc="cn-gettingstarted" targetptr="bns_nova_nova">“Use nova-network API and nova-client”</olink> or
-                <olink targetdoc="cn-gettingstarted" targetptr="bns_nova_curl">“Use nova-network API and cURL”</olink>. There
-            are no neutron API operations for direct attachment of a network to the server without using ports.</para>
-    </note>-->
+    <para>These sections walk you through listing subnets, creating a port for your network, listing the ports, provisioning
+        a server with an attached port, listing servers, and listing servers by using the neutron API.</para>
     <sidebar>
         <para><emphasis role="bold">Start here: </emphasis><olink targetdoc="cn-gettingstarted"
-                targetptr="neutron_create_port_curl">“Create a port (cURL)”</olink></para>
+                targetptr="neutron_list_subnets_bns_curl">“List subnets (cURL)”</olink></para>
     </sidebar>
+
+    <section xml:id="neutron_list_subnets_bns_curl">
+        <title>List subnets (cURL)</title>
+        <para>The following steps detail how to list subnets. You'll need to identify the right network from this listing for
+            booting your server.</para>
+        <procedure>
+            <title>To list subnets</title>
+            <step>
+                <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                        <prompt>$</prompt> curl https://dfw.networks.api.rackspacecloud.com/v2.0/$account/subnets \
+       -X GET 
+       -H "User-Agent: python-novaclient" \
+       -H "Accept: application/json" \
+       -H "X-Auth-Token: $token" | python -m json.tool</programlisting>
+                    <emphasis role="bold">Output:</emphasis>
+                </para>
+                <para>The API operation returns a response body as shown in the following output:
+                    <programlisting language="json"><?db-font-size 75%?>
+{
+    "subnets": [
+        {
+            "allocation_pools": [],
+            "cidr": "fc01::/64",
+            "dns_nameservers": [],
+            "enable_dhcp": null,
+            "gateway_ip": null,
+            "host_routes": [],
+            "id": "1d18d76b-a04a-4147-a04c-151630ec80d0",
+            "ip_version": 6,
+            "name": "",
+            "network_id": "03f240c5-6fb8-47a0-860a-c7ba83be519f",
+            "tenant_id": "5831008"
+        }
+  ]
+}
+                        </programlisting>
+                </para>
+            </step>
+            <step>
+                <para>Copy the <parameter>network_id</parameter> value from the output. You will use this value when you
+                    provision your server. In this example, the network ID is
+                        <literal>03f240c5-6fb8-47a0-860a-c7ba83be519f</literal>, but use the value from your response.</para>
+            </step>
+        </procedure>
+        <sidebar>
+            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+                    targetptr="neutron_create_port_curl">Create a port (cURL)</olink></para>
+        </sidebar>
+    </section>
 
     <section xml:id="neutron_create_port_curl">
         <title>Create a port (cURL)</title>
         <para>Before you can attach port and network to a server, you need to create the port.</para>
-        <para>To create a port, you specify a name for your port and the network name. After you create a port, copy its
-            port ID. Use this ID to attach it to a new server.</para>
+        <para>To create a port, you specify a name for your port and the network name. After you create a port, copy its port
+            ID. Use this ID to attach it to a new server.</para>
         <procedure>
             <title>To create a port</title>
             <step>
@@ -35,7 +77,7 @@
        -H "Content-Type: application/json" \
        -H "Accept: application/json" \
        -H "X-Auth-Token: $token" \
-       -d '{"port": {"name":"newport","network_id": "29f52c7e-6efd-4335-a14a-db77d32a2555"}}| python -m json.tool</programlisting></para>
+       -d '{"port": {"admin_state_up": true,"device_id": "","name": "port1", "network_id": "03f240c5-6fb8-47a0-860a-c7ba83be519f"}}| python -m json.tool</programlisting></para>
                 <para>In this cURL command, you specify several options. For information about options, see <olink
                         targetdoc="cn-gettingstarted" targetptr="curl_options">Table 2, “cURL Command-Line
                     Options”</olink>.</para>
@@ -44,97 +86,95 @@
                 <para>The operation returns the response body, as shown in the following JSON response:
                     <programlisting language="json"><?db-font-size 75%?>
 {
-   "port":[
-      {
-         "status":"DOWN",
-         "name":"newport",
-         "admin_state_up":true,
-         "network_id":"29f52c7e-6efd-4335-a14a-db77d32a2555",
-         "tenant_id":"53501b3c25d34f8ea293c03298caed60",
-         "device_owner":"",
-         "mac_address":"fa:16:3e:a6:48:c4",
-         "id":"c23c2fff-c07f-4af0-bc37-8ad883231f7c",
-         "security_groups":[
-            "7e768af1-f9e9-431e-823d-9477e593e345"
-         ],
-         "device_id":""
-      }
-   ]
+    "port": 
+    {
+         "status": "ACTIVE"
+         "name": "port1", 
+         "admin_state_up": true, 
+         "network_id": "03f240c5-6fb8-47a0-860a-c7ba83be519f", 
+         "tenant_id": "5831008"
+         "device_owner": null, 
+         "mac_address": "AA:BB:CC:00:01:4A", 
+         "fixed_ips": [
+            {
+                "subnet_id": "1d18d76b-a04a-4147-a04c-151630ec80d0", 
+                "ip_address": "fc01::7"
+             }
+         ], 
+         "id": "79bf47e2-5107-4d93-b9c3-b78ddbc94c93",
+         "security_groups": [], 
+         "device_id": ""
+    }
 }
-
                     </programlisting></para>
             </step>
             <step>
                 <para>Copy the ID value from the output. You will use this value when you provision your server. In this
-                    example, the port ID is <literal>c23c2fff-c07f-4af0-bc37-8ad883231f7c</literal>, but use the value from
+                    example, the port ID is <literal>79bf47e2-5107-4d93-b9c3-b78ddbc94c93</literal>, but use the value from
                     your response.</para>
             </step>
         </procedure>
         <sidebar>
             <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_list_ports_curl">“List ports (cURL)”</olink></para>
+                    targetptr="neutron_list_port_curl">“List ports (cURL)”</olink></para>
         </sidebar>
     </section>
 
-    <section xml:id="neutron_list_ports_curl">
+    <section xml:id="neutron_list_port_curl">
         <title>List ports (cURL)</title>
         <para>After you create a port, you may want to list ports to confirm creation.</para>
-        <para>The following steps shows you how to list networks and subnets using cURL.</para>
+        <para>The following steps shows you how to list ports using cURL.</para>
         <procedure>
             <title>To list ports</title>
             <step>
                 <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
 <prompt>$</prompt> curl https://dfw.networks.api.rackspacecloud.com/v2.0/$account/ports \
--X GET -H "X-Auth-Token: $token" | python -m json.tool</programlisting>
+-X GET 
+-H "User-Agent: python-novaclient" \
+-H "Accept: application/json" \
+-H "X-Auth-Token: $token" | python -m json.tool</programlisting>
                     <emphasis role="bold">Output:</emphasis>
                 </para>
                 <para>The API operation returns a response body as shown in the following output:
                     <programlisting language="json"><?db-font-size 75%?>
-{
-   "ports":[
-      {
-         "status":"ACTIVE",
-         "name":"newport",
-         "admin_state_up":true,
-         "network_id":"29f52c7e-6efd-4335-a14a-db77d32a2555",
-         "tenant_id":"53501b3c25d34f8ea293c03298caed60",
-         "device_owner":"compute:None",
-         "mac_address":"fa:16:3e:a6:48:c4",
-         "id":"c23c2fff-c07f-4af0-bc37-8ad883231f7c",
-         "device_id":"f288bb5f-920d-4276-8345-2c0319c16f58"
-      },
-      {
-         "status":"DOWN",
-         "name":"",
-         "admin_state_up":true,
-         "network_id":"29f52c7e-6efd-4335-a14a-db77d32a2555",
-         "tenant_id":"53501b3c25d34f8ea293c03298caed60",
-         "device_owner":"network:router_gateway",
-         "mac_address":"fa:16:3e:c1:a5:6a",
-         "id":"d272f4bf-06a7-419e-9f22-5ee4a3cbd7c2",
-         "device_id":"0dc517bf-9169-4aa6-88b7-569219962881"
-      },
-      {
-         "status":"ACTIVE",
-         "name":"",
-         "admin_state_up":true,
-         "network_id":"29f52c7e-6efd-4335-a14a-db77d32a2555",
-         "tenant_id":"53501b3c25d34f8ea293c03298caed60",
-         "device_owner":"network:router_interface",
-         "mac_address":" fa:16:3e:6e:dc:9a",
-         "id":"f4a83984-8b96-4701-8ddd-a464caf4b14e",
-         "device_id":"0dc517bf-9169-4aa6-88b7-569219962881"
-      }
-   ]
+{     "ports": [
+     {
+            "admin_state_up": true,
+            "device_id": "",
+            "device_owner": null,
+            "fixed_ips": [
+                {
+                    "ip_address": "fc01::7",
+                    "subnet_id": "1d18d76b-a04a-4147-a04c-151630ec80d0"
+                }
+            ],
+            "id": "79bf47e2-5107-4d93-b9c3-b78ddbc94c93",
+            "mac_address": "AA:BB:CC:00:01:4A",
+            "name": "port1",
+            "network_id": "03f240c5-6fb8-47a0-860a-c7ba83be519f",
+            "security_groups": [],
+            "status": "ACTIVE",
+            "tenant_id": "5831008"
+        }
+  ]
 }
+
                     </programlisting>
+                </para>
+            </step>
+            <step>
+                <para>Confirm the ID value from the output. You will use this value when you provision your server. In this
+                    example, the port ID is <literal>79bf47e2-5107-4d93-b9c3-b78ddbc94c93</literal>, but use the value from
+                    your response.</para>
+                <para> Also, notice the <parameter>ip_address</parameter> with the value of <literal>fc01::7</literal>.
                 </para>
             </step>
         </procedure>
         <sidebar>
             <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_create_server_curl">“Provision a server by attaching a port with an isolated network
-                    (cURL)”</olink></para>
+                    targetptr="neutron_create_server_curl">“Provision a server with a port and an isolated network
+                    (cURL)”</olink>
+            </para>
         </sidebar>
     </section>
 
@@ -168,157 +208,241 @@
                     command:<programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
 <prompt>$</prompt> curl https://dfw.servers.api.rackspacecloud.com/v2/$account/servers \
 -X POST \
--H "X-Auth-Project-Id: $account" \
 -H "Content-Type: application/json" \
+-H "User-Agent: python-novaclient" \
 -H "Accept: application/json" \
 -H "X-Auth-Token: $token" \
--d '{"server": {"name": "ServerAmp", "imageRef": "82e72de5-6366-4217-8c87-a570a9b17e73", "flavorRef": "1", "max_count": 1, "min_count": 1, "networks":[{"uuid":"00000000-0000-0000-0000-000000000000"},{"uuid": "11111111-1111-1111-1111-111111111111"},{"port":"c23c2fff-c07f-4af0-bc37-8ad883231f7c"}]}}' \
+-d '{"server": {"name": "ata", "imageRef": "c63e20ad-6e3b-4e0b-943c-95cf3ba6c3a6", "flavorRef": "2", "max_count": 1, "min_count": 1, "networks":[{"uuid":"00000000-0000-0000-0000-000000000000"},{"uuid": "11111111-1111-1111-1111-111111111111"},{"port":"79bf47e2-5107-4d93-b9c3-b78ddbc94c93"}]}}' \
    | python -m json.tool</programlisting></para>
-                <!--output example-->
-                <xi:include href="net_bns_provserv_all.xml"
-                    xpointer="xmlns(db=http://docbook.org/ns/docbook)
-                    xpath(//*[@xml:id = 'bns_ps_output_curl']/*[not(self::db:title)])">
-                    <xi:fallback>
-                        <para>Missing content here. Please let us know by making a DISQUS comment.</para>
-                    </xi:fallback>
-                </xi:include>
-                <!--<para><emphasis role="bold">Output:</emphasis> The API operation returns information about the new server, as
-                    shown in the following output:</para>
-                <programlisting language="json"><?db-font-size 75%?>
-{
-    "server": {
-        "OS-DCF:diskConfig": "MANUAL", 
-        "adminPass": "4PkrqfdmuuKy", 
-        "id": "537805b0-7a04-4bbc-8040-812527b024bc", 
-        "links": [
-            {
-                "href": "https://dfw.servers.api.rackspacecloud.com/v2/010101/servers/537805b0-7a04-4bbc-8040-812527b024bc", 
-                "rel": "self"
-            }, 
-            {
-                "href": "https://dfw.servers.api.rackspacecloud.com/010101/servers/537805b0-7a04-4bbc-8040-812527b024bc", 
-                "rel": "bookmark"
-            }
-        ]
-    }
-}    
-                    </programlisting>-->
-            </step>
-        </procedure>
-        <!-- Commented out since neutron doesn't use xml at all, it made sense to not show the xml here, even though
-            this is nova-network API and xml does work.  Unhide at will -->
-        <!--        <procedure>
-            <title>To provision a server and attach a port with a network by using XML</title>
-            <step>
-                <para>Issue the following cURL
-                    command:<programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-                            <prompt>$</prompt> curl -i https://dfw.servers.api.rackspacecloud.com/v2/$account/servers.xml \
-        -X POST \
-        -H "X-Auth-Project-Id: $account" \
-        -H "Content-Type: application/xml" \
-        -H "Accept: application/xml" \
-        -H "X-Auth-Token: $token" \
-        -d '&lt;?xml version="1.0" encoding="UTF-8"?>&lt;server xmlns="http://docs.openstack.org/compute/api/v1.1" imageRef="82e72de5-6366-4217-8c87-a570a9b17e73" flavorRef="1" name="ServerAmp">&lt;ports>&lt;id>c23c2fff-c07f-4af0-bc37-8ad883231f7c>&lt;/server>'</programlisting></para>
-                <para><emphasis role="bold">Output:</emphasis> The API operation returns information about the new
-                    server, as shown in the following output:</para>
-                <programlisting language="xml"><?db-font-size 75%?>
-&lt;server>
-    xmlns:OS-DCF="http://docs.openstack.org/compute/ext/disk_config/api/v1.1"
-    xmlns:atom="http://www.w3.org/2005/Atom"
-    xmlns="http://docs.openstack.org/compute/api/v1.1"
-    id="fbcebd8c-5b4f-4087-a778-f5a6ffc4530f" 
-    adminPass="K3kviaHwhKqS"
-    OS-DCF:diskConfig="AUTO">
-    &lt;metadata/>
-    &lt;atom:link
-        href="https://dfw.servers.api.rackspacecloud.com/v2/010101/servers/fbcebd8c-5b4f-4087-a778-f5a6ffc4530f"
-        rel="self"/>
-    &lt;atom:link
-        href="https://dfw.servers.api.rackspacecloud.com/010101/servers/fbcebd8c-5b4f-4087-a778-f5a6ffc4530f"
-        rel="bookmark"/>
-&lt;/server>
-                    </programlisting>
-            </step>
-        </procedure>-->
-        <sidebar>
-            <para>
-                <emphasis role="bold">Next step:</emphasis>
-                <olink targetdoc="cn-gettingstarted" targetptr="neutron_show_port_curl">“Show port details (cURL)”</olink>
-            </para>
-        </sidebar>
-    </section>
-
-    <section xml:id="neutron_show_port_curl">
-        <title>Show port details (cURL)</title>
-        <para>The following steps shows you how to view details for a port using cURL.</para>
-        <procedure>
-            <title>To show information for a specified port ID</title>
-            <step>
-                <para>Issue the following cURL command:
-                    <programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
-<prompt>$</prompt> curl https://dfw.networks.api.rackspacecloud.com/v2.0/$account/ports/c23c2fff-c07f-4af0-bc37-8ad883231f7c \
--X GET \
--H "X-Auth-Project-Id: $account" \
--H "Accept: application/json" \
--H "Content-Type: application/json"\
--H "X-Auth-Token: $token" | python -m json.tool</programlisting></para>
-                <para><emphasis role="bold">Positional argument:</emphasis></para>
-                <para>
-                    <itemizedlist>
-                        <listitem>
-                            <para>The ID of the port for which you want to show information.</para>
-                        </listitem>
-                    </itemizedlist>
-                </para>
                 <para><emphasis role="bold">Output:</emphasis></para>
                 <para>The API operation returns a response body as shown in the following output:</para>
 
                 <programlisting language="json"><?db-font-size 75%?>
 {
-   "port":[
-      {
-         "status":"ACTIVE",
-         "name":"newport",
-         "admin_state_up":true,
-         "network_id":"29f52c7e-6efd-4335-a14a-db77d32a2555",
-         "tenant_id":"53501b3c25d34f8ea293c03298caed60",
-         "device_owner":"compute:None",
-         "mac_address":"fa:16:3e:a6:48:c4",
-         "fixed_ips":[
+    "server": {
+        "OS-DCF:diskConfig": "AUTO", 
+        "id": "cfe9a69d-92ef-462f-9240-ed5b43d3d1af", 
+        "links": [
             {
-               "subnet_id":"23e3059e-4f39-4f7f-8cf2-c326e5de6c37",
-               "ip_address":"120.1.2.4"
+                "href": "https://dfw.servers.api.rackspacecloud.com/v2/5831008/servers/cfe9a69d-92ef-462f-9240-ed5b43d3d1af", 
+                "rel": "self"
+            }, 
+            {
+                "href": "https://dfw.servers.api.rackspacecloud.com/5831008/servers/cfe9a69d-92ef-462f-9240-ed5b43d3d1af", 
+                "rel": "bookmark"
             }
-         ],
-         "id":"c23c2fff-c07f-4af0-bc37-8ad883231f7c",
-         "device_id":"537805b0-7a04-4bbc-8040-812527b024bc"
-      }
-   ]
-}
+        ], 
+        "adminPass": "27L93SfBWttf"
+    }
                 </programlisting>
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_list_server_curl">“List servers and attached networks (cURL)”</olink></para>
+            <para>
+                <emphasis role="bold">Next step:</emphasis>
+                <olink targetdoc="cn-gettingstarted" targetptr="neutron_list_server_curl">“List server and attached networks
+                    (cURL)”</olink>
+            </para>
         </sidebar>
     </section>
 
-    <!--The following section to list servers is same for neutron/neutron and nova-network-nova so it is linked-->
     <section xml:id="neutron_list_server_curl">
-        <title>List servers and attached networks (cURL)</title>
-        <xi:include href="net_bns_listserv_curl.xml"
-            xpointer="xmlns(db=http://docbook.org/ns/docbook)
-            xpath(//*[@xml:id = 'bns_listserv_curl']/*[not(self::db:title)])">
-            <xi:fallback>
-                <para>Missing content here. Please let us know by making a DISQUS comment.</para>
-            </xi:fallback>
-        </xi:include>
+        <title>List server and attached networks (cURL)</title>
+        <para>After you provision your server, list server details to make sure the server and attached network are
+            listed.</para>
+        <procedure>
+            <title>To show server details with JSON</title>
+            <step>
+                <para>Issue the following command:</para>
+                <programlisting language="bash" role="gutter: false"><?db-font-size 85%?>
+                    <prompt>$</prompt> curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/servers/cfe9a69d-92ef-462f-9240-ed5b43d3d1af  \
+-X GET \
+-H "Content-Type: application/json" \
+-H "User-Agent: python-novaclient" \
+-H "Accept: application/json" \
+-H "X-Auth-Token: $token" | python -m json.tool</programlisting>
+                <para>The command returns the disk configuration, the addresses of any attached networks, flavor and image
+                    information, the server ID, and the server status. The networks include any isolated networks that you
+                    have created, in addition to Rackspace public and private networks.</para>
+                <programlisting language="json"><?db-font-size 80%?>
+{
+    "server": {
+        "OS-DCF:diskConfig": "AUTO",
+        "OS-EXT-STS:power_state": 1,
+        "OS-EXT-STS:task_state": null,
+        "OS-EXT-STS:vm_state": "active",
+        "accessIPv4": "10.13.20.27",
+        "accessIPv6": "2001:db8:0:1:a8bb:ccff:fe00:14b",
+        "addresses": {
+            "private": [
+                {
+                    "addr": "10.181.208.32",
+                    "version": 4
+                }
+            ],
+            "public": [
+                {
+                    "addr": "2001:db8:0:1:a8bb:ccff:fe00:14b",
+                    "version": 6
+                },
+                {
+                    "addr": "10.13.20.27",
+                    "version": 4
+                }
+            ],
+            "mynet": [
+                {
+                    "addr": "fc01::7",
+                    "version": 6
+                }
+            ]
+        },
+        "config_drive": "",
+        "created": "2014-10-02T18:18:06Z",
+        "flavor": {
+            "id": "2",
+            "links": [
+                {
+                    "href": "https://dfw.servers.api.rackspacecloud.com/5831008/flavors/2",
+                    "rel": "bookmark"
+                }
+            ]
+        },
+        "hostId": "406f461675e0cd4c4d7cd920ec726e3b156579612babf69248b97aa3",
+        "id": "cfe9a69d-92ef-462f-9240-ed5b43d3d1af",
+        "image": {
+            "id": "c63e20ad-6e3b-4e0b-943c-95cf3ba6c3a6",
+            "links": [
+                {
+                    "href": "https://dfw.servers.api.rackspacecloud.com/5831008/images/c63e20ad-6e3b-4e0b-943c-95cf3ba6c3a6",
+                    "rel": "bookmark"
+                }
+            ]
+        },
+        "key_name": null,
+        "links": [
+            {
+                "href": "https://dfw.servers.api.rackspacecloud.com/v2/5831008/servers/cfe9a69d-92ef-462f-9240-ed5b43d3d1af",
+                "rel": "self"
+            },
+            {
+                "href": "https://dfw.servers.api.rackspacecloud.com/5831008/servers/cfe9a69d-92ef-462f-9240-ed5b43d3d1af",
+                "rel": "bookmark"
+            }
+        ],
+        "metadata": {},
+        "name": "ata",
+        "progress": 100,
+        "status": "ACTIVE",
+        "tenant_id": "5831008",
+        "updated": "2014-10-02T18:21:36Z",
+        "user_id": "207638"
+    }
+}
+                </programlisting>
+            </step>
+            <step>
+                <para>Servers are listed by server ID, and the addresses for any attached networks are displayed. Copy the
+                    server ID for your server in case you need to update or delete your server.</para>
+                <para>Notice the <literal>mynet</literal> network IP address <literal>fc01::7</literal> in the output, which
+                    is the same as the <parameter>fixed_ip</parameter> IP address of the port you created.</para>
+                <para>Use the public IP address when you log into your server.</para>
+            </step>
+        </procedure>
+        <sidebar>
+            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+                targetptr="neutron_list_ports_curl">“List ports (cURL)”</olink></para>
+        </sidebar>
+    </section>
+
+    <section xml:id="neutron_list_ports_curl">
+        <title>List ports (cURL)</title>
+        <para>Confirm the port information.</para>
+        <para>The following steps shows you how to list ports using cURL.</para>
+        <procedure>
+            <title>To list ports</title>
+            <step>
+                <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+<prompt>$</prompt> curl https://dfw.networks.api.rackspacecloud.com/v2.0/$account/ports \
+-X GET \
+-H "User-Agent: python-novaclient" \
+-H "Accept: application/json" \
+-H "X-Auth-Token: $token" | python -m json.tool</programlisting>
+                    <emphasis role="bold">Output:</emphasis>
+                </para>
+                <para>The API operation returns a response body as shown in the following output:
+                    <programlisting language="json"><?db-font-size 75%?>
+{
+    "ports": [
+        {
+            "admin_state_up": true,
+            "device_id": "cfe9a69d-92ef-462f-9240-ed5b43d3d1af",
+            "device_owner": "compute:None",
+            "fixed_ips": [
+                {
+                    "ip_address": "fc01::7",
+                    "subnet_id": "1d18d76b-a04a-4147-a04c-151630ec80d0"
+                }
+            ],
+            "id": "79bf47e2-5107-4d93-b9c3-b78ddbc94c93",
+            "mac_address": "AA:BB:CC:00:01:4A",
+            "name": "port1",
+            "network_id": "03f240c5-6fb8-47a0-860a-c7ba83be519f",
+            "security_groups": [],
+            "status": "ACTIVE",
+            "tenant_id": "5831008"
+        },
+        {
+            "admin_state_up": true,
+            "device_id": "cfe9a69d-92ef-462f-9240-ed5b43d3d1af",
+            "device_owner": "compute:None",
+            "fixed_ips": [
+                {
+                    "ip_address": "10.13.20.27",
+                    "subnet_id": "31ac9611-df43-4300-83bb-8c6dc4fb0dec"
+                },
+                {
+                    "ip_address": "2001:db8:0:1:a8bb:ccff:fe00:14b",
+                    "subnet_id": "09589a8a-d876-43c6-bab5-4556ad1ac00d"
+                }
+            ],
+            "id": "f5a598c6-00b5-4bcd-9787-1d74576ccf57",
+            "mac_address": "AA:BB:CC:00:01:4B",
+            "name": "",
+            "network_id": "00000000-0000-0000-0000-000000000000",
+            "security_groups": [],
+            "status": "ACTIVE",
+            "tenant_id": "5831008"
+        },
+        {
+            "admin_state_up": true,
+            "device_id": "cfe9a69d-92ef-462f-9240-ed5b43d3d1af",
+            "device_owner": "compute:None",
+            "fixed_ips": [
+                {
+                    "ip_address": "10.181.208.32",
+                    "subnet_id": "07fbe6ae-88ec-45ae-85f3-96f6f327a5b5"
+                }
+            ],
+            "id": "0363f484-9031-4438-9ed5-b526df24c485",
+            "mac_address": "AA:BB:CC:00:01:4F",
+            "name": "",
+            "network_id": "11111111-1111-1111-1111-111111111111",
+            "security_groups": [],
+            "status": "ACTIVE",
+            "tenant_id": "5831008"
+        }
+    ]
+}
+                    </programlisting>
+                </para>
+            </step>
+        </procedure>
         <sidebar>
             <!--<para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted" targetptr="attach_net"
                     >Attach your network to an existing server</olink></para>-->
             <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted" targetptr="delete_net"
-                >“Delete your cloud network”</olink>
+                    >“Delete your cloud network”</olink>
             </para>
         </sidebar>
     </section>

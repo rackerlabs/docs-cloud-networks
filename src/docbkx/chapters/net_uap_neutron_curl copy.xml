@@ -15,7 +15,9 @@
 
     <section xml:id="neutron_create_network_uap_curl">
         <title>Create a network (cURL)</title>
-        <para>After you create a network, copy its network ID. You use this ID to create a subnet.</para>
+        <para>After you create a network, copy its network ID. You use this ID to create a subnet or attach the network to a
+            server.</para>
+        <para>The Rackspace Networking API supports only JSON formatting. XML is not supported.</para>
         <procedure>
             <title>To create a network</title>
             <step>
@@ -121,7 +123,7 @@
         ],
         "cidr": "192.168.5.0/24",
         "dns_nameservers": [],
-        "enable_dhcp": false,
+        "enable_dhcp": null,
         "gateway_ip": null,
         "host_routes": [
             {
@@ -202,9 +204,9 @@
     </section>
 
     <section xml:id="neutron_verify_ip_uap_curl">
-        <title>Verify IP on server port (cURL)</title>
-        <para>The following step shows you how to verify the IP address on the server port. In this case, The IP should be
-                <literal>192.168.5.3 </literal>, from the start of the allocation pool.</para>
+        <title>Verify IP on server port  (cURL)</title>
+        <para>The following step shows you how to verify the IP address on the server port.  In this case, The IP should 
+            be <literal>192.168.5.3 </literal>, from the start of the allocation pool.</para>
         <procedure>
             <title>To create a port outside allocation pool</title>
             <step>
@@ -300,14 +302,14 @@
         </procedure>
         <sidebar>
             <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_create_port_uap_curl">Create port outside allocation pool (cURL)</olink></para>
+                targetptr="neutron_create_port_uap_curl">Create port outside allocation pool (cURL)</olink></para>
         </sidebar>
     </section>
 
     <section xml:id="neutron_create_port_uap_curl">
         <title>Create port outside allocation pool (cURL)</title>
         <para>The following step shows you create a port outside of the allocation pool using cURL. Do this by using the
-                <parameter>fixed_ips</parameter> attribute and assigning the new IP address to the port. In this case, the
+            <parameter>fixed_ips</parameter> attribute and assigning the new IP address to the port. In this case, the
             allocation pool IPs range from <literal>192.168.5.3</literal> to <literal>192.168.5.100</literal> and the IP
             address for the new port is <literal>192.168.5.1</literal>.</para>
         <procedure>
@@ -339,9 +341,13 @@
 {
     "port":
     {
+        "status": "ACTIVE",
+        "name": "Rackerport",
         "admin_state_up": true,
-        "device_id": "",
+        "network_id": "a8fde776-e80f-47bb-a050-0c057d89afc3",
+        "tenant_id": "5831008", 
         "device_owner": null, 
+        "mac_address": "BE:CB:FE:00:01:69",
         "fixed_ips": [
             {
                 "subnet_id": "98c1af30-05c9-4502-8b1f-9bffde843cba",
@@ -349,12 +355,8 @@
             }
         ],
         "id": "e84fb78e-fc92-45aa-90b3-8786c82b5112",
-        "mac_address": "BE:CB:FE:00:01:69",
-        "name": "Rackerport",
-        "network_id": "a8fde776-e80f-47bb-a050-0c057d89afc3",
         "security_groups": [],
-        "status": "ACTIVE",
-        "tenant_id": "5831008"
+        "device_id": ""
     }
 }
                         </programlisting>
@@ -363,8 +365,7 @@
         </procedure>
         <sidebar>
             <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="configure_host_routes">Configure host routes</olink>
-            </para>
+                targetptr="neutron_list_subnets_curl">List subnets (cURL)</olink></para>
         </sidebar>
     </section>
 </section>

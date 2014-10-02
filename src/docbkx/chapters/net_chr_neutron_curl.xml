@@ -3,17 +3,16 @@
 <!ENTITY % common  SYSTEM "../../common/common.ent">
 %common;
 ]>
-<section xml:id="uap_neutron_curl" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+<section xml:id="chr_neutron_curl" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0">
-    <title>Use allocation pools to control dynamic IP address allocation with cURL</title>
-    <para>These sections walk you through using allocation pools to control dynamic IP address allocation by using
-        cURL.</para>
+    <title>Configure host routes with cURL</title>
+    <para>These sections walk you through configuring host routes by using cURL.</para>
     <sidebar>
         <para><emphasis role="bold">Start here: </emphasis><olink targetdoc="cn-gettingstarted"
-                targetptr="neutron_create_network_uap_curl">“Create a network (cURL)”</olink></para>
+                targetptr="neutron_create_network_chr_curl">“Create a network (cURL)”</olink></para>
     </sidebar>
 
-    <section xml:id="neutron_create_network_uap_curl">
+    <section xml:id="neutron_create_network_chr_curl">
         <title>Create a network (cURL)</title>
         <para>After you create a network, copy its network ID. You use this ID to create a subnet.</para>
         <procedure>
@@ -57,14 +56,14 @@
         </procedure>
         <sidebar>
             <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_create_subnet_uap_curl">“Create a subnet with allocation pools (cURL)”</olink></para>
+                    targetptr="neutron_create_subnet_chr_curl">“Create a subnet with allocation pools (cURL)”</olink></para>
         </sidebar>
     </section>
 
-    <section xml:id="neutron_create_subnet_uap_curl">
-        <title>Create a subnet with allocation pools (cURL)</title>
-        <para>To create a subnet with allocation pools, you specify a network, an IP address, allocation pools, and host
-            routes for your subnet. After you create a subnet, copy its subnet ID for future reference.</para>
+    <section xml:id="neutron_create_subnet_chr_curl">
+        <title>Create a subnet with host routes (cURL)</title>
+        <para>To create a subnet with host routes, you specify a network, an IP address, allocation pools, and host routes
+            for your subnet. After you create a subnet, copy its subnet ID for future reference.</para>
         <procedure>
             <title>To create a subnet with allocation pools</title>
             <step>
@@ -139,26 +138,26 @@
                             </programlisting></para>
             </step>
             <step>
-                <para>Copy the <literal>id</literal> value from the output for future reference. In this example, the id is
-                        <literal>98c1af30-05c9-4502-8b1f-9bffde843cba</literal>, but use the <parameter>id</parameter> from
-                    your response.</para>
+                <para>Notice the <parameter>host_routes</parameter> attribute with the <parameter>destination</parameter> of
+                        <literal>1.1.1.0/24</literal> and the <parameter>nexthop</parameter> of
+                        <literal>192.168.5.254</literal>.</para>
             </step>
         </procedure>
         <sidebar>
             <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_boot_server_uap_curl">“Boot Server with allocation pools (cURL)”</olink></para>
+                    targetptr="neutron_boot_server_chr_curl">“Boot Server with host routes (cURL)”</olink></para>
         </sidebar>
     </section>
 
-    <section xml:id="neutron_boot_server_uap_curl">
-        <title>Boot Server with allocation pools (cURL)</title>
+    <section xml:id="neutron_boot_server_chr_curl">
+        <title>Boot Server with host routes (cURL)</title>
         <para>The following step shows you how to boot server using cURL.</para>
         <procedure>
             <title>To boot a server</title>
             <step>
                 <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
                         <prompt>$</prompt> curl https://dfw.servers.api.rackspacecloud.com/v2.0/$account/servers \
-       -X GET \
+       -X POST \
        -H "Content-Type: application/json" \
        -H "User-Agent: python-novaclient" \
        -H "Accept: application/json" \
@@ -197,16 +196,15 @@
         </procedure>
         <sidebar>
             <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_verify_ip_uap_curl">Verify IP on server port (cURL)</olink></para>
+                    targetptr="neutron_verify_ip_chr_curl">Verify IP on server port (cURL)</olink></para>
         </sidebar>
     </section>
 
-    <section xml:id="neutron_verify_ip_uap_curl">
+    <section xml:id="neutron_verify_ip_chr_curl">
         <title>Verify IP on server port (cURL)</title>
-        <para>The following step shows you how to verify the IP address on the server port. In this case, The IP should be
-                <literal>192.168.5.3 </literal>, from the start of the allocation pool.</para>
+        <para>The following step shows you how to verify the IP address on the server port.</para>
         <procedure>
-            <title>To create a port outside allocation pool</title>
+            <title>To server IP</title>
             <step>
                 <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
                         <prompt>$</prompt> curl -k https://dfw.servers.api.rackspacecloud.com/v2.0/servers/a1061a57-0136-4c29-aac1-8b1a646a3001  \
@@ -296,75 +294,55 @@
 }
                         </programlisting>
                 </para>
+                <para>Notice the IP address on the <literal>public</literal> interface (in this case,
+                        <literal>10.23.233.124</literal>). Use this to login to the server in the next step.</para>
             </step>
         </procedure>
         <sidebar>
             <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_create_port_uap_curl">Create port outside allocation pool (cURL)</olink></para>
+                    targetptr="neutron_verify_route_chr_curl">Login to server and verify route (cURL)</olink></para>
         </sidebar>
     </section>
 
-    <section xml:id="neutron_create_port_uap_curl">
-        <title>Create port outside allocation pool (cURL)</title>
-        <para>The following step shows you create a port outside of the allocation pool using cURL. Do this by using the
-                <parameter>fixed_ips</parameter> attribute and assigning the new IP address to the port. In this case, the
-            allocation pool IPs range from <literal>192.168.5.3</literal> to <literal>192.168.5.100</literal> and the IP
-            address for the new port is <literal>192.168.5.1</literal>.</para>
+    <section xml:id="neutron_verify_route_chr_curl">
+        <title>Login to server and verify route (cURL)</title>
+        <para>The following steps show you how to login to the server and verify that the host route is configured correctly
+            using the command line.</para>
         <procedure>
-            <title>To create a port outside allocation pool</title>
+            <title>To login to server an verify host route</title>
             <step>
-                <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-                        <prompt>$</prompt> curl -k https://dfw.networks.api.rackspacecloud.com/v2.0/ports \
-        -X POST
-        -H "Content-Type: application/json" \
-        -H "User-Agent: python-novaclient" \
-        -H "Accept: application/json" \
-        -H "X-Auth-Token: $token"
-        -d '{"port": 
-    {
-        "admin_state_up": true,
-        "device_id": "",
-        "name": "Rackerport", 
-        "fixed_ips": [
-            {
-                "ip_address": "192.168.5.1", 
-                "subnet_id": "98c1af30-05c9-4502-8b1f-9bffde843cba"
-            }
-        ], 
-        "network_id": "a8fde776-e80f-47bb-a050-0c057d89afc3"}}' | python -m json.tool</programlisting>
+                <para>Issue the following command at the prompt: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                        <prompt>$</prompt> ssh root@10.23.233.124</programlisting>
                     <emphasis role="bold">Output:</emphasis>
                 </para>
-                <para>The API operation returns a response body as shown in the following output:
-                    <programlisting language="json"><?db-font-size 75%?>
-{
-    "port":
-    {
-        "admin_state_up": true,
-        "device_id": "",
-        "device_owner": null, 
-        "fixed_ips": [
-            {
-                "subnet_id": "98c1af30-05c9-4502-8b1f-9bffde843cba",
-                "ip_address": "192.168.5.1"
-            }
-        ],
-        "id": "e84fb78e-fc92-45aa-90b3-8786c82b5112",
-        "mac_address": "BE:CB:FE:00:01:69",
-        "name": "Rackerport",
-        "network_id": "a8fde776-e80f-47bb-a050-0c057d89afc3",
-        "security_groups": [],
-        "status": "ACTIVE",
-        "tenant_id": "5831008"
-    }
-}
-                        </programlisting>
+                <para>The command returns the following output:
+                    <programlisting language="bash"><?db-font-size 75%?>
+The authenticity of host '10.23.233.124 (10.23.233.124)' can't be established.
+RSA key fingerprint is 87:b6:8f:7a:44:80:a4:58:f8:9b:09:82:d4:b0:f9:bf.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '10.23.233.124' (RSA) to the list of known hosts.
+root@10.23.233.124's password:
+                    </programlisting>
                 </para>
+                <para>Enter your password when prompted.</para>
+            </step>
+            <step>
+                <para>Issue the following command at the prompt: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                        <prompt>root@ata:~#</prompt> route</programlisting>
+                    <emphasis role="bold">Output:</emphasis>
+                    <programlisting language="bash"><?db-font-size 75%?>
+Kernel IP routing table
+Destination Gateway Genmask Flags Metric Ref Use Iface
+default 10.23.233.1 0.0.0.0 UG 100 0 0 eth0
+1.1.1.0 192.168.5.254 255.255.255.0 UG 0 0 0 eth2
+10.23.233.0 * 255.255.255.0 U 0 0 0 eth0
+10.181.192.0 * 255.255.248.0 U 0 0 0 eth1
+192.168.5.0 * 255.255.255.0 U 0 0 0 eth2
+                    </programlisting>
+                </para>
+                <para>Notice the route <literal>1.1.1.0/24</literal> with Gateway <literal>192.168.5.254</literal> in the
+                    preceding output. That is what we expected.</para>
             </step>
         </procedure>
-        <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="configure_host_routes">Configure host routes</olink>
-            </para>
-        </sidebar>
     </section>
 </section>

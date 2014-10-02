@@ -14,8 +14,8 @@
 
     <section xml:id="neutron_create_network_curl">
         <title>Create a network (cURL)</title>
-        <para>After you create a network, copy its network ID. You use this ID to create a subnet or attach the network to a
-            server.</para>
+        <para>After you create a network, copy its network ID. You use this <parameter>id</parameter> to create a subnet or
+            attach the network to a server.</para>
         <para>The Rackspace Networking API supports only JSON formatting. XML is not supported.</para>
         <procedure>
             <title>To create a network</title>
@@ -64,8 +64,9 @@
 
     <section xml:id="neutron_create_subnet_curl">
         <title>Create a subnet (cURL)</title>
-        <para>To create a subnet, you specify a network, an IP address, and a name for your subnet. After you create a
-            subnet, copy its subnet ID for future reference.</para>
+        <para>To create a subnet, you specify a network ID (using the <parameter>id</parameter> you copied in the previous
+            step), an IP address, and a name for your subnet. After you create a subnet, copy its subnet ID for future
+            reference.</para>
         <procedure>
             <title>To create a subnet</title>
             <step>
@@ -100,7 +101,7 @@
       	],
       	"host_routes":[
       	],
-      	"enable_dhcp":true,
+      	"enable_dhcp":false,
       	"gateway_ip":null,
       	"id":"23e3059e-4f39-4f7f-8cf2-c326e5de6c37",
       	"name":"Subamp",
@@ -183,7 +184,7 @@
 	   "cidr":"120.1.2.0/24",
 	   "dns_nameservers":[
    	    ],
-   	    "enable_dhcp":true,
+   	    "enable_dhcp":false,
    	    "gateway_ip":"null",
    	    "host_routes":[
    	    ],

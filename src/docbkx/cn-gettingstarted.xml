@@ -44,10 +44,28 @@
         </abstract>
         <revhistory>
             <revision>
-                <!--revise date-->
+                <date>2014-10-02</date>
+                <revdescription>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Added <olink targetdoc="cn-gettingstarted" targetptr="use_alloc_pools">Use allocation pools
+                                    to control dynamic IP address allocation</olink> and <olink targetdoc="cn-gettingstarted"
+                                    targetptr="configure_host_routes">Configure host routes</olink>.</para>
+                        </listitem>
+                        <listitem>
+                            <para>other changes</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision>
                 <date>2014-09-30</date>
                 <revdescription>
-                    <para>Published document with neutron API calls.</para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Published document with neutron API calls.</para>
+                        </listitem>
+                    </itemizedlist>
                 </revdescription>
             </revision>
         </revhistory>
@@ -65,6 +83,7 @@
     <xi:include href="chapters/net_boot_new_server.xml"/>
     <xi:include href="chapters/net_attach_network_to_server.xml"/>
     <xi:include href="chapters/net_delete_network.xml"/>
-<!--    <xi:include href="chapters/net_use_alloc_pools.xml"/>-->
+    <xi:include href="chapters/net_use_alloc_pools.xml"/>
+    <xi:include href="chapters/net_configure_host_routes.xml"/>
     <glossary role="auto"/>
 </book>

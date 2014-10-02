@@ -70,6 +70,16 @@
         </abstract>
         <revhistory>
             <revision>
+                <date>2014-10-02</date>
+                <revdescription>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Minor updates.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision>
                 <date>2014-09-30</date>
                 <revdescription>
                     <itemizedlist>

@@ -11,7 +11,7 @@
     ],
     "cidr": "192.168.62.0/24",
     "dns_nameservers": [],
-    "enable_dhcp": null,
+    "enable_dhcp": false,
     "gateway_ip": "192.168.62.1",
     "host_routes": [],
     "id": "bbda1637-79df-4ec6-8399-baa8e01dda22",

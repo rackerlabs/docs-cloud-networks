@@ -200,7 +200,7 @@
                     (<parameter>cidr</parameter>) cannot be updated. Attempting to update these parameters results in a
                     <errorcode>400 Bad Request</errorcode> error.</para>
             <para>Users cannot update allocation pools that are attached to a port.</para>
-            <para>If <parameter>host_routes</parameter> is updated, it will only take effect for ports or Cloud Servers using
+            <para>If any attributes are updated, the changes will only take effect for ports or Cloud Servers using
                 this subnet that are created after this modification. Any existing ports or Cloud Servers will not be
                 updated.</para>
         </wadl:doc>

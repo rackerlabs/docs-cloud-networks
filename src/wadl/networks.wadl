@@ -56,9 +56,6 @@
                 <link xlink:href="http://docs.rackspace.com/networks/api/v2/cn-devguide/content/section_pagination.html">Pagination 
                     of Requests</link>
                 in the <citetitle>Cloud Networks API Developer Guide</citetitle>.--></para>
-            <warning><para>Network ID: "00000000-0000-0000-0000-000000000000", and ID:
-                    "11111111-1111-1111-1111-111111111111" correspond to PublicNet and ServiceNet networks of Rackspace and
-                    are not user modifiable networks. Changes to these networks are not supported.</para></warning>
         </wadl:doc>
         <response status="200">
             <representation mediaType="application/json" element="csapi:network">
@@ -78,6 +75,8 @@
             <para role="shortdesc">Creates a network.</para>
             <para>This operation creates a network. The tenant ID that you specify in the URI is the tenant who creates the
                 network.</para>
+            <note><para>Only one <literal>IPv4</literal> and one <literal>IPv6</literal> subnet can be specified per
+                Network.</para></note>
         </wadl:doc>
         <request>
             <representation mediaType="application/json" element="csapi:network">
@@ -161,6 +160,9 @@
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Update Network">
             <para role="shortdesc">Updates a specified network.</para>
             <para>This operation updates an existing network.</para>
+            <warning><para>Network ID: "00000000-0000-0000-0000-000000000000", and ID: "11111111-1111-1111-1111-111111111111"
+                    correspond to PublicNet and ServiceNet networks of Rackspace and are not user modifiable networks.
+                    Changes to these networks are not supported.</para></warning>
         </wadl:doc>
         <request>
             <representation mediaType="application/json" element="csapi:network">

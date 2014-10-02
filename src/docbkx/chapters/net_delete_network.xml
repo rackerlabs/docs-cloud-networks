@@ -29,7 +29,7 @@
                 type.<!-- To simplify your path through this chapter, decide whether you
                 prefer neutron-client <!-\-or nova-client examples, -\->or cURL examples.--></para>
         <sidebar>
-                <para><emphasis role="bold">Next step:</emphasis><!-- Choose one of the following methods:--><itemizedlist>
+                <para><emphasis role="bold">Next step:</emphasis> Choose your method:<!-- Choose one of the following methods:--><itemizedlist>
                                 <!--<listitem>
                                         <para><olink targetdoc="cn-gettingstarted" targetptr="dn_neutron_neutron">“Use
                                                         neutron client”</olink></para>

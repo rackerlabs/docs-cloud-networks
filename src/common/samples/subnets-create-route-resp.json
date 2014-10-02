@@ -3,12 +3,12 @@
         "allocation_pools": [
             {
                "end": "192.168.19.254",
-             "start": "192.168.19.1"
+               "start": "192.168.19.1"
             }
          ],
         "cidr": "192.168.19.0/24",
         "dns_nameservers": [],
-        "enable_dhcp": null,
+        "enable_dhcp": false,
         "gateway_ip": null,
         "host_routes": [
             {

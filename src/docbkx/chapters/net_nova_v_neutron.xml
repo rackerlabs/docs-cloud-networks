@@ -7,7 +7,7 @@
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
     <title>Networking: neutron versus nova-network</title>
     <para>Rackspace first introduced networking services that were based on the OpenStack nova-network API and exposed these
-        services via the <literal>/osnetworksv2</literal> Cloud Servers extension. For documentation on these operations, see
+        services via the <literal>/os-networksv2</literal> Cloud Servers extension. For documentation on these operations, see
         <link xlink:href="http://docs-internal.rackspace.com/servers/api/v2/cs-devguide/content/ch_extensions.html">
                 Cloud Servers API Developers Guide Extensions</link>.
         This is now superseded by the current networking API, based on OpenStack neutron, which offers a richer suite of

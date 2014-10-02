@@ -35,7 +35,7 @@
                 </itemizedlist>
         </note>
         <sidebar>
-                <para><emphasis role="bold">Next step:</emphasis> <!--Choose one of the following methods:--><itemizedlist>
+                <para><emphasis role="bold">Next step:</emphasis> Choose your method: <!--Choose one of the following methods:--><itemizedlist>
                                 <!--<listitem>
                                         <para><olink targetdoc="cn-gettingstarted" targetptr="cfn_neutron_neutron">“Use
                                                         neutron client”</olink></para>
