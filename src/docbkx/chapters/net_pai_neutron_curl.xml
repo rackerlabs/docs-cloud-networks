@@ -68,16 +68,20 @@
         </procedure>
         <sidebar>
             <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_find_v4_address_pai_curl">“Find IPv4 network address (cURL)”</olink></para>
+                    targetptr="neutron_get_network_cidr_pai_curl">“Get the IPv4 CIDR for the network (cURL)”</olink></para>
         </sidebar>
     </section>
 
-    <section xml:id="neutron_find_v4_address_pai_curl">
-        <title>Find IPv4 network address (cURL)</title>
-        <para>Now, find the IPv4 IP address. In this example, notice the subnet's <parameter>network_id</parameter> of
-                <literal>03f240c5-6fb8-47a0-860a-c7ba83be519f</literal>.</para>
+    <section xml:id="neutron_get_network_cidr_pai_curl">
+        <title>Get the IPv4 CIDR for the network (cURL)</title>
+        <para>Now, note the IPv4 CIDR on the same network as the IPv6 CIDR. You should have already created this subnet on
+            the same network. If you have not done so, create an IPv4 subnet (<command>POST /subnets</command>) on the same
+            network. Because this example assumes the subnet has already been created, run the following command and note the
+            CIDR to identify the IPv4 address. In this example, the subnet's <parameter>network_id</parameter> is
+                <literal>03f240c5-6fb8-47a0-860a-c7ba83be519f</literal> and the <parameter>cidr</parameter> is
+                <literal>192.168.7.0/24</literal>.</para>
         <procedure>
-            <title>To find network's IPv4 IP address for the subnet</title>
+            <title>To get the IPv4 CIDR of the matching network</title>
             <step>
                 <para>Issue the following cURL command:
                     <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
@@ -122,8 +126,8 @@
                 <para>Make note of the <parameter>network_id</parameter> and <parameter>cidr</parameter> for future
                     reference. In this example, the <parameter>network_id</parameter> is
                         <literal>03f240c5-6fb8-47a0-860a-c7ba83be519f</literal>), but use the
-                        <parameter>network_id</parameter> from your response. The IP address of the
-                        <parameter>cidr</parameter> is <literal>192.168.7.0</literal>, but, again, use the value from your
+                        <parameter>network_id</parameter> from your response. The <parameter>cidr</parameter> is
+                        <literal>192.168.7.0/24</literal>, but, again, use the <parameter>cidr</parameter> from your
                     response.</para>
             </step>
         </procedure>
@@ -136,7 +140,9 @@
     <section xml:id="neutron_add_v4_IP_pai_curl">
         <title>Add an IPv4 address on the same port (cURL)</title>
         <para>To add an IPv4 address on the same port, update the IPv6 port with the existing IPv6 IP address, the subnet's
-            IPv4 network ID, and the subnet's network IPv4 IP address from the preceding two steps.</para>
+            IPv4 ID, and the IP address from the subnet's IPv4 CIDR. In this example, the IPv4 IP address is
+                <literal>192.168.7.250</literal> and the <parameter>subnet_id</parameter> is
+                <literal>321caa1c-2105-4186-b53b-366fa623c09a</literal>.</para>
         <procedure>
             <title>To add an IPv4 address to a port</title>
             <step>
