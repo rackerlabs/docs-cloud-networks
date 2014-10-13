@@ -76,9 +76,10 @@
                     <td>Bool</td>
                     <td>No</td>
                     <td>CRU</td>
-                    <td>null</td>
-                    <td>null</td>
-                    <td>The administrative state of network. This value is null by default and cannot be changed.</td>
+                    <td>True</td>
+                    <td>True</td>
+                    <td>The administrative state of network. This value is <literal>true</literal> by default and cannot be
+                        changed.</td>
                 </tr>
                 <tr>
                     <td>status</td>
@@ -367,9 +368,9 @@
                     <td>bool</td>
                     <td>No</td>
                     <td>CRU</td>
-                    <td>true</td>
-                    <td>true</td>
-                    <td>Administrative state of port. This value is always set to true.</td>
+                    <td>True</td>
+                    <td>True</td>
+                    <td>Administrative state of port. This value is always set to <literal>true</literal>.</td>
                 </tr>
                 <tr>
                     <td>status</td>

@@ -14,7 +14,7 @@
 
     <section xml:id="neutron_create_network_chr_curl">
         <title>Create a network (cURL)</title>
-        <para>After you create a network, copy its network ID. You use this ID to create a subnet.</para>
+        <para>After you create a network, copy its network ID. You use this ID to create a subnet and boot the server.</para>
         <procedure>
             <title>To create a network</title>
             <step>
@@ -63,13 +63,13 @@
     <section xml:id="neutron_create_subnet_chr_curl">
         <title>Create a subnet with host routes (cURL)</title>
         <para>To create a subnet with host routes, you specify a network, an IP address, allocation pools, and host routes
-            for your subnet. After you create a subnet, copy its subnet ID for future reference.</para>
+            for your subnet.</para>
         <procedure>
             <title>To create a subnet with allocation pools</title>
             <step>
                 <para>Issue the following cURL command:
                     <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
-                            <prompt>$</prompt> curl -s https://dfw.networks.api.rackspacecloud.com/v2.0/$account/subnets \
+                            <prompt>$</prompt> curl -s https://dfw.networks.api.rackspacecloud.com/v2.0/subnets \
        -X POST \
        -H "Content-Type: application/json" \
        -H "User-Agent: python-novaclient" \
@@ -145,13 +145,14 @@
         </procedure>
         <sidebar>
             <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_boot_server_chr_curl">“Boot Server with host routes (cURL)”</olink></para>
+                    targetptr="neutron_boot_server_chr_curl">“Boot Server (cURL)”</olink></para>
         </sidebar>
     </section>
 
     <section xml:id="neutron_boot_server_chr_curl">
-        <title>Boot Server with host routes (cURL)</title>
-        <para>The following step shows you how to boot server using cURL.</para>
+        <title>Boot Server (cURL)</title>
+        <para>The following step shows you how to boot server using cURL, using the network ID from the network you created
+            in the first step of this procedure.</para>
         <procedure>
             <title>To boot a server</title>
             <step>
@@ -207,7 +208,7 @@
             <title>To server IP</title>
             <step>
                 <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-                        <prompt>$</prompt> curl -k https://dfw.servers.api.rackspacecloud.com/v2.0/servers/a1061a57-0136-4c29-aac1-8b1a646a3001  \
+                        <prompt>$</prompt> curl -k https://dfw.servers.api.rackspacecloud.com/v2.0/$account/servers/a1061a57-0136-4c29-aac1-8b1a646a3001  \
         -X GET
         -H "Content-Type: application/json" \
         -H "User-Agent: python-novaclient" \
@@ -344,5 +345,11 @@ default 10.23.233.1 0.0.0.0 UG 100 0 0 eth0
                     preceding output. That is what we expected.</para>
             </step>
         </procedure>
+        <sidebar>
+            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+                    targetptr="provision_additional_ips">Provision additional IP and dual-stack IPs on an Isolated network
+                    port</olink>
+            </para>
+        </sidebar>
     </section>
 </section>

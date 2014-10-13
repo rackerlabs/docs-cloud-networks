@@ -72,7 +72,7 @@
             <step>
                 <para>Issue the following cURL command:
                     <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
-                            <prompt>$</prompt> curl -s https://dfw.networks.api.rackspacecloud.com/v2.0/$account/subnets \
+                            <prompt>$</prompt> curl -s https://dfw.networks.api.rackspacecloud.com/v2.0/subnets \
        -X POST \
        -H "Content-Type: application/json" \
        -H "Accept: application/json" \
@@ -129,7 +129,7 @@
             <title>To list networks</title>
             <step>
                 <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-                        <prompt>$</prompt> curl https://dfw.networks.api.rackspacecloud.com/v2.0/$account/networks \
+                        <prompt>$</prompt> curl https://dfw.networks.api.rackspacecloud.com/v2.0/networks \
        -X GET -H "X-Auth-Token: $token" | python -m json.tool</programlisting>
                     <emphasis role="bold">Output:</emphasis>
                 </para>
@@ -166,7 +166,7 @@
             <title>To list subnets</title>
             <step>
                 <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-                        <prompt>$</prompt> curl https://dfw.networks.api.rackspacecloud.com/v2.0/$account/subnets \
+                        <prompt>$</prompt> curl https://dfw.networks.api.rackspacecloud.com/v2.0/subnets \
        -X GET -H "X-Auth-Token: $token" | python -m json.tool</programlisting>
                     <emphasis role="bold">Output:</emphasis>
                 </para>

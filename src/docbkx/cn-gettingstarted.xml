@@ -44,6 +44,20 @@
         </abstract>
         <revhistory>
             <revision>
+                <date>2014-10-13</date>
+                <revdescription>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Added <olink targetdoc="cn-gettingstarted" targetptr="provision_additional_ips">Provision
+                                    additional IP and dual-stack IPs on an Isolated network port</olink>.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Minor wording and URI changes.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision>
                 <date>2014-10-02</date>
                 <revdescription>
                     <itemizedlist>
@@ -53,7 +67,7 @@
                                     targetptr="configure_host_routes">Configure host routes</olink>.</para>
                         </listitem>
                         <listitem>
-                            <para>other changes</para>
+                            <para>Minor wording changes.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -85,5 +99,6 @@
     <xi:include href="chapters/net_delete_network.xml"/>
     <xi:include href="chapters/net_use_alloc_pools.xml"/>
     <xi:include href="chapters/net_configure_host_routes.xml"/>
+    <xi:include href="chapters/net_provision_additional_ips.xml"/>
     <glossary role="auto"/>
 </book>

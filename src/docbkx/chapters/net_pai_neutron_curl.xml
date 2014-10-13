@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section [
+<!ENTITY % common  SYSTEM "../../common/common.ent">
+%common;
+]>
+<section xml:id="pai_neutron_curl" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0">
+    <title>Provision port with additional IP and dual-stack IPs with cURL</title>
+    <para>These sections walk you through provisioning an additional IP and dual-stack (v4 and v6) IPs on an Isolated network
+        port by using cURL.</para>
+    <sidebar>
+        <para><emphasis role="bold">Start here: </emphasis><olink targetdoc="cn-gettingstarted"
+                targetptr="neutron_show_v6_port_pai_curl">“Show port with IPv6 address (cURL)”</olink></para>
+    </sidebar>
+
+    <section xml:id="neutron_show_v6_port_pai_curl">
+        <title>Show port with IPv6 address (cURL)</title>
+        <para>First, take a look at your port with an IPv6 IP address. In this example, notice the
+                <parameter>fixed_ips</parameter><parameter>ip_address</parameter> of <literal>fc01::7</literal>, which is an
+            IPv6 address in hexadecimal format.</para>
+        <procedure>
+            <title>To show a port</title>
+            <step>
+                <para>Issue the following cURL command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
+                            <prompt>$</prompt> curl -s https://dfw.networks.api.rackspacecloud.com/v2.0/ports \
+       -X GET \
+       -H "Content-Type: application/json" \
+       -H "User-Agent: python-novaclient" \
+       -H "Accept: application/json" \
+       -H "X-Auth-Token: $token" | python -m json.tool</programlisting></para>
+                <para>In this cURL command, you specify several options. For information about options, see <olink
+                        targetdoc="cn-gettingstarted" targetptr="curl_options">Table 2, “cURL Command-Line
+                    Options”</olink>.</para>
+                <para><emphasis role="bold">Output:</emphasis>
+                </para>
+                <para>The operation returns the response body, as shown in the following JSON response:
+                    <programlisting language="json"><?db-font-size 65%?>
+{
+    "ports": [
+        {
+            "admin_state_up": true,
+            "device_id": "cfe9a69d-92ef-462f-9240-ed5b43d3d1af",
+            "device_owner": "compute:None",
+            "fixed_ips": [
+                {
+                    "ip_address": "fc01::7",
+                    "subnet_id": "1d18d76b-a04a-4147-a04c-151630ec80d0"
+                }
+            ],
+            "id": "79bf47e2-5107-4d93-b9c3-b78ddbc94c93",
+            "mac_address": "AA:BB:CC:00:01:4A",
+            "name": "port1",
+            "network_id": "03f240c5-6fb8-47a0-860a-c7ba83be519f",
+            "security_groups": [],
+            "status": "ACTIVE",
+            "tenant_id": "5831008"
+        }
+   ]
+}
+                            </programlisting></para>
+            </step>
+            <step>
+                <para>Make note of the <parameter>id</parameter> for future reference. In this example, the
+                        <parameter>id</parameter> is <literal>79bf47e2-5107-4d93-b9c3-b78ddbc94c93</literal>), but use the
+                        <parameter>id</parameter> from your response.</para>
+            </step>
+        </procedure>
+        <sidebar>
+            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+                    targetptr="neutron_find_v4_address_pai_curl">“Find IPv4 network address (cURL)”</olink></para>
+        </sidebar>
+    </section>
+
+    <section xml:id="neutron_find_v4_address_pai_curl">
+        <title>Find IPv4 network address (cURL)</title>
+        <para>Now, find the IPv4 IP address. In this example, notice the subnet's <parameter>network_id</parameter> of
+                <literal>03f240c5-6fb8-47a0-860a-c7ba83be519f</literal>.</para>
+        <procedure>
+            <title>To find network's IPv4 IP address for the subnet</title>
+            <step>
+                <para>Issue the following cURL command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
+                            <prompt>$</prompt> curl -s https://dfw.networks.api.rackspacecloud.com/v2.0/subnets \
+       -X GET \
+       -H "Content-Type: application/json" \
+       -H "User-Agent: python-novaclient" \
+       -H "Accept: application/json" \
+       -H "X-Auth-Token: $token" | python -m json.tool</programlisting></para>
+                <para>In this cURL command, you specify several options. For information about options, see <olink
+                        targetdoc="cn-gettingstarted" targetptr="curl_options">Table 2, “cURL Command-Line
+                    Options”</olink>.</para>
+                <para><emphasis role="bold">Output:</emphasis>
+                </para>
+                <para>The operation returns the response body, as shown in the following JSON response:
+                    <programlisting language="json"><?db-font-size 65%?>
+{
+    "subnet": {
+        {
+            "allocation_pools": [
+                {
+                    "end": "192.168.7.254",
+                    "start": "192.168.7.1"
+                }
+            ],
+            "cidr": "192.168.7.0/24",
+            "dns_nameservers": [],
+            "enable_dhcp": null,
+            "gateway_ip": null,
+            "host_routes": [],
+            "id": "321caa1c-2105-4186-b53b-366fa623c09a",
+            "ip_version": 4,
+            "name": "",
+            "network_id": "03f240c5-6fb8-47a0-860a-c7ba83be519f",
+            "tenant_id": "5831008"
+        }
+    }
+}
+                            </programlisting></para>
+            </step>
+            <step>
+                <para>Make note of the <parameter>network_id</parameter> and <parameter>cidr</parameter> for future
+                    reference. In this example, the <parameter>network_id</parameter> is
+                        <literal>03f240c5-6fb8-47a0-860a-c7ba83be519f</literal>), but use the
+                        <parameter>network_id</parameter> from your response. The IP address of the
+                        <parameter>cidr</parameter> is <literal>192.168.7.0</literal>, but, again, use the value from your
+                    response.</para>
+            </step>
+        </procedure>
+        <sidebar>
+            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+                    targetptr="neutron_add_v4_IP_pai_curl">“Add an IPv4 address on the same port (cURL)”</olink></para>
+        </sidebar>
+    </section>
+
+    <section xml:id="neutron_add_v4_IP_pai_curl">
+        <title>Add an IPv4 address on the same port (cURL)</title>
+        <para>To add an IPv4 address on the same port, update the IPv6 port with the existing IPv6 IP address, the subnet's
+            IPv4 network ID, and the subnet's network IPv4 IP address from the preceding two steps.</para>
+        <procedure>
+            <title>To add an IPv4 address to a port</title>
+            <step>
+                <para>Issue the following cURL command, using the port ID from the preceding step in the URI:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
+                            <prompt>$</prompt> curl -s https://dfw.networks.api.rackspacecloud.com/v2.0/ports/79bf47e2-5107-4d93-b9c3-b78ddbc94c93 \
+       -X PUT \
+       -H "Content-Type: application/json" \
+       -H "User-Agent: python-novaclient" \
+       -H "Accept: application/json" \
+       -H "X-Auth-Token: $token" \
+       -d '{"port":
+    {
+        "fixed_ips": [
+            {
+                "ip_address": "fc01::7",
+                "subnet_id": "1d18d76b-a04a-4147-a04c-151630ec80d0"
+            },
+            {
+                "ip_address": "192.168.7.250",
+                "subnet_id": "321caa1c-2105-4186-b53b-366fa623c09a"
+            }
+        ]
+    }
+}' | python -m json.tool</programlisting></para>
+                <para>In this cURL command, you specify several options. For information about options, see <olink
+                        targetdoc="cn-gettingstarted" targetptr="curl_options">Table 2, “cURL Command-Line
+                    Options”</olink>.</para>
+                <para><emphasis role="bold">Output:</emphasis>
+                </para>
+                <para>The operation returns the response body, as shown in the following JSON response:
+                    <programlisting language="json"><?db-font-size 65%?>
+{
+    "port": 
+    {
+        "status": "ACTIVE", 
+        "name": "port1", 
+        "admin_state_up": true, 
+        "network_id": "03f240c5-6fb8-47a0-860a-c7ba83be519f", 
+        "tenant_id": "5831008", 
+        "device_owner": "compute:None", 
+        "mac_address": "AA:BB:CC:00:01:4A", 
+        "fixed_ips": [
+            {
+                "subnet_id": "1d18d76b-a04a-4147-a04c-151630ec80d0", 
+                "ip_address": "fc01::7"
+            }, 
+            {
+                "subnet_id": "321caa1c-2105-4186-b53b-366fa623c09a", 
+                "ip_address": "192.168.7.250"
+            }
+        ], 
+        "id": "79bf47e2-5107-4d93-b9c3-b78ddbc94c93", 
+        "security_groups": [], 
+        "device_id": "cfe9a69d-92ef-462f-9240-ed5b43d3d1af"
+    }
+}
+                            </programlisting></para>
+            </step>
+        </procedure>
+        <sidebar>
+            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+                    targetptr="neutron_show_both_port_pai_curl">“Show port with both IP Addresses (cURL)”</olink></para>
+        </sidebar>
+    </section>
+
+    <section xml:id="neutron_show_both_port_pai_curl">
+        <title>Show port with both IP Addresses (cURL)</title>
+        <para>The following step shows you how to show port details to verify that both IPv4 and IPv6 IP addresses are
+            configured using cURL.</para>
+        <procedure>
+            <title>To show port details</title>
+            <step>
+                <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                        <prompt>$</prompt> curl https://dfw.servers.api.rackspacecloud.com/v2.0/ports/79bf47e2-5107-4d93-b9c3-b78ddbc94c93 \
+       -X GET \
+       -H "Content-Type: application/json" \
+       -H "User-Agent: python-novaclient" \
+       -H "Accept: application/json" \
+       -H "X-Auth-Token: $token" | python -m json.tool</programlisting>
+                    <emphasis role="bold">Output:</emphasis>
+                </para>
+                <para>The API operation returns a response body as shown in the following output:
+                    <programlisting language="json"><?db-font-size 75%?>
+{
+    "ports": [
+        {
+            "admin_state_up": true,
+            "device_id": "cfe9a69d-92ef-462f-9240-ed5b43d3d1af",
+            "device_owner": "compute:None",
+            "fixed_ips": [
+                {
+                    "ip_address": "fc01::7",
+                    "subnet_id": "1d18d76b-a04a-4147-a04c-151630ec80d0"
+                },
+                {
+                    "ip_address": "192.168.7.250",
+                    "subnet_id": "321caa1c-2105-4186-b53b-366fa623c09a"
+                }
+            ],
+            "id": "79bf47e2-5107-4d93-b9c3-b78ddbc94c93",
+            "mac_address": "AA:BB:CC:00:01:4A",
+            "name": "port1",
+            "network_id": "03f240c5-6fb8-47a0-860a-c7ba83be519f",
+            "security_groups": [],
+            "status": "ACTIVE",
+            "tenant_id": "5831008"
+        }
+   ]
+}
+                        </programlisting>
+                </para>
+            </step>
+        </procedure>
+        <sidebar>
+            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+                    targetptr="neutron_boot_server_pai_curl">Boot Server (cURL)</olink></para>
+        </sidebar>
+    </section>
+
+    <section xml:id="neutron_boot_server_pai_curl">
+        <title>Boot Server (cURL)</title>
+        <para>The following step shows you how to boot server using cURL, using the port ID of the port you configured with
+            dual-stack IPs in the second step of this procedure.</para>
+        <procedure>
+            <title>To boot a server</title>
+            <step>
+                <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                        <prompt>$</prompt> curl https://dfw.servers.api.rackspacecloud.com/v2.0/$account/servers \
+       -X POST \
+       -H "Content-Type: application/json" \
+       -H "User-Agent: python-novaclient" \
+       -H "Accept: application/json" \
+       -H "X-Auth-Token: $token" \
+       -d '{"server":
+            "name": "ata",
+            "imageRef": "c63e20ad-6e3b-4e0b-943c-95cf3ba6c3a6",
+            "flavorRef": "2",
+            "max_count": 1,
+            "min_count": 1,
+            "networks": [{"uuid": "00000000-0000-0000-0000-000000000000"}, {"uuid": "11111111-1111-1111-1111-111111111111"}, {"port":"79bf47e2-5107-4d93-b9c3-b78ddbc94c93"} ]
+        }} | python -m json.tool</programlisting>
+                    <emphasis role="bold">Output:</emphasis>
+                </para>
+                <para>The API operation returns a response body as shown in the following output:
+                    <programlisting language="json"><?db-font-size 75%?>
+{
+    "server": 
+    {
+        "OS-DCF:diskConfig": 
+        "AUTO", 
+        "id": "1ed5bc31-153d-4570-a361-92d5a02fd428", 
+        "links":[
+            { 
+                "href": "https://netdev-ord.ohthree.com/v2/5831008/servers/1ed5bc31-153d-4570-a361-92d5a02fd428", 
+                "rel": "self"
+            }, 
+            {
+                "href": "https://netdev-ord.ohthree.com/5831008/servers/1ed5bc31-153d-4570-a361-92d5a02fd428", 
+                "rel": "bookmark"
+            }
+        ], 
+        "adminPass": "LuXD49ijFf3D"
+    }
+}
+                        </programlisting>
+                </para>
+            </step>
+            <step>
+                <para>Copy the <literal>id</literal> value from the output for future reference. In this example, the id is
+                        <literal>1ed5bc31-153d-4570-a361-92d5a02fd428</literal>, but use the <parameter>id</parameter> from
+                    your response.</para>
+            </step>
+        </procedure>
+        <sidebar>
+            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+                    targetptr="neutron_verify_ips_pai_curl">Verify IPs on server port (cURL)</olink></para>
+        </sidebar>
+    </section>
+
+    <section xml:id="neutron_verify_ips_pai_curl">
+        <title>Verify IPs on server port (cURL)</title>
+        <para>The following step shows you how to verify the IP addresses on the server port. In this case, the IPs should be
+                <literal>192.168.7.250</literal> and <literal>fc01::7</literal>.</para>
+        <procedure>
+            <title>To verify the port on the server</title>
+            <step>
+                <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                        <prompt>$</prompt> curl -k https://dfw.servers.api.rackspacecloud.com/v2.0/$account/servers/1ed5bc31-153d-4570-a361-92d5a02fd428  \
+        -X GET
+        -H "Content-Type: application/json" \
+        -H "User-Agent: python-novaclient" \
+        -H "Accept: application/json" \
+        -H "X-Auth-Token: $token" | python -m json.tool</programlisting>
+                    <emphasis role="bold">Output:</emphasis>
+                </para>
+                <para>The API operation returns a response body as shown in the following output:
+                    <programlisting language="json"><?db-font-size 75%?>
+{
+    "server": {
+        "OS-DCF:diskConfig": "AUTO",
+        "OS-EXT-STS:power_state": 1,
+        "OS-EXT-STS:task_state": null,
+        "OS-EXT-STS:vm_state": "active",
+        "accessIPv4": "10.13.20.20",
+        "accessIPv6": "2001:db8:0:1:a8bb:ccff:fe00:12f",
+        "addresses": {
+            "private": [
+                {
+                    "addr": "10.181.208.27",
+                    "version": 4
+                }
+            ],
+            "public": [
+                {
+                    "addr": "2001:db8:0:1:a8bb:ccff:fe00:12f",
+                    "version": 6
+                },
+                {
+                    "addr": "10.13.20.20",
+                    "version": 4
+                }
+            ],
+            "Rack-4": [
+                {
+                    "addr": "fc01::7",
+                    "version": 6
+                },
+                {
+                    "addr": "192.168.7.250",
+                    "version": 4
+                }
+            ]
+        },
+        "config_drive": "",
+        "created": "2014-10-02T19:16:13Z",
+        "flavor": {
+            "id": "2",
+            "links": [
+                {
+                    "href": "https://netdev-ord.ohthree.com/5831008/flavors/2",
+                    "rel": "bookmark"
+                }
+            ]
+        },
+        "hostId": "bbfe330f7bb15e4e89e06a1983abe0dbe506a57e607300ad11e3f285",
+        "id": "9e524d9c-6b6e-4fb9-8460-a59fcbd0e127",
+        "image": {
+            "id": "c63e20ad-6e3b-4e0b-943c-95cf3ba6c3a6",
+            "links": [
+                {
+                    "href": "https://netdev-ord.ohthree.com/5831008/images/c63e20ad-6e3b-4e0b-943c-95cf3ba6c3a6",
+                    "rel": "bookmark"
+                }
+            ]
+        },
+        "key_name": null,
+        "links": [
+            {
+                "href": "https://netdev-ord.ohthree.com/v2/5831008/servers/9e524d9c-6b6e-4fb9-8460-a59fcbd0e127",
+                "rel": "self"
+            },
+            {
+                "href": "https://netdev-ord.ohthree.com/5831008/servers/9e524d9c-6b6e-4fb9-8460-a59fcbd0e127",
+                "rel": "bookmark"
+            }
+        ],
+        "metadata": {},
+        "name": "ata",
+        "progress": 100,
+        "status": "ACTIVE",
+        "tenant_id": "5831008",
+        "updated": "2014-10-02T19:18:43Z",
+        "user_id": "207638"
+    }
+}
+                        </programlisting>
+                </para>
+            </step>
+        </procedure>
+    </section>
+</section>

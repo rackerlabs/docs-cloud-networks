@@ -15,7 +15,7 @@
 
     <section xml:id="neutron_create_network_uap_curl">
         <title>Create a network (cURL)</title>
-        <para>After you create a network, copy its network ID. You use this ID to create a subnet.</para>
+        <para>After you create a network, copy its network ID. You use this ID to create a subnet and boot the server.</para>
         <procedure>
             <title>To create a network</title>
             <step>
@@ -64,13 +64,13 @@
     <section xml:id="neutron_create_subnet_uap_curl">
         <title>Create a subnet with allocation pools (cURL)</title>
         <para>To create a subnet with allocation pools, you specify a network, an IP address, allocation pools, and host
-            routes for your subnet. After you create a subnet, copy its subnet ID for future reference.</para>
+            routes for your subnet.</para>
         <procedure>
             <title>To create a subnet with allocation pools</title>
             <step>
                 <para>Issue the following cURL command:
                     <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
-                            <prompt>$</prompt> curl -s https://dfw.networks.api.rackspacecloud.com/v2.0/$account/subnets \
+                            <prompt>$</prompt> curl -s https://dfw.networks.api.rackspacecloud.com/v2.0/subnets \
        -X POST \
        -H "Content-Type: application/json" \
        -H "User-Agent: python-novaclient" \
@@ -146,19 +146,20 @@
         </procedure>
         <sidebar>
             <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_boot_server_uap_curl">“Boot Server with allocation pools (cURL)”</olink></para>
+                    targetptr="neutron_boot_server_uap_curl">“Boot Server (cURL)”</olink></para>
         </sidebar>
     </section>
 
     <section xml:id="neutron_boot_server_uap_curl">
-        <title>Boot Server with allocation pools (cURL)</title>
-        <para>The following step shows you how to boot server using cURL.</para>
+        <title>Boot Server (cURL)</title>
+        <para>The following step shows you how to boot server using cURL, using the network ID of the network you created in the first
+            step of this procedure.</para>
         <procedure>
             <title>To boot a server</title>
             <step>
                 <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-                        <prompt>$</prompt> curl https://dfw.servers.api.rackspacecloud.com/v2.0/$account/servers \
-       -X GET \
+                        <prompt>$</prompt> curl https://dfw.servers.api.rackspacecloud.com/v2/$account/servers \
+       -X POST \
        -H "Content-Type: application/json" \
        -H "User-Agent: python-novaclient" \
        -H "Accept: application/json" \
@@ -203,13 +204,13 @@
 
     <section xml:id="neutron_verify_ip_uap_curl">
         <title>Verify IP on server port (cURL)</title>
-        <para>The following step shows you how to verify the IP address on the server port. In this case, The IP should be
+        <para>The following step shows you how to verify the IP address on the server port. In this case, the IP should be
                 <literal>192.168.5.3 </literal>, from the start of the allocation pool.</para>
         <procedure>
-            <title>To create a port outside allocation pool</title>
+            <title>To verify the port on the server</title>
             <step>
                 <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-                        <prompt>$</prompt> curl -k https://dfw.servers.api.rackspacecloud.com/v2.0/servers/a1061a57-0136-4c29-aac1-8b1a646a3001  \
+                        <prompt>$</prompt> curl -k https://dfw.servers.api.rackspacecloud.com/v2/$account/servers/a1061a57-0136-4c29-aac1-8b1a646a3001  \
         -X GET
         -H "Content-Type: application/json" \
         -H "User-Agent: python-novaclient" \

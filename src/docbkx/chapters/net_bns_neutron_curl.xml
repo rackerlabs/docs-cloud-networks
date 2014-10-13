@@ -21,7 +21,7 @@
             <title>To list subnets</title>
             <step>
                 <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-                        <prompt>$</prompt> curl https://dfw.networks.api.rackspacecloud.com/v2.0/$account/subnets \
+                        <prompt>$</prompt> curl https://dfw.networks.api.rackspacecloud.com/v2.0/subnets \
        -X GET 
        -H "User-Agent: python-novaclient" \
        -H "Accept: application/json" \
@@ -128,7 +128,7 @@
             <title>To list ports</title>
             <step>
                 <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-<prompt>$</prompt> curl https://dfw.networks.api.rackspacecloud.com/v2.0/$account/ports \
+<prompt>$</prompt> curl https://dfw.networks.api.rackspacecloud.com/v2.0/ports \
 -X GET 
 -H "User-Agent: python-novaclient" \
 -H "Accept: application/json" \
@@ -363,7 +363,7 @@
             <title>To list ports</title>
             <step>
                 <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-<prompt>$</prompt> curl https://dfw.networks.api.rackspacecloud.com/v2.0/$account/ports \
+<prompt>$</prompt> curl https://dfw.networks.api.rackspacecloud.com/v2.0/ports \
 -X GET \
 -H "User-Agent: python-novaclient" \
 -H "Accept: application/json" \
