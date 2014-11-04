@@ -12,32 +12,34 @@
                     run simple commands that make neutron API calls. This open-source Python client runs on Linux or Mac OS X
                     systems and is easy to learn and use. You can specify a debug parameter on any neutron command to show
                     the underlying API request for the command. This is a good way to become familiar with API requests. </para>
-                <!-\-<para>See <olink targetdoc="cn-gettingstarted" targetptr="novaclient">“How the nova Client
-                    Works”</olink>.</para>-\->
             </listitem>-->
+            <listitem>
+                <para><emphasis role="bold">The neutron client</emphasis>. This client is not supported at this time but,
+                    once it is supported, it will enable you to run commands to execute neutron API operations.</para>
+                <para>See <olink targetdoc="cn-gettingstarted" targetptr="neutronclient">“How the neutron Client
+                        Works”</olink>.</para>
+            </listitem>
             <listitem>
                 <para><emphasis role="bold">The
                         <link xlink:href="http://www.rackspace.com/knowledge_center/article/using-python-novaclient-with-the-rackspace-cloud">
                             nova client</link></emphasis>.
-                    Use the nova client to run simple commands such as those required to boot servers. This open-source
-                    Python client runs on Linux or Mac OS X systems and is easy to learn and use. You can specify a debug
-                    parameter on any nova command to show the underlying API request for the command.</para>
+                    Use the nova client to run simple nova-network API commands such as those required to boot
+                    servers and to attach/detach networks.</para>
                 <para>See <olink targetdoc="cn-gettingstarted" targetptr="novaclient">“How the nova Client
                     Works”</olink>.</para>
             </listitem>
             <listitem>
-                <para><emphasis role="bold"><link xlink:href="http://curl.haxx.se/">cURL</link> commands</emphasis>. If you
-                    are familiar with or want to learn cURL commands, choose this method. With cURL, you send HTTP requests
-                    with embedded API calls from the command line. The cURL examples in this guide show request and response
-                    bodies that are in JSON and XML formats. See <olink targetdoc="cn-gettingstarted" targetptr="curl">“How
-                        cURL Commands Work”</olink></para>
+                <para><emphasis role="bold"><link xlink:href="http://curl.haxx.se/">cURL</link> commands</emphasis>. With
+                    cURL, you send HTTP requests with embedded API calls from the command line. The cURL examples in this
+                    guide show request and response bodies that are in JSON format. See <olink targetdoc="cn-gettingstarted"
+                        targetptr="curl">“How cURL Commands Work”</olink></para>
             </listitem>
-        </itemizedlist>If you like, you can use cURL in one example and switch to the neutron client in the next example. If
-        you choose to use a cURL command for any example, you must export the environment variables required to run the cURL
-        examples. See <olink targetdoc="cn-gettingstarted" targetptr="export_env_vars">“(optional) Export Environment
-            Variables to Run cURL Commands”</olink>.</para>
-    <para>Each example, whether neutron client, nova client or cURL, points you to the next step in the process. </para>
+        </itemizedlist>You can use cURL in one example and switch to a client in the next example. If you choose
+        to use a cURL command for any example, you must export the environment variables required to run the cURL examples.
+        See <olink targetdoc="cn-gettingstarted" targetptr="export_env_vars">“(optional) Export Environment Variables to Run
+            cURL Commands”</olink>.</para>
 
-    <xi:include href="net_how_client_works.xml"/>
+    <xi:include href="net_how_client_works_neutron.xml"/>
+    <xi:include href="net_how_client_works_nova.xml"/>
     <xi:include href="net_how_curl_works.xml"/>
 </chapter>

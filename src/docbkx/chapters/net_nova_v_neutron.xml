@@ -39,6 +39,6 @@
     </para>
     <para>The neutron API supports JSON data serialization format for requests and responses.</para>
     <para>For guidance on the nova-network API networking operations, see
-        <link xlink:href="http://docs-internal.rackspace.com/servers/api/v2/cs-devguide/content/ch_extensions.html">
-                Cloud Servers API Developers Guide Extensions</link>.</para>
+        <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/network_extension.html">
+                Cloud Servers API Developers Network extension</link>.</para>
 </section>

@@ -70,6 +70,17 @@
         </abstract>
         <revhistory>
             <revision>
+                <date>2014-11-04</date>
+                <revdescription>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Clarified details around nova and neutron clients, reorganized, and added information to
+                                    <olink targetdoc="cn-devguide" targetptr="ch_overview">Overview</olink>. </para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision>
                 <date>2014-10-13</date>
                 <revdescription>
                     <itemizedlist>

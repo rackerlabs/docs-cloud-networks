@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section [
+<!ENTITY % common  SYSTEM "../../common/common.ent">
+%common;
+]>
+<section xml:id="neutronclient" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
+    <title>How the neutron client works</title>
+    <note>
+        <para>We do not support the neutron client at this time. As soon as it is available, this document will be
+            updated.</para>
+    </note>
+    <para>The neutron client is an open-source Python client that lets you run commands to make API calls. Currently, the
+        neutron client is not available for use, but it will be supported soon. Each client command will run cURL commands
+        that embed API requests. Once it is available, you will be able to run the client from a desktop machine or remote
+        system, such as a Cloud Server. Until then, use cURL commands to make neutron API calls.</para>
+    <!--<para>To install the neutron client on a Linux distribution or on Mac OS X, see <olink targetdoc="cn-gettingstarted"
+            targetptr="install_neutron">“(Optional) Install the neutron client with the Cloud Networks extension”</olink>. </para>
+    <para>To install the neutron client on a Linux distribution or on Mac OS X, see <olink targetdoc="cn-gettingstarted"
+        targetptr="install_neutron">“(Optional) Install the neutron client”</olink>. </para>
+    <para>To configure the client, update your bash profile to set and export environment variables. </para>
+    <note>
+        <para>You can specify a debug parameter on any neutron command to show the underlying API request for
+            the command. This is a good way to become familiar with the API requests. </para>
+    </note>
+    <warning>
+        <para>If you upgrade the operating system of the desktop or remote machine where you installed them, you may need to
+            reinstall the neutron client.</para>
+    </warning>-->
+</section>

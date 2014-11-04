@@ -181,7 +181,7 @@
     <!--Writer:  Keep this sections in sync with xml:id="nova_create_server_curl". Content is basically same but command, 
         title, and sidebar are different-->
     <section xml:id="neutron_create_server_curl">
-        <title>Provision a server with a port and an isolated network (cURL)</title>
+        <title>Provision a server with a port on an isolated network (cURL)</title>
         <para>To create your new server and attach a port with an isolated network, you need the following
             information:</para>
 

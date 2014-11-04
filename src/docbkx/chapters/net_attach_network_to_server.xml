@@ -7,12 +7,12 @@
 <chapter xml:id="attach_net" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
     <title>Attach your network to an existing server</title>
-    <para><!--Unlike other activities described in this guide, y-->You can attach your network to existing servers using only
-        the Nova-network API. There is no Neutron API equivalent. See the
+    <para>You can attach your network to existing servers using only the Nova-network API. There is no Neutron API
+        equivalent. See the
         <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-gettingstarted/content/ch_gs_getting_started_with_nova.html">
                 Cloud Servers Getting Started Guide</link>
         for examples of attaching a network to an existing server using the Nova-network API and the &virt_ext;</para>
-   <!-- <para>The following flow chart shows the steps for attaching a network to an existing server by using the Nova-network
+    <!-- <para>The following flow chart shows the steps for attaching a network to an existing server by using the Nova-network
         API.<figure>
             <title>Steps to attach a network to an existing server</title>
             <mediaobject>

@@ -30,7 +30,12 @@
                     specific IP address from the block or let the Cloud Networks service choose the first available IP
                     address.</para>
             </listitem>
-        </itemizedlist></para>
+        </itemizedlist>
+        <note>
+            <para>At this time, the neutron API is accessible by using cURL commands, a browser plug-in for REST, or various
+                programming languages and tools. The neutron client is not supported at this time.</para>
+        </note></para>
+
     <section xml:id="api_networks">
         <title>Networks</title>
         <para>This section describes the API operations for networks.</para>

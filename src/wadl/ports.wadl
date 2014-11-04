@@ -162,11 +162,11 @@
                 <para>If the updated IP addresses are not valid or are already in use, the operation fails and the existing
                     IP addresses are not removed from the port.</para>
             </warning>
-            <para>When the <parameter>fixed_ips</parameter> attribute of the port that is already attached to an active Cloud
+            <warning><para>When the <parameter>fixed_ips</parameter> attribute of the port that is already attached to an active Cloud
                 Server Instance is updated, the changes do not take effect on the server even though the attributes of the
                 port are updated. Hence this operation will only be useful for ports that are not attached to any server.
                 Once the port attributes are updated they can be passed to a Cloud Server instance at boot time.</para>
-            <para>Security groups are not supported.</para>
+                <para>Security groups are not supported.</para></warning>
         </wadl:doc>
         <request>
             <representation mediaType="application/json">

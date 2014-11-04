@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section [
+<!ENTITY % common  SYSTEM "../../common/common.ent">
+%common;
+]>
+<section xml:id="novaclient" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
+    <title>How the nova client works</title>
+    <para>The nova client is an open-source Python client that lets you run commands to make API calls. The client is easy to
+        learn and use. Each client command runs cURL commands that embed API requests. You can run the client from a desktop
+        machine or remote system, such as a Cloud Server. </para>
+    <para>The nova client may be used to do the following operations:</para>
+    <orderedlist>
+        <listitem>
+            <para>Boot a server with Isolated networks and ports.</para>
+        </listitem>
+        <listitem>
+            <para>Attach and detach networks from servers (if the Cloud Networks extension is installed).</para>
+        </listitem>
+    </orderedlist>
+    <para>To install the nova client on a Linux distribution or on Mac OS X, see
+        <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-gettingstarted/content/section_gs_install_nova.html">Install the nova Client with the Cloud Networks Extension</link>
+        in the <citetitle>Next Generation Cloud Servers Getting Started Guide</citetitle>.
+    </para>
+</section>

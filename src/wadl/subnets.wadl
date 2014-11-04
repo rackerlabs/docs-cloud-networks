@@ -192,10 +192,10 @@
             <para>IP version (<parameter>ip_version</parameter>), network ID (<parameter>network_id</parameter>), and CIDR
                     (<parameter>cidr</parameter>) cannot be updated. Attempting to update these parameters results in a
                     <errorcode>400 Bad Request</errorcode> error.</para>
-            <para>Users cannot update allocation pools that are attached to a port.</para>
-            <para>If any attributes are updated, the changes will only take effect for ports or Cloud Servers using this
+            <para>Users cannot update allocation pools that are attached to a port.</para>            
+            <warning><para>If any attributes are updated, the changes will only take effect for ports or Cloud Servers using this
                 subnet that are created after this modification. Any existing ports or Cloud Servers will not be
-                updated.</para>
+                updated.</para></warning>
         </wadl:doc>
         <request>
             <representation mediaType="application/json">

@@ -44,6 +44,41 @@
         </abstract>
         <revhistory>
             <revision>
+                <date>2014-11-04</date>
+                <revdescription>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Clarified details around nova and neutron clients in <olink targetdoc="cn-gettingstarted"
+                                    targetptr="install_nova">Install the nova client with the Cloud Networks
+                                    extension</olink>, <olink targetdoc="cn-gettingstarted" targetptr="install_nova">Install
+                                    the nova client with the Cloud Networks extension</olink>, <olink
+                                    targetdoc="cn-gettingstarted" targetptr="ch_gs_getting_set_up">Set up the environment and
+                                    authenticate</olink>, <olink targetdoc="cn-gettingstarted" targetptr="novaclient">How the
+                                    nova client works</olink>, <olink targetdoc="cn-gettingstarted" targetptr="neutronclient"
+                                    >How the neutron client works</olink>, <olink targetdoc="cn-gettingstarted"
+                                    targetptr="ch_overview">Overview</olink>, and <olink targetdoc="cn-gettingstarted"
+                                    targetptr="how_examples_work">Learn how to use the examples in this guide</olink>.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Reorganized and added information to <olink targetdoc="cn-gettingstarted"
+                                    targetptr="ch_overview">Overview</olink>.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2014-10-13</date>
+                <revdescription>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Corrected heading for <olink targetdoc="cn-gettingstarted"
+                                    targetptr="neutron_create_server_curl">Provision a server with a port on an isolated
+                                    network (cURL)</olink>.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision>
                 <date>2014-10-13</date>
                 <revdescription>
                     <itemizedlist>
