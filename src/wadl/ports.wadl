@@ -85,7 +85,7 @@
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/port_create_or_update_resp.json"/>
-                </wadl:doc>&portListParameters; </representation>
+                </wadl:doc>&portGetParameters; </representation>
             <!--<representation mediaType="application/xml">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/port_create_or_update_resp.xml"/>
@@ -140,8 +140,8 @@
         <response status="200">
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-                    <xsdxt:code href="../common/samples/ports-get-resp.json"/>
-                </wadl:doc>&portListParameters; </representation>
+                    <xsdxt:code href="../common/samples/ports-get-1-resp.json"/>
+                </wadl:doc>&portGetParameters; </representation>
             <!--<representation mediaType="application/xml">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/ports-get-resp.xml"/>
@@ -178,7 +178,7 @@
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/port_create_or_update_resp.json"/>
-                </wadl:doc>&portListParameters; </representation>
+                </wadl:doc>&portGetParameters; </representation>
             <!--<representation mediaType="application/xml">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/port_create_or_update_resp.xml"/>

@@ -70,12 +70,15 @@
         </abstract>
         <revhistory>
             <revision>
-                <date>2014-11-04</date>
+                <date>2014-11-05</date>
                 <revdescription>
                     <itemizedlist>
                         <listitem>
                             <para>Clarified details around nova and neutron clients, reorganized, and added information to
                                     <olink targetdoc="cn-devguide" targetptr="ch_overview">Overview</olink>. </para>
+                        </listitem>
+                        <listitem>
+                            <para>update reponse example for creating, updating, or showing ports to remove array.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>

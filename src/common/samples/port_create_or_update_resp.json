@@ -1,5 +1,5 @@
 {
-   "port":[
+   "port":
       {
          "admin_state_up":true,
          "device_id": "",
@@ -18,5 +18,4 @@
          "status": "ACTIVE",
          "tenant_id":"60cd4f6dbc2f491982a284e7b83b5be3" 
       }
-   ]
 }
