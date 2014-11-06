@@ -75,7 +75,7 @@
             <representation mediaType="application/json" element="csapi:network">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/network-post-resp.json"/>
-                </wadl:doc> &networkListParameters; </representation>
+                </wadl:doc> &networkCreateRspParameters; </representation>
         </response> &fault400; &fault401; </method>
 
     <!-- Bulk Create Networks -->
@@ -140,7 +140,7 @@
             <representation mediaType="application/json" element="csapi:network">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/network-put-update.req.json"/>
-                </wadl:doc> &networkCreateParameters; </representation>
+                </wadl:doc> &networkUpdateParameters; </representation>
         </request>
         <response status="200">
             <representation mediaType="application/json" element="csapi:network">

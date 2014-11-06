@@ -70,7 +70,7 @@
         </abstract>
         <revhistory>
             <revision>
-                <date>2014-11-05</date>
+                <date>2014-11-06</date>
                 <revdescription>
                     <itemizedlist>
                         <listitem>
@@ -78,7 +78,7 @@
                                     <olink targetdoc="cn-devguide" targetptr="ch_overview">Overview</olink>. </para>
                         </listitem>
                         <listitem>
-                            <para>update reponse example for creating, updating, or showing ports to remove array.</para>
+                            <para>cleaned up many of the API examples or parameter listings.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>

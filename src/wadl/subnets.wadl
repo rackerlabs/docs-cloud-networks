@@ -202,22 +202,12 @@
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/subnet-post-req.json"/>
                 </wadl:doc>&subnetUpdateParameters; </representation>
-            <!--<representation mediaType="application/xml">
-                <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-                    <xsdxt:code href="../common/samples/subnet-post-req.xml"/>
-                </wadl:doc>
-            </representation>-->
         </request>
         <response status="201">
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/subnet-post-resp.json"/>
-                </wadl:doc>&subnetCreateRspParameters;</representation>
-            <!--<representation mediaType="application/xml">
-                <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-                    <xsdxt:code href="../common/samples/subnet-post-resp.xml"/>
-                </wadl:doc>
-            </representation>-->
+                </wadl:doc>&subnetUpdateRspParameters;</representation>
         </response> &fault400; &fault401; &fault403; &fault404; </method>
 
     <!--Remove Subnet-->
