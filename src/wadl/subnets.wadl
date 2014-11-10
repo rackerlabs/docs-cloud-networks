@@ -100,11 +100,6 @@
                     <xsdxt:code href="../common/samples/subnets-create-pools-req.json"/>
                 </wadl:doc>
             </representation>
-            <!--<representation mediaType="application/xml">
-                <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-                    <xsdxt:code href="../common/samples/subnets-create-req.xml"/>
-                </wadl:doc>
-            </representation>-->
         </request>
         <response status="201">
             <representation mediaType="application/json">
@@ -123,11 +118,6 @@
                     <xsdxt:code href="../common/samples/subnets-create-pools-resp.json"/>
                 </wadl:doc>
             </representation>
-            <!--<representation mediaType="application/xml">
-                <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-                    <xsdxt:code href="../common/samples/subnets-create-resp.xml"/>
-                </wadl:doc>
-            </representation>-->
         </response> &fault400; &fault401; &fault403; &fault404; &fault409conflict; </method>
 
     <!--Create Bulk (Multiple) Subnets-->

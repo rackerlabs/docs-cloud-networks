@@ -70,6 +70,16 @@
         </abstract>
         <revhistory>
             <revision>
+                <date>2014-11-10</date>
+                <revdescription>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Fixed a couple more API parameter listings.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision>
                 <date>2014-11-06</date>
                 <revdescription>
                     <itemizedlist>
@@ -78,7 +88,7 @@
                                     <olink targetdoc="cn-devguide" targetptr="ch_overview">Overview</olink>. </para>
                         </listitem>
                         <listitem>
-                            <para>cleaned up many of the API examples or parameter listings.</para>
+                            <para>Cleaned up many of the API examples or parameter listings.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
