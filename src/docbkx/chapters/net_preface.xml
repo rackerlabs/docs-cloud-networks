@@ -8,19 +8,19 @@
     <title>Preface</title>
     <para>Rackspace Cloud Networks enables you to create isolated networks and provision <glossterm>server</glossterm>
         instances with Rackspace networks or the isolated networks that you created. </para>
-    <para>When you create an isolated network, it is associated with your tenant ID, which is also know as your account ID or
-        account number. If you are unsure of your tenant ID, you can log into the
-        <link xlink:href="http://mycloud.rackspace.com">Cloud Control Panel</link> and expand the Account drop-down menu in
-        the upper right corner of the screen. Your tenant ID will be shown at the top of the menu, listed as
-            <parameter>"Account number"</parameter>.</para>
+    <para>When you create an isolated network, it is associated with your tenant ID, which is also known as your account ID
+        or account number. If you are unsure of your tenant ID, you can log in to the
+        <link xlink:href="http://mycloud.rackspace.com">Cloud Control Panel</link> and expand the
+            <guilabel>Account</guilabel> menu in the upper-right corner of the screen. Your tenant ID is shown at the top of
+        the menu, listed as <guilabel>"Account number"</guilabel>.</para>
 
     <para>Cloud Networks was originally released using the Cloud Servers the nova-network API, whose operations are detailed
         in
         <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/ch_extensions.html">
                 Cloud Servers API Developers Guide Extensions</link>.
         Now Cloud Networks has been released using the neutron API (see <olink condition="cn" targetdoc="cn-devguide"
-            targetptr="api_operations_neutron">API operations - neutron</olink>, which is documented in this guide
-        <phrase condition="gs">
+            targetptr="api_operations_neutron">API operations - neutron</olink>, which is documented in this guide <phrase
+            condition="gs">
             <link xlink:href="http://docs.rackspace.com/networks/api/v2/cn-devguide/content/api_operations_neutron.html">
                 API operations - neutron</link>
             in the <citetitle>Cloud Networks Developer Guide</citetitle></phrase>). We recommend that you use the neutron API
@@ -29,9 +29,7 @@
             >“Networking: neutron versus nova-network”</olink>
         <olink condition="gs" targetdoc="cn-gettingstarted" targetptr="section_nova_v_neutron">“Networking: neutron versus
             nova-network”</olink>.</para>
-    <para>To request access to Cloud Networks now, click
-        <link xlink:href="http://www.iwantcloudnetworks.com/">"I want Cloud Networks"</link>.</para>
-    <para>To detect if you are enabled to use Cloud Networks, issue a &GET; <command>/limits</command> call or a
+    <!--<para>To detect if you are enabled to use Cloud Networks, issue a &GET; <command>/limits</command> call or a
             <command>nova absolute-limits</command> call and review the <literal>maxTotalPrivateNetworks</literal> value:
             <table xml:id="maxTotalPrivateNetworks" rules="all">
             <caption>maxTotalPrivateNetworks Value</caption>
@@ -61,7 +59,7 @@
         </table></para>
     <para>For more information about querying limits, see
         <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/ProgrammaticLimits.html">Get Limits</link>
-        in the <citetitle>Cloud Servers Developer Guide</citetitle>.</para>
+        in the <citetitle>Cloud Servers Developer Guide</citetitle>.</para>-->
     <para>We welcome feedback, comments, and bug reports at
         <link xlink:href="https://feedback.rackspace.com/">https://feedback.rackspace.com/</link>.</para>
 

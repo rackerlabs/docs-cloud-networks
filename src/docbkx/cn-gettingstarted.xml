@@ -44,6 +44,16 @@
         </abstract>
         <revhistory>
             <revision>
+                <date>2014-11-13</date>
+                <revdescription>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Removed reference to www.iwantcloudnetworks.com from preface.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision>
                 <date>2014-11-06</date>
                 <revdescription>
                     <itemizedlist>

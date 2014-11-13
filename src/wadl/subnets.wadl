@@ -70,7 +70,7 @@
     <method name="POST" id="createSubnet">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Create Subnet">
             <para role="shortdesc">Creates a subnet on a specified network.</para>
-            <para>This opperation creates subnets on the specified network. You cannot create subnets on PublicNet and
+            <para>This operation creates subnets on the specified network. You cannot create subnets on PublicNet and
                 ServiceNet. Only one IPv4 subnet and one IPv6 subnet are permitted per network.</para>
             <para>If the <parameter>gateway_ip</parameter> parameter is not specified, it is set to
                 <literal>null</literal>.</para>
