@@ -7,17 +7,17 @@
 <section xml:id="networks_consquences" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
     <title>Consequences of detaching from Rackspace networks</title>
-    <para>When you provision a next generation Cloud Server, you can attach to one or more isolated networks and the
-        Rackspace networks. You can also explicitly opt out of attaching the Rackspace networks to it, which introduces the
-        following consequences: </para>
+    <para>When you provision a next generation cloud server, you can attach to one or more isolated networks and the
+        Rackspace networks. You can also explicitly opt out of attaching the Rackspace networks to the server, which
+        introduces the following consequences: </para>
     <para>
         <itemizedlist>
             <listitem>
-                <para>If you do not attach the PublicNet network to your server, the server cannot access to the Internet and
+                <para>If you do not attach the PublicNet network to the server, the server cannot access the Internet and
                     some Rackspace products and services. </para>
             </listitem>
             <listitem>
-                <para>If you do not attach the ServiceNet network to your server, the server cannot access certain Rackspace
+                <para>If you do not attach the ServiceNet network to the server, the server cannot access certain Rackspace
                     products and services. </para>
             </listitem>
         </itemizedlist>
@@ -31,11 +31,11 @@
     <para>To opt out of attaching the Rackspace networks to your server, perform the following action depending on how you
         are provisioning the server: <itemizedlist>
             <listitem>
-                <para><emphasis role="bold">nova boot command</emphasis>. Specify the optional <option>--no-public</option>
+                <para><emphasis role="bold">nova boot command</emphasis>: Specify the optional <option>--no-public</option>
                     and <option>--no-service-net</option> parameters. </para>
             </listitem>
             <listitem>
-                <para><emphasis role="bold">Cloud Servers nova-network API (nova client or cURL)</emphasis>. If you do not
+                <para><emphasis role="bold">Cloud Servers Nova-Network API (nova client or cURL)</emphasis>: If you do not
                     specify any networks, ServiceNet and PublicNet are attached by default. However, if you specify an
                     isolated network, you must explicitly specify the UUIDs for PublicNet and ServiceNet to attach these
                     networks to your server. </para>
@@ -44,9 +44,9 @@
                 <para>Omit these UUIDs from the request to opt out of attaching to these networks.</para>
             </listitem>
             <listitem>
-                <para><emphasis role="bold">Cloud Control Panel</emphasis>. Clear either or both of the PublicNet and
-                    ServiceNet selections during the server creation process. You are warned that your capabilities might be
-                    degraded by this choice.</para>
+                <para><emphasis role="bold">Cloud Control Panel</emphasis>: Clear the PublicNet and ServiceNet selections
+                    during the server creation process. You are warned that your capabilities might be degraded by this
+                    choice.</para>
             </listitem>
         </itemizedlist></para>
 </section>

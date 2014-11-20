@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter [
+<!ENTITY % common  SYSTEM "../../common/common.ent">
+%common;
+]>
+<chapter xml:id="delete_net" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+        xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
+        <title>Delete your cloud network</title>
+        <para>When you no longer need your cloud network, delete it.</para>
+        <note>
+                <para>You cannot delete a network while its port is still attached to a server. Also, you cannot delete the
+                        PublicNet and ServiceNet networks .</para>
+        </note>
+        <para>The following flow chart shows the steps for deleting an isolated network. Detailed steps are provided in this
+                section. <figure>
+                        <title>Steps to delete a network</title>
+                        <mediaobject>
+                                <imageobject>
+                                        <imagedata fileref="../figures/dn-neutron-api.png" contentwidth="3in"/>
+                                </imageobject>
+                        </mediaobject>
+                </figure>
+        </para>
+        <!--<para>The sections are also organized by example type.
+                To simplify your path through this chapter, decide whether you
+                prefer neutron-client <!-\-or nova-client examples, -\->or cURL examples.</para>-->
+        <sidebar>
+                <para><emphasis role="bold">Next step:</emphasis>
+                        <olink targetdoc="cn-gettingstarted" targetptr="dn_neutron_curl">“Use cURL”</olink></para>
+        </sidebar>
+        <!--<sidebar>
+                <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
+                                <!-\-<listitem>
+                                        <para><olink targetdoc="cn-gettingstarted" targetptr="dn_neutron_neutron">“Use
+                                                        neutron client”</olink></para>
+                                </listitem>-\->
+                                <listitem>
+                                        <para><olink targetdoc="cn-gettingstarted" targetptr="dn_neutron_curl">“Use
+                                                        cURL”</olink></para>
+                                </listitem>
+                        </itemizedlist></para>
+        </sidebar>-->
+        <!--<xi:include href="dn_neutron_neutron.xml"/>-->
+        <xi:include href="dn_neutron_curl.xml"/>
+</chapter>

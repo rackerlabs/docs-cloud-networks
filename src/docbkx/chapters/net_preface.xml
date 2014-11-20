@@ -7,24 +7,24 @@
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="ch_preface">
     <title>Preface</title>
     <para>Rackspace Cloud Networks enables you to create isolated networks and provision <glossterm>server</glossterm>
-        instances with Rackspace networks or the isolated networks that you created. </para>
+        instances with Rackspace networks or the isolated networks that you create. </para>
     <para>When you create an isolated network, it is associated with your tenant ID, which is also known as your account ID
-        or account number. If you are unsure of your tenant ID, you can log in to the
-        <link xlink:href="http://mycloud.rackspace.com">Cloud Control Panel</link> and expand the
+        or account number. If you don't know your tenant ID, you can find it by logging in to the
+        <link xlink:href="http://mycloud.rackspace.com">Cloud Control Panel</link> and expanding the
             <guilabel>Account</guilabel> menu in the upper-right corner of the screen. Your tenant ID is shown at the top of
-        the menu, listed as <guilabel>"Account number"</guilabel>.</para>
+        the menu, listed as <guilabel>"Account #"</guilabel>.</para>
 
-    <para>Cloud Networks was originally released using the Cloud Servers the nova-network API, whose operations are detailed
+    <para>Cloud Networks was originally released using the Cloud Servers the Nova-Network API, whose operations are detailed
         in
-        <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/ch_extensions.html">
-                Cloud Servers API Developers Guide Extensions</link>.
-        Now Cloud Networks has been released using the neutron API (see <olink condition="cn" targetdoc="cn-devguide"
-            targetptr="api_operations_neutron">API operations - neutron</olink>, which is documented in this guide <phrase
-            condition="gs">
+        <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/network_extension.html">
+                 Network extension</link>
+        of the <citetitle>Next Generation Cloud Servers Developers Guide</citetitle>. Now Cloud Networks has been released
+        using the Neutron API (see <olink condition="cn" targetdoc="cn-devguide" targetptr="api_operations_neutron">API
+            operations - neutron</olink>, which is documented in this guide <phrase condition="gs">
             <link xlink:href="http://docs.rackspace.com/networks/api/v2/cn-devguide/content/api_operations_neutron.html">
-                API operations - neutron</link>
-            in the <citetitle>Cloud Networks Developer Guide</citetitle></phrase>). We recommend that you use the neutron API
-        operations even though the nova-network API operations still work. For information that helps you determine which
+                API operations</link>
+            in the <citetitle>Cloud Networks Developer Guide</citetitle></phrase>). We recommend that you use the Neutron API
+        operations even though the Nova-Network API operations still work. For information that helps you determine which
         method is better for you, see <olink condition="cn" targetdoc="cn-devguide" targetptr="section_nova_v_neutron"
             >“Networking: neutron versus nova-network”</olink>
         <olink condition="gs" targetdoc="cn-gettingstarted" targetptr="section_nova_v_neutron">“Networking: neutron versus
@@ -66,7 +66,7 @@
     <section xml:id="Intended_Audience-d1e85">
         <title>Intended audience</title>
         <para>This guide assists software developers who want to develop applications by using Cloud Networks with the
-            neutron API. </para>
+            Neutron API. </para>
         <para>To use this information, you should have access to an active Rackspace Cloud Servers account and access to
             Cloud Networks. You should also be familiar with the following concepts: </para>
         <itemizedlist spacing="compact">
@@ -87,8 +87,8 @@
 
     <section version="5.0" xml:id="Pricing_SLA">
         <title>Pricing and service level</title>
-        <para>Next generation Cloud Networks is part of the Rackspace Cloud and your use through the API is billed according
-            to the pricing schedule for Cloud Servers at
+        <para>Cloud Networks is part of the Rackspace Cloud and your use through the API is billed according to the pricing
+            schedule for Cloud Servers at
             <link xlink:href="http://www.rackspace.com/cloud/servers/pricing/">http://www.rackspace.com/cloud/servers/pricing/</link>.</para>
         <para>The Service Level Agreement (SLA) for Cloud Networks, as part of Cloud Servers, is available at
             <link xlink:href="http://www.rackspace.com/cloud/servers/service-levels/">http://www.rackspace.com/cloud/servers/service-levels/</link>.</para>
@@ -172,8 +172,8 @@
             tickets.</para>
         <para>For product updates and announcements through Twitter, see
             <link xlink:href="http://twitter.com/rackspace">http://twitter.com/rackspace</link>.</para>
-        <para>For information about the supernova client, which is an unsupported wrapper for the nova client useful for
-            managing multiple nova environments, see
+        <para>For information about the supernova client, which is an unsupported wrapper for the nova client that is useful
+            for managing multiple nova environments, see
             <link xlink:href="http://major.github.io/supernova/">supernova client</link>.</para>
     </section>
 </chapter>

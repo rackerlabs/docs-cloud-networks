@@ -25,29 +25,28 @@
                     <para>The name of the new server. Use a name of your choice.</para>
                 </listitem>
                 <listitem>
-                    <para>The image ID. For how to list images, see
+                    <para>The image ID. For instructions on how list images, see
                         <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-gettingstarted/content/list_images.html">
                     List Images</link>.</para>
                 </listitem>
                 <listitem>
-                    <para>The flavor ID. For how to list flavors, see
+                    <para>The flavor ID. For instructions on how to list flavors, see
                         <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-gettingstarted/content/list_flavors.html">
                     List Flavors</link>.</para>
                 </listitem>
                 <listitem>
-                    <para>The port ID of your isolated network. This is the ID you copied in <!--either <olink
+                    <para>The port ID of your isolated network. This is the that ID you copied in <!--either <olink
                             targetdoc="cn-gettingstarted" targetptr="neutron_create_port_neutron">“Create a port (neutron
                             API/neutron)”</olink> or-->
                         <olink targetdoc="cn-gettingstarted" targetptr="neutron_create_port_curl">“Create a port
                             (cURL)”</olink></para>
                     <note>
-                        <para>Instead of port ID, you can also pass the network ID of the isolated (Cloud) network.</para>
+                        <para>Instead of the port ID, you can also pass the network ID of the isolated network.</para>
                     </note>
                 </listitem>
                 <listitem>
-                    <para>The network ID of PublicNet and ServiceNet. These are
-                            <literal>00000000-0000-0000-0000-000000000000</literal> and
-                            <literal>11111111-1111-1111-1111-111111111111</literal> respectively. </para>
+                    <para>The network ID of PublicNet, which is <literal>00000000-0000-0000-0000-000000000000</literal>, and
+                        ServiceNet, which is <literal>11111111-1111-1111-1111-111111111111</literal>. </para>
                 </listitem>
             </itemizedlist>
         </para>
@@ -83,8 +82,7 @@
 
     <!-- client output paramaters for call, nova and neutron -->
     <epigraph xml:id="bns_ps_output_client">
-        <para><emphasis role="bold">Output:</emphasis> The command returns information about the new server, as shown in the
-            following output:</para>
+        <para>The operation returns information about the new server, as shown in the following example:</para>
         <para><informalexample>
                 <screen><computeroutput>
 +-------------------------+-----------------------------------------------------------------+
@@ -116,8 +114,7 @@
 
     <!-- curl output paramaters for call, nova and neutron -->
     <epigraph xml:id="bns_ps_output_curl">
-        <para><emphasis role="bold">Output:</emphasis> The command returns information about the new server, as shown in the
-            following output:
+        <para>The operation returns information about the new server, as shown in the following example:
             <programlisting language="json"><?db-font-size 75%?>
 {
     "server": {

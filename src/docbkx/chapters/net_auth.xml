@@ -5,14 +5,10 @@
 ]>
 <section xml:id="net_auth" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
-    <title>Get authentication token</title>
+    <title>Get the authentication token</title>
     <para>To authenticate access to Rackspace Cloud services, you issue an authentication request to the &CIS;, which is an
         implementation of the OpenStack Keystone Identity Service v2.0.</para>
-    <important>
-        <para> Multiple &CIS; endpoints exist. You may use any endpoint, regardless of where your account was created.
-        </para>
-    </important>
-    <para> Use the chosen endpoint, as follows:</para>
+    <para> You can authenticate through either of the following endpoints:</para>
     <para>
         <informaltable rules="all">
             <col width="25%"/>
@@ -39,10 +35,15 @@
             </tbody>
         </informaltable>
     </para>
+    <note>
+        <para>For our UK customers, we recommend
+            <link xlink:href="https://lon.identity.api.rackspacecloud.com/v2.0">https://lon.identity.api.rackspacecloud.com/v2.0</link>
+            for better regional performance. </para>
+    </note>
     <para>In response to valid credentials, an authentication request to the &CIS; returns an authentication token and a
         service catalog that contains a list of all services and endpoints available for this token. Because the
-        authentication token expires after 24 hours, you must generate a token once a day. </para>
-    <para>For detailed information about the OpenStack Keystone Identity Service v2.0, see
+        authentication token expires after 24 hours, you must generate a new token once a day. </para>
+    <para>For detailed information about the Rackspace Identity Service v2.0, see
         <link xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/index.html"><citetitle>Cloud Identity Client Developer Guide API
                 v2.0</citetitle></link>.</para>
     <sidebar audience="gs">
@@ -64,6 +65,8 @@
 
     <section xml:id="nova_auth" audience="gs">
         <title>Authenticate with the nova client</title>
+        <para>When you authenticate by using the nova client, you execute separate commands to get the authentication token
+            and the service catalog.</para>
         <procedure>
             <title>To authenticate with the nova client:</title>
             <step>
@@ -71,9 +74,11 @@
                 <programlisting language="bash" role="gutter: false"><prompt>$</prompt> nova credentials</programlisting>
 
                 <para>Successful authentication returns user credentials, including ID, name, roles, and the authentication
-                    token. The token appears in the <literal>id</literal> field in the <literal>Token</literal> box. </para>
+                    token. The token appears in the <literal>id</literal> field in the <literal>Token</literal> box as shown
+                    in the following example. </para>
 
-                <informalexample>
+                <example>
+                    <title>Authentication credentials response</title>
                     <screen><computeroutput><?db-font-size 50%?>+------------------+---------------------------------------------------------------------------------------+
 | User Credentials | Value                                                                                 |
 +------------------+---------------------------------------------------------------------------------------+
@@ -88,7 +93,7 @@
 | id      | 1bd336d5-e0c6-49d9-b902-d3dbdc463062   |
 | tenant  | {u'id': u'010101', u'name': u'010101'} |
 +---------+----------------------------------------+</computeroutput></screen>
-                </informalexample>
+                </example>
 
                 <para>After you generate a token, the nova client automatically injects the token into any nova client
                     commands that you issue. </para>
@@ -98,15 +103,15 @@
             <step>
                 <para>Get the service catalog with a list of endpoints: </para>
                 <programlisting language="bash" role="gutter: false"><prompt>$</prompt> nova endpoints</programlisting>
-                <para>For each service, the response includes the public URL, which is the endpoint that you use to access
-                    the service, the region, service name, tenant ID, the version ID, and endpoints that you can use to get
-                    version information for the API. </para>
+                <para>For each service, the response includes the public URL (which is the endpoint, including your tenant
+                    ID, that you use to access the service), the region, the service name, the tenant ID, the version ID, and
+                    the endpoints that you can use to get version information for the API. </para>
                 <para>To access the Cloud Networks or next generation Cloud Servers service, use the <code>publicURL</code>
                     value for the <literal>cloudServersOpenStack</literal> service. </para>
-                <para>The following output shows the information returned for the DFW region for the Cloud Networks or next
-                    generation Cloud Servers service:</para>
-
-                <informalexample>
+                <para>The following example shows the information returned for the DFW region for the next generation Cloud
+                    Servers service:</para>
+                <example>
+                    <title>Authentication endpoints response</title>
                     <screen><computeroutput><?db-font-size 50%?>+-----------------------+------------------------------------------------------+
 | cloudServersOpenStack | Value                                                |
 +-----------------------+------------------------------------------------------+
@@ -118,7 +123,7 @@
 | versionInfo           | https://dfw.servers.api.rackspacecloud.com/v2        |
 | versionList           | https://dfw.servers.api.rackspacecloud.com/          |
 +-----------------------+------------------------------------------------------+</computeroutput></screen>
-                </informalexample>
+                </example>
 
 
                 <para>The <literal>cloudServersOpenStack</literal> service might show multiple endpoints to enable regional
@@ -140,21 +145,22 @@
     <?hard-pagebreak?>
     <section xml:id="curl_auth">
         <title>Authenticate with cURL</title>
-        <para>To authenticate, you issue a &POST; <command>/tokens</command> request to the appropriate Rackspace Cloud
+        <para>To authenticate with cURL, issue a &POST; <command>/tokens</command> request to the appropriate Rackspace Cloud
             Identity Service endpoint. </para>
         <para>In the request body, supply one of the following sets of credentials:</para>
         <itemizedlist>
             <listitem>
-                <para>user name and password</para>
+                <para>User name and password</para>
             </listitem>
             <listitem>
-                <para>user name and API key</para>
+                <para>User name and API key</para>
             </listitem>
         </itemizedlist>
-        <para>Your username and password are the ones that you use to log into the Rackspace Cloud Control Panel. </para>
-        <para>To obtain your API key, log into
-            <link xlink:href="http://mycloud.rackspace.com." xml:id="newwin">http://mycloud.rackspace.com</link>, click your
-            user name, and select <guilabel>API Keys</guilabel> to get your key.</para>
+        <para>Your user name and password are the ones that you use to log in to the Rackspace Cloud Control Panel. </para>
+        <para>To obtain your API key, log in to
+            <link xlink:href="http://mycloud.rackspace.com." xml:id="newwin">http://mycloud.rackspace.com</link>, select
+                <guilabel>Account:</guilabel><replaceable>username</replaceable> &gt; <guilabel>Account Settings</guilabel>,
+            and click <guilabel>Show</guilabel> next to the <guilabel>API Key</guilabel> field.</para>
         <procedure>
             <title>To authenticate with cURL:</title>
             <step>
@@ -163,13 +169,13 @@
                 <example>
                     <title>Authenticate with username and password: JSON request</title>
                     <programlisting language="bash" role="gutter: false"><?db-font-size 50%?><prompt>$</prompt> curl -s https://identity.api.rackspacecloud.com/v2.0/tokens -X 'POST' \
-       -d '{"auth":{"passwordCredentials":{"username":"theUserName", "password":"thePassword"}}}' \
+       -d '{"auth":{"passwordCredentials":{"username":<replaceable>"yourUserName"</replaceable>, "password":<replaceable>"yourPassword"</replaceable>}}}' \
        -H "Content-Type: application/json" | python -m json.tool</programlisting>
                 </example>
                 <example>
                     <title>Authenticate with username and API key: JSON request</title>
                     <programlisting language="bash" role="gutter: false"><?db-font-size 50%?><prompt>$</prompt> curl -s https://identity.api.rackspacecloud.com/v2.0/tokens -X 'POST' \
-       -d '{"auth":{"RAX-KSKEY:apiKeyCredentials":{"username":"theUserName", "apiKey":"0000000000000000000"}}}' \
+       -d '{"auth":{"RAX-KSKEY:apiKeyCredentials":{"username":<replaceable>"yourUserName"</replaceable>, "apiKey":<replaceable>"yourApiKey"</replaceable>}}}' \
        -H "Content-Type: application/json" | python -m json.tool</programlisting>
                 </example>
                 <tip>
@@ -178,18 +184,18 @@
                         <olink condition="dev" targetdoc="cn-devguide" targetptr="json_tool">Note</olink>.</para>
                 </tip>
                 <para>In response to valid credentials, your request returns an authentication token and a service catalog
-                    with the endpoints to request services. </para>
+                    with the endpoints that you need to request services. </para>
                 <para>Do not include explicit API endpoints in your scripts and applications. Instead, find the endpoint for
                     your service and region. </para>
                 <para>The following output shows a partial authentication response in JSON format: <example>
-                        <title>Authenticate: JSON response</title>
+                        <title>Authentication: JSON response</title>
                         <programlistingco>
                             <areaspec>
-                                <area xml:id="credentials.xml.endpoints" units="linecolumn" coords="46 32"/>
-                                <area xml:id="credentials.xml.tenant" units="linecolumn" coords="50 47"/>
-                                <area xml:id="credentials.xml.name" units="linecolumn" coords="64 50"/>
-                                <area xml:id="credentials.xml.expires" units="linecolumn" coords="79 57"/>
-                                <area xml:id="credentials.xml.token" units="linecolumn" coords="80 59"/>
+                                <area xml:id="credentials.xml.endpoints" units="linecolumn" coords="26 32"/>
+                                <area xml:id="credentials.xml.tenant" units="linecolumn" coords="30 47"/>
+                                <area xml:id="credentials.xml.name" units="linecolumn" coords="52 50"/>
+                                <area xml:id="credentials.xml.expires" units="linecolumn" coords="60 57"/>
+                                <area xml:id="credentials.xml.token" units="linecolumn" coords="61 59"/>
 
                             </areaspec>
                             <programlisting language="json"><?db-font-size 55%?><xi:include href="../../common/samples/authv2.json" parse="text"/></programlisting>
@@ -200,58 +206,29 @@
                         <callout arearefs="credentials.xml.endpoints">
                             <para><emphasis role="bold">Endpoints to request Rackspace Cloud services</emphasis>. Appears in
                                 the <code>endpoints</code> element in the <code>serviceCatalog</code> element. </para>
-                            <para>Endpoints information includes the public URL, which is the endpoint that you use to access
-                                the service, region, tenant ID, and version information. </para>
-                            <para>To access the Cloud Networks or next generation Cloud Servers service, use the endpoint for
-                                the <literal>cloudServersOpenStack</literal> service.</para>
+                            <para>Endpoint information includes the public URL (which is the endpoint that you use to access
+                                the service), region, tenant ID, and version information. </para>
                         </callout>
                         <callout arearefs="credentials.xml.tenant">
                             <para><emphasis role="bold">Tenant ID</emphasis>. Appears in the <literal>tenantId</literal>
-                                field in the <literal>endpoints</literal> element. Also known as the account number. </para>
-                            <para>You include the tenant ID in the endpoint URL when you call a Cloud service. </para>
-                            <para>In the following example, you export the tenant ID, <literal>010101</literal>, to the
-                                    <literal>account</literal> environment variable and the authentication token to the
-                                    <literal>token</literal> environment variable. Then, you issue a cURL command, as
-                                follows:</para>
-                            <programlisting language="bash" role="gutter: false"><?db-font-size 60%?><prompt>$</prompt> export account="010101"
-<prompt>$</prompt> export token="00000000-0000-0000-000000000000"
-<prompt>$</prompt> curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
-     -H "X-Auth-Token: $token" | python -m json.tool</programlisting>
+                                field in the <literal>endpoints</literal> element. Also known as the account number.</para>
+                            <para>You include the tenant ID in the endpoint URL when you call a Rackspace Cloud service.</para>
                         </callout>
                         <callout arearefs="credentials.xml.name">
                             <para><emphasis role="bold">The name of the service</emphasis>. Appears in the <code>name</code>
                                 field. </para>
-                            <para>Locate the correct service name in the service catalog, as follows: </para>
-                            <itemizedlist>
-                                <listitem>
-                                    <para><emphasis role="bold">First generation Cloud Servers</emphasis>. Named
-                                            <literal>cloudServers</literal> in the catalog.</para>
-                                    <para>If you use the authentication token to access this service, you can view and
-                                        perform &fgCS; API operations against your &fgCS;. </para>
-                                </listitem>
-                                <listitem>
-                                    <para><emphasis role="bold">Cloud Networks or next generation Cloud Servers</emphasis>.
-                                        Named <literal>cloudServersOpenStack</literal> in the catalog.</para>
-                                    <para>To access the Cloud Networks or next generation Cloud Servers service, use the
-                                            <code>publicURL</code> value for the <literal>cloudServersOpenStack</literal>
-                                        service.</para>
-                                    <para>The service might show multiple endpoints to enable regional choice. Select the
-                                        appropriate endpoint for the region that you want to interact with by examining the
-                                            <literal>region</literal> field.</para>
-                                    <para>If you use the authentication token to access this service, you can view and
-                                        perform Cloud Networks or &ngCS; API operations against your &ngCS;. To complete
-                                        Cloud Networks API operations, you must also get access to this service. To request
-                                        access, click <link xlink:href="http://www.iwantcloudnetworks.com/">here</link>.
-                                    </para>
-                                </listitem>
-                            </itemizedlist>
+                            <para>To access the next generation Cloud Servers service, locate and use the <code>publicURL</code> value
+                                for the <literal>cloudServersOpenStack</literal> service.</para>
+                            <para>A service might show multiple endpoints to enable regional choice. Select the appropriate
+                                endpoint for the region that you want to interact with by examining the
+                                    <literal>region</literal> field.</para>
                         </callout>
                         <callout arearefs="credentials.xml.expires">
                             <para><emphasis role="bold">Expiration date and time for authentication token</emphasis>. Appears
                                 in the <code>expires</code> field in the <code>token</code> element.</para>
                             <para>The authentication token expires after this date and time, unless it is revoked earlier.
                                 After the token expires or is revoked, you must generate a new token if you want to continue
-                                accessing Rackspace cloud services.</para>
+                                accessing Rackspace Cloud services.</para>
                             <para>This field predicts the maximum lifespan for a token, but does not guarantee that the token
                                 reaches that lifespan. Clients are encouraged to cache a token until it expires.</para>
                         </callout>
@@ -259,15 +236,7 @@
                             <para><emphasis role="bold">Authentication token</emphasis>. Appears in the <code>id</code> field
                                 in the <code>token</code> element. </para>
                             <para>You pass the authentication token in the <code>X-Auth-Token</code> header each time that
-                                you send a request to a service. </para>
-                            <para>In the following example, you export the tenant ID, <literal>010101</literal>, to the
-                                    <literal>account</literal> environment variable. You also export the authentication
-                                token, <literal>00000000-0000-0000-000000000000</literal>, to the <literal>token</literal>
-                                environment variable. Then, you issue a cURL command, as
-                                follows:<programlisting language="bash" role="gutter: false"><?db-font-size 60%?><prompt>$</prompt> export account="010101"
-<prompt>$</prompt> export token="00000000-0000-0000-000000000000"
-<prompt>$</prompt> curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/images/detail \
-     -H "X-Auth-Token: $token" | python -m json.tool</programlisting></para>
+                                you send a request to a service.</para>
                         </callout>
                     </calloutlist></para>
 
@@ -278,16 +247,16 @@
                         <literal>cloudServersOpenStack</literal> service for your region. </para>
                 <para>Copy the authentication token from the <literal>id</literal> field in the <literal>token</literal>
                     element. </para>
-                <para>In the next step, you set environment variables to these values. </para>
+                <para>As a next step, you can set environment variables to these values. </para>
             </step>
         </procedure>
 
         <sidebar audience="gs">
-            <para><emphasis role="bold">Next step: Chose one of the following steps: </emphasis>
+            <para><emphasis role="bold">Next step: Choose one of the following steps: </emphasis>
                 <itemizedlist>
                     <listitem>
-                        <para><olink targetdoc="cn-gettingstarted" targetptr="export_env_vars">“(optional) Export environment
-                                variables to run cURL commands”</olink></para>
+                        <para><olink targetdoc="cn-gettingstarted" targetptr="export_env_vars">“Export environment variables
+                                to run cURL commands (optional)”</olink></para>
                     </listitem>
                     <listitem>
                         <para>

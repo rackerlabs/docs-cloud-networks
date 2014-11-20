@@ -148,12 +148,12 @@
     <xi:include href="chapters/net_overview.xml"/>
     <xi:include href="chapters/net_use_examples.xml"/>
     <xi:include href="chapters/net_set_up.xml"/>
-    <xi:include href="chapters/net_create_first_net.xml"/>
-    <xi:include href="chapters/net_boot_new_server.xml"/>
-    <xi:include href="chapters/net_attach_network_to_server.xml"/>
-    <xi:include href="chapters/net_delete_network.xml"/>
-    <xi:include href="chapters/net_use_alloc_pools.xml"/>
-    <xi:include href="chapters/net_configure_host_routes.xml"/>
-    <xi:include href="chapters/net_provision_additional_ips.xml"/>
+    <xi:include href="chapters/cfn_create_first_net.xml"/>
+    <xi:include href="chapters/bns_boot_new_server.xml"/>
+    <xi:include href="chapters/dn_delete_network.xml"/>
+    <xi:include href="chapters/uap_use_alloc_pools.xml"/>
+    <xi:include href="chapters/chr_configure_host_routes.xml"/>
+    <xi:include href="chapters/pai_provision_additional_ips.xml"/>
+    <xi:include href="chapters/aes_attach_network_to_server.xml"/>
     <glossary role="auto"/>
 </book>

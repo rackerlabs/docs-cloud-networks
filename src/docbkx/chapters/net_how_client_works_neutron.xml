@@ -7,13 +7,13 @@
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
     <title>How the neutron client works</title>
     <note>
-        <para>We do not support the neutron client at this time. As soon as it is available, this document will be
+        <para>The neutron client is not supported at this time. When it is available, this document will be
             updated.</para>
     </note>
-    <para>The neutron client is an open-source Python client that lets you run commands to make API calls. Currently, the
-        neutron client is not available for use, but it will be supported soon. Each client command will run cURL commands
-        that embed API requests. Once it is available, you will be able to run the client from a desktop machine or remote
-        system, such as a Cloud Server. Until then, use cURL commands to make neutron API calls.</para>
+    <para>The neutron client is an open-source Python client that you use to run commands to make API calls. Currently, the
+        neutron client is not available, but it will be supported soon. Each client command will run cURL commands
+        that embed API requests. Once it is available, you will be able to run the client from a desktop computer or remote
+        system, such as a cloud server. Until then, use cURL commands to make Neutron API calls.</para>
     <!--<para>To install the neutron client on a Linux distribution or on Mac OS X, see <olink targetdoc="cn-gettingstarted"
             targetptr="install_neutron">“(Optional) Install the neutron client with the Cloud Networks extension”</olink>. </para>
     <para>To install the neutron client on a Linux distribution or on Mac OS X, see <olink targetdoc="cn-gettingstarted"

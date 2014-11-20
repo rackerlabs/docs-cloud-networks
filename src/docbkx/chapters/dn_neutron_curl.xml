@@ -25,8 +25,7 @@
         <procedure>
             <title>To delete a specified subnet</title>
             <step>
-                <title>Delete the subnet</title>
-                <para>Issue the following cURL command:
+                <para>Issue the following cURL command, substituting your own values for the ones shown:
                     <programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
                         <prompt>$</prompt> curl -i https://dfw.networks.api.rackspacecloud.com/v2.0/subnets/23e3059e-4f39-4f7f-8cf2-c326e5de6c37 \
        -X 'DELETE' \
@@ -49,8 +48,8 @@
                 </para>
                 <para><emphasis role="bold">Output:</emphasis>
                 </para>
-                <para>Successful deletion returns an <errortext>Accepted</errortext> (<returnvalue>202</returnvalue>)
-                    response code:</para>
+                <para>Successful deletion returns an <returnvalue>202</returnvalue>
+                    <errortext>Accepted</errortext> response code:</para>
                 <screen><computeroutput>HTTP/1.1 202 Accepted
 Date: Thu, 04 Oct 2012 16:23:30 GMT
 Content-Length: 58
@@ -73,8 +72,7 @@ The request is accepted for processing.</computeroutput></screen>
         <procedure>
             <title>To delete a specified network</title>
             <step>
-                <title>Delete the network</title>
-                <para>Issue the following cURL command:
+                <para>Issue the following cURL command, substituting your own values for the ones shown:
                     <programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
                         <prompt>$</prompt> curl -i https://dfw.networks.api.rackspacecloud.com/v2.0/networks/29f52c7e-6efd-4335-a14a-db77d32a2555 \
        -X 'DELETE' \
@@ -97,8 +95,8 @@ The request is accepted for processing.</computeroutput></screen>
                 </para>
                 <para><emphasis role="bold">Output:</emphasis>
                 </para>
-                <para>Successful deletion returns an <errortext>Accepted</errortext> (<returnvalue>202</returnvalue>)
-                    response code:</para>
+                <para>Successful deletion returns an <returnvalue>202</returnvalue>
+                    <errortext>Accepted</errortext> response code:</para>
                 <screen><computeroutput>HTTP/1.1 202 Accepted
 Date: Thu, 04 Oct 2012 16:23:30 GMT
 Content-Length: 58
@@ -111,8 +109,8 @@ The request is accepted for processing.</computeroutput></screen>
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted" targetptr="use_alloc_pools"
-                >Use allocation pools to control dynamic IP address allocation</olink></para>
+            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+                    targetptr="use_alloc_pools">Use allocation pools to control dynamic IP address allocation</olink></para>
         </sidebar>
     </section>
 </section>

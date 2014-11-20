@@ -25,15 +25,14 @@
     <title>Set up the environment and authenticate</title>
 
     <para>To follow the examples in this guide, you can use cURL, <!--neutron,--> or, in some cases, nova commands. If you
-        plan to use the nova <!--or neutron--> client<!--s-->, install <!--them-->it. Then get your authentication token. If
-        you plan to use cURL commands, go ahead and get your authentication token and then export your environment
-        variables.</para>
+        plan to use the nova <!--or neutron--> client<!--s-->, install <!--them-->it, and then get your authentication token.
+        If you plan to use cURL commands, get your authentication token and then export your environment variables.</para>
     <note>
         <para>You can use any combination of methods to run the commands in this guide, switching back and forth if you like.
             You are not locked into one method just because you started with it. All methods are available with cURL. Some
             methods are not available in the nova <!--or neutron -->client<!--s-->.</para>
     </note>
-    <para>Regardless of which method you choose to make API calls, don't forget to get that authentication token!</para>
+    <para>Regardless of which method you choose to make API calls, you must get an authentication token.</para>
 
     <xi:include href="net_install_nova.xml"/>
     <!--<xi:include href="net_install_neutron.xml"/>-->

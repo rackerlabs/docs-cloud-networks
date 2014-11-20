@@ -30,9 +30,7 @@
                 <para>In this cURL command, you specify several options. For information about options, see <olink
                         targetdoc="cn-gettingstarted" targetptr="curl_options">Table 2, “cURL Command-Line
                     Options”</olink>.</para>
-                <para><emphasis role="bold">Output:</emphasis>
-                </para>
-                <para>The operation returns the response body, as shown in the following JSON response:
+                <para>The operation returns the response body, as shown in the following example:
                     <programlisting language="json"><?db-font-size 65%?>
 {
    "network":{
@@ -49,9 +47,8 @@
             </step>
             <step>
                 <para>Copy the <literal>id</literal> value from the output. You will use this value when you create a subnet,
-                    provision your server, or perform other related activities. In this example, the id is
-                        <literal>a8fde776-e80f-47bb-a050-0c057d89afc3</literal>, but use the <parameter>id</parameter> from
-                    your response.</para>
+                    provision your server, or perform other related activities. In this example, the ID is
+                        <literal>a8fde776-e80f-47bb-a050-0c057d89afc3</literal>, but use the ID from your response.</para>
             </step>
         </procedure>
         <sidebar>
@@ -67,7 +64,7 @@
         <procedure>
             <title>To create a subnet with allocation pools</title>
             <step>
-                <para>Issue the following cURL command:
+                <para>Issue the following cURL command, substituting your own values for the ones shown:
                     <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
                             <prompt>$</prompt> curl -s https://dfw.networks.api.rackspacecloud.com/v2.0/subnets \
        -X POST \
@@ -98,12 +95,10 @@
             }
         ],
         "tenant_id": "5831008"}}' | python -m json.tool</programlisting></para>
-                <para>In this cURL command, you specify several options. For information about options, see <olink
+                <para>In this cURL command, you specify several options. For information about the options, see <olink
                         targetdoc="cn-gettingstarted" targetptr="curl_options">Table 2, “cURL Command-Line
                     Options”</olink>.</para>
-                <para><emphasis role="bold">Output:</emphasis>
-                </para>
-                <para>The operation returns the response body, as shown in the following JSON response:
+                <para>The operation returns the response body, as shown in the following example:
                     <programlisting language="json"><?db-font-size 65%?>
 {
    "subnet":
@@ -138,8 +133,7 @@
                             </programlisting></para>
             </step>
             <step>
-                <para>Notice the <parameter>host_routes</parameter> attribute with the <parameter>destination</parameter> of
-                        <literal>1.1.1.0/24</literal> and the <parameter>nexthop</parameter> of
+                <para>Note the host_routes attribute with the destination of <literal>1.1.1.0/24</literal> and the nexthop of
                         <literal>192.168.5.254</literal>.</para>
             </step>
         </procedure>
@@ -150,13 +144,14 @@
     </section>
 
     <section xml:id="neutron_boot_server_chr_curl">
-        <title>Boot Server (cURL)</title>
-        <para>The following step shows you how to boot server using cURL, using the network ID from the network you created
-            in the first step of this procedure.</para>
+        <title>Boot a Server (cURL)</title>
+        <para>Boot a server by using the network ID from the network that you created in the first step of this
+            procedure.</para>
         <procedure>
             <title>To boot a server</title>
             <step>
-                <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                <para>Issue the following cURL command, substituting your own values for the ones shown:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
                         <prompt>$</prompt> curl https://dfw.servers.api.rackspacecloud.com/v2.0/$account/servers \
        -X POST \
        -H "Content-Type: application/json" \
@@ -170,10 +165,8 @@
             "max_count": 1,
             "min_count": 1,
             "networks": [{"uuid": "00000000-0000-0000-0000-000000000000"}, {"uuid": "11111111-1111-1111-1111-111111111111"}, {"uuid":"a8fde776-e80f-47bb-a050-0c057d89afc3"} ]
-        }} | python -m json.tool</programlisting>
-                    <emphasis role="bold">Output:</emphasis>
-                </para>
-                <para>The API operation returns a response body as shown in the following output:
+        }} | python -m json.tool</programlisting></para>
+                <para>The operation returns the response body as shown in the following example:
                     <programlisting language="json"><?db-font-size 75%?>
 {
     "server": {
@@ -190,33 +183,31 @@
                 </para>
             </step>
             <step>
-                <para>Copy the <literal>id</literal> value from the output for future reference. In this example, the id is
-                        <literal>a1061a57-0136-4c29-aac1-8b1a646a3001</literal>, but use the <parameter>id</parameter> from
-                    your response.</para>
+                <para>Copy the <literal>id</literal> value from the output for future reference. In this example, the ID is
+                        <literal>a1061a57-0136-4c29-aac1-8b1a646a3001</literal>, but use the ID from your response.</para>
             </step>
         </procedure>
         <sidebar>
             <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_verify_ip_chr_curl">Verify IP on server port (cURL)</olink></para>
+                    targetptr="neutron_verify_ip_chr_curl">Verify the IP on the server port (cURL)</olink></para>
         </sidebar>
     </section>
 
     <section xml:id="neutron_verify_ip_chr_curl">
-        <title>Verify IP on server port (cURL)</title>
+        <title>Verify the IP on the server port (cURL)</title>
         <para>The following step shows you how to verify the IP address on the server port.</para>
         <procedure>
-            <title>To server IP</title>
+            <title>To verify the port IP address</title>
             <step>
-                <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                <para>Issue the following cURL command, substituting your own values for the ones shown:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
                         <prompt>$</prompt> curl -k https://dfw.servers.api.rackspacecloud.com/v2.0/$account/servers/a1061a57-0136-4c29-aac1-8b1a646a3001  \
         -X GET
         -H "Content-Type: application/json" \
         -H "User-Agent: python-novaclient" \
         -H "Accept: application/json" \
-        -H "X-Auth-Token: $token" | python -m json.tool</programlisting>
-                    <emphasis role="bold">Output:</emphasis>
-                </para>
-                <para>The API operation returns a response body as shown in the following output:
+        -H "X-Auth-Token: $token" | python -m json.tool</programlisting></para>
+                <para>The operation returns the response body as shown in the following example:
                     <programlisting language="json"><?db-font-size 75%?>
 {
     "server": 
@@ -295,28 +286,27 @@
 }
                         </programlisting>
                 </para>
-                <para>Notice the IP address on the <literal>public</literal> interface (in this case,
-                        <literal>10.23.233.124</literal>). Use this to login to the server in the next step.</para>
+                <para>Note the IP address on the <literal>public</literal> interface (in this case,
+                        <literal>10.23.233.124</literal>). Use this to log in to the server in the next step.</para>
             </step>
         </procedure>
         <sidebar>
             <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_verify_route_chr_curl">Login to server and verify route (cURL)</olink></para>
+                    targetptr="neutron_verify_route_chr_curl">Log in to the server and verify the route (cURL)</olink></para>
         </sidebar>
     </section>
 
     <section xml:id="neutron_verify_route_chr_curl">
-        <title>Login to server and verify route (cURL)</title>
-        <para>The following steps show you how to login to the server and verify that the host route is configured correctly
-            using the command line.</para>
+        <title>Log in to the server and verify the route (cURL)</title>
+        <para>The following steps show you how to log in to the server and verify that the host route is configured correctly
+            by using the command line.</para>
         <procedure>
-            <title>To login to server an verify host route</title>
+            <title>To log in to the server and verify the host route</title>
             <step>
-                <para>Issue the following command at the prompt: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-                        <prompt>$</prompt> ssh root@10.23.233.124</programlisting>
-                    <emphasis role="bold">Output:</emphasis>
-                </para>
-                <para>The command returns the following output:
+                <para>Issue the following command at the prompt, substituting your own values for the ones shown:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                        <prompt>$</prompt> ssh root@10.23.233.124</programlisting></para>
+                <para>The command returns output like the following example:
                     <programlisting language="bash"><?db-font-size 75%?>
 The authenticity of host '10.23.233.124 (10.23.233.124)' can't be established.
 RSA key fingerprint is 87:b6:8f:7a:44:80:a4:58:f8:9b:09:82:d4:b0:f9:bf.
@@ -325,12 +315,16 @@ Warning: Permanently added '10.23.233.124' (RSA) to the list of known hosts.
 root@10.23.233.124's password:
                     </programlisting>
                 </para>
+            </step>
+            <step>
                 <para>Enter your password when prompted.</para>
             </step>
             <step>
-                <para>Issue the following command at the prompt: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                <para>Issue the following command at the prompt:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
                         <prompt>root@ata:~#</prompt> route</programlisting>
-                    <emphasis role="bold">Output:</emphasis>
+                </para>
+                <para>The command returns output like the following example:
                     <programlisting language="bash"><?db-font-size 75%?>
 Kernel IP routing table
 Destination Gateway Genmask Flags Metric Ref Use Iface
@@ -342,13 +336,13 @@ default 10.23.233.1 0.0.0.0 UG 100 0 0 eth0
                     </programlisting>
                 </para>
                 <para>Notice the route <literal>1.1.1.0/24</literal> with Gateway <literal>192.168.5.254</literal> in the
-                    preceding output. That is what we expected.</para>
+                    preceding output. That is what was expected.</para>
             </step>
         </procedure>
         <sidebar>
             <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="provision_additional_ips">Provision additional IP and dual-stack IPs on an Isolated network
-                    port</olink>
+                    targetptr="provision_additional_ips">Provision additional IP address and dual-stack IP addresses on an
+                    isolated network port</olink>
             </para>
         </sidebar>
     </section>

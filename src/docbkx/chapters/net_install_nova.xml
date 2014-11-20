@@ -6,18 +6,17 @@
 <section xml:id="install_nova" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
 
-    <title>(optional) Install the nova client with the Cloud Networks extension</title>
+    <title>Install the nova client with the Cloud Networks extension (optional)</title>
     <!--<para>To manage your servers from the command line, you can use the open-source nova client application called
             <literal>python-novaclient</literal>. </para>
     <para>To install the nova client, you first install the <literal>rackspace-novaclient</literal> package, which includes
         the nova client and the Rackspace extensions including the Cloud Networks extension.</para>-->
-    <para>The Rackspace neutron API doesn’t currently offer a way to attach and detach networks from server. If you want to
-        attach and detach networks from a cloud server using the nova client, you need to use the Cloud Networks virtual
-        interface extension by installing the <literal>os_virtual_interfacesv2_python_novaclient_ext</literal>
-        package.</para>
+    <para>The Rackspace Neutron API doesn’t currently offer a way to attach networks to, and detach networks from, a server.
+        If you want to attach and detach networks by using the nova client, you must use the Cloud Networks virtual interface
+        extension by installing the <literal>os_virtual_interfacesv2_python_novaclient_ext</literal> package.</para>
     <note>
-        <para>The python-novaclient is developed and maintained by the OpenStack community. While we do not directly support
-            python-novaclient, you can post in the comments below if you run into any difficulties.</para>
+        <para>The python-novaclient is developed and maintained by the OpenStack community. Although we do not directly
+            support python-novaclient, you can post in the comments below if you run into any difficulties.</para>
     </note>
 
     <para> For help installing the nova client and Cloud Networks extension, see

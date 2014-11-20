@@ -6,15 +6,14 @@
 <chapter xml:id="use_alloc_pools" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
         xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
         <title>Use allocation pools to control dynamic IP address allocation</title>
-        <para>Allocation pools are a property of the <parameter>subnets</parameter> resource and can be used to control
-                dynamic address allocation within a CIDR. An allocation pool is a subset of the CIDR. Any addresses that are
-                not part of the allocation pool are not dynamically assigned to ports or Cloud Server instances. However,
-                addresses that are not part of the allocation pool, but that are within the CIDR, can still be assigned
-                statically when a port is created by using the fixed_ips attribute of the <parameter>ports</parameter>
-                resource. The port ID can then be passed to the server at boot time as shown in the example in this
-                guide.</para>
-        <para>The following flow chart shows the steps for using allocation pools to control dynamic IP address allocation by
-                using the neutron API<!-- and the nova-network API-->. These steps are detailed in this guide.<figure>
+        <para>Allocation pools are a property of the subnets resource and can be used to control dynamic address allocation
+                within a CIDR. An allocation pool is a subset of the CIDR. Any addresses that are not part of the allocation
+                pool are not dynamically assigned to ports or Cloud Server instances. However, addresses that are not part of
+                the allocation pool, but that are within the CIDR, can still be assigned statically when a port is created by
+                using the fixed_ips attribute of the ports resource. The port ID can then be passed to the server at boot
+                time as shown in the example.</para>
+        <para>The following flow chart shows the steps for using allocation pools to control dynamic IP address allocation.
+                Detailed steps are provided in this section.<figure>
                         <title>Steps to use allocation pools to control dynamic IP address allocation</title>
                         <mediaobject>
                                 <imageobject>
@@ -27,17 +26,20 @@
                 prefer neutron-client or cURL examples.</para>-->
         <sidebar>
                 <para><emphasis role="bold">Next step:</emphasis>
-                        <!--Choose one of the following methods:--><itemizedlist>
-                                <!--<listitem>
+                        <olink targetdoc="cn-gettingstarted" targetptr="uap_neutron_curl">“Use cURL”</olink></para>
+        </sidebar>
+        <!--<sidebar>
+                <para><emphasis role="bold">Next step:</emphasis>Choose one of the following methods: <itemizedlist>
+                                <listitem>
                                         <para><olink targetdoc="cn-gettingstarted" targetptr="uap_neutron_neutron">“Use
                                                         neutron client”</olink></para>
-                                </listitem>-->
+                                </listitem>
                                 <listitem>
                                         <para><olink targetdoc="cn-gettingstarted" targetptr="uap_neutron_curl">“Use
                                                         cURL”</olink></para>
                                 </listitem>
                         </itemizedlist></para>
-        </sidebar>
-        <!--<xi:include href="net_uap_neutron_neutron.xml"/>-->
-        <xi:include href="net_uap_neutron_curl.xml"/>
+        </sidebar>-->
+        <!--<xi:include href="uap_neutron_neutron.xml"/>-->
+        <xi:include href="uap_neutron_curl.xml"/>
 </chapter>

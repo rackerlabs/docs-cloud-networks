@@ -5,19 +5,18 @@
 ]>
 <section xml:id="pai_neutron_curl" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0">
-    <title>Provision port with additional IP and dual-stack IPs with cURL</title>
-    <para>These sections walk you through provisioning an additional IP and dual-stack (v4 and v6) IPs on an Isolated network
-        port by using cURL.</para>
+    <title>Provision a port with additional IP and dual-stack IPs with cURL</title>
+    <para>These sections walk you through provisioning an additional IP and dual-stack (v4 and v6) IP addresses on an
+        isolated network port by using cURL.</para>
     <sidebar>
         <para><emphasis role="bold">Start here: </emphasis><olink targetdoc="cn-gettingstarted"
                 targetptr="neutron_show_v6_port_pai_curl">“Show port with IPv6 address (cURL)”</olink></para>
     </sidebar>
 
     <section xml:id="neutron_show_v6_port_pai_curl">
-        <title>Show port with IPv6 address (cURL)</title>
-        <para>First, take a look at your port with an IPv6 IP address. In this example, notice the
-                <parameter>fixed_ips</parameter><parameter>ip_address</parameter> of <literal>fc01::7</literal>, which is an
-            IPv6 address in hexadecimal format.</para>
+        <title>Show a port with an IPv6 address (cURL)</title>
+        <para>First, look at your port with an IPv6 IP address. In this example, note the fixed_ips ip_address of
+                <literal>fc01::7</literal>, which is an IPv6 address in hexadecimal format.</para>
         <procedure>
             <title>To show a port</title>
             <step>
@@ -29,12 +28,10 @@
        -H "User-Agent: python-novaclient" \
        -H "Accept: application/json" \
        -H "X-Auth-Token: $token" | python -m json.tool</programlisting></para>
-                <para>In this cURL command, you specify several options. For information about options, see <olink
+                <para>In this cURL command, you specify several options. For information about the options, see <olink
                         targetdoc="cn-gettingstarted" targetptr="curl_options">Table 2, “cURL Command-Line
                     Options”</olink>.</para>
-                <para><emphasis role="bold">Output:</emphasis>
-                </para>
-                <para>The operation returns the response body, as shown in the following JSON response:
+                <para>The operation returns the response body, as shown in the following example:
                     <programlisting language="json"><?db-font-size 65%?>
 {
     "ports": [
@@ -61,9 +58,8 @@
                             </programlisting></para>
             </step>
             <step>
-                <para>Make note of the <parameter>id</parameter> for future reference. In this example, the
-                        <parameter>id</parameter> is <literal>79bf47e2-5107-4d93-b9c3-b78ddbc94c93</literal>), but use the
-                        <parameter>id</parameter> from your response.</para>
+                <para>Note the <parameter>id</parameter> value for future reference. In this example, the ID is
+                        <literal>79bf47e2-5107-4d93-b9c3-b78ddbc94c93</literal>), but use the ID from your response.</para>
             </step>
         </procedure>
         <sidebar>
@@ -76,10 +72,10 @@
         <title>Get the IPv4 CIDR for the network (cURL)</title>
         <para>Now, note the IPv4 CIDR on the same network as the IPv6 CIDR. You should have already created this subnet on
             the same network. If you have not done so, create an IPv4 subnet (<command>POST /subnets</command>) on the same
-            network. Because this example assumes the subnet has already been created, run the following command and note the
-            CIDR to identify the IPv4 address. In this example, the subnet's <parameter>network_id</parameter> is
-                <literal>03f240c5-6fb8-47a0-860a-c7ba83be519f</literal> and the <parameter>cidr</parameter> is
-                <literal>192.168.7.0/24</literal>.</para>
+            network. Because this example assumes that the subnet has already been created, run the following command and
+            note the CIDR to identify the IPv4 address. In this example, the subnet's network_id is
+                <literal>03f240c5-6fb8-47a0-860a-c7ba83be519f</literal> and the cidr is
+            <literal>192.168.7.0/24</literal>.</para>
         <procedure>
             <title>To get the IPv4 CIDR of the matching network</title>
             <step>
@@ -91,12 +87,10 @@
        -H "User-Agent: python-novaclient" \
        -H "Accept: application/json" \
        -H "X-Auth-Token: $token" | python -m json.tool</programlisting></para>
-                <para>In this cURL command, you specify several options. For information about options, see <olink
+                <para>In this cURL command, you specify several options. For information about the options, see <olink
                         targetdoc="cn-gettingstarted" targetptr="curl_options">Table 2, “cURL Command-Line
                     Options”</olink>.</para>
-                <para><emphasis role="bold">Output:</emphasis>
-                </para>
-                <para>The operation returns the response body, as shown in the following JSON response:
+                <para>The operation returns the response body, as shown in the following example:
                     <programlisting language="json"><?db-font-size 65%?>
 {
     "subnet": {
@@ -123,12 +117,9 @@
                             </programlisting></para>
             </step>
             <step>
-                <para>Make note of the <parameter>network_id</parameter> and <parameter>cidr</parameter> for future
-                    reference. In this example, the <parameter>network_id</parameter> is
-                        <literal>03f240c5-6fb8-47a0-860a-c7ba83be519f</literal>), but use the
-                        <parameter>network_id</parameter> from your response. The <parameter>cidr</parameter> is
-                        <literal>192.168.7.0/24</literal>, but, again, use the <parameter>cidr</parameter> from your
-                    response.</para>
+                <para>Note the network_id and CIDR values for future reference. In this example, the network_id is
+                        <literal>03f240c5-6fb8-47a0-860a-c7ba83be519f</literal> and the CIDR is
+                        <literal>192.168.7.0/24</literal>, but use the values from your response.</para>
             </step>
         </procedure>
         <sidebar>
@@ -141,8 +132,8 @@
         <title>Add an IPv4 address on the same port (cURL)</title>
         <para>To add an IPv4 address on the same port, update the IPv6 port with the existing IPv6 IP address, the subnet's
             IPv4 ID, and the IP address from the subnet's IPv4 CIDR. In this example, the IPv4 IP address is
-                <literal>192.168.7.250</literal> and the <parameter>subnet_id</parameter> is
-                <literal>321caa1c-2105-4186-b53b-366fa623c09a</literal>.</para>
+                <literal>192.168.7.250</literal> and the subnet_id is
+            <literal>321caa1c-2105-4186-b53b-366fa623c09a</literal>.</para>
         <procedure>
             <title>To add an IPv4 address to a port</title>
             <step>
@@ -168,12 +159,10 @@
         ]
     }
 }' | python -m json.tool</programlisting></para>
-                <para>In this cURL command, you specify several options. For information about options, see <olink
+                <para>In this cURL command, you specify several options. For information about the options, see <olink
                         targetdoc="cn-gettingstarted" targetptr="curl_options">Table 2, “cURL Command-Line
                     Options”</olink>.</para>
-                <para><emphasis role="bold">Output:</emphasis>
-                </para>
-                <para>The operation returns the response body, as shown in the following JSON response:
+                <para>The operation returns the response body, as shown in the following example:
                     <programlisting language="json"><?db-font-size 65%?>
 {
     "port": 
@@ -205,27 +194,26 @@
         </procedure>
         <sidebar>
             <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_show_both_port_pai_curl">“Show port with both IP Addresses (cURL)”</olink></para>
+                    targetptr="neutron_show_both_port_pai_curl">“Show the port with both IP addresses (cURL)”</olink></para>
         </sidebar>
     </section>
 
     <section xml:id="neutron_show_both_port_pai_curl">
-        <title>Show port with both IP Addresses (cURL)</title>
+        <title>Show the port with both IP addresses (cURL)</title>
         <para>The following step shows you how to show port details to verify that both IPv4 and IPv6 IP addresses are
-            configured using cURL.</para>
+            configured by using cURL.</para>
         <procedure>
             <title>To show port details</title>
             <step>
-                <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                <para>Issue the following cURL command, substituting your own values for the ones shown:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
                         <prompt>$</prompt> curl https://dfw.servers.api.rackspacecloud.com/v2.0/ports/79bf47e2-5107-4d93-b9c3-b78ddbc94c93 \
        -X GET \
        -H "Content-Type: application/json" \
        -H "User-Agent: python-novaclient" \
        -H "Accept: application/json" \
-       -H "X-Auth-Token: $token" | python -m json.tool</programlisting>
-                    <emphasis role="bold">Output:</emphasis>
-                </para>
-                <para>The API operation returns a response body as shown in the following output:
+       -H "X-Auth-Token: $token" | python -m json.tool</programlisting></para>
+                <para>The operation returns the response body as shown in the following example:
                     <programlisting language="json"><?db-font-size 75%?>
 {
     "ports": [
@@ -259,18 +247,19 @@
         </procedure>
         <sidebar>
             <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_boot_server_pai_curl">Boot Server (cURL)</olink></para>
+                    targetptr="neutron_boot_server_pai_curl">Boot a Server (cURL)</olink></para>
         </sidebar>
     </section>
 
     <section xml:id="neutron_boot_server_pai_curl">
-        <title>Boot Server (cURL)</title>
-        <para>The following step shows you how to boot server using cURL, using the port ID of the port you configured with
-            dual-stack IPs in the second step of this procedure.</para>
+        <title>Boot a Server (cURL)</title>
+        <para>The following step shows you how to boot a server by using the port ID of the port that you configured with
+            dual-stack IP addresses in the second step of this procedure.</para>
         <procedure>
             <title>To boot a server</title>
             <step>
-                <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                <para>Issue the following cURL command, substituting your own values for the ones shown:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
                         <prompt>$</prompt> curl https://dfw.servers.api.rackspacecloud.com/v2.0/$account/servers \
        -X POST \
        -H "Content-Type: application/json" \
@@ -284,10 +273,8 @@
             "max_count": 1,
             "min_count": 1,
             "networks": [{"uuid": "00000000-0000-0000-0000-000000000000"}, {"uuid": "11111111-1111-1111-1111-111111111111"}, {"port":"79bf47e2-5107-4d93-b9c3-b78ddbc94c93"} ]
-        }} | python -m json.tool</programlisting>
-                    <emphasis role="bold">Output:</emphasis>
-                </para>
-                <para>The API operation returns a response body as shown in the following output:
+        }} | python -m json.tool</programlisting></para>
+                <para>The operation returns the response body as shown in the following example:
                     <programlisting language="json"><?db-font-size 75%?>
 {
     "server": 
@@ -312,21 +299,20 @@
                 </para>
             </step>
             <step>
-                <para>Copy the <literal>id</literal> value from the output for future reference. In this example, the id is
-                        <literal>1ed5bc31-153d-4570-a361-92d5a02fd428</literal>, but use the <parameter>id</parameter> from
-                    your response.</para>
+                <para>Copy the <literal>id</literal> value from the output for future reference. In this example, the ID is
+                        <literal>1ed5bc31-153d-4570-a361-92d5a02fd428</literal>, but use the ID from your response.</para>
             </step>
         </procedure>
         <sidebar>
             <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_verify_ips_pai_curl">Verify IPs on server port (cURL)</olink></para>
+                    targetptr="neutron_verify_ips_pai_curl">Verify IP addresses on the server port (cURL)</olink></para>
         </sidebar>
     </section>
 
     <section xml:id="neutron_verify_ips_pai_curl">
-        <title>Verify IPs on server port (cURL)</title>
-        <para>The following step shows you how to verify the IP addresses on the server port. In this case, the IPs should be
-                <literal>192.168.7.250</literal> and <literal>fc01::7</literal>.</para>
+        <title>Verify IP addresses on the server port (cURL)</title>
+        <para>The following step shows you how to verify the IP addresses on the server port. In this case, the IP addresses
+            should be <literal>192.168.7.250</literal> and <literal>fc01::7</literal>.</para>
         <procedure>
             <title>To verify the port on the server</title>
             <step>
@@ -336,10 +322,8 @@
         -H "Content-Type: application/json" \
         -H "User-Agent: python-novaclient" \
         -H "Accept: application/json" \
-        -H "X-Auth-Token: $token" | python -m json.tool</programlisting>
-                    <emphasis role="bold">Output:</emphasis>
-                </para>
-                <para>The API operation returns a response body as shown in the following output:
+        -H "X-Auth-Token: $token" | python -m json.tool</programlisting></para>
+                <para>The operation returns the response body as shown in the following example:
                     <programlisting language="json"><?db-font-size 75%?>
 {
     "server": {

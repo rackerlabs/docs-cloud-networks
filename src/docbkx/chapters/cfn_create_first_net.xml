@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter [
+<!ENTITY % common  SYSTEM "../../common/common.ent">
+%common;
+]>
+<chapter xml:id="create_first_net" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+        xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
+        <title>Create your first cloud network</title>
+        <para>The following flow chart shows the steps for creating a network. Detailed steps are provided in this section.<figure>
+                        <title>Steps to create a network</title>
+                        <mediaobject>
+                                <imageobject>
+                                        <imagedata fileref="../figures/cfn-neutron-api.png" contentwidth="3in"/>
+                                </imageobject>
+                        </mediaobject>
+                </figure>
+        </para>
+        <!--<para>The sections are also organized by example type. To simplify your path through this chapter, decide whether you
+                prefer neutron-client or cURL examples.</para>-->
+        <note>
+                <itemizedlist>
+                        <title>Network Limitations:</title>
+                        <listitem>
+                                <para>The isolated network must exist in the same region as the cloud server.</para>
+                        </listitem>
+                        <listitem>
+                                <para>You can create up to 10 isolated networks with up to 250 servers attached to each
+                                        one.</para>
+                        </listitem>
+                </itemizedlist>
+        </note>
+        <sidebar>
+                <para><emphasis role="bold">Next step:</emphasis>
+                        <olink targetdoc="cn-gettingstarted" targetptr="cfn_neutron_curl">“Use cURL”</olink></para>
+                <!--<para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
+                                <listitem>
+                                        <para><olink targetdoc="cn-gettingstarted" targetptr="cfn_neutron_neutron">“Use
+                                                        neutron client”</olink></para>
+                                </listitem>
+                                <listitem>
+                                        <para><olink targetdoc="cn-gettingstarted" targetptr="cfn_neutron_curl">“Use
+                                                        cURL”</olink></para>
+                                </listitem>
+                        </itemizedlist></para>-->
+        </sidebar>
+        <!--<xi:include href="cfn_neutron_neutron.xml"/>-->
+        <xi:include href="cfn_neutron_curl.xml"/>
+        <!--<xi:include href="net_cfn_nova_nova.xml"/>
+        <xi:include href="net_cfn_nova_curl.xml"/>-->
+</chapter>

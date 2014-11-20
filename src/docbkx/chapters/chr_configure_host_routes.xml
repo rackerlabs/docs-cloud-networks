@@ -6,10 +6,10 @@
 <chapter xml:id="configure_host_routes" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
         xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
         <title>Configure host routes</title>
-        <para>At server boot time, you can use the host_routes in the <parameter>subnets</parameter> resource to pass
+        <para>At server boot time, you can use the host routes in the <parameter>subnets</parameter> resource to pass
                 specific static routes to the server.</para>
-        <para>The following flow chart shows the steps for configuring host routes by using the neutron API. These steps are
-                detailed in this guide.<figure>
+        <para>The following flow chart shows the steps for configuring host routes. Detailed steps are provided in this
+                section. <figure>
                         <title>Steps to configure host routes</title>
                         <mediaobject>
                                 <imageobject>
@@ -21,17 +21,21 @@
         <!--<para>The sections are also organized by example type. To simplify your path through this chapter, decide whether you
                 prefer neutron-client or cURL examples.</para>-->
         <sidebar>
-                <para><emphasis role="bold">Next step:</emphasis> Choose your method: <!--Choose one of the following methods:--><itemizedlist>
-                                <!--<listitem>
+                <para><emphasis role="bold">Next step:</emphasis>
+                        <olink targetdoc="cn-gettingstarted" targetptr="chr_neutron_curl">“Use cURL”</olink></para>
+        </sidebar>
+        <!--<sidebar>
+                <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods: <itemizedlist>
+                                <listitem>
                                         <para><olink targetdoc="cn-gettingstarted" targetptr="uap_neutron_neutron">“Use
                                                         neutron client”</olink></para>
-                                </listitem>-->
+                                </listitem>
                                 <listitem>
                                         <para><olink targetdoc="cn-gettingstarted" targetptr="chr_neutron_curl">“Use
                                                         cURL”</olink></para>
                                 </listitem>
                         </itemizedlist></para>
-        </sidebar>
-        <!--<xi:include href="net_chr_neutron_neutron.xml"/>-->
-        <xi:include href="net_chr_neutron_curl.xml"/>
+        </sidebar>-->
+        <!--<xi:include href="chr_neutron_neutron.xml"/>-->
+        <xi:include href="chr_neutron_curl.xml"/>
 </chapter>

@@ -5,11 +5,11 @@
 ]>
 <chapter xml:id="provision_additional_ips" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
         xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
-        <title>Provision additional IP and dual-stack IPs on an Isolated network port</title>
+        <title>Provision additional IP and dual-stack IP addresses on an isolated network port</title>
         <para>For extra flexibility, you can configure a port to have both IPv4 and IPv6 IP addresses and boot a server using
                 that port.</para>
-        <para>The following flow chart shows the steps for using dual-stack IP addresses on a port by using the neutron API.
-                These steps are detailed in this guide.<figure>
+        <para>The following flow chart shows the steps for using dual-stack IP addresses on a port. Detailed steps are
+                provided in this section.<figure>
                         <title>Steps to provision dual-stack IP addresses on a port</title>
                         <mediaobject>
                                 <imageobject>
@@ -21,17 +21,21 @@
         <!--<para>The sections are also organized by example type. To simplify your path through this chapter, decide whether you
                 prefer neutron-client or cURL examples.</para>-->
         <sidebar>
-                <para><emphasis role="bold">Next step:</emphasis> Choose your method: <!--Choose one of the following methods:--><itemizedlist>
-                                <!--<listitem>
+                <para><emphasis role="bold">Next step:</emphasis>
+                        <olink targetdoc="cn-gettingstarted" targetptr="pai_neutron_curl">“Use cURL”</olink></para>
+        </sidebar>
+        <!--<sidebar>
+                <para><emphasis role="bold">Next step:</emphasis> Choose your method: <!-\-Choose one of the following methods:-\-><itemizedlist>
+                                <listitem>
                                         <para><olink targetdoc="cn-gettingstarted" targetptr="pai_neutron_neutron">“Use
                                                         neutron client”</olink></para>
-                                </listitem>-->
+                                </listitem>
                                 <listitem>
                                         <para><olink targetdoc="cn-gettingstarted" targetptr="pai_neutron_curl">“Use
                                                         cURL”</olink></para>
                                 </listitem>
                         </itemizedlist></para>
-        </sidebar>
-        <!--<xi:include href="net_pai_neutron_neutron.xml"/>-->
-        <xi:include href="net_pai_neutron_curl.xml"/>
+        </sidebar>-->
+        <!--<xi:include href="pai_neutron_neutron.xml"/>-->
+        <xi:include href="pai_neutron_curl.xml"/>
 </chapter>

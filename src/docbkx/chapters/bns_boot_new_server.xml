@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter [
+<!ENTITY % common  SYSTEM "../../common/common.ent">
+%common;
+]>
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+        xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="boot_new_server">
+        <title>Boot a new server with your cloud network</title>
+        <para>Now that you have a cloud network, you can attach it to a new server.</para>
+        <para>The following flow chart shows the steps to attach a network and provision a server. Detailed steps are
+                provided in this section.</para>
+        <note>
+                <para>You can pass network attributes to the server at boot time in the following ways. <orderedlist>
+                                <listitem>
+                                        <para>You can pass the network ID.</para>
+                                </listitem>
+                                <listitem>
+                                        <para>You can pass the ID of the ports on the desired networks.</para>
+                                </listitem>
+                        </orderedlist> The flowchart assumes that you are passing the port UUID of the isolated network.</para>
+        </note>
+        <figure>
+                <title>Steps to provision a server with a network</title>
+                <mediaobject>
+                        <imageobject>
+                                <imagedata fileref="../figures/bns-neutron-api.png" contentwidth="3in"/>
+                        </imageobject>
+                </mediaobject>
+        </figure>
+        <!--<para>The sections are also organized by example type. To simplify your path through this chapter, decide whether you
+                prefer neutron-client or cURL examples.</para>-->
+        <sidebar>
+                <para><emphasis role="bold">Next step:</emphasis>
+                        <olink targetdoc="cn-gettingstarted" targetptr="bns_neutron_curl">“Use cURL”</olink></para>
+        </sidebar>
+        <!--<sidebar>
+                <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
+                                <listitem>
+                                        <para><olink targetdoc="cn-gettingstarted" targetptr="bns_neutron_neutron">“Use
+                                                        neutron client”</olink></para>
+                                </listitem>
+                                <listitem>
+                                        <para><olink targetdoc="cn-gettingstarted" targetptr="bns_neutron_curl">“Use
+                                                        cURL”</olink></para>
+                                </listitem>
+                        </itemizedlist></para>
+        </sidebar>-->
+        <!--<xi:include href="bns_neutron_neutron.xml"/>-->
+        <xi:include href="bns_neutron_curl.xml"/>
+</chapter>

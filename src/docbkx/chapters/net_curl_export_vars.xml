@@ -5,24 +5,22 @@
 ]>
 <section xml:id="export_env_vars" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
-    <title>(optional) Export environment variables to run cURL commands</title>
-    <para>To run the cURL command examples in this guide, follow this procedure to export environment variables. </para>
+    <title>Export environment variables to run cURL commands (optional)</title>
+    <para>To run the cURL command examples in this guide, follow this procedure to export values to environment
+        variables.</para>
     <para>Export your tenant ID and authentication token to environment variables. All cURL examples in this guide use these
         environment variables.</para>
     <procedure>
-        <title>To export environment variables:</title>
+        <title>To export environment variables</title>
         <step>
-            <para>Export your tenant ID to the <literal>account</literal> environment variable:</para>
-            <screen><computeroutput><prompt>$</prompt> export account="&lt;tenantId&gt;"</computeroutput></screen>
-            <para>Where <parameter>tenantId</parameter> is the value in the <literal>tenantId</literal> field in the
-                authentication response. </para>
+            <para>Export your tenant ID to the <literal>account</literal> environment variable: <screen><computeroutput><prompt>$</prompt> export account="<replaceable>tenantId</replaceable>"</computeroutput></screen>
+                <replaceable>tenantId</replaceable> is the value in the <literal>tenantId</literal> field in the authentication
+                response. </para>
         </step>
         <step>
-            <para>Export your authentication token to the <literal>token</literal> environment variable:
-                <screen><computeroutput>
-                    <prompt>$</prompt> export token="&lt;id&gt;"</computeroutput></screen>
-                Where <parameter>id</parameter> is the authentication token value in the <literal>id</literal> field in the
-                    <literal>token</literal> element in the authentication response. </para>
+            <para>Export your authentication token to the <literal>token</literal> environment variable: <screen><computeroutput><prompt>$</prompt> export token="<replaceable>id</replaceable>"</computeroutput></screen>
+                <replaceable>id</replaceable> is the value in the <literal>id</literal> field in the
+                    <literal>token</literal> field in the authentication response.</para>
             <sidebar>
                 <para><emphasis role="bold">Next step: </emphasis>
                     <olink targetdoc="cn-gettingstarted" targetptr="create_first_net">Create your first cloud

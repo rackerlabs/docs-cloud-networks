@@ -17,7 +17,7 @@
         directly to the command line or a script.</para>
 
     <para>The following command is an example cURL command that provisions a server with an isolated network using
-        JSON:</para>
+        JSON.</para>
 
     <example xml:id="json_example">
         <title>cURL command example: JSON request</title>
@@ -37,7 +37,7 @@
             the escape character in the JSON request body within the cURL command.--></para>
     </note>
     <?hard-pagebreak?>
-    <para>The cURL examples in this guide use the following command-line options:</para>
+    <para>The cURL examples in this guide use the following command-line options.</para>
     <table xml:id="curl_options" rules="all" width="85%">
         <caption>cURL command-line options</caption>
 
@@ -66,23 +66,23 @@
                         each header with the <option>-H</option> option. </para>
                     <para>Common headers in Rackspace API requests are as follows:<itemizedlist>
                             <listitem>
-                                <para><literal>Content-Type</literal>. Required for operations with a request body. </para>
+                                <para><literal>Content-Type</literal>: Required for operations with a request body.</para>
                                 <para>Specifies the format of the request body. Following is the syntax for the header where
-                                        <parameter>format</parameter> is <literal>json</literal>.</para>
+                                        <parameter>format</parameter> is <literal>json</literal>:</para>
                                 <screen><computeroutput>Content-Type: application/<parameter>format</parameter></computeroutput></screen>
                             </listitem>
                             <listitem>
-                                <para><literal>X-Auth-Token</literal>. Required. Specifies the authentication token.</para>
+                                <para><literal>X-Auth-Token</literal>: Required. Specifies the authentication token.</para>
                             </listitem>
                             <listitem>
-                                <para><literal>X-Auth-Project-Id</literal>. Optional. Specifies the project ID, which can be
+                                <para><literal>X-Auth-Project-Id</literal>: Optional. Specifies the project ID, which can be
                                     your account number or another value.</para>
                             </listitem>
                             <listitem>
-                                <para><literal>Accept</literal>. Optional. </para>
+                                <para><literal>Accept</literal>: Optional. </para>
                                 <para>Specifies the format of the response body. Following is the syntax for the header where
                                     the <parameter>format</parameter> is <literal>json</literal>, which is the
-                                    default.</para>
+                                    default:</para>
                                 <screen><computeroutput>Accept: application/<parameter>format</parameter></computeroutput></screen>
                             </listitem>
                         </itemizedlist></para>
@@ -131,7 +131,7 @@
         <programlisting language="bash" role="gutter: false">| python -m json.tool</programlisting>
         <para>To use json.tool, import the JSON module. For information about json.tool, see
             <link xlink:href="http://docs.python.org/2/library/json.html">json — JSON encoder and decoder</link>. </para>
-        <para>If you run a Python version older than 2.6, import the simplejson module and use simplejson.tool. For
+        <para>If you run a Python version earlier than 2.6, import the simplejson module and use simplejson.tool. For
             information about simplejson.tool, see
             <link xlink:href="http://simplejson.googlecode.com/svn/tags/simplejson-2.0.9/docs/index.html">simplejson — JSON encoder and decoder</link>.</para>
         <para>If you do not want to pretty-print JSON output, omit this code. </para>
