@@ -13,17 +13,17 @@
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xmlns:raxm="http://docs.rackspace.com/api/metadata"
     xml:id="api_operations_neutron">
     <title>API operations<!-- - neutron--></title>
-    <para>The Rackspace Cloud Networks API v2 (neutron) serves the following functions: <itemizedlist>
+    <para>The Rackspace Cloud Networks API v2 (Neutron) serves the following functions: <itemizedlist>
             <listitem>
                 <para>Provides virtual networking services among devices that are managed by the Rackspace Cloud Servers
                     service.</para>
             </listitem>
             <listitem>
-                <para>Combines the API v1.1 (quantam) functionality with some essential Internet Protocol Address Management
+                <para>Combines the API v1.1 (Quantam) functionality with some essential Internet Protocol Address Management
                     (IPAM) functionality by introducing the subnet entity.</para>
-                <para>When you create a port on the network, an available fixed IP address is allocated to it from one the
-                    designated subnets for each IP version (IP version 4 or version 6). When you delete the port, the
-                    allocated addresses return to the pool of available IPs on the subnet.</para>
+                <para>When you create a port on the network, an available fixed IP address is allocated to it from one of the
+                    designated subnets for each IP version (IPv4 or IPv6). When you delete the port, the allocated addresses
+                    return to the pool of available IP addresses on the subnet.</para>
             </listitem>
             <listitem>
                 <para>Enables users to associate IP address blocks and other network configuration settings. You can choose a
@@ -32,7 +32,7 @@
             </listitem>
         </itemizedlist>
         <note>
-            <para>At this time, the neutron API is accessible by using cURL commands, a browser plug-in for REST, or various
+            <para>At this time, the Neutron API is accessible by using cURL commands, a browser plug-in for REST, or various
                 programming languages and tools. The neutron client is not supported at this time.</para>
         </note></para>
 

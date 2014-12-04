@@ -41,10 +41,9 @@
 
     <!--List Subnets-->
     <method name="GET" id="listSubnets">
-        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="List Subnets">
-            <para role="shortdesc">Lists subnets to which the specified tenant has access.</para>
-            <para>This operations lists the subnets owned by the tenant submitting the request. You can control which
-                attributes are returned by using the <parameter>fields</parameter> query
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Retrieve list of subnets">
+            <para role="shortdesc">Retrieves list of subnets to which the specified tenant has access.</para>
+            <para>You can control which attributes are returned by using the <parameter>fields</parameter> query
                 parameter<!--, and you can specify how many results to return per page.
                 For information, see
                 <link xlink:href="http://docs.rackspace.com/networks/api/v2/cn-devguide/content/section_filtering.html">Filtering 
@@ -68,10 +67,10 @@
 
     <!--Create Subnet-->
     <method name="POST" id="createSubnet">
-        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Create Subnet">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Create subnet">
             <para role="shortdesc">Creates a subnet on a specified network.</para>
-            <para>This operation creates subnets on the specified network. You cannot create subnets on PublicNet and
-                ServiceNet. Only one IPv4 subnet and one IPv6 subnet are permitted per network.</para>
+            <para>You cannot create subnets on the PublicNet and ServiceNet networks. Only one IPv4 subnet and one IPv6
+                subnet are permitted per network.</para>
             <para>If the <parameter>gateway_ip</parameter> parameter is not specified, it is set to
                 <literal>null</literal>.</para>
             <para>If the <parameter>allocation_pools</parameter> parameter is not specified, Cloud Networks automatically
@@ -79,8 +78,8 @@
                 gateway. Otherwise, you can explicitly specify allocation pools as shown in the following example.</para>
             <warning>
                 <para>When you specify both the <parameter>allocation_pools</parameter> and <parameter>gateway_ip</parameter>
-                    parameters, you must ensure that the gateway IP does not overlap with the specified allocation pools;
-                    otherwise a <errorcode>409 Conflict</errorcode> error occurs.</para>
+                    parameters, you must ensure that the gateway IP address does not overlap with the specified allocation
+                    pools; otherwise a <errorcode>409 Conflict</errorcode> error occurs.</para>
             </warning>
         </wadl:doc>
         <request>
@@ -105,7 +104,7 @@
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/subnets-create-resp.json"/>
-                </wadl:doc>&subnetCreateRspParameters;</representation>
+                </wadl:doc>&subnetCreateRspParameters;</representation> 
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
                     title="Create Subnet with host routes: JSON response">
@@ -122,11 +121,11 @@
 
     <!--Create Bulk (Multiple) Subnets-->
     <method name="POST" id="bulkCreateSubnet">
-        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Bulk Create Subnet">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Bulk create subnet">
             <para role="shortdesc">Creates multiple subnets in a single request. Specify a list of subnets in the request
                 body.</para>
-            <para>This operation allows you to create multiple subnets with one command. Bulk create operations are always
-                atomic, meaning that either all or no subnets in the request body are created.</para>
+            <para>Bulk create operations are always atomic, meaning that either all or no subnets in the request body are
+                created.</para>
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
@@ -153,13 +152,12 @@
 
     <!--Show Subnet-->
     <method name="GET" id="showSubnet">
-        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Show Subnet">
-            <para role="shortdesc">Shows information for a specified subnet.</para>
-            <para>This operation displays details about a subnet. You can control which attributes are returned by using the
-                    <parameter>fields</parameter> query parameter. For information, see
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Show subnet">
+            <para role="shortdesc">Retrieves information for a specified subnet.</para>
+            <para>You can control which attributes are returned by using the <parameter>fields</parameter> query parameter.
+                For information, see
                 <link xlink:href="http://docs.rackspace.com/networks/api/v2/cn-devguide/content/section_filtering.html">Filtering 
-                    Requests</link>
-                in the <citetitle>Cloud Networks API Developer Guide</citetitle>.</para>
+                    Requests</link>.</para>
         </wadl:doc>
         <response status="201">
             <representation mediaType="application/json">
@@ -175,23 +173,21 @@
 
     <!--Update Subnet-->
     <method name="PUT" id="updateSubnet">
-        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Update Subnet">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Update subnet">
             <para role="shortdesc">Updates a specified subnet.</para>
-            <para>This operation updates a specified subnet.</para>
-            <para>Limitations exist on updating the following parameters: </para>
-            <para>IP version (<parameter>ip_version</parameter>), network ID (<parameter>network_id</parameter>), and CIDR
-                    (<parameter>cidr</parameter>) cannot be updated. Attempting to update these parameters results in a
+            <para>The IP version (<parameter>ip_version</parameter>), network ID (<parameter>network_id</parameter>), and
+                CIDR (<parameter>cidr</parameter>) cannot be updated. Attempting to update these parameters results in a
                     <errorcode>400 Bad Request</errorcode> error.</para>
-            <para>Users cannot update allocation pools that are attached to a port.</para>            
-            <warning><para>If any attributes are updated, the changes will only take effect for ports or Cloud Servers using this
-                subnet that are created after this modification. Any existing ports or Cloud Servers will not be
-                updated.</para></warning>
+            <para>You cannot update allocation pools that are attached to a port.</para>
+            <warning><para>If any attributes are updated, the changes will take effect only for ports or cloud servers using
+                    this subnet that are created after this modification. Any existing ports or servers are not 
+                    updated.</para></warning>
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/subnet-post-req.json"/>
-                </wadl:doc>&subnetUpdateParameters; </representation>
+                </wadl:doc>&subnetUpdateParameters;</representation>
         </request>
         <response status="201">
             <representation mediaType="application/json">
@@ -202,7 +198,7 @@
 
     <!--Remove Subnet-->
     <method name="DELETE" id="removeSubnet">
-        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Delete Subnet">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Delete subnet">
             <para role="shortdesc">Deletes a specified subnet.</para>
             <para>This operation fails if the subnet IP addresses are still allocated.</para>
         </wadl:doc>

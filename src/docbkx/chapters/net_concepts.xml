@@ -8,13 +8,28 @@
     <section xml:id="conceptNetwork">
         <title>Network</title>
         <para>A network is an isolated virtual layer-2 broadcast domain that is typically reserved for the tenant who created
-            it . Tenants can create multiple networks until the thresholds per-tenant quota is reached. This threshold is
-            currently set to 10 networks per region. </para>
-        <para>In the Networking API v2.0, the network is the main entity. Ports and subnets are always associated with a
+            it, unless the network is configured to be shared. Tenants can create up to 10 networks per region. </para>
+        <para>In the Networks API v2.0, the network is the main entity. Ports and subnets are always associated with a
             network.</para>
-        <para>The following table describes the attributes for network objects.</para>
+        <para>The following table describes the attributes for network objects. In the "CRUD" column, the abbreviations are
+            defined as follows:</para>
+        <itemizedlist>
+            <listitem>
+                <para><emphasis role="bold">C</emphasis>: The attribute is used in create operations.</para>
+            </listitem>
+            <listitem>
+                <para><emphasis role="bold">R</emphasis>: The attribute is returned in response to show and list
+                    operations.</para>
+            </listitem>
+            <listitem>
+                <para><emphasis role="bold">U</emphasis>: You can update the value of this attribute.</para>
+            </listitem>
+            <listitem>
+                <para><emphasis role="bold">D</emphasis>: You can delete the value of this attribute.</para>
+            </listitem>
+        </itemizedlist>
         <table rules="all" width="95%">
-            <caption>Network Attributes</caption>
+            <caption>Network attributes</caption>
             <col width="20%"/>
             <col width="10%"/>
             <col width="10%"/>
@@ -27,28 +42,9 @@
                     <th>Attribute</th>
                     <th>Type</th>
                     <th>Required</th>
-                    <th>CRUD<footnote xml:id="crud">
-                            <para><itemizedlist>
-                                    <listitem>
-                                        <para><emphasis role="bold">C</emphasis>. Use the attribute in create
-                                            operations.</para>
-                                    </listitem>
-                                    <listitem>
-                                        <para><emphasis role="bold">R</emphasis>. This attribute is returned in response to
-                                            show and list operations.</para>
-                                    </listitem>
-                                    <listitem>
-                                        <para><emphasis role="bold">U</emphasis>. You can update the value of this
-                                            attribute.</para>
-                                    </listitem>
-                                    <listitem>
-                                        <para><emphasis role="bold">D</emphasis>. You can delete the value of this
-                                            attribute.</para>
-                                    </listitem>
-                                </itemizedlist></para>
-                        </footnote></th>
-                    <th>Default Value</th>
-                    <th>Validation Constraints</th>
+                    <th>CRUD</th>
+                    <th>Default value</th>
+                    <th>Validation constraints</th>
                     <th>Notes</th>
                 </tr>
             </thead>
@@ -58,22 +54,22 @@
                     <td>uuid-str</td>
                     <td>N/A</td>
                     <td>R</td>
-                    <td>generated</td>
+                    <td>Generated</td>
                     <td>N/A</td>
                     <td>UUID for the network.</td>
                 </tr>
                 <tr>
                     <td>name</td>
-                    <td>String</td>
+                    <td>string</td>
                     <td>No</td>
                     <td>CRU</td>
                     <td>None</td>
                     <td>N/A</td>
-                    <td>Human-readable name for the network. Might not be unique.</td>
+                    <td>Human-readable name for the network. The name might not be unique.</td>
                 </tr>
                 <tr>
                     <td>admin_state_up</td>
-                    <td>Bool</td>
+                    <td>Boolean</td>
                     <td>No</td>
                     <td>CRU</td>
                     <td>True</td>
@@ -83,10 +79,10 @@
                 </tr>
                 <tr>
                     <td>status</td>
-                    <td>String</td>
+                    <td>string</td>
                     <td>N/A</td>
                     <td>R</td>
-                    <td>ACTIVE</td>
+                    <td>null</td>
                     <td>N/A</td>
                     <td><para>Indicates whether network is currently operational. The status is <literal>null</literal> by
                             default and cannot be changed.</para></td>
@@ -96,7 +92,7 @@
                     <td>list(uuid-str)</td>
                     <td>No</td>
                     <td>R</td>
-                    <td>Empty List</td>
+                    <td>Empty list</td>
                     <td>N/A</td>
                     <td>Subnets associated with this network. One IPv4 and one IPv6 subnet can be specified in a
                         Network.</td>
@@ -108,7 +104,7 @@
                     <td>CRU</td>
                     <td>False</td>
                     <td>False</td>
-                    <td>Specifies whether the network resource can be accessed by any tenant or not. The default value is
+                    <td>Specifies whether the network resource can be accessed by any tenant. The default value is
                             <literal>False</literal> and cannot be changed</td>
                 </tr>
                 <tr>
@@ -117,8 +113,8 @@
                     <td>No</td>
                     <td>CR</td>
                     <td>N/A</td>
-                    <td>No constraint</td>
-                    <td>Owner of network. This value cannot be changed and must belong to the tenant.</td>
+                    <td>N/A</td>
+                    <td>Owner of the network. This value cannot be changed and must belong to the tenant.</td>
                 </tr>
             </tbody>
         </table>
@@ -131,11 +127,27 @@
             subnet must have a CIDR and must be associated with a network. IP addresses can be selected either from the whole
             subnet CIDR or from allocation pools that can be specified by the user.</para>
         <para>A subnet can also optionally have a gateway, a list of DNS name servers, and host routes. This information is
-            pushed to Cloud Servers whose ports are associated with the subnet, as long as the ports or Cloud Servers were
+            pushed to the cloud servers whose ports are associated with the subnet, as long as the ports or servers were
             created after the subnet was created.</para>
-        <para>The following table describes the attributes for subnet objects.</para>
+        <para>The following table describes the attributes for subnet objects. In the "CRUD" column, the abbreviations are
+            defined as follows:</para>
+        <itemizedlist>
+            <listitem>
+                <para><emphasis role="bold">C</emphasis>: The attribute is used in create operations.</para>
+            </listitem>
+            <listitem>
+                <para><emphasis role="bold">R</emphasis>: The attribute is returned in response to show and list
+                    operations.</para>
+            </listitem>
+            <listitem>
+                <para><emphasis role="bold">U</emphasis>: You can update the value of this attribute.</para>
+            </listitem>
+            <listitem>
+                <para><emphasis role="bold">D</emphasis>: You can delete the value of this attribute.</para>
+            </listitem>
+        </itemizedlist>
         <table rules="all" width="95%">
-            <caption>Subnet Attributes</caption>
+            <caption>Subnet attributes</caption>
             <col width="20%"/>
             <col width="10%"/>
             <col width="10%"/>
@@ -148,29 +160,9 @@
                     <th>Attribute</th>
                     <th>Type</th>
                     <th>Required</th>
-                    <th>CRUD<footnote xml:id="crud2">
-                            <para><itemizedlist>
-                                    <listitem>
-                                        <para><emphasis role="bold">C</emphasis>. Use the attribute in create
-                                            operations.</para>
-                                    </listitem>
-                                    <listitem>
-                                        <para><emphasis role="bold">R</emphasis>. This attribute is returned in response to
-                                            show and list operations.</para>
-                                    </listitem>
-                                    <listitem>
-                                        <para><emphasis role="bold">U</emphasis>. You can update the value of this
-                                            attribute.</para>
-                                    </listitem>
-                                    <listitem>
-                                        <para><emphasis role="bold">D</emphasis>. You can delete the value of this
-                                            attribute.</para>
-                                    </listitem>
-                                </itemizedlist></para>
-                        </footnote>
-                    </th>
-                    <th>Default Value</th>
-                    <th>Validation Constraints</th>
+                    <th>CRUD</th>
+                    <th>Default value</th>
+                    <th>Validation constraints</th>
                     <th>Notes</th>
                 </tr>
             </thead>
@@ -180,7 +172,7 @@
                     <td>uuid-str</td>
                     <td>N/A</td>
                     <td>R</td>
-                    <td>generated</td>
+                    <td>Generated</td>
                     <td>N/A</td>
                     <td>UUID representing the subnet</td>
                 </tr>
@@ -190,17 +182,17 @@
                     <td>Yes</td>
                     <td>CR</td>
                     <td>N/A</td>
-                    <td>network this subnet is associated with</td>
+                    <td>Network this subnet is associated with</td>
                     <td>UUID representing the network</td>
                 </tr>
                 <tr>
                     <td>name</td>
-                    <td>String</td>
+                    <td>string</td>
                     <td>No</td>
                     <td>CRU</td>
                     <td>None</td>
                     <td>N/A</td>
-                    <td>Human-readable name for the subnet. Might not be unique</td>
+                    <td>Human-readable name for the subnet. This name might not be unique</td>
                 </tr>
                 <tr>
                     <td>ip_version</td>
@@ -217,8 +209,8 @@
                     <td>Yes</td>
                     <td>CR</td>
                     <td>N/A</td>
-                    <td>valid CIDR in the form &lt;network_address&gt;/&lt;prefix&gt;</td>
-                    <td>CIDR representing IP range for this subnet, based on IP version</td>
+                    <td>Valid CIDR in the form &lt;network_address&gt;/&lt;prefix&gt;</td>
+                    <td>CIDR representing the IP address range for this subnet, based on the IP version</td>
                 </tr>
                 <tr>
                     <td>gateway_ip</td>
@@ -227,8 +219,8 @@
                     <td>CRUD</td>
                     <td>Null</td>
                     <td>Valid IP address or null</td>
-                    <td>default gateway used by devices in this subnet. This is applied on Cloud Servers only at boot time
-                        and will not change for existing servers.</td>
+                    <td>The default gateway used by devices in this subnet. This is applied on cloud servers only at boot
+                        time and will not change for existing servers.</td>
                 </tr>
                 <tr>
                     <td>dns_nameservers</td>
@@ -236,8 +228,8 @@
                     <td>No</td>
                     <td>CRU</td>
                     <td>Empty list</td>
-                    <td>No constraint</td>
-                    <td>DNS name servers used by hosts in this subnet. This is applied on Cloud Servers only at boot time and
+                    <td>N?A</td>
+                    <td>DNS name servers used by hosts in this subnet. This is applied on cloud servers only at boot time and
                         will not change for existing servers.</td>
                 </tr>
                 <tr>
@@ -245,10 +237,10 @@
                     <td>list(dict)</td>
                     <td>No</td>
                     <td>CR</td>
-                    <td>Every address in <emphasis role="italic">CIDR</emphasis>, excluding <emphasis role="italic"
-                            >gateway_ip</emphasis> if configured</td>
-                    <td>start and end addresses of range must be valid IPs</td>
-                    <td>Sub-ranges of CIDR available for dynamic allocation to ports [ { "start": "10.0.0.2", "end":
+                    <td>Every address in the <emphasis role="italic">CIDR</emphasis>, excluding <emphasis role="italic"
+                            >gateway_ip</emphasis> if it is configured</td>
+                    <td>The start and end addresses of the range must be valid IP addresses.</td>
+                    <td>Sub-ranges of theCIDR available for dynamic allocation to ports [ { "start": "10.0.0.2", "end":
                         "10.0.0.254"} ]</td>
                 </tr>
                 <tr>
@@ -260,18 +252,18 @@
                     <td>
                         <emphasis role="italic">[]</emphasis>
                     </td>
-                    <td>Routes that should be used by devices with IPs from this subnet (not including local subnet route).
-                        These routes are applied on Cloud Servers only at boot time and will not change for existing
-                        servers.</td>
+                    <td>Routes that should be used by devices with IP addresses from this subnet (not including the local
+                        subnet route). These routes are applied on cloud servers only at boot time and will not change for
+                        existing servers.</td>
                 </tr>
                 <tr>
                     <td>enable_dhcp</td>
-                    <td>Bool</td>
+                    <td>Boolean</td>
                     <td>No</td>
                     <td>CRU</td>
                     <td>Null</td>
                     <td>Null</td>
-                    <td>Specifies whether DHCP is enabled for this subnet or not. The default value is null and cannot be
+                    <td>Specifies whether DHCP is enabled for this subnet. The default value is null and cannot be
                         changed.</td>
                 </tr>
                 <tr>
@@ -280,8 +272,8 @@
                     <td>No</td>
                     <td>CR</td>
                     <td>N/A</td>
-                    <td>No constraint</td>
-                    <td>Owner of network. This value cannot be changed and must belong to the tenant.</td>
+                    <td>N/A</td>
+                    <td>Owner of the network. This value cannot be changed and must belong to the tenant.</td>
                 </tr>
             </tbody>
         </table>
@@ -290,11 +282,27 @@
     <!-- Port -->
     <section xml:id="conceptPort">
         <title>Port</title>
-        <para>A port represents a virtual switch port on a logical network switch. Cloud Servers attach their interfaces into
-            ports. The logical port also defines the MAC address and the IP address(es), to be assigned to the interfaces
-            plugged into them. When IP addresses are associated to a port, this also implies that the port is associated with
-            a subnet, because the IP address was taken from the allocation pool for a specific subnet.</para>
-        <para>The following table describes the attributes for port objects.</para>
+        <para>A port represents a virtual switch port on a logical network switch. Cloud servers attach their interfaces into
+            ports. The logical port also defines the MAC address and the IP addresses, to be assigned to the interfaces
+            plugged into them. When IP addresses are associated with a port, the port is associated with a subnet, because
+            the IP address was taken from the allocation pool for a specific subnet.</para>
+        <para>The following table describes the attributes for port objects. In the "CRUD" column, the abbreviations are
+            defined as follows:</para>
+        <itemizedlist>
+            <listitem>
+                <para><emphasis role="bold">C</emphasis>: The attribute is used in create operations.</para>
+            </listitem>
+            <listitem>
+                <para><emphasis role="bold">R</emphasis>: The attribute is returned in response to show and list
+                    operations.</para>
+            </listitem>
+            <listitem>
+                <para><emphasis role="bold">U</emphasis>: You can update the value of this attribute.</para>
+            </listitem>
+            <listitem>
+                <para><emphasis role="bold">D</emphasis>: You can delete the value of this attribute.</para>
+            </listitem>
+        </itemizedlist>
         <table rules="all" width="95%">
             <caption>Port Attributes</caption>
             <col width="20%"/>
@@ -309,29 +317,9 @@
                     <th>Attribute</th>
                     <th>Type</th>
                     <th>Required</th>
-                    <th>CRUD<footnote xml:id="crud3">
-                            <para><itemizedlist>
-                                    <listitem>
-                                        <para><emphasis role="bold">C</emphasis>. Use the attribute in create
-                                            operations.</para>
-                                    </listitem>
-                                    <listitem>
-                                        <para><emphasis role="bold">R</emphasis>. This attribute is returned in response to
-                                            show and list operations.</para>
-                                    </listitem>
-                                    <listitem>
-                                        <para><emphasis role="bold">U</emphasis>. You can update the value of this
-                                            attribute.</para>
-                                    </listitem>
-                                    <listitem>
-                                        <para><emphasis role="bold">D</emphasis>. You can delete the value of this
-                                            attribute.</para>
-                                    </listitem>
-                                </itemizedlist></para>
-                        </footnote>
-                    </th>
-                    <th>Default Value</th>
-                    <th>Validation Constraints</th>
+                    <th>CRUD</th>
+                    <th>Default value</th>
+                    <th>Validation constraints</th>
                     <th>Notes</th>
                 </tr>
             </thead>
@@ -341,7 +329,7 @@
                     <td>uuid-str</td>
                     <td>N/A</td>
                     <td>R</td>
-                    <td>generated</td>
+                    <td>Generated</td>
                     <td>N/A</td>
                     <td>UUID for the port.</td>
                 </tr>
@@ -351,7 +339,7 @@
                     <td>Yes</td>
                     <td>CR</td>
                     <td>N/A</td>
-                    <td>existing network identifier</td>
+                    <td>Existing network identifier</td>
                     <td>Network that this port is associated with. </td>
                 </tr>
                 <tr>
@@ -361,11 +349,11 @@
                     <td>CRU</td>
                     <td>None</td>
                     <td>N/A</td>
-                    <td>Human-readable name for the port. Might not be unique.</td>
+                    <td>Human-readable name for the port. This name might not be unique.</td>
                 </tr>
                 <tr>
                     <td>admin_state_up</td>
-                    <td>bool</td>
+                    <td>Boolean</td>
                     <td>No</td>
                     <td>CRU</td>
                     <td>True</td>
@@ -377,9 +365,9 @@
                     <td>string</td>
                     <td>N/A</td>
                     <td>R</td>
+                    <td>ACTIVE</td>
                     <td>N/A</td>
-                    <td>N/A</td>
-                    <td><para>Indicates whether network is currently operational. The status is always set to
+                    <td><para>Indicates whether the network is currently operational. The status is always set to
                                 <literal>ACTIVE</literal>.</para></td>
                 </tr>
                 <tr>
@@ -387,16 +375,16 @@
                     <td>string</td>
                     <td>No</td>
                     <td>CR</td>
-                    <td>generated</td>
-                    <td>valid MAC in 6-octet form separated by colons</td>
-                    <td>Mac address to use on this port.</td>
+                    <td>Generated</td>
+                    <td>Valid MAC in 6-octet form separated by colons</td>
+                    <td>MAC address to use on this port.</td>
                 </tr>
                 <tr>
                     <td>fixed_ips</td>
                     <td>list(dict)</td>
                     <td>No</td>
                     <td>CRU</td>
-                    <td>automatically allocated from pool</td>
+                    <td>Automatically allocated from pool</td>
                     <td>Valid IP address and existing subnet identifier</td>
                     <td>Specifies IP addresses for the port thus associating the port itself with the subnets from which the
                         IP addresses are picked</td>
@@ -407,8 +395,8 @@
                     <td>No</td>
                     <td>CRUD</td>
                     <td>None</td>
-                    <td>No constraint</td>
-                    <td>identifies the device (such as Cloud Server) using this port. When the port is not attached to an
+                    <td>N/A</td>
+                    <td>Identifies the device (such as cloud server) using this port. When the port is not attached to an
                         instance, this field is empty.</td>
                 </tr>
                 <tr>
@@ -417,8 +405,8 @@
                     <td>No</td>
                     <td>CRUD</td>
                     <td>Null</td>
-                    <td>No constraint</td>
-                    <td>Identifies the entity using this port. The device_owner is set to <literal>Null</literal>.</td>
+                    <td>N/A</td>
+                    <td>Identifies the entity using this port.</td>
                 </tr>
                 <tr>
                     <td>tenant_id</td>
@@ -426,8 +414,8 @@
                     <td>No</td>
                     <td>CR</td>
                     <td>N/A</td>
-                    <td>No constraint</td>
-                    <td>Owner of network. This value cannot be changed.</td>
+                    <td>N/A</td>
+                    <td>Owner of the network. This value cannot be changed.</td>
                 </tr>
                 <tr>
                     <td>security_groups</td>
@@ -436,7 +424,7 @@
                     <td>CRUD</td>
                     <td>None</td>
                     <td>Existing security group IDs</td>
-                    <td>Specifies the IDs of any security groups associated with a port. Security Groups are currently not
+                    <td>Specifies the IDs of any security groups associated with a port. Security groups are currently not
                         supported.</td>
                 </tr>
             </tbody>

@@ -44,10 +44,10 @@
 
     <!-- List Networks -->
     <method name="GET" id="listNetworks">
-        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="List Networks">
-            <para role="shortdesc">Lists networks to which the specified tenant has access.</para>
-            <para>This operation lists networks to which the specified tenant has access. You can control which attributes
-                are returned by using the <parameter>fields</parameter> query parameter.</para>
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Retrieve list of networks">
+            <para role="shortdesc">Retrieves list of networks to which the specified tenant has access.</para>
+            <para>You can control which attributes are returned by using the <parameter>fields</parameter> query
+                parameter.</para>
         </wadl:doc>
         <response status="200">
             <representation mediaType="application/json" element="csapi:network">
@@ -58,12 +58,11 @@
 
     <!-- Create Network -->
     <method name="POST" id="createNetwork">
-        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Create Network">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Create network">
             <para role="shortdesc">Creates a network.</para>
-            <para>This operation creates a network. The tenant ID that you specify in the URI is the tenant who creates the
-                network.</para>
+            <para>The tenant ID that you specify in the URI is the tenant who creates the network.</para>
             <note><para>Only one <literal>IPv4</literal> and one <literal>IPv6</literal> subnet can be specified per
-                Network.</para></note>
+                    network.</para></note>
         </wadl:doc>
         <request>
             <representation mediaType="application/json" element="csapi:network">
@@ -80,10 +79,9 @@
 
     <!-- Bulk Create Networks -->
     <method name="POST" id="bulkCreateNetwork">
-        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Bulk Create Networks">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Bulk create networks">
             <para role="shortdesc">Creates multiple networks in a single request.</para>
-            <para>This operation creates multiple networks with one request. In the request body, specify a list of
-                networks.</para>
+            <para>In the request body, specify a list of networks.</para>
             <note><para>Bulk create operations are always atomic, meaning that either all or no networks in the request body
                     are created.</para></note>
         </wadl:doc>
@@ -112,13 +110,12 @@
 
     <!-- Show Networks -->
     <method name="GET" id="showNetwork">
-        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Show Network">
-            <para role="shortdesc">Shows information for a specified network.</para>
-            <para>This operation displays details for a specified network. You can control which attributes are returned by
-                using the <parameter>fields</parameter> query parameter. For information, see
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Show network">
+            <para role="shortdesc">Retrieves information for a specified network.</para>
+            <para>You can control which attributes are returned by using the <parameter>fields</parameter> query parameter.
+                For information, see
                 <link xlink:href="http://docs.rackspace.com/networks/api/v2/cn-devguide/content/section_filtering.html">Filtering 
-                    Requests</link>
-                in the <citetitle>Cloud Networks API Developer Guide</citetitle>.</para>
+                    Requests</link>.</para>
         </wadl:doc>
         <response status="200">
             <representation mediaType="application/json" element="csapi:network">
@@ -129,12 +126,11 @@
 
     <!-- Update Network -->
     <method name="PUT" id="updateNetwork">
-        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Update Network">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Update network">
             <para role="shortdesc">Updates a specified network.</para>
-            <para>This operation updates an existing network.</para>
-            <warning><para>Network ID: "00000000-0000-0000-0000-000000000000", and ID: "11111111-1111-1111-1111-111111111111"
-                    correspond to PublicNet and ServiceNet networks of Rackspace and are not user modifiable networks.
-                    Changes to these networks are not supported.</para></warning>
+            <warning><para>Network IDs "00000000-0000-0000-0000-000000000000" and "11111111-1111-1111-1111-111111111111"
+                    correspond to the PublicNet and ServiceNet networks of Rackspace. Changes to these networks are not
+                    supported.</para></warning>
         </wadl:doc>
         <request>
             <representation mediaType="application/json" element="csapi:network">
@@ -151,9 +147,8 @@
 
     <!-- Delete Network -->
     <method name="DELETE" id="deleteNetwork">
-        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Delete Network">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Delete network">
             <para role="shortdesc">Deletes a specified network and its associated resources.</para>
-            <para>This operation deletes an existing network and its associated resources.</para>
         </wadl:doc>
         <response status="204">
             <representation mediaType="application/json"/>
