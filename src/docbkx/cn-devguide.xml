@@ -24,7 +24,7 @@
             <year>2014</year>
             <holder>Rackspace US, Inc.</holder>
         </copyright>
-        <releaseinfo>OpenStack Neutron API v2</releaseinfo>
+        <releaseinfo>Neutron API v2</releaseinfo>
         <productname>Cloud Networks™</productname>
         <pubdate/>
         <legalnotice role="rs-api">

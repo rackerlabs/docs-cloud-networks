@@ -37,13 +37,6 @@ This operation does not require a request body.</para>'>
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="General-Keystone-API-d1e62">
     <title>General API information</title>
-    <info>
-        <raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
-            <raxm:type>concept</raxm:type>
-            <raxm:product version="v3.0">auth</raxm:product>
-            <raxm:priority>1</raxm:priority>
-        </raxm:metadata>
-    </info>
     <para>The Cloud Networks API v2.0 is a RESTful HTTP service that uses all aspects of the HTTP protocol including methods,
         URIs, media types, and response codes. This section provides more information about authentication, cURL, and
         filtering and pagination of requests. </para>
