@@ -42,6 +42,13 @@
         </abstract>
         <revhistory>
             <revision>
+                <date>2015-01-12</date>
+                <revdescription>
+                    <para>Updated <xref linkend="curl_auth"/> with information about 
+                        using multi-factor authentication for added security when a user authenticates with username and password credentials.</para>
+                </revdescription>
+            </revision>
+            <revision>
                 <date>2014-11-20</date>
                 <revdescription>
                     <itemizedlist spacing="compact">

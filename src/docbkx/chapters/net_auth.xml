@@ -157,6 +157,14 @@
             </listitem>
         </itemizedlist>
         <para>Your user name and password are the ones that you use to log in to the Rackspace Cloud Control Panel. </para>
+        <note>
+            <para>
+                If you authenticate with username and password credentials, you can use multi-factor authentication to add an additional 
+                level of account security. This feature is not implemented for username and API credentials. For more information, 
+                see <link xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/MFA_Ops.html">Multifactor authentication</link> 
+                in the <citetitle>Cloud Identity Client Developer Guide</citetitle>.
+            </para>
+        </note>
         <para>To obtain your API key, log in to
             <link xlink:href="http://mycloud.rackspace.com." xml:id="newwin">http://mycloud.rackspace.com</link>, select
                 <guilabel>Account:</guilabel><replaceable>username</replaceable> &gt; <guilabel>Account Settings</guilabel>,
@@ -181,12 +189,19 @@
                 <tip>
                     <para>For information about the json.tool, see <olink condition="gs" targetdoc="cn-gettingstarted"
                             targetptr="json_tool">Note</olink>
-                        <olink condition="dev" targetdoc="cn-devguide" targetptr="json_tool">Note</olink>.</para>
+                        <olink condition="dev" targetdoc="cn-devguide" targetptr="json_tool">Note</olink>.
+                    </para>
                 </tip>
                 <para>In response to valid credentials, your request returns an authentication token and a service catalog
-                    with the endpoints that you need to request services. </para>
+                    with the endpoints that you need to request services.</para>
+                <note>
+                    <para>If you authenticated with username and password credentials, and the Identity service returns a 401 message requesting 
+                        additional credentials, your account is configured for multi-factor authentication. To complete the authentication process, 
+                        <link xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/proc_mfa_auth.html">submit a 
+                            second POST tokens request with multi-factor authentication credentials</link>.</para>
+                </note>
                 <para>Do not include explicit API endpoints in your scripts and applications. Instead, find the endpoint for
-                    your service and region. </para>
+                    your service and region.</para>
                 <para>The following output shows a partial authentication response in JSON format: <example>
                         <title>Authentication: JSON response</title>
                         <programlistingco>
