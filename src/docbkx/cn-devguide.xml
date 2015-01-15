@@ -21,7 +21,10 @@
             </affiliation>
         </author>
         <copyright>
+            <year>2012</year>
+            <year>2013</year>
             <year>2014</year>
+            <year>2015</year>
             <holder>Rackspace US, Inc.</holder>
         </copyright>
         <releaseinfo>Neutron API v2</releaseinfo>
@@ -42,10 +45,10 @@
         </abstract>
         <revhistory>
             <revision>
-                <date>2015-01-12</date>
+                <date>2015-01-15</date>
                 <revdescription>
-                    <para>Updated <xref linkend="curl_auth"/> with information about 
-                        using multi-factor authentication for added security when a user authenticates with username and password credentials.</para>
+                    <para>Updated <xref linkend="curl_auth"/> with information about using multi-factor authentication for
+                        added security when a user authenticates with username and password credentials.</para>
                 </revdescription>
             </revision>
             <revision>
