@@ -6,6 +6,13 @@
   <version>1.0.0-SNAPSHOT</version>
   <packaging>jar</packaging>
   <name>Cloud Networks API Documentation</name>
+  
+  <parent>
+    <groupId>com.rackspace.cloud.api</groupId>
+    <artifactId>rackspace-docs-parent</artifactId>
+    <version>1.0.0</version>
+  </parent>
+  
   <!-- ################################################ -->
   <!-- USE "mvn clean generate-sources" to run this POM -->
   <!-- ################################################ -->
@@ -15,15 +22,6 @@
       <plugin>
         <groupId>com.rackspace.cloud.api</groupId>
         <artifactId>olink-maven-plugin</artifactId>
-        <version>1.2.6</version>
-        <executions>
-          <execution>
-            <phase>initialize</phase>
-            <goals>
-              <goal>olink</goal>
-            </goals>
-          </execution>
-        </executions>
       </plugin>
       <!-- Maven Dependency -->
       <plugin>
@@ -52,8 +50,7 @@
       <!-- Maven Clouddocs -->
       <plugin>
         <groupId>com.rackspace.cloud.api</groupId>
-        <artifactId>clouddocs-maven-plugin</artifactId>
-        <version>2.1.3</version>
+        <artifactId>rackspace-docs-maven-plugin</artifactId>
         <executions>
           <!-- Configuration for Release Notes -->
           <execution>
