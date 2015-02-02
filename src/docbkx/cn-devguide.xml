@@ -44,6 +44,29 @@
                 extensions as permitted by the OpenStack Quantum API contract and the OpenStack Neutron API contract.</para>
         </abstract>
         <revhistory>
+            <!--change date-->
+            <!--<revision>
+                <date>2015-01-01</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>added following sections related to the security group extension: <olink
+                                    targetdoc="cn-devguide" targetptr="ch_overview">Overview</olink>, <olink
+                                    targetdoc="cn-devguide" targetptr="conceptSecurityGroups">“Security Groups and
+                                    Rules”</olink>, and <olink targetdoc="cn-devguide" targetptr="api_ext_security_neutron"
+                                    >“Extension - Security Groups”</olink>.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>-->
+            <revision>
+                <date>2015-02-02</date>
+                <revdescription>
+                    <para>Updated <olink targetdoc="cn-devguide" targetptr="POST_createNetwork_v2.0_networks_api_networks"
+                            >“POST_createNetwork_v2.0_networks_api_networks”</olink> with corrected create network
+                        example.</para>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2015-01-15</date>
                 <revdescription>
