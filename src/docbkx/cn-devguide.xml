@@ -60,7 +60,7 @@
                 </revdescription>
             </revision>-->
             <revision>
-                <date>2015-02-02</date>
+                <date>2015-02-09</date>
                 <revdescription>
                     <para>Updated <olink targetdoc="cn-devguide" targetptr="POST_createNetwork_v2.0_networks_api_networks"
                             >“POST_createNetwork_v2.0_networks_api_networks”</olink> with corrected create network
