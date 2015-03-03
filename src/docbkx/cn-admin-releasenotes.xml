@@ -8,7 +8,7 @@
   xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml" version="5.0"
   xml:id="cn-releasenotes">
   <title>Cloud Networks™ Admin Release Notes</title>
-  <?rax title.font.size="37px" pdf.url="../../cn-admin-releasenotes.pdf" canonical.url.base="http://docs.rackspace.com/servers/api/v2/cn-admin-releasenotes/content"?>
+  <?rax title.font.size="37px" pdf.url="../../cn-admin-releasenotes.pdf" canonical.url.base="http://docs-internal.rackspace.com/servers/api/v2/cn-admin-releasenotes/content"?>
   <titleabbrev>Cloud Networks™ Admin Release Notes</titleabbrev>
   <info>
     <author>

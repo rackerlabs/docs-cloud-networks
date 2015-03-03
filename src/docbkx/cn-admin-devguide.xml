@@ -7,8 +7,8 @@
     xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg"
     xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml"
     xmlns:db="http://docbook.org/ns/docbook" version="5.0" xml:id="cn-devguide">
-    <title>Cloud Networks™ Developer Guide</title>
-    <?rax title.font.size="37px" pdf.url="../../cn-admin-devguide.pdf" canonical.url.base="http://docs.rackspace.com/servers/api/v2/cn-admin-devguide/content"?>
+    <title>Cloud Networks™ Admin Developer Guide</title>
+    <?rax title.font.size="37px" pdf.url="../../cn-admin-devguide.pdf" canonical.url.base="http://docs-internal.rackspace.com/servers/api/v2/cn-admin-devguide/content"?>
     <titleabbrev>Cloud Networks Admin Developer Guide</titleabbrev>
     <info>
         <author>
