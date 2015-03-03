@@ -54,7 +54,7 @@
         <executions>
           <!-- Configuration for Release Notes Internal-->
           <execution>
-            <id>cn-admin-releasenotes</id>
+            <id>cn-admin-releasenotes-internal</id>
             <goals>
               <goal>generate-webhelp</goal>
             </goals>
@@ -90,7 +90,7 @@
 
           <!-- Configuration for Rackspace Dev Guide Internal-->
           <execution>
-            <id>cn-admin-devguide</id>
+            <id>cn-admin-devguide-internal</id>
             <goals>
               <goal>generate-webhelp</goal>
             </goals>
@@ -126,7 +126,7 @@
 
           <!-- Configuration for Rackspace Getting Started Guide Internal -->
           <execution>
-            <id>cn-admin-gettingstarted</id>
+            <id>cn-admin-gettingstarted-internal</id>
             <goals>
               <goal>generate-webhelp</goal>
             </goals>
