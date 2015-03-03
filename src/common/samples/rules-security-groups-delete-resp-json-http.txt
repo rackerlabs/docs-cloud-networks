@@ -1,1 +1,3 @@
+Content-Type: application/json
+Accept: application/json
 status: 204

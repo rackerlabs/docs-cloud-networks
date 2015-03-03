@@ -52,10 +52,27 @@
         <groupId>com.rackspace.cloud.api</groupId>
         <artifactId>rackspace-docs-maven-plugin</artifactId>
         <executions>
-          <!-- Configuration for Release Notes -->
+          <!-- Configuration for Release Notes Internal-->
+          <execution>
+            <id>cn-admin-releasenotes</id>
+            <goals>
+              <goal>generate-webhelp</goal>
+            </goals>
+            <phase>generate-sources</phase>
+            <configuration>
+              <sourceDirectory>src/docbkx</sourceDirectory>
+              <includes>cn-admin-releasenotes.xml</includes>
+              <chapterAutolabel>0</chapterAutolabel>
+              <security>internal</security>
+              <generateToc> appendix toc,title article/appendix nop article toc,title book title,figure,table,equation
+                chapter toc part toc,title preface toc,title qandadiv toc qandaset toc reference toc,title set toc,title </generateToc>
+              <tocSectionDepth>1</tocSectionDepth>
+              <failOnValidationError>false</failOnValidationError>
+            </configuration>
+          </execution>
+          <!-- Configuration for Release Notes External-->
           <execution>
             <id>cn-releasenotes</id>
-            <!--<id>cn-releasenotes-internal</id>-->
             <goals>
               <goal>generate-webhelp</goal>
             </goals>
@@ -64,7 +81,6 @@
               <sourceDirectory>src/docbkx</sourceDirectory>
               <includes>cn-releasenotes.xml</includes>
               <chapterAutolabel>0</chapterAutolabel>
-              <!--<security>internal</security>-->
               <generateToc> appendix toc,title article/appendix nop article toc,title book title,figure,table,equation
                 chapter toc part toc,title preface toc,title qandadiv toc qandaset toc reference toc,title set toc,title </generateToc>
               <tocSectionDepth>1</tocSectionDepth>
@@ -72,10 +88,27 @@
             </configuration>
           </execution>
 
-          <!-- Configuration for Rackspace Dev Guide -->
+          <!-- Configuration for Rackspace Dev Guide Internal-->
+          <execution>
+            <id>cn-admin-devguide</id>
+            <goals>
+              <goal>generate-webhelp</goal>
+            </goals>
+            <phase>generate-sources</phase>
+            <configuration>
+              <includes>cn-admin-devguide.xml</includes>
+              <profileCondition>cn</profileCondition>
+              <profileAudience>dg</profileAudience>
+              <security>internal</security>
+              <tocSectionDepth>1</tocSectionDepth>
+              <generateToc> appendix toc,title article/appendix nop article toc,title book toc,title,figure,table,equation
+                chapter toc part toc,title preface nop qandadiv toc qandaset toc reference toc,title section toc set
+                toc,title </generateToc>
+            </configuration>
+          </execution>
+          <!-- Configuration for Rackspace Dev Guide External-->
           <execution>
             <id>cn-devguide</id>
-            <!--<id>cn-devguide-internal</id>-->
             <goals>
               <goal>generate-webhelp</goal>
             </goals>
@@ -84,7 +117,6 @@
               <includes>cn-devguide.xml</includes>
               <profileCondition>cn</profileCondition>
               <profileAudience>dg</profileAudience>
-              <!--<security>internal</security>-->
               <tocSectionDepth>1</tocSectionDepth>
               <generateToc> appendix toc,title article/appendix nop article toc,title book toc,title,figure,table,equation
                 chapter toc part toc,title preface nop qandadiv toc qandaset toc reference toc,title section toc set
@@ -92,10 +124,32 @@
             </configuration>
           </execution>
 
-          <!-- Configuration for Rackspace Getting Started Guide -->
+          <!-- Configuration for Rackspace Getting Started Guide Internal -->
+          <execution>
+            <id>cn-admin-gettingstarted</id>
+            <goals>
+              <goal>generate-webhelp</goal>
+            </goals>
+            <phase>generate-sources</phase>
+            <configuration>
+              <sourceDirectory>src/docbkx</sourceDirectory>
+              <includes>cn-admin-gettingstarted.xml</includes>
+              <profileAudience>gs</profileAudience>
+              <profileCondition>gs</profileCondition>
+              <chapterAutolabel>0</chapterAutolabel>
+              <sectionAutolabel>0</sectionAutolabel>
+              <appendixAutolabel>0</appendixAutolabel>
+              <tocSectionDepth>1</tocSectionDepth>
+              <security>internal</security>
+              <formalProcedures>0</formalProcedures>
+              <generateToc> appendix toc,title article/appendix nop article toc,title book toc,title,figure,table,equation
+                chapter toc part toc,title preface nop qandadiv toc qandaset toc reference toc,title section toc set
+                toc,title </generateToc>
+            </configuration>
+          </execution>
+          <!-- Configuration for Rackspace Getting Started Guide External-->
           <execution>
             <id>cn-gettingstarted</id>
-            <!--<id>cn-gettingstarted-internal</id>-->
             <goals>
               <goal>generate-webhelp</goal>
             </goals>
@@ -109,7 +163,6 @@
               <sectionAutolabel>0</sectionAutolabel>
               <appendixAutolabel>0</appendixAutolabel>
               <tocSectionDepth>1</tocSectionDepth>
-              <!--<security>internal</security>-->
               <formalProcedures>0</formalProcedures>
               <generateToc> appendix toc,title article/appendix nop article toc,title book toc,title,figure,table,equation
                 chapter toc part toc,title preface nop qandadiv toc qandaset toc reference toc,title section toc set

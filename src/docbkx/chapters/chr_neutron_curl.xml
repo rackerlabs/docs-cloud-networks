@@ -340,7 +340,7 @@ default 10.23.233.1 0.0.0.0 UG 100 0 0 eth0
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+            <para><emphasis role="bold">Next topic: </emphasis><olink targetdoc="cn-gettingstarted"
                     targetptr="provision_additional_ips">Provision additional IP address and dual-stack IP addresses on an
                     isolated network port</olink>
             </para>

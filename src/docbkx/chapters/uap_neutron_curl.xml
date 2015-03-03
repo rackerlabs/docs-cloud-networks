@@ -352,7 +352,7 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+            <para><emphasis role="bold">Next topic: </emphasis><olink targetdoc="cn-gettingstarted"
                     targetptr="configure_host_routes">Configure host routes</olink>
             </para>
         </sidebar>

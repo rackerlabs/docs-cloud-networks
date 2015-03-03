@@ -1,0 +1,6 @@
+    Status Code: 200 OK
+    Content-Length: 370
+    Content-Type: application/json; charset=UTF-8
+    Date: Thu, 19 Feb 2015 20:41:20 GMT, Thu, 19 Feb 2015 20:41:21 GMT
+    Server: Jetty(9.2.z-SNAPSHOT)
+    Via: 1.1 Repose (Repose/6.2.0.2)

@@ -8,8 +8,8 @@
     xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml"
     xmlns:db="http://docbook.org/ns/docbook" version="5.0" xml:id="cn-devguide">
     <title>Cloud Networks™ Developer Guide</title>
-    <?rax title.font.size="37px" pdf.url="../../cn-devguide.pdf" canonical.url.base="http://docs.rackspace.com/servers/api/v2/cn-devguide/content"?>
-    <titleabbrev>Cloud Networks Developer Guide</titleabbrev>
+    <?rax title.font.size="37px" pdf.url="../../cn-admin-devguide.pdf" canonical.url.base="http://docs.rackspace.com/servers/api/v2/cn-admin-devguide/content"?>
+    <titleabbrev>Cloud Networks Admin Developer Guide</titleabbrev>
     <info>
         <author>
             <personname>
@@ -38,13 +38,13 @@
             </annotation>
         </legalnotice>
         <abstract>
-            <para>This document is intended for software developers who want to develop applications using Rackspace Cloud
-                Networks™, which is powered by the OpenStack Networking code base. In addition to the core features of the
-                OpenStack Networking Application Programming Interface (API) v2, Rackspace has also deployed certain
+            <para>This document is intended for internal software developers who want to develop applications using Rackspace
+                Cloud Networks™, which is powered by the OpenStack Networking code base. In addition to the core features of
+                the OpenStack Networking Application Programming Interface (API) v2, Rackspace has also deployed certain
                 extensions as permitted by the OpenStack Quantum API contract and the OpenStack Neutron API contract.</para>
         </abstract>
         <revhistory>
-            <revision security="internal">
+            <revision>
                 <date>2015-03-03</date>
                 <revdescription>
                     <itemizedlist spacing="compact">

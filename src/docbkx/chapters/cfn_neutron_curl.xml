@@ -194,7 +194,7 @@
                         targetptr="show_network_neutron">“Show network or subnet details”</olink></para>
             </sidebar>-->
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+            <para><emphasis role="bold">Next topic: </emphasis><olink targetdoc="cn-gettingstarted"
                     targetptr="boot_new_server">Boot a new server with your cloud network</olink></para>
         </sidebar>
     </section>

@@ -52,6 +52,7 @@
         <response status="200">
             <representation mediaType="application/json" element="csapi:network">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+                    <xsdxt:code href="../common/samples/networks-get-resp-html.txt"/>
                     <xsdxt:code href="../common/samples/networks-get-resp.json"/>
                 </wadl:doc>&networkListParameters; </representation>
         </response> &fault401;</method>

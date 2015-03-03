@@ -407,5 +407,10 @@
                 </para>
             </step>
         </procedure>
+        <sidebar security="internal">
+            <para><emphasis role="bold">Next topic: </emphasis><olink targetdoc="cn-gettingstarted"
+                targetptr="security_groups">Use security groups to control traffic</olink>
+            </para>
+        </sidebar>
     </section>
 </section>

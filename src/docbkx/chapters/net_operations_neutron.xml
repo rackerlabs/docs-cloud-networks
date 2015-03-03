@@ -38,7 +38,8 @@
 
     <section xml:id="api_networks">
         <title>Networks</title>
-        <para>This section describes the API operations for networks.</para>
+        <para>This section describes the API operations for networks. For general information about networks, see <olink
+                targetdoc="cn-devguide" targetptr="conceptNetwork">“Network”</olink>.</para>
         <!--- this section comes from these WADLs: networks.wadl, ports.wadl, subnets.wadl -->
         <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
             <!-- list networks -->
@@ -69,7 +70,8 @@
     </section>
     <section xml:id="api_subnets_neutron">
         <title>Subnets</title>
-        <para>This section describes the API operations for subnets.</para>
+        <para>This section describes the API operations for subnets. For general information about subnets, see <olink
+                targetdoc="cn-devguide" targetptr="conceptSubnet">“Subnet”</olink>.</para>
         <!--- this section comes from these WADLs: subnets.wadl -->
         <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
             <!-- list subnets -->
@@ -100,7 +102,8 @@
     </section>
     <section xml:id="api_ports_neutron">
         <title>Ports</title>
-        <para>This section describes the API operations for ports.</para>
+        <para>This section describes the API operations for ports. For general information about ports, see <olink
+                targetdoc="cn-devguide" targetptr="conceptPort">“Port”</olink>.</para>
         <!--- this section comes from these WADLs: ports.wadl -->
         <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
             <!-- list ports -->
@@ -152,45 +155,52 @@
             </wadl:resource>
         </wadl:resources>
     </section>-->
-    <!--    <section xml:id="api_ext_security_neutron">
-        <title>Extension - Security Groups</title>
+    <section xml:id="api_ext_security_neutron" security="internal">
+        <title>Extension - Security groups</title>
         <para>This section describes the API operations for security groups and rules.</para>
-        <!-\-\- this section comes from these WADLs: ports.wadl -\->
+        <important>
+            <para>Security Groups API are in Limited Availability right now. Please contact Rackspace support in order to use
+                this feature.</para>
+        </important>
+        <para><emphasis role="bold">For general information about security groups and rules, see <olink
+                    targetdoc="cn-devguide" targetptr="conceptSecurityGroups">“Security Groups and
+            Rules”</olink>.</emphasis></para>
+        <!--- this section comes from these WADLs: security-groups.wadl -->
         <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
-            <!-\- list security groups -\->
+            <!-- list security groups -->
             <wadl:resource href="../../wadl/security-groups.wadl#SecGroups">
                 <wadl:method href="listSecGroups"/>
             </wadl:resource>
-            <!-\- create security group -\->
+            <!-- create security group -->
             <wadl:resource href="../../wadl/security-groups.wadl#SecGroups">
                 <wadl:method href="createSecGroup"/>
             </wadl:resource>
-            <!-\- show security group -\->
+            <!-- show security group -->
             <wadl:resource href="../../wadl/security-groups.wadl#securityGroupID">
                 <wadl:method href="showSecGroup"/>
             </wadl:resource>
-            <!-\- delete security group -\->
+            <!-- delete security group -->
             <wadl:resource href="../../wadl/security-groups.wadl#securityGroupID">
                 <wadl:method href="deleteSecGroup"/>
             </wadl:resource>
-            <!-\- list security group rules -\->
+            <!-- list security group rules -->
             <wadl:resource href="../../wadl/security-groups.wadl#SecGroupsRules">
                 <wadl:method href="listSecGroupRules"/>
             </wadl:resource>
-            <!-\- create security group rule-\->
+            <!-- create security group rule-->
             <wadl:resource href="../../wadl/security-groups.wadl#SecGroupsRules">
                 <wadl:method href="createSecGroupRule"/>
             </wadl:resource>
-            <!-\- show security group rule-\->
+            <!-- show security group rule-->
             <wadl:resource href="../../wadl/security-groups.wadl#SecGroupRulesID">
                 <wadl:method href="showSecGroupRule"/>
             </wadl:resource>
-            <!-\- delete security group rule -\->
+            <!-- delete security group rule -->
             <wadl:resource href="../../wadl/security-groups.wadl#SecGroupRulesID">
                 <wadl:method href="deleteSecGroupRule"/>
             </wadl:resource>
         </wadl:resources>
-    </section>-->
+    </section>
     <!--    <section xml:id="api_ext_layer3_router">
         <title>Extension - layer-3 networking (router)</title>
         <para>This section describes the API operations for creating and managing routers for Layer-3 (router)

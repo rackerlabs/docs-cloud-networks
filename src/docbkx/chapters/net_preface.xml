@@ -12,7 +12,7 @@
         or account number. If you don't know your tenant ID, you can find it by logging in to the
         <link xlink:href="http://mycloud.rackspace.com">Cloud Control Panel</link> and expanding the
             <guilabel>Account</guilabel> menu in the upper-right corner of the screen. Your tenant ID is shown at the top of
-        the menu, listed as <guilabel>"Account #"</guilabel>.</para>
+        the menu, listed as <guilabel>Account #</guilabel>.</para>
 
     <para>Cloud Networks was originally released using the Cloud Servers the Nova-Network API, whose operations are detailed
         in

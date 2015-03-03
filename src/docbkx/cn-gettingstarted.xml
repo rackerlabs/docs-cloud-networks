@@ -44,6 +44,12 @@
                 permitted by the OpenStack Networking API contract.</para>
         </abstract>
         <revhistory>
+            <!--<revision>
+                <date>2015-03-02</date>
+                <revdescription>
+                    <para>Added <xref linkend="security_groups"/> to provide a use case for security groups.</para>
+                </revdescription>
+            </revision>-->
             <revision>
                 <date>2015-01-15</date>
                 <revdescription>
@@ -162,6 +168,7 @@
     <xi:include href="chapters/uap_use_alloc_pools.xml"/>
     <xi:include href="chapters/chr_configure_host_routes.xml"/>
     <xi:include href="chapters/pai_provision_additional_ips.xml"/>
+    <xi:include href="chapters/sg_security_groups.xml" security="internal"/>
     <xi:include href="chapters/aes_attach_network_to_server.xml"/>
     <glossary role="auto"/>
 </book>

@@ -109,7 +109,7 @@ The request is accepted for processing.</computeroutput></screen>
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
+            <para><emphasis role="bold">Next topic: </emphasis><olink targetdoc="cn-gettingstarted"
                     targetptr="use_alloc_pools">Use allocation pools to control dynamic IP address allocation</olink></para>
         </sidebar>
     </section>
