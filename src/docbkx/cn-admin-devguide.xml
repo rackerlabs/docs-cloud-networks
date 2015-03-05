@@ -149,7 +149,7 @@
             </revision>
         </revhistory>
         <raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
-            <raxm:displayname>API Developer Guide</raxm:displayname>
+            <raxm:displayname>API Admin Developer Guide</raxm:displayname>
             <raxm:product version="v2">networks</raxm:product>
             <raxm:priority>60</raxm:priority>
         </raxm:metadata>
