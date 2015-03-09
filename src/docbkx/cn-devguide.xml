@@ -44,6 +44,18 @@
                 extensions as permitted by the OpenStack Quantum API contract and the OpenStack Neutron API contract.</para>
         </abstract>
         <revhistory>
+            <revision>
+                <date>2015-03-06</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Updated Identity API endpoint documentation to remove references to regional endpoints. All
+                                customers can authenticate using the https://identity.api.rackspacecloud.com global endpoint,
+                                regardless of geographic location.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision security="internal">
                 <date>2015-03-03</date>
                 <revdescription>

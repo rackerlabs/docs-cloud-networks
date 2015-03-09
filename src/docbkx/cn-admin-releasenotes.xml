@@ -74,7 +74,7 @@
       </revision>
     </revhistory>
     <raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
-      <raxm:displayname>Admin&#160;Release&#160;Notes</raxm:displayname>
+      <raxm:displayname>Admin Release Notes</raxm:displayname>
       <raxm:product version="v2">networks</raxm:product>
       <raxm:priority>70</raxm:priority>
     </raxm:metadata>

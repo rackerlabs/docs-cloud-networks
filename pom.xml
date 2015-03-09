@@ -169,6 +169,7 @@
                 toc,title </generateToc>
             </configuration>
           </execution>
+ 
         </executions>
         <configuration>
           <highlightSource>false</highlightSource>

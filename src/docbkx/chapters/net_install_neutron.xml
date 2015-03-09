@@ -15,14 +15,14 @@
 <!ENTITY Uvirt_ext 'Cloud Networks Virtual Interface Extension'>
 ]>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
-    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="install_neutron">
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="install_neutron" security="internal">
 
-    <title>(Optional) Install the neutron client</title>
+    <title>Install the neutron client (optional)</title>
     <para>Follow the necessary steps to install the neutron client</para>
     <para>To manage your network from the command line, you can use the open-source neutron client application called
             <literal>rackspace-python-neutronclient</literal>. </para>
     <para>Before you install the neutron client, install the following software:<table rules="all" width="90%">
-            <caption>Neutron Client Prerequisite Software</caption>
+            <caption>Neutron client prerequisite software</caption>
             <col width="25%"/>
             <col width="75%"/>
             <thead>
@@ -58,7 +58,7 @@
                     <td valign="top"><command>pip</command> package</td>
                     <td>
                         <para>To install the neutron client on a Mac OS X or Linux system, use <command>pip</command> because
-                            it is easy and ensures that you get the latest version of the nova client from the
+                            it is easy and ensures that you get the latest version of the neutron client from the
                             <link xlink:href="http://pypi.python.org/pypi/python-neutronclient/">Python Package Index</link>.
                             Also, it lets you update the package later on.</para>
                         <para>Install <command>pip</command> through the package manager for your system:<itemizedlist>
@@ -99,25 +99,24 @@
 
         <step>
             <title>Install or update the neutron client package</title>
-            <para>The <literal>rackspace-python-neutronclient</literal> package includes the neutron client. </para>
             <para>Run the following command for your operating system to install the
-                    <literal>rackspace-python-neutronclient</literal> package:</para>
+                    <literal>rackspace-python-neutronclient</literal> package, which includes the neutron client:</para>
             <para>For Ubuntu, Debian, or OS X: </para>
             <programlisting language="bash" role="gutter: false">
-                <prompt>$</prompt> sudo pip install rackspace-python-neutronclient</programlisting>
+                <prompt>$</prompt> sudo pip install rackspace-neutronclient</programlisting>
             <para>For RHEL, CentOS, or Fedora: </para>
             <programlisting language="bash" role="gutter: false">
-                <prompt>$</prompt> sudo python-pip install rackspace-python-neutronclient</programlisting>
+                <prompt>$</prompt> sudo python-pip install rackspace-neutronclient</programlisting>
             <note>
 
                 <para>If you previously installed the <literal>rackspace-python-neutronclient</literal> package, run the
                     following command for your operating system to upgrade it:</para>
                 <para> For Ubuntu, Debian, or OS X:
                     <programlisting language="bash" role="gutter: false">
-                        <prompt>$</prompt> sudo pip install --upgrade rackspace-python-neutronclient</programlisting>
+                        <prompt>$</prompt> sudo pip install --upgrade rackspace-neutronclient</programlisting>
                     For RHEL, CentOS, or Fedora:
                     <programlisting language="bash" role="gutter: false">
-                        <prompt>$</prompt> sudo python-pip install --upgrade rackspace-python-neutronclient</programlisting>
+                        <prompt>$</prompt> sudo python-pip install --upgrade rackspace-neutronclient</programlisting>
                 </para>
             </note>
         </step>
@@ -125,31 +124,21 @@
         <step>
             <title>Set environment variables</title>
             <para>Edit your bash profile to add and set environment variables that enable the neutron client to connect to
-                your Rackspace Cloud account. Use nano or an editor of your choice to edit your
+                your Rackspace Cloud account. Use nano, or an editor of your choice, to edit your
                     <filename>.bash_profile</filename> file:</para>
             <programlisting language="bash" role="gutter: false"><prompt>$</prompt> nano ~/.bash_profile </programlisting>
-            <para>Depending on your account location, add one of the following sets of lines to your bash profile and save
-                the file:<example>
+            <para>Add the following sets of lines to your bash profile and save the file. Substitute your username and tenant
+                ID for the placeholders and modify the OS_UAUTH_URL if you use a different authentication endpoint.<example>
                     <title>US Data Center Example</title>
                     <screen><computeroutput><?db-font-size 65%?>export OS_AUTH_URL=https://identity.api.rackspacecloud.com/v2.0/
+export OS_EXECUTABLE=neutron 
 export OS_AUTH_SYSTEM=rackspace
+export OS_AUTH_STRATEGY=rackspace
 export OS_REGION_NAME=DFW
 export OS_USERNAME=&lt;username>
 export OS_TENANT_NAME=&lt;tenant_id>
-export NOVA_RAX_AUTH=1
-export OS_PASSWORD=&lt;api_key>
 export OS_PROJECT_ID=&lt;tenant_id>
-export OS_NO_CACHE=1</computeroutput></screen>
-                </example><example>
-                    <title>UK Data Center Example</title>
-                    <screen><computeroutput><?db-font-size 65%?>export OS_AUTH_URL=https://lon.identity.api.rackspacecloud.com/v2.0/
-export OS_AUTH_SYSTEM=rackspace_uk
-export OS_REGION_NAME=LON
-export OS_USERNAME=&lt;username>
-export OS_TENANT_NAME=&lt;tenant_id>
-export NOVA_RAX_AUTH=1
 export OS_PASSWORD=&lt;apikey>
-export OS_PROJECT_ID=&lt;tenant_id>
 export OS_NO_CACHE=1</computeroutput></screen>
                 </example></para>
         </step>
@@ -207,6 +196,18 @@ export OS_NO_CACHE=1</computeroutput></screen>
                     <programlisting language="bash" role="gutter: false">
                         <prompt>$</prompt> neutron --password &lt;password> net-list </programlisting>
                     <para>Where <parameter>password</parameter> is your Rackspace password.</para>
+                </listitem>
+                <listitem>
+                    <para>Having the upstream <literal>python-neutronclient</literal> installed at the same time as the
+                            <literal>rackspace-python-neutronclient</literal> may cause problems.</para>
+                    <para>If you are having trouble, try installing your neutron clients using the following instructions and
+                        then attempt to reinstall the neutron client as shown in the preceding step. <programlisting language="bash" role="gutter: false">
+                                            <prompt>$</prompt> sudo pip uninstall -y python-neutronclient </programlisting>
+                        <programlisting language="bash" role="gutter: false">
+                                            <prompt>$</prompt> sudo pip uninstall -y rackspace-neutronclient </programlisting>
+                        <programlisting language="bash" role="gutter: false">
+                                            <prompt>$</prompt> sudo pip uninstall -y rackspace-auth-neutronclientext 
+                            </programlisting></para>
                 </listitem>
                 <listitem>
                     <para> While Rackspace does not directly support python-neutronclient, if the above steps don't help, you
