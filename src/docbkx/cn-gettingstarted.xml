@@ -59,13 +59,9 @@
             <revision>
                 <date>2015-03-06</date>
                 <revdescription>
-                    <itemizedlist spacing="compact">
-                        <listitem>
-                            <para>Updated Identity API endpoint documentation to remove references to regional endpoints. All
-                                customers can authenticate using the https://identity.api.rackspacecloud.com global endpoint,
-                                regardless of geographic location.</para>
-                        </listitem>
-                    </itemizedlist>
+                    <para>Updated Identity API endpoint documentation to remove references to regional endpoints. All
+                        customers can authenticate using the https://identity.api.rackspacecloud.com global endpoint,
+                        regardless of geographic location.</para>
                 </revdescription>
             </revision>
             <revision>
