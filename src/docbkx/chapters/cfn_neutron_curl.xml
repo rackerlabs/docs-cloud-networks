@@ -27,7 +27,7 @@
        -H "Content-Type: application/json" \
        -H "Accept: application/json" \
        -H "X-Auth-Token: $token" \
-       -d '{"network": {"name": "amp", "admin_state_up": "false"}}' | python -m json.tool</programlisting></para>
+       -d '{"network": {"name": "amp"}}' | python -m json.tool</programlisting></para>
                 <para>In this cURL command, you specify several options. For information about the options, see <olink
                         targetdoc="cn-gettingstarted" targetptr="curl_options">Table 2, “cURL Command-Line
                     Options”</olink>.</para>
@@ -73,7 +73,7 @@
        -H "Content-Type: application/json" \
        -H "Accept: application/json" \
        -H "X-Auth-Token: $token" \
-       -d '{"subnets":[{"cidr":"120.1.2.0/24","ip_version":4,"network_id":"29f52c7e-6efd-4335-a14a-db77d32a2555"}]}' \
+       -d '{"subnets":[{"name":"Subamp","cidr":"120.1.2.0/24","ip_version":4,"network_id":"29f52c7e-6efd-4335-a14a-db77d32a2555"}]}' \
        | python -m json.tool</programlisting></para>
                 <para>In this cURL command, you specify several options. For information about the options, see <olink
                         targetdoc="cn-gettingstarted" targetptr="curl_options">Table 2, “cURL Command-Line

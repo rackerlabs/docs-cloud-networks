@@ -10,13 +10,13 @@
         client.</para>
     <sidebar>
         <para><emphasis role="bold">Start here: </emphasis><olink targetdoc="cn-gettingstarted"
-            targetptr="neutron_create_network_neutron">“Create a network (neutron client)”</olink></para>
+                targetptr="neutron_create_network_neutron">“Create a network (neutron client)”</olink></para>
     </sidebar>
 
     <section xml:id="neutron_create_network_neutron">
         <title>Create a network (neutron client)</title>
         <para>To create a network, you specify a name for your network. After you create a network, copy its network ID. You
-            use this ID to create a subnet or attach the network to a server or port.</para>
+            use this ID to create a subnet and attach it to a port.</para>
         <para>
             <procedure>
                 <title>To create a network</title>
@@ -50,8 +50,8 @@
                     </informalexample>
                 </step>
                 <step>
-                    <para>Copy the id value from the output. You will use this value when you create a subnet, provision your
-                        server, or perform other related activities. In this example, the id is
+                    <para>Copy the ID value from the output. You will use this value when you create a subnet, provision your
+                        server, or perform other related activities. In this example, the ID is
                             <literal>29f52c7e-6efd-4335-a14a-db77d32a2555</literal>, but use the <parameter>id</parameter>
                         from your response.</para>
                 </step>
@@ -59,10 +59,10 @@
         </para>
         <sidebar>
             <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                targetptr="neutron_create_subnet_neutron">“Create a subnet (neutron client)”</olink></para>
+                    targetptr="neutron_create_subnet_neutron">“Create a subnet (neutron client)”</olink></para>
         </sidebar>
     </section>
-    
+
     <section xml:id="neutron_create_subnet_neutron">
         <title>Create a subnet (neutron client)</title>
         <para>To create a subnet, you specify a network, an IP address, and a name for your subnet. After you create a
@@ -73,19 +73,24 @@
                 <step>
                     <para>Issue the following neutron command:
                         <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-                               <prompt>$</prompt> neutron subnet-create amp 120.1.2.0/24 --name Subamp</programlisting></para>
+                               <prompt>$</prompt> neutron subnet-create --name Subamp --ip-version 4 29f52c7e-6efd-4335-a14a-db77d32a2555 120.1.2.0/24</programlisting></para>
                     <para><emphasis role="bold">Positional arguments:</emphasis></para>
                     <para>
                         <itemizedlist>
                             <listitem>
-                                <para>The network name. In this example, the name is <literal>amp</literal>.</para>
+                                <para><emphasis role="bold">name</emphasis> The subnet name. In this example, the name is
+                                        <literal>Subamp</literal>.</para>
+                            </listitem>
+                            <listitem>
+                                <para><emphasis role="bold">ip-version</emphasis> The version of the subnet IP. In this
+                                    example, the version is <literal>4</literal>.</para>
+                            </listitem>
+                            <listitem>
+                                <para>The network ID or name. In this example, we used the network ID
+                                        <literal>29f52c7e-6efd-4335-a14a-db77d32a2555</literal>.</para>
                             </listitem>
                             <listitem>
                                 <para>The network CIDR. In this example, the CIDR is <literal>120.1.2.0/24</literal>.</para>
-                            </listitem>
-                            <listitem>
-                                <para><emphasis role="bold">name</emphasis> The subnet name. In this example, the name is
-                                        <literal>Subamp</literal>.</para>
                             </listitem>
                         </itemizedlist>
                     </para>
@@ -96,11 +101,11 @@
 +------------------+----------------------------------------------+
 | Field            | Value                                        |
 +------------------+----------------------------------------------+
-| allocation_pools | {"start": "120.1.2.2", "end": "120.1.2.254"} |
+| allocation_pools | {"start": "120.1.2.1", "end": "120.1.2.254"} |
 | cidr             | 120.1.2.0/24                                 |
 | dns_nameservers  |                                              |
-| enable_dhcp      | True                                         |
-| gateway_ip       | 120.1.2.1                                    |
+| enable_dhcp      |                                              |
+| gateway_ip       |                                              |
 | host_routes      |                                              |
 | id               | 23e3059e-4f39-4f7f-8cf2-c326e5de6c37         |
 | ip_version       | 4                                            |
@@ -111,8 +116,7 @@
                     </informalexample>
                 </step>
                 <step>
-                    <para>Copy the id value from the output. You will use this value when you create a subnet, provision your
-                        server, or perform other related activities. In this example, the id is
+                    <para>Copy the id value from the output for future reference. In this example, the id is
                             <literal>23e3059e-4f39-4f7f-8cf2-c326e5de6c37</literal>, but use the <parameter>id</parameter>
                         from your response.</para>
                 </step>
@@ -120,13 +124,12 @@
         </para>
         <sidebar>
             <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                targetptr="neutron_list_networks_neutron">“List networks (neutron client)”</olink></para>
+                    targetptr="neutron_list_networks_neutron">“List networks (neutron client)”</olink></para>
         </sidebar>
     </section>
-    
+
     <section xml:id="neutron_list_networks_neutron">
         <title>List networks (neutron client)</title>
-        <para>The following steps shows you how to list networks and subnets using the neutron client.</para>
         <procedure>
             <title>To list networks</title>
             <step>
@@ -137,20 +140,20 @@
                 <para>For each network, the command returns the result as shown in the following output</para>
                 <informalexample>
                     <screen><computeroutput><?db-font-size 75%?>
-+--------------------------------------+---------+-----------------------------------------------------+
-| id                                   | name    | subnets                                             |
-+--------------------------------------+---------+-----------------------------------------------------+
-| 29f52c7e-6efd-4335-a14a-db77d32a2555 | amp     | 23e3059e-4f39-4f7f-8cf2-c326e5de6c37 120.1.2.0/24   |
-+--------------------------------------+---------+-----------------------------------------------------+</computeroutput></screen>
++--------------------------------------+------+---------------------------------------------------+
+| id                                   | name | subnets                                           |
++--------------------------------------+------+---------------------------------------------------+
+| 29f52c7e-6efd-4335-a14a-db77d32a2555 | amp  | 23e3059e-4f39-4f7f-8cf2-c326e5de6c37 120.1.2.0/24 |
++--------------------------------------+------+---------------------------------------------------+</computeroutput></screen>
                 </informalexample>
             </step>
         </procedure>
         <sidebar>
             <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                targetptr="neutron_list_subnets_neutron">List subnets (neutron client)</olink></para>
+                    targetptr="neutron_list_subnets_neutron">List subnets (neutron client)</olink></para>
         </sidebar>
     </section>
-    
+
     <section xml:id="neutron_list_subnets_neutron">
         <title>List subnets (neutron client)</title>
         <para>The following steps shows you how to list subnets using the neutron client.</para>
@@ -164,11 +167,11 @@
                 <para>For each subnet, the command returns the result as shown in the following output</para>
                 <informalexample>
                     <screen><computeroutput><?db-font-size 75%?>
-+--------------------------------------+----------------+----------------+--------------------------------------------------+
-| id                                   | name           | cidr           | allocation_pools                                 |
-+--------------------------------------+----------------+----------------+--------------------------------------------------+
-| 23e3059e-4f39-4f7f-8cf2-c326e5de6c37 | Subamp         | 120.1.2.0/24   | {"start": "120.1.2.2", "end": "120.1.2.254"}     |
-+--------------------------------------+----------------+----------------+--------------------------------------------------+</computeroutput></screen>
++--------------------------------------+--------+--------------+----------------------------------------------+
+| id                                   | name   | cidr         | allocation_pools                             |
++--------------------------------------+--------+--------------+----------------------------------------------+
+| 23e3059e-4f39-4f7f-8cf2-c326e5de6c37 | Subamp | 120.1.2.0/24 | {"start": "120.1.2.1", "end": "120.1.2.254"} |
++--------------------------------------+--------+--------------+----------------------------------------------+</computeroutput></screen>
                 </informalexample>
             </step>
         </procedure>

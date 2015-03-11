@@ -32,10 +32,16 @@
             </listitem>
         </itemizedlist>
         <note>
-            <para>At this time, the Neutron API is accessible by using cURL commands, a browser plug-in for REST, or various
+            <para>The Neutron API is accessible by using cURL commands, a browser plug-in for REST, or various
                 programming languages and tools. The neutron client is not supported at this time.</para>
-        </note></para>
-
+        </note>
+        <important>
+            <para>The neutron API is in Unlimited Availability and is available for all Managed Infrastructure and
+                Managed Operations customers except for RackConnect v3 customers. <phrase security="internal">The security groups
+                extension API is in Limited Availability and is available only for Managed Infrastructure customers
+                (not for RackConnect nor Managed Operations customers). Please contact Rackspace support in order to use
+                the security group feature.</phrase></para>
+        </important></para>
     <section xml:id="api_networks">
         <title>Networks</title>
         <para>This section describes the API operations for networks. For general information about networks, see <olink

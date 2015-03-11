@@ -1,7 +1,6 @@
 {
     "network": 
     {
-        "admin_state_up": true,
         "name": "testnet-3",
         "shared": false,
         "tenant_id": "123456"

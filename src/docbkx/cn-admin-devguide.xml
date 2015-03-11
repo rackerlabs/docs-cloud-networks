@@ -45,6 +45,13 @@
         </abstract>
         <revhistory>
             <revision>
+                <date>2015-03-11</date>
+                <revdescription>
+                    <para>Updated <olink targetdoc="cn-devguide" targetptr="api_operations_neutron">API
+                        operations</olink> to note levels of availability for the various APIs and extensions.</para>
+                </revdescription>
+            </revision>
+            <revision>
                 <date>2015-03-06</date>
                 <revdescription>
                     <itemizedlist spacing="compact">

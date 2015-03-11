@@ -434,8 +434,9 @@
     <section xml:id="conceptSecurityGroups" security="internal">
         <title>Security groups and rules</title>
         <important>
-            <para>Security Groups API are in Limited Availability right now. Please contact Rackspace support in order to use
-                this feature.</para>
+            <para>Security Groups API is in Limited Availability right now and is available only for Managed Infrastructure
+                customers and not for RackConnect nor Managed Operations customers. Please contact Rackspace support in order
+                to use this feature.</para>
         </important>
         <para>A security group is a named container for security group rules, which provide Rackspace Public Cloud users the
             ability to specify the types of traffic that are allowed to pass through, to, and from ports (Public/ServiceNet)
@@ -497,6 +498,25 @@
             </listitem>
             <listitem>
                 <para>cannot refer to a different security group. These self-referential rules are not supported.</para>
+            </listitem>
+            <listitem>
+                <para>are limited to a total of 100 security group rules per user, across all the user's security
+                    groups.</para>
+            </listitem>
+        </itemizedlist>
+
+        <para>There are some limits and quotas around security groups and security group rules, as shown the preceding lists.
+            Here they are again, for convenience.</para>
+        <para>Quotas:</para>
+        <itemizedlist>
+            <listitem>
+                <para>Maximum of 5 security groups per port.</para>
+            </listitem>
+            <listitem>
+                <para>Maximum of 20 security group rules per security group.</para>
+            </listitem>
+            <listitem>
+                <para>Maximum of 100 security group rules per user.</para>
             </listitem>
         </itemizedlist>
 

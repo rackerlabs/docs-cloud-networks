@@ -9,8 +9,8 @@
     <title>Attach your network to an existing server</title>
     <para>You can attach your network to existing servers by using the Nova-Network API. The Neutron API does not provide an
         equivalent operation. See the
-        <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-gettingstarted/content/ch_gs_getting_started_with_nova.html">
-                Cloud Servers Getting Started Guide</link>
+        <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-gettingstarted/content/nova_summary_virtualints.html">
+                Cloud Servers Getting Started Guide Virtual Interfaces</link>
         for examples of attaching a network to an existing server by using the Nova-Network API and the &virt_ext;</para>
     <!-- <para>The following flow chart shows the steps for attaching a network to an existing server by using the Nova-network
         API.<figure>

@@ -90,6 +90,24 @@
                                                 <para>250</para>
                                         </listitem>
                                 </varlistentry>
+                        <varlistentry security="internal">
+                                <term><emphasis role="bold">Security groups per port:</emphasis></term>
+                                <listitem>
+                                        <para>5</para>
+                                </listitem>
+                        </varlistentry>
+                        <varlistentry security="internal">
+                                <term><emphasis role="bold">Security group rules per security group:</emphasis></term>
+                                <listitem>
+                                        <para>20</para>
+                                </listitem>
+                        </varlistentry>
+                        <varlistentry security="internal">
+                                <term><emphasis role="bold">Security group rules per user:</emphasis></term>
+                                <listitem>
+                                        <para>100</para>
+                                </listitem>
+                        </varlistentry>
                         </variablelist>
                 </para>
         </section>

@@ -7,8 +7,9 @@
         xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" security="internal">
         <title>Use security groups to control traffic</title>
         <important>
-                <para>Security Groups API are in Limited Availability right now. Please contact Rackspace support in order to
-                        use this feature.</para>
+                <para>Security Groups API is in Limited Availability right now and is available only for Managed
+                        Infrastructure customers and not for RackConnect nor Managed Operations customers. Please contact
+                        Rackspace support in order to use this feature.</para>
         </important>
         <para>A security group is a named container for security group rules, which provide Rackspace Public Cloud users the
                 ability to specify the types of traffic that are allowed to pass through, to, and from ports

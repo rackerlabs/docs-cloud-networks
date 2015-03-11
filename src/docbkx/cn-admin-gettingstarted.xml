@@ -44,6 +44,13 @@
                 extensions as permitted by the OpenStack Networking API contract.</para>
         </abstract>
         <revhistory>
+            <revision security="internal">
+                <date>2015-03-11</date>
+                <revdescription>
+                    <para>Updated <olink targetdoc="cn-gettingstarted" targetptr="security_groups">Use security groups to
+                            control traffic</olink> to note availability level.</para>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2015-03-06</date>
                 <revdescription>
