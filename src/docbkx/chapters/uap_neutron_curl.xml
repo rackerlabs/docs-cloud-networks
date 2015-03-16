@@ -35,7 +35,7 @@
                     <programlisting language="json"><?db-font-size 65%?>
 {
    "network":{
-        "admin_state_up": null,
+        "admin_state_up": "true",
         "id": "a8fde776-e80f-47bb-a050-0c057d89afc3",
         "name": "RackerNet",
         "shared": false,
@@ -134,7 +134,7 @@
                             </programlisting></para>
             </step>
             <step>
-                <para>Copy the <literal>id</literal> value from the output for future reference. In this example, the ID is
+                <para>Copy the ID value from the output for future reference. In this example, the ID is
                         <literal>98c1af30-05c9-4502-8b1f-9bffde843cba</literal>, but use the ID from your response.</para>
             </step>
         </procedure>
@@ -145,7 +145,7 @@
     </section>
 
     <section xml:id="neutron_boot_server_uap_curl">
-        <title>Boot Server (cURL)</title>
+        <title>Boot server (cURL)</title>
         <para>The following step shows you how to boot server using cURL, using the network ID of the network you created in
             the first step of this procedure.</para>
         <procedure>

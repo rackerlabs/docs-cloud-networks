@@ -47,15 +47,17 @@
             <!--<revision>
                 <date>2015-03-02</date>
                 <revdescription>
-                    <para>Added neutron client setup (<xref linkend="install_neutron"/>) and examples.</para>
-                </revdescription>
-            </revision>-->
-            <!--<revision>
-                <date>2015-03-02</date>
-                <revdescription>
                     <para>Added <xref linkend="security_groups"/> to provide a use case for security groups.</para>
                 </revdescription>
             </revision>-->
+            <revision>
+                <date>2015-03-19</date>
+                <revdescription>
+                    <para>Added <olink targetdoc="cn-gettingstarted" targetptr="install_neutron">“Install the neutron client
+                        (optional)”</olink> and updated the use-cases to add neutron client
+                        examples.</para>
+                </revdescription>
+            </revision>
             <revision security="internal">
                 <date>2015-03-11</date>
                 <revdescription>

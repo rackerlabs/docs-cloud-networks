@@ -35,9 +35,9 @@
                     List Flavors</link>.</para>
                 </listitem>
                 <listitem>
-                    <para>The port ID of your isolated network. This is the that ID you copied in <!--either <olink
+                    <para>The port ID of your isolated network. This is the that ID you copied in either <olink
                             targetdoc="cn-gettingstarted" targetptr="neutron_create_port_neutron">“Create a port (neutron
-                            API/neutron)”</olink> or-->
+                            API/neutron)”</olink> or
                         <olink targetdoc="cn-gettingstarted" targetptr="neutron_create_port_curl">“Create a port
                             (cURL)”</olink></para>
                     <note>

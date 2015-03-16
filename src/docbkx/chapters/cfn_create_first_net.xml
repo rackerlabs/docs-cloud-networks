@@ -15,8 +15,8 @@
                         </mediaobject>
                 </figure>
         </para>
-        <!--<para>The sections are also organized by example type. To simplify your path through this chapter, decide whether you
-                prefer neutron-client or cURL examples.</para>-->
+        <para>The sections are also organized by example type. To simplify your path through this chapter, decide whether you
+                prefer neutron-client or cURL examples.</para>
         <note>
                 <itemizedlist>
                         <title>Network Limitations:</title>
@@ -30,9 +30,9 @@
                 </itemizedlist>
         </note>
         <sidebar>
-                <para><emphasis role="bold">Next step:</emphasis>
-                        <olink targetdoc="cn-gettingstarted" targetptr="cfn_neutron_curl">“Use cURL”</olink></para>
-                <!--<para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
+                <!--<para><emphasis role="bold">Next step:</emphasis>
+                        <olink targetdoc="cn-gettingstarted" targetptr="cfn_neutron_curl">“Use cURL”</olink></para>-->
+                <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
                                 <listitem>
                                         <para><olink targetdoc="cn-gettingstarted" targetptr="cfn_neutron_neutron">“Use
                                                         neutron client”</olink></para>
@@ -41,10 +41,8 @@
                                         <para><olink targetdoc="cn-gettingstarted" targetptr="cfn_neutron_curl">“Use
                                                         cURL”</olink></para>
                                 </listitem>
-                        </itemizedlist></para>-->
+                        </itemizedlist></para>
         </sidebar>
-        <!--<xi:include href="cfn_neutron_neutron.xml"/>-->
+        <xi:include href="cfn_neutron_neutron.xml"/>
         <xi:include href="cfn_neutron_curl.xml"/>
-        <!--<xi:include href="net_cfn_nova_nova.xml"/>
-        <xi:include href="net_cfn_nova_curl.xml"/>-->
 </chapter>

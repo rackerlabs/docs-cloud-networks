@@ -58,7 +58,7 @@
                             </programlisting></para>
             </step>
             <step>
-                <para>Note the <parameter>id</parameter> value for future reference. In this example, the ID is
+                <para>Note the id value for future reference. In this example, the ID is
                         <literal>79bf47e2-5107-4d93-b9c3-b78ddbc94c93</literal>), but use the ID from your response.</para>
             </step>
         </procedure>
@@ -73,9 +73,7 @@
         <para>Now, note the IPv4 CIDR on the same network as the IPv6 CIDR. You should have already created this subnet on
             the same network. If you have not done so, create an IPv4 subnet (<command>POST /subnets</command>) on the same
             network. Because this example assumes that the subnet has already been created, run the following command and
-            note the CIDR to identify the IPv4 address. In this example, the subnet's network_id is
-                <literal>03f240c5-6fb8-47a0-860a-c7ba83be519f</literal> and the cidr is
-            <literal>192.168.7.0/24</literal>.</para>
+            note the CIDR to identify the IPv4 address.</para>
         <procedure>
             <title>To get the IPv4 CIDR of the matching network</title>
             <step>
@@ -279,8 +277,7 @@
 {
     "server": 
     {
-        "OS-DCF:diskConfig": 
-        "AUTO", 
+        "OS-DCF:diskConfig": "AUTO", 
         "id": "1ed5bc31-153d-4570-a361-92d5a02fd428", 
         "links":[
             { 
@@ -299,7 +296,7 @@
                 </para>
             </step>
             <step>
-                <para>Copy the <literal>id</literal> value from the output for future reference. In this example, the ID is
+                <para>Copy the server id value from the output for future reference. In this example, the ID is
                         <literal>1ed5bc31-153d-4570-a361-92d5a02fd428</literal>, but use the ID from your response.</para>
             </step>
         </procedure>
@@ -316,7 +313,8 @@
         <procedure>
             <title>To verify the port on the server</title>
             <step>
-                <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                <para>Issue the following cURL command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
                         <prompt>$</prompt> curl -k https://dfw.servers.api.rackspacecloud.com/v2.0/$account/servers/1ed5bc31-153d-4570-a361-92d5a02fd428  \
         -X GET
         -H "Content-Type: application/json" \
@@ -409,7 +407,7 @@
         </procedure>
         <sidebar security="internal">
             <para><emphasis role="bold">Next topic: </emphasis><olink targetdoc="cn-gettingstarted"
-                targetptr="security_groups">Use security groups to control traffic</olink>
+                    targetptr="security_groups">Use security groups to control traffic</olink>
             </para>
         </sidebar>
     </section>

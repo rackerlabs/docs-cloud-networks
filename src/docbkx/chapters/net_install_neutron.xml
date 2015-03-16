@@ -15,7 +15,7 @@
 <!ENTITY Uvirt_ext 'Cloud Networks Virtual Interface Extension'>
 ]>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
-    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="install_neutron" security="internal">
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="install_neutron">
 
     <title>Install the neutron client (optional)</title>
     <para>Follow the necessary steps to install the neutron client</para>

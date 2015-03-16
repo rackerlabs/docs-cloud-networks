@@ -6,10 +6,11 @@
 <chapter xml:id="security_groups" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
         xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" security="internal">
         <title>Use security groups to control traffic</title>
+        <!--availwarn-->
         <important>
-                <para>Security Groups API is in Limited Availability right now and is available only for Managed
-                        Infrastructure customers and not for RackConnect nor Managed Operations customers. Please contact
-                        Rackspace support in order to use this feature.</para>
+                <para>The Security Groups API is currently in Limited Availability. It is available only to Managed
+                        Infrastructure customers and not to RackConnect or Managed Operations customers. To use this feature,
+                        contact Rackspace Support.</para>
         </important>
         <para>A security group is a named container for security group rules, which provide Rackspace Public Cloud users the
                 ability to specify the types of traffic that are allowed to pass through, to, and from ports
@@ -34,25 +35,24 @@
                         </mediaobject>
                 </figure>
         </para>
-        <!--<para>The sections are also organized by example type.
-                To simplify your path through this chapter, decide whether you
-                prefer neutron-client or cURL examples.</para>-->
-        <sidebar>
+        <para>The sections are also organized by example type. To simplify your path through this chapter, decide whether you
+                prefer neutron-client or cURL examples.</para>
+        <!--<sidebar>
                 <para><emphasis role="bold">Next step:</emphasis>
                         <olink targetdoc="cn-gettingstarted" targetptr="sg_neutron_curl">“Use cURL”</olink></para>
-        </sidebar>
-        <!--<sidebar>
+        </sidebar>-->
+        <sidebar>
                 <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
-                                <!-\-<listitem>
+                                <listitem>
                                         <para><olink targetdoc="cn-gettingstarted" targetptr="sg_neutron_neutron">“Use
                                                         neutron client”</olink></para>
-                                </listitem>-\->
+                                </listitem>
                                 <listitem>
                                         <para><olink targetdoc="cn-gettingstarted" targetptr="sg_neutron_curl">“Use
                                                         cURL”</olink></para>
                                 </listitem>
                         </itemizedlist></para>
-        </sidebar>-->
-        <!--<xi:include href="sg_neutron_neutron.xml"/>-->
+        </sidebar>
+        <xi:include href="sg_neutron_neutron.xml"/>
         <xi:include href="sg_neutron_curl.xml"/>
 </chapter>

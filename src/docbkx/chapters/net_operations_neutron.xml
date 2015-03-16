@@ -32,15 +32,16 @@
             </listitem>
         </itemizedlist>
         <note>
-            <para>The Neutron API is accessible by using cURL commands, a browser plug-in for REST, or various
-                programming languages and tools. The neutron client is not supported at this time.</para>
+            <para>The neutron API is accessible by using cURL commands, the neutron client, a browser plug-in for REST, or
+                various programming languages and tools.</para>
         </note>
+        <!--availwarn-->
         <important>
-            <para>The neutron API is in Unlimited Availability and is available for all Managed Infrastructure and
-                Managed Operations customers except for RackConnect v3 customers. <phrase security="internal">The security groups
-                extension API is in Limited Availability and is available only for Managed Infrastructure customers
-                (not for RackConnect nor Managed Operations customers). Please contact Rackspace support in order to use
-                the security group feature.</phrase></para>
+            <para>The neutron API is in Unlimited Availability and is available for all Managed Infrastructure and Managed
+                Operations customers except for RackConnect v3 customers. <phrase security="internal">The Security Groups API
+                    is currently in Limited Availability. It is available only to Managed Infrastructure customers and not to
+                    RackConnect or Managed Operations customers. To use the security groups feature, contact Rackspace
+                    Support.</phrase></para>
         </important></para>
     <section xml:id="api_networks">
         <title>Networks</title>
@@ -164,9 +165,11 @@
     <section xml:id="api_ext_security_neutron" security="internal">
         <title>Extension - Security groups</title>
         <para>This section describes the API operations for security groups and rules.</para>
+        <!--availwarn-->
         <important>
-            <para>Security Groups API are in Limited Availability right now. Please contact Rackspace support in order to use
-                this feature.</para>
+            <para>The Security Groups API is currently in Limited Availability. It is available only to Managed
+                Infrastructure customers and not to RackConnect or Managed Operations customers. To use this feature, contact
+                Rackspace Support.</para>
         </important>
         <para><emphasis role="bold">For general information about security groups and rules, see <olink
                     targetdoc="cn-devguide" targetptr="conceptSecurityGroups">“Security Groups and

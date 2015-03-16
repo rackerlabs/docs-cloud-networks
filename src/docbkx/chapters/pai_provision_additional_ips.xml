@@ -18,14 +18,14 @@
                         </mediaobject>
                 </figure>
         </para>
-        <!--<para>The sections are also organized by example type. To simplify your path through this chapter, decide whether you
-                prefer neutron-client or cURL examples.</para>-->
-        <sidebar>
+        <para>The sections are also organized by example type. To simplify your path through this chapter, decide whether you
+                prefer neutron-client or cURL examples.</para>
+        <!--<sidebar>
                 <para><emphasis role="bold">Next step:</emphasis>
                         <olink targetdoc="cn-gettingstarted" targetptr="pai_neutron_curl">“Use cURL”</olink></para>
-        </sidebar>
-        <!--<sidebar>
-                <para><emphasis role="bold">Next step:</emphasis> Choose your method: <!-\-Choose one of the following methods:-\-><itemizedlist>
+        </sidebar>-->
+        <sidebar>
+                <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
                                 <listitem>
                                         <para><olink targetdoc="cn-gettingstarted" targetptr="pai_neutron_neutron">“Use
                                                         neutron client”</olink></para>
@@ -35,7 +35,7 @@
                                                         cURL”</olink></para>
                                 </listitem>
                         </itemizedlist></para>
-        </sidebar>-->
-        <!--<xi:include href="pai_neutron_neutron.xml"/>-->
+        </sidebar>
+        <xi:include href="pai_neutron_neutron.xml"/>
         <xi:include href="pai_neutron_curl.xml"/>
 </chapter>

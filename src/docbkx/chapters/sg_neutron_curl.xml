@@ -618,7 +618,7 @@ Request timeout for icmp_seq 2
         <procedure>
             <title>To apply the security group to the server port and test the rule</title>
             <step>
-                <para>To apply the group (in this example <literal>fd269d7a-0909-488f-b5fc-5606c8aa489f</literal>) to the
+                <para>To apply the group, in this example <literal>fd269d7a-0909-488f-b5fc-5606c8aa489f</literal>, to the
                     port, issue the following cURL command, substituting your port ID for the one shown.</para>
                 <para><emphasis role="bold">Argument:</emphasis></para>
                 <para>

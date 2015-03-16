@@ -17,7 +17,7 @@
     <para>These sections walk you through deleting your subnet and network by using the neutron client.</para>
     <sidebar>
         <para><emphasis role="bold">Start here: </emphasis><olink targetdoc="cn-gettingstarted"
-            targetptr="neutron_delete_subnet_neutron">“Delete a subnet (neutron client)”</olink></para>
+                targetptr="neutron_delete_subnet_neutron">“Delete a subnet (neutron client)”</olink></para>
     </sidebar>
     <section xml:id="neutron_delete_subnet_neutron">
         <title>Delete a subnet (neutron client)</title>
@@ -26,31 +26,30 @@
             <title>To delete a specified subnet</title>
             <step>
                 <title>Delete the subnet</title>
-                <para>Issue the following neutron client command:
-                    <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-                        <prompt>$</prompt> neutron subnet-delete 23e3059e-4f39-4f7f-8cf2-c326e5de6c37</programlisting></para>
+                <para>Issue the following neutron client command.</para>
                 <para><emphasis role="bold">Positional argument:</emphasis></para>
                 <para>
                     <itemizedlist>
                         <listitem>
                             <para>The subnet ID of the subnet that you want to delete. In this example, the subnet ID is
-                                    <literal>23e3059e-4f39-4f7f-8cf2-c326e5de6c37</literal>. To determine the subnet ID,
-                                issue a <command>neutron</command>
-                                <option>subnet-list</option> command.</para>
+                                    <literal>23e3059e-4f39-4f7f-8cf2-c326e5de6c37</literal>.</para>
                         </listitem>
                     </itemizedlist>
                 </para>
+                <para><programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                        <prompt>$</prompt> neutron subnet-delete 23e3059e-4f39-4f7f-8cf2-c326e5de6c37</programlisting></para>
                 <para><emphasis role="bold">Output:</emphasis>
                 </para>
-                <para>Successful deletion returns an <errortext>Accepted</errortext> (<returnvalue>202</returnvalue>)
+                <para>Successful deletion returns an <errortext>Accepted</errortext> (<returnvalue>204</returnvalue>)
                     response code.</para>
             </step>
         </procedure>
         <sidebar>
             <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                targetptr="neutron_delete_network_neutron">“Delete a network (neutron client)”</olink></para>
+                    targetptr="neutron_delete_network_neutron">“Delete a network (neutron client)”</olink></para>
         </sidebar>
     </section>
+    
     <section xml:id="neutron_delete_network_neutron">
         <title>Delete a network (neutron client)</title>
         <para>To delete a network, specify the network ID.</para>
@@ -58,23 +57,21 @@
             <title>To delete a specified network</title>
             <step>
                 <title>Delete the network</title>
-                <para>Issue the following neutron client command:
-                    <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-                        <prompt>$</prompt> neutron net-delete &lt;id&gt;</programlisting></para>
+                <para>Issue the following neutron client command.</para>
                 <para><emphasis role="bold">Positional argument:</emphasis></para>
                 <para>
                     <itemizedlist>
                         <listitem>
                             <para>The network ID of the network that you want to delete. In this example, the network ID is
-                                    <literal>29f52c7e-6efd-4335-a14a-db77d32a2555</literal>. To determine the network ID,
-                                issue a <command>neutron</command>
-                                <option>net-list</option> command.</para>
+                                    <literal>29f52c7e-6efd-4335-a14a-db77d32a2555</literal>.</para>
                         </listitem>
                     </itemizedlist>
                 </para>
+                <para><programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                        <prompt>$</prompt> neutron net-delete 29f52c7e-6efd-4335-a14a-db77d32a2555</programlisting></para>
                 <para><emphasis role="bold">Output:</emphasis>
                 </para>
-                <para>Successful deletion returns an <errortext>Accepted</errortext> (<returnvalue>202</returnvalue>)
+                <para>Successful deletion returns an <errortext>Accepted</errortext> (<returnvalue>204</returnvalue>)
                     response code.</para>
             </step>
         </procedure>

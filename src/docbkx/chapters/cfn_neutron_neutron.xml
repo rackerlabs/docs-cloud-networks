@@ -21,9 +21,7 @@
             <procedure>
                 <title>To create a network</title>
                 <step>
-                    <para>Issue the following neutron command:
-                        <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-                              <prompt>$</prompt> neutron net-create amp</programlisting></para>
+                    <para>Issue the following neutron command.</para>
                     <para><emphasis role="bold">Positional arguments:</emphasis></para>
                     <para>
                         <itemizedlist>
@@ -32,6 +30,8 @@
                             </listitem>
                         </itemizedlist>
                     </para>
+                    <para><programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                              <prompt>$</prompt> neutron net-create amp</programlisting></para>
                     <para><emphasis role="bold">Output:</emphasis></para>
                     <para>The command returns the response, as shown in the following output:</para>
                     <informalexample>
@@ -71,10 +71,7 @@
             <procedure>
                 <title>To create a subnet</title>
                 <step>
-                    <para>Issue the following neutron command:
-                        <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-                               <prompt>$</prompt> neutron subnet-create --name Subamp --ip-version 4 29f52c7e-6efd-4335-a14a-db77d32a2555 120.1.2.0/24</programlisting></para>
-                    <para><emphasis role="bold">Positional arguments:</emphasis></para>
+                    <para>Issue the following neutron command.</para>
                     <para>
                         <itemizedlist>
                             <listitem>
@@ -94,6 +91,9 @@
                             </listitem>
                         </itemizedlist>
                     </para>
+                    <para><programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                               <prompt>$</prompt> neutron subnet-create --name Subamp --ip-version 4 29f52c7e-6efd-4335-a14a-db77d32a2555 120.1.2.0/24</programlisting></para>
+                    <para><emphasis role="bold">Positional arguments:</emphasis></para>
                     <para><emphasis role="bold">Output:</emphasis></para>
                     <para>The command returns the response, as shown in the following output:</para>
                     <informalexample>
