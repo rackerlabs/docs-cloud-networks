@@ -48,8 +48,7 @@
                 <date>2015-03-19</date>
                 <revdescription>
                     <para>Added <olink targetdoc="cn-gettingstarted" targetptr="install_neutron">“Install the neutron client
-                            (optional)”</olink> and updated the use-cases to add neutron client
-                        examples.</para>
+                            (optional)”</olink> and updated the use-cases to add neutron client examples.</para>
                 </revdescription>
             </revision>
             <revision security="internal">

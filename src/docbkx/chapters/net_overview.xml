@@ -30,7 +30,7 @@
                                         <para>To detach a network from a server, you must use the &virt_ext; to delete the
                                                 virtual interface for the network from the server. For more information, see
                                                 the
-                                                <link xlink:href="http://http://docs.rackspace.com/servers/api/v2/cs-devguide/content/section_virt_ext.html">
+                                                <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/section_virt_ext.html">
                                                       Next Generation Cloud Servers Developer Guide</link>.</para>
                                 </note>
                         </listitem>

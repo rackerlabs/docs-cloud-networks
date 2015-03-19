@@ -210,6 +210,11 @@ export OS_NO_CACHE=1</computeroutput></screen>
                             </programlisting></para>
                 </listitem>
                 <listitem>
+                    <para>To show the underlying API request for any neutron client command, specify
+                            <literal>--debug</literal> as the first parameter on any neutron command. This is a good way to
+                        become familiar with API requests. For example: neutron --debug net-list.</para>
+                </listitem>
+                <listitem>
                     <para> While Rackspace does not directly support python-neutronclient, if the above steps don't help, you
                         can post a question in the comments below.</para>
                 </listitem>

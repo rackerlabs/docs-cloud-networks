@@ -6,23 +6,17 @@
 <section xml:id="neutronclient" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
     <title>How the neutron client works</title>
-    <!--    <note>
-        <para>The neutron client is not supported at this time. When it is available, this document will be
-            updated.</para>
-    </note>-->
-    <para>The neutron client is an open-source Python client that you use to run commands to make API calls.
-        <!--Currently, the
-        neutron client is not available, but it will be supported soon.--> Each client command
-        runs cURL commands that embed API requests. <!--Once it is available, you will be able to run--> The client runs from
-        a desktop computer or remote system, such as a cloud server.
-        <!--Until then, use cURL commands to make Neutron API
-        calls.--></para>
-    <para>To install the neutron client on a Linux distribution or on Mac OS X, see <olink targetdoc="cn-gettingstarted"
-        targetptr="install_neutron">“Install the neutron client (optional)”</olink>.</para>
-    <para>To configure the client, update your bash profile to set and export environment variables. </para>
+    <para>The neutron client is an open-source Python client that you use to run commands to make API calls. Each client
+        command runs cURL commands that embed API requests. The client runs from a desktop computer or remote system, such as
+        a cloud server.</para>
+    <para>To install and configure the neutron client on a Linux distribution or on Mac OS X, see <olink
+            targetdoc="cn-gettingstarted" targetptr="install_neutron">“Install the neutron client (optional)”</olink>.</para>
+    <para>To export environment variables (see <olink targetdoc="cn-gettingstarted" targetptr="export_env_vars">“Export
+            environment variables to run cURL commands (optional)”</olink>).</para>
     <note>
-        <para>You can specify a debug parameter on any neutron command to show the underlying API request for the command.
-            This is a good way to become familiar with the API requests. </para>
+        <para>You can specify <literal>--debug</literal> as the first parameter on any neutron command to show the underlying
+            API request for the command. This is a good way to become familiar with API requests. For example: neutron
+            --debug net-list.</para>
     </note>
     <warning>
         <para>If you upgrade the operating system of the desktop or remote machine where you installed the client, you may

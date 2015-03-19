@@ -43,7 +43,7 @@
     </abstract>
     <revhistory>
       <!--     <revision>
-        <date>2015-03-03</date>
+        <date>2015-03-24</date>
         <revdescription>
           <itemizedlist spacing="compact">
             <listitem>
@@ -52,6 +52,16 @@
           </itemizedlist>
         </revdescription>
       </revision>-->
+      <revision>
+        <date>2015-03-19</date>
+        <revdescription>
+          <itemizedlist spacing="compact">
+            <listitem>
+              <para>Release of neutron client.</para>
+            </listitem>
+          </itemizedlist>
+        </revdescription>
+      </revision>
       <revision>
         <date>2014-11-20</date>
         <revdescription>
@@ -96,9 +106,9 @@
       <?rax revhistory?>
     </section>
   </preface>
-  
-<!--  <chapter xml:id="rel20150303">
-    <title>API v2 Neutron Security Groups, March 03, 2015</title>
+
+  <!--  <chapter xml:id="rel20150324">
+    <title>API v2 Neutron Security Groups, March 24, 2015</title>
     <para>This section describes the new features and known issues for the API.</para>
     <itemizedlist>
       <title>New Features</title>
@@ -116,6 +126,46 @@
       </listitem>
     </itemizedlist>
   </chapter>-->
+
+  <chapter xml:id="rel20150319">
+    <title>API v2 Neutron Security Groups, March 19, 2015</title>
+    <para>This section describes the new features and known issues for the API.</para>
+    <itemizedlist>
+      <title>New Features</title>
+      <listitem>
+        <para>The Cloud Networks API now includes installation instructions for the neutron client and usage examples in the
+          Getting Started Guide. The neutron client provides a simple, command line interface to the Cloud Networks API,
+          similar to the nova client for Cloud Servers or the trove client for Cloud Databases. All these clients are
+          actually executing cURL operations in the background.</para>
+        <para> To see the cURL operation being executed, include <literal>--debug</literal> as the first option of the
+          command. For example, executing the command <literal>neutron --debug </literal>, shows the cURL request and
+          response, as shown here.</para>
+        <programlisting>
+         DEBUG: neutronclient.client
+         REQ: curl -i https://dfw.networks.api.rackspacecloud.com/v2.0/subnets.json?fields=id&amp;
+         fields=cidr&amp;id=9cd7bd6c-afb5-4b9c-bbf4-aed3cbdc2fa7 -X GET -H "User-Agent: python-neutronclient" 
+         -H "X-Auth-Token: 5616b4d951ae4e0997c8148d387ce881"
+
+        DEBUG: neutronclient.client 
+        RESP:200 {'date': 'Thu, 19 Mar 2015 12:10:59 GMT, Thu, 19 Mar 2015 12:10:59 GMT', 'content-length': '520', 
+        'via': '1.1 Repose (Repose/6.2.0.2)', 'content-type': 'application/json; charset=UTF-8','server': 'Jetty(9.2.z-SNAPSHOT)'} 
+        {"subnets": [{"name": "SecureNet", "enable_dhcp": null, "dns_nameservers": ["72.3.128.240", "72.3.128.241"], 
+        "allocation_pools": [{"start": "192.168.3.1", "end": "192.168.3.254"}], "host_routes": [], 
+        "ip_version": 4, "gateway_ip": null, "cidr": "192.168.3.0/24", "id": "9cd7bd6c-afb5-4b9c-bbf4-aed3cbdc2fa7"}], 
+        "subnets_links": [{"href": "http://localhost:9696/v2.0/subnets?fields=id&amp;fields=cidr&amp;
+        id=9cd7bd6c-afb5-4b9c-bbf4-aed3cbdc2fa7&amp;marker=9cd7bd6c-afb5-4b9c-bbf4-aed3cbdc2fa7&amp;page_reverse=True", 
+        "rel": "previous"}]}   
+        </programlisting>
+      </listitem>
+    </itemizedlist>
+    <itemizedlist>
+      <title>Known Issues</title>
+      <listitem>
+        <para>none</para>
+      </listitem>
+    </itemizedlist>
+  </chapter>
+
   <chapter xml:id="initial">
     <title>API v2 Neutron Release, September 30, 2014</title>
     <para>This section describes the new features and known issues for the API.</para>

@@ -45,6 +45,13 @@
         </abstract>
         <revhistory>
             <revision>
+                <date>2015-03-19</date>
+                <revdescription>
+                    <para>Corrected the link to the Cloud Servers Dev Guide in <olink targetdoc="cn-devguide"
+                        targetptr="ch_overview">Overview</olink>.</para>
+                </revdescription>
+            </revision>
+            <revision>
                 <date>2015-03-11</date>
                 <revdescription>
                     <para>Updated <olink targetdoc="cn-devguide" targetptr="api_operations_neutron">API
@@ -178,6 +185,4 @@
     <xi:include href="chapters/net_concepts.xml"/>
     <xi:include href="chapters/net_generalinfo.xml"/>
     <xi:include href="chapters/net_operations_neutron.xml"/>
-    <!-- moved to server guide -->
-    <!--<xi:include href="chapters/net_operations_nova.xml"/>-->
 </book>
