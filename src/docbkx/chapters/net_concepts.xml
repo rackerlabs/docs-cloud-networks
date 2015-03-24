@@ -431,7 +431,7 @@
     </section>
 
     <!-- Security Groups -->
-    <section xml:id="conceptSecurityGroups" security="internal">
+    <section xml:id="conceptSecurityGroups">
         <title>Security groups and rules</title>
         <!--availwarn-->
         <important>

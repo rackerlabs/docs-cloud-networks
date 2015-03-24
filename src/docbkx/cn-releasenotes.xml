@@ -107,7 +107,7 @@
     </section>
   </preface>
 
-  <!--  <chapter xml:id="rel20150324">
+ <chapter xml:id="rel20150324">
     <title>API v2 Neutron Security Groups, March 24, 2015</title>
     <para>This section describes the new features and known issues for the API.</para>
     <itemizedlist>
@@ -125,7 +125,7 @@
         <para>none</para>
       </listitem>
     </itemizedlist>
-  </chapter>-->
+  </chapter>
 
   <chapter xml:id="rel20150319">
     <title>API v2 Neutron Security Groups, March 19, 2015</title>

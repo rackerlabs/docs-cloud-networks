@@ -44,20 +44,16 @@
                 extensions as permitted by the OpenStack Quantum API contract and the OpenStack Neutron API contract.</para>
         </abstract>
         <revhistory>
-<!--            <revision security="internal">
+            <revision>
                 <date>2015-03-24</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
-                            <para>Added the following sections related to the security group extension: <olink
-                                targetdoc="cn-devguide" targetptr="ch_overview">Overview</olink>, <olink
-                                    targetdoc="cn-devguide" targetptr="conceptSecurityGroups">“Security Groups and
-                                    Rules”</olink>, and <olink targetdoc="cn-devguide" targetptr="api_ext_security_neutron"
-                                        >“Extension - Security Groups”</olink>.</para>
+                            <para>Added sections related to the security group extension in Overview, Concepts, and Extensions.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
-            </revision>-->
+            </revision>
             <revision>
                 <date>2015-03-19</date>
                 <revdescription>

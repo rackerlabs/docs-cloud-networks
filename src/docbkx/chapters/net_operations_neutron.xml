@@ -38,7 +38,7 @@
         <!--availwarn-->
         <important>
             <para>The neutron API is in Unlimited Availability and is available for all Managed Infrastructure and Managed
-                Operations customers except for RackConnect v3 customers. <phrase security="internal">The Security Groups API
+                Operations customers except for RackConnect v3 customers. <phrase>The Security Groups API
                     is currently in Limited Availability. It is available only to Managed Infrastructure customers and not to
                     RackConnect or Managed Operations customers. To use the security groups feature, contact Rackspace
                     Support.</phrase></para>
@@ -162,7 +162,7 @@
             </wadl:resource>
         </wadl:resources>
     </section>-->
-    <section xml:id="api_ext_security_neutron" security="internal">
+    <section xml:id="api_ext_security_neutron">
         <title>Extension - Security groups</title>
         <para>This section describes the API operations for security groups and rules.</para>
         <!--availwarn-->

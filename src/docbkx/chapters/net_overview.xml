@@ -40,7 +40,7 @@
                         <listitem>
                                 <para>Manage <glossterm baseform="port">ports</glossterm>.</para>
                         </listitem>
-                        <listitem security="internal">
+                        <listitem>
                                 <para>Manage security groups and security group rules.</para>
                         </listitem>
                 </itemizedlist></para>
