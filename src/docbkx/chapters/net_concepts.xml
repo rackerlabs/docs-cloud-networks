@@ -451,7 +451,7 @@
         <para>Security groups:</para>
         <itemizedlist>
             <listitem>
-                <para>act as a stateful firewall for your cloud server instances.</para>
+                <para>act as a firewall for your cloud server instances.</para>
             </listitem>
             <listitem>
                 <para>can be applied to Rackspace Cloud Servers on Public and ServiceNet Neutron ports. They are not

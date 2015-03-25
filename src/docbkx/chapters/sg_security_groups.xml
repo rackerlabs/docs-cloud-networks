@@ -22,9 +22,11 @@
                         security groups, you have to create them first and then apply them to Neutron ports that belong to
                         Cloud Server instances.</para>
         </important>
-        <para>For more information about security groups and security group rules, see
-                <link xlink:href="http://docs.rackspace.com/networks/api/v2/cn-devguide/content/conceptSecurityGroups.html">
-                 <citetitle>Security groups and rules.</citetitle></link>.</para>
+        <para>For more information about security groups and security
+                group rules, see <link
+                        xlink:href="http://docs.rackspace.com/networks/api/v2/cn-devguide/content/conceptSecurityGroups.html">
+                        <citetitle>Security groups and
+                                rules.</citetitle></link></para>
         <para>The following flow chart shows the steps for creating, using, and modifying security groups and rules. Detailed
                 steps are provided in this section. <figure>
                         <title>Steps to create, use, and modify security groups and rules</title>

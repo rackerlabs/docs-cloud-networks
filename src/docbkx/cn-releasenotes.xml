@@ -42,7 +42,7 @@
         the OpenStack Neutron API contract.</para>
     </abstract>
     <revhistory>
-      <!--     <revision>
+      <revision>
         <date>2015-03-24</date>
         <revdescription>
           <itemizedlist spacing="compact">
@@ -51,7 +51,7 @@
             </listitem>
           </itemizedlist>
         </revdescription>
-      </revision>-->
+      </revision>
       <revision>
         <date>2015-03-19</date>
         <revdescription>
