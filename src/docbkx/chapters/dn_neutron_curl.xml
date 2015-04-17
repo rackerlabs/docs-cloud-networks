@@ -16,8 +16,9 @@
     <title>Delete your network with cURL</title>
     <para>These sections walk you through deleting your subnet and network by using cURL.</para>
     <sidebar>
-        <para><emphasis role="bold">Start here: </emphasis><olink targetdoc="cn-gettingstarted"
-                targetptr="neutron_delete_subnet_curl">“Delete a subnet (cURL)”</olink></para>
+        <para><emphasis role="bold">Start here: </emphasis>
+            <link xlink:href="neutron_delete_subnet_curl.html">Delete a subnet (cURL)</link>
+        </para>
     </sidebar>
     <section xml:id="neutron_delete_subnet_curl">
         <title>Delete a subnet (cURL)</title>
@@ -62,8 +63,8 @@ The request is accepted for processing.</computeroutput></screen>
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_delete_network_curl">“Delete a network (cURL)”</olink></para>
+            <para><emphasis role="bold">Next step: </emphasis>
+                <link xlink:href="neutron_delete_network_curl.html">Delete a network (cURL)</link></para>
         </sidebar>
     </section>
     <section xml:id="neutron_delete_network_curl">
@@ -109,8 +110,9 @@ The request is accepted for processing.</computeroutput></screen>
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next topic: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="use_alloc_pools">Use allocation pools to control dynamic IP address allocation</olink></para>
+            <para><emphasis role="bold">Next topic: </emphasis>
+                <link xlink:href="use_alloc_pools.html">Use allocation pools to control dynamic IP address allocation</link>
+            </para>
         </sidebar>
     </section>
 </section>

@@ -16,8 +16,8 @@
     <title>Using security groups with cURL</title>
     <para>This section provides steps for creating, using, and modifying security groups and rules by using cURL.</para>
     <sidebar>
-        <para><emphasis role="bold">Start here: </emphasis><olink targetdoc="cn-gettingstarted"
-                targetptr="neutron_create_security_group_curl">“Create a security group (cURL)”</olink></para>
+        <para><emphasis role="bold">Start here: </emphasis>
+            <link xlink:href="neutron_create_security_group_curl.html">Create a security group (cURL)</link></para>
     </sidebar>
 
     <section xml:id="neutron_create_security_group_curl">
@@ -58,8 +58,8 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_add_rule_ssh_curl">“Add a rule for ssh traffic (cURL)”</olink></para>
+            <para><emphasis role="bold">Next step: </emphasis>
+                <link xlink:href="neutron_add_rule_ssh_curl.html">Add a rule for ssh traffic (cURL)</link></para>
         </sidebar>
     </section>
 
@@ -188,8 +188,8 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_find_port_on_server_curl">Find the port to use on the server (cURL)</olink></para>
+            <para><emphasis role="bold">Next step: </emphasis>
+                <link xlink:href="neutron_find_port_on_server_curl.html">Find the port to use on the server (cURL)</link></para>
         </sidebar>
     </section>
 
@@ -370,9 +370,9 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_apply_ssh_rule_curl">Apply security group with ssh rule to a port no the server
-                    (cURL)</olink></para>
+            <para><emphasis role="bold">Next step: </emphasis>
+                <link xlink:href="neutron_apply_ssh_rule_curl.html">Apply security group with ssh rule to a port no the server
+                    (cURL)</link></para>
         </sidebar>
     </section>
 
@@ -451,8 +451,8 @@ Request timeout for icmp_seq 2
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_add_rule_icmp_curl">Add a rule for icmp traffic (cURL)</olink></para>
+            <para><emphasis role="bold">Next step: </emphasis>
+                <link xlink:href="neutron_add_rule_icmp_curl.html">Add a rule for ICMP traffic (cURL)</link></para>
         </sidebar>
     </section>
 
@@ -606,9 +606,9 @@ Request timeout for icmp_seq 2
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_apply_icmp_rule_curl">Apply security group with ICMP rule to the port on the server
-                    (cURL)</olink></para>
+            <para><emphasis role="bold">Next step: </emphasis>
+                <link xlink:href="neutron_apply_icmp_rule_curl.html">Apply security group with ICMP rule to the port on the server
+                    (cURL)</link></para>
         </sidebar>
     </section>
 
@@ -686,8 +686,8 @@ PING 10.22.253.123 (10.22.253.123): 56 data bytes
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next topic: </emphasis><olink targetdoc="cn-gettingstarted" targetptr="attach_net"
-                    >Attach your network to an existing server</olink>
+            <para><emphasis role="bold">Next topic: </emphasis>
+                <link xlink:href="attach_net.html">Attach your network to an existing server</link>
             </para>
         </sidebar>
     </section>

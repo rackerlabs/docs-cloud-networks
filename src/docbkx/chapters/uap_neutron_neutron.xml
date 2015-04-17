@@ -17,8 +17,8 @@
     <para>These sections walk you through using allocation pools to control dynamic IP address allocation by using the
         neutron client.</para>
     <sidebar>
-        <para><emphasis role="bold">Start here: </emphasis><olink targetdoc="cn-gettingstarted"
-                targetptr="neutron_create_network_uap_neutron">“Create a network (neutron client)”</olink></para>
+        <para><emphasis role="bold">Start here: </emphasis>
+            <link xlink:href="neutron_create_network_uap_neutron.html">Create a network (neutron client)</link></para>
     </sidebar>
     <section xml:id="neutron_create_network_uap_neutron">
         <title>Create a network (neutron client)</title>
@@ -62,9 +62,9 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_create_subnet_uap_neutron">“Create a subnet with allocation pools (neutron
-                    client)”</olink></para>
+            <para><emphasis role="bold">Next step: </emphasis>
+                <link xlink:href="neutron_create_subnet_uap_neutron.html">Create a subnet with allocation pools (neutron
+                    client)</link></para>
         </sidebar>
     </section>
 
@@ -144,8 +144,8 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_boot_server_uap_nova">“Boot server (nova client)”</olink></para>
+            <para><emphasis role="bold">Next step: </emphasis>
+                <link xlink:href="neutron_boot_server_uap_nova.html">Boot server (nova client)</link></para>
         </sidebar>
     </section>
 
@@ -214,8 +214,7 @@
         <sidebar>
             <para>
                 <emphasis role="bold">Next step:</emphasis>
-                <olink targetdoc="cn-gettingstarted" targetptr="neutron_verify_ip_nova">“Verify IP on server port (nova
-                    client)”</olink>
+                <link xlink:href="neutron_verify_ip_nova.html">Verify IP on server port (nova client)</link>
             </para>
         </sidebar>
     </section>
@@ -277,8 +276,8 @@
         </procedure>
 
         <sidebar>
-            <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_create_port_uap_neutron">“Create a port (neutron client)”</olink></para>
+            <para><emphasis role="bold">Next step:</emphasis>
+                <link xlink:href="neutron_create_port_uap_neutron.html">Create a port (neutron client)</link></para>
         </sidebar>
     </section>
 
@@ -340,8 +339,8 @@
         </procedure>
 
         <sidebar>
-            <para><emphasis role="bold">Next topic: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="configure_host_routes">Configure host routes</olink>
+            <para><emphasis role="bold">Next topic: </emphasis>
+                <link xlink:href="configure_host_routes.html">Configure host routes</link>
             </para>
         </sidebar>
     </section>

@@ -1,30 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE section [
-<!-- Some useful entities borrowed from HTML -->
-<!ENTITY ndash  "&#x2013;">
-<!ENTITY mdash  "&#x2014;">
-<!ENTITY hellip "&#x2026;">
-<!ENTITY plusmn "&#xB1;">
-
-<!-- Useful for describing APIs -->
-<!ENTITY GET    '<command xmlns="http://docbook.org/ns/docbook">GET</command>'>
-<!ENTITY PUT    '<command xmlns="http://docbook.org/ns/docbook">PUT</command>'>
-<!ENTITY POST   '<command xmlns="http://docbook.org/ns/docbook">POST</command>'>
-<!ENTITY DELETE '<command xmlns="http://docbook.org/ns/docbook">DELETE</command>'>
-
-<!ENTITY CHECK  '<inlinemediaobject xmlns="http://docbook.org/ns/docbook">
-<imageobject>
-<imagedata fileref="figures/Check_mark_23x20_02.svg"
-format="SVG" scale="60"/>
-</imageobject>
-</inlinemediaobject>'>
-
-<!ENTITY ARROW  '<inlinemediaobject xmlns="http://docbook.org/ns/docbook">
-<imageobject>
-<imagedata fileref="../figures/Arrow_east.svg"
-format="SVG" scale="60"/>
-</imageobject>
-</inlinemediaobject>'>
+<!ENTITY % common  SYSTEM "../../common/common.ent">
+%common;
 ]>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="section_rbac_3">
@@ -32,10 +9,11 @@ format="SVG" scale="60"/>
     <para> Role Based Access Control (RBAC) restricts access to the capabilities of Rackspace Cloud services, including the
         Cloud Networks API, to authorized users only. RBAC enables Rackspace Cloud customers to specify which account users
         of their Cloud account have access to which Cloud Networks API service capabilities, based on roles defined by
-        Rackspace (see <olink targetdoc="cn-devguide" targetptr="RBAC_global_roles_table_3">Table 8, “ Multiproduct (Global)
-            Roles and Permissions”</olink>). The permissions to perform certain operations in Cloud Networks API – create,
-        read, update, delete – are assigned to specific roles. The account owner user assigns these roles, either global
-        (multiproduct) or product-specific (for example, Cloud Networks), to account users. </para>
+        Rackspace (see
+        <link xlink:href="section_roles_for_products_3.html#RBAC_global_roles_table_3">Multiproduct (global) roles and permissions</link>).
+        The permissions to perform certain operations in Cloud Networks API – create, read, update, delete – are assigned to
+        specific roles. The account owner user assigns these roles, either global (multiproduct) or product-specific (for
+        example, Cloud Networks), to account users. </para>
 
     <section xml:id="section_assign_roles_3" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
         xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">

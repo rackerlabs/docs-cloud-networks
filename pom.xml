@@ -97,7 +97,7 @@
             <phase>generate-sources</phase>
             <configuration>
               <includes>cn-admin-devguide.xml</includes>
-              <profileCondition>cn</profileCondition>
+              <profileCondition>dg</profileCondition>
               <profileAudience>dg</profileAudience>
               <security>internal</security>
               <tocSectionDepth>1</tocSectionDepth>
@@ -115,7 +115,7 @@
             <phase>generate-sources</phase>
             <configuration>
               <includes>cn-devguide.xml</includes>
-              <profileCondition>cn</profileCondition>
+              <profileCondition>dg</profileCondition>
               <profileAudience>dg</profileAudience>
               <tocSectionDepth>1</tocSectionDepth>
               <generateToc> appendix toc,title article/appendix nop article toc,title book toc,title,figure,table,equation

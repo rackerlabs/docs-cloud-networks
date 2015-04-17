@@ -23,8 +23,7 @@
                     <literal>token</literal> field in the authentication response.</para>
             <sidebar>
                 <para><emphasis role="bold">Next step: </emphasis>
-                    <olink targetdoc="cn-gettingstarted" targetptr="create_first_net">Create your first cloud
-                    network</olink></para>
+                    <link xlink:href="create_first_net.html">Create your first cloud network</link></para>
             </sidebar>
         </step>
     </procedure>

@@ -16,8 +16,9 @@
     <title>Delete your network with neutron client</title>
     <para>These sections walk you through deleting your subnet and network by using the neutron client.</para>
     <sidebar>
-        <para><emphasis role="bold">Start here: </emphasis><olink targetdoc="cn-gettingstarted"
-                targetptr="neutron_delete_subnet_neutron">“Delete a subnet (neutron client)”</olink></para>
+        <para><emphasis role="bold">Start here: </emphasis>
+            <link xlink:href="neutron_delete_subnet_neutron.html">Delete a subnet (neutron client)</link>
+        </para>
     </sidebar>
     <section xml:id="neutron_delete_subnet_neutron">
         <title>Delete a subnet (neutron client)</title>
@@ -45,11 +46,12 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_delete_network_neutron">“Delete a network (neutron client)”</olink></para>
+            <para><emphasis role="bold">Next step: </emphasis>
+                <link xlink:href="neutron_delete_network_neutron.html">Delete a network (neutron client)</link>
+            </para>
         </sidebar>
     </section>
-    
+
     <section xml:id="neutron_delete_network_neutron">
         <title>Delete a network (neutron client)</title>
         <para>To delete a network, specify the network ID.</para>
@@ -75,5 +77,10 @@
                     response code.</para>
             </step>
         </procedure>
+        <sidebar>
+            <para><emphasis role="bold">Next topic: </emphasis>
+                <link xlink:href="use_alloc_pools.html">Use allocation pools to control dynamic IP address allocation</link>
+            </para>
+        </sidebar>
     </section>
 </section>

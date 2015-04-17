@@ -8,8 +8,9 @@
     <title>Configure host routes with cURL</title>
     <para>These sections walk you through configuring host routes by using cURL.</para>
     <sidebar>
-        <para><emphasis role="bold">Start here: </emphasis><olink targetdoc="cn-gettingstarted"
-                targetptr="neutron_create_network_chr_curl">“Create a network (cURL)”</olink></para>
+        <para><emphasis role="bold">Start here: </emphasis>
+            <link xlink:href="neutron_create_network_chr_curl.html">Create a network (cURL)</link>
+        </para>
     </sidebar>
 
     <section xml:id="neutron_create_network_chr_curl">
@@ -27,9 +28,6 @@
        -H "Accept: application/json" \
        -H "X-Auth-Token: $token" \
        -d '{"network": {"name": "Rackernet"}}' | python -m json.tool</programlisting></para>
-                <para>In this cURL command, you specify several options. For information about options, see <olink
-                        targetdoc="cn-gettingstarted" targetptr="curl_options">Table 2, “cURL Command-Line
-                    Options”</olink>.</para>
                 <para>The operation returns the response body, as shown in the following example:
                     <programlisting language="json"><?db-font-size 65%?>
 {
@@ -52,8 +50,8 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_create_subnet_chr_curl">“Create a subnet with host routes (cURL)”</olink></para>
+            <para><emphasis role="bold">Next step: </emphasis>
+                <link xlink:href="neutron_create_subnet_chr_curl.html">Create a subnet with host routes (cURL)</link></para>
         </sidebar>
     </section>
 
@@ -95,9 +93,6 @@
             }
         ],
         "tenant_id": "5831008"}}' | python -m json.tool</programlisting></para>
-                <para>In this cURL command, you specify several options. For information about the options, see <olink
-                        targetdoc="cn-gettingstarted" targetptr="curl_options">Table 2, “cURL Command-Line
-                    Options”</olink>.</para>
                 <para>The operation returns the response body, as shown in the following example:
                     <programlisting language="json"><?db-font-size 65%?>
 {
@@ -138,8 +133,8 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_boot_server_chr_curl">“Boot Server (cURL)”</olink></para>
+            <para><emphasis role="bold">Next step: </emphasis>
+                <link xlink:href="neutron_boot_server_chr_curl.html">Boot Server (cURL)</link></para>
         </sidebar>
     </section>
 
@@ -188,8 +183,9 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_verify_ip_chr_curl">Verify the IP on the server port (cURL)</olink></para>
+            <para><emphasis role="bold">Next step:
+                </emphasis><link xlink:href="neutron_verify_ip_chr_curl.html">Verify the IP on the server port (cURL)</link>
+            </para>
         </sidebar>
     </section>
 
@@ -291,9 +287,10 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_verify_route_chr_sshcurl">Log in to the server and verify the route
-                (ssh)</olink></para>
+            <para><emphasis role="bold">Next step:
+                </emphasis><link xlink:href="neutron_verify_route_chr_sshcurl.html">Log in to the server and verify the route
+                (ssh)</link>
+            </para>
         </sidebar>
     </section>
 
@@ -341,9 +338,9 @@ default 10.23.233.1 0.0.0.0 UG 100 0 0 eth0
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next topic: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="provision_additional_ips">Provision additional IP address and dual-stack IP addresses on an
-                    isolated network port</olink>
+            <para><emphasis role="bold">Next topic: </emphasis>
+                <link xlink:href="provision_additional_ips.html">Provision additional IP address and dual-stack IP addresses on an
+                    isolated network port</link>
             </para>
         </sidebar>
     </section>

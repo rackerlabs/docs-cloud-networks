@@ -14,20 +14,19 @@
         service catalog that contains a list of all services and endpoints available for this token. Because the
         authentication token expires after 24 hours, you must generate a new token once a day. </para>
     <para>For detailed information about the Rackspace Identity Service v2.0, see
-        <link xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/index.html"><citetitle>Cloud Identity Client Developer Guide API
-                v2.0</citetitle></link>.</para>
+        <link xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/index.html">
+            <citetitle>Cloud Identity Client Developer Guide API v2.0</citetitle></link>.</para>
     <sidebar audience="gs">
         <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
                 <listitem>
-                    <para><olink condition="gs" targetdoc="cn-gettingstarted" targetptr="nova_auth">“Authenticate with the
-                            nova client”</olink><olink condition="dev" targetdoc="cn-devguide" targetptr="nova_auth"
-                            >“Authenticate with the nova client”</olink></para>
+                    <para>
+                        <link xlink:href="nova_auth.html">Authenticate with the nova client</link>
+                    </para>
                 </listitem>
                 <listitem>
-                    <para><olink condition="gs" targetdoc="cn-gettingstarted" targetptr="curl_auth">“Authenticate with
-                            cURL”</olink>
-                        <olink condition="dev" targetdoc="cn-devguide" targetptr="curl_auth">“Authenticate with
-                        cURL”</olink></para>
+                    <para>
+                        <link xlink:href="curl_auth.html">Authenticate with cURL</link>
+                    </para>
                 </listitem>
             </itemizedlist></para>
     </sidebar>
@@ -108,8 +107,7 @@
         </procedure>
         <sidebar audience="gs">
             <para><emphasis role="bold">Next step:</emphasis>
-                <olink targetdoc="cn-gettingstarted" targetptr="create_first_net">Create your first cloud
-                network</olink></para>
+                <link xlink:href="create_first_net.html">Create your first cloud network</link></para>
         </sidebar>
     </section>
     <?hard-pagebreak?>
@@ -156,9 +154,8 @@
        -H "Content-Type: application/json" | python -m json.tool</programlisting>
                 </example>
                 <tip>
-                    <para>For information about the json.tool, see <olink condition="gs" targetdoc="cn-gettingstarted"
-                            targetptr="json_tool">Note</olink>
-                        <olink condition="dev" targetdoc="cn-devguide" targetptr="json_tool">Note</olink>. </para>
+                    <para>For information about the json.tool, see
+                        <link xlink:href="curl.html#json_tool">More about json.tool</link>. </para>
                 </tip>
                 <para>In response to valid credentials, your request returns an authentication token and a service catalog
                     with the endpoints that you need to request services.</para>
@@ -241,13 +238,12 @@
             <para><emphasis role="bold">Next step: Choose one of the following steps: </emphasis>
                 <itemizedlist>
                     <listitem>
-                        <para><olink targetdoc="cn-gettingstarted" targetptr="export_env_vars">“Export environment variables
-                                to run cURL commands (optional)”</olink></para>
+                        <para>
+                            <link xlink:href="export_env_vars.html">Export environment variables to run cURL commands (optional)</link></para>
                     </listitem>
                     <listitem>
                         <para>
-                            <olink targetdoc="cn-gettingstarted" targetptr="create_first_net">Create your first cloud
-                                network</olink></para>
+                            <link xlink:href="create_first_net.html">Create your first cloud network</link></para>
                     </listitem>
                 </itemizedlist>
             </para>

@@ -13,34 +13,25 @@
                     systems and is easy to learn and use. You can specify <literal>--debug</literal> as the first parameter
                     on any neutron command to show the underlying API request for the command. This is a good way to become
                     familiar with API requests. For example: neutron --debug net-list.</para>
-                <para>For more information, see <olink targetdoc="cn-gettingstarted" targetptr="neutronclient">“How the
-                    neutron client works”</olink>.</para>
+                <para>For more information, see <link xlink:href="neutronclient.html">How the neutron client works</link>.</para>
             </listitem>
-<!--            <listitem>
-                <para><emphasis role="bold">The neutron client</emphasis>: This client is not supported at this time but,
-                    once it is supported, it will enable you to run commands to execute Neutron API operations.</para>
-                <para>For more information, see <olink targetdoc="cn-gettingstarted" targetptr="neutronclient">“How the
-                        neutron client works”</olink>.</para>
-            </listitem>-->
             <listitem>
                 <para><emphasis role="bold">The
                         <link xlink:href="http://www.rackspace.com/knowledge_center/article/using-python-novaclient-with-the-rackspace-cloud">
                             nova client</link></emphasis>:
                     Use the nova client to run simple Nova-Network API commands such as those required to boot servers and to
                     attach and detach networks.</para>
-                <para>For more information, see <olink targetdoc="cn-gettingstarted" targetptr="novaclient">“How the nova
-                        client works”</olink>.</para>
+                <para>For more information, see <link xlink:href="novaclient.html">How the nova client works</link>.</para>
             </listitem>
             <listitem>
                 <para><emphasis role="bold"><link xlink:href="http://curl.haxx.se/">cURL</link> commands</emphasis>: With
                     cURL, you send HTTP requests with embedded API calls from the command line. The cURL examples in this
-                    guide show request and response bodies that are in JSON format. See <olink targetdoc="cn-gettingstarted"
-                        targetptr="curl">“How cURL commands work”</olink></para>
+                    guide show request and response bodies that are in JSON format. See 
+                    <link xlink:href="curl.html">How cURL commands work</link>.</para>
             </listitem>
         </itemizedlist>You can use cURL in one example and switch to a client in the next example. If you choose to use a
-        cURL command for any example, you must export the environment variables required to run the cURL examples. See <olink
-            targetdoc="cn-gettingstarted" targetptr="export_env_vars">“Export environment variables to run cURL commands
-            (optional)”</olink>.</para>
+        cURL command for any example, you must export the environment variables required to run the cURL examples. See 
+        <link xlink:href="export_env_vars.html">Export environment variables to run cURL commands (optional)</link>.</para>
 
     <xi:include href="net_how_client_works_neutron.xml"/>
     <xi:include href="net_how_client_works_nova.xml"/>

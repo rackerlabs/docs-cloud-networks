@@ -17,7 +17,8 @@
                                 <listitem>
                                         <para>You can pass the ID of the ports on the desired networks.</para>
                                 </listitem>
-                        </orderedlist> The flowchart assumes that you are passing the port UUID of the isolated network.</para>
+                        </orderedlist> The flowchart assumes that you are passing the port UUID of the isolated
+                        network.</para>
         </note>
         <figure>
                 <title>Steps to provision a server with a network</title>
@@ -29,19 +30,13 @@
         </figure>
         <para>The sections are also organized by example type. To simplify your path through this chapter, decide whether you
                 prefer neutron-client or cURL examples.</para>
-        <!--<sidebar>
-                <para><emphasis role="bold">Next step:</emphasis>
-                        <olink targetdoc="cn-gettingstarted" targetptr="bns_neutron_curl">“Use cURL”</olink></para>
-        </sidebar>-->
         <sidebar>
                 <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
                                 <listitem>
-                                        <para><olink targetdoc="cn-gettingstarted" targetptr="bns_neutron_neutron">“Use
-                                                        neutron client”</olink></para>
+                                        <para><link xlink:href="bns_neutron_neutron.html">Boot server with neutron client</link></para>
                                 </listitem>
                                 <listitem>
-                                        <para><olink targetdoc="cn-gettingstarted" targetptr="bns_neutron_curl">“Use
-                                                        cURL”</olink></para>
+                                        <para><link xlink:href="bns_neutron_curl.html">Boot server with cURL</link></para>
                                 </listitem>
                         </itemizedlist></para>
         </sidebar>

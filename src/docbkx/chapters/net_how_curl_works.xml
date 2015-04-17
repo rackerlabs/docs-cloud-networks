@@ -10,9 +10,6 @@
         to transmit and receive <glossterm>HTTP</glossterm> requests and responses from the command line or a shell script,
         which enables you to work with the API directly. It is available for Linux distributions, Mac OS X, and Windows. For
         information about cURL, see <link xlink:href="http://curl.haxx.se/">http://curl.haxx.se/</link>. </para>
-    <!--    <para>To use XML, see <olink targetdoc="cn-gettingstarted" targetptr="curl_summary_xml">“XML
-            requests and responses”</olink>.</para>-->
-
     <para>To run the cURL request examples shown in this guide, copy each example from the HTML version of this guide
         directly to the command line or a script.</para>
 

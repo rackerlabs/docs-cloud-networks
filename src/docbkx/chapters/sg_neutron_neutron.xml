@@ -13,12 +13,12 @@
 ]>
 <section xml:id="sg_neutron_neutron" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:raxm="http://docs.rackspace.com/api/metadata" version="5.0">
-    <title>Using security groups with the neutron client</title>
+    <title>Using security groups with neutron client</title>
     <para>These sections walk you through creating, using, and modifying security groups and rules by using the neutron
         client.</para>
     <sidebar>
-        <para><emphasis role="bold">Start here: </emphasis><olink targetdoc="cn-gettingstarted"
-                targetptr="neutron_create_security_group_neutron">“Create a security group (neutron client)”</olink></para>
+        <para><emphasis role="bold">Start here: </emphasis>
+            <link xlink:href="neutron_create_security_group_neutron.html">Create a security group (neutron client)</link></para>
     </sidebar>
     <section xml:id="neutron_create_security_group_neutron">
         <title>Create a security group (neutron client)</title>
@@ -68,8 +68,8 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_add_rule_ssh_neutron">“Add a rule for ssh traffic (neutron client)”</olink></para>
+            <para><emphasis role="bold">Next step: </emphasis>
+                <link xlink:href="neutron_add_rule_ssh_neutron.html">Add a rule for ssh traffic (neutron client)</link></para>
         </sidebar>
     </section>
 
@@ -172,9 +172,9 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_find_port_on_server_sg_nova">Find the port to use on the server (nova/neutron
-                    client)</olink></para>
+            <para><emphasis role="bold">Next step: </emphasis>
+                <link xlink:href="neutron_find_port_on_server_sg_nova.html">Find the port to use on the server (nova/neutron
+                    client)</link></para>
         </sidebar>
     </section>
 
@@ -260,9 +260,9 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_apply_ssh_rule_neutron">Apply security group with ssh rule to a port no the server
-                    (neutron client)</olink></para>
+            <para><emphasis role="bold">Next step: </emphasis>
+                <link xlink:href="neutron_apply_ssh_rule_neutron.html">Apply security group with ssh rule to a port no the server
+                    (neutron client)</link></para>
         </sidebar>
     </section>
 
@@ -330,8 +330,8 @@ Request timeout for icmp_seq 2
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_add_rule_icmp_neutron">Add a rule for icmp traffic (neutron client)</olink></para>
+            <para><emphasis role="bold">Next step: </emphasis>
+                <link xlink:href="neutron_add_rule_icmp_neutron.html">Add a rule for ICMP traffic (neutron client)</link></para>
         </sidebar>
     </section>
 
@@ -435,9 +435,9 @@ Request timeout for icmp_seq 2
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_apply_icmp_rule_neutron">Apply security group with ICMP rule to the port on the server
-                    (neutron client)</olink></para>
+            <para><emphasis role="bold">Next step: </emphasis>
+                <link xlink:href="neutron_apply_icmp_rule_neutron.html">Apply security group with ICMP rule to the port on the server
+                    (neutron client)</link></para>
         </sidebar>
     </section>
 
@@ -504,8 +504,8 @@ PING 10.22.253.123 (10.22.253.123): 56 data bytes
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next topic: </emphasis><olink targetdoc="cn-gettingstarted" targetptr="attach_net"
-                    >Attach your network to an existing server</olink>
+            <para><emphasis role="bold">Next topic: </emphasis>
+                <link xlink:href="attach_net.html">Attach your network to an existing server</link>
             </para>
         </sidebar>
     </section>

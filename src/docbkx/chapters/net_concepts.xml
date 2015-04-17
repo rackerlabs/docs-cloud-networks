@@ -3,7 +3,6 @@
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="Concepts">
     <title>Concepts</title>
     <para>The concepts covered in this section describe the components of Cloud Networks.</para>
-    <!--<?dbhtml stop-chunking?>-->
     <!-- Network -->
     <section xml:id="conceptNetwork">
         <title>Network</title>
@@ -564,8 +563,8 @@
         <para> A router is used to interconnect subnets and forward traffic among them. Another feature of the router is to
             NAT internal traffic to external networks. A router has an interface for each associated subnet. By default, the
             IP address of an interface is the subnet's gateway IP. Also, whenever a router is associated with a subnet, a
-            port for that router interface will be added to the subnet's network. See <olink targetdoc="cn-devguide"
-                targetptr="api_ext_layer3_router">“Extension - Layer 3 Networking (Router)”</olink> for the associated API
+            port for that router interface will be added to the subnet's network. See 
+            <link xlink:href="api_ext_layer3_router.html">Extension - Layer 3 Networking (Router)</link> for the associated API
             operations.</para>
         <para>The following table describes the attributes for router objects.</para>
         <table rules="all" width="100%">

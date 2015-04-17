@@ -19,47 +19,14 @@
         <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/network_extension.html">
                  Network extension</link>
         of the <citetitle>Next Generation Cloud Servers Developers Guide</citetitle>. Now Cloud Networks has been released
-        using the Neutron API (see <olink condition="cn" targetdoc="cn-devguide" targetptr="api_operations_neutron">API
-            operations - neutron</olink>, which is documented in this guide <phrase condition="gs">
-            <link xlink:href="http://docs.rackspace.com/networks/api/v2/cn-devguide/content/api_operations_neutron.html">
-                API operations</link>
-            in the <citetitle>Cloud Networks Developer Guide</citetitle></phrase>). We recommend that you use the Neutron API
+        using the Neutron API (see <phrase condition="dg"
+            ><link xlink:href="api_operations_neutron.html">API operations</link></phrase>
+        <phrase condition="gs">
+            <link xlink:href="http://docs.rackspace.com/networks/api/v2/cn-devguide/content/api_operations_neutron.html">API operations</link> in
+            the <citetitle>Cloud Networks Developer Guide</citetitle></phrase>). We recommend that you use the Neutron API
         operations even though the Nova-Network API operations still work. For information that helps you determine which
-        method is better for you, see <olink condition="cn" targetdoc="cn-devguide" targetptr="section_nova_v_neutron"
-            >“Networking: neutron versus nova-network”</olink>
-        <olink condition="gs" targetdoc="cn-gettingstarted" targetptr="section_nova_v_neutron">“Networking: neutron versus
-            nova-network”</olink>.</para>
-    <!--<para>To detect if you are enabled to use Cloud Networks, issue a &GET; <command>/limits</command> call or a
-            <command>nova absolute-limits</command> call and review the <literal>maxTotalPrivateNetworks</literal> value:
-            <table xml:id="maxTotalPrivateNetworks" rules="all">
-            <caption>maxTotalPrivateNetworks Value</caption>
-            <col width="20%"/>
-            <col width="80%"/>
-            <thead>
-                <tr>
-                    <th>maxTotalPrivateNetworks Value</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>0</td>
-                    <td>
-                        <para>Cloud Networks is disabled.</para>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Greater than 0</td>
-                    <td>
-                        <para>Cloud Networks is enabled. The value indicates the number of isolated networks that you are
-                            allowed to create.</para>
-                    </td>
-                </tr>
-            </tbody>
-        </table></para>
-    <para>For more information about querying limits, see
-        <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/ProgrammaticLimits.html">Get Limits</link>
-        in the <citetitle>Cloud Servers Developer Guide</citetitle>.</para>-->
+        method is better for you, see
+        <link xlink:href="section_nova_v_neutron.html">Networking: neutron versus nova-network</link>.</para>
     <para>We welcome feedback, comments, and bug reports at
         <link xlink:href="https://feedback.rackspace.com/">https://feedback.rackspace.com/</link>.</para>
 

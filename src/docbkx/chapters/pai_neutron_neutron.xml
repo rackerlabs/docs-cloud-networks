@@ -17,8 +17,8 @@
     <para>These sections walk you through provisioning an additional IP and dual-stack (v4 and v6) IP addresses on an
         isolated network port by using the neutron client.</para>
     <sidebar>
-        <para><emphasis role="bold">Start here: </emphasis><olink targetdoc="cn-gettingstarted"
-                targetptr="neutron_show_v6_port_pai_neutron">“Show port with IPv6 address (neutron client)”</olink></para>
+        <para><emphasis role="bold">Start here: </emphasis>
+            <link xlink:href="neutron_show_v6_port_pai_neutron.html">Show port with IPv6 address (neutron client)</link></para>
     </sidebar>
     <section xml:id="neutron_show_v6_port_pai_neutron">
         <title>Show a port with an IPv6 address (neutron client)</title>
@@ -48,9 +48,9 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_get_network_cidr_pai_neutron">“Get the IPv4 CIDR for the network (neutron
-                    client)”</olink></para>
+            <para><emphasis role="bold">Next step: </emphasis>
+                <link xlink:href="neutron_get_network_cidr_pai_neutron.html">Get the IPv4 CIDR for the network (neutron
+                    client)</link></para>
         </sidebar>
     </section>
 
@@ -84,9 +84,9 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_add_v4_IP_pai_neutron">“Add an IPv4 address on the same port (neutron
-                client)”</olink></para>
+            <para><emphasis role="bold">Next step: </emphasis>
+                <link xlink:href="neutron_add_v4_IP_pai_neutron.html">Add an IPv4 address on the same port (neutron
+                client)</link></para>
         </sidebar>
     </section>
 
@@ -144,9 +144,9 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_show_both_port_pai_neutron">“Show the port with both IP addresses (neutron
-                    client)”</olink></para>
+            <para><emphasis role="bold">Next step: </emphasis>
+                <link xlink:href="neutron_show_both_port_pai_neutron.html">Show the port with both IP addresses (neutron
+                    client)</link></para>
         </sidebar>
     </section>
 
@@ -196,8 +196,8 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_boot_server_pai_nova">“Boot a Server (neutron client)”</olink></para>
+            <para><emphasis role="bold">Next step: </emphasis>
+                <link xlink:href="neutron_boot_server_pai_nova.html">Boot a Server (nova client)</link></para>
         </sidebar>
     </section>
 
@@ -265,8 +265,8 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_verify_ip_pai_nova">Verify the IP on the server port (nova client)</olink></para>
+            <para><emphasis role="bold">Next step: </emphasis>
+                <link xlink:href="neutron_verify_ip_pai_nova.html">Verify the IP on the server port (nova client)</link></para>
         </sidebar>
     </section>
 
@@ -323,9 +323,8 @@
             </step>
         </procedure>
         <sidebar security="internal">
-            <para><emphasis role="bold">Next topic: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="security_groups">Use security groups to control traffic</olink>
-            </para>
+            <para><emphasis role="bold">Next topic: </emphasis>
+                <link xlink:href="security_groups.html">Use security groups to control traffic</link></para>
         </sidebar>
     </section>
 </section>

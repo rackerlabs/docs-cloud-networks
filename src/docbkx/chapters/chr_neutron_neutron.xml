@@ -8,8 +8,8 @@
     <title>Configure host routes with neutron</title>
     <para>These sections walk you through configuring host routes by using the neutron client.</para>
     <sidebar>
-        <para><emphasis role="bold">Start here: </emphasis><olink targetdoc="cn-gettingstarted"
-                targetptr="neutron_create_network_chr_neutron">“Create a network (neutron client)”</olink></para>
+        <para><emphasis role="bold">Start here: </emphasis>
+            <link xlink:href="neutron_create_network_chr_neutron.html">Create a network (neutron client)</link></para>
     </sidebar>
 
     <section xml:id="neutron_create_network_chr_neutron">
@@ -54,9 +54,10 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_create_subnet_chr_neutron">“Create a subnet with host routes (neutron
-                client)”</olink></para>
+            <para><emphasis role="bold">Next step: </emphasis>
+                <link xlink:href="neutron_create_subnet_chr_neutron.html">Create a subnet with host routes (neutron
+                client)</link>
+            </para>
         </sidebar>
     </section>
 
@@ -136,8 +137,8 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_boot_server_chr_nova">“Boot Server (nova client)”</olink></para>
+            <para><emphasis role="bold">Next step: </emphasis>
+                <link xlink:href="neutron_boot_server_chr_nova.html">Boot Server (nova client)</link></para>
         </sidebar>
     </section>
 
@@ -205,8 +206,8 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_verify_ip_chr_nova">Verify the IP on the server port (nova client)</olink></para>
+            <para><emphasis role="bold">Next step: </emphasis>
+                <link xlink:href="neutron_verify_ip_chr_nova.html">Verify the IP on the server port (nova client)</link></para>
         </sidebar>
     </section>
 
@@ -266,9 +267,9 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_verify_route_chr_sshneutron">Log in to the server and verify the route
-                (ssh)</olink></para>
+            <para><emphasis role="bold">Next step: </emphasis>
+                <link xlink:href="neutron_verify_route_chr_sshneutron.html">Log in to the server and verify the route (ssh)</link>
+            </para>
         </sidebar>
     </section>
 
@@ -316,9 +317,9 @@ default 10.23.233.1 0.0.0.0 UG 100 0 0 eth0
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next topic: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="provision_additional_ips">Provision additional IP address and dual-stack IP addresses on an
-                    isolated network port</olink>
+            <para><emphasis role="bold">Next topic: </emphasis>
+                <link xlink:href="provision_additional_ips.html">Provision additional IP address and dual-stack IP addresses on an
+                    isolated network port</link>
             </para>
         </sidebar>
     </section>

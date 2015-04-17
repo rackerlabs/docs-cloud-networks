@@ -23,7 +23,7 @@
         <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-gettingstarted/content/section_gs_install_nova.html"> Install the nova Client with the Cloud Networks Extension</link>
         in the <citetitle>Next Generation Cloud Servers Getting Started Guide</citetitle>.</para>
     <sidebar>
-        <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted" targetptr="net_auth">“Get
-                authentication token”</olink></para>
+        <para><emphasis role="bold">Next step: </emphasis>
+            <link xlink:href="net_auth.html">Get the authentication token</link></para>
     </sidebar>
 </section>

@@ -12,35 +12,4 @@
         <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-gettingstarted/content/nova_summary_virtualints.html">
                 Cloud Servers Getting Started Guide Virtual Interfaces</link>
         for examples of attaching a network to an existing server by using the Nova-Network API and the &virt_ext;</para>
-    <!-- <para>The following flow chart shows the steps for attaching a network to an existing server by using the Nova-network
-        API.<figure>
-            <title>Steps to attach a network to an existing server</title>
-            <mediaobject>
-                <imageobject>
-                    <imagedata fileref="../figures/aes-neutron-api.png" contentwidth="3in"/>
-                </imageobject>
-            </mediaobject>
-        </figure>
-    </para>-->
-    <!--<para>The sections are also organized by example type. To simplify your path through this chapter, decide whether you
-        prefer nova-client examples or cURL examples.</para>
-    <para>If you haven't already installed the virtual interface extension, do that first.</para>
-    <sidebar>
-        <para><emphasis role="bold">If you need to install the virtual interface extension: </emphasis> Go to <olink
-                targetdoc="cn-gettingstarted" targetptr="aes_install_interface">“Install the &virt_ext;”</olink></para>
-        <para><emphasis role="bold">If you've installed the virtual interface extension:</emphasis> Choose one of the
-            following methods:<itemizedlist>
-                <listitem>
-                    <para><olink targetdoc="cn-gettingstarted" targetptr="aes_nova_nova">“Use nova-network API and nova
-                            client”</olink></para>
-                </listitem>
-                <listitem>
-                    <para><olink targetdoc="cn-gettingstarted" targetptr="aes_nova_curl">“Use nova-network API and
-                            cURL”</olink></para>
-                </listitem>
-            </itemizedlist></para>
-    </sidebar>-->
-    <!--<xi:include href="net_aes_install_interface.xml"/>
-    <xi:include href="net_aes_nova_nova.xml"/>
-    <xi:include href="net_aes_nova_curl.xml"/>-->
 </chapter>

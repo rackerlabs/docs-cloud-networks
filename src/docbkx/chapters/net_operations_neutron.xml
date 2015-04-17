@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE chapter [
-<!-- Some useful entities borrowed from HTML -->
-<!ENTITY ndash "&#x2013;">
-<!ENTITY mdash "&#x2014;">
-<!ENTITY hellip "&#x2026;">
-<!ENTITY plusmn "&#xB1;">
 <!ENTITY % common  SYSTEM "../../common/common.ent">
 %common;
 ]>
@@ -12,7 +7,7 @@
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xmlns:raxm="http://docs.rackspace.com/api/metadata"
     xml:id="api_operations_neutron">
-    <title>API operations<!-- - neutron--></title>
+    <title>API operations</title>
     <para>The Rackspace Cloud Networks API v2 (Neutron) serves the following functions: <itemizedlist>
             <listitem>
                 <para>Provides virtual networking services among devices that are managed by the Rackspace Cloud Servers
@@ -38,15 +33,15 @@
         <!--availwarn-->
         <important>
             <para>The neutron API is in Unlimited Availability and is available for all Managed Infrastructure and Managed
-                Operations customers except for RackConnect v3 customers. <phrase>The Security Groups API
-                    is currently in Limited Availability. It is available only to Managed Infrastructure customers and not to
-                    RackConnect or Managed Operations customers. To use the security groups feature, contact Rackspace
-                    Support.</phrase></para>
+                Operations customers except for RackConnect v3 customers. <phrase>The Security Groups API is currently in
+                    Limited Availability. It is available only to Managed Infrastructure customers and not to RackConnect or
+                    Managed Operations customers. To use the security groups feature, contact Rackspace
+                Support.</phrase></para>
         </important></para>
     <section xml:id="api_networks">
         <title>Networks</title>
-        <para>This section describes the API operations for networks. For general information about networks, see <olink
-                targetdoc="cn-devguide" targetptr="conceptNetwork">“Network”</olink>.</para>
+        <para>This section describes the API operations for networks. For general information about networks, see
+            <link xlink:href="conceptNetwork.html">Network</link>.</para>
         <!--- this section comes from these WADLs: networks.wadl, ports.wadl, subnets.wadl -->
         <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
             <!-- list networks -->
@@ -77,8 +72,8 @@
     </section>
     <section xml:id="api_subnets_neutron">
         <title>Subnets</title>
-        <para>This section describes the API operations for subnets. For general information about subnets, see <olink
-                targetdoc="cn-devguide" targetptr="conceptSubnet">“Subnet”</olink>.</para>
+        <para>This section describes the API operations for subnets. For general information about subnets, see
+            <link xlink:href="conceptSubnet.html">Subnet</link>.</para>
         <!--- this section comes from these WADLs: subnets.wadl -->
         <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
             <!-- list subnets -->
@@ -109,8 +104,8 @@
     </section>
     <section xml:id="api_ports_neutron">
         <title>Ports</title>
-        <para>This section describes the API operations for ports. For general information about ports, see <olink
-                targetdoc="cn-devguide" targetptr="conceptPort">“Port”</olink>.</para>
+        <para>This section describes the API operations for ports. For general information about ports, see
+            <link xlink:href="conceptPort.html">Port</link>.</para>
         <!--- this section comes from these WADLs: ports.wadl -->
         <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
             <!-- list ports -->
@@ -171,9 +166,8 @@
                 Infrastructure customers and not to RackConnect or Managed Operations customers. To use this feature, contact
                 Rackspace Support.</para>
         </important>
-        <para><emphasis role="bold">For general information about security groups and rules, see <olink
-                    targetdoc="cn-devguide" targetptr="conceptSecurityGroups">“Security Groups and
-            Rules”</olink>.</emphasis></para>
+        <para><emphasis role="bold">For general information about security groups and rules, see
+                <link xlink:href="conceptSecurityGroups.html">Security groups and rules</link>.</emphasis></para>
         <!--- this section comes from these WADLs: security-groups.wadl -->
         <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
             <!-- list security groups -->
@@ -223,8 +217,9 @@
                 <listitem>
                     <para>a logical entity for forwarding packets across internal subnets and NATting them on external
                         networks through an appropriate external gateway.</para>
-                    <para>See <olink targetdoc="cn-devguide" targetptr="conceptRouter">“Router”</olink>for more information
-                        about routers.</para>
+                    <para>See 
+                    <link xlink:href="conceptRouter.html">Router</link>
+                    for more information about routers.</para>
                 </listitem>
             </varlistentry>
         </variablelist>

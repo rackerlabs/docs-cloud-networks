@@ -222,7 +222,7 @@ export OS_NO_CACHE=1</computeroutput></screen>
         </step>
     </procedure>
     <sidebar>
-        <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted" targetptr="net_auth">“Get
-                authentication token”</olink></para>
+        <para><emphasis role="bold">Next step: </emphasis>
+            <link xlink:href="net_auth.html">Get the authentication token</link></para>
     </sidebar>
 </section>

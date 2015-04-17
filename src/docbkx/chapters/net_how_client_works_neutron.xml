@@ -9,10 +9,10 @@
     <para>The neutron client is an open-source Python client that you use to run commands to make API calls. Each client
         command runs cURL commands that embed API requests. The client runs from a desktop computer or remote system, such as
         a cloud server.</para>
-    <para>To install and configure the neutron client on a Linux distribution or on Mac OS X, see <olink
-            targetdoc="cn-gettingstarted" targetptr="install_neutron">“Install the neutron client (optional)”</olink>.</para>
-    <para>To export environment variables (see <olink targetdoc="cn-gettingstarted" targetptr="export_env_vars">“Export
-            environment variables to run cURL commands (optional)”</olink>).</para>
+    <para>To install and configure the neutron client on a Linux distribution or on Mac OS X, see 
+        <link xlink:href="install_neutron.html">Install the neutron client (optional)</link>.</para>
+    <para>To export environment variables (see
+        <link xlink:href="export_env_vars.html">Export environment variables to run cURL commands (optional)</link>.</para>
     <note>
         <para>You can specify <literal>--debug</literal> as the first parameter on any neutron command to show the underlying
             API request for the command. This is a good way to become familiar with API requests. For example: neutron

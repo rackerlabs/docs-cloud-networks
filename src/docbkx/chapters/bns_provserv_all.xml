@@ -11,9 +11,8 @@
     <!-- notes common to neutron and nova & client and curl -->
     <para xml:id="bns_ps_notes">
         <note>
-            <para>You can use the &virt_ext; to attach an isolated network to an existing server. For information, see <olink
-                    targetdoc="cn-gettingstarted" targetptr="attach_net">Attach Your Network to an Existing
-                Server</olink>.</para>
+            <para>You can use the &virt_ext; to attach an isolated network to an existing server. For information, see 
+                <link xlink:href="attach_net.html">Attach Your Network to an Existing Server</link>.</para>
         </note>
     </para>
 
@@ -35,11 +34,7 @@
                     List Flavors</link>.</para>
                 </listitem>
                 <listitem>
-                    <para>The port ID of your isolated network. This is the that ID you copied in either <olink
-                            targetdoc="cn-gettingstarted" targetptr="neutron_create_port_neutron">“Create a port (neutron
-                            API/neutron)”</olink> or
-                        <olink targetdoc="cn-gettingstarted" targetptr="neutron_create_port_curl">“Create a port
-                            (cURL)”</olink></para>
+                    <para>The port ID of your isolated network.</para>
                     <note>
                         <para>Instead of the port ID, you can also pass the network ID of the isolated network.</para>
                     </note>
@@ -70,10 +65,7 @@
                     List Flavors</link>.</para>
                 </listitem>
                 <listitem>
-                    <para>The network ID of your isolated network. This is the ID you copied in either <olink
-                            targetdoc="cn-gettingstarted" targetptr="nova_create_network_nova">“Create a network
-                            (nova-network API/nova)”</olink> or <olink targetdoc="cn-gettingstarted"
-                            targetptr="nova_create_network_curl">“Create a network (nova-network API/cURL)”</olink></para>
+                    <para>The network ID of your isolated network.</para>
                 </listitem>
             </itemizedlist>
         </para>

@@ -9,8 +9,9 @@
     <para>These sections walk you through creating your network and subnet and then listing them by using the neutron
         client.</para>
     <sidebar>
-        <para><emphasis role="bold">Start here: </emphasis><olink targetdoc="cn-gettingstarted"
-                targetptr="neutron_create_network_neutron">“Create a network (neutron client)”</olink></para>
+        <para><emphasis role="bold">Start here:
+            </emphasis><link xlink:href="neutron_create_network_neutron.html">Create a network (neutron client)</link>
+        </para>
     </sidebar>
 
     <section xml:id="neutron_create_network_neutron">
@@ -58,8 +59,9 @@
             </procedure>
         </para>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_create_subnet_neutron">“Create a subnet (neutron client)”</olink></para>
+            <para><emphasis role="bold">Next step:
+                </emphasis><link xlink:href="neutron_create_subnet_neutron.html">Create a subnet (neutron client)</link>
+            </para>
         </sidebar>
     </section>
 
@@ -123,8 +125,9 @@
             </procedure>
         </para>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_list_networks_neutron">“List networks (neutron client)”</olink></para>
+            <para><emphasis role="bold">Next step: </emphasis>
+                <link xlink:href="neutron_list_networks_neutron.html">List networks (neutron client)</link>
+            </para>
         </sidebar>
     </section>
 
@@ -149,8 +152,9 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_list_subnets_neutron">List subnets (neutron client)</olink></para>
+            <para><emphasis role="bold">Next step: </emphasis>
+                <link xlink:href="neutron_list_subnets_neutron.html">List subnets (neutron client)</link>
+            </para>
         </sidebar>
     </section>
 
@@ -176,8 +180,9 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="boot_new_server">Boot a new server with your cloud network</olink></para>
+            <para><emphasis role="bold">Next step: </emphasis>
+                <link xlink:href="boot_new_server.html">Boot a new server with your cloud network</link>
+            </para>
         </sidebar>
     </section>
 </section>

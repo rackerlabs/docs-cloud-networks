@@ -22,9 +22,8 @@
                         security groups, you have to create them first and then apply them to Neutron ports that belong to
                         Cloud Server instances.</para>
         </important>
-        <para>For more information about security groups and security
-                group rules, see <link
-                        xlink:href="http://docs.rackspace.com/networks/api/v2/cn-devguide/content/conceptSecurityGroups.html">
+        <para>For more information about security groups and security group rules, see
+                <link xlink:href="http://docs.rackspace.com/networks/api/v2/cn-devguide/content/conceptSecurityGroups.html">
                         <citetitle>Security groups and
                                 rules.</citetitle></link></para>
         <para>The following flow chart shows the steps for creating, using, and modifying security groups and rules. Detailed
@@ -39,19 +38,16 @@
         </para>
         <para>The sections are also organized by example type. To simplify your path through this chapter, decide whether you
                 prefer neutron-client or cURL examples.</para>
-        <!--<sidebar>
-                <para><emphasis role="bold">Next step:</emphasis>
-                        <olink targetdoc="cn-gettingstarted" targetptr="sg_neutron_curl">“Use cURL”</olink></para>
-        </sidebar>-->
         <sidebar>
                 <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
                                 <listitem>
-                                        <para><olink targetdoc="cn-gettingstarted" targetptr="sg_neutron_neutron">“Use
-                                                        neutron client”</olink></para>
+                                        <para>
+                                                <link xlink:href="sg_neutron_neutron.html">Using security groups with neutron client</link>
+                                        </para>
                                 </listitem>
                                 <listitem>
-                                        <para><olink targetdoc="cn-gettingstarted" targetptr="sg_neutron_curl">“Use
-                                                        cURL”</olink></para>
+                                        <para>
+                                                <link xlink:href="sg_neutron_curl.html">Using security groups with cURL</link></para>
                                 </listitem>
                         </itemizedlist></para>
         </sidebar>

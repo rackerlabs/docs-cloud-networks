@@ -20,19 +20,15 @@
         </para>
         <para>The sections are also organized by example type. To simplify your path through this chapter, decide whether you
                 prefer neutron-client or cURL examples.</para>
-<!--        <sidebar>
-                <para><emphasis role="bold">Next step:</emphasis>
-                        <olink targetdoc="cn-gettingstarted" targetptr="chr_neutron_curl">“Use cURL”</olink></para>
-        </sidebar>-->
         <sidebar>
                 <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods: <itemizedlist>
                                 <listitem>
-                                        <para><olink targetdoc="cn-gettingstarted" targetptr="uap_neutron_neutron">“Use
-                                                        neutron client”</olink></para>
+                                        <para><link xlink:href="chr_neutron_neutron.html">Configure host routes with neutron</link>
+                                        </para>
                                 </listitem>
                                 <listitem>
-                                        <para><olink targetdoc="cn-gettingstarted" targetptr="chr_neutron_curl">“Use
-                                                        cURL”</olink></para>
+                                        <para><link xlink:href="chr_neutron_curl.html">Configure host routes with cURL</link>
+                                        </para>
                                 </listitem>
                         </itemizedlist></para>
         </sidebar>

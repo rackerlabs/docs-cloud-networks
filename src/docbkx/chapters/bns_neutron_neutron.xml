@@ -9,15 +9,9 @@
     <para>These sections walk you through creating a port for your network, listing the ports and showing the port details by
         using the neutron API. They also show the steps for provisioning a server with an attached port and for listing
         servers by using the nova-network API.</para>
-    <!--    <note>
-        <para>If you prefer to attach the network directly to a new server without using a port, see <olink
-                targetdoc="cn-gettingstarted" targetptr="bns_nova_nova">“Use nova-network API and nova client”</olink> or
-                <olink targetdoc="cn-gettingstarted" targetptr="bns_nova_curl">“Use nova-network API and cURL”</olink>. There
-            are no neutron API operations for direct attachment of a network to the server without using ports.</para>
-    </note>-->
     <sidebar>
-        <para><emphasis role="bold">Start here: </emphasis><olink targetdoc="cn-gettingstarted"
-                targetptr="neutron_list_networks2_neutron">“List networks (neutron client)”</olink></para>
+        <para><emphasis role="bold">Start here: </emphasis>
+            <link xlink:href="neutron_list_networks2_neutron.html">List networks (neutron client)</link></para>
     </sidebar>
 
     <section xml:id="neutron_list_networks2_neutron">
@@ -48,8 +42,8 @@
         </procedure>
 
         <sidebar>
-            <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_create_port_neutron">“Create a port (neutron client)”</olink></para>
+            <para><emphasis role="bold">Next step:</emphasis>
+                <link xlink:href="neutron_create_port_neutron.html">Create a port (neutron client)</link></para>
         </sidebar>
     </section>
 
@@ -105,8 +99,8 @@
         </procedure>
 
         <sidebar>
-            <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_list_ports_neutron">“List ports (neutron client)”</olink></para>
+            <para><emphasis role="bold">Next step:</emphasis>
+                <link xlink:href="neutron_list_ports_neutron.html">List ports (neutron client)</link></para>
         </sidebar>
     </section>
 
@@ -133,9 +127,9 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_create_server_nova">“Provision a server by attaching a port with an isolated network
-                    (nova client)”</olink></para>
+            <para><emphasis role="bold">Next step: </emphasis>
+                <link xlink:href="neutron_create_server_nova.html">Provision a server by attaching a port with an isolated network
+                    (nova client)</link></para>
         </sidebar>
     </section>
 
@@ -159,9 +153,7 @@
                     List Flavors</link>.</para>
                 </listitem>
                 <listitem>
-                    <para>The port ID of your isolated network. This is the that ID you copied in <olink
-                            targetdoc="cn-gettingstarted" targetptr="neutron_create_port_neutron">“Create a port (neutron
-                            API/neutron)”</olink>.</para>
+                    <para>The port ID of your isolated network.</para>
                     <note>
                         <para>Instead of the port ID, you can also pass the network ID of the isolated network.</para>
                     </note>
@@ -213,8 +205,7 @@
         <sidebar>
             <para>
                 <emphasis role="bold">Next step:</emphasis>
-                <olink targetdoc="cn-gettingstarted" targetptr="neutron_show_port_neutron">“Show port details (neutron
-                    client)”</olink>
+                <link xlink:href="neutron_show_port_neutron.html">Show port details (neutron client)</link>
             </para>
         </sidebar>
     </section>
@@ -267,8 +258,8 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_list_server_nova">“List servers (nova client)”</olink></para>
+            <para><emphasis role="bold">Next step: </emphasis>
+                <link xlink:href="neutron_list_server_nova.html">List servers (nova client)</link></para>
         </sidebar>
     </section>
 
@@ -300,8 +291,8 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted" targetptr="attach_net"
-                    >Attach your network to an existing server</olink></para>
+            <para><emphasis role="bold">Next step: </emphasis>
+                <link xlink:href="attach_net.html">Attach your network to an existing server</link></para>
         </sidebar>
     </section>
 </section>

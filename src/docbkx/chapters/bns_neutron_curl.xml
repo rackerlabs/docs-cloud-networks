@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE section [
+       <!DOCTYPE section [
 <!ENTITY % common  SYSTEM "../../common/common.ent">
 %common;
 ]>
@@ -9,8 +9,8 @@
     <para>These sections walk you through listing subnets, creating a port for your network, listing the ports, provisioning
         a server with an attached port, listing servers, and listing servers.</para>
     <sidebar>
-        <para><emphasis role="bold">Start here: </emphasis><olink targetdoc="cn-gettingstarted"
-                targetptr="neutron_list_subnets_bns_curl">“List subnets (cURL)”</olink></para>
+        <para><emphasis role="bold">Start here: </emphasis>
+            <link xlink:href="neutron_list_subnets_bns_curl.html">List subnets (cURL)</link></para>
     </sidebar>
 
     <section xml:id="neutron_list_subnets_bns_curl">
@@ -20,7 +20,8 @@
         <procedure>
             <title>To list subnets</title>
             <step>
-                <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                <para>Issue the following cURL command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
                         <prompt>$</prompt> curl https://dfw.networks.api.rackspacecloud.com/v2.0/subnets \
        -X GET 
        -H "User-Agent: python-novaclient" \
@@ -55,8 +56,8 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_create_port_curl">Create a port (cURL)</olink></para>
+            <para><emphasis role="bold">Next step:
+                </emphasis><link xlink:href="neutron_create_port_curl.html">Create a port (cURL)</link></para>
         </sidebar>
     </section>
 
@@ -76,9 +77,6 @@
        -H "Accept: application/json" \
        -H "X-Auth-Token: $token" \
        -d '{"port": {"admin_state_up": true,"device_id": "","name": "port1", "network_id": "03f240c5-6fb8-47a0-860a-c7ba83be519f"}}| python -m json.tool</programlisting></para>
-                <para>In this cURL command, you specify several options. For information about the options, see <olink
-                        targetdoc="cn-gettingstarted" targetptr="curl_options">Table 2, “cURL Command-Line
-                    Options”</olink>.</para>
                 <para>The operation returns the response body, as shown in the following example:
                     <programlisting language="json"><?db-font-size 75%?>
 {
@@ -111,8 +109,8 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step:</emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_list_port_curl">“List ports (cURL)”</olink></para>
+            <para><emphasis role="bold">Next
+                step:</emphasis><link xlink:href="neutron_list_port_curl.html">List ports (cURL)</link></para>
         </sidebar>
     </section>
 
@@ -122,7 +120,8 @@
         <procedure>
             <title>To list ports</title>
             <step>
-                <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                <para>Issue the following cURL command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
 <prompt>$</prompt> curl https://dfw.networks.api.rackspacecloud.com/v2.0/ports \
 -X GET 
 -H "User-Agent: python-novaclient" \
@@ -163,9 +162,8 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_create_server_curl">“Provision a server with a port and an isolated network
-                    (cURL)”</olink>
+            <para><emphasis role="bold">Next step:
+                </emphasis><link xlink:href="neutron_create_server_curl.html">Provision a server with a port on an isolated network (cURL)</link>
             </para>
         </sidebar>
     </section>
@@ -231,8 +229,7 @@
         <sidebar>
             <para>
                 <emphasis role="bold">Next step:</emphasis>
-                <olink targetdoc="cn-gettingstarted" targetptr="neutron_list_server_curl">“List server and attached networks
-                    (cURL)”</olink>
+                <link xlink:href="neutron_list_server_curl.html">List server and attached networks (cURL)</link>
             </para>
         </sidebar>
     </section>
@@ -340,8 +337,8 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_list_ports_curl">“List ports (cURL)”</olink></para>
+            <para><emphasis role="bold">Next step:
+                </emphasis><link xlink:href="neutron_list_ports_curl.html">List ports (cURL)</link></para>
         </sidebar>
     </section>
 
@@ -351,7 +348,8 @@
         <procedure>
             <title>To list ports</title>
             <step>
-                <para>Issue the following cURL command: <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
+                <para>Issue the following cURL command:
+                    <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
 <prompt>$</prompt> curl https://dfw.networks.api.rackspacecloud.com/v2.0/ports \
 -X GET \
 -H "User-Agent: python-novaclient" \
@@ -426,8 +424,8 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next topic: </emphasis><olink targetdoc="cn-gettingstarted" targetptr="delete_net"
-                    >“Delete your cloud network”</olink>
+            <para><emphasis role="bold">Next topic:
+                </emphasis><link xlink:href="delete_net.html">Delete your cloud network</link>
             </para>
         </sidebar>
     </section>

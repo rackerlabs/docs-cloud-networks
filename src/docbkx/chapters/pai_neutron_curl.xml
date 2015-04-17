@@ -9,8 +9,8 @@
     <para>These sections walk you through provisioning an additional IP and dual-stack (v4 and v6) IP addresses on an
         isolated network port by using cURL.</para>
     <sidebar>
-        <para><emphasis role="bold">Start here: </emphasis><olink targetdoc="cn-gettingstarted"
-                targetptr="neutron_show_v6_port_pai_curl">“Show port with IPv6 address (cURL)”</olink></para>
+        <para><emphasis role="bold">Start here: </emphasis>
+            <link xlink:href="neutron_show_v6_port_pai_curl.html">Show port with IPv6 address (cURL)</link></para>
     </sidebar>
 
     <section xml:id="neutron_show_v6_port_pai_curl">
@@ -28,9 +28,6 @@
        -H "User-Agent: python-novaclient" \
        -H "Accept: application/json" \
        -H "X-Auth-Token: $token" | python -m json.tool</programlisting></para>
-                <para>In this cURL command, you specify several options. For information about the options, see <olink
-                        targetdoc="cn-gettingstarted" targetptr="curl_options">Table 2, “cURL Command-Line
-                    Options”</olink>.</para>
                 <para>The operation returns the response body, as shown in the following example:
                     <programlisting language="json"><?db-font-size 65%?>
 {
@@ -63,8 +60,8 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_get_network_cidr_pai_curl">“Get the IPv4 CIDR for the network (cURL)”</olink></para>
+            <para><emphasis role="bold">Next step: </emphasis>
+                <link xlink:href="neutron_get_network_cidr_pai_curl.html">Get the IPv4 CIDR for the network (cURL)</link></para>
         </sidebar>
     </section>
 
@@ -85,9 +82,6 @@
        -H "User-Agent: python-novaclient" \
        -H "Accept: application/json" \
        -H "X-Auth-Token: $token" | python -m json.tool</programlisting></para>
-                <para>In this cURL command, you specify several options. For information about the options, see <olink
-                        targetdoc="cn-gettingstarted" targetptr="curl_options">Table 2, “cURL Command-Line
-                    Options”</olink>.</para>
                 <para>The operation returns the response body, as shown in the following example:
                     <programlisting language="json"><?db-font-size 65%?>
 {
@@ -121,8 +115,8 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_add_v4_IP_pai_curl">“Add an IPv4 address on the same port (cURL)”</olink></para>
+            <para><emphasis role="bold">Next step: </emphasis>
+                <link xlink:href="neutron_add_v4_IP_pai_curl.html">Add an IPv4 address on the same port (cURL)</link></para>
         </sidebar>
     </section>
 
@@ -157,9 +151,6 @@
         ]
     }
 }' | python -m json.tool</programlisting></para>
-                <para>In this cURL command, you specify several options. For information about the options, see <olink
-                        targetdoc="cn-gettingstarted" targetptr="curl_options">Table 2, “cURL Command-Line
-                    Options”</olink>.</para>
                 <para>The operation returns the response body, as shown in the following example:
                     <programlisting language="json"><?db-font-size 65%?>
 {
@@ -191,8 +182,8 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_show_both_port_pai_curl">“Show the port with both IP addresses (cURL)”</olink></para>
+            <para><emphasis role="bold">Next step: </emphasis>
+                <link xlink:href="neutron_show_both_port_pai_curl.html">Show the port with both IP addresses (cURL)</link></para>
         </sidebar>
     </section>
 
@@ -244,8 +235,8 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_boot_server_pai_curl">Boot a Server (cURL)</olink></para>
+            <para><emphasis role="bold">Next step: </emphasis>
+                <link xlink:href="neutron_boot_server_pai_curl.html">Boot a Server (cURL)</link></para>
         </sidebar>
     </section>
 
@@ -301,8 +292,8 @@
             </step>
         </procedure>
         <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="neutron_verify_ips_pai_curl">Verify IP addresses on the server port (cURL)</olink></para>
+            <para><emphasis role="bold">Next step: </emphasis>
+                <link xlink:href="neutron_verify_ips_pai_curl.html">Verify IP addresses on the server port (cURL)</link></para>
         </sidebar>
     </section>
 
@@ -406,8 +397,8 @@
             </step>
         </procedure>
         <sidebar security="internal">
-            <para><emphasis role="bold">Next topic: </emphasis><olink targetdoc="cn-gettingstarted"
-                    targetptr="security_groups">Use security groups to control traffic</olink>
+            <para><emphasis role="bold">Next topic: </emphasis>
+                <link xlink:href="security_groups.html">Use security groups to control traffic</link>
             </para>
         </sidebar>
     </section>
