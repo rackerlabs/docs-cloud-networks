@@ -64,6 +64,9 @@
               <includes>cn-admin-releasenotes.xml</includes>
               <chapterAutolabel>0</chapterAutolabel>
               <security>internal</security>
+              <enableGoogleAnalytics>0</enableGoogleAnalytics>
+              <enableDisqus>intranet</enableDisqus>
+              <feedbackEmail>cat.lookabaugh@rackspace.com</feedbackEmail>
               <generateToc> appendix toc,title article/appendix nop article toc,title book title,figure,table,equation
                 chapter toc part toc,title preface toc,title qandadiv toc qandaset toc reference toc,title set toc,title </generateToc>
               <tocSectionDepth>1</tocSectionDepth>
@@ -84,6 +87,8 @@
               <generateToc> appendix toc,title article/appendix nop article toc,title book title,figure,table,equation
                 chapter toc part toc,title preface toc,title qandadiv toc qandaset toc reference toc,title set toc,title </generateToc>
               <tocSectionDepth>1</tocSectionDepth>
+              <enableDisqus>internet</enableDisqus>
+              <feedbackEmail>cat.lookabaugh@rackspace.com</feedbackEmail>
               <failOnValidationError>false</failOnValidationError>
             </configuration>
           </execution>
@@ -100,6 +105,9 @@
               <profileCondition>dg</profileCondition>
               <profileAudience>dg</profileAudience>
               <security>internal</security>
+              <enableGoogleAnalytics>0</enableGoogleAnalytics>
+              <enableDisqus>intranet</enableDisqus>
+              <feedbackEmail>cat.lookabaugh@rackspace.com</feedbackEmail>
               <tocSectionDepth>1</tocSectionDepth>
               <generateToc> appendix toc,title article/appendix nop article toc,title book toc,title,figure,table,equation
                 chapter toc part toc,title preface nop qandadiv toc qandaset toc reference toc,title section toc set
@@ -118,6 +126,8 @@
               <profileCondition>dg</profileCondition>
               <profileAudience>dg</profileAudience>
               <tocSectionDepth>1</tocSectionDepth>
+              <enableDisqus>internet</enableDisqus>
+              <feedbackEmail>cat.lookabaugh@rackspace.com</feedbackEmail>
               <generateToc> appendix toc,title article/appendix nop article toc,title book toc,title,figure,table,equation
                 chapter toc part toc,title preface nop qandadiv toc qandaset toc reference toc,title section toc set
                 toc,title </generateToc>
@@ -141,6 +151,9 @@
               <appendixAutolabel>0</appendixAutolabel>
               <tocSectionDepth>1</tocSectionDepth>
               <security>internal</security>
+              <enableGoogleAnalytics>0</enableGoogleAnalytics>
+              <enableDisqus>intranet</enableDisqus>
+              <feedbackEmail>cat.lookabaugh@rackspace.com</feedbackEmail>
               <formalProcedures>0</formalProcedures>
               <generateToc> appendix toc,title article/appendix nop article toc,title book toc,title,figure,table,equation
                 chapter toc part toc,title preface nop qandadiv toc qandaset toc reference toc,title section toc set
@@ -163,13 +176,14 @@
               <sectionAutolabel>0</sectionAutolabel>
               <appendixAutolabel>0</appendixAutolabel>
               <tocSectionDepth>1</tocSectionDepth>
+              <enableDisqus>internet</enableDisqus>
+              <feedbackEmail>cat.lookabaugh@rackspace.com</feedbackEmail>
               <formalProcedures>0</formalProcedures>
               <generateToc> appendix toc,title article/appendix nop article toc,title book toc,title,figure,table,equation
                 chapter toc part toc,title preface nop qandadiv toc qandaset toc reference toc,title section toc set
                 toc,title </generateToc>
             </configuration>
           </execution>
- 
         </executions>
         <configuration>
           <highlightSource>false</highlightSource>
@@ -177,9 +191,9 @@
           <showXslMessages>true</showXslMessages>
           <profileCondition>cn</profileCondition>
           <!--<sourceDirectory>src</sourceDirectory>-->
-          <enableDisqus>internet</enableDisqus>
-          <feedbackEmail>cat.lookabaugh@rackspace.com</feedbackEmail>
           <!-- <security>external</security> -->
+          <!--<enableDisqus>internet</enableDisqus>
+          <feedbackEmail>cat.lookabaugh@rackspace.com</feedbackEmail>-->
           <branding>rackspace</branding>
           <socialIcons>1</socialIcons>
           <enableGoogleAnalytics>1</enableGoogleAnalytics>
