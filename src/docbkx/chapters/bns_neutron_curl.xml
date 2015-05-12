@@ -76,7 +76,7 @@
        -H "Content-Type: application/json" \
        -H "Accept: application/json" \
        -H "X-Auth-Token: $token" \
-       -d '{"port": {"admin_state_up": true,"device_id": "","name": "port1", "network_id": "03f240c5-6fb8-47a0-860a-c7ba83be519f"}}| python -m json.tool</programlisting></para>
+       -d '{"port": {"admin_state_up": true,"device_id": "","name": "port1", "network_id": "03f240c5-6fb8-47a0-860a-c7ba83be519f"}}'| python -m json.tool</programlisting></para>
                 <para>The operation returns the response body, as shown in the following example:
                     <programlisting language="json"><?db-font-size 75%?>
 {
@@ -168,28 +168,61 @@
         </sidebar>
     </section>
 
-    <!--Writer:  Keep this sections in sync with xml:id="nova_create_server_curl". Content is basically same but command, 
-        title, and sidebar are different-->
     <section xml:id="neutron_create_server_curl">
         <title>Provision a server with a port on an isolated network (cURL)</title>
         <para>To create your new server and attach a port with an isolated network, you need the following
             information:</para>
 
-        <xi:include href="net_bns_provserv_all.xml"
+        <!--<xi:include href="net_bns_provserv_all.xml"
             xpointer="xmlns(db=http://docbook.org/ns/docbook)
             xpath(//*[@xml:id = 'bns_ps_params_neutron']/*[not(self::db:title)])">
             <xi:fallback>
                 <para>Missing content here. Please let us know by making a DISQUS comment.</para>
             </xi:fallback>
-        </xi:include>
+        </xi:include>-->
+        
+        <para>
+            <itemizedlist>
+                <listitem>
+                    <para>The name of the new server. Use a name of your choice.</para>
+                </listitem>
+                <listitem>
+                    <para>The image ID. For instructions on how list images, see
+                        <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-gettingstarted/content/list_images.html">
+                    List Images</link>.</para>
+                </listitem>
+                <listitem>
+                    <para>The flavor ID. For instructions on how to list flavors, see
+                        <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-gettingstarted/content/list_flavors.html">
+                    List Flavors</link>.</para>
+                </listitem>
+                <listitem>
+                    <para>The port ID of your isolated network.</para>
+                    <note>
+                        <para>Instead of the port ID, you can also pass the network ID of the isolated network.</para>
+                    </note>
+                </listitem>
+                <listitem>
+                    <para>The network ID of PublicNet, which is <literal>00000000-0000-0000-0000-000000000000</literal>, and
+                        ServiceNet, which is <literal>11111111-1111-1111-1111-111111111111</literal>. </para>
+                </listitem>
+            </itemizedlist>
+        </para>
 
-        <xi:include href="net_bns_provserv_all.xml"
+        <!--<xi:include href="net_bns_provserv_all.xml"
             xpointer="xmlns(db=http://docbook.org/ns/docbook)
             xpath(//*[@xml:id = 'bns_ps_notes']/*[not(self::db:title)])">
             <xi:fallback>
                 <para>Missing content here. Please let us know by making a DISQUS comment.</para>
             </xi:fallback>
-        </xi:include>
+        </xi:include>-->
+        
+        <para xml:id="bns_ps_notes">
+            <note>
+                <para>You can use the &virt_ext; to attach an isolated network to an existing server. For information, see 
+                    <link xlink:href="attach_net.html">Attach Your Network to an Existing Server</link>.</para>
+            </note>
+        </para>
 
         <procedure>
             <title>To provision a server and attach a port with a network by using JSON</title>

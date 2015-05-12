@@ -38,7 +38,7 @@
                     </itemizedlist>
                 </para>
                 <para><programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-                        <prompt>$</prompt> neutron subnet-delete 23e3059e-4f39-4f7f-8cf2-c326e5de6c37</programlisting></para>
+                        <prompt>$</prompt> neutron subnet-delete &lt;23e3059e-4f39-4f7f-8cf2-c326e5de6c37&gt;</programlisting></para>
                 <para><emphasis role="bold">Output:</emphasis>
                 </para>
                 <para>Successful deletion returns an <errortext>Accepted</errortext> (<returnvalue>204</returnvalue>)
@@ -70,7 +70,7 @@
                     </itemizedlist>
                 </para>
                 <para><programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-                        <prompt>$</prompt> neutron net-delete 29f52c7e-6efd-4335-a14a-db77d32a2555</programlisting></para>
+                        <prompt>$</prompt> neutron net-delete &lt;29f52c7e-6efd-4335-a14a-db77d32a2555&gt;</programlisting></para>
                 <para><emphasis role="bold">Output:</emphasis>
                 </para>
                 <para>Successful deletion returns an <errortext>Accepted</errortext> (<returnvalue>204</returnvalue>)

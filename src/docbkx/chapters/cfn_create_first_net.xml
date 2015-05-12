@@ -32,7 +32,7 @@
         <sidebar>
                 <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
                                 <listitem>
-                                        <para><link xlink:href="cfn_neutron_neutron">Create network with neutron client</link></para>
+                                        <para><link xlink:href="cfn_neutron_neutron.html">Create network with neutron client</link></para>
                                 </listitem>
                                 <listitem>
                                         <para><link xlink:href="cfn_neutron_curl.html">Create network with cURL</link></para>

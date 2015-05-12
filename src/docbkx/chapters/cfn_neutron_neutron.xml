@@ -32,7 +32,7 @@
                         </itemizedlist>
                     </para>
                     <para><programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-                              <prompt>$</prompt> neutron net-create amp</programlisting></para>
+                              <prompt>$</prompt> neutron net-create &lt;amp&gt;</programlisting></para>
                     <para><emphasis role="bold">Output:</emphasis></para>
                     <para>The command returns the response, as shown in the following output:</para>
                     <informalexample>
@@ -94,7 +94,7 @@
                         </itemizedlist>
                     </para>
                     <para><programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-                               <prompt>$</prompt> neutron subnet-create --name Subamp --ip-version 4 29f52c7e-6efd-4335-a14a-db77d32a2555 120.1.2.0/24</programlisting></para>
+                               <prompt>$</prompt> neutron subnet-create --name &lt;Subamp&gt; --ip-version &lt;4&gt; &lt;29f52c7e-6efd-4335-a14a-db77d32a2555&gt; &lt;120.1.2.0/24&gt;</programlisting></para>
                     <para><emphasis role="bold">Positional arguments:</emphasis></para>
                     <para><emphasis role="bold">Output:</emphasis></para>
                     <para>The command returns the response, as shown in the following output:</para>

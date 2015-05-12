@@ -91,6 +91,18 @@
                         </para>
                     </td>
                 </tr>
+                <tr>
+                    <td valign="top">
+                        <para>Nova client</para>
+                    </td>
+                    <td>
+                        <para>Before you can use the neutron client commands, you must have an authentication token. Since
+                            the neutron client doesn't provide authentication, install the nova client. See
+                            <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-gettingstarted/content/section_gs_install_nova.html">
+                                Install the nova Client with the Cloud Networks Extension</link>
+                            in the <citetitle>Next Generation Cloud Servers Getting Started Guide</citetitle>.</para>
+                    </td>
+                </tr>
             </tbody>
         </table></para>
 

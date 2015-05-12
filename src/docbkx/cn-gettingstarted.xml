@@ -45,11 +45,18 @@
         </abstract>
         <revhistory>
             <revision>
+                <date>2015-05-12</date>
+                <revdescription>
+                    <para>Fixed the following operation examples: create subnet, create port, delete network, delete subnet,
+                        and boot server for several use cases.</para>
+                </revdescription>
+            </revision>
+            <revision>
                 <date>2015-03-24</date>
                 <revdescription>
                     <para>Expanded section on security groups to provide a use case.</para>
-               </revdescription>
-           </revision> 
+                </revdescription>
+            </revision>
             <revision>
                 <date>2015-03-19</date>
                 <revdescription>
@@ -60,8 +67,7 @@
             <revision security="internal">
                 <date>2015-03-24</date>
                 <revdescription>
-                    <para>Updated security groups to
-                            control traffic to note availability level.</para>
+                    <para>Updated security groups to control traffic to note availability level.</para>
                 </revdescription>
             </revision>
             <revision>

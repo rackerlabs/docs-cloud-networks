@@ -51,7 +51,7 @@
                 </para>
                 <para>Successful deletion returns an <returnvalue>202</returnvalue>
                     <errortext>Accepted</errortext> response code:</para>
-                <screen><computeroutput>HTTP/1.1 202 Accepted
+                <screen><computeroutput>HTTP/1.1 204 No Content
 Date: Thu, 04 Oct 2012 16:23:30 GMT
 Content-Length: 58
 Content-Type: text/html;charset=UTF-8
@@ -98,7 +98,7 @@ The request is accepted for processing.</computeroutput></screen>
                 </para>
                 <para>Successful deletion returns an <returnvalue>202</returnvalue>
                     <errortext>Accepted</errortext> response code:</para>
-                <screen><computeroutput>HTTP/1.1 202 Accepted
+                <screen><computeroutput>HTTP/1.1 204 No Content
 Date: Thu, 04 Oct 2012 16:23:30 GMT
 Content-Length: 58
 Content-Type: text/html;charset=UTF-8

@@ -198,7 +198,7 @@
                     </itemizedlist>
                 </para>
                 <para><programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
-                        <prompt>$</prompt> nova list 6ae4be93-4ec7-4b55-897a-c250f3a6e161</programlisting></para>
+                        <prompt>$</prompt> nova list &lt;6ae4be93-4ec7-4b55-897a-c250f3a6e161&gt;</programlisting></para>
                 <para><emphasis role="bold">Output:</emphasis></para>
                 <para>The command returns the response, as shown in the following output:</para>
                 <informalexample>
@@ -288,7 +288,7 @@
                     </itemizedlist>
                 </para>
                 <para><programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
-                        <prompt>$</prompt> neutron port-update --security-group fd269d7a-0909-488f-b5fc-5606c8aa489f</programlisting></para>
+                        <prompt>$</prompt> neutron port-update --security-group &lt;fd269d7a-0909-488f-b5fc-5606c8aa489f&gt;</programlisting></para>
                 <para><emphasis role="bold">Output:</emphasis></para>
                 <para>The command returns the result as shown in the following output</para>
                 <informalexample>
@@ -463,7 +463,7 @@ Request timeout for icmp_seq 2
                     </itemizedlist>
                 </para>
                 <para><programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
-                        <prompt>$</prompt> neutron port-update --security-group fd269d7a-0909-488f-b5fc-5606c8aa489f</programlisting></para>
+                        <prompt>$</prompt> neutron port-update --security-group &lt;fd269d7a-0909-488f-b5fc-5606c8aa489f&gt;</programlisting></para>
                 <para><emphasis role="bold">Output:</emphasis></para>
                 <para>The command returns the result as shown in the following output</para>
                 <informalexample>

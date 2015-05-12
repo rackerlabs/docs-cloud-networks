@@ -256,13 +256,13 @@
        -H "Accept: application/json" \
        -H "X-Auth-Token: $token" \
        -d '{"server":
-            "name": "ata",
-            "imageRef": "c63e20ad-6e3b-4e0b-943c-95cf3ba6c3a6",
-            "flavorRef": "2",
-            "max_count": 1,
-            "min_count": 1,
-            "networks": [{"uuid": "00000000-0000-0000-0000-000000000000"}, {"uuid": "11111111-1111-1111-1111-111111111111"}, {"port":"79bf47e2-5107-4d93-b9c3-b78ddbc94c93"} ]
-        }} | python -m json.tool</programlisting></para>
+              {"name": "ata",
+               "imageRef": "c63e20ad-6e3b-4e0b-943c-95cf3ba6c3a6",
+               "flavorRef": "2",
+               "max_count": 1,
+               "min_count": 1,
+               "networks": [{"uuid": "00000000-0000-0000-0000-000000000000"}, {"uuid": "11111111-1111-1111-1111-111111111111"}, {"port":"79bf47e2-5107-4d93-b9c3-b78ddbc94c93"} ]
+        }}' | python -m json.tool</programlisting></para>
                 <para>The operation returns the response body as shown in the following example:
                     <programlisting language="json"><?db-font-size 75%?>
 {

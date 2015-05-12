@@ -11,7 +11,7 @@
             <literal>python-novaclient</literal>. </para>
     <para>To install the nova client, you first install the <literal>rackspace-novaclient</literal> package, which includes
         the nova client and the Rackspace extensions including the Cloud Networks extension.</para>-->
-    <para>The Rackspace Neutron API doesn’t currently offer a way to attach networks to, and detach networks from, a server.
+    <para>The Rackspace Neutron API doesn’t currently offer a way to authenticate or to attach networks to, and detach networks from, a server.
         If you want to attach and detach networks by using the nova client, you must use the Cloud Networks virtual interface
         extension by installing the <literal>os_virtual_interfacesv2_python_novaclient_ext</literal> package.</para>
     <note>

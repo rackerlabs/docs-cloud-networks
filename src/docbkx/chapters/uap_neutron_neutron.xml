@@ -36,7 +36,7 @@
                     </itemizedlist>
                 </para>
                 <para><programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-                        <prompt>$</prompt> neutron net-create Rackernet</programlisting></para>
+                        <prompt>$</prompt> neutron net-create &lt;Rackernet&gt;</programlisting></para>
                 <para><emphasis role="bold">Output:</emphasis>
                 </para>
                 <para>The command returns the response, as shown in the following output:</para>
@@ -109,12 +109,12 @@
                 </para>
                 <para><programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
                         <prompt>$</prompt> neutron subnet-create \
-    --ip-version 4 \
-    --allocation-pool start=192.168.5.3,end=192.168.5.100 \
-    --allocation-pool start=192.168.5.103,end=192.168.5.254 \
-    --host-route destination=1.1.1.0/24,nexthop=192.168.5.254 \
-    --tenant-id 5831008 \
-    a8fde776-e80f-47bb-a050-0c057d89afc3 192.168.5.0/24</programlisting></para>
+    --ip-version &lt;4&gt; \
+    --allocation-pool start=&lt;192.168.5.3&gt;,end=&lt;192.168.5.100&gt; \
+    --allocation-pool start=&lt;192.168.5.103&gt;,end=&lt;192.168.5.254&gt; \
+    --host-route destination=&lt;1.1.1.0/24&gt;,nexthop=&lt;192.168.5.254&gt; \
+    --tenant-id &lt;5831008&gt; \
+    &lt;a8fde776-e80f-47bb-a050-0c057d89afc3&gt; &lt;192.168.5.0/24&gt;</programlisting></para>
                 <para><emphasis role="bold">Output:</emphasis>
                 </para>
                 <para>The command returns the response, as shown in the following output:</para>
@@ -175,7 +175,7 @@
             <step>
                 <para>Issue the following nova client command:
                     <programlisting language="bash" role="gutter: false"><?db-font-size 80%?>
-<prompt>$</prompt> nova boot ata --image ffa476b1-9b14-46bd-99a8-862d1d94eb7a --flavor 2 --nic net-id=a8fde776-e80f-47bb-a050-0c057d89afc3</programlisting></para>
+<prompt>$</prompt> nova boot &lt;ata&gt; --image &lt;ffa476b1-9b14-46bd-99a8-862d1d94eb7a&gt; --flavor &lt;2&gt; --nic net-id=&lt;a8fde776-e80f-47bb-a050-0c057d89afc3&gt;</programlisting></para>
 
                 <para>The operation returns information about the new server, as shown in the following example:</para>
                 <para><informalexample>
@@ -228,7 +228,7 @@
             <step>
                 <para>Issue the following nova command:
                     <programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
-<prompt>$</prompt> nova list a1061a57-0136-4c29-aac1-8b1a646a3001</programlisting></para>
+<prompt>$</prompt> nova list &lt;a1061a57-0136-4c29-aac1-8b1a646a3001&gt;</programlisting></para>
                 <para><emphasis role="bold">Positional arguments:</emphasis></para>
                 <para>
                     <itemizedlist>
@@ -312,9 +312,9 @@
                 </para>
                 <para><programlisting language="bash" role="gutter: false"><?db-font-size 75%?>
 <prompt>$</prompt> neutron port-create \
-    --name Rackerport \
-    --fixed-ip subnet_id=98c1af30-05c9-4502-8b1f-9bffde843cba,ip_address=192.168.5.1 \
-    a8fde776-e80f-47bb-a050-0c057d89afc3</programlisting></para>
+    --name &lt;Rackerport&gt; \
+    --fixed-ip subnet_id=&lt;98c1af30-05c9-4502-8b1f-9bffde843cba&gt;,ip_address=&lt;192.168.5.1&gt; \
+    &lt;a8fde776-e80f-47bb-a050-0c057d89afc3&gt;</programlisting></para>
                 <para><emphasis role="bold">Output:</emphasis></para>
                 <para>The command returns the response, as shown in the following output:</para>
                 <informalexample>

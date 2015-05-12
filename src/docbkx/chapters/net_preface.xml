@@ -14,7 +14,7 @@
             <guilabel>Account</guilabel> menu in the upper-right corner of the screen. Your tenant ID is shown at the top of
         the menu, listed as <guilabel>Account #</guilabel>.</para>
 
-    <para>Cloud Networks was originally released using the Cloud Servers the Nova-Network API, whose operations are detailed
+    <para>Cloud Networks was originally released using the Cloud Servers Nova-Network API, whose operations are detailed
         in
         <link xlink:href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/network_extension.html">
                  Network extension</link>

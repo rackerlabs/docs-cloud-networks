@@ -74,7 +74,7 @@
        -H "Content-Type: application/json" \
        -H "Accept: application/json" \
        -H "X-Auth-Token: $token" \
-       -d '{"subnets":[{"name":"Subamp","cidr":"120.1.2.0/24","ip_version":4,"network_id":"29f52c7e-6efd-4335-a14a-db77d32a2555"}]}' \
+       -d '{"subnet":{"name":"Subamp","cidr":"120.1.2.0/24","ip_version":4,"network_id":"29f52c7e-6efd-4335-a14a-db77d32a2555"}}' \
        | python -m json.tool</programlisting></para>
                 <para>In this cURL command, you specify several options. For information about the options, see
                     <link xlink:href="curl.html#curl_options">cURL command-line options</link>.</para>
