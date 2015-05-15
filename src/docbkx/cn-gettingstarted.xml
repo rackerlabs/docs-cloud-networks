@@ -181,7 +181,7 @@
             </revision>
         </revhistory>
         <raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
-            <raxm:displayname>Getting&#160;Started&#160;Guide</raxm:displayname>
+            <raxm:displayname>Getting Started Guide</raxm:displayname>
             <raxm:product version="v2">networks</raxm:product>
             <raxm:priority>50</raxm:priority>
         </raxm:metadata>
