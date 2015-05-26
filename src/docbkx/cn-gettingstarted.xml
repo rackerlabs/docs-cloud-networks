@@ -45,6 +45,13 @@
         </abstract>
         <revhistory>
             <revision>
+                <date>2015-05-26</date>
+                <revdescription>
+                    <para> Corrected some examples for <olink targetdoc="cn-gettingstarted" targetptr="security_groups">Use
+                        security groups to control traffic</olink>.</para>
+                </revdescription>
+            </revision>
+            <revision>
                 <date>2015-05-12</date>
                 <revdescription>
                     <para>Fixed the following operation examples: create subnet, create port, delete network, delete subnet,
