@@ -273,7 +273,8 @@
             <title>To apply the security group to the server port and test the rule</title>
             <step>
                 <para>To apply the group (in this example <literal>fd269d7a-0909-488f-b5fc-5606c8aa489f</literal>) to the
-                    port, issue the following neutron client command, substituting your port ID for the one shown.</para>
+                    port, issue the following neutron client command, substituting your port ID and security group for the
+                    ones shown.</para>
                 <para><emphasis role="bold">Argument:</emphasis></para>
                 <para>
                     <itemizedlist>
@@ -288,7 +289,7 @@
                     </itemizedlist>
                 </para>
                 <para><programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
-                        <prompt>$</prompt> neutron port-update --security-group &lt;fd269d7a-0909-488f-b5fc-5606c8aa489f&gt;</programlisting></para>
+                        <prompt>$</prompt> neutron port-update &lt;9dd49b03-956d-4cd5-ae23-6dbf89b76aeb&gt; --security-group &lt;fd269d7a-0909-488f-b5fc-5606c8aa489f&gt;</programlisting></para>
                 <para><emphasis role="bold">Output:</emphasis></para>
                 <para>The command returns the result as shown in the following output</para>
                 <informalexample>
@@ -463,7 +464,7 @@ Request timeout for icmp_seq 2
                     </itemizedlist>
                 </para>
                 <para><programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
-                        <prompt>$</prompt> neutron port-update --security-group &lt;fd269d7a-0909-488f-b5fc-5606c8aa489f&gt;</programlisting></para>
+                        <prompt>$</prompt> neutron port-update &lt;9dd49b03-956d-4cd5-ae23-6dbf89b76aeb&gt; --security-group &lt;fd269d7a-0909-488f-b5fc-5606c8aa489f&gt;</programlisting></para>
                 <para><emphasis role="bold">Output:</emphasis></para>
                 <para>The command returns the result as shown in the following output</para>
                 <informalexample>

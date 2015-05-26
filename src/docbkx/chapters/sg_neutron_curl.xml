@@ -30,11 +30,11 @@
                     <programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
                         <prompt>$</prompt> curl -i https://dfw.networks.api.rackspacecloud.com/v2.0/security-groups \
        -X 'POST' \
-       -H "Content-Type: application/json"
+       -H "Content-Type: application/json" \
        -H "X-Auth-Token: $token" \
        -H "X-User-Agent: python-novaclient" \
        -H "Accept: application/json" \
-       -d {"security_group":{"name":"1-new-tcp","description":"security group for webservers"}} | python -m json.tool</programlisting></para>
+       -d '{"security_group":{"name":"1-new-tcp","description":"security group for webservers"}}' | python -m json.tool</programlisting></para>
                 <note>
                     <para>Include the <option>-i</option> option in the cURL command to show the response header.</para>
                 </note>
@@ -74,11 +74,11 @@
                     <programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
                         <prompt>$</prompt> curl -i https://dfw.networks.api.rackspacecloud.com/v2.0/security-group-rules \
        -X 'POST' \
-       -H "Content-Type: application/json"
+       -H "Content-Type: application/json" \
        -H "X-Auth-Token: $token" \
        -H "User-Agent: python-novaclient" \
-       -H "Accept: application/json" 
-       -d {"security_group_rule":{"direction":"ingress","port_range_min":"22","ethertype":"IPv4","port_range_max":"22","protocol":"tcp","security_group_id":"fd269d7a-0909-488f-b5fc-5606c8aa489f"}} | python -m json.tool</programlisting></para>
+       -H "Accept: application/json" \
+       -d '{"security_group_rule":{"direction":"ingress","port_range_min":"22","ethertype":"IPv4","port_range_max":"22","protocol":"tcp","security_group_id":"fd269d7a-0909-488f-b5fc-5606c8aa489f"}}' | python -m json.tool</programlisting></para>
                 <note>
                     <para>Include the <option>-i</option> option in the cURL command to show the response header.</para>
                 </note>
@@ -110,7 +110,7 @@
                     <programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
                         <prompt>$</prompt> curl -i https://dfw.networks.api.rackspacecloud.com/v2.0/security-group-rules \
        -X 'GET' \
-       -H "Content-Type: application/json"
+       -H "Content-Type: application/json" \
        -H "X-Auth-Token: $token" \
        -H "X-User-Agent: python-novaclient" \
        -H "Accept: application/json" | python -m json.tool</programlisting></para>
@@ -147,7 +147,7 @@
                     <programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
                         <prompt>$</prompt> curl -i https://dfw.networks.api.rackspacecloud.com/v2.0/security-groups \
        -X 'GET' \
-       -H "Content-Type: application/json"
+       -H "Content-Type: application/json" \
        -H "X-Auth-Token: $token" \
        -H "X-User-Agent: python-novaclient" \
        -H "Accept: application/json" | python -m json.tool</programlisting></para>
@@ -219,7 +219,7 @@
                 <para><programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
                         <prompt>$</prompt> curl -k -i https://dfw.servers.api.rackspacecloud.com/v2/5831008/servers/6ae4be93-4ec7-4b55-897a-c250f3a6e161 \
        -X 'GET' \
-       -H "Content-Type: application/json"
+       -H "Content-Type: application/json" \
        -H "X-Auth-Token: $token" \
        -H "User-Agent: python-novaclient" \
        -H "Accept: application/json" | python -m json.tool</programlisting></para>
@@ -310,6 +310,7 @@
                     <programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
                         <prompt>$</prompt> curl -i https://dfw.networks.api.rackspacecloud.com/v2.0/ports \
        -X 'GET' \
+       -H "Content-Type: application/json" \
        -H "X-Auth-Token: $token" \
        -H "X-User-Agent: python-novaclient" \
        -H "Accept: application/json" | python -m json.tool</programlisting></para>
@@ -396,11 +397,11 @@
                 <para><programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
                         <prompt>$</prompt> curl -i https://dfw.networks.api.rackspacecloud.com/v2.0/ports/9dd49b03-956d-4cd5-ae23-6dbf89b76aeb \
        -X 'PUT' \
-       -H "Content-Type: application/json"
+       -H "Content-Type: application/json" \
        -H "X-Auth-Token: $token" \
        -H "User-Agent: python-novaclient" \
-       -H "Accept: application/json" | python -m json.tool
-       -d {"port": {"security_groups": ["fd269d7a-0909-488f-b5fc-5606c8aa489f"]}} | python -m json.tool</programlisting></para>
+       -H "Accept: application/json" \
+       -d '{"port": {"security_groups": ["fd269d7a-0909-488f-b5fc-5606c8aa489f"]}}' | python -m json.tool</programlisting></para>
                 <note>
                     <para>Include the <option>-i</option> option in the cURL command to show the response header.</para>
                 </note>
@@ -467,11 +468,11 @@ Request timeout for icmp_seq 2
                     <programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
                         <prompt>$</prompt> curl -i https://dfw.networks.api.rackspacecloud.com/v2.0/security-group-rules \
        -X 'POST' \
-       -H "Content-Type: application/json"
+       -H "Content-Type: application/json" \
        -H "X-Auth-Token: $token" \
        -H "User-Agent: python-novaclient" \
-       -H "Accept: application/json" 
-       -d {"security_group_rule":{"direction":"ingress","port_range_min":null,"ethertype":"IPv4","port_range_max":null,"protocol":"icmp","remote_ip_prefix":null,"security_group_id":"fd269d7a-0909-488f-b5fc-5606c8aa489f"}} | python -m json.tool</programlisting></para>
+       -H "Accept: application/json" \
+       -d '{"security_group_rule":{"direction":"ingress","port_range_min":null,"ethertype":"IPv4","port_range_max":null,"protocol":"icmp","remote_ip_prefix":null,"security_group_id":"fd269d7a-0909-488f-b5fc-5606c8aa489f"}}' | python -m json.tool</programlisting></para>
                 <note>
                     <para>Include the <option>-i</option> option in the cURL command to show the response header.</para>
                 </note>
@@ -503,7 +504,7 @@ Request timeout for icmp_seq 2
                     <programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
                         <prompt>$</prompt> curl -i https://dfw.networks.api.rackspacecloud.com/v2.0/security-group-rules \
        -X 'GET' \
-       -H "Content-Type: application/json"
+       -H "Content-Type: application/json" \
        -H "X-Auth-Token: $token" \
        -H "X-User-Agent: python-novaclient" \
        -H "Accept: application/json" | python -m json.tool</programlisting></para>
@@ -552,7 +553,7 @@ Request timeout for icmp_seq 2
                     <programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
                         <prompt>$</prompt> curl -i https://dfw.networks.api.rackspacecloud.com/v2.0/security-groups \
        -X 'GET' \
-       -H "Content-Type: application/json"
+       -H "Content-Type: application/json" \
        -H "X-Auth-Token: $token" \
        -H "X-User-Agent: python-novaclient" \
        -H "Accept: application/json" | python -m json.tool</programlisting></para>
@@ -632,11 +633,11 @@ Request timeout for icmp_seq 2
                 <para><programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
                         <prompt>$</prompt> curl -i https://dfw.networks.api.rackspacecloud.com/v2.0/ports/9dd49b03-956d-4cd5-ae23-6dbf89b76aeb \
        -X 'PUT' \
-       -H "Content-Type: application/json"
+       -H "Content-Type: application/json" \
        -H "X-Auth-Token: $token" \
        -H "User-Agent: python-novaclient" \
-       -H "Accept: application/json" | python -m json.tool
-       -d {"port": {"security_groups": ["fd269d7a-0909-488f-b5fc-5606c8aa489f"]}} | python -m json.tool</programlisting></para>
+       -H "Accept: application/json" \
+       -d '{"port": {"security_groups": ["fd269d7a-0909-488f-b5fc-5606c8aa489f"]}}' | python -m json.tool</programlisting></para>
                 <note>
                     <para>Include the <option>-i</option> option in the cURL command to show the response header.</para>
                 </note>
