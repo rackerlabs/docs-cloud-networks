@@ -45,10 +45,19 @@
         </abstract>
         <revhistory>
             <revision>
+                <date>2015-06-05</date>
+                <revdescription>
+                    <para> Corrected erroneous text in <olink targetdoc="cn-gettingstarted"
+                            targetptr="neutron_create_security_group_neutron">Create a security group (neutron
+                            client)</olink> and <olink targetdoc="cn-gettingstarted" targetptr="neutron_add_rule_ssh_neutron"
+                            >Add a rule for SSH traffic (neutron client)</olink>.</para>
+                </revdescription>
+            </revision>
+            <revision>
                 <date>2015-05-26</date>
                 <revdescription>
                     <para> Corrected some examples for <olink targetdoc="cn-gettingstarted" targetptr="security_groups">Use
-                        security groups to control traffic</olink>.</para>
+                            security groups to control traffic</olink>.</para>
                 </revdescription>
             </revision>
             <revision>
