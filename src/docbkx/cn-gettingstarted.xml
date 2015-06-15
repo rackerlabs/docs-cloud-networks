@@ -45,6 +45,14 @@
         </abstract>
         <revhistory>
             <revision>
+                <date>2015-06-15</date>
+                <revdescription>
+                    <para> Corrected erroneous example in <olink targetdoc="cn-gettingstarted"
+                        targetptr="neutron_create_security_group_neutron">Create a security group (neutron
+                        client)</olink>.</para>
+                </revdescription>
+            </revision>
+            <revision>
                 <date>2015-06-05</date>
                 <revdescription>
                     <para> Corrected erroneous text in <olink targetdoc="cn-gettingstarted"

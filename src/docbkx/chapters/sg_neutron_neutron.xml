@@ -198,7 +198,7 @@
                     </itemizedlist>
                 </para>
                 <para><programlisting language="bash" role="gutter: false"><?db-font-size 65%?>
-                        <prompt>$</prompt> nova list &lt;6ae4be93-4ec7-4b55-897a-c250f3a6e161&gt;</programlisting></para>
+                        <prompt>$</prompt> nova show 6ae4be93-4ec7-4b55-897a-c250f3a6e161</programlisting></para>
                 <para><emphasis role="bold">Output:</emphasis></para>
                 <para>The command returns the response, as shown in the following output:</para>
                 <informalexample>
