@@ -42,7 +42,7 @@ General API Information
 
    general-api-info
    authentication
-   role-based-authentication-control
+   role-based-access-control
    how-curl-commands-work
    filtering-requests
    pagination

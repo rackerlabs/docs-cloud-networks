@@ -16,8 +16,9 @@ You can use the Cloud Networks service Neutron API to perform the following task
 
 -  Delete an isolated network, if it is not associated with any server.
 
-   ..  note::
-   To detach a network from a server, you must use the Cloud Networks virtual interface extension to delete the virtual interface for the network from the server. For more information, see the `Cloud Servers Developer Guide`_.
+    ..  note::
+
+        To detach a network from a server, you must use the Cloud Networks virtual interface extension to delete the virtual interface for the network from the server. For more information, see the `Cloud Servers Developer Guide`_.
 
 -  Manage subnets.
 

@@ -34,6 +34,7 @@ In the request body, supply one of the following sets of credentials:
 Your user name and password are the ones that you use to log in to the Rackspace Cloud Control Panel.
 
 ..  note::
+
     If you authenticate with username and password credentials, you can use multi-factor authentication to add an additional level of account security. This feature is not implemented for username and API credentials. For more information, see `Multifactor authentication`_ in the *Cloud Identity Client Developer Guide*.
 
 .. _Multifactor authentication: http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/MFA_Ops.html
@@ -62,12 +63,14 @@ To obtain your API key, log in to http://mycloud.rackspace.com,  select **Accoun
               -d '{"auth":{"RAX-KSKEY:apiKeyCredentials":{"username":"yourUserName", "apiKey":"yourApiKey"}}}' \
               -H "Content-Type: application/json" | python -m json.tool
 
-   ..  tip:: 
-   For information about the json.tool, see :ref:`More about json.tool <cn-dg-generalapi-curl-json>`.
+   ..  note::
+
+        For information about the json.tool, see :ref:`More about json.tool <cn-dg-generalapi-curl-json>`.
 
    In response to valid credentials, your request returns an authentication token and a service catalog with the endpoints that you need to request services.
 
    ..  note:: 
+        
         If you authenticated with username and password credentials, and the Identity service returns a 401 message requesting additional credentials, your account is configured for multi-factor authentication. To complete the authentication process, `submit a second POST tokens request with multi-factor authentication credentials`_.
 
 .. _submit a second POST tokens request with multi-factor authentication credentials: http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/proc_mfa_auth.html
@@ -164,7 +167,7 @@ To obtain your API key, log in to http://mycloud.rackspace.com,  select **Accoun
    Successful authentication returns the following information:
 
    +--------------------------------------+--------------------------------------+
-   | image:: /_images/1.png                | **Endpoints to request Rackspace     |
+   | image:: /_images/1.png               | **Endpoints to request Rackspace     |
    |                                      | Cloud services**. Appears in the     |
    |                                      | `endpoints` element in the           |
    |                                      | `serviceCatalog` element.            |
@@ -175,7 +178,7 @@ To obtain your API key, log in to http://mycloud.rackspace.com,  select **Accoun
    |                                      | region, tenant ID, and version       |
    |                                      | information.                         |
    +--------------------------------------+--------------------------------------+
-   | image:: /_images/2.png                | **Tenant ID**. Appears in the        |
+   | image:: /_images/2.png               | **Tenant ID**. Appears in the        |
    |                                      | `tenantId` field in the              |
    |                                      | `endpoints` element. Also known as   |
    |                                      | the account number.                  |
@@ -184,7 +187,7 @@ To obtain your API key, log in to http://mycloud.rackspace.com,  select **Accoun
    |                                      | endpoint URL when you call a         |
    |                                      | Rackspace Cloud service.             |
    +--------------------------------------+--------------------------------------+
-   | image:: /_images/3.png                | **The name of the service**. Appears |
+   | image:: /_images/3.png               | **The name of the service**. Appears |
    |                                      | in the `name` field.                 |
    |                                      |                                      |
    |                                      | To access the next generation Cloud  |
@@ -199,7 +202,7 @@ To obtain your API key, log in to http://mycloud.rackspace.com,  select **Accoun
    |                                      | want to interact with by examining   |
    |                                      | the `region` field.                  |
    +--------------------------------------+--------------------------------------+
-   | image:: /_images/4.png                | **Expiration date and time for       |
+   | image:: /_images/4.png               | **Expiration date and time for       |
    |                                      | authentication token**. Appears in   |
    |                                      | the `expires` field in the           |
    |                                      | `token` element.                     |
@@ -219,7 +222,7 @@ To obtain your API key, log in to http://mycloud.rackspace.com,  select **Accoun
    |                                      | encouraged to cache a token until it |
    |                                      | expires.                             |
    +--------------------------------------+--------------------------------------+
-   | image:: /_images/5.png                | **Authentication token**. Appears in |
+   | image:: /_images/5.png               | **Authentication token**. Appears in |
    |                                      | the `id` field in the `token`        |
    |                                      | element.                             |
    |                                      |                                      |
