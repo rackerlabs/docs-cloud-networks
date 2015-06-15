@@ -26,7 +26,8 @@ The following command is an example cURL command that provisions a server with a
           | python -m json.tool
 
 ..  note::
-    The carriage returns in the cURL request examples use a backslash (`\`) as an escape character. The escape character allows continuation of the command across multiple lines.
+
+    The carriage returns in the cURL request examples use a backslash (``\``) as an escape character. The escape character allows continuation of the command across multiple lines.
 
 The cURL examples in this guide use the following command-line options.
 
@@ -97,17 +98,18 @@ The cURL examples in this guide use the following command-line options.
 +--------------------------------------+--------------------------------------+
 
 ..  note::
+
     For commands that return a response, you can append the following code to the command to call json.tool to pretty-print output:
 
 .. code::  
 
     | python -m json.tool
 
-To use json.tool, import the JSON module. For information about json.tool, see `json - JSON encoder and decoder`_.
+To use json.tool, import the JSON module. For information about json.tool, see `JSON encoder and decoder`_.
 
-If you run a Python version earlier than 2.6, import the simplejson module and use simplejson.tool. For information about simplejson.tool, see `simplejson — JSON encoder and decoder`_.
+If you run a Python version earlier than 2.6, import the simplejson module and use simplejson.tool. For information about simplejson.tool, see `simplejson encoder and decoder`_.
 
 If you do not want to pretty-print JSON output, omit this code.
 
-.. _json - JSON encoder and decoder: http://docs.python.org/2/library/json.html
-.. _simplejson - JSON encoder and decoder: http://simplejson.googlecode.com/svn/tags/simplejson-2.0.9/docs/index.html
+.. _json encoder and decoder: http://docs.python.org/2/library/json.html
+.. _simplejson encoder and decoder: http://simplejson.googlecode.com/svn/tags/simplejson-2.0.9/docs/index.html
