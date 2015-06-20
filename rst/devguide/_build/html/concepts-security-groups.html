@@ -91,54 +91,81 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 
   <div class="section" id="security-groups-and-rules">
 <span id="cn-dg-concepts-security"></span><h1>Security groups and rules<a class="headerlink" href="#security-groups-and-rules" title="Permalink to this headline">¶</a></h1>
-<div class="admonition important">
+<blockquote>
+<div><div class="admonition important">
 <p class="first admonition-title">Important</p>
-<p class="last">Important: The Security Groups API is currently in Limited Availability. It is available only to Managed Infrastructure customers and not to RackConnect or Managed Operations customers. To use this feature, contact Rackspace Support.</p>
+<p class="last">The Security Groups API is currently in Limited Availability. It is available only to
+Managed Infrastructure customers and not to RackConnect or Managed Operations customers.
+To use this feature, contact Rackspace Support.</p>
 </div>
-<p>A security group is a named container for security group rules, which provide Rackspace Public Cloud users the ability to specify the types of traffic that are allowed to pass through, to, and from ports (Public/ServiceNet) on a Cloud server instance. After an instance is active, you can assign one or more security groups to Neutron ports on that instance. You cannot apply security groups to a port at boot time.</p>
+</div></blockquote>
+<p>A security group is a named container for security group rules, which provide Rackspace
+Public Cloud users the ability to specify the types of traffic that are allowed to pass
+through, to, and from ports (Public/ServiceNet) on a Cloud server instance. After an
+instance is active, you can assign one or more security groups to Neutron ports on that
+instance. You cannot apply security groups to a port at boot time.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">There are no default security groups created for you in your Rackspace account. In order to use security groups, you have to create them first and then apply them to Neutron ports that belong to Cloud Server instances.</p>
+<p class="last">There are no default security groups created for you in your Rackspace account. In
+order to use security groups, you have to create them first and then apply them to
+Neutron ports that belong to Cloud Server instances.</p>
 </div>
 <div class="section" id="security-groups">
 <span id="cn-dg-concepts-security-groups"></span><h2>Security groups<a class="headerlink" href="#security-groups" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p class="first">act as a firewall for your cloud server instances.</p>
 </li>
-<li><p class="first">can be applied to Rackspace Cloud Servers on Public and ServiceNet Neutron ports. They are not supported for Cloud Networks ports (Isolated Networks).</p>
+<li><p class="first">can be applied to Rackspace Cloud Servers on Public and ServiceNet Neutron ports. They
+are not supported for Cloud Networks ports (Isolated Networks).</p>
 </li>
-<li><p class="first">can only contain rules for the inbound traffic, also known as ingress direction. Outbound traffic, or egress direction, rules are not supported at this time.</p>
+<li><p class="first">can only contain rules for the inbound traffic, also known as ingress direction.
+Outbound traffic, or egress direction, rules are not supported at this time.</p>
 </li>
-<li><p class="first">are limited to no more than 5 security groups per Neutron port. When a Neutron port has multiple security groups applied, the rules from each security group are effectively aggregated to dictate the rules for access on that port.</p>
+<li><p class="first">are limited to no more than 5 security groups per Neutron port. When a Neutron port
+has multiple security groups applied, the rules from each security group are effectively
+aggregated to dictate the rules for access on that port.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">If there is more than one security group applied to a Neutron port, we apply the most permissive rule. For example, if you have one rule that allows ICMP traffic from IP address 10.23.194.19 and another rule that allows access to ICMP from everyone, then everyone can access the server via ICMP on that Neutron port.</p>
+<p class="last">If there is more than one security group applied to a Neutron port, we apply the most
+permissive rule. For example, if you have one rule that allows ICMP traffic from IP
+address 10.23.194.19 and another rule that allows access to ICMP from everyone, then
+everyone can access the server via ICMP on that Neutron port.</p>
 </div>
 </li>
 <li><p class="first">may contain up to 20 security group rules.</p>
 </li>
 </ul>
-<p>The rules of a security group control the incoming traffic that is allowed to reach an instance through the Public and ServiceNet Neutron ports, where the security group is applied to those ports.</p>
+<p>The rules of a security group control the incoming traffic that is allowed to reach an
+instance through the Public and ServiceNet Neutron ports, where the security group is
+applied to those ports.</p>
 </div>
 <div class="section" id="security-group-rules">
 <span id="cn-dg-concepts-security-rules"></span><h2>Security group rules<a class="headerlink" href="#security-group-rules" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p class="first">are a white-list (permit traffic if there is a match). You cannot create rules that deny traffic.</p>
+<li><p class="first">are a white-list (permit traffic if there is a match). You cannot create rules that
+deny traffic.</p>
 </li>
-<li><p class="first">may be added to, and removed from, Security Groups either before the Security Group is applied to the port or while the Security Group is applied to the port.</p>
+<li><p class="first">may be added to, and removed from, Security Groups either before the Security Group is
+applied to the port or while the Security Group is applied to the port.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">If you add or remove rules from a security groups while the security group is applied to a port, you need to re-apply the security group to the port for the changes to take effect. The security group rule changes are applied to the port after a short period of time.</p>
+<p class="last">If you add or remove rules from a security groups while the security group is applied
+to a port, you need to re-apply the security group to the port for the changes to take
+effect. The security group rule changes are applied to the port after a short period of
+time.</p>
 </div>
 </li>
-<li><p class="first">cannot be edited. To change a security group rule, you have to delete the original security group rule and add a new rule.</p>
+<li><p class="first">cannot be edited. To change a security group rule, you have to delete the original
+security group rule and add a new rule.</p>
 </li>
 <li><p class="first">cannot refer to a different security group. These self-referential rules are not supported.</p>
 </li>
-<li><p class="first">are limited to a total of 100 security group rules per user, across all the user&#8217;s security groups.</p>
+<li><p class="first">are limited to a total of 100 security group rules per user, across all the user&#8217;s
+security groups.</p>
 </li>
 </ul>
-<p>There are some limits and quotas around security groups and securit group rules, as shown the preceding lists. Here they are again, for convenience.</p>
+<p>There are some limits and quotas around security groups and securit group rules, as shown
+the preceding lists. Here they are again, for convenience.</p>
 </div>
 <div class="section" id="quotas">
 <span id="cn-dg-concepts-security-quotas"></span><h2>Quotas<a class="headerlink" href="#quotas" title="Permalink to this headline">¶</a></h2>
@@ -151,28 +178,27 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 <div class="section" id="parameters">
 <span id="cn-dg-concepts-security-parameters"></span><h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
 <p>Specify the following parameters when you create a rule:</p>
-<div class="section" id="ethertype">
-<h3>Ethertype<a class="headerlink" href="#ethertype" title="Permalink to this headline">¶</a></h3>
-<p>This is the type of traffic to allow, either <cite>IPv4</cite> or <cite>IPv6</cite>.</p>
-</div>
-<div class="section" id="protocol">
-<h3>Protocol<a class="headerlink" href="#protocol" title="Permalink to this headline">¶</a></h3>
-<p>Choose <cite>TCP</cite> for SSH, <cite>ICMP</cite> for pings, or <cite>UDP</cite> for data exchanges.</p>
-</div>
-<div class="section" id="port-range">
-<h3>Port range<a class="headerlink" href="#port-range" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first"><strong>Ethertype</strong></p>
+<p>This is the type of traffic to allow, either <code class="docutils literal"><span class="pre">IPv4</span></code> or <code class="docutils literal"><span class="pre">IPv6</span></code>.</p>
+</li>
+<li><p class="first"><strong>Protocol</strong></p>
+<p>Choose <code class="docutils literal"><span class="pre">TCP</span></code> for SSH, <code class="docutils literal"><span class="pre">ICMP</span></code> for pings, or <code class="docutils literal"><span class="pre">UDP</span></code> for data exchanges.</p>
+</li>
+<li><p class="first"><strong>Port range</strong></p>
 <p>Enter the range of ports for the rule. To open a single port only, enter the same value twice.</p>
-<blockquote>
-<div><div class="admonition note">
+<div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Since ICMP does not support ports, enter the ICMP type in the <cite>port_range_min</cite> field and enter the ICMP code in the <cite>port_range_max</cite> field.</p>
+<p class="last">Since ICMP does not support ports, enter the ICMP type in the <code class="docutils literal"><span class="pre">port_range_min</span></code> field
+and enter the ICMP code in the <code class="docutils literal"><span class="pre">port_range_max</span></code> field.</p>
 </div>
-</div></blockquote>
-</div>
-<div class="section" id="remote-ip-prefix">
-<h3>Remote IP prefix<a class="headerlink" href="#remote-ip-prefix" title="Permalink to this headline">¶</a></h3>
-<p>This optional parameter permits traffic from a Source IP address corresponding to the Remote IP prefix. You can enter a single IP address (for example: 10.553.16.23) or a range of IP addresses (for example: 10.553.16.23/24).</p>
-</div>
+</li>
+<li><p class="first"><strong>Remote IP prefix</strong></p>
+<p>This optional parameter permits traffic from a Source IP address corresponding to the
+Remote IP prefix. You can enter a single IP address (for example: 10.553.16.23) or a range
+of IP addresses (for example: 10.553.16.23/24).</p>
+</li>
+</ul>
 </div>
 </div>
 
