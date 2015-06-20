@@ -91,9 +91,13 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 
   <div class="section" id="network">
 <span id="cn-dg-concepts-network"></span><h1>Network<a class="headerlink" href="#network" title="Permalink to this headline">¶</a></h1>
-<p>A network is an isolated virtual layer-2 broadcast domain that is typically reserved for the tenant who created it, unless the network is configured to be shared. Tenants can create up to 10 networks per region.</p>
-<p>In the Networks API v2.0, the network is the main entity. Ports and subnets are always associated with a network.</p>
-<p>The following table describes the attributes for network objects. In the &#8220;CRUD&#8221; column, the abbreviations are defined as follows:</p>
+<p>A network is an isolated virtual layer-2 broadcast domain that is typically reserved for
+the tenant who created it, unless the network is configured to be shared. Tenants can
+create up to 10 networks per region.</p>
+<p>In the Networks API v2.0, the network is the main entity. Ports and subnets are always
+associated with a network.</p>
+<p>The following table describes the attributes for network objects. In the &#8220;CRUD&#8221; column,
+the abbreviations are defined as follows:</p>
 <ul class="simple">
 <li><strong>C</strong>: The attribute is used in create operations.</li>
 <li><strong>R</strong>: The attribute is returned in response to show and list
@@ -103,19 +107,18 @@ operations.</li>
 </ul>
 <table border="1" class="docutils">
 <colgroup>
-<col width="19%" />
+<col width="18%" />
 <col width="11%" />
 <col width="11%" />
-<col width="11%" />
+<col width="10%" />
 <col width="14%" />
 <col width="16%" />
-<col width="19%" />
+<col width="18%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Attribute</th>
 <th class="head">Type</th>
-<th class="head">Require
-d</th>
+<th class="head">Required</th>
 <th class="head">CRUD</th>
 <th class="head">Default
 value</th>
@@ -126,8 +129,7 @@ constraints</th>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>id</td>
-<td>uuid-st
-r</td>
+<td>uuid-str</td>
 <td>N/A</td>
 <td>R</td>
 <td>Generated</td>
@@ -147,8 +149,7 @@ network. The
 name might not
 be unique.</td>
 </tr>
-<tr class="row-even"><td>admin_state_
-up</td>
+<tr class="row-even"><td>admin_state_up</td>
 <td>Boolean</td>
 <td>No</td>
 <td>CRU</td>
@@ -182,8 +183,8 @@ cannot be
 changed.</td>
 </tr>
 <tr class="row-even"><td>subnets</td>
-<td>list(uu
-id-str)</td>
+<td>list of
+uuid-str</td>
 <td>No</td>
 <td>R</td>
 <td>Empty list</td>
@@ -217,8 +218,7 @@ cannot be
 changed</td>
 </tr>
 <tr class="row-even"><td>tenant_id</td>
-<td>uuid-st
-r</td>
+<td>uuid-str</td>
 <td>No</td>
 <td>CR</td>
 <td>N/A</td>
