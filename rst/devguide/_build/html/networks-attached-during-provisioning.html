@@ -91,29 +91,34 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 
   <div class="section" id="which-networks-are-attached-during-provisioning">
 <h1>Which networks are attached during provisioning?<a class="headerlink" href="#which-networks-are-attached-during-provisioning" title="Permalink to this headline">¶</a></h1>
-<p>Which networks get attached, manually or automatically, to a newly provisioned server depends on which of the following methods you use to provision that server:</p>
-<ul>
-<li><p class="first"><strong>Cloud Servers Neutron API</strong>: You must specify the networks that you want to attach to your server. The UUID for ServiceNet is:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="mi">11111111</span><span class="o">-</span><span class="mi">1111</span><span class="o">-</span><span class="mi">1111</span><span class="o">-</span><span class="mi">1111</span><span class="o">-</span><span class="mi">111111111111</span>
-</pre></div>
-</div>
-</li>
+<p>Which networks get attached, manually or automatically, to a newly provisioned server
+depends on which of the following methods you use to provision that server:</p>
+<ul class="simple">
+<li><strong>Cloud Servers Neutron API</strong>: You must specify the networks that you want to attach to
+your server. The UUID for ServiceNet is <code class="docutils literal"><span class="pre">11111111-1111-1111-1111-111111111111</span></code> and the
+UUID for PublicNet is <code class="docutils literal"><span class="pre">00000000-0000-0000-0000-000000000000</span></code>.</li>
 </ul>
-<p>and the UUID for PublicNet is:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="mo">00000000</span><span class="o">-</span><span class="mo">0000</span><span class="o">-</span><span class="mo">0000</span><span class="o">-</span><span class="mo">0000</span><span class="o">-</span><span class="mo">000000000000</span>
-</pre></div>
-</div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">The Neutron API is currently accessible by using cURL commands, browser plug-ins for REST, or various programming languages and tools. The neutron client is not supported at this time.</p>
+<p class="last">The Neutron API is currently accessible by using cURL commands, browser plug-ins for
+REST, or various programming languages and tools. The neutron client is not supported
+at this time.</p>
 </div>
 <ul class="simple">
-<li><strong>nova boot command</strong>: You must specify the networks that you want to attach to your server. If you do not specify any networks, ServiceNet and PublicNet are attached by default. To attach to isolated networks that you have created, you must explicitly specify them in the command. If you do so, those networks, in addition to PublicNet and ServiceNet, are attached to your server.</li>
-<li><strong>Cloud Control Panel</strong>: PublicNet and ServiceNet are automatically attached, but you can disable these networks during the server creation process. You can also attach any isolated networks that you have created.</li>
+<li><strong>nova boot command</strong>: You must specify the networks that you want to attach to your
+server. If you do not specify any networks, ServiceNet and PublicNet are attached by
+default. To attach to isolated networks that you have created, you must explicitly specify
+them in the command. If you do so, those networks, in addition to PublicNet and ServiceNet,
+are attached to your server.</li>
+<li><strong>Cloud Control Panel</strong>: PublicNet and ServiceNet are automatically attached, but you
+can disable these networks during the server creation process. You can also attach any
+isolated networks that you have created.</li>
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">You can explicitly opt out of attaching to the Rackspace networks, which introduces certain potential complications. For more information, see <a class="reference internal" href="consequences-of-detaching.html#cn-dg-overview-consequences"><span>Consequences of detaching from Rackspace networks</span></a>.</p>
+<p class="last">You can explicitly opt out of attaching to the Rackspace networks, which introduces
+certain potential complications. For more information, see <a class="reference internal" href="consequences-of-detaching.html#cn-dg-overview-consequences"><span>Consequences of
+detaching from Rackspace networks</span></a>.</p>
 </div>
 </div>
 
