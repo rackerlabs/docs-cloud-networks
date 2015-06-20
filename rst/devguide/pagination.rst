@@ -4,7 +4,9 @@
 Pagination of requests
 ======================
 
-To reduce load on the service, list operations return a maximum number of items at a time. To help you navigate the collection, you can set the `limit`, `marker`, and `page_reverse` parameters in the URI.
+To reduce load on the service, list operations return a maximum number of items at a time. 
+To help you navigate the collection, you can set the ``limit``, ``marker``, and 
+``page_reverse`` parameters in the URI.
 
 For example, the following request returns up to 100 pages, starting with the item with ID=1234:
 
@@ -12,9 +14,15 @@ For example, the following request returns up to 100 pages, starting with the it
 
     ?limit=100&marker=1234&page_reverse=False
 
-The `marker` parameter is the ID of the last item in the previous list. The `limit` parameter sets the page size. The `page_reverse` parameter sets the page direction. These parameters are optional. If the client requests a limit beyond the maximum limit configured by the deployment, the server returns the number of items equal to the maximum limit.
+The ``marker`` parameter is the ID of the last item in the previous list. The ``limit`` 
+parameter sets the page size. The `page_reverse` parameter sets the page direction. These 
+parameters are optional. If the client requests a limit beyond the maximum limit configured 
+by the deployment, the server returns the number of items equal to the maximum limit.
 
-For convenience, list responses contain `next` links and `previous` links. The last page in the list requested with `page_reverse=False` does not contain a `next` link, and the last page in the list requested with `page_reverse=True` does not contain a `previous` link. The following examples illustrate two pages with three items.
+For convenience, list responses contain ``next`` links and ``previous`` links. The last 
+page in the list requested with ``page_reverse=False`` does not contain a ``next`` link, 
+and the last page in the list requested with ``page_reverse=True`` does not contain a 
+``previous`` link. The following examples illustrate two pages with three items.
 
  
 **Example: Network collection, first page: JSON request**
