@@ -1,0 +1,8 @@
+{
+   "ip_address":
+    {
+        "network_id": "fda61e0b-a410-49e8-ad3a-64c595618c7e",
+        "version": 4,
+        "port_ids": ["6200d533-a42b-4c04-82a1-cc14dbdbf2de"]
+    }
+}

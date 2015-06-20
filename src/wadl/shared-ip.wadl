@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- (C) 2013-2014 OpenStack Foundation, All Rights Reserved -->
+<!--*******************************************************-->
+<!--         Import Common XML Entities                    -->
+<!--                                                       -->
+<!--     You can resolve the entites with xmllint          -->
+<!--                                                       -->
+<!--        xmllint -noent os-subnets.wadl                 -->
+<!--*******************************************************-->
+<!DOCTYPE application [<!ENTITY % common  SYSTEM "../common/common.ent">
+%common;]>
+<application xmlns="http://wadl.dev.java.net/2009/02" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:linkend="http://www.w3.org/1999/linkend"
+    xmlns:xsdxt="http://docs.rackspacecloud.com/xsd-ext/v1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns:csapi="http://docs.openstack.org/compute/api/v1.1">
+    <!--*******************************************************-->
+    <!--             All Resources                             -->
+    <!--*******************************************************-->
+    <resources base="https://neutron.example.com/" xml:id="os-subnets-v2">
+        <resource id="version" path="v2.0/">
+            <resource id="SharedIPs" path="ip-addresses">
+                <method href="#listSharedIPs"/>
+                <method href="#createSharedIP"/>
+                <resource id="sharedIP" path="{ipAddressID}">
+                    <param name="shared_IP_address" style="template" type="xsd:string">
+                        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Shared IP">
+                            <para>The shared IP address.</para>
+                        </wadl:doc>
+                    </param>
+                    <method href="#showSharedIP"/>
+                    <!--<method href="#updateSharedIP"/>
+                    <method href="#removeSharedIP"/>-->
+                </resource>
+            </resource>
+        </resource>
+    </resources>
+    <!--*******************************************************-->
+    <!--               All Methods                             -->
+    <!--*******************************************************-->
+
+    <!--List Shared IPs-->
+    <method name="GET" id="listSharedIPs">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Retrieve list of shared IPs">
+            <para role="shortdesc">Retrieves list of shared IPs for specified tenant.</para>
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+                    <!--<xsdxt:code href="../common/samples/req-json-http.txt"/>-->
+                </wadl:doc>&sharedIPQueryParameters; </representation>
+        </request>
+        <response status="200">
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+                    <xsdxt:code href="../common/samples/sharedip-get-resp.json"/>
+                </wadl:doc>&sharedIPListParameters; </representation>
+        </response> &fault401; </method>
+
+    <!--Create Shared IP-->
+    <method name="POST" id="createSharedIP">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Create shared IP">
+            <para role="shortdesc">Creates a shared IP on a specified network.</para>
+            <para>A list of device_ids may be optionally specified to create the IP address and added to their respective
+                ports.</para>
+            <para>A list of port_ids may be optionally specified to create the IP address and added to the specified
+                ports.</para>
+            <para>At least one of device_ids or port_ids must be specified.</para>
+            <para>Defaults all ports' service to "none".</para>
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+                    <xsdxt:code href="../common/samples/sharedip-create-req.json"/>
+                </wadl:doc>&sharedIPCreateReqParameters; </representation>
+        </request>
+        <response status="201">
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+                    <xsdxt:code href="../common/samples/sharedip-create-resp.json"/>
+                </wadl:doc>&sharedIPCreateRspParameters;</representation>
+        </response> &fault400; &fault401; &fault404; </method>
+
+    <!--Show Shared IP-->
+    <method name="GET" id="showSharedIP">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Show subnet">
+            <para role="shortdesc">Retrieves information for a specified shared IP.</para>
+        </wadl:doc>
+        <response status="200">
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+                    <xsdxt:code href="../common/samples/sharedIP-show-resp.json"/>
+                </wadl:doc>&subnetCreateRspParameters;</representation>
+        </response> &fault401; &fault404; </method>
+
+    <!--Update Shared IP-->
+    <method name="PUT" id="updateSubnet">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Update subnet">
+            <para role="shortdesc">Updates a specified subnet.</para>
+            <para>The IP version (<parameter>ip_version</parameter>), network ID (<parameter>network_id</parameter>), and
+                CIDR (<parameter>cidr</parameter>) cannot be updated. Attempting to update these parameters results in a
+                    <errorcode>400 Bad Request</errorcode> error.</para>
+            <para>You cannot update allocation pools that are attached to a port.</para>
+            <warning><para>If any attributes are updated, the changes will take effect only for ports or cloud servers using
+                    this subnet that are created after this modification. Any existing ports or servers are not
+                    updated.</para></warning>
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+                    <xsdxt:code href="../common/samples/subnet-post-req.json"/>
+                </wadl:doc>&subnetUpdateParameters;</representation>
+        </request>
+        <response status="201">
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+                    <xsdxt:code href="../common/samples/subnet-post-resp.json"/>
+                </wadl:doc>&subnetUpdateRspParameters;</representation>
+        </response> &fault400; &fault401; &fault403; &fault404; </method>
+
+    <!--Remove Shared IP-->
+    <method name="DELETE" id="removeSubnet">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Delete subnet">
+            <para role="shortdesc">Deletes a specified subnet.</para>
+            <para>This operation fails if the subnet IP addresses are still allocated.</para>
+        </wadl:doc>
+        <response status="204">
+            <representation mediaType="application/json"/>
+        </response> &fault401; &fault404; &fault409conflict; </method>
+</application>

@@ -1,0 +1,16 @@
+{
+    "ip_addresses": 
+    [
+       {
+            "id": "4cacd68e-d7aa-4ff2-96f4-5c6f57dba737",
+            "network_id": "6870304a-7212-443f-bd0c-089c886b44df",
+            "address": "192.168.10.1",
+            "port_ids": 
+                ['2f693cca-7383-45da-8bae-d26b6c2d6718'],
+            "subnet_id": "f11687e8-ef0d-4207-8e22-c60e737e473b",
+            "tenant_id": "2345678",
+            "version": "4",
+            "type": "fixed"
+        }
+    ]
+}
