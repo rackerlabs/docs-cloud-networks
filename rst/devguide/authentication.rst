@@ -38,7 +38,8 @@ In the request body, supply one of the following sets of credentials:
 
 -  User name and API key
 
-Your user name and password are the ones that you use to log in to the Rackspace Cloud Control Panel.
+Your user name and password are the ones that you use to log in to the Rackspace Cloud 
+Control Panel.
 
 ..  note::
 
@@ -79,15 +80,20 @@ the **API Key** field.
 
         For information about the json.tool, see :ref:`More about json.tool <cn-dg-generalapi-curl-json>`.
 
-   In response to valid credentials, your request returns an authentication token and a service catalog with the endpoints that you need to request services.
+   In response to valid credentials, your request returns an authentication token and a 
+   service catalog with the endpoints that you need to request services.
 
    ..  note:: 
         
-        If you authenticated with username and password credentials, and the Identity service returns a 401 message requesting additional credentials, your account is configured for multi-factor authentication. To complete the authentication process, `submit a second POST tokens request with multi-factor authentication credentials`_.
+        If you authenticated with username and password credentials, and the Identity service 
+        returns a 401 message requesting additional credentials, your account is configured 
+        for multi-factor authentication. To complete the authentication process, `submit a 
+        second POST tokens request with multi-factor authentication credentials`_.
 
    .. _submit a second POST tokens request with multi-factor authentication credentials: http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/proc_mfa_auth.html
 
-   Do not include explicit API endpoints in your scripts and applications. Instead, find the endpoint for your service and region.
+   Do not include explicit API endpoints in your scripts and applications. Instead, find 
+   the endpoint for your service and region.
 
    The following output shows a partial authentication response in JSON format:
 

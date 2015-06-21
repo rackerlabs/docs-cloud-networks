@@ -4,13 +4,18 @@
 How cURL commands work
 ======================
 
-cURL is a command-line tool that you can use to interact with REST interfaces. cURL lets you to transmit and receive HTTP requests and responses from the command line or a shell script, which enables you to work with the API directly. It is available for Linux distributions, Mac OS X, and Windows. For information about cURL, see http://curl.haxx.se/.
+cURL is a command-line tool that you can use to interact with REST interfaces. cURL lets 
+you to transmit and receive HTTP requests and responses from the command line or a shell 
+script, which enables you to work with the API directly. It is available for Linux distributions, 
+Mac OS X, and Windows. For information about cURL, see http://curl.haxx.se/.
 
-To run the cURL request examples shown in this guide, copy each example from the HTML version of this guide directly to the command line or a script.
+To run the cURL request examples shown in this guide, copy each example from the HTML version 
+of this guide directly to the command line or a script.
 
 .. _cn-dg-generalapi-curl-json:
 
-The following command is an example cURL command that provisions a server with an isolated network using JSON.
+The following command is an example cURL command that provisions a server with an isolated 
+network using JSON.
 
 **cURL command example: JSON request**
 
@@ -27,7 +32,8 @@ The following command is an example cURL command that provisions a server with a
 
 ..  note::
 
-    The carriage returns in the cURL request examples use a backslash (``\``) as an escape character. The escape character allows continuation of the command across multiple lines.
+    The carriage returns in the cURL request examples use a backslash (``\``) as an escape 
+    character. The escape character allows continuation of the command across multiple lines.
 
 ..  note::
 
