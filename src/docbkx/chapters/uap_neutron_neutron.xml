@@ -269,10 +269,6 @@
 +-------------------------+------------------------------------------------------------------------------------+</computeroutput></screen>
                 </informalexample>
             </step>
-            <step>
-                <para>Copy the id value from the output. You will use this value when you provision your server. In this
-                    example, the port id is <literal>e84fb78e-fc92-45aa-90b3-8786c82b5112</literal>.</para>
-            </step>
         </procedure>
 
         <sidebar>

@@ -1,8 +1,11 @@
 {
-   "ip_address":
-    {
-        "network_id": "fda61e0b-a410-49e8-ad3a-64c595618c7e",
+    "ip_address": {
+        "network_id": "00000000-0000-0000-0000-000000000000",
         "version": 4,
-        "port_ids": ["6200d533-a42b-4c04-82a1-cc14dbdbf2de"]
+        "port_ids": [
+            "6200d533-a42b-4c04-82a1-cc14dbdbf2de",
+            "9d0db2d7-62df-4c99-80cb-6f140a5260e8"
+         ],
+        "tenant_id": "2345678"
     }
 }

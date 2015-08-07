@@ -91,15 +91,19 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 
   <div class="section" id="filtering-requests">
 <span id="cn-dg-generalapi-filtering"></span><h1>Filtering requests<a class="headerlink" href="#filtering-requests" title="Permalink to this headline">¶</a></h1>
-<p>The Cloud Networks API supports filtering based on all top-level attributes of a resource. Filters are applicable to all list requests.</p>
+<p>The Cloud Networks API supports filtering based on all top-level attributes of a resource.
+Filters are applicable to all list requests.</p>
 <p>For example, the following request returns all networks named foobar:</p>
-<div class="code highlight-python"><div class="highlight"><pre>GET /v2.0/networks?name=foobar
+<div class="code highlight-python"><div class="highlight"><pre>GET /v2.0/networks?name=&lt;foobar&gt;
 </pre></div>
 </div>
-<p>When you specify multiple filters, the API returns only objects that meet all filtering criteria. The operation applies an <strong>AND</strong> condition among the filters. There is no <strong>OR</strong> condition.</p>
-<p>By default, the API returns all attributes for any show or list call. You can use the <cite>fields</cite> query parameter to control the attributes that the API returns.</p>
+<p>When you specify multiple filters, the API returns only objects that meet all filtering
+criteria. The operation applies an <strong>AND</strong> condition among the filters. There is no <strong>OR</strong>
+condition.</p>
+<p>By default, the API returns all attributes for any show or list call. You can use the
+<code class="docutils literal"><span class="pre">fields</span></code> query parameter to control the attributes that the API returns.</p>
 <p>For example, the following request returns only ID and name for each network:</p>
-<div class="code highlight-python"><div class="highlight"><pre>GET /v2.0/networks.json?fields=id&amp;fields=name
+<div class="code highlight-python"><div class="highlight"><pre>GET /v2.0/networks.json?fields=&lt;id&gt;&amp;fields=&lt;name&gt;
 </pre></div>
 </div>
 </div>
@@ -155,6 +159,8 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 <li class="toctree-l1"><a class="reference internal" href="how-curl-commands-work.html">How cURL commands work</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Filtering requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pagination.html">Pagination of requests</a></li>
+</ul>
+<ul class="simple">
 </ul>
 
 

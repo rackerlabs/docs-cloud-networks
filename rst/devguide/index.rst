@@ -46,3 +46,11 @@ General API Information
    how-curl-commands-work
    filtering-requests
    pagination
+
+API Operations
+--------------
+
+.. toctree::
+   :maxdepth: 2
+
+   api-operations/index

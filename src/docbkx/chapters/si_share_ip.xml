@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter [
+<!ENTITY % common  SYSTEM "../../common/common.ent">
+%common;
+]>
+<chapter xml:id="share_ip" xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+        xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
+        <title>Share IP address between servers</title>
+        <para>The following flow chart shows the steps for sharing an IP address between two newly created servers or two
+                existing servers with the same <literal>publicIPZoneId</literal>. Detailed steps are provided in this
+                section. <note>
+                        <para> For servers to share a public IP address, the servers must be in the same
+                                        <literal>publicIPZoneId</literal>. To determine whether the servers are in the same
+                                        <literal>publicIPZoneId</literal>, use the Get <literal>/servers/{serverID}</literal>
+                                API operation to get the server details and view the contents of the
+                                RAX-PUBLIC-IP-ZONE-ID:publicIPZoneId attribute. If the shared IP address is a Cloud Networks
+                                (or Isolated network) address, then servers do not have to be in the same
+                                        <literal>publicIPZoneId</literal>.</para>
+                </note></para>
+        <para>The user needs to configure a heartbeat mechanism between using an application, such as VRRP, keepalived, and
+                so on, to control ownership of the Shared IP.</para>
+        <para><figure>
+                        <title>Steps to share an IP address between servers</title>
+                        <mediaobject>
+                                <imageobject>
+                                        <imagedata fileref="../figures/si-neutron-api.png" contentwidth="3in"/>
+                                </imageobject>
+                        </mediaobject>
+                </figure></para>
+
+        <!--<para>The sections are also organized by example type. To simplify your path through this chapter, decide whether you
+                prefer neutron-client or cURL examples.</para>-->
+        <sidebar>
+                <para><emphasis role="bold">Next step:</emphasis> Choose <!--one of--> the following method<!--s-->:<itemizedlist>
+                                <!--<listitem>
+                                        <para><link xlink:href="cfn_neutron_neutron.html">Share IP address with neutron client</link></para>
+                                </listitem>-->
+                                <listitem>
+                                        <para><link xlink:href="si_neutron_curl.html">Share IP address with cURL</link></para>
+                                </listitem>
+                        </itemizedlist></para>
+        </sidebar>
+        <!--<xi:include href="si_neutron_neutron.xml"/>-->
+        <xi:include href="si_neutron_curl.xml"/>
+</chapter>

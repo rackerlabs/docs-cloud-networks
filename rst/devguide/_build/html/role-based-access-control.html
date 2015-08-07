@@ -91,11 +91,23 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 
   <div class="section" id="role-based-access-control">
 <h1>Role Based Access Control<a class="headerlink" href="#role-based-access-control" title="Permalink to this headline">¶</a></h1>
-<p>Role Based Access Control (RBAC) restricts access to the capabilities of Rackspace Cloud services, including the Cloud Networks API, to authorized users only. RBAC enables Rackspace Cloud customers to specify which account users of their Cloud account have access to which Cloud Networks API service capabilities, based on roles defined by Rackspace (see Cloud Servers Product Roles and Permissions). The permissions to perform certain operations in Cloud Networks API – create, read, update, delete – are assigned to specific roles. The account owner user assigns these roles, either global (multiproduct) or product-specific (for example, Cloud Networks), to account users.</p>
+<p>Role Based Access Control (RBAC) restricts access to the capabilities of Rackspace Cloud
+services, including the Cloud Networks API, to authorized users only. RBAC enables
+Rackspace Cloud customers to specify which account users of their Cloud account have access
+to which Cloud Networks API service capabilities, based on roles defined by Rackspace
+(see Cloud Servers Product Roles and Permissions). The permissions to perform certain
+operations in Cloud Networks API – create, read, update, delete – are assigned to specific
+roles. The account owner user assigns these roles, either global (multiproduct) or
+product-specific (for example, Cloud Networks), to account users.</p>
 <div class="section" id="assigning-roles-to-account-users">
 <h2>Assigning Roles to Account Users<a class="headerlink" href="#assigning-roles-to-account-users" title="Permalink to this headline">¶</a></h2>
-<p>The account owner (identity:user-admin) can create account users on the account and then assign roles to those users. The roles grant the account users specific permissions for accessing the capabilities of the Cloud Networks service. Each account has only one account owner, and that role is assigned by default to any Rackspace Cloud account when the account is created.</p>
-<p>See the Cloud Identity Client Developer Guide for information about how to perform the following tasks:</p>
+<p>The account owner (identity:user-admin) can create account users on the account and then
+assign roles to those users. The roles grant the account users specific permissions for
+accessing the capabilities of the Cloud Networks service. Each account has only one account
+owner, and that role is assigned by default to any Rackspace Cloud account when the account
+is created.</p>
+<p>See the <em>Cloud Identity Client Developer Guide</em> for information about how to perform the
+following tasks:</p>
 <ul class="simple">
 <li><a class="reference external" href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_addUser_v2.0_users_User_Calls.html">Create account users</a></li>
 <li><a class="reference external" href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/PUT_addUserRole_v2.0_users__userId__roles_OS-KSADM__roleId__Role_Calls.html">Assign roles to account users</a></li>
@@ -103,37 +115,58 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">The account owner (identity:user-admin) role cannot hold any additional roles because it already has full access to all capabilities.</p>
+<p class="last">The account owner (identity:user-admin) role cannot hold any additional roles because
+it already has full access to all capabilities.</p>
 </div>
 </div>
 <div class="section" id="roles-available-for-cloud-networks">
 <h2>Roles Available for Cloud Networks<a class="headerlink" href="#roles-available-for-cloud-networks" title="Permalink to this headline">¶</a></h2>
-<p>Three roles (observer, creator, and admin) can be used to access the Cloud Networks API specifically. The following table describes these roles and their permissions.</p>
+<p>Three roles (observer, creator, and admin) can be used to access the Cloud Networks API
+specifically. The following table describes these roles and their permissions.</p>
 <p><strong>Cloud Networks Product Roles and Permissions</strong></p>
-<p>cloudNetworks:admin - This role provides Create, Read, Update, and Delete permissions in Cloud Networks, where access is granted.</p>
-<p>cloudNetworks:creator - This role provides Create, Read, and Update permissions in Cloud Networks, where access is granted.</p>
-<p>cloudNetworks:observer - This role provides Read permission in Cloud Networks, where access is granted.</p>
-<p>Additionally, two multiproduct roles apply to all products. Users with multiproduct roles inherit access to future products when those products become RBAC-enabled. The following table describes these roles and their permissions.</p>
+<ul class="simple">
+<li><strong>cloudNetworks:admin</strong> - This role provides Create, Read, Update, and Delete permissions
+in Cloud Networks, where access is granted.</li>
+<li><strong>cloudNetworks:creator</strong> - This role provides Create, Read, and Update permissions in
+Cloud Networks, where access is granted.</li>
+<li><strong>cloudNetworks:observer</strong> - This role provides Read permission in Cloud Networks, where
+access is granted.</li>
+</ul>
+<p>Additionally, two multiproduct roles apply to all products. Users with multiproduct roles
+inherit access to future products when those products become RBAC-enabled. The following
+table describes these roles and their permissions.</p>
 <p><strong>Multiproduct (Global) Roles and Permissions</strong></p>
-<p>admin - This role provides Create, Read, Update, and Delete permissions in all products, where access is granted.</p>
-<p>observer - This role provides Read permission in all products, where access is granted.</p>
+<ul class="simple">
+<li><strong>admin</strong> - This role provides Create, Read, Update, and Delete permissions in all products,
+where access is granted.</li>
+<li><strong>observer</strong> - This role provides Read permission in all products, where access is granted.</li>
+</ul>
 </div>
 <div class="section" id="resolving-conflicts-between-roles">
 <h2>Resolving Conflicts Between Roles<a class="headerlink" href="#resolving-conflicts-between-roles" title="Permalink to this headline">¶</a></h2>
-<p>The account owner can set roles for both multiproduct and Cloud Networks scope, and it is important to understand how any potential conflicts among these roles are resolved. When two roles appear to conflict, the role that provides the more extensive permissions takes precedence. Therefore, admin roles take precedence over observer and creator roles, because admin roles provide more permissions.</p>
-<p>The following scenarios show examples of how potential conflicts between user roles in the Control Panel are resolved:</p>
-<p>Scenario 1:
-Configuration : User is assigned the following roles: multiproduct <strong>observer</strong> and Cloud Networks <strong>admin</strong></p>
-<p>View: Appears that the user has only the multiproduct <strong>observer</strong> role.</p>
-<p>Permissions: The user can perform product admin functions in the control panel for Cloud Networks only. The user has the <strong>observer</strong> role for the rest of the products.</p>
-<p>Scenario 2:
-Configuration: User is assigned the following roles: multiproduct <strong>admin</strong> and Cloud Networks <strong>observer</strong></p>
-<p>View: Appears that the user has only the multiproduct <strong>admin</strong> role.</p>
-<p>Permissions: The user can perform product admin functions in the control panel for all of the products. The Cloud Networks <strong>observer</strong> role is ignored.</p>
+<p>The account owner can set roles for both multiproduct and Cloud Networks scope, and it is
+important to understand how any potential conflicts among these roles are resolved. When
+two roles appear to conflict, the role that provides the more extensive permissions takes
+precedence. Therefore, admin roles take precedence over observer and creator roles, because
+admin roles provide more permissions.</p>
+<p>The following scenarios show examples of how potential conflicts between user roles in the
+Control Panel are resolved:</p>
+<p><strong>Scenario 1:</strong></p>
+<p><em>Configuration:</em> User is assigned the following roles: multiproduct <strong>observer</strong> and Cloud Networks <strong>admin</strong></p>
+<p><em>Control Panel View:</em> Appears that the user has only the multiproduct <strong>observer</strong> role.</p>
+<p><em>Permissions:</em> The user can perform product admin functions in the control panel for
+Cloud Networks only. The user has the <strong>observer</strong> role for the rest of the products.</p>
+<p><strong>Scenario 2:</strong></p>
+<p><em>Configuration:</em> User is assigned the following roles: multiproduct <strong>admin</strong> and Cloud Networks <strong>observer</strong></p>
+<p><em>Control Panel View:</em> Appears that the user has only the multiproduct <strong>admin</strong> role.</p>
+<p><em>Permissions:</em> The user can perform product admin functions in the control panel for all
+of the products. The Cloud Networks <strong>observer</strong> role is ignored.</p>
 </div>
 <div class="section" id="rbac-permissions-cross-reference-to-cloud-networks-api-operations">
 <h2>RBAC Permissions Cross-reference to Cloud Networks API Operations<a class="headerlink" href="#rbac-permissions-cross-reference-to-cloud-networks-api-operations" title="Permalink to this headline">¶</a></h2>
-<p>API operations for Cloud Networks may or may not be available to all roles. To see which operations are permitted to invoke which calls, please review <a class="reference external" href="http://www.rackspace.com/knowledge_center/article/permissions-matrix-for-next-generation-cloud-servers">the Knowledge Center article</a>.</p>
+<p>API operations for Cloud Networks may or may not be available to all roles. To see which
+operations are permitted to invoke which calls, please review <a class="reference external" href="http://www.rackspace.com/knowledge_center/article/permissions-matrix-for-next-generation-cloud-servers">the Knowledge Center
+article</a>.</p>
 </div>
 </div>
 
@@ -194,6 +227,8 @@ Configuration: User is assigned the following roles: multiproduct <strong>admin<
 <li class="toctree-l1"><a class="reference internal" href="how-curl-commands-work.html">How cURL commands work</a></li>
 <li class="toctree-l1"><a class="reference internal" href="filtering-requests.html">Filtering requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pagination.html">Pagination of requests</a></li>
+</ul>
+<ul class="simple">
 </ul>
 
 

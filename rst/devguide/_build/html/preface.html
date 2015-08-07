@@ -91,14 +91,27 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 
   <div class="section" id="cloud-networks-neutron-api-v2">
 <span id="cn-dg-preface"></span><h1>Cloud Networks - Neutron API v2<a class="headerlink" href="#cloud-networks-neutron-api-v2" title="Permalink to this headline">¶</a></h1>
-<p>Rackspace Cloud Networks enables you to create isolated networks and provision server instances with Rackspace networks or the isolated networks that you created.</p>
-<p>When you create an isolated network, it is associated with your tenant ID, which is also known as your account ID or account number. If you don&#8217;t know your tenant ID, you can find it by logging in to the <a class="reference external" href="http://mycloud.rackspace.com">Cloud Control Panel</a> and expanding the <strong>Account</strong> menu in the upper-right corner of the screen. Your tenant ID is shown at the top of the menu, listed as <strong>Account #</strong>.</p>
-<p>Cloud Networks was originally released using the Cloud Servers the Nova-Network API, whose operations are detailed in <a class="reference external" href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/network_extension.html">Network extension</a> of the <em>Next Generation Cloud Servers Developers Guide</em>. Now Cloud Networks has been released using the Neutron API (see <a class="reference external" href="api_operations_neutron.html">API operations</a>). We recommend that you use the Neutron API operations even though the Nova-Network API operations still work. For information that helps you determine which method is better for you, see <a class="reference external" href="section_nova_v_neutron.html">Networking: neutron versus nova-network</a>.</p>
+<p>Rackspace Cloud Networks enables you to create isolated networks and provision server
+instances with Rackspace networks or the isolated networks that you created.</p>
+<p>When you create an isolated network, it is associated with your tenant ID, which is also
+known as your account ID or account number. If you don&#8217;t know your tenant ID, you can find
+it by logging in to the <a class="reference external" href="http://mycloud.rackspace.com">Cloud Control Panel</a> and expanding the <strong>Account</strong> menu in the
+upper-right corner of the screen. Your tenant ID is shown at the top of the menu, listed
+as <strong>Account #</strong>.</p>
+<p>Cloud Networks was originally released using the Cloud Servers the Nova-Network API, whose
+operations are detailed in <a class="reference external" href="http://docs.rackspace.com/servers/api/v2/cs-devguide/content/network_extension.html">Network extension</a> of the <em>Next Generation Cloud Servers Developers Guide</em>.
+Now Cloud Networks has been released using the Neutron API
+(see <a class="reference external" href="api_operations_neutron.html">API operations</a>). We recommend that you use the
+Neutron API operations even though the Nova-Network API operations still work. For information
+that helps you determine which method is better for you, see <a class="reference external" href="section_nova_v_neutron.html">Networking: neutron versus
+nova-network</a>.</p>
 <p>We welcome <a class="reference external" href="https://feedback.rackspace.com/">feedback, comments, and bug reports</a>.</p>
 <div class="section" id="intended-audience">
 <span id="cn-dg-preface-intended"></span><h2>Intended Audience<a class="headerlink" href="#intended-audience" title="Permalink to this headline">¶</a></h2>
-<p>This guide assists software developers who want to develop applications by using Cloud Networks with the Neutron API.</p>
-<p>To use this information, you should have access to an active Rackspace Cloud Servers account and access to Cloud Networks. You should also be familiar with the following concepts:</p>
+<p>This guide assists software developers who want to develop applications by using Cloud
+Networks with the Neutron API.</p>
+<p>To use this information, you should have access to an active Rackspace Cloud Servers
+account and access to Cloud Networks. You should also be familiar with the following concepts:</p>
 <ul class="simple">
 <li>Cloud Servers service</li>
 <li>RESTful web services</li>
@@ -108,12 +121,14 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 </div>
 <div class="section" id="pricing-and-service-level">
 <span id="cn-dg-preface-pricing"></span><h2>Pricing and service level<a class="headerlink" href="#pricing-and-service-level" title="Permalink to this headline">¶</a></h2>
-<p>Cloud Networks is part of the Rackspace Cloud and your use through the API is billed according to the <a class="reference external" href="http://www.rackspace.com/cloud/servers/pricing/">pricing schedule for Cloud Servers</a>.</p>
+<p>Cloud Networks is part of the Rackspace Cloud and your use through the API is billed
+according to the <a class="reference external" href="http://www.rackspace.com/cloud/servers/pricing/">pricing schedule for Cloud Servers</a>.</p>
 <p>The <a class="reference external" href="http://www.rackspace.com/cloud/servers/service-levels/">Service Level Agreement</a> (SLA) for Cloud Networks is available as part of Cloud Servers.</p>
 </div>
 <div class="section" id="document-change-history">
 <span id="cn-dg-preface-changehist"></span><h2>Document change history<a class="headerlink" href="#document-change-history" title="Permalink to this headline">¶</a></h2>
-<p>This version of the guide applies only to v2.0 of the API. The most recent changes are described in the following table:</p>
+<p>This version of the guide applies only to v2.0 of the API. The most recent changes are
+described in the following table:</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="24%" />
@@ -163,9 +178,12 @@ authenticates with username and password credentials.</td>
 </div>
 <div class="section" id="resources">
 <span id="cn-dg-preface-resources"></span><h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
-<p>For additional Cloud Servers and Cloud Networks service resources, see the <a class="reference external" href="http://www.rackspacecloud.com/cloud_hosting_products/servers">Rackspace Cloud</a> site, which provides related documents and links to Rackspace support channels including <a class="reference external" href="http://www.rackspace.com/knowledge_center/">Knowledge Center articles</a>, phone, chat, and tickets.</p>
+<p>For additional Cloud Servers and Cloud Networks service resources, see the
+<a class="reference external" href="http://www.rackspacecloud.com/cloud_hosting_products/servers">Rackspace Cloud</a> site, which provides related documents and links to Rackspace support
+channels including <a class="reference external" href="http://www.rackspace.com/knowledge_center/">Knowledge Center articles</a>, phone, chat, and tickets.</p>
 <p>For product updates and announcements through Twitter, see <a class="reference external" href="http://twitter.com/rackspace">http://twitter.com/rackspace</a>.</p>
-<p>For information about the supernova client, which is an unsupported wrapper for the nova client that is useful for managing multiple nova environments, see <a class="reference external" href="http://major.github.io/supernova/">supernova client</a>.</p>
+<p>For information about the supernova client, which is an unsupported wrapper for the nova
+client that is useful for managing multiple nova environments, see <a class="reference external" href="http://major.github.io/supernova/">supernova client</a>.</p>
 </div>
 </div>
 
@@ -226,6 +244,8 @@ authenticates with username and password credentials.</td>
 <li class="toctree-l1"><a class="reference internal" href="how-curl-commands-work.html">How cURL commands work</a></li>
 <li class="toctree-l1"><a class="reference internal" href="filtering-requests.html">Filtering requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pagination.html">Pagination of requests</a></li>
+</ul>
+<ul class="simple">
 </ul>
 
 

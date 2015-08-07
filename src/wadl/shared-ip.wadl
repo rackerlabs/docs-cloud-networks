@@ -18,18 +18,35 @@
     <!--*******************************************************-->
     <resources base="https://neutron.example.com/" xml:id="os-subnets-v2">
         <resource id="version" path="v2.0/">
-            <resource id="SharedIPs" path="ip-addresses">
-                <method href="#listSharedIPs"/>
-                <method href="#createSharedIP"/>
+            <resource id="SharedIPs" path="ip_addresses">
+                <method href="#listIPs"/>
+                <method href="#provisionIP"/>
                 <resource id="sharedIP" path="{ipAddressID}">
-                    <param name="shared_IP_address" style="template" type="xsd:string">
+                    <param name="ipAddressID" style="template" type="xsd:string">
                         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Shared IP">
-                            <para>The shared IP address.</para>
+                            <para>The IP address ID. Note that this is the ID and not the IP address itself.</para>
                         </wadl:doc>
                     </param>
-                    <method href="#showSharedIP"/>
-                    <!--<method href="#updateSharedIP"/>
-                    <method href="#removeSharedIP"/>-->
+                    <method href="#showIP"/>
+                    <method href="#updateIP"/>
+                    <method href="#removeIP"/>
+                </resource>
+            </resource>
+        </resource>
+        <resource id="versionsrv" path="v2/">
+            <resource id="IPAssociationServers" path="servers">
+                <resource id="ipaServerID" path="{serverID}/ip_associations">
+                    <method href="#listAssociatedIPs"/>
+                    <resource id="IPAddressID" path="{IPAddressID}">
+                        <param name="IPAddressID" style="template" type="csapi:UUID">
+                            <wadl:doc xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" title="Image ID">
+                                <p>The IP address ID. Note that this is the ID and not the IP address itself.</p>
+                            </wadl:doc>
+                        </param>
+                        <method href="#associateAssociatedIP"/>
+                        <method href="#showAssociatedIP"/>
+                        <method href="#deleteAssociatedIP"/>
+                    </resource>
                 </resource>
             </resource>
         </resource>
@@ -39,33 +56,33 @@
     <!--*******************************************************-->
 
     <!--List Shared IPs-->
-    <method name="GET" id="listSharedIPs">
-        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Retrieve list of shared IPs">
-            <para role="shortdesc">Retrieves list of shared IPs for specified tenant.</para>
+    <method name="GET" id="listIPs">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Retrieve list of IP addresses">
+            <para role="shortdesc">Retrieves list of IP addresses for specified tenant.</para>
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <!--<xsdxt:code href="../common/samples/req-json-http.txt"/>-->
-                </wadl:doc>&sharedIPQueryParameters; </representation>
+                </wadl:doc>
+            </representation>
         </request>
         <response status="200">
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/sharedip-get-resp.json"/>
-                </wadl:doc>&sharedIPListParameters; </representation>
+                </wadl:doc>&sharedIPListRspParameters; </representation>
         </response> &fault401; </method>
 
     <!--Create Shared IP-->
-    <method name="POST" id="createSharedIP">
-        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Create shared IP">
-            <para role="shortdesc">Creates a shared IP on a specified network.</para>
-            <para>A list of device_ids may be optionally specified to create the IP address and added to their respective
-                ports.</para>
-            <para>A list of port_ids may be optionally specified to create the IP address and added to the specified
-                ports.</para>
-            <para>At least one of device_ids or port_ids must be specified.</para>
-            <para>Defaults all ports' service to "none".</para>
+    <method name="POST" id="provisionIP">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Provision IP address">
+            <para role="shortdesc">Provisions an IP address on a specified network.</para>
+            <para>A list of port_ids must be specified to provision the IP address on the specified ports.</para>
+            <note>
+                <para>When provisioning IP addresses, the type is automatically set to <literal>shared</literal> when
+                    multiple port IDs are included in the request.</para>
+            </note>
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
@@ -81,49 +98,163 @@
         </response> &fault400; &fault401; &fault404; </method>
 
     <!--Show Shared IP-->
-    <method name="GET" id="showSharedIP">
-        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Show subnet">
-            <para role="shortdesc">Retrieves information for a specified shared IP.</para>
+    <method name="GET" id="showIP">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Show IP address details">
+            <para role="shortdesc">Retrieves information for a specified IP address.</para>
+            <para>This operation retrieves information for a specified IP address, using the IP address ID.</para>
         </wadl:doc>
         <response status="200">
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-                    <xsdxt:code href="../common/samples/sharedIP-show-resp.json"/>
-                </wadl:doc>&subnetCreateRspParameters;</representation>
+                    <xsdxt:code href="../common/samples/sharedIP-create-resp.json"/>
+                </wadl:doc>&sharedIPCreateRspParameters;</representation>
         </response> &fault401; &fault404; </method>
 
     <!--Update Shared IP-->
-    <method name="PUT" id="updateSubnet">
-        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Update subnet">
-            <para role="shortdesc">Updates a specified subnet.</para>
-            <para>The IP version (<parameter>ip_version</parameter>), network ID (<parameter>network_id</parameter>), and
-                CIDR (<parameter>cidr</parameter>) cannot be updated. Attempting to update these parameters results in a
-                    <errorcode>400 Bad Request</errorcode> error.</para>
-            <para>You cannot update allocation pools that are attached to a port.</para>
-            <warning><para>If any attributes are updated, the changes will take effect only for ports or cloud servers using
-                    this subnet that are created after this modification. Any existing ports or servers are not
-                    updated.</para></warning>
+    <method name="PUT" id="updateIP">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Update ports with an IP address">
+            <para role="shortdesc">Updates the port IDs provisioned with an IP address.</para>
+            <para>This operation updates the port IDs that are sharing an IP address, using the IP address ID. Old ports are
+                replaced by the new list of ports included in the request body. Only the port attributes may be updated with
+                this operation.</para>
+            <note>
+                <para>Updating the IP address with an empty port list de-allocates the IP addresses from the tenant using the
+                    IP address.</para>
+            </note>
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-                    <xsdxt:code href="../common/samples/subnet-post-req.json"/>
-                </wadl:doc>&subnetUpdateParameters;</representation>
+                    <xsdxt:code href="../common/samples/sharedIP-update-req.json"/>
+                </wadl:doc>&sharedIPUpdateReqParameters;</representation>
+        </request>
+        <response status="200">
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+                    <xsdxt:code href="../common/samples/sharedIP-update-resp.json"/>
+                </wadl:doc>&sharedIPCreateRspParameters;</representation>
+        </response> &fault400; &fault401; &fault403; &fault404; </method>
+
+    <!--Remove Shared IP-->
+    <method name="DELETE" id="removeIP">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="De-allocate IP address">
+            <para role="shortdesc">De-allocates a specified associated IP address.</para>
+            <para>This operation de-allocates the specified IP address from the tenant, using the associated IP address
+                ID.</para>
+            <note>
+                <para>Before using this operation to de-allocate an IP address from a tenant, all IP associations must be
+                    removed from the IP address by using the DELETE <literal>/ip_associations</literal> operation.</para>
+            </note>
+        </wadl:doc>
+        <response status="204">
+            <representation mediaType="application/json">
+                <wadl:doc xml:lang="EN" xmlns="http://docbook.org/ns/docbook">
+                    <xsdxt:code href="../common/samples/sharedIP-delete-resp-json-http.txt"/>
+                </wadl:doc>
+            </representation>
+        </response>&fault401;&fault404; </method>
+
+    <!--List Associated IPs-->
+    <method name="GET" id="listAssociatedIPs">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="Retrieve list of IP addresses explicitly associated with a server">
+            <para role="shortdesc">Retrieves list of explicitly associated IPs for specified server.</para>
+            <para>This operation retrieves a list of all IP addresses explicitly associated to the specified server using the
+                    <literal>/ip_addresses</literal> API operations.</para>
+            <para>Any IP addresses provisioned using POST <literal>/ip_addresses</literal> that have not been associated with
+                the servers using the <literal>/ip_associations</literal> API will not be able to forward traffic from the
+                intended servers. For example, if you need to share IP address between two ports, belonging to two servers,
+                you must use a POST <literal>/ip_addresses</literal> for the relevant ports, followed by an IP association.
+                The IP association must be done for the IP address for both the servers so that they can forward traffic for
+                the IP address.</para>
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+                    <!--<xsdxt:code href="../common/samples/req-json-http.txt"/>-->
+                </wadl:doc>
+            </representation>
+        </request>
+        <response status="200">
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+                    <xsdxt:code href="../common/samples/associatedip-get-resp.json"/>
+                </wadl:doc>&xtenAssociatedIPListRspParameters;</representation>
+        </response> &commonFaults;</method>
+
+    <!--Associate Associated IP-->
+    <method name="POST" id="associateAssociatedIP">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Explicitly associate IP address with server">
+            <para role="shortdesc">Explicitly associate a provisioned IP address with server</para>
+            <para>This operation explicitly associates to a server an IP address.</para>
+            <important>
+                <para>Before using this operation, you must use the POST <literal>ip_addresses</literal> API operation to
+                    provision the IP address.</para>
+            </important>
+            <para>Any IP addresses provisioned using POST <literal>/ip_addresses</literal> that have not been associated with
+                the servers using the <literal>/ip_associations</literal> API will not be able to forward traffic from the
+                intended servers. For example, if you need to share IP address between two ports, belonging to two servers,
+                you must use a POST <literal>/ip_addresses</literal> for the relevant ports, followed by an IP association.
+                The IP association must be done for the IP address for both the servers so that they can forward traffic for
+                the IP address.</para>
+            <para>For usage examples, please see the Cloud Networks Getting Started Guide.</para>
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+                    <!--<xsdxt:code href="../common/samples/req-json-http.txt"/>-->
+                </wadl:doc>
+            </representation>
         </request>
         <response status="201">
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-                    <xsdxt:code href="../common/samples/subnet-post-resp.json"/>
-                </wadl:doc>&subnetUpdateRspParameters;</representation>
-        </response> &fault400; &fault401; &fault403; &fault404; </method>
+                    <xsdxt:code href="../common/samples/associatedip-create-resp.json"/>
+                </wadl:doc>&xtenAssociatedIPCreateRspParameters;</representation>
+        </response> &commonFaults; </method>
 
-    <!--Remove Shared IP-->
-    <method name="DELETE" id="removeSubnet">
-        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Delete subnet">
-            <para role="shortdesc">Deletes a specified subnet.</para>
-            <para>This operation fails if the subnet IP addresses are still allocated.</para>
+    <!--Show Associated IP-->
+    <method name="GET" id="showAssociatedIP">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="Show specific IP addresses explicitly associated with server">
+            <para role="shortdesc">Retrieves information for a specific IP address explicitly associated with a
+                server.</para>
+            <para>This operation retrieves information for a specific IP address explicitly associated with a server using
+                the <literal>/ip_associations</literal> API operations by specifying the associated IP address ID.</para>
+            <para>Perform this operation to verify that the association of the IP address to the server exists. </para>
+            <para>Any IP addresses provisioned using POST <literal>/ip_addresses</literal> that have not been associated with
+                the servers using the <literal>/ip_associations</literal> API will not be able to forward traffic from the
+                intended servers. For example, if you need to share IP address between two ports, belonging to two servers,
+                you must use a POST <literal>/ip_addresses</literal> for the relevant ports, followed by an IP association.
+                The IP association must be done for the IP address for both the servers so that they can forward traffic for
+                the IP address.</para>
+        </wadl:doc>
+        <response status="200">
+            <representation mediaType="application/json">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
+                    <xsdxt:code href="../common/samples/associatedIP-show-resp.json"/>
+                </wadl:doc>&xtenAssociatedIPCreateRspParameters;</representation>
+        </response> &commonFaults;</method>
+
+    <!--Remove Associated IP-->
+    <method name="DELETE" id="deleteAssociatedIP">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="Delete association between IP address and server">
+            <para role="shortdesc">Deletes the association between the server and associated IP address.</para>
+            <para>This operation deletes association between the server and the IP address, using the associated IP address
+                ID.</para>
+            <note>
+                <para>All IP associations must be removed from an IP address by using this operation before you can
+                    de-allocate an IP address from a tenant, by using the DELETE <literal>/ip_addresses</literal> or the PUT
+                        <literal>/ip_addresses</literal> operation with an empty list of port IDs.</para>
+            </note>
         </wadl:doc>
         <response status="204">
-            <representation mediaType="application/json"/>
-        </response> &fault401; &fault404; &fault409conflict; </method>
+            <representation mediaType="application/json">
+                <wadl:doc xml:lang="EN" xmlns="http://docbook.org/ns/docbook">
+                    <xsdxt:code href="../common/samples/associatedIP-delete-resp-json-http.txt"/>
+                </wadl:doc>
+            </representation>
+        </response>&commonFaults;</method>
+
 </application>

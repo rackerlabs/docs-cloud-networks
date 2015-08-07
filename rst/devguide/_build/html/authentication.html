@@ -92,27 +92,40 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
   <div class="section" id="get-the-authentication-token">
 <span id="cn-dg-generalapi-auth"></span><h1>Get the authentication token<a class="headerlink" href="#get-the-authentication-token" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference internal" href="#cn-dg-generalapi-auth-curl"><span>Authenticate with cURL</span></a></p>
-<p>To authenticate access to Rackspace Cloud services, you issue an authentication request to the Rackspace Cloud Identity service, which is an implementation of the OpenStack Keystone Identity Service v2.0.</p>
+<p>To authenticate access to Rackspace Cloud services, you issue an authentication request to
+the Rackspace Cloud Identity service, which is an implementation of the OpenStack Keystone
+Identity Service v2.0.</p>
 <p>Authenticate by using the following endpoint:</p>
 <div class="highlight-python"><div class="highlight"><pre>https://identity.api.rackspacecloud.com/v2.0
 </pre></div>
 </div>
-<p>In response to valid credentials, an authentication request to the Rackspace Cloud Identity service returns an authentication token and a service catalog that contains a list of all services and endpoints available for this token. Because the authentication token expires after 24 hours, you must generate a new token once a day.</p>
-<p>For detailed information about the Rackspace Identity Service v2.0, see <a class="reference external" href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/index.html">Cloud Identity Client Developer Guide API v2.0</a>.</p>
+<p>In response to valid credentials, an authentication request to the Rackspace Cloud Identity
+service returns an authentication token and a service catalog that contains a list of all
+services and endpoints available for this token. Because the authentication token expires
+after 24 hours, you must generate a new token once a day.</p>
+<p>For detailed information about the Rackspace Identity Service v2.0, see <a class="reference external" href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/index.html">Cloud Identity
+Client Developer Guide API v2.0</a>.</p>
 <div class="section" id="authenticate-with-curl">
 <span id="cn-dg-generalapi-auth-curl"></span><h2>Authenticate with cURL<a class="headerlink" href="#authenticate-with-curl" title="Permalink to this headline">¶</a></h2>
-<p>To authenticate with cURL, issue a <strong>POST /tokens</strong> request to the appropriate Rackspace Cloud Identity Service endpoint.</p>
+<p>To authenticate with cURL, issue a <strong>POST /tokens</strong> request to the appropriate Rackspace
+Cloud Identity Service endpoint.</p>
 <p>In the request body, supply one of the following sets of credentials:</p>
 <ul class="simple">
 <li>User name and password</li>
 <li>User name and API key</li>
 </ul>
-<p>Your user name and password are the ones that you use to log in to the Rackspace Cloud Control Panel.</p>
+<p>Your user name and password are the ones that you use to log in to the Rackspace Cloud
+Control Panel.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">If you authenticate with username and password credentials, you can use multi-factor authentication to add an additional level of account security. This feature is not implemented for username and API credentials. For more information, see <a class="reference external" href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/MFA_Ops.html">Multifactor authentication</a> in the <em>Cloud Identity Client Developer Guide</em>.</p>
+<p class="last">If you authenticate with username and password credentials, you can use multi-factor
+authentication to add an additional level of account security. This feature is not
+implemented for username and API credentials. For more information, see
+<a class="reference external" href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/MFA_Ops.html">Multifactor authentication</a> in the <em>Cloud Identity Client Developer Guide</em>.</p>
 </div>
-<p>To obtain your API key, log in to <a class="reference external" href="http://mycloud.rackspace.com">http://mycloud.rackspace.com</a>,  select <strong>Account:</strong><em>`username`</em> &gt; <strong>Account Settings</strong>, and click <strong>Show</strong> next to the <strong>API Key</strong> field.</p>
+<p>To obtain your API key, log in to <a class="reference external" href="http://mycloud.rackspace.com">http://mycloud.rackspace.com</a>,
+select <strong>Account:</strong><em>username</em> &gt; <strong>Account Settings</strong>, and click <strong>Show</strong> next to
+the <strong>API Key</strong> field.</p>
 <p><strong>To authenticate with cURL:</strong></p>
 <ol class="arabic">
 <li><p class="first">Get an authentication token and a service catalog with a list of endpoints.</p>
@@ -133,15 +146,17 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 <p class="first admonition-title">Note</p>
 <p class="last">For information about the json.tool, see <a class="reference internal" href="how-curl-commands-work.html#cn-dg-generalapi-curl-json"><span>More about json.tool</span></a>.</p>
 </div>
-<p>In response to valid credentials, your request returns an authentication token and a service catalog with the endpoints that you need to request services.</p>
+<p>In response to valid credentials, your request returns an authentication token and a
+service catalog with the endpoints that you need to request services.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">If you authenticated with username and password credentials, and the Identity service returns a 401 message requesting additional credentials, your account is configured for multi-factor authentication. To complete the authentication process, <a class="reference external" href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/proc_mfa_auth.html">submit a second POST tokens request with multi-factor authentication credentials</a>.</p>
+<p class="last">If you authenticated with username and password credentials, and the Identity service
+returns a 401 message requesting additional credentials, your account is configured
+for multi-factor authentication. To complete the authentication process, <a class="reference external" href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/proc_mfa_auth.html">submit a
+second POST tokens request with multi-factor authentication credentials</a>.</p>
 </div>
-</li>
-</ol>
-<blockquote>
-<div><p>Do not include explicit API endpoints in your scripts and applications. Instead, find the endpoint for your service and region.</p>
+<p>Do not include explicit API endpoints in your scripts and applications. Instead, find
+the endpoint for your service and region.</p>
 <p>The following output shows a partial authentication response in JSON format:</p>
 <p><strong>Example: Authentication: JSON response</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>
@@ -227,85 +242,49 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 </pre></div>
 </div>
 <p>Successful authentication returns the following information:</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>image:: /_images/1.png</td>
-<td><p class="first"><strong>Endpoints to request Rackspace
-Cloud services</strong>. Appears in the
-<cite>endpoints</cite> element in the
-<cite>serviceCatalog</cite> element.</p>
-<p class="last">Endpoint information includes the
-public URL (which is the endpoint
-that you use to access the service),
-region, tenant ID, and version
+<p><strong>Endpoints to request Rackspace Cloud services</strong>. Appears in the
+<code class="docutils literal"><span class="pre">endpoints</span></code> element in the <code class="docutils literal"><span class="pre">serviceCatalog</span></code> element.</p>
+<p>Endpoint information includes the public URL, which is the endpoint that
+you use to access the service, as well as region, tenant ID, and version
 information.</p>
-</td>
-</tr>
-<tr class="row-even"><td>image:: /_images/2.png</td>
-<td><p class="first"><strong>Tenant ID</strong>. Appears in the
-<cite>tenantId</cite> field in the
-<cite>endpoints</cite> element. Also known as
-the account number.</p>
-<p class="last">You include the tenant ID in the
-endpoint URL when you call a
-Rackspace Cloud service.</p>
-</td>
-</tr>
-<tr class="row-odd"><td>image:: /_images/3.png</td>
-<td><p class="first"><strong>The name of the service</strong>. Appears
-in the <cite>name</cite> field.</p>
-<p>To access the next generation Cloud
-Servers service, locate and use the
-<cite>publicURL</cite> value for the
-<cite>cloudServersOpenStack</cite> service.</p>
-<p class="last">A service might show multiple
-endpoints to enable regional
-choice.&nbsp;Select the appropriate
-endpoint for the region that you
-want to interact with by examining
-the <cite>region</cite> field.</p>
-</td>
-</tr>
-<tr class="row-even"><td>image:: /_images/4.png</td>
-<td><p class="first"><strong>Expiration date and time for
-authentication token</strong>. Appears in
-the <cite>expires</cite> field in the
-<cite>token</cite> element.</p>
-<p>The authentication token expires
-after this date and time, unless it
-is revoked earlier. After the token
-expires or is revoked, you must
-generate a new token if you want to
-continue accessing Rackspace Cloud
-services.</p>
-<p class="last">This field predicts the maximum
-lifespan for a token, but does not
-guarantee that the token reaches
-that lifespan. Clients are
-encouraged to cache a token until it
-expires.</p>
-</td>
-</tr>
-<tr class="row-odd"><td>image:: /_images/5.png</td>
-<td><p class="first"><strong>Authentication token</strong>. Appears in
-the <cite>id</cite> field in the <cite>token</cite>
-element.</p>
-<p class="last">You pass the authentication token in
-the <cite>X-Auth-Token</cite> header each
-time that you send a request to a
-service.</p>
-</td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
-<ol class="arabic">
-<li><p class="first">Copy the values in the <cite>publicURL</cite> and <cite>tenantId</cite> fields for the <cite>cloudServersOpenStack</cite> service for your region.</p>
-<p>Copy the authentication token from the <cite>id</cite> field in the <cite>token</cite> element.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">To help you decide which regionalized endpoint to use, read about
+<a class="reference external" href="http://www.rackspace.com/knowledge_center/article/about-regions">special considerations</a> for choosing a data center.</p>
+</div>
+<p><strong>Tenant ID</strong>. Appears in the <code class="docutils literal"><span class="pre">tenantId</span></code> field in the <code class="docutils literal"><span class="pre">endpoints</span></code>
+element. The tenant ID is also known as the account number.</p>
+<p>You include the tenant ID in the endpoint URL when you call a cloud service.</p>
+<p><strong>The name of the service</strong>. Appears in the <code class="docutils literal"><span class="pre">name</span></code> field.</p>
+<p>Locate the correct service name in the service catalog, as follows:</p>
+<ul>
+<li><p class="first"><strong>Cloud Networks</strong>. Named <code class="docutils literal"><span class="pre">cloudNetworks</span></code> in the catalog.</p>
+<p>To access the Cloud Networks service, locate and use the <code class="docutils literal"><span class="pre">publicURL</span></code> value
+for the <code class="docutils literal"><span class="pre">cloudNetworks</span></code> service.</p>
+<p>The service might show multiple endpoints to enable regional
+choice.&nbsp;Select the appropriate endpoint for the region that you want
+to interact with by examining the <code class="docutils literal"><span class="pre">region</span></code> field.</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">To help you decide which regionalized endpoint to use, read about
+special considerations for choosing a data center at
+<a class="reference external" href="http://ord.admin.kc.rakr.net/knowledge_center/article/about-regions">http://ord.admin.kc.rakr.net/knowledge_center/article/about-regions</a>.</p>
+</div>
+<p><strong>Expiration date and time for authentication token</strong>. Appears in the
+<code class="docutils literal"><span class="pre">expires</span></code> field in the <code class="docutils literal"><span class="pre">token</span></code> element.</p>
+<p>After this date and time, the token is no longer valid. This field predicts the maximum
+lifespan for a token, but does not guarantee that the token reaches that lifespan.</p>
+<p>Clients are encouraged to cache a token until it expires.</p>
+<p>Because the authentication token expires after 24 hours, you must generate a token once a day.</p>
+<p><strong>Authentication token</strong>. Appears in the <code class="docutils literal"><span class="pre">id</span></code> field in the <code class="docutils literal"><span class="pre">token</span></code> element.</p>
+<p>You pass the authentication token in the <code class="docutils literal"><span class="pre">X-Auth-Token</span></code> header each
+time that you send a request to a service.</p>
+</li>
+<li><p class="first">Copy the values in the <code class="docutils literal"><span class="pre">publicURL</span></code> and <code class="docutils literal"><span class="pre">tenantId</span></code> fields for the
+<code class="docutils literal"><span class="pre">cloudNetworks</span></code> service for your region, and copy the authentication token from
+the <code class="docutils literal"><span class="pre">id</span></code> field in the <code class="docutils literal"><span class="pre">token</span></code> element.</p>
 <p>As a next step, you can set environment variables to these values.</p>
 </li>
 </ol>
@@ -366,6 +345,8 @@ service.</p>
 <li class="toctree-l1"><a class="reference internal" href="how-curl-commands-work.html">How cURL commands work</a></li>
 <li class="toctree-l1"><a class="reference internal" href="filtering-requests.html">Filtering requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pagination.html">Pagination of requests</a></li>
+</ul>
+<ul class="simple">
 </ul>
 
 

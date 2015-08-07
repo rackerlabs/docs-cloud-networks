@@ -217,10 +217,11 @@
     <xi:include href="chapters/cfn_create_first_net.xml"/>
     <xi:include href="chapters/bns_boot_new_server.xml"/>
     <xi:include href="chapters/dn_delete_network.xml"/>
+    <xi:include href="chapters/aes_attach_network_to_server.xml"/>
     <xi:include href="chapters/uap_use_alloc_pools.xml"/>
     <xi:include href="chapters/chr_configure_host_routes.xml"/>
     <xi:include href="chapters/pai_provision_additional_ips.xml"/>
     <xi:include href="chapters/sg_security_groups.xml"/>
-    <xi:include href="chapters/aes_attach_network_to_server.xml"/>
+    <!--<xi:include href="chapters/si_share_ip.xml"/>-->
     <glossary role="auto"/>
 </book>

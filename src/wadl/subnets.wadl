@@ -162,7 +162,7 @@
         <response status="201">
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-                    <xsdxt:code href="../common/samples/subnet-show-resp.json"/>
+                    <xsdxt:code href="../common/samples/subnet-show-resp.json"/> 
                 </wadl:doc>&subnetCreateRspParameters;</representation>
             <!--<representation mediaType="application/xml">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">

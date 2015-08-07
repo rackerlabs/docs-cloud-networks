@@ -91,9 +91,14 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 
   <div class="section" id="how-curl-commands-work">
 <span id="cn-dg-generalapi-curl"></span><h1>How cURL commands work<a class="headerlink" href="#how-curl-commands-work" title="Permalink to this headline">¶</a></h1>
-<p>cURL is a command-line tool that you can use to interact with REST interfaces. cURL lets you to transmit and receive HTTP requests and responses from the command line or a shell script, which enables you to work with the API directly. It is available for Linux distributions, Mac OS X, and Windows. For information about cURL, see <a class="reference external" href="http://curl.haxx.se/">http://curl.haxx.se/</a>.</p>
-<p>To run the cURL request examples shown in this guide, copy each example from the HTML version of this guide directly to the command line or a script.</p>
-<p id="cn-dg-generalapi-curl-json">The following command is an example cURL command that provisions a server with an isolated network using JSON.</p>
+<p>cURL is a command-line tool that you can use to interact with REST interfaces. cURL lets
+you to transmit and receive HTTP requests and responses from the command line or a shell
+script, which enables you to work with the API directly. It is available for Linux distributions,
+Mac OS X, and Windows. For information about cURL, see <a class="reference external" href="http://curl.haxx.se/">http://curl.haxx.se/</a>.</p>
+<p>To run the cURL request examples shown in this guide, copy each example from the HTML version
+of this guide directly to the command line or a script.</p>
+<p id="cn-dg-generalapi-curl-json">The following command is an example cURL command that provisions a server with an isolated
+network using JSON.</p>
 <p><strong>cURL command example: JSON request</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>      $ curl https://dfw.servers.api.rackspacecloud.com/v2/$account/servers \
  -X POST \
@@ -107,13 +112,14 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">The carriage returns in the cURL request examples use a backslash (<code class="docutils literal"><span class="pre">\</span></code>) as an escape character. The escape character allows continuation of the command across multiple lines.</p>
+<p class="last">The carriage returns in the cURL request examples use a backslash (<code class="docutils literal"><span class="pre">\</span></code>) as an escape
+character. The escape character allows continuation of the command across multiple lines.</p>
 </div>
 <p>The cURL examples in this guide use the following command-line options.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="50%" />
-<col width="50%" />
+<col width="13%" />
+<col width="87%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Option</th>
@@ -121,80 +127,74 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td><cite>-d</cite></td>
-<td>Sends the specified data in a
-<strong>POST</strong> request to the HTTP server.
-Use this option to send a JSON
-request body to the server.</td>
+<tr class="row-even"><td><strong>-d</strong></td>
+<td>Sends the specified data in a <strong>POST</strong> request to the HTTP server.
+Use this option to send a JSON request body to the server.</td>
 </tr>
-<tr class="row-odd"><td><cite>-H</cite></td>
-<td><p class="first">Specifies an extra HTTP header in
-the request. You can specify any
-number of extra headers. Precede
-each header with the <code class="docutils literal"><span class="pre">-H</span></code> option.</p>
-<p>Common headers in Rackspace API
-requests are as follows:</p>
+<tr class="row-odd"><td><strong>-H</strong></td>
+<td><p class="first">Specifies an extra HTTP header in the request. You can specify any
+number of extra headers. Precede each header with the <code class="docutils literal"><span class="pre">-H</span></code> option.</p>
+<p>Common headers in Rackspace API requests are as follows:</p>
+<p><code class="docutils literal"><span class="pre">Content-Type</span></code>: Required for operations with a request body.</p>
+<ul>
+<li><p class="first">Specifies the format of the request body. Following is the syntax
+for the header where format is <code class="docutils literal"><span class="pre">json</span></code>:</p>
+<div class="code highlight-python"><div class="highlight"><pre>Content-Type: application/json
+</pre></div>
+</div>
+</li>
+</ul>
+<p><code class="docutils literal"><span class="pre">X-Auth-Token</span></code>: Required.</p>
+<ul class="simple">
+<li>Specifies the authentication token.</li>
+</ul>
+<p><code class="docutils literal"><span class="pre">X-Auth-Project-Id</span></code>: Optional.</p>
+<ul class="simple">
+<li>Specifies the project ID, which can be your account number or
+another value.</li>
+</ul>
+<p><code class="docutils literal"><span class="pre">Accept</span></code>: Optional.</p>
 <ul class="last">
-<li><p class="first"><cite>Content-Type</cite>: Required for
-operations with a request body.</p>
-<p>Specifies the format of the
-request body. Following is the
-syntax for the header where
-<cite>format</cite> is <cite>json</cite>:</p>
-<p>Content-Type: application/format</p>
-</li>
-<li><p class="first"><cite>X-Auth-Token</cite>: Required.
-Specifies the authentication
-token.</p>
-</li>
-<li><p class="first"><cite>X-Auth-Project-Id</cite>: Optional.
-Specifies the project ID, which
-can be your account number or
-another value.</p>
-</li>
-<li><p class="first"><cite>Accept</cite>: Optional.</p>
-<p>Specifies the format of the
-response body. Following is the
-syntax for the header where the
-<cite>format</cite> is <cite>json</cite>, which is
-the default:</p>
-<p>Accept: application/format</p>
+<li><p class="first">Specifies the format of the response body. Following is the syntax
+for the header where the format is <code class="docutils literal"><span class="pre">json</span></code>, which is the
+default:</p>
+<div class="code highlight-python"><div class="highlight"><pre>Accept: application/json
+</pre></div>
+</div>
 </li>
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td><cite>-i</cite></td>
-<td>Includes the HTTP header in the
-output.</td>
+<tr class="row-even"><td><strong>-i</strong></td>
+<td>Includes the HTTP header in the output.</td>
 </tr>
-<tr class="row-odd"><td><cite>-s</cite></td>
-<td>Specifies silent or quiet mode,
-which makes cURL mute. No progress
-or error messages are shown.</td>
+<tr class="row-odd"><td><strong>-s</strong></td>
+<td>Specifies silent or quiet mode, which makes cURL mute. No progress or
+error messages are shown.</td>
 </tr>
-<tr class="row-even"><td><cite>-T</cite></td>
-<td>Transfers the specified local file
-to the remote URL.</td>
+<tr class="row-even"><td><strong>-T</strong></td>
+<td>Transfers the specified local file to the remote URL.</td>
 </tr>
-<tr class="row-odd"><td><cite>-X</cite></td>
-<td>Specifies the request method to use
-when communicating with the HTTP
-server. The specified request is
-used instead of the default method,
+<tr class="row-odd"><td><strong>-X</strong></td>
+<td>Specifies the request method to use when communicating with the HTTP
+server. The specified request is used instead of the default method,
 which is <strong>GET</strong>.</td>
 </tr>
 </tbody>
 </table>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">For commands that return a response, you can append the following code to the command to call json.tool to pretty-print output:</p>
-</div>
+<p>For commands that return a response, use json.tool to pretty-print the output by
+appending the following command to the cURL call:</p>
 <div class="code highlight-python"><div class="highlight"><pre>| python -m json.tool
 </pre></div>
 </div>
-<p>To use json.tool, import the JSON module. For information about json.tool, see <a class="reference external" href="http://docs.python.org/2/library/json.html">JSON encoder and decoder</a>.</p>
-<p>If you run a Python version earlier than 2.6, import the simplejson module and use simplejson.tool. For information about simplejson.tool, see <a class="reference external" href="http://simplejson.googlecode.com/svn/tags/simplejson-2.0.9/docs/index.html">simplejson encoder and decoder</a>.</p>
-<p>If you do not want to pretty-print JSON output, omit this code.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>To use json.tool, import the JSON module. For information about json.tool, see
+<a class="reference external" href="http://docs.python.org/2/library/json.html">JSON encoder and decoder</a>.</p>
+<p>If you run a Python version earlier than 2.6, import the simplejson module and use
+simplejson.tool. For information about simplejson.tool, see <a class="reference external" href="http://simplejson.googlecode.com/svn/tags/simplejson-2.0.9/docs/index.html">simplejson encoder and decoder</a>.</p>
+<p class="last">If you do not want to pretty-print JSON output, omit this code.</p>
+</div>
 </div>
 
 
@@ -248,6 +248,8 @@ which is <strong>GET</strong>.</td>
 <li class="toctree-l1 current"><a class="current reference internal" href="">How cURL commands work</a></li>
 <li class="toctree-l1"><a class="reference internal" href="filtering-requests.html">Filtering requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pagination.html">Pagination of requests</a></li>
+</ul>
+<ul class="simple">
 </ul>
 
 

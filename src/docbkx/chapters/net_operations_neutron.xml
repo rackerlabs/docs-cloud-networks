@@ -134,29 +134,6 @@
             </wadl:resource>
         </wadl:resources>
     </section>
-    <!--<section xml:id="api_quotas_neutron">
-        <title>Quotas</title>
-        <para>This section describes the API operations for quotas.</para>
-        <!-\-\- this section comes from these WADLs: quotas.wadl -\->
-        <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
-            <!-\- list quotas -\->
-            <wadl:resource href="../../wadl/quotas.wadl#Quotas">
-                <wadl:method href="listQuotas"/>
-            </wadl:resource>
-            <!-\- show quotas -\->
-            <wadl:resource href="../../wadl/quotas.wadl#Quotas">
-                <wadl:method href="showQuota"/> 
-            </wadl:resource>
-            <!-\- update quotas -\->
-            <wadl:resource href="../../wadl/quotas.wadl#Quotas">
-                <wadl:method href="updateQuota"/>
-            </wadl:resource>
-            <!-\- reset quotas -\->
-            <wadl:resource href="../../wadl/quotas.wadl#Quotas">
-                <wadl:method href="resetQuota"/>
-            </wadl:resource>
-        </wadl:resources>
-    </section>-->
     <section xml:id="api_ext_security_neutron">
         <title>Extension - Security groups</title>
         <para>This section describes the API operations for security groups and rules.</para>
@@ -205,34 +182,54 @@
         </wadl:resources>
     </section>
     <!--<section xml:id="api_ext_sharedip_neutron">
-        <title>Extension - Shared IPs</title>
-        <para>This section describes the API operations for shared IP addresses.</para>
+        <title>Extension - IP addresses</title>
+        <para>This section describes the API operations for sharing IP addresses.</para>
         <!-\-availwarn-\->
         <important>
-            <para>The Shared IP addresses API is currently in Limited Availability. <!-\-It is available only to Managed
+            <para>The IP addresses API is currently in Limited Availability. <!-\-It is available only to Managed
                 Infrastructure customers and not to RackConnect or Managed Operations customers. To use this feature, contact
                 Rackspace Support.-\-></para>
         </important>
-        <para><emphasis role="bold">For general information about shared IP addresses, see addlinkhere
-            <!-\-<link xlink:href="conceptSecurityGroups.html">Security groups and rules</link>-\->.</emphasis></para>
-        <!-\-\- this section comes from these WADLs: security-groups.wadl -\->
+        <para><emphasis role="bold">For more information about IP addresses, see 
+            <link xlink:href="conceptSharedIPs.html">Sharing IP Addresses</link>.</emphasis></para>
+        <!-\-\- this section comes from these WADLs: shared-ip.wadl -\->
         <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
             <!-\- list shared IPs -\->
             <wadl:resource href="../../wadl/shared-ip.wadl#SharedIPs">
-                <wadl:method href="listSharedIPs"/>
+                <wadl:method href="listIPs"/>
             </wadl:resource>
-            <!-\- create shared IPs -\->
+            <!-\- provision shared IPs -\->
             <wadl:resource href="../../wadl/shared-ip.wadl#SharedIPs">
-                <wadl:method href="createSharedIP"/>
+                <wadl:method href="provisionIP"/>
             </wadl:resource>
              <!-\-show shared IP -\->
             <wadl:resource href="../../wadl/shared-ip.wadl#sharedIP">
-                <wadl:method href="showSharedIP"/>
+                <wadl:method href="showIP"/>
+            </wadl:resource>
+            <!-\-update shared IP -\->
+            <wadl:resource href="../../wadl/shared-ip.wadl#sharedIP">
+                <wadl:method href="updateIP"/>
             </wadl:resource>
             <!-\- delete shared IP -\->
-            <!-\-<wadl:resource href="../../wadl/shared-ip.wadl#sharedIP">
-                <wadl:method href="removeSharedIP"/>
-            </wadl:resource>-\->
+            <wadl:resource href="../../wadl/shared-ip.wadl#sharedIP">
+                <wadl:method href="removeIP"/>
+            </wadl:resource>
+            <!-\- list associated IPs -\->
+            <wadl:resource href="../../wadl/shared-ip.wadl#ipaServerID">
+                <wadl:method href="listAssociatedIPs"/>
+            </wadl:resource>
+            <!-\-show associated IP -\->
+            <wadl:resource href="../../wadl/shared-ip.wadl#IPAddressID">
+                <wadl:method href="showAssociatedIP"/>
+            </wadl:resource>
+            <!-\- create associated IPs -\->
+            <wadl:resource href="../../wadl/shared-ip.wadl#IPAddressID">
+                <wadl:method href="associateAssociatedIP"/>
+            </wadl:resource>
+            <!-\- delete associated IP -\->
+            <wadl:resource href="../../wadl/shared-ip.wadl#IPAddressID">
+                <wadl:method href="deleteAssociatedIP"/>
+            </wadl:resource>
         </wadl:resources>
     </section>-->
     <!--    <section xml:id="api_ext_layer3_router">
@@ -283,6 +280,29 @@
             <!-\- remove interface from router-\->
             <wadl:resource href="../../wadl/layer3.wadl#RouterID_remove_interface">
                 <wadl:method href="removeRouterInterface"/>
+            </wadl:resource>
+        </wadl:resources>
+    </section>-->
+    <!--<section xml:id="api_quotas_neutron">
+        <title>Quotas</title>
+        <para>This section describes the API operations for quotas.</para>
+        <!-\-\- this section comes from these WADLs: quotas.wadl -\->
+        <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+            <!-\- list quotas -\->
+            <wadl:resource href="../../wadl/quotas.wadl#Quotas">
+                <wadl:method href="listQuotas"/>
+            </wadl:resource>
+            <!-\- show quotas -\->
+            <wadl:resource href="../../wadl/quotas.wadl#Quotas">
+                <wadl:method href="showQuota"/> 
+            </wadl:resource>
+            <!-\- update quotas -\->
+            <wadl:resource href="../../wadl/quotas.wadl#Quotas">
+                <wadl:method href="updateQuota"/>
+            </wadl:resource>
+            <!-\- reset quotas -\->
+            <wadl:resource href="../../wadl/quotas.wadl#Quotas">
+                <wadl:method href="resetQuota"/>
             </wadl:resource>
         </wadl:resources>
     </section>-->

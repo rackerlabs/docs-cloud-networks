@@ -45,6 +45,16 @@
         </abstract>
         <revhistory>
             <revision>
+                <date>2015-06-30</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added sections related to the shared IP extension in Overview, Concepts, and Extensions.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision>
                 <date>2015-03-24</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
