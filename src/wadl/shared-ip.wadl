@@ -68,6 +68,7 @@
             </representation>
         </request>
         <response status="200">
+            <doc title="Success">Request succeeded.</doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/sharedip-get-resp.json"/>
@@ -91,6 +92,7 @@
                 </wadl:doc>&sharedIPCreateReqParameters; </representation>
         </request>
         <response status="201">
+            <doc title="Success">Request succeeded.</doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/sharedip-create-resp.json"/>
@@ -104,6 +106,7 @@
             <para>This operation retrieves information for a specified IP address, using the IP address ID.</para>
         </wadl:doc>
         <response status="200">
+            <doc title="Success">Request succeeded.</doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/sharedIP-create-resp.json"/>
@@ -129,6 +132,7 @@
                 </wadl:doc>&sharedIPUpdateReqParameters;</representation>
         </request>
         <response status="200">
+            <doc title="Success">Request succeeded.</doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/sharedIP-update-resp.json"/>
@@ -147,6 +151,7 @@
             </note>
         </wadl:doc>
         <response status="204">
+            <doc title="Success">Request succeeded.</doc>
             <representation mediaType="application/json">
                 <wadl:doc xml:lang="EN" xmlns="http://docbook.org/ns/docbook">
                     <xsdxt:code href="../common/samples/sharedIP-delete-resp-json-http.txt"/>
@@ -176,6 +181,7 @@
             </representation>
         </request>
         <response status="200">
+            <doc title="Success">Request succeeded.</doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/associatedip-get-resp.json"/>
@@ -207,6 +213,7 @@
             </representation>
         </request>
         <response status="201">
+            <doc title="Success">Request succeeded.</doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/associatedip-create-resp.json"/>
@@ -230,6 +237,7 @@
                 the IP address.</para>
         </wadl:doc>
         <response status="200">
+            <doc title="Success">Request succeeded.</doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/associatedIP-show-resp.json"/>
@@ -250,6 +258,7 @@
             </note>
         </wadl:doc>
         <response status="204">
+            <doc title="Success">Request succeeded.</doc>
             <representation mediaType="application/json">
                 <wadl:doc xml:lang="EN" xmlns="http://docbook.org/ns/docbook">
                     <xsdxt:code href="../common/samples/associatedIP-delete-resp-json-http.txt"/>

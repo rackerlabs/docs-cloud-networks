@@ -1,8 +1,8 @@
 .. _cn-dg-concepts-port:
 
-====
-Port
-====
+=============
+Port concepts
+=============
 
 A port represents a virtual switch port on a logical network switch. Cloud servers attach 
 their interfaces into ports. The logical port also defines the MAC address and the IP 

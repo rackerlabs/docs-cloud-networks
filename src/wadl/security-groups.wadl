@@ -55,16 +55,14 @@
             <!--<para>You can control which parameters are returned by using the <parameter>fields</parameter> query parameter,
                 and you can specify how many results to return per page. For information, see
                 <link xlink:href="http://docs.rackspace.com/networks/api/v2/cn-devguide/content/section_filtering.html">Filtering 
-                    Requests</link>
-                or
-                <link xlink:href="http://docs.rackspace.com/networks/api/v2/cn-devguide/content/section_pagination.html">Pagination 
-                    of Requests</link>.</para>-->
+                    Requests</link></para>-->
         </wadl:doc>
         <response status="200">
+            <doc title="Success">Request succeeded.</doc>
             <representation mediaType="application/json" element="csapi:network">
                 <wadl:doc xml:lang="EN" xmlns="http://docbook.org/ns/docbook">
                     <xsdxt:code href="../common/samples/security-groups-list-get-resp.json"/>
-                </wadl:doc>&securityGroupListParameters; </representation>
+                </wadl:doc>&securityGroupListRspParameters;</representation>
         </response>&fault401; </method>
 
     <!-- Create Security Group -->
@@ -81,10 +79,11 @@
                 </wadl:doc>&securityGroupCreateReqParameters; </representation>
         </request>
         <response status="201">
+            <doc title="Success">Request succeeded.</doc>
             <representation mediaType="application/json">
                 <wadl:doc xml:lang="EN" xmlns="http://docbook.org/ns/docbook">
                     <xsdxt:code href="../common/samples/security-groups-create-resp.json"/>
-                </wadl:doc>&securityGroupGetParameters;</representation>
+                </wadl:doc>&securityGroupGetRspParameters;</representation>
         </response>&fault400; &fault401; </method>
 
     <!-- Show Security Group -->
@@ -95,10 +94,11 @@
                 and security group rules associated with the specified security group.</para>
         </wadl:doc>
         <response status="200">
+            <doc title="Success">Request succeeded.</doc>
             <representation mediaType="application/json">
                 <wadl:doc xml:lang="EN" xmlns="http://docbook.org/ns/docbook">
                     <xsdxt:code href="../common/samples/security-groups-get-resp.json"/>
-                </wadl:doc>&securityGroupGetParameters;</representation>
+                </wadl:doc>&securityGroupGetRspParameters;</representation>
         </response>&fault401;&fault404; </method>
 
     <!-- Delete Security Group -->
@@ -109,6 +109,7 @@
                 delete operation fails if a port is associated with the security group. </para>
         </wadl:doc>
         <response status="204">
+            <doc title="Success">Request succeeded.</doc>
             <representation mediaType="application/json">
                 <wadl:doc xml:lang="EN" xmlns="http://docbook.org/ns/docbook">
                     <xsdxt:code href="../common/samples/security-groups-delete-resp-json-http.txt"/>
@@ -130,8 +131,9 @@
                 </wadl:doc>
             </representation>
         </request>
-        <response status="200"> &securityGroupRule; <representation
-                mediaType="application/json">
+        <response status="200"> &securityGroupRule; 
+        <doc title="Success">Request succeeded.</doc>
+        <representation mediaType="application/json">
                 <wadl:doc xml:lang="EN"
                     xmlns="http://docbook.org/ns/docbook">
                     <xsdxt:code href="../common/samples/rules-security-groups-list-get-resp.json"/>
@@ -140,6 +142,7 @@
         </response>
         <response status="401"
             xmlns="http://wadl.dev.java.net/2009/02">
+            <doc title="Success">Request unauthorised.</doc>
             <representation mediaType="application/xml" element="secgr:unauthorized"/>
             <representation mediaType="application/json"/>
         </response>
@@ -153,10 +156,11 @@
                 security group rule.</para>
         </wadl:doc>
         <response status="200">
+            <doc title="Success">Request succeeded.</doc>
             <representation mediaType="application/json">
                 <wadl:doc xml:lang="EN" xmlns="http://docbook.org/ns/docbook">
                     <xsdxt:code href="../common/samples/rules-security-groups-list-get-resp.json"/>
-                </wadl:doc> &securityGroupRuleListParameters; </representation>
+                </wadl:doc> &securityGroupRuleListRspParameters;</representation>
         </response>&fault401; </method>
 
     <!-- Create Security Group Rule -->
@@ -171,10 +175,11 @@
                 </wadl:doc>&securityGroupRuleCreateReqParameters; </representation>
         </request>
         <response status="201">
+            <doc title="Success">Request succeeded.</doc>
             <representation mediaType="application/json">
                 <wadl:doc xml:lang="EN" xmlns="http://docbook.org/ns/docbook">
                     <xsdxt:code href="../common/samples/rules-security-groups-create-resp.json"/>
-                </wadl:doc>&securityGroupRuleGetParameters; </representation>
+                </wadl:doc>&securityGroupRuleGetRspParameters;</representation>
         </response> &fault400;&fault401;&fault404;&fault409; </method>
 
     <!-- Show Security Group Rule -->
@@ -183,10 +188,11 @@
             <para role="shortdesc">Retrieves information about the specified security group rule.</para>
         </wadl:doc>
         <response status="200">
+            <doc title="Success">Request succeeded.</doc>
             <representation mediaType="application/json">
                 <wadl:doc xml:lang="EN" xmlns="http://docbook.org/ns/docbook">
                     <xsdxt:code href="../common/samples/rules-security-groups-get-resp.json"/>
-                </wadl:doc> &securityGroupRuleGetParameters; </representation>
+                </wadl:doc> &securityGroupRuleGetRspParameters; </representation>
         </response>&fault401;&fault404; </method>
 
     <!-- Delete Security Group Rule -->
@@ -195,6 +201,7 @@
             <para role="shortdesc">Deletes the specified rule from a security group.</para>
         </wadl:doc>
         <response status="204">
+            <doc title="Success">Request succeeded.</doc>
             <representation mediaType="application/json">
                 <wadl:doc xml:lang="EN" xmlns="http://docbook.org/ns/docbook">
                     <xsdxt:code href="../common/samples/rules-security-groups-delete-resp-json-http.txt"/>

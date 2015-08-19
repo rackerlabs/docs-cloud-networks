@@ -1,10 +1,14 @@
 Networks
 --------
 
+This section describes the API operations for networks. For general information about networks, 
+see :ref:`Networks concepts <cn-dg-concepts-network>`.
+
 .. toctree::
     :maxdepth: 2
 
-    List networks <GET_listNetworks_v2.0_networks_api_networks>
-    Create network <POST_createNetwork_v2.0_networks_api_networks>
-    Show network details <GET_showNetwork_v2.0_networks__network_id__api_networks>
-    Delete network <DELETE_deleteNetwork_v2.0_networks__network_id__api_networks>
+    List (GET /v2.0/networks) <get-retrieve-list-of-networks-v2.0-networks>
+    Create (POST /v2.0/networks) <post-create-network-v2.0-networks>
+    Show details (GET /v2.0/networks/{network_id}) <get-show-network-v2.0-networks-network-id>
+    Update (PUT /v2.0/networks/{network_id}) <put-update-network-v2.0-networks-network-id>
+    Delete (DELETE /v2.0/networks/{network_id}) <delete-delete-network-v2.0-networks-network-id>

@@ -1,8 +1,8 @@
 .. _cn-dg-concepts-network:
 
-=======
-Network
-=======
+================
+Network concepts
+================
 
 A network is an isolated virtual layer-2 broadcast domain that is typically reserved for 
 the tenant who created it, unless the network is configured to be shared. Tenants can 

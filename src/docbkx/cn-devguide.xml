@@ -44,7 +44,7 @@
                 extensions as permitted by the OpenStack Quantum API contract and the OpenStack Neutron API contract.</para>
         </abstract>
         <revhistory>
-            <revision>
+            <!--<revision>
                 <date>2015-06-30</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
@@ -53,7 +53,7 @@
                         </listitem>
                     </itemizedlist>
                 </revdescription>
-            </revision>
+            </revision>-->
             <revision>
                 <date>2015-03-24</date>
                 <revdescription>

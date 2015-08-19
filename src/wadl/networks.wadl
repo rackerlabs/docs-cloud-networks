@@ -46,15 +46,18 @@
     <method name="GET" id="listNetworks">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Retrieve list of networks">
             <para role="shortdesc">Retrieves list of networks to which the specified tenant has access.</para>
-            <para>You can control which attributes are returned by using the <parameter>fields</parameter> query
-                parameter.</para>
+            <para>You can control which attributes are returned by using the <parameter>fields</parameter> query parameter.
+                For more information, see
+                <link xlink:href="http://docs.rackspace.com/networks/api/v2/cn-devguide/content/section_filtering.html">Filtering 
+                    Requests</link>.</para>
         </wadl:doc>
         <response status="200">
+            <doc title="Success">Request succeeded.</doc>
             <representation mediaType="application/json" element="csapi:network">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/networks-get-resp-html.txt"/>
                     <xsdxt:code href="../common/samples/networks-get-resp.json"/>
-                </wadl:doc>&networkListParameters; </representation>
+                </wadl:doc>&networkListRspParameters;</representation>
         </response> &fault401;</method>
 
     <!-- Create Network -->
@@ -72,6 +75,7 @@
                 </wadl:doc> &networkCreateParameters; </representation>
         </request>
         <response status="201">
+            <doc title="Success">Request succeeded.</doc>
             <representation mediaType="application/json" element="csapi:network">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/network-post-resp.json"/>
@@ -98,10 +102,11 @@
             </representation>-->
         </request>
         <response status="201">
+            <doc title="Success">Request succeeded.</doc>
             <representation mediaType="application/json" element="csapi:network">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/networks-create-bulk-resp.json"/>
-                </wadl:doc>&networkListParameters; </representation>
+                </wadl:doc>&networkListRspParameters; </representation>
             <!--<representation mediaType="application/xml" element="csapi:network">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/networks-create-bulk-resp.xml"/>
@@ -114,24 +119,26 @@
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Show network">
             <para role="shortdesc">Retrieves information for a specified network.</para>
             <para>You can control which attributes are returned by using the <parameter>fields</parameter> query parameter.
-                For information, see
+                For more information, see
                 <link xlink:href="http://docs.rackspace.com/networks/api/v2/cn-devguide/content/section_filtering.html">Filtering 
                     Requests</link>.</para>
         </wadl:doc>
         <response status="200">
+            <doc title="Success">Request succeeded.</doc>
             <representation mediaType="application/json" element="csapi:network">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/networks-get-detail-resp.json"/>
-                </wadl:doc>&networkListParameters; </representation>
+                </wadl:doc>&networkListRspParameters; </representation>
         </response> &fault401; &fault404; </method>
 
     <!-- Update Network -->
     <method name="PUT" id="updateNetwork">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Update network">
             <para role="shortdesc">Updates a specified network.</para>
-            <warning><para>Network IDs "00000000-0000-0000-0000-000000000000" and "11111111-1111-1111-1111-111111111111"
-                    correspond to the PublicNet and ServiceNet networks of Rackspace. Changes to these networks are not
-                    supported.</para></warning>
+            <para>This operation allows you to update certain network attributes.</para>
+            <warning><para>Network IDs <literal>"00000000-0000-0000-0000-000000000000"</literal> and
+                        <literal>"11111111-1111-1111-1111-111111111111"</literal> correspond to the PublicNet and ServiceNet
+                    networks of Rackspace. Changes to these networks are not supported.</para></warning>
         </wadl:doc>
         <request>
             <representation mediaType="application/json" element="csapi:network">
@@ -140,10 +147,11 @@
                 </wadl:doc> &networkUpdateParameters; </representation>
         </request>
         <response status="200">
+            <doc title="Success">Request succeeded.</doc>
             <representation mediaType="application/json" element="csapi:network">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/network-put-update-resp.json"/>
-                </wadl:doc>&networkListParameters; </representation>
+                </wadl:doc>&networkListRspParameters; </representation>
         </response> &fault400; &fault401; &fault403; &fault404; </method>
 
     <!-- Delete Network -->
@@ -152,6 +160,11 @@
             <para role="shortdesc">Deletes a specified network and its associated resources.</para>
         </wadl:doc>
         <response status="204">
-            <representation mediaType="application/json"/>
+            <doc title="Success">Request succeeded.</doc>
+            <representation mediaType="application/json">
+                <wadl:doc xml:lang="EN" xmlns="http://docbook.org/ns/docbook">
+                    <xsdxt:code href="../common/samples/networks-delete-resp-json-http.txt"/>
+                </wadl:doc>
+            </representation>
         </response> &fault401; &fault404; &fault409conflict; </method>
 </application>

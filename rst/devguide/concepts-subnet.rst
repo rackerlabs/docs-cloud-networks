@@ -1,8 +1,8 @@
 .. _cn-dg-concepts-subnet:
 
-======
-Subnet
-======
+===============
+Subnet concepts
+===============
 
 A subnet represents an IP address block that can be used to assign IP addresses to virtual 
 instances. Each subnet must have a CIDR and must be associated with a network. IP addresses 

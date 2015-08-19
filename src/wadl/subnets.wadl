@@ -43,26 +43,17 @@
     <method name="GET" id="listSubnets">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Retrieve list of subnets">
             <para role="shortdesc">Retrieves list of subnets to which the specified tenant has access.</para>
-            <para>You can control which attributes are returned by using the <parameter>fields</parameter> query
-                parameter<!--, and you can specify how many results to return per page.
-                For information, see
+            <para>You can control which attributes are returned by using the <parameter>fields</parameter> query parameter.
+                For more information, see
                 <link xlink:href="http://docs.rackspace.com/networks/api/v2/cn-devguide/content/section_filtering.html">Filtering 
-                    Requests</link>
-                or
-                <link xlink:href="http://docs.rackspace.com/networks/api/v2/cn-devguide/content/section_pagination.html">Pagination 
-                    of Requests</link>
-                in the <citetitle>Cloud Networks API Developer Guide</citetitle>.--></para>
+                    Requests</link>.</para>
         </wadl:doc>
         <response status="200">
+            <doc title="Success">Request succeeded.</doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/subnets-get-resp.json"/>
-                </wadl:doc>&subnetListParameters; </representation>
-            <!--<representation mediaType="application/xml">
-                <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-                    <xsdxt:code href="../common/samples/subnets-get-resp.xml"/>
-                </wadl:doc>
-            </representation>-->
+                </wadl:doc>&subnetListRspParameters;</representation>
         </response> &fault401; </method>
 
     <!--Create Subnet-->
@@ -101,10 +92,11 @@
             </representation>
         </request>
         <response status="201">
+            <doc title="Success">Request succeeded.</doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/subnets-create-resp.json"/>
-                </wadl:doc>&subnetCreateRspParameters;</representation> 
+                </wadl:doc>&subnetCreateRspParameters;</representation>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
                     title="Create Subnet with host routes: JSON response">
@@ -132,22 +124,13 @@
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/subnets-post-create-bulk-req.json"/>
                 </wadl:doc>&subnetCreateParameters;</representation>
-            <!--<representation mediaType="application/xml">
-                <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-                    <xsdxt:code href="../common/samples/subnets-post-create-bulk-req.xml"/>
-                </wadl:doc>
-            </representation>-->
         </request>
         <response status="201">
+            <doc title="Success">Request succeeded.</doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/subnets-create-bulk-resp.json"/>
-                </wadl:doc>&subnetListParameters;</representation>
-            <!--<representation mediaType="application/xml">
-                <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-                    <xsdxt:code href="../common/samples/subnets-create-bulk-resp.xml"/>
-                </wadl:doc>
-            </representation>-->
+                </wadl:doc>&subnetListRspParameters;</representation>
         </response> &fault400; &fault401; &fault403; &fault404; &fault409conflict; </method>
 
     <!--Show Subnet-->
@@ -160,15 +143,11 @@
                     Requests</link>.</para>
         </wadl:doc>
         <response status="201">
+            <doc title="Success">Request succeeded.</doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-                    <xsdxt:code href="../common/samples/subnet-show-resp.json"/> 
+                    <xsdxt:code href="../common/samples/subnet-show-resp.json"/>
                 </wadl:doc>&subnetCreateRspParameters;</representation>
-            <!--<representation mediaType="application/xml">
-                <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-                    <xsdxt:code href="../common/samples/subnet-show-resp.xml"/>
-                </wadl:doc>
-            </representation>-->
         </response> &fault401; &fault404; </method>
 
     <!--Update Subnet-->
@@ -180,16 +159,17 @@
                     <errorcode>400 Bad Request</errorcode> error.</para>
             <para>You cannot update allocation pools that are attached to a port.</para>
             <warning><para>If any attributes are updated, the changes will take effect only for ports or cloud servers using
-                    this subnet that are created after this modification. Any existing ports or servers are not 
+                    this subnet that are created after this modification. Any existing ports or servers are not
                     updated.</para></warning>
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/subnet-post-req.json"/>
-                </wadl:doc>&subnetUpdateParameters;</representation>
+                </wadl:doc>&subnetUpdateReqParameters;</representation>
         </request>
         <response status="201">
+            <doc title="Success">Request succeeded.</doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/subnet-post-resp.json"/>
@@ -203,6 +183,11 @@
             <para>This operation fails if the subnet IP addresses are still allocated.</para>
         </wadl:doc>
         <response status="204">
-            <representation mediaType="application/json"/>
+            <doc title="Success">Request succeeded.</doc>
+            <representation mediaType="application/json">
+                <wadl:doc xml:lang="EN" xmlns="http://docbook.org/ns/docbook">
+                    <xsdxt:code href="../common/samples/subnets-delete-resp-json-http.txt"/>
+                </wadl:doc>
+            </representation>
         </response> &fault401; &fault404; &fault409conflict; </method>
 </application>

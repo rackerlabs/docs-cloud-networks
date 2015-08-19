@@ -43,6 +43,9 @@
                         <listitem>
                                 <para>Manage security groups and security group rules.</para>
                         </listitem>
+                        <!--<listitem>
+                                <para>Manage IP addresses, and sharing them between servers.</para>
+                        </listitem>-->
                 </itemizedlist></para>
 
         <section xml:id="ov_limits">

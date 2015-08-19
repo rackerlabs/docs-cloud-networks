@@ -54,10 +54,11 @@
                 in the <citetitle>Cloud Networks API Developer Guide</citetitle>-->.</para>
         </wadl:doc>
         <response status="200">
+            <doc title="Success">Request succeeded.</doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/ports-get-resp.json"/>
-                </wadl:doc>&portListParameters; </representation>
+                </wadl:doc>&portListRspParameters;</representation>
             <!--<representation mediaType="application/xml">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/ports-get-resp.xml"/>
@@ -79,13 +80,14 @@
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/port-post-create-req.json"/>
-                </wadl:doc>&portCreateParameters; </representation>
+                </wadl:doc>&portCreateParameters;</representation>
         </request>
         <response status="201">
+            <doc title="Success">Request succeeded.</doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/port_create_or_update_resp.json"/>
-                </wadl:doc>&portGetParameters; </representation>
+                </wadl:doc>&portGetRspParameters;</representation>
             <!--<representation mediaType="application/xml">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/port_create_or_update_resp.xml"/>
@@ -116,10 +118,11 @@
             </representation>-->
         </request>
         <response status="201">
+            <doc title="Success">Request succeeded.</doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/ports-create-bulk-resp.json"/>
-                </wadl:doc>&portListParameters; </representation>
+                </wadl:doc>&portListRspParameters; </representation>
             <!--<representation mediaType="application/xml">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/ports-create-bulk-resp.xml"/>
@@ -137,10 +140,11 @@
                     Requests</link>.</para>
         </wadl:doc>
         <response status="200">
+            <doc title="Success">Request succeeded.</doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/ports-get-1-resp.json"/>
-                </wadl:doc>&portGetParameters; </representation>
+                </wadl:doc>&portGetRspParameters; </representation>
             <!--<representation mediaType="application/xml">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/ports-get-resp.xml"/>
@@ -174,10 +178,11 @@
                 </wadl:doc>&portUpdateParameters; </representation>
         </request>
         <response status="200">
+            <doc title="Success">Request succeeded.</doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
                     <xsdxt:code href="../common/samples/port_create_or_update_resp.json"/>
-                </wadl:doc>&portGetParameters; </representation>
+                </wadl:doc>&portGetRspParameters; </representation>
         </response> &fault400; &fault401; &fault403; &fault404; &fault409conflict; </method>
 
     <!-- Remove Port -->
@@ -188,6 +193,11 @@
                 pools.</para>
         </wadl:doc>
         <response status="204">
-            <representation mediaType="application/json"/>
+            <doc title="Success">Request succeeded.</doc>
+            <representation mediaType="application/json">
+                <wadl:doc xml:lang="EN" xmlns="http://docbook.org/ns/docbook">
+                    <xsdxt:code href="../common/samples/ports-delete-resp-json-http.txt"/>
+                </wadl:doc>
+            </representation>
         </response> &fault401; &fault404; &fault409conflict; </method>
 </application>

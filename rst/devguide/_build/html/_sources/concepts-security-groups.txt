@@ -1,8 +1,8 @@
 .. _cn-dg-concepts-security:
 
-=========================
-Security groups and rules
-=========================
+==================================
+Security groups and rules concepts
+==================================
 
    .. important::
       The Security Groups API is currently in Limited Availability. It is available only to 

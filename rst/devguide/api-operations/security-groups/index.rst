@@ -1,18 +1,30 @@
 Security Groups
 ---------------
 
+This section describes the API operations for security groups. For general information about 
+security groups and security group rules, see :ref:`Security groups concepts <cn-dg-concepts-security>`.
+
+.. note::
+	The Security Groups API is currently in Limited Availability. It is available only to 
+	Managed Infrastructure customers and not to RackConnect or Managed Operations customers. 
+	To use this feature, contact Rackspace Support.
+
+
 .. toctree::
     :maxdepth: 2
 
-    List security groups <GET_listSecGroups_v2.0_security-groups_api_ext_security_neutron>
-    Create security group <POST_createSecGroup_v2.0_security-groups_api_ext_security_neutron>
-    Show security group details <GET_showSecGroup_v2.0_security-groups__security_group_id__api_ext_security_neutron>
-    Delete security group <DELETE_deleteSecGroup_v2.0_security-groups__security_group_id__api_ext_security_neutron>
+    List (GET /v2.0/security-groups) <get-list-security-groups-v2.0-security-groups>
+    Create (POST /v2.0/security-groups) <post-create-security-group-v2.0-security-groups>
+    Show details (GET /v2.0/security-groups/{security_group_id}) <get-show-security-group-v2.0-security-groups-security-group-id>
+    Delete (DELETE /v2.0/security-groups/{security_group_id}) <delete-delete-security-group-v2.0-security-groups-security-group-id>
 
 Security Groups Rules
 ---------------------
-    
-    List security group rules <GET_listSecGroupRules_v2.0_security-group-rules_api_ext_security_neutron>
-    Create security group rule <POST_createSecGroupRule_v2.0_security-group-rules_api_ext_security_neutron>
-    Show security group rule details <GET_showSecGroupRule_v2.0_security-group-rules__rules-security-groups-id__api_ext_security_neutron>
-    Delete security group rule <DELETE_deleteSecGroupRule_v2.0_security-group-rules__rules-security-groups-id__api_ext_security_neutron>
+
+.. toctree::
+    :maxdepth: 2
+        
+    List (GET /v2.0/security-group-rules) <get-list-security-group-rules-v2.0-security-group-rules>
+    Create (POST /v2.0/security-group-rules) <post-create-security-group-rule-v2.0-security-group-rules>
+    Show details (GET /v2.0/security-group-rules/{rules-security-groups-id}) <get-show-security-group-rule-v2.0-security-group-rules-rules-security-groups-id>
+    Delete (DELETE /v2.0/security-group-rules/{rules-security-groups-id}) <delete-delete-security-group-rule-v2.0-security-group-rules-rules-security-groups-id>

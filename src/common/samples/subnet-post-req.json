@@ -1,5 +1,5 @@
 {
     "subnet": {
-        "name": "my_subnet"
+        "name": "private-subnet"
     }
 }

@@ -181,7 +181,7 @@
             </wadl:resource>
         </wadl:resources>
     </section>
-    <!--<section xml:id="api_ext_sharedip_neutron">
+<!--    <section xml:id="api_ext_sharedip_neutron">
         <title>Extension - IP addresses</title>
         <para>This section describes the API operations for sharing IP addresses.</para>
         <!-\-availwarn-\->
