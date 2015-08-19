@@ -25,10 +25,15 @@ This table shows the possible response codes for this operation:
 |401                       |Unauthorized             |The user is unauthorized |
 |                          |                         |to make this request.    |
 +--------------------------+-------------------------+-------------------------+
+|404                       |Not Found                |Item not found.          |
++--------------------------+-------------------------+-------------------------+
 
 
 Request
 """"""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
@@ -50,6 +55,8 @@ This operation does not accept a request body.
 
 Response
 """"""""""""""""
+
+
 
 
 

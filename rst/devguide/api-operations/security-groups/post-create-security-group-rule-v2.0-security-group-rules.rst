@@ -26,12 +26,16 @@ This table shows the possible response codes for this operation:
 |401                       |Unauthorized             |The user is unauthorized |
 |                          |                         |to make this request.    |
 +--------------------------+-------------------------+-------------------------+
+|404                       |Not Found                |Item not found.          |
++--------------------------+-------------------------+-------------------------+
 |409                       |buildInProgress          |Build is in progress.    |
 +--------------------------+-------------------------+-------------------------+
 
 
 Request
 """"""""""""""""
+
+
 
 
 
@@ -147,6 +151,8 @@ This table shows the body parameters for the request:
 
 Response
 """"""""""""""""
+
+
 
 
 This table shows the body parameters for the response:

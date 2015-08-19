@@ -2,6 +2,7 @@
 
 # Build directories
 target/
+_build/
 
 # Editor files
 .bak

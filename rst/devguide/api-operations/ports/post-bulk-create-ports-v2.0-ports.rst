@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-Bulk create ports
+Bulk Create Ports
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
@@ -53,12 +53,14 @@ Request
 
 
 
+
+
 This operation does not accept a request body.
 
 
 
 
-**Example Bulk create ports: JSON request**
+**Example Bulk Create Ports: JSON request**
 
 
 .. code::
@@ -82,6 +84,8 @@ This operation does not accept a request body.
 
 Response
 """"""""""""""""
+
+
 
 
 This table shows the body parameters for the response:
@@ -143,7 +147,7 @@ This table shows the body parameters for the response:
 
 
 
-**Example Bulk create ports: JSON response**
+**Example Bulk Create Ports: JSON response**
 
 
 .. code::
