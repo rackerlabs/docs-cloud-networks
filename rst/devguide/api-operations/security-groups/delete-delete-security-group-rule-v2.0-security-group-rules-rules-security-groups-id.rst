@@ -18,16 +18,30 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
 +==========================+=========================+=========================+
+<<<<<<< HEAD
 |204                       |Success                  |Request succeeded.       |
 +--------------------------+-------------------------+-------------------------+
 |401                       |Unauthorized             |The user is unauthorized |
 |                          |                         |to make this request.    |
+=======
+|204                       |                         |                         |
++--------------------------+-------------------------+-------------------------+
+|401                       |                         |                         |
++--------------------------+-------------------------+-------------------------+
+|404                       |                         |                         |
+>>>>>>> 2b706e3... Edits common.ent to add fixed_ips to create port call
 +--------------------------+-------------------------+-------------------------+
 
 
 Request
 """"""""""""""""
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 2b706e3... Edits common.ent to add fixed_ips to create port call
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -53,6 +67,11 @@ Response
 
 
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 2b706e3... Edits common.ent to add fixed_ips to create port call
 **Example Delete security group rule: JSON response**
 
 

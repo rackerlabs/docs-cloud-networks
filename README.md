@@ -4,9 +4,9 @@
 
 This github repository contains the source files for the following Rackspace Networks API documentation:
 
-* [Cloud Networks Getting Started Guide](http://docs.rackspace.com/images/api/v2/cn-gettingstarted/)
-* [Cloud Networks Developer Guide](http://docs.rackspace.com/images/api/v2/cn-devguide/)
-* [Cloud Networks Release Notes](http://docs.rackspace.com/images/api/v2/cn-releasenotes/)
+* [Cloud Networks Getting Started Guide](http://docs.rackspace.com/networks/api/v2/cn-gettingstarted/)
+* [Cloud Networks Developer Guide](http://docs.rackspace.com/networks/api/v2/cn-devguide/)
+* [Cloud Networks Release Notes](http://docs.rackspace.com/networks/api/v2/cn-releasenotes/)
 
 ## Contributing
 
@@ -51,12 +51,13 @@ The files that are most likely to be of interest to you are as follows:
 
 * [src/wadl/networks.wadl](src/resources/wadl/networks.wadl) - networks API operations wadl
 * [src/wadl/ports.wadl](src/resources/wadl/ports.wadl) - ports API operations wadl
-* [src/wadl/subnets.wadl](src/subnets/wadl/ports.wadl) - ports API operations wadl
+* [src/wadl/subnets.wadl](src/subnets/wadl/ports.wadl) - subnets API operations wadl
 * [src/docbkx/cn-devguide.xml](src/docbkx/cn-devguide.xml) - main source file for Developer's Guide
 * [src/dockbkx/cn-gettingstarted.xml](src/dockbkx/cn-gettingstarted.xml) - main source file for Getting Started Guide
 * [src/docbkx/cn-releasenotes.xml](src/docbkx/cn-releasenotes.xml) - main source file for Release Notes
 * [src/docbkx/chapters](src/docbkx/chapters) - supplemental chapters and sections for the guides
     Note: Be aware that some chapters and sections are shared by both Guides, so make sure the change that you propose works for both.
+* [rst/devguide](rst/devguide) - contains converted files; when you change the WADL also run the wadl2rst tool to generate new RST files in rst/devguide/api-operations
 
 If you want to make changes to the example files referenced in the WADL file, you can find the example files at  
     [src/common/samples](src/common/samples).

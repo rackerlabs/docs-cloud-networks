@@ -29,6 +29,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
 +==========================+=========================+=========================+
+<<<<<<< HEAD
 |201                       |Success                  |Request succeeded.       |
 +--------------------------+-------------------------+-------------------------+
 |400                       |Error                    |A general error has      |
@@ -43,6 +44,19 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 |409                       |conflict                 |There is a resource      |
 |                          |                         |conflict.                |
+=======
+|201                       |                         |                         |
++--------------------------+-------------------------+-------------------------+
+|400                       |                         |                         |
++--------------------------+-------------------------+-------------------------+
+|401                       |                         |                         |
++--------------------------+-------------------------+-------------------------+
+|403                       |                         |                         |
++--------------------------+-------------------------+-------------------------+
+|404                       |                         |                         |
++--------------------------+-------------------------+-------------------------+
+|409                       |                         |                         |
+>>>>>>> 2b706e3... Edits common.ent to add fixed_ips to create port call
 +--------------------------+-------------------------+-------------------------+
 
 
@@ -54,6 +68,11 @@ Request
 
 
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 2b706e3... Edits common.ent to add fixed_ips to create port call
 This table shows the body parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -175,6 +194,11 @@ Response
 """"""""""""""""
 
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 2b706e3... Edits common.ent to add fixed_ips to create port call
 This table shows the body parameters for the response:
 
 +--------------------------+-------------------------+-------------------------+
@@ -187,8 +211,13 @@ This table shows the body parameters for the response:
 +--------------------------+-------------------------+-------------------------+
 |enable_dhcp               |Boolean                  |Indicates if DHCP for    |
 |                          |                         |the subnet is enabled.   |
+<<<<<<< HEAD
 |                          |                         |This value is ``false``  |
 |                          |                         |and cannot be changed.   |
+=======
+|                          |                         |This value is false and  |
+|                          |                         |cannot be changed.       |
+>>>>>>> 2b706e3... Edits common.ent to add fixed_ips to create port call
 +--------------------------+-------------------------+-------------------------+
 |network_id                |Uuid                     |The ID of the attached   |
 |                          |                         |network.                 |
