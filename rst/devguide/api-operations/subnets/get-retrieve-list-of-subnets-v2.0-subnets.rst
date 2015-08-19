@@ -10,11 +10,7 @@ Retrieve list of subnets
 
 Retrieves list of subnets to which the specified tenant has access.
 
-<<<<<<< HEAD
 You can control which attributes are returned by using the ``fields`` query parameter. For more information, see `Filtering Requests <http://docs.rackspace.com/networks/api/v2/cn-devguide/content/section_filtering.html>`__.
-=======
-You can control which attributes are returned by using the ``fields`` query parameter
->>>>>>> 2b706e3... Edits common.ent to add fixed_ips to create port call
 
 
 
@@ -24,16 +20,10 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
 +==========================+=========================+=========================+
-<<<<<<< HEAD
 |200                       |Success                  |Request succeeded.       |
 +--------------------------+-------------------------+-------------------------+
 |401                       |Unauthorized             |The user is unauthorized |
 |                          |                         |to make this request.    |
-=======
-|200                       |                         |                         |
-+--------------------------+-------------------------+-------------------------+
-|401                       |                         |                         |
->>>>>>> 2b706e3... Edits common.ent to add fixed_ips to create port call
 +--------------------------+-------------------------+-------------------------+
 
 
@@ -45,11 +35,8 @@ Request
 
 
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 2b706e3... Edits common.ent to add fixed_ips to create port call
 This operation does not accept a request body.
 
 
@@ -59,17 +46,13 @@ Response
 """"""""""""""""
 
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 2b706e3... Edits common.ent to add fixed_ips to create port call
 This table shows the body parameters for the response:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-<<<<<<< HEAD
 |subnets                   |Array                    |The array of subnets.    |
 +--------------------------+-------------------------+-------------------------+
 |name                      |String                   |The subnet name.         |
@@ -110,48 +93,6 @@ This table shows the body parameters for the response:
 |cidr                      |String                   |The CIDR for the subnet. |
 +--------------------------+-------------------------+-------------------------+
 |id                        |Uuid                     |The ID of the subnet.    |
-=======
-|subnets                   |Array *(Required)*       |The array of subnets.    |
-+--------------------------+-------------------------+-------------------------+
-|name                      |String *(Required)*      |The subnet name.         |
-+--------------------------+-------------------------+-------------------------+
-|enable_dhcp               |Boolean *(Required)*     |Indicates if DHCP for    |
-|                          |                         |the subnet is enabled.   |
-|                          |                         |This value is false and  |
-|                          |                         |cannot be changed.       |
-+--------------------------+-------------------------+-------------------------+
-|network_id                |Uuid *(Required)*        |The ID of the attached   |
-|                          |                         |network.                 |
-+--------------------------+-------------------------+-------------------------+
-|tenant_id                 |Uuid *(Required)*        |The ID of the tenant who |
-|                          |                         |owns the subnet.         |
-+--------------------------+-------------------------+-------------------------+
-|dns_nameservers           |Array *(Required)*       |The array of dns name    |
-|                          |                         |servers for the subnet.  |
-+--------------------------+-------------------------+-------------------------+
-|allocation_pools          |Array *(Required)*       |The array of allocation  |
-|                          |                         |pool objects.            |
-+--------------------------+-------------------------+-------------------------+
-|end                       |String *(Required)*      |The ending IP address of |
-|                          |                         |the subnet allocation    |
-|                          |                         |pool.                    |
-+--------------------------+-------------------------+-------------------------+
-|start                     |String *(Required)*      |The starting IP address  |
-|                          |                         |of the subnet allocation |
-|                          |                         |pool.                    |
-+--------------------------+-------------------------+-------------------------+
-|host_routes               |Array *(Required)*       |The array of host routes |
-|                          |                         |for the subnet.          |
-+--------------------------+-------------------------+-------------------------+
-|ip_version                |String *(Required)*      |The subnet IP version,   |
-|                          |                         |which is ``4`` or ``6``. |
-+--------------------------+-------------------------+-------------------------+
-|gateway_ip                |String *(Required)*      |The gateway IP address.  |
-+--------------------------+-------------------------+-------------------------+
-|cidr                      |String *(Required)*      |The CIDR for the subnet. |
-+--------------------------+-------------------------+-------------------------+
-|id                        |Uuid *(Required)*        |The ID of the subnet.    |
->>>>>>> 2b706e3... Edits common.ent to add fixed_ips to create port call
 +--------------------------+-------------------------+-------------------------+
 
 

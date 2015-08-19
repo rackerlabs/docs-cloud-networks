@@ -25,7 +25,6 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
 +==========================+=========================+=========================+
-<<<<<<< HEAD
 |201                       |Success                  |Request succeeded.       |
 +--------------------------+-------------------------+-------------------------+
 |400                       |Error                    |A general error has      |
@@ -33,13 +32,6 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 |401                       |Unauthorized             |The user is unauthorized |
 |                          |                         |to make this request.    |
-=======
-|201                       |                         |                         |
-+--------------------------+-------------------------+-------------------------+
-|400                       |                         |                         |
-+--------------------------+-------------------------+-------------------------+
-|401                       |                         |                         |
->>>>>>> 2b706e3... Edits common.ent to add fixed_ips to create port call
 +--------------------------+-------------------------+-------------------------+
 
 
@@ -51,11 +43,8 @@ Request
 
 
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 2b706e3... Edits common.ent to add fixed_ips to create port call
 This table shows the body parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -110,11 +99,8 @@ Response
 """"""""""""""""
 
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 2b706e3... Edits common.ent to add fixed_ips to create port call
 This table shows the body parameters for the response:
 
 +--------------------------+-------------------------+-------------------------+

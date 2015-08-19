@@ -20,16 +20,10 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
 +==========================+=========================+=========================+
-<<<<<<< HEAD
 |200                       |Success                  |Request succeeded.       |
 +--------------------------+-------------------------+-------------------------+
 |401                       |Unauthorized             |The user is unauthorized |
 |                          |                         |to make this request.    |
-=======
-|200                       |                         |                         |
-+--------------------------+-------------------------+-------------------------+
-|401                       |                         |                         |
->>>>>>> 2b706e3... Edits common.ent to add fixed_ips to create port call
 +--------------------------+-------------------------+-------------------------+
 
 
@@ -41,11 +35,8 @@ Request
 
 
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 2b706e3... Edits common.ent to add fixed_ips to create port call
 This operation does not accept a request body.
 
 
@@ -55,17 +46,13 @@ Response
 """"""""""""""""
 
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 2b706e3... Edits common.ent to add fixed_ips to create port call
 This table shows the body parameters for the response:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-<<<<<<< HEAD
 |ports                     |Array                    |The array of ports.      |
 +--------------------------+-------------------------+-------------------------+
 |status                    |String                   |The port status (        |
@@ -74,22 +61,11 @@ This table shows the body parameters for the response:
 |name                      |String                   |The port name.           |
 +--------------------------+-------------------------+-------------------------+
 |admin_state_up            |Bool                     |The administrative state |
-=======
-|ports                     |Array *(Required)*       |The array of ports.      |
-+--------------------------+-------------------------+-------------------------+
-|status                    |String *(Required)*      |The port status (        |
-|                          |                         |``ACTIVE`` or ``DOWN`` ).|
-+--------------------------+-------------------------+-------------------------+
-|name                      |String *(Required)*      |The port name.           |
-+--------------------------+-------------------------+-------------------------+
-|admin_state_up            |Bool *(Required)*        |The administrative state |
->>>>>>> 2b706e3... Edits common.ent to add fixed_ips to create port call
 |                          |                         |of the network. The      |
 |                          |                         |default value is         |
 |                          |                         |``true`` and cannot be   |
 |                          |                         |changed by the user.     |
 +--------------------------+-------------------------+-------------------------+
-<<<<<<< HEAD
 |network_id                |Uuid                     |The ID of the attached   |
 |                          |                         |network.                 |
 +--------------------------+-------------------------+-------------------------+
@@ -101,24 +77,10 @@ This table shows the body parameters for the response:
 |                          |                         |owns the port.           |
 +--------------------------+-------------------------+-------------------------+
 |device_owner              |String                   |The ID of the entity     |
-=======
-|network_id                |Uuid *(Required)*        |The ID of the attached   |
-|                          |                         |network.                 |
-+--------------------------+-------------------------+-------------------------+
-|security_groups           |Uuid *(Required)*        |An array of security     |
-|                          |                         |group IDs attached to    |
-|                          |                         |this port.               |
-+--------------------------+-------------------------+-------------------------+
-|tenant_id                 |Uuid *(Required)*        |The ID of the tenant who |
-|                          |                         |owns the port.           |
-+--------------------------+-------------------------+-------------------------+
-|device_owner              |String *(Required)*      |The ID of the entity     |
->>>>>>> 2b706e3... Edits common.ent to add fixed_ips to create port call
 |                          |                         |that uses this port -    |
 |                          |                         |for example, a DHCP      |
 |                          |                         |agent.                   |
 +--------------------------+-------------------------+-------------------------+
-<<<<<<< HEAD
 |mac_address               |String                   |The MAC address of the   |
 |                          |                         |port.                    |
 +--------------------------+-------------------------+-------------------------+
@@ -136,25 +98,6 @@ This table shows the body parameters for the response:
 |id                        |Uuid                     |The ID of the port.      |
 +--------------------------+-------------------------+-------------------------+
 |device_id                 |Uuid                     |The ID of the device     |
-=======
-|mac_address               |String *(Required)*      |The MAC address of the   |
-|                          |                         |port.                    |
-+--------------------------+-------------------------+-------------------------+
-|fixed_ips                 |Array *(Required)*       |Array of fixed IP        |
-|                          |                         |address objects.         |
-+--------------------------+-------------------------+-------------------------+
-|subnet_id                 |Uuid *(Required)*        |The subnet ID for the    |
-|                          |                         |fixed IP address for a   |
-|                          |                         |port.                    |
-+--------------------------+-------------------------+-------------------------+
-|ip_address                |String *(Required)*      |The IP address for the   |
-|                          |                         |fixed IP address for a   |
-|                          |                         |port.                    |
-+--------------------------+-------------------------+-------------------------+
-|id                        |Uuid *(Required)*        |The ID of the port.      |
-+--------------------------+-------------------------+-------------------------+
-|device_id                 |Uuid *(Required)*        |The ID of the device     |
->>>>>>> 2b706e3... Edits common.ent to add fixed_ips to create port call
 |                          |                         |that uses this port -    |
 |                          |                         |for example, a virtual   |
 |                          |                         |server.                  |

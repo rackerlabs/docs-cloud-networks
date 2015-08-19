@@ -18,16 +18,10 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
 +==========================+=========================+=========================+
-<<<<<<< HEAD
 |200                       |Success                  |Request succeeded.       |
 +--------------------------+-------------------------+-------------------------+
 |401                       |Unauthorized             |The user is unauthorized |
 |                          |                         |to make this request.    |
-=======
-|200                       |                         |                         |
-+--------------------------+-------------------------+-------------------------+
-|401                       |                         |                         |
->>>>>>> 2b706e3... Edits common.ent to add fixed_ips to create port call
 +--------------------------+-------------------------+-------------------------+
 
 
@@ -39,11 +33,8 @@ Request
 
 
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 2b706e3... Edits common.ent to add fixed_ips to create port call
 This operation does not accept a request body.
 
 
@@ -53,17 +44,13 @@ Response
 """"""""""""""""
 
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 2b706e3... Edits common.ent to add fixed_ips to create port call
 This table shows the body parameters for the response:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-<<<<<<< HEAD
 |security_groups           |Object                   |An array of security     |
 |                          |                         |groups.                  |
 +--------------------------+-------------------------+-------------------------+
@@ -86,30 +73,6 @@ This table shows the body parameters for the response:
 |                          |                         |group rule.              |
 +--------------------------+-------------------------+-------------------------+
 |direction                 |String                   |The direction (          |
-=======
-|security_groups           |Object *(Required)*      |An array of security     |
-|                          |                         |groups.                  |
-+--------------------------+-------------------------+-------------------------+
-|id                        |Uuid *(Required)*        |The UUID for the         |
-|                          |                         |security group.          |
-+--------------------------+-------------------------+-------------------------+
-|name                      |String *(Required)*      |The security group name. |
-+--------------------------+-------------------------+-------------------------+
-|description               |String *(Required)*      |The security group       |
-|                          |                         |description.             |
-+--------------------------+-------------------------+-------------------------+
-|tenant_id                 |Uuid *(Required)*        |The tenant ID of the     |
-|                          |                         |owner of the security    |
-|                          |                         |groups.                  |
-+--------------------------+-------------------------+-------------------------+
-|security_group_rules      |String *(Required)*      |An array of rules in a   |
-|                          |                         |security group.          |
-+--------------------------+-------------------------+-------------------------+
-|id                        |Uuid *(Required)*        |The ID for the security  |
-|                          |                         |group rule.              |
-+--------------------------+-------------------------+-------------------------+
-|direction                 |String *(Required)*      |The direction (          |
->>>>>>> 2b706e3... Edits common.ent to add fixed_ips to create port call
 |                          |                         |``ingress`` ). For a     |
 |                          |                         |Cloud Servers instance,  |
 |                          |                         |an ``ingress`` security  |
@@ -117,36 +80,20 @@ This table shows the body parameters for the response:
 |                          |                         |incoming traffic for     |
 |                          |                         |that instance.           |
 +--------------------------+-------------------------+-------------------------+
-<<<<<<< HEAD
 |ethertype                 |String                   |The network ether type,  |
 |                          |                         |either ``IPv4`` or       |
 |                          |                         |``IPv6``.                |
 +--------------------------+-------------------------+-------------------------+
 |security_group_id         |Uuid                     |The security group ID    |
-=======
-|ethertype                 |String *(Required)*      |The network ether type,  |
-|                          |                         |either ``IPv4`` or       |
-|                          |                         |``IPv6``.                |
-+--------------------------+-------------------------+-------------------------+
-|security_group_id         |Uuid *(Required)*        |The security group ID    |
->>>>>>> 2b706e3... Edits common.ent to add fixed_ips to create port call
 |                          |                         |for the security group   |
 |                          |                         |with which the rule is   |
 |                          |                         |associated.              |
 +--------------------------+-------------------------+-------------------------+
-<<<<<<< HEAD
 |tenant_id                 |Uuid                     |The tenant ID of the     |
 |                          |                         |security group rule      |
 |                          |                         |owner.                   |
 +--------------------------+-------------------------+-------------------------+
 |port_range_min            |Int                      |The minimum port number  |
-=======
-|tenant_id                 |Uuid *(Required)*        |The tenant ID of the     |
-|                          |                         |security group rule      |
-|                          |                         |owner.                   |
-+--------------------------+-------------------------+-------------------------+
-|port_range_min            |Int *(Optional)*         |The minimum port number  |
->>>>>>> 2b706e3... Edits common.ent to add fixed_ips to create port call
 |                          |                         |in the range that is     |
 |                          |                         |matched by the security  |
 |                          |                         |group rule. If the       |
@@ -163,11 +110,7 @@ This table shows the body parameters for the response:
 |                          |                         |"null", this value must  |
 |                          |                         |be "null".               |
 +--------------------------+-------------------------+-------------------------+
-<<<<<<< HEAD
 |port_range_max            |Int                      |The maximum port number  |
-=======
-|port_range_max            |Int *(Optional)*         |The maximum port number  |
->>>>>>> 2b706e3... Edits common.ent to add fixed_ips to create port call
 |                          |                         |in the range that is     |
 |                          |                         |matched by the security  |
 |                          |                         |group rule. The          |
@@ -182,31 +125,19 @@ This table shows the body parameters for the response:
 |                          |                         |"null", this value must  |
 |                          |                         |be "null".               |
 +--------------------------+-------------------------+-------------------------+
-<<<<<<< HEAD
 |protocol                  |String                   |The protocol that is     |
-=======
-|protocol                  |String *(Required)*      |The protocol that is     |
->>>>>>> 2b706e3... Edits common.ent to add fixed_ips to create port call
 |                          |                         |matched by the security  |
 |                          |                         |group rule. Valid values |
 |                          |                         |are ``null``, ``tcp``,   |
 |                          |                         |``udp``, and ``icmp``.   |
 +--------------------------+-------------------------+-------------------------+
-<<<<<<< HEAD
 |remote_group_id           |String                   |The remote group ID.     |
-=======
-|remote_group_id           |String *(Optional)*      |The remote group ID.     |
->>>>>>> 2b706e3... Edits common.ent to add fixed_ips to create port call
 |                          |                         |This attribute must be   |
 |                          |                         |set to null since self-  |
 |                          |                         |referential Security     |
 |                          |                         |Groups are not supported.|
 +--------------------------+-------------------------+-------------------------+
-<<<<<<< HEAD
 |remote_ip_prefix          |String                   |The remote IP prefix.    |
-=======
-|remote_ip_prefix          |String *(Optional)*      |The remote IP prefix.    |
->>>>>>> 2b706e3... Edits common.ent to add fixed_ips to create port call
 |                          |                         |This attribute matches   |
 |                          |                         |the specified IP prefix  |
 |                          |                         |as the source IP address |
