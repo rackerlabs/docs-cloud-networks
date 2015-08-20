@@ -88,6 +88,7 @@ Response
 
 
 
+
 This table shows the body parameters for the response:
 
 +--------------------------+-------------------------+-------------------------+
@@ -147,6 +148,8 @@ This table shows the body parameters for the response:
 
 
 
+
+
 **Example Bulk Create Ports: JSON response**
 
 
@@ -200,5 +203,4 @@ This table shows the body parameters for the response:
           }
        ]
     }
-
 

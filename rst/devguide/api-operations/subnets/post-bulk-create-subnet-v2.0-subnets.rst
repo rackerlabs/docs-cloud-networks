@@ -123,6 +123,7 @@ Response
 
 
 
+
 This table shows the body parameters for the response:
 
 +--------------------------+-------------------------+-------------------------+
@@ -169,6 +170,8 @@ This table shows the body parameters for the response:
 +--------------------------+-------------------------+-------------------------+
 |id                        |Uuid                     |The ID of the subnet.    |
 +--------------------------+-------------------------+-------------------------+
+
+
 
 
 
@@ -227,5 +230,4 @@ This table shows the body parameters for the response:
           }
        ]
     }
-
 

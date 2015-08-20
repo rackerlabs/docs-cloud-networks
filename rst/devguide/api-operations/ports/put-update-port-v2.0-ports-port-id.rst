@@ -108,6 +108,7 @@ Response
 
 
 
+
 This table shows the body parameters for the response:
 
 +--------------------------+-------------------------+-------------------------+
@@ -167,6 +168,8 @@ This table shows the body parameters for the response:
 
 
 
+
+
 **Example Update port: JSON response**
 
 
@@ -193,5 +196,4 @@ This table shows the body parameters for the response:
              "tenant_id":"60cd4f6dbc2f491982a284e7b83b5be3" 
           }
     }
-
 

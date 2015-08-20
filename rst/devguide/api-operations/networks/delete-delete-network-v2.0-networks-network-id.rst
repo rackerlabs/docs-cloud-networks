@@ -62,6 +62,9 @@ Response
 
 
 
+
+
+
 **Example Delete network: JSON response**
 
 
@@ -70,5 +73,4 @@ Response
     Content-Type: application/json
     Accept: application/json
     status: 204
-
 

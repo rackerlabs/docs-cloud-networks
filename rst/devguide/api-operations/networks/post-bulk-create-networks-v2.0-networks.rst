@@ -105,6 +105,7 @@ Response
 
 
 
+
 This table shows the body parameters for the response:
 
 +--------------------------+-------------------------+-------------------------+
@@ -138,6 +139,8 @@ This table shows the body parameters for the response:
 |                          |                         |cannot be changed by the |
 |                          |                         |user.                    |
 +--------------------------+-------------------------+-------------------------+
+
+
 
 
 
@@ -180,5 +183,4 @@ This table shows the body parameters for the response:
           }
        ]
     }
-
 

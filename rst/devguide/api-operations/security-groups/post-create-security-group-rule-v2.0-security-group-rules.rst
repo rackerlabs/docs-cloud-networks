@@ -155,6 +155,7 @@ Response
 
 
 
+
 This table shows the body parameters for the response:
 
 +--------------------------+-------------------------+-------------------------+
@@ -239,6 +240,8 @@ This table shows the body parameters for the response:
 
 
 
+
+
 **Example Create security group rule: JSON response**
 
 
@@ -258,5 +261,4 @@ This table shows the body parameters for the response:
           "tenant_id":"5831008"
        }
     }
-
 

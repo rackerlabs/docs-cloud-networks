@@ -179,6 +179,7 @@ Response
 
 
 
+
 This table shows the body parameters for the response:
 
 +--------------------------+-------------------------+-------------------------+
@@ -228,6 +229,8 @@ This table shows the body parameters for the response:
 +--------------------------+-------------------------+-------------------------+
 |id                        |Uuid                     |The ID of the subnet.    |
 +--------------------------+-------------------------+-------------------------+
+
+
 
 
 
@@ -320,5 +323,4 @@ This table shows the body parameters for the response:
         "network_id": "c23f2b6c-efa1-4b66-8bdf-34cda87b8102",
         "tenant_id": "546428"
     }
-
 

@@ -64,6 +64,9 @@ Response
 
 
 
+
+
+
 **Example Delete subnet: JSON response**
 
 
@@ -72,5 +75,4 @@ Response
     Content-Type: application/json
     Accept: application/json
     status: 204
-
 

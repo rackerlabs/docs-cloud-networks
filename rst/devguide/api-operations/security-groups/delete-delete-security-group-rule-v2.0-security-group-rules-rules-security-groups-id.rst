@@ -60,6 +60,9 @@ Response
 
 
 
+
+
+
 **Example Delete security group rule: JSON response**
 
 
@@ -68,5 +71,4 @@ Response
     Content-Type: application/json
     Accept: application/json
     status: 204
-
 

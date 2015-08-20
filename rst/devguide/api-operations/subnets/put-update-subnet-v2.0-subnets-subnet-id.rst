@@ -94,6 +94,7 @@ Response
 
 
 
+
 This table shows the body parameters for the response:
 
 +--------------------------+-------------------------+-------------------------+
@@ -152,6 +153,8 @@ This table shows the body parameters for the response:
 
 
 
+
+
 **Example Update subnet: JSON response**
 
 
@@ -179,5 +182,4 @@ This table shows the body parameters for the response:
             "id": "08eae331-0402-425a-923c-34f7cfe39c1b"
         }
     }
-
 
