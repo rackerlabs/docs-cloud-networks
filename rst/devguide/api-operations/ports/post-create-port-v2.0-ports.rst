@@ -83,7 +83,7 @@ This table shows the body parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |subnet_id                 |Uuid                     |The subnet ID for the    |
 |                          |                         |fixed IP address for a   |
-|                          |                         |port.                    |
+|                          |                         |port, fred.              |
 +--------------------------+-------------------------+-------------------------+
 |ip_address                |String                   |The IP address for the   |
 |                          |                         |fixed IP address for a   |
