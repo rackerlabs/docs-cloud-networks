@@ -51,7 +51,7 @@ The files that are most likely to be of interest to you are as follows:
 
 * [src/wadl/networks.wadl](src/resources/wadl/networks.wadl) - networks API operations wadl
 * [src/wadl/ports.wadl](src/resources/wadl/ports.wadl) - ports API operations wadl
-* [src/wadl/subnets.wadl](src/subnets/wadl/ports.wadl) - subnets API operations wadl
+* [src/wadl/subnets.wadl](src/subnets/wadl/subnets.wadl) - subnets API operations wadl
 * [src/docbkx/cn-devguide.xml](src/docbkx/cn-devguide.xml) - main source file for Developer's Guide
 * [src/dockbkx/cn-gettingstarted.xml](src/dockbkx/cn-gettingstarted.xml) - main source file for Getting Started Guide
 * [src/docbkx/cn-releasenotes.xml](src/docbkx/cn-releasenotes.xml) - main source file for Release Notes
