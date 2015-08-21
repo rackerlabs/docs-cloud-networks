@@ -78,6 +78,17 @@ This table shows the body parameters for the request:
 |tenant_id                 |Uuid *(Optional)*        |The ID of the tenant who |
 |                          |                         |owns the port.           |
 +--------------------------+-------------------------+-------------------------+
+|fixed_ips                 |Array                    |Array of fixed IP        |
+|                          |                         |address objects.         |
++--------------------------+-------------------------+-------------------------+
+|subnet_id                 |Uuid                     |The subnet ID for the    |
+|                          |                         |fixed IP address for a   |
+|                          |                         |port.                    |
++--------------------------+-------------------------+-------------------------+
+|ip_address                |String                   |The IP address for the   |
+|                          |                         |fixed IP address for a   |
+|                          |                         |port.                    |
++--------------------------+-------------------------+-------------------------+
 
 
 
@@ -100,6 +111,7 @@ This table shows the body parameters for the request:
 
 Response
 """"""""""""""""
+
 
 
 
@@ -163,6 +175,8 @@ This table shows the body parameters for the response:
 
 
 
+
+
 **Example Create port: JSON response**
 
 
@@ -189,5 +203,4 @@ This table shows the body parameters for the response:
              "tenant_id":"60cd4f6dbc2f491982a284e7b83b5be3" 
           }
     }
-
 

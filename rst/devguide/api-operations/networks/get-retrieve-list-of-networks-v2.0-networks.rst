@@ -48,6 +48,7 @@ Response
 
 
 
+
 This table shows the body parameters for the response:
 
 +--------------------------+-------------------------+-------------------------+
@@ -86,6 +87,8 @@ This table shows the body parameters for the response:
 
 
 
+
+
 **Example Retrieve list of networks: JSON response**
 
 
@@ -97,5 +100,4 @@ This table shows the body parameters for the response:
         Date: Thu, 19 Feb 2015 20:41:20 GMT, Thu, 19 Feb 2015 20:41:21 GMT
         Server: Jetty(9.2.z-SNAPSHOT)
         Via: 1.1 Repose (Repose/6.2.0.2)
-
 

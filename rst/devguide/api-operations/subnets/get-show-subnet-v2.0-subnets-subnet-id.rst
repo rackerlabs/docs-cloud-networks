@@ -58,6 +58,7 @@ Response
 
 
 
+
 This table shows the body parameters for the response:
 
 +--------------------------+-------------------------+-------------------------+
@@ -112,6 +113,8 @@ This table shows the body parameters for the response:
 
 
 
+
+
 **Example Show subnet: JSON response**
 
 
@@ -140,5 +143,4 @@ This table shows the body parameters for the response:
         }
     }
     
-
 

@@ -48,6 +48,7 @@ Response
 
 
 
+
 This table shows the body parameters for the response:
 
 +--------------------------+-------------------------+-------------------------+
@@ -132,6 +133,8 @@ This table shows the body parameters for the response:
 
 
 
+
+
 **Example List security group rules: JSON response**
 
 
@@ -165,5 +168,4 @@ This table shows the body parameters for the response:
           }
        ]
     }
-
 

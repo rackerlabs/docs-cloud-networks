@@ -92,6 +92,7 @@ Response
 
 
 
+
 This table shows the body parameters for the response:
 
 +--------------------------+-------------------------+-------------------------+
@@ -130,6 +131,8 @@ This table shows the body parameters for the response:
 
 
 
+
+
 **Example Update network: JSON response**
 
 
@@ -146,5 +149,4 @@ This table shows the body parameters for the response:
           "id":"1f370095-98f6-4079-be64-6d3d4a6adcc6",
        }
     }
-
 

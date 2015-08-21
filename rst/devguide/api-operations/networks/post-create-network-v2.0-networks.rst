@@ -101,6 +101,7 @@ Response
 
 
 
+
 This table shows the body parameters for the response:
 
 +--------------------------+-------------------------+-------------------------+
@@ -140,6 +141,8 @@ This table shows the body parameters for the response:
 
 
 
+
+
 **Example Create network: JSON response**
 
 
@@ -158,5 +161,4 @@ This table shows the body parameters for the response:
             "tenant_id": "123456"
         }
     }
-
 

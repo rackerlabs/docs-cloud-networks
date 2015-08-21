@@ -48,6 +48,7 @@ Response
 
 
 
+
 This table shows the body parameters for the response:
 
 +--------------------------+-------------------------+-------------------------+
@@ -107,6 +108,8 @@ This table shows the body parameters for the response:
 
 
 
+
+
 **Example Retrieve list of ports: JSON response**
 
 
@@ -134,5 +137,4 @@ This table shows the body parameters for the response:
             }
         ]
     }
-
 
