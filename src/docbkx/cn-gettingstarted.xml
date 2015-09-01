@@ -44,6 +44,12 @@
                 permitted by the OpenStack Networking API contract.</para>
         </abstract>
         <revhistory>
+            <!--<revision>
+                <date>2015-08-31</date>
+                <revdescription>
+                    <para> Added use case for shared IP addresses.</para>
+                </revdescription>
+            </revision>-->
             <revision>
                 <date>2015-06-15</date>
                 <revdescription>

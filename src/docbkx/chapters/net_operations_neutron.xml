@@ -186,7 +186,7 @@
         <para>This section describes the API operations for sharing IP addresses.</para>
         <!-\-availwarn-\->
         <important>
-            <para>The IP addresses API is currently in Limited Availability. <!-\-It is available only to Managed
+            <para>The IP addresses API is currently in Early Access. <!-\-It is available only to Managed
                 Infrastructure customers and not to RackConnect or Managed Operations customers. To use this feature, contact
                 Rackspace Support.-\-></para>
         </important>

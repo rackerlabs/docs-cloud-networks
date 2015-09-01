@@ -353,7 +353,7 @@
             <step>
                 <para>Issue the following cURL command, using your server A ID and shared IP address ID:
                     <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
-                            <prompt>$</prompt> curl -s https://dfw.servers.api.rackspacecloud.com/v2/servers/f387799f-9668-4cc7-9f0f-03c9cfc43af6/ip_associations/89875b4a-b098-414f-980a-5e9f89078a49 \
+                            <prompt>$</prompt> curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/servers/f387799f-9668-4cc7-9f0f-03c9cfc43af6/ip_associations/89875b4a-b098-414f-980a-5e9f89078a49 \
        -X PUT \
        -H "Content-Type: application/json" \
        -H "User-Agent: python-novaclient" \
@@ -380,7 +380,7 @@
                 <para>Repeat the process for server B.</para>
                 <para>Issue the following cURL command, using your server B ID and shared IP address ID:
                     <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
-                            <prompt>$</prompt> curl -s https://dfw.servers.api.rackspacecloud.com/v2/servers/1a861bf7-2a5e-40a4-acb3-1fb058cf2a74/ip_associations/89875b4a-b098-414f-980a-5e9f89078a49 \
+                            <prompt>$</prompt> curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/servers/1a861bf7-2a5e-40a4-acb3-1fb058cf2a74/ip_associations/89875b4a-b098-414f-980a-5e9f89078a49 \
        -X PUT \
        -H "Content-Type: application/json" \
        -H "User-Agent: python-novaclient" \
