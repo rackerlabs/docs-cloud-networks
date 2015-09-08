@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _get-retrieve-list-of-subnets-v2.0-subnets:
+
 Retrieve list of subnets
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -107,27 +109,30 @@ This table shows the body parameters for the response:
 
 .. code::
 
-    {
-        "subnets": [
-            {
-                "allocation_pools": [
-                    {
-                        "end": "192.168.9.254",
-                        "start": "192.168.9.1"
-                    }
-                ],
-                "cidr": "192.168.9.0/24",
-                "dns_nameservers": [],
-                "enable_dhcp": false,
-                "gateway_ip": null,
-                "host_routes": [],
-                "id": "f975defc-637d-4e2a-858b-c6cc4cec3951",
-                "ip_version": 4,
-                "name": "",
-                "network_id": "0ebf6a10-5fc1-4f13-aca9-be0a2a00b1ac",
-                "tenant_id": "123456"
-            }
-        ]
-    }
-    
+   {
+       "subnets": [
+           {
+               "allocation_pools": [
+                   {
+                       "end": "192.168.9.254",
+                       "start": "192.168.9.1"
+                   }
+               ],
+               "cidr": "192.168.9.0/24",
+               "dns_nameservers": [],
+               "enable_dhcp": false,
+               "gateway_ip": null,
+               "host_routes": [],
+               "id": "f975defc-637d-4e2a-858b-c6cc4cec3951",
+               "ip_version": 4,
+               "name": "",
+               "network_id": "0ebf6a10-5fc1-4f13-aca9-be0a2a00b1ac",
+               "tenant_id": "123456"
+           }
+       ]
+   }
+   
+
+
+
 

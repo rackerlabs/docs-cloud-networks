@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _post-create-network-v2.0-networks:
+
 Create network
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -85,14 +87,17 @@ This table shows the body parameters for the request:
 
 .. code::
 
-    {
-        "network": 
-        {
-            "name": "testnet-3",
-            "shared": false,
-            "tenant_id": "123456"
-        }
-    }
+   {
+       "network": 
+       {
+           "name": "testnet-3",
+           "shared": false,
+           "tenant_id": "123456"
+       }
+   }
+
+
+
 
 
 Response
@@ -148,17 +153,20 @@ This table shows the body parameters for the response:
 
 .. code::
 
-    
-    {
-    "network": 
-        {
-            "admin_state_up": true,
-            "id": "4d4e772a-98e7-4409-8a3c-4fed4324da26",
-            "name": "testnet-3",
-            "shared": false,
-            "status": "ACTIVE",
-            "subnets": [],
-            "tenant_id": "123456"
-        }
-    }
+   
+   {
+   "network": 
+       {
+           "admin_state_up": true,
+           "id": "4d4e772a-98e7-4409-8a3c-4fed4324da26",
+           "name": "testnet-3",
+           "shared": false,
+           "status": "ACTIVE",
+           "subnets": [],
+           "tenant_id": "123456"
+       }
+   }
+
+
+
 

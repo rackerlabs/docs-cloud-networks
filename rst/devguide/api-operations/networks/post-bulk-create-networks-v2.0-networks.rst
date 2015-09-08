@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _post-bulk-create-networks-v2.0-networks:
+
 Bulk create networks
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -85,18 +87,21 @@ This table shows the body parameters for the request:
 
 .. code::
 
-    {
-       "networks":[
-          {
-             "name":"sample_network_1",
-             "admin_state_up":false
-          },
-          {
-             "name":"sample_network_2",
-             "admin_state_up":false
-          }
-       ]
-    }
+   {
+      "networks":[
+         {
+            "name":"sample_network_1",
+            "admin_state_up":false
+         },
+         {
+            "name":"sample_network_2",
+            "admin_state_up":false
+         }
+      ]
+   }
+
+
+
 
 
 Response
@@ -151,36 +156,39 @@ This table shows the body parameters for the response:
 
 .. code::
 
-    {
-       "networks":[
-          {
-             "status":"ACTIVE",
-             "subnets":[
-    
-             ],
-             "name":"sample_network3",
-             "provider:physical_network":null,
-             "admin_state_up":true,
-             "tenant_id":"4fd44f30292945e481c7b8a0c8908869",
-             "provider:network_type":"local",
-             "shared":false,
-             "id":"bc1a76cb-8767-4c3a-bb95-018b822f2130",
-             "provider:segmentation_id":null
-          },
-          {
-             "status":"ACTIVE",
-             "subnets":[
-    
-             ],
-             "name":"sample_network4",
-             "provider:physical_network":null,
-             "admin_state_up":true,
-             "tenant_id":"4fd44f30292945e481c7b8a0c8908869",
-             "provider:network_type":"local",
-             "shared":false,
-             "id":"af374017-c9ae-4a1d-b799-ab73111476e2",
-             "provider:segmentation_id":null
-          }
-       ]
-    }
+   {
+      "networks":[
+         {
+            "status":"ACTIVE",
+            "subnets":[
+   
+            ],
+            "name":"sample_network3",
+            "provider:physical_network":null,
+            "admin_state_up":true,
+            "tenant_id":"4fd44f30292945e481c7b8a0c8908869",
+            "provider:network_type":"local",
+            "shared":false,
+            "id":"bc1a76cb-8767-4c3a-bb95-018b822f2130",
+            "provider:segmentation_id":null
+         },
+         {
+            "status":"ACTIVE",
+            "subnets":[
+   
+            ],
+            "name":"sample_network4",
+            "provider:physical_network":null,
+            "admin_state_up":true,
+            "tenant_id":"4fd44f30292945e481c7b8a0c8908869",
+            "provider:network_type":"local",
+            "shared":false,
+            "id":"af374017-c9ae-4a1d-b799-ab73111476e2",
+            "provider:segmentation_id":null
+         }
+      ]
+   }
+
+
+
 

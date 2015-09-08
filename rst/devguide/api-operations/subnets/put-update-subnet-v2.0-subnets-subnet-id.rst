@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _put-update-subnet-v2.0-subnets-subnet-id:
+
 Update subnet
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -81,11 +83,14 @@ This table shows the body parameters for the request:
 
 .. code::
 
-    {
-        "subnet": {
-            "name": "private-subnet"
-        }
-    }
+   {
+       "subnet": {
+           "name": "private-subnet"
+       }
+   }
+
+
+
 
 
 Response
@@ -160,26 +165,29 @@ This table shows the body parameters for the response:
 
 .. code::
 
-    {
-        "subnet": {
-            "name": "private-subnet",
-            "enable_dhcp": false,
-            "network_id": "db193ab3-96e3-4cb3-8fc5-05f4296d0324",
-            "tenant_id": "26a7980765d0414dbc1fc1f88cdb7e6e",
-            "dns_nameservers": [
-            ],
-            "allocation_pools": [
-                {
-                    "start": "10.0.0.2",
-                    "end": "10.0.0.254"
-                }
-            ],
-            "host_routes": [
-            ],
-            "ip_version": 4,
-            "gateway_ip": "10.0.0.1",
-            "cidr": "10.0.0.0/24",
-            "id": "08eae331-0402-425a-923c-34f7cfe39c1b"
-        }
-    }
+   {
+       "subnet": {
+           "name": "private-subnet",
+           "enable_dhcp": false,
+           "network_id": "db193ab3-96e3-4cb3-8fc5-05f4296d0324",
+           "tenant_id": "26a7980765d0414dbc1fc1f88cdb7e6e",
+           "dns_nameservers": [
+           ],
+           "allocation_pools": [
+               {
+                   "start": "10.0.0.2",
+                   "end": "10.0.0.254"
+               }
+           ],
+           "host_routes": [
+           ],
+           "ip_version": 4,
+           "gateway_ip": "10.0.0.1",
+           "cidr": "10.0.0.0/24",
+           "id": "08eae331-0402-425a-923c-34f7cfe39c1b"
+       }
+   }
+
+
+
 

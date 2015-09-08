@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _get-retrieve-list-of-networks-v2.0-networks:
+
 Retrieve list of networks
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -94,10 +96,50 @@ This table shows the body parameters for the response:
 
 .. code::
 
-        Status Code: 200 OK
-        Content-Length: 370
-        Content-Type: application/json; charset=UTF-8
-        Date: Thu, 19 Feb 2015 20:41:20 GMT, Thu, 19 Feb 2015 20:41:21 GMT
-        Server: Jetty(9.2.z-SNAPSHOT)
-        Via: 1.1 Repose (Repose/6.2.0.2)
+       Status Code: 200 OK
+       Content-Length: 370
+       Content-Type: application/json; charset=UTF-8
+       Date: Thu, 19 Feb 2015 20:41:20 GMT, Thu, 19 Feb 2015 20:41:21 GMT
+       Server: Jetty(9.2.z-SNAPSHOT)
+       Via: 1.1 Repose (Repose/6.2.0.2)
+
+
+.. code::
+
+   {
+       "networks": [
+           {
+               "admin_state_up": true,
+               "id": "00000000-0000-0000-0000-000000000000",
+               "name": "public",
+               "shared": true,
+               "status": "ACTIVE",
+               "subnets": [],
+               "tenant_id": "rackspace"
+           },
+           {
+               "admin_state_up": true,
+               "id": "11111111-1111-1111-1111-111111111111",
+               "name": "private",
+               "shared": true,
+               "status": "ACTIVE",
+               "subnets": [],
+               "tenant_id": "rackspace"
+           },
+           {
+               "admin_state_up": true,
+               "id": "2993e407-5531-4ca8-9d2a-0d13b5cac904",
+               "name": "RackNet",
+               "shared": false,
+               "status": "ACTIVE",
+               "subnets": [
+                   "017d8997-70ec-4448-91d9-a8097d6d60f3"
+               ],
+               "tenant_id": "123456"
+           }
+       ]
+   }
+
+
+
 

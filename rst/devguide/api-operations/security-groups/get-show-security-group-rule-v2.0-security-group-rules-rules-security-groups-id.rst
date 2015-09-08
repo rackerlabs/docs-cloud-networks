@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _get-show-security-group-rule-v2.0-security-group-rules-rules-security-groups-id:
+
 Show security group rule
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -22,8 +24,6 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 |401                       |Unauthorized             |The user is unauthorized |
 |                          |                         |to make this request.    |
-+--------------------------+-------------------------+-------------------------+
-|404                       |Not Found                |Item not found.          |
 +--------------------------+-------------------------+-------------------------+
 
 
@@ -149,18 +149,21 @@ This table shows the body parameters for the response:
 
 .. code::
 
-    {
-       "security_group_rule":{
-          "direction":"ingress",
-          "ethertype":"IPv6",
-          "id":"c0b09f00-1d49-4e64-a0a7-8a186d928138",
-          "port_range_max":22,
-          "port_range_min":22,
-          "protocol":"TCP",
-          "remote_group_id":null,
-          "remote_ip_prefix":null,
-          "security_group_id":"85cc3048-abc3-43cc-89b3-377341426ac5",
-          "tenant_id":"5831008"
-       }
-    }
+   {
+      "security_group_rule":{
+         "direction":"ingress",
+         "ethertype":"IPv6",
+         "id":"c0b09f00-1d49-4e64-a0a7-8a186d928138",
+         "port_range_max":22,
+         "port_range_min":22,
+         "protocol":"TCP",
+         "remote_group_id":null,
+         "remote_ip_prefix":null,
+         "security_group_id":"85cc3048-abc3-43cc-89b3-377341426ac5",
+         "tenant_id":"5831008"
+      }
+   }
+
+
+
 

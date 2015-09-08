@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _delete-delete-security-group-rule-v2.0-security-group-rules-rules-security-groups-id:
+
 Delete security group rule
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -22,8 +24,6 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 |401                       |Unauthorized             |The user is unauthorized |
 |                          |                         |to make this request.    |
-+--------------------------+-------------------------+-------------------------+
-|404                       |Not Found                |Item not found.          |
 +--------------------------+-------------------------+-------------------------+
 
 
@@ -68,7 +68,10 @@ Response
 
 .. code::
 
-    Content-Type: application/json
-    Accept: application/json
-    status: 204
+   Content-Type: application/json
+   Accept: application/json
+   status: 204
+
+
+
 

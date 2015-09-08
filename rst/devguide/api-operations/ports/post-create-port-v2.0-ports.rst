@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _post-create-port-v2.0-ports:
+
 Create port
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -78,14 +80,14 @@ This table shows the body parameters for the request:
 |tenant_id                 |Uuid *(Optional)*        |The ID of the tenant who |
 |                          |                         |owns the port.           |
 +--------------------------+-------------------------+-------------------------+
-|fixed_ips                 |Array                    |Array of fixed IP        |
+|fixed_ips                 |Array *(Optional)*       |Array of fixed IP        |
 |                          |                         |address objects.         |
 +--------------------------+-------------------------+-------------------------+
-|subnet_id                 |Uuid                     |The subnet ID for the    |
+|subnet_id                 |Uuid *(Optional)*        |The subnet ID for the    |
 |                          |                         |fixed IP address for a   |
 |                          |                         |port.                    |
 +--------------------------+-------------------------+-------------------------+
-|ip_address                |String                   |The IP address for the   |
+|ip_address                |String *(Optional)*      |The IP address for the   |
 |                          |                         |fixed IP address for a   |
 |                          |                         |port.                    |
 +--------------------------+-------------------------+-------------------------+
@@ -99,14 +101,17 @@ This table shows the body parameters for the request:
 
 .. code::
 
-    {
-        "port": {
-            "admin_state_up": true,
-            "device_id": "d6b4d3a5-c700-476f-b609-1493dd9dadc0",
-            "name": "port1",
-            "network_id": "6aeaf34a-c482-4bd3-9dc3-7faf36412f12"
-        }
-    } 
+   {
+       "port": {
+           "admin_state_up": true,
+           "device_id": "d6b4d3a5-c700-476f-b609-1493dd9dadc0",
+           "name": "port1",
+           "network_id": "6aeaf34a-c482-4bd3-9dc3-7faf36412f12"
+       }
+   } 
+
+
+
 
 
 Response
@@ -182,25 +187,28 @@ This table shows the body parameters for the response:
 
 .. code::
 
-    {
-       "port":
-          {
-             "admin_state_up":true,
-             "device_id": "",
-             "device_owner": null,
-             "fixed_ips": [
-                 {
-                     "ip_address": "fc01::8",
-                     "subnet_id": "1d18d76b-a04a-4147-a04c-151630ec80d0"
-                 }
-             ],
-             "id":"8fb361d8-bab0-418d-b1b8-7204a230fb06",
-             "mac_address":"fa:16:3e:2e:7c:8a",
-             "name":"sample_port_1",
-             "network_id":"a3775a7d-9f8b-4148-be81-c84bbd0837ce",
-             "security_groups":[],
-             "status": "ACTIVE",
-             "tenant_id":"60cd4f6dbc2f491982a284e7b83b5be3" 
-          }
-    }
+   {
+      "port":
+         {
+            "admin_state_up":true,
+            "device_id": "",
+            "device_owner": null,
+            "fixed_ips": [
+                {
+                    "ip_address": "fc01::8",
+                    "subnet_id": "1d18d76b-a04a-4147-a04c-151630ec80d0"
+                }
+            ],
+            "id":"8fb361d8-bab0-418d-b1b8-7204a230fb06",
+            "mac_address":"fa:16:3e:2e:7c:8a",
+            "name":"sample_port_1",
+            "network_id":"a3775a7d-9f8b-4148-be81-c84bbd0837ce",
+            "security_groups":[],
+            "status": "ACTIVE",
+            "tenant_id":"60cd4f6dbc2f491982a284e7b83b5be3" 
+         }
+   }
+
+
+
 

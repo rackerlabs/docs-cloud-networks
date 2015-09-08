@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _post-create-security-group-v2.0-security-groups:
+
 Create security group
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -66,12 +68,15 @@ This table shows the body parameters for the request:
 
 .. code::
 
-    {
-       "security_group":{
-          "name":"new-webservers",
-          "description":"security group for webservers"
-       }
-    }
+   {
+      "security_group":{
+         "name":"new-webservers",
+         "description":"security group for webservers"
+      }
+   }
+
+
+
 
 
 Response
@@ -186,13 +191,16 @@ This table shows the body parameters for the response:
 
 .. code::
 
-    {
-       "security_group":{
-          "description":"security group for webservers",
-          "id":"10fb1612-f78f-4d35-b008-15133520debe",
-          "name":"new-webservers",
-          "security_group_rules":[],
-          "tenant_id":"5831008"
-       }
-    }
+   {
+      "security_group":{
+         "description":"security group for webservers",
+         "id":"10fb1612-f78f-4d35-b008-15133520debe",
+         "name":"new-webservers",
+         "security_group_rules":[],
+         "tenant_id":"5831008"
+      }
+   }
+
+
+
 

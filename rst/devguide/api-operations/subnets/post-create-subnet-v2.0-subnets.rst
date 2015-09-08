@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _post-create-subnet-v2.0-subnets:
+
 Create subnet
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -110,15 +112,18 @@ This table shows the body parameters for the request:
 
 .. code::
 
-    {
-        "subnet": {
-            "network_id": "d32019d3-bc6e-4319-9c1d-6722fc136a22",
-            "ip_version": 4,
-            "name":"",
-            "cidr": "192.168.199.0/24"
-        }
-    }
-    
+   {
+       "subnet": {
+           "network_id": "d32019d3-bc6e-4319-9c1d-6722fc136a22",
+           "ip_version": 4,
+           "name":"",
+           "cidr": "192.168.199.0/24"
+       }
+   }
+   
+
+
+
 
 
 **Example Create Subnet with host routes: JSON request**
@@ -126,21 +131,24 @@ This table shows the body parameters for the request:
 
 .. code::
 
-    {
-        "subnet": {
-        "network_id": "eaac8bec-9caf-43a2-8a9d-18ad3d1709c9",
-        "ip_version": 4,
-        "name":"",
-        "cidr": "192.168.19.0/24",
-        "host_routes": [
-                {
-                    "destination": "1.1.1.0/24",
-                    "nexthop": "192.168.19.20"
-                }
-            ]
-        }
-    }
-    
+   {
+       "subnet": {
+       "network_id": "eaac8bec-9caf-43a2-8a9d-18ad3d1709c9",
+       "ip_version": 4,
+       "name":"",
+       "cidr": "192.168.19.0/24",
+       "host_routes": [
+               {
+                   "destination": "1.1.1.0/24",
+                   "nexthop": "192.168.19.20"
+               }
+           ]
+       }
+   }
+   
+
+
+
 
 
 **Example Create Subnet with allocation pools and gateway IP: JSON request**
@@ -148,29 +156,32 @@ This table shows the body parameters for the request:
 
 .. code::
 
-    {
-        "subnet":
-        {
-            "network_id": "c23f2b6c-efa1-4b66-8bdf-34cda87b8102",
-            "ip_version": 4,
-            "name":"",
-            "cidr": "192.168.62.0/24",
-            "gateway_ip": "192.168.62.1",
-            "allocation_pools": [
-                {
-                    "end": "192.168.62.21",
-                    "start": "192.168.62.11"
-                },
-                {
-                    "end": "192.168.62.251",
-                    "start": "192.168.62.241"
-                }
-            ],
-            "tenant_id": "123456"
-        }
-    }
-    
-    
+   {
+       "subnet":
+       {
+           "network_id": "c23f2b6c-efa1-4b66-8bdf-34cda87b8102",
+           "ip_version": 4,
+           "name":"",
+           "cidr": "192.168.62.0/24",
+           "gateway_ip": "192.168.62.1",
+           "allocation_pools": [
+               {
+                   "end": "192.168.62.21",
+                   "start": "192.168.62.11"
+               },
+               {
+                   "end": "192.168.62.251",
+                   "start": "192.168.62.241"
+               }
+           ],
+           "tenant_id": "123456"
+       }
+   }
+   
+   
+
+
+
 
 
 Response
@@ -241,27 +252,30 @@ This table shows the body parameters for the response:
 
 .. code::
 
-    {
-        "subnet": {
-            "name": "",
-            "enable_dhcp": false,
-            "network_id": "d32019d3-bc6e-4319-9c1d-6722fc136a22",
-            "tenant_id": "4fd44f30292945e481c7b8a0c8908869",
-            "dns_nameservers": [],
-            "allocation_pools": [
-                {
-                    "start": "192.168.199.1",
-                    "end": "192.168.199.254"
-                }
-            ],
-            "host_routes": [],
-            "ip_version": 4,
-            "gateway_ip": null,  
-            "cidr": "192.168.199.0/24",
-            "id": "3b80198d-4f7b-4f77-9ef5-774d54e17126"
-        }
-    }
-    
+   {
+       "subnet": {
+           "name": "",
+           "enable_dhcp": false,
+           "network_id": "d32019d3-bc6e-4319-9c1d-6722fc136a22",
+           "tenant_id": "4fd44f30292945e481c7b8a0c8908869",
+           "dns_nameservers": [],
+           "allocation_pools": [
+               {
+                   "start": "192.168.199.1",
+                   "end": "192.168.199.254"
+               }
+           ],
+           "host_routes": [],
+           "ip_version": 4,
+           "gateway_ip": null,  
+           "cidr": "192.168.199.0/24",
+           "id": "3b80198d-4f7b-4f77-9ef5-774d54e17126"
+       }
+   }
+   
+
+
+
 
 
 **Example Create Subnet with host routes: JSON response**
@@ -269,31 +283,34 @@ This table shows the body parameters for the response:
 
 .. code::
 
-    {
-        "subnet": {
-            "allocation_pools": [
-                {
-                   "end": "192.168.19.254",
-                   "start": "192.168.19.1"
-                }
-             ],
-            "cidr": "192.168.19.0/24",
-            "dns_nameservers": [],
-            "enable_dhcp": false,
-            "gateway_ip": null,
-            "host_routes": [
-                {
-                    "destination": "1.1.1.0/24",
-                    "nexthop": "192.168.19.20"
-                }
+   {
+       "subnet": {
+           "allocation_pools": [
+               {
+                  "end": "192.168.19.254",
+                  "start": "192.168.19.1"
+               }
             ],
-            "id": "f46041c1-7c39-4d15-a018-de2ccc31931c",
-            "ip_version": 4,
-            "name": "",
-            "network_id": "eaac8bec-9caf-43a2-8a9d-18ad3d1709c9",
-            "tenant_id": "546428"
-        }
-    }
+           "cidr": "192.168.19.0/24",
+           "dns_nameservers": [],
+           "enable_dhcp": false,
+           "gateway_ip": null,
+           "host_routes": [
+               {
+                   "destination": "1.1.1.0/24",
+                   "nexthop": "192.168.19.20"
+               }
+           ],
+           "id": "f46041c1-7c39-4d15-a018-de2ccc31931c",
+           "ip_version": 4,
+           "name": "",
+           "network_id": "eaac8bec-9caf-43a2-8a9d-18ad3d1709c9",
+           "tenant_id": "546428"
+       }
+   }
+
+
+
 
 
 **Example Create Subnet with allocation pools and gateway IP: JSON response**
@@ -301,26 +318,29 @@ This table shows the body parameters for the response:
 
 .. code::
 
-    {
-        "allocation_pools": [
-            {
-                "end": "192.168.62.21",
-                "start": "192.168.62.11"
-            },
-            {
-                "end": "192.168.62.251",
-                "start": "192.168.62.241"
-            }
-        ],
-        "cidr": "192.168.62.0/24",
-        "dns_nameservers": [],
-        "enable_dhcp": false,
-        "gateway_ip": "192.168.62.1",
-        "host_routes": [],
-        "id": "bbda1637-79df-4ec6-8399-baa8e01dda22",
-        "ip_version": 4,
-        "name": "",
-        "network_id": "c23f2b6c-efa1-4b66-8bdf-34cda87b8102",
-        "tenant_id": "546428"
-    }
+   {
+       "allocation_pools": [
+           {
+               "end": "192.168.62.21",
+               "start": "192.168.62.11"
+           },
+           {
+               "end": "192.168.62.251",
+               "start": "192.168.62.241"
+           }
+       ],
+       "cidr": "192.168.62.0/24",
+       "dns_nameservers": [],
+       "enable_dhcp": false,
+       "gateway_ip": "192.168.62.1",
+       "host_routes": [],
+       "id": "bbda1637-79df-4ec6-8399-baa8e01dda22",
+       "ip_version": 4,
+       "name": "",
+       "network_id": "c23f2b6c-efa1-4b66-8bdf-34cda87b8102",
+       "tenant_id": "546428"
+   }
+
+
+
 

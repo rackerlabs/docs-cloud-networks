@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _delete-delete-port-v2.0-ports-port-id:
+
 Delete port
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -72,7 +74,10 @@ Response
 
 .. code::
 
-    Content-Type: application/json
-    Accept: application/json
-    status: 204
+   Content-Type: application/json
+   Accept: application/json
+   status: 204
+
+
+
 

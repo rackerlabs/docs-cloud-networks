@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _post-create-security-group-rule-v2.0-security-group-rules:
+
 Create security group rule
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -25,8 +27,6 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 |401                       |Unauthorized             |The user is unauthorized |
 |                          |                         |to make this request.    |
-+--------------------------+-------------------------+-------------------------+
-|404                       |Not Found                |Item not found.          |
 +--------------------------+-------------------------+-------------------------+
 |409                       |buildInProgress          |Build is in progress.    |
 +--------------------------+-------------------------+-------------------------+
@@ -134,19 +134,22 @@ This table shows the body parameters for the request:
 
 .. code::
 
-    POST /v2.0/security-group-rules.json
-    Accept: application/json
-    {
-       "security_group_rule":{
-          "direction":"ingress",
-          "port_range_min":"80",
-          "ethertype":"IPv4",
-          "port_range_max":"80",
-          "protocol":"TCP",
-          "remote_group_id":null,
-          "security_group_id":"a7734e61-b545-452d-a3cd-0189cbd9747a"
-       }
-    }
+   POST /v2.0/security-group-rules.json
+   Accept: application/json
+   {
+      "security_group_rule":{
+         "direction":"ingress",
+         "port_range_min":"80",
+         "ethertype":"IPv4",
+         "port_range_max":"80",
+         "protocol":"TCP",
+         "remote_group_id":null,
+         "security_group_id":"a7734e61-b545-452d-a3cd-0189cbd9747a"
+      }
+   }
+
+
+
 
 
 Response
@@ -247,18 +250,21 @@ This table shows the body parameters for the response:
 
 .. code::
 
-    {
-       "security_group_rule":{
-          "direction":"ingress",
-          "ethertype":"IPv4",
-          "id":"2bc0accf-312e-429a-956e-e4407625eb62",
-          "port_range_max":80,
-          "port_range_min":80,
-          "protocol":"TCP",
-          "remote_group_id":null,
-          "remote_ip_prefix":null,
-          "security_group_id":"a7734e61-b545-452d-a3cd-0189cbd9747a",
-          "tenant_id":"5831008"
-       }
-    }
+   {
+      "security_group_rule":{
+         "direction":"ingress",
+         "ethertype":"IPv4",
+         "id":"2bc0accf-312e-429a-956e-e4407625eb62",
+         "port_range_max":80,
+         "port_range_min":80,
+         "protocol":"TCP",
+         "remote_group_id":null,
+         "remote_ip_prefix":null,
+         "security_group_id":"a7734e61-b545-452d-a3cd-0189cbd9747a",
+         "tenant_id":"5831008"
+      }
+   }
+
+
+
 

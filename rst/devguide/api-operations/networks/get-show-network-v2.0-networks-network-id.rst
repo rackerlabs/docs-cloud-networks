@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _get-show-network-v2.0-networks-network-id:
+
 Show network
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -104,16 +106,19 @@ This table shows the body parameters for the response:
 
 .. code::
 
-    {
-        "network": 
-        {
-            "admin_state_up": true,
-            "id": "4d4e772a-98e7-4409-8a3c-4fed4324da26",
-            "name": "sameer-3",
-            "shared": false,
-            "status": "ACTIVE",
-            "subnets": [],
-            "tenant_id": "546428"
-        }
-    }
+   {
+       "network": 
+       {
+           "admin_state_up": true,
+           "id": "4d4e772a-98e7-4409-8a3c-4fed4324da26",
+           "name": "sameer-3",
+           "shared": false,
+           "status": "ACTIVE",
+           "subnets": [],
+           "tenant_id": "546428"
+       }
+   }
+
+
+
 

@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _get-list-security-group-rules-v2.0-security-group-rules:
+
 List security group rules
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -140,32 +142,35 @@ This table shows the body parameters for the response:
 
 .. code::
 
-    {
-       "security_group_rules":[
-          {
-             "direction":"ingress",
-             "ethertype":"IPv6",
-             "id":"c0b09f00-1d49-4e64-a0a7-8a186d928138",
-             "port_range_max":22,
-             "port_range_min":22,
-             "protocol":"TCP",
-             "remote_group_id":null,
-             "remote_ip_prefix":null,
-             "security_group_id":"85cc3048-abc3-43cc-89b3-377341426ac5",
-             "tenant_id":"5831008"
-          },
-          {
-             "direction":"ingress",
-             "ethertype":"IPv4",
-             "id":"f7d45c89-008e-4bab-88ad-d6811724c51c",
-             "port_range_max":22,
-             "port_range_min":22,
-             "protocol":"TCP",
-             "remote_group_id":null,
-             "remote_ip_prefix":null,
-             "security_group_id":"85cc3048-abc3-43cc-89b3-377341426ac5",
-             "tenant_id":"5831008"
-          }
-       ]
-    }
+   {
+      "security_group_rules":[
+         {
+            "direction":"ingress",
+            "ethertype":"IPv6",
+            "id":"c0b09f00-1d49-4e64-a0a7-8a186d928138",
+            "port_range_max":22,
+            "port_range_min":22,
+            "protocol":"TCP",
+            "remote_group_id":null,
+            "remote_ip_prefix":null,
+            "security_group_id":"85cc3048-abc3-43cc-89b3-377341426ac5",
+            "tenant_id":"5831008"
+         },
+         {
+            "direction":"ingress",
+            "ethertype":"IPv4",
+            "id":"f7d45c89-008e-4bab-88ad-d6811724c51c",
+            "port_range_max":22,
+            "port_range_min":22,
+            "protocol":"TCP",
+            "remote_group_id":null,
+            "remote_ip_prefix":null,
+            "security_group_id":"85cc3048-abc3-43cc-89b3-377341426ac5",
+            "tenant_id":"5831008"
+         }
+      ]
+   }
+
+
+
 

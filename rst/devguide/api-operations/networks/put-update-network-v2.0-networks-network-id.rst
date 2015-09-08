@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _put-update-network-v2.0-networks-network-id:
+
 Update network
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -77,13 +79,16 @@ This table shows the body parameters for the request:
 
 .. code::
 
-    {
-     "network":
-      {
-        "name": "sample_network_5_updated"
-      }
-    }
-    
+   {
+    "network":
+     {
+       "name": "sample_network_5_updated"
+     }
+   }
+   
+
+
+
 
 
 Response
@@ -138,15 +143,18 @@ This table shows the body parameters for the response:
 
 .. code::
 
-    {
-         "network":{
-          "status":"ACTIVE",
-          "subnets":[],
-          "name":"sample_network_5_updated",
-          "admin_state_up":true,
-          "tenant_id":"4fd44f30292945e481c7b8a0c8908869",
-          "shared":false,
-          "id":"1f370095-98f6-4079-be64-6d3d4a6adcc6",
-       }
-    }
+   {
+        "network":{
+         "status":"ACTIVE",
+         "subnets":[],
+         "name":"sample_network_5_updated",
+         "admin_state_up":true,
+         "tenant_id":"4fd44f30292945e481c7b8a0c8908869",
+         "shared":false,
+         "id":"1f370095-98f6-4079-be64-6d3d4a6adcc6",
+      }
+   }
+
+
+
 

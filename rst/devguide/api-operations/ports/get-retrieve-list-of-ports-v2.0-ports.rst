@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _get-retrieve-list-of-ports-v2.0-ports:
+
 Retrieve list of ports
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -115,26 +117,29 @@ This table shows the body parameters for the response:
 
 .. code::
 
-    {
-        "ports": [
-            {
-                "admin_state_up": true, 
-                "device_id": "", 
-                "device_owner": null, 
-                "fixed_ips": [
-                    {
-                        "ip_address": "192.168.3.11", 
-                        "subnet_id": "739ecc58-f9a0-4145-8a06-cd415e6e5c8d"
-                    }
-                ], 
-                "id": "10ba23f5-bb70-4fd7-a118-83f89b62e340", 
-                "mac_address": "BE:CB:FE:00:00:EE", 
-                "name": "port1", 
-                "network_id": "6406ed30-193a-4958-aae5-7c05268d332b", 
-                "security_groups": [], 
-                "status": "ACTIVE", 
-                "tenant_id": "123456"
-            }
-        ]
-    }
+   {
+       "ports": [
+           {
+               "admin_state_up": true, 
+               "device_id": "", 
+               "device_owner": null, 
+               "fixed_ips": [
+                   {
+                       "ip_address": "192.168.3.11", 
+                       "subnet_id": "739ecc58-f9a0-4145-8a06-cd415e6e5c8d"
+                   }
+               ], 
+               "id": "10ba23f5-bb70-4fd7-a118-83f89b62e340", 
+               "mac_address": "BE:CB:FE:00:00:EE", 
+               "name": "port1", 
+               "network_id": "6406ed30-193a-4958-aae5-7c05268d332b", 
+               "security_groups": [], 
+               "status": "ACTIVE", 
+               "tenant_id": "123456"
+           }
+       ]
+   }
+
+
+
 

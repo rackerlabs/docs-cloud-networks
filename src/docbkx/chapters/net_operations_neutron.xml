@@ -181,57 +181,57 @@
             </wadl:resource>
         </wadl:resources>
     </section>
-<!--    <section xml:id="api_ext_sharedip_neutron">
+    <section xml:id="api_ext_sharedip_neutron">
         <title>Extension - IP addresses</title>
         <para>This section describes the API operations for sharing IP addresses.</para>
-        <!-\-availwarn-\->
+        <!--availwarn-->
         <important>
-            <para>The IP addresses API is currently in Early Access. <!-\-It is available only to Managed
+            <para>The IP addresses API is currently in Early Access. <!--It is available only to Managed
                 Infrastructure customers and not to RackConnect or Managed Operations customers. To use this feature, contact
-                Rackspace Support.-\-></para>
+                Rackspace Support.--></para>
         </important>
         <para><emphasis role="bold">For more information about IP addresses, see 
             <link xlink:href="conceptSharedIPs.html">Sharing IP Addresses</link>.</emphasis></para>
-        <!-\-\- this section comes from these WADLs: shared-ip.wadl -\->
+        <!--- this section comes from these WADLs: shared-ip.wadl -->
         <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
-            <!-\- list shared IPs -\->
+            <!-- list shared IPs -->
             <wadl:resource href="../../wadl/shared-ip.wadl#SharedIPs">
                 <wadl:method href="listIPs"/>
             </wadl:resource>
-            <!-\- provision shared IPs -\->
+            <!-- provision shared IPs -->
             <wadl:resource href="../../wadl/shared-ip.wadl#SharedIPs">
                 <wadl:method href="provisionIP"/>
             </wadl:resource>
-             <!-\-show shared IP -\->
+             <!--show shared IP -->
             <wadl:resource href="../../wadl/shared-ip.wadl#sharedIP">
                 <wadl:method href="showIP"/>
             </wadl:resource>
-            <!-\-update shared IP -\->
+            <!--update shared IP -->
             <wadl:resource href="../../wadl/shared-ip.wadl#sharedIP">
                 <wadl:method href="updateIP"/>
             </wadl:resource>
-            <!-\- delete shared IP -\->
+            <!-- delete shared IP -->
             <wadl:resource href="../../wadl/shared-ip.wadl#sharedIP">
                 <wadl:method href="removeIP"/>
             </wadl:resource>
-            <!-\- list associated IPs -\->
+            <!-- list associated IPs -->
             <wadl:resource href="../../wadl/shared-ip.wadl#ipaServerID">
                 <wadl:method href="listAssociatedIPs"/>
             </wadl:resource>
-            <!-\-show associated IP -\->
+            <!--show associated IP -->
             <wadl:resource href="../../wadl/shared-ip.wadl#IPAddressID">
                 <wadl:method href="showAssociatedIP"/>
             </wadl:resource>
-            <!-\- create associated IPs -\->
+            <!-- create associated IPs -->
             <wadl:resource href="../../wadl/shared-ip.wadl#IPAddressID">
                 <wadl:method href="associateAssociatedIP"/>
             </wadl:resource>
-            <!-\- delete associated IP -\->
+            <!-- delete associated IP -->
             <wadl:resource href="../../wadl/shared-ip.wadl#IPAddressID">
                 <wadl:method href="deleteAssociatedIP"/>
             </wadl:resource>
         </wadl:resources>
-    </section>-->
+    </section>
     <!--    <section xml:id="api_ext_layer3_router">
         <title>Extension - layer-3 networking (router)</title>
         <para>This section describes the API operations for creating and managing routers for Layer-3 (router)

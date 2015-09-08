@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _delete-delete-network-v2.0-networks-network-id:
+
 Delete network
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -70,7 +72,10 @@ Response
 
 .. code::
 
-    Content-Type: application/json
-    Accept: application/json
-    status: 204
+   Content-Type: application/json
+   Accept: application/json
+   status: 204
+
+
+
 

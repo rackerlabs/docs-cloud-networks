@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _post-bulk-create-ports-v2.0-ports:
+
 Bulk Create Ports
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -65,21 +67,24 @@ This operation does not accept a request body.
 
 .. code::
 
-    {
-       "ports":[
-          {
-             "name":"sample_port_1",
-             "admin_state_up":false,
-             "network_id":"a3775a7d-9f8b-4148-be81-c84bbd0837ce"
-          },
-          {
-             "name":"sample_port_2",
-             "admin_state_up":false,
-             "network_id":"a3775a7d-9f8b-4148-be81-c84bbd0837ce"
-          }
-       ]
-    }
-    
+   {
+      "ports":[
+         {
+            "name":"sample_port_1",
+            "admin_state_up":false,
+            "network_id":"a3775a7d-9f8b-4148-be81-c84bbd0837ce"
+         },
+         {
+            "name":"sample_port_2",
+            "admin_state_up":false,
+            "network_id":"a3775a7d-9f8b-4148-be81-c84bbd0837ce"
+         }
+      ]
+   }
+   
+
+
+
 
 
 Response
@@ -155,52 +160,55 @@ This table shows the body parameters for the response:
 
 .. code::
 
-    {
-       "ports":[
-          {
-             "status":"DOWN",
-             "binding:host_id":null,
-             "name":"sample_port_1",
-             "admin_state_up":true,
-             "network_id":"a3775a7d-9f8b-4148-be81-c84bbd0837ce",
-             "tenant_id":"60cd4f6dbc2f491982a284e7b83b5be3",
-             "binding:vif_type":"ovs",
-             "device_owner":"",
-             "binding:capabilities":{
-                "port_filter":true
-             },
-             "mac_address":"fa:16:3e:2e:7c:8a",
-             "fixed_ips":[
-    
-             ],
-             "id":"8fb361d8-bab0-418d-b1b8-7204a230fb06",
-             "security_groups":[
-                "99f465bc-0d7c-4142-8829-7ae0179f2fa8"
-             ],
-             "device_id":""
-          },
-          {
-             "status":"DOWN",
-             "binding:host_id":null,
-             "name":"sample_port_2",
-             "admin_state_up":false,
-             "network_id":"a3775a7d-9f8b-4148-be81-c84bbd0837ce",
-             "tenant_id":"60cd4f6dbc2f491982a284e7b83b5be3",
-             "binding:vif_type":"ovs",
-             "device_owner":"",
-             "binding:capabilities":{
-                "port_filter":true
-             },
-             "mac_address":"fa:16:3e:0a:4e:13",
-             "fixed_ips":[
-    
-             ],
-             "id":"d4c93b0b-f593-424e-a199-d648478a5a3c",
-             "security_groups":[
-                "99f465bc-0d7c-4142-8829-7ae0179f2fa8"
-             ],
-             "device_id":""
-          }
-       ]
-    }
+   {
+      "ports":[
+         {
+            "status":"DOWN",
+            "binding:host_id":null,
+            "name":"sample_port_1",
+            "admin_state_up":true,
+            "network_id":"a3775a7d-9f8b-4148-be81-c84bbd0837ce",
+            "tenant_id":"60cd4f6dbc2f491982a284e7b83b5be3",
+            "binding:vif_type":"ovs",
+            "device_owner":"",
+            "binding:capabilities":{
+               "port_filter":true
+            },
+            "mac_address":"fa:16:3e:2e:7c:8a",
+            "fixed_ips":[
+   
+            ],
+            "id":"8fb361d8-bab0-418d-b1b8-7204a230fb06",
+            "security_groups":[
+               "99f465bc-0d7c-4142-8829-7ae0179f2fa8"
+            ],
+            "device_id":""
+         },
+         {
+            "status":"DOWN",
+            "binding:host_id":null,
+            "name":"sample_port_2",
+            "admin_state_up":false,
+            "network_id":"a3775a7d-9f8b-4148-be81-c84bbd0837ce",
+            "tenant_id":"60cd4f6dbc2f491982a284e7b83b5be3",
+            "binding:vif_type":"ovs",
+            "device_owner":"",
+            "binding:capabilities":{
+               "port_filter":true
+            },
+            "mac_address":"fa:16:3e:0a:4e:13",
+            "fixed_ips":[
+   
+            ],
+            "id":"d4c93b0b-f593-424e-a199-d648478a5a3c",
+            "security_groups":[
+               "99f465bc-0d7c-4142-8829-7ae0179f2fa8"
+            ],
+            "device_id":""
+         }
+      ]
+   }
+
+
+
 
