@@ -109,7 +109,7 @@
             <doc title="Success">Request succeeded.</doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-                    <xsdxt:code href="../common/samples/sharedIP-create-resp.json"/>
+                    <xsdxt:code href="../common/samples/sharedip-create-resp.json"/>
                 </wadl:doc>&sharedIPCreateRspParameters;</representation>
         </response> &fault401; &fault404; </method>
 
@@ -128,14 +128,14 @@
         <request>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-                    <xsdxt:code href="../common/samples/sharedIP-update-req.json"/>
+                    <xsdxt:code href="../common/samples/sharedip-update-req.json"/>
                 </wadl:doc>&sharedIPUpdateReqParameters;</representation>
         </request>
         <response status="200">
             <doc title="Success">Request succeeded.</doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-                    <xsdxt:code href="../common/samples/sharedIP-update-resp.json"/>
+                    <xsdxt:code href="../common/samples/sharedip-update-resp.json"/>
                 </wadl:doc>&sharedIPCreateRspParameters;</representation>
         </response> &fault400; &fault401; &fault403; &fault404; </method>
 
@@ -154,7 +154,7 @@
             <doc title="Success">Request succeeded.</doc>
             <representation mediaType="application/json">
                 <wadl:doc xml:lang="EN" xmlns="http://docbook.org/ns/docbook">
-                    <xsdxt:code href="../common/samples/sharedIP-delete-resp-json-http.txt"/>
+                    <xsdxt:code href="../common/samples/sharedip-delete-resp-json-http.txt"/>
                 </wadl:doc>
             </representation>
         </response>&fault401;&fault404; </method>
@@ -189,7 +189,7 @@
         </response> &commonFaults;</method>
 
     <!--Associate Associated IP-->
-    <method name="POST" id="associateAssociatedIP">
+    <method name="PUT" id="associateAssociatedIP">
         <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN" title="Explicitly associate IP address with server">
             <para role="shortdesc">Explicitly associate a provisioned IP address with server</para>
             <para>This operation explicitly associates to a server an IP address.</para>
@@ -240,7 +240,7 @@
             <doc title="Success">Request succeeded.</doc>
             <representation mediaType="application/json">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN">
-                    <xsdxt:code href="../common/samples/associatedIP-show-resp.json"/>
+                    <xsdxt:code href="../common/samples/associatedip-show-resp.json"/>
                 </wadl:doc>&xtenAssociatedIPCreateRspParameters;</representation>
         </response> &commonFaults;</method>
 
@@ -261,7 +261,7 @@
             <doc title="Success">Request succeeded.</doc>
             <representation mediaType="application/json">
                 <wadl:doc xml:lang="EN" xmlns="http://docbook.org/ns/docbook">
-                    <xsdxt:code href="../common/samples/associatedIP-delete-resp-json-http.txt"/>
+                    <xsdxt:code href="../common/samples/associatedip-delete-resp-json-http.txt"/>
                 </wadl:doc>
             </representation>
         </response>&commonFaults;</method>
