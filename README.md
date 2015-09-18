@@ -1,4 +1,7 @@
 # Rackspace Cloud Networks API documentation
+
+[![Build Status](https://travis-ci.org/rackerlabs/docs-cloud-networks.svg?branch=master)](https://travis-ci.org/rackerlabs/docs-cloud-networks)
+
 ==========================================
 ## Resources
 
