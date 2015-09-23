@@ -2,4 +2,4 @@
 cd ../..
 wadl2rst
 cd rst/dev*
-make html
+make singlehtml

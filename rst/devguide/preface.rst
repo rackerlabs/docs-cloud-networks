@@ -59,43 +59,6 @@ The `Service Level Agreement`_ (SLA) for Cloud Networks is available as part of 
 .. _pricing schedule for Cloud Servers: http://www.rackspace.com/cloud/servers/pricing/
 .. _Service Level Agreement: http://www.rackspace.com/cloud/servers/service-levels/
 
-.. _cn-dg-preface-changehist:
-
-Document change history
-~~~~~~~~~~~~~~~~~~~~~~~
-
-This version of the guide applies only to v2.0 of the API. The most recent changes are 
-described in the following table:
-
-+--------------------+-----------------------------------------------------------------+
-|   Revision Date    |                       Summary of Changes                        |
-+====================+=================================================================+
-| March 24, 2015     | Added sections related to the security group extension          |
-|                    | in Overview, Concepts, and Extensions.                          |
-+--------------------+-----------------------------------------------------------------+
-| March 19, 2015     | Corrected the link to the Cloud Servers Dev Guide in            |
-|                    | Overview.                                                       |
-+--------------------+-----------------------------------------------------------------+
-| March 11, 2015     | Updated API Operations to note levels of availability           |
-|                    | for the various APIs and extensions.                            |
-+--------------------+-----------------------------------------------------------------+
-| March 6, 2015      | Updated Identity API endpoint documentation to remove           |
-|                    | references to regional endpoints. All customers can             |
-|                    | authenticate using the https://identity.api.rackspacecloud.com  |
-|                    | global endpoint, regardless of geographic location.             |
-+--------------------+-----------------------------------------------------------------+
-| February 9, 2015   | Updated "Create network” with corrected create                  |
-|                    | network example.                                                |
-+--------------------+-----------------------------------------------------------------+
-| January 15, 2015   | Updated “Authenticate with cURL” with information about using   |
-|                    | multi-factor authentication for added security when a user      |
-|                    | authenticates with username and password credentials.           |
-+--------------------+-----------------------------------------------------------------+
-| November 20, 2014  | Public release of this document.                                |
-+--------------------+-----------------------------------------------------------------+
-| September 30, 2014 | Published document with neutron API calls.                      |
-+--------------------+-----------------------------------------------------------------+
-
 .. _cn-dg-preface-resources:
 
 Resources
