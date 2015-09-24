@@ -4,7 +4,7 @@ Network operations
 ~~~~~~~~~~~~~~~~~~
 
 This section describes the API operations for networks. For general information about networks, 
-see  ref `Networks concepts <concepts-network>`.
+see :ref:`Networks concepts <concepts-network>`.
 
 .. NETWORKS OPS
 

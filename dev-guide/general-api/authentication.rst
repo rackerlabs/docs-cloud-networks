@@ -4,8 +4,6 @@
 Get the authentication token
 ============================
 
-:ref:`Authenticate with cURL <cn-dg-generalapi-auth-curl>`
-
 To authenticate access to Rackspace Cloud services, you issue an authentication request to 
 the Rackspace Cloud Identity service, which is an implementation of the OpenStack Keystone 
 Identity Service v2.0.
@@ -187,53 +185,47 @@ the **API Key** field.
    **Endpoints to request Rackspace Cloud services**. Appears in the
    ``endpoints`` element in the ``serviceCatalog`` element.
 
-   Endpoint information includes the public URL, which is the endpoint that
-   you use to access the service, as well as region, tenant ID, and version
-   information.
-
-   .. note:: To help you decide which regionalized endpoint to use, read about
-      `special considerations <http://www.rackspace.com/knowledge_center/article/about-regions>`_ for choosing a data center.
+   - Endpoint information includes the public URL, which is the endpoint that
+   	 you use to access the service, as well as region, tenant ID, and version information.
+   	 
+   	 .. note:: To help you decide which regionalized endpoint to use, read about `special considerations <http://www.rackspace.com/knowledge_center/article/about-regions>`_ for choosing a data center.
 
    **Tenant ID**. Appears in the ``tenantId`` field in the ``endpoints``
    element. The tenant ID is also known as the account number.
 
-   You include the tenant ID in the endpoint URL when you call a cloud service.
+   - You include the tenant ID in the endpoint URL when you call a cloud service.
 
    **The name of the service**. Appears in the ``name`` field.
-
-   Locate the correct service name in the service catalog, as follows:
-
-   -  **Cloud Networks**. Named ``cloudNetworks`` in the catalog.
    
-      To access the Cloud Networks service, locate and use the ``publicURL`` value 
-      for the ``cloudNetworks`` service.
+   - To access the Cloud Networks service, locate and use the ``publicURL`` value 
+     for the ``cloudNetworks`` service.
 
-      The service might show multiple endpoints to enable regional
-      choice. Select the appropriate endpoint for the region that you want
-      to interact with by examining the ``region`` field.
+   - The service might show multiple endpoints to enable regional
+     choice. Select the appropriate endpoint for the region that you want
+     to interact with by examining the ``region`` field.
 
-   .. note:: To help you decide which regionalized endpoint to use, read about
-      special considerations for choosing a data center at
-      http://ord.admin.kc.rakr.net/knowledge_center/article/about-regions.
+     .. note:: To help you decide which regionalized endpoint to use, read about
+        special considerations for choosing a data center at
+        http://ord.admin.kc.rakr.net/knowledge_center/article/about-regions.
 
    **Expiration date and time for authentication token**. Appears in the
    ``expires`` field in the ``token`` element.
 
-   After this date and time, the token is no longer valid. This field predicts the maximum 
-   lifespan for a token, but does not guarantee that the token reaches that lifespan.
+   - After this date and time, the token is no longer valid. This field predicts the maximum 
+     lifespan for a token, but does not guarantee that the token reaches that lifespan.
 
-   Clients are encouraged to cache a token until it expires.
+   - Clients are encouraged to cache a token until it expires.
 
-   Because the authentication token expires after 24 hours, you must generate a token once a day.
+   - Because the authentication token expires after 24 hours, you must generate a token once a day.
 
    **Authentication token**. Appears in the ``id`` field in the ``token`` element.
 
-   You pass the authentication token in the ``X-Auth-Token`` header each
-   time that you send a request to a service.
+   - You pass the authentication token in the ``X-Auth-Token`` header each
+     time that you send a request to a service.
 
 
 #. Copy the values in the ``publicURL`` and ``tenantId`` fields for the 
    ``cloudNetworks`` service for your region, and copy the authentication token from 
    the ``id`` field in the ``token`` element.
 
-   As a next step, you can set environment variables to these values.
+As a next step, you can set environment variables to these values.

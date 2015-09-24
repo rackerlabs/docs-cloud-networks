@@ -53,99 +53,105 @@ Response
 
 This table shows the body parameters for the response:
 
-+-----------------------------------+---------------------+--------------------+
-|Name                               |Type                 |Description         |
-+===================================+=====================+====================+
-|parameters.\                       |String               |An array of rules   |
-|**security_group_rules**           |                     |in a security group.|
-+-----------------------------------+---------------------+--------------------+
-|parameters.security_group_rules.\  |Uuid                 |The ID for the      |
-|**id**                             |                     |security group rule.|
-+-----------------------------------+---------------------+--------------------+
-|parameters.security_group_rules.\  |String               |The direction (     |
-|**direction**                      |                     |``ingress`` ). For  |
-|                                   |                     |a Cloud Servers     |
-|                                   |                     |instance, an        |
-|                                   |                     |``ingress``         |
-|                                   |                     |security group rule |
-|                                   |                     |is applied to       |
-|                                   |                     |incoming traffic    |
-|                                   |                     |for that instance.  |
-+-----------------------------------+---------------------+--------------------+
-|parameters.security_group_rules.\  |String               |The network ether   |
-|**ethertype**                      |                     |type, either        |
-|                                   |                     |``IPv4`` or         |
-|                                   |                     |``IPv6``.           |
-+-----------------------------------+---------------------+--------------------+
-|parameters.security_group_rules.\  |Uuid                 |The security group  |
-|**security_group_id**              |                     |ID for the security |
-|                                   |                     |group with which    |
-|                                   |                     |the rule is         |
-|                                   |                     |associated.         |
-+-----------------------------------+---------------------+--------------------+
-|parameters.security_group_rules.\  |Uuid                 |The tenant ID of    |
-|**tenant_id**                      |                     |the security group  |
-|                                   |                     |rule owner.         |
-+-----------------------------------+---------------------+--------------------+
-|parameters.security_group_rules.\  |Int                  |The minimum port    |
-|**port_range_min**                 |                     |number in the range |
-|                                   |                     |that is matched by  |
-|                                   |                     |the security group  |
-|                                   |                     |rule. If the        |
-|                                   |                     |protocol is ``TCP`` |
-|                                   |                     |or ``UDP``, this    |
-|                                   |                     |value must be less  |
-|                                   |                     |than or equal to    |
-|                                   |                     |the value of the    |
-|                                   |                     |``port_range_max``  |
-|                                   |                     |parameter. If the   |
-|                                   |                     |protocol is         |
-|                                   |                     |``ICMP``, this      |
-|                                   |                     |value may be an     |
-|                                   |                     |``ICMP`` type. If   |
-|                                   |                     |the protocol        |
-|                                   |                     |attribute is        |
-|                                   |                     |"null", this value  |
-|                                   |                     |must be "null".     |
-+-----------------------------------+---------------------+--------------------+
-|parameters.security_group_rules.\  |Int                  |The maximum port    |
-|**port_range_max**                 |                     |number in the range |
-|                                   |                     |that is matched by  |
-|                                   |                     |the security group  |
-|                                   |                     |rule. The           |
-|                                   |                     |``port_range_min``  |
-|                                   |                     |parameter           |
-|                                   |                     |constrains this     |
-|                                   |                     |``port_range_max``  |
-|                                   |                     |parameter. If the   |
-|                                   |                     |protocol is         |
-|                                   |                     |``ICMP``, this      |
-|                                   |                     |value may be an     |
-|                                   |                     |``ICMP`` code. If   |
-|                                   |                     |the protocol        |
-|                                   |                     |attribute is        |
-|                                   |                     |"null", this value  |
-|                                   |                     |must be "null".     |
-+-----------------------------------+---------------------+--------------------+
-|parameters.security_group_rules.\  |String               |The protocol. Set   |
-|**protocol**                       |                     |to null.            |
-+-----------------------------------+---------------------+--------------------+
-|parameters.security_group_rules.\  |String               |The remote group    |
-|**remote_group_id**                |                     |ID. This attribute  |
-|                                   |                     |must be set to null |
-|                                   |                     |since self-         |
-|                                   |                     |referential         |
-|                                   |                     |Security Groups are |
-|                                   |                     |not supported.      |
-+-----------------------------------+---------------------+--------------------+
-|parameters.security_group_rules.\  |String               |The remote IP       |
-|**remote_ip_prefix**               |                     |prefix. This        |
-|                                   |                     |attribute matches   |
-|                                   |                     |the specified IP    |
-|                                   |                     |prefix as the       |
-|                                   |                     |source IP address   |
-|                                   |                     |of the IP packet.   |
-+-----------------------------------+---------------------+--------------------+
++----------------------------------+---------------------+---------------------+
+|Name                              |Type                 |Description          |
++==================================+=====================+=====================+
+|**security_group_rules**          |Array                |An array for         |
+|                                  |                     |the security group   |
+|                                  |                     |rules.               |
++----------------------------------+---------------------+---------------------+
+|security_group_rules.\            |String               |The direction in     |
+|**direction**                     |                     |which the security   |
+|                                  |                     |group rule is        |
+|                                  |                     |applied (            |
+|                                  |                     |``ingress`` ). For a |
+|                                  |                     |Cloud Servers        |
+|                                  |                     |instance, an ingress |
+|                                  |                     |security group rule  |
+|                                  |                     |is applied to        |
+|                                  |                     |incoming (ingress)   |
+|                                  |                     |traffic for that     |
+|                                  |                     |instance.            |
++----------------------------------+---------------------+---------------------+
+|security_group_rules.\            |String               |The network ether    |
+|**ethertype**                     |                     |type, either         |
+|                                  |                     |``IPv4`` or          |
+|                                  |                     |``IPv6``. Addresses  |
+|                                  |                     |represented in CIDR  |
+|                                  |                     |must match the       |
+|                                  |                     |ingress rules.       |
++----------------------------------+---------------------+---------------------+
+|security_group_rules.\            |Uuid                 |The ID of the        |
+|**security_group_id**             |                     |security group to    |
+|                                  |                     |associate with this  |
+|                                  |                     |security group rule. |
++----------------------------------+---------------------+---------------------+
+|security_group_rules.\            |Int                  |The minimum port     |
+|**port_range_min**                |                     |number in the range  |
+|                                  |                     |that is matched by   |
+|                                  |                     |the security group   |
+|                                  |                     |rule. If the         |
+|                                  |                     |protocol is ``TCP``  |
+|                                  |                     |or ``UDP``, this     |
+|                                  |                     |value must be less   |
+|                                  |                     |than or equal to the |
+|                                  |                     |value of the         |
+|                                  |                     |``port_range_max``   |
+|                                  |                     |parameter. If the    |
+|                                  |                     |protocol is          |
+|                                  |                     |``ICMP``, this value |
+|                                  |                     |may be an ``ICMP``   |
+|                                  |                     |type. If the         |
+|                                  |                     |protocol attribute   |
+|                                  |                     |is "null", this      |
+|                                  |                     |value must be "null".|
++----------------------------------+---------------------+---------------------+
+|security_group_rules.\            |Int                  |The maximum port     |
+|**port_range_max**                |                     |number in the range  |
+|                                  |                     |that is matched by   |
+|                                  |                     |the security group   |
+|                                  |                     |rule. The            |
+|                                  |                     |``port_range_min``   |
+|                                  |                     |parameter constrains |
+|                                  |                     |this                 |
+|                                  |                     |``port_range_max``   |
+|                                  |                     |parameter. If the    |
+|                                  |                     |protocol is          |
+|                                  |                     |``ICMP``, this value |
+|                                  |                     |may be an ``ICMP``   |
+|                                  |                     |code. If the         |
+|                                  |                     |protocol attribute   |
+|                                  |                     |is "null", this      |
+|                                  |                     |value must be "null".|
++----------------------------------+---------------------+---------------------+
+|security_group_rules.\            |String               |The protocol that is |
+|**protocol**                      |                     |matched by the       |
+|                                  |                     |security group rule. |
+|                                  |                     |Valid values are     |
+|                                  |                     |``null``, ``tcp``,   |
+|                                  |                     |``udp``, and         |
+|                                  |                     |``icmp``.            |
++----------------------------------+---------------------+---------------------+
+|security_group_rules.\            |Uuid                 |The remote group ID  |
+|**remote_group_id**               |                     |to be associated     |
+|                                  |                     |with this security   |
+|                                  |                     |group rule. This     |
+|                                  |                     |attribute must be    |
+|                                  |                     |set to null since    |
+|                                  |                     |self-referential     |
+|                                  |                     |Security Groups are  |
+|                                  |                     |not supported.       |
++----------------------------------+---------------------+---------------------+
+|security_group_rules.\            |Uuid                 |The remote IP prefix |
+|**remote_ip_prefix**              |                     |to be associated     |
+|                                  |                     |with this security   |
+|                                  |                     |group rule. This     |
+|                                  |                     |attribute matches    |
+|                                  |                     |the specified IP     |
+|                                  |                     |prefix as the source |
+|                                  |                     |IP address of the IP |
+|                                  |                     |packet.              |
++----------------------------------+---------------------+---------------------+
 
 
 

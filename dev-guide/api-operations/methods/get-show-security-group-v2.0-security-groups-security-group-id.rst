@@ -12,7 +12,8 @@ Show security group
 
 Retrieves information for a specified security group.
 
-This operation returns a response body that contains the description, name, security group ID, tenant ID, and security group rules associated with the specified security group.
+This operation returns a response body that contains the description, name, security group 
+ID, tenant ID, and security group rules associated with the specified security group.
 
 
 
@@ -67,30 +68,30 @@ This table shows the body parameters for the response:
 +--------------------------------------------------+-------+--------------------+
 |Name                                              |Type   |Description         |
 +==================================================+=======+====================+
-|parameters.\ **security_group**                   |Object |The container for   |
+|**security_group**                                |Object |The container for   |
 |                                                  |       |security group      |
 |                                                  |       |details.            |
 +--------------------------------------------------+-------+--------------------+
-|parameters.security_group.\ **id**                |Uuid   |The UUID for the    |
+|security_group.\ **id**                           |Uuid   |The UUID for the    |
 |                                                  |       |security group.     |
 +--------------------------------------------------+-------+--------------------+
-|parameters.security_group.\ **name**              |String |The security group  |
+|security_group.\ **name**                         |String |The security group  |
 |                                                  |       |name.               |
 +--------------------------------------------------+-------+--------------------+
-|parameters.security_group.\ **description**       |String |The security group  |
+|security_group.\ **description**                  |String |The security group  |
 |                                                  |       |description.        |
 +--------------------------------------------------+-------+--------------------+
-|parameters.security_group.\ **tenant_id**         |Uuid   |The tenant ID of    |
+|security_group.\ **tenant_id**                    |Uuid   |The tenant ID of    |
 |                                                  |       |the security group  |
 |                                                  |       |owner.              |
 +--------------------------------------------------+-------+--------------------+
-|parameters.security_group.\                       |String |An array of rules   |
-|**security_group_rules**                          |       |in a security group.|
+|security_group.\ **security_group_rules**         |String |An array of rules   |
+|                                                  |       |in a security group.|
 +--------------------------------------------------+-------+--------------------+
-|parameters.security_group.security_group_rules.\  |Uuid   |The ID for the      |
-|**id**                                            |       |security group rule.|
+|security_group.security_group_rules.\ **id**      |Uuid   |The ID for the      |
+|                                                  |       |security group rule.|
 +--------------------------------------------------+-------+--------------------+
-|parameters.security_group.security_group_rules.\  |String |The direction (     |
+|security_group.security_group_rules.\             |String |The direction (     |
 |**direction**                                     |       |``ingress`` ). For  |
 |                                                  |       |a Cloud Servers     |
 |                                                  |       |instance, an        |
@@ -100,22 +101,22 @@ This table shows the body parameters for the response:
 |                                                  |       |incoming traffic    |
 |                                                  |       |for that instance.  |
 +--------------------------------------------------+-------+--------------------+
-|parameters.security_group.security_group_rules.\  |String |The network ether   |
+|security_group.security_group_rules.\             |String |The network ether   |
 |**ethertype**                                     |       |type, either        |
 |                                                  |       |``IPv4`` or         |
 |                                                  |       |``IPv6``.           |
 +--------------------------------------------------+-------+--------------------+
-|parameters.security_group.security_group_rules.\  |Uuid   |The security group  |
+|security_group.security_group_rules.\             |Uuid   |The security group  |
 |**security_group_id**                             |       |ID for the security |
 |                                                  |       |group with which    |
 |                                                  |       |the rule is         |
 |                                                  |       |associated.         |
 +--------------------------------------------------+-------+--------------------+
-|parameters.security_group.security_group_rules.\  |Uuid   |The tenant ID of    |
+|security_group.security_group_rules.\             |Uuid   |The tenant ID of    |
 |**tenant_id**                                     |       |the security group  |
 |                                                  |       |rule owner.         |
 +--------------------------------------------------+-------+--------------------+
-|parameters.security_group.security_group_rules.\  |Int    |The minimum port    |
+|security_group.security_group_rules.\             |Int    |The minimum port    |
 |**port_range_min**                                |       |number in the range |
 |                                                  |       |that is matched by  |
 |                                                  |       |the security group  |
@@ -136,7 +137,7 @@ This table shows the body parameters for the response:
 |                                                  |       |"null", this value  |
 |                                                  |       |must be "null".     |
 +--------------------------------------------------+-------+--------------------+
-|parameters.security_group.security_group_rules.\  |Int    |The maximum port    |
+|security_group.security_group_rules.\             |Int    |The maximum port    |
 |**port_range_max**                                |       |number in the range |
 |                                                  |       |that is matched by  |
 |                                                  |       |the security group  |
@@ -155,10 +156,10 @@ This table shows the body parameters for the response:
 |                                                  |       |"null", this value  |
 |                                                  |       |must be "null".     |
 +--------------------------------------------------+-------+--------------------+
-|parameters.security_group.security_group_rules.\  |String |The protocol. Set   |
+|security_group.security_group_rules.\             |String |The protocol. Set   |
 |**protocol**                                      |       |to null.            |
 +--------------------------------------------------+-------+--------------------+
-|parameters.security_group.security_group_rules.\  |String |The remote group    |
+|security_group.security_group_rules.\             |String |The remote group    |
 |**remote_group_id**                               |       |ID. This attribute  |
 |                                                  |       |must be set to null |
 |                                                  |       |since self-         |
@@ -166,7 +167,7 @@ This table shows the body parameters for the response:
 |                                                  |       |Security Groups are |
 |                                                  |       |not supported.      |
 +--------------------------------------------------+-------+--------------------+
-|parameters.security_group.security_group_rules.\  |String |The remote IP       |
+|security_group.security_group_rules.\             |String |The remote IP       |
 |**remote_ip_prefix**                              |       |prefix. This        |
 |                                                  |       |attribute matches   |
 |                                                  |       |the specified IP    |
@@ -174,7 +175,6 @@ This table shows the body parameters for the response:
 |                                                  |       |source IP address   |
 |                                                  |       |of the IP packet.   |
 +--------------------------------------------------+-------+--------------------+
-
 
 
 

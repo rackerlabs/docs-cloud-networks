@@ -4,7 +4,7 @@ Subnet operations
 ~~~~~~~~~~~~~~~~~
 
 This section describes the API operations for subnets. For general information about subnets, 
-see  ref `Subnets concepts <concepts-subnet>`.
+see :ref:`Subnets concepts <concepts-subnet>`.
 
 .. SUBNET OPS
 

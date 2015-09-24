@@ -12,7 +12,8 @@ Retrieve list of networks
 
 Retrieves list of networks to which the specified tenant has access.
 
-You can control which attributes are returned by using the ``fields`` query parameter. For more information, see `Filtering Requests <http://docs.rackspace.com/networks/api/v2/cn-devguide/content/section_filtering.html>`__.
+You can control which attributes are returned by using the ``fields`` query parameter. 
+For more information, see :ref:`Filtering Requests <generalapi-filtering>`.
 
 
 
@@ -56,33 +57,33 @@ This table shows the body parameters for the response:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|parameters.\ **networks** |Array                    |The array of networks.   |
+|**networks**              |Array                    |The array of networks.   |
 +--------------------------+-------------------------+-------------------------+
-|parameters.networks.\     |String                   |The network status. The  |
-|**status**                |                         |default value is         |
+|networks.\ **status**     |String                   |The network status. The  |
+|                          |                         |default value is         |
 |                          |                         |``ACTIVE`` and cannot be |
 |                          |                         |changed by the user.     |
 +--------------------------+-------------------------+-------------------------+
-|parameters.networks.\     |Dict                     |The associated subnets.  |
-|**subnets**               |                         |                         |
+|networks.\ **subnets**    |Dict                     |The associated subnets.  |
+|                          |                         |                         |
 +--------------------------+-------------------------+-------------------------+
-|parameters.networks.\     |String                   |The network name.        |
-|**name**                  |                         |                         |
+|networks.\ **name**       |String                   |The network name.        |
+|                          |                         |                         |
 +--------------------------+-------------------------+-------------------------+
-|parameters.networks.\     |Bool                     |The administrative state |
+|networks.\                |Bool                     |The administrative state |
 |**admin_state_up**        |                         |of the network. The      |
 |                          |                         |default value is         |
 |                          |                         |``true`` and cannot be   |
 |                          |                         |changed by the user.     |
 +--------------------------+-------------------------+-------------------------+
-|parameters.networks.\     |Uuid                     |The tenant ID.           |
-|**tenant_id**             |                         |                         |
+|networks.\ **tenant_id**  |Uuid                     |The tenant ID.           |
+|                          |                         |                         |
 +--------------------------+-------------------------+-------------------------+
-|parameters.networks.\     |Uuid                     |The network ID.          |
-|**id**                    |                         |                         |
+|networks.\ **id**         |Uuid                     |The network ID.          |
+|                          |                         |                         |
 +--------------------------+-------------------------+-------------------------+
-|parameters.networks.\     |Bool                     |Indicates whether this   |
-|**shared**                |                         |network is shared across |
+|networks.\ **shared**     |Bool                     |Indicates whether this   |
+|                          |                         |network is shared across |
 |                          |                         |all tenants. The default |
 |                          |                         |value is ``false`` and   |
 |                          |                         |cannot be changed by the |

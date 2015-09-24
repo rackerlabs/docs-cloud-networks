@@ -12,8 +12,8 @@ Show network
 
 Retrieves information for a specified network.
 
-You can control which attributes are returned by using the ``fields`` query parameter. For more information, see `Filtering Requests <http://docs.rackspace.com/networks/api/v2/cn-devguide/content/section_filtering.html>`__.
-
+You can control which attributes are returned by using the ``fields`` query parameter. 
+For more information, see :ref:`Filtering Requests <generalapi-filtering>`.
 
 
 This table shows the possible response codes for this operation:

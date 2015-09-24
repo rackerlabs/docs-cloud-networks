@@ -65,36 +65,37 @@ This table shows the body parameters for the response:
 +----------------------------------+---------------------+---------------------+
 |Name                              |Type                 |Description          |
 +==================================+=====================+=====================+
-|parameters.\                      |String               |An array of rules in |
-|**security_group_rule**           |                     |a security group.    |
+|**security_group_rule**           |String               |An object to contain |
+|                                  |                     |the security group   |
+|                                  |                     |rules.               |
 +----------------------------------+---------------------+---------------------+
-|parameters.security_group_rule.\  |Uuid                 |The ID for the       |
-|**id**                            |                     |security group rule. |
-+----------------------------------+---------------------+---------------------+
-|parameters.security_group_rule.\  |String               |The direction (      |
-|**direction**                     |                     |``ingress`` ). For a |
-|                                  |                     |Cloud Servers        |
-|                                  |                     |instance, an         |
-|                                  |                     |``ingress`` security |
+|security_group_rule.\             |String               |The direction in     |
+|**direction**                     |                     |which the security   |
 |                                  |                     |group rule is        |
-|                                  |                     |applied to incoming  |
+|                                  |                     |applied (            |
+|                                  |                     |``ingress`` ). For a |
+|                                  |                     |Cloud Servers        |
+|                                  |                     |instance, an ingress |
+|                                  |                     |security group rule  |
+|                                  |                     |is applied to        |
+|                                  |                     |incoming (ingress)   |
 |                                  |                     |traffic for that     |
 |                                  |                     |instance.            |
 +----------------------------------+---------------------+---------------------+
-|parameters.security_group_rule.\  |String               |The network ether    |
+|security_group_rule.\             |String               |The network ether    |
 |**ethertype**                     |                     |type, either         |
-|                                  |                     |``IPv4`` or ``IPv6``.|
+|                                  |                     |``IPv4`` or          |
+|                                  |                     |``IPv6``. Addresses  |
+|                                  |                     |represented in CIDR  |
+|                                  |                     |must match the       |
+|                                  |                     |ingress rules.       |
 +----------------------------------+---------------------+---------------------+
-|parameters.security_group_rule.\  |Uuid                 |The security group   |
-|**security_group_id**             |                     |ID for the security  |
-|                                  |                     |group with which the |
-|                                  |                     |rule is associated.  |
+|security_group_rule.\             |Uuid                 |The ID of the        |
+|**security_group_id**             |                     |security group to    |
+|                                  |                     |associate with this  |
+|                                  |                     |security group rule. |
 +----------------------------------+---------------------+---------------------+
-|parameters.security_group_rule.\  |Uuid                 |The tenant ID of the |
-|**tenant_id**                     |                     |security group rule  |
-|                                  |                     |owner.               |
-+----------------------------------+---------------------+---------------------+
-|parameters.security_group_rule.\  |Int                  |The minimum port     |
+|security_group_rule.\             |Int                  |The minimum port     |
 |**port_range_min**                |                     |number in the range  |
 |                                  |                     |that is matched by   |
 |                                  |                     |the security group   |
@@ -114,7 +115,7 @@ This table shows the body parameters for the response:
 |                                  |                     |is "null", this      |
 |                                  |                     |value must be "null".|
 +----------------------------------+---------------------+---------------------+
-|parameters.security_group_rule.\  |Int                  |The maximum port     |
+|security_group_rule.\             |Int                  |The maximum port     |
 |**port_range_max**                |                     |number in the range  |
 |                                  |                     |that is matched by   |
 |                                  |                     |the security group   |
@@ -132,18 +133,28 @@ This table shows the body parameters for the response:
 |                                  |                     |is "null", this      |
 |                                  |                     |value must be "null".|
 +----------------------------------+---------------------+---------------------+
-|parameters.security_group_rule.\  |String               |The protocol. Set to |
-|**protocol**                      |                     |null.                |
+|security_group_rule.\             |String               |The protocol that is |
+|**protocol**                      |                     |matched by the       |
+|                                  |                     |security group rule. |
+|                                  |                     |Valid values are     |
+|                                  |                     |``null``, ``tcp``,   |
+|                                  |                     |``udp``, and         |
+|                                  |                     |``icmp``.            |
 +----------------------------------+---------------------+---------------------+
-|parameters.security_group_rule.\  |String               |The remote group ID. |
-|**remote_group_id**               |                     |This attribute must  |
-|                                  |                     |be set to null since |
+|security_group_rule.\             |Uuid                 |The remote group ID  |
+|**remote_group_id**               |                     |to be associated     |
+|                                  |                     |with this security   |
+|                                  |                     |group rule. This     |
+|                                  |                     |attribute must be    |
+|                                  |                     |set to null since    |
 |                                  |                     |self-referential     |
 |                                  |                     |Security Groups are  |
 |                                  |                     |not supported.       |
 +----------------------------------+---------------------+---------------------+
-|parameters.security_group_rule.\  |String               |The remote IP        |
-|**remote_ip_prefix**              |                     |prefix. This         |
+|security_group_rule.\             |Uuid                 |The remote IP prefix |
+|**remote_ip_prefix**              |                     |to be associated     |
+|                                  |                     |with this security   |
+|                                  |                     |group rule. This     |
 |                                  |                     |attribute matches    |
 |                                  |                     |the specified IP     |
 |                                  |                     |prefix as the source |

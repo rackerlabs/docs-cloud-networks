@@ -49,11 +49,11 @@ This table shows the body parameters for the request:
 +----------------------------------+---------------------+---------------------+
 |Name                              |Type                 |Description          |
 +==================================+=====================+=====================+
-|**security_group_rule**           |String *(Required)*  |An object to contain |
+|**security_group_rule**           |String               |An object to contain |
 |                                  |                     |the security group   |
 |                                  |                     |rules.               |
 +----------------------------------+---------------------+---------------------+
-|security_group_rule.\             |String *(Required)*  |The direction in     |
+|security_group_rule.\             |String               |The direction in     |
 |**direction**                     |                     |which the security   |
 |                                  |                     |group rule is        |
 |                                  |                     |applied (            |
@@ -66,7 +66,7 @@ This table shows the body parameters for the request:
 |                                  |                     |traffic for that     |
 |                                  |                     |instance.            |
 +----------------------------------+---------------------+---------------------+
-|security_group_rule.\             |String *(Required)*  |The network ether    |
+|security_group_rule.\             |String               |The network ether    |
 |**ethertype**                     |                     |type, either         |
 |                                  |                     |``IPv4`` or          |
 |                                  |                     |``IPv6``. Addresses  |
@@ -74,12 +74,12 @@ This table shows the body parameters for the request:
 |                                  |                     |must match the       |
 |                                  |                     |ingress rules.       |
 +----------------------------------+---------------------+---------------------+
-|security_group_rule.\             |Uuid *(Required)*    |The ID of the        |
+|security_group_rule.\             |Uuid                 |The ID of the        |
 |**security_group_id**             |                     |security group to    |
 |                                  |                     |associate with this  |
 |                                  |                     |security group rule. |
 +----------------------------------+---------------------+---------------------+
-|security_group_rule.\             |Int *(Optional)*     |The minimum port     |
+|security_group_rule.\             |Int                  |The minimum port     |
 |**port_range_min**                |                     |number in the range  |
 |                                  |                     |that is matched by   |
 |                                  |                     |the security group   |
@@ -99,7 +99,7 @@ This table shows the body parameters for the request:
 |                                  |                     |is "null", this      |
 |                                  |                     |value must be "null".|
 +----------------------------------+---------------------+---------------------+
-|security_group_rule.\             |Int *(Optional)*     |The maximum port     |
+|security_group_rule.\             |Int                  |The maximum port     |
 |**port_range_max**                |                     |number in the range  |
 |                                  |                     |that is matched by   |
 |                                  |                     |the security group   |
@@ -117,7 +117,7 @@ This table shows the body parameters for the request:
 |                                  |                     |is "null", this      |
 |                                  |                     |value must be "null".|
 +----------------------------------+---------------------+---------------------+
-|security_group_rule.\             |String *(Optional)*  |The protocol that is |
+|security_group_rule.\             |String               |The protocol that is |
 |**protocol**                      |                     |matched by the       |
 |                                  |                     |security group rule. |
 |                                  |                     |Valid values are     |
@@ -125,7 +125,7 @@ This table shows the body parameters for the request:
 |                                  |                     |``udp``, and         |
 |                                  |                     |``icmp``.            |
 +----------------------------------+---------------------+---------------------+
-|security_group_rule.\             |Uuid *(Optional)*    |The remote group ID  |
+|security_group_rule.\             |Uuid                 |The remote group ID  |
 |**remote_group_id**               |                     |to be associated     |
 |                                  |                     |with this security   |
 |                                  |                     |group rule. This     |
@@ -135,7 +135,7 @@ This table shows the body parameters for the request:
 |                                  |                     |Security Groups are  |
 |                                  |                     |not supported.       |
 +----------------------------------+---------------------+---------------------+
-|security_group_rule.\             |Uuid *(Optional)*    |The remote IP prefix |
+|security_group_rule.\             |Uuid                 |The remote IP prefix |
 |**remote_ip_prefix**              |                     |to be associated     |
 |                                  |                     |with this security   |
 |                                  |                     |group rule. This     |

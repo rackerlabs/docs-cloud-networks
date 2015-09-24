@@ -6,7 +6,7 @@ Role Based Access Control (RBAC) restricts access to the capabilities of Rackspa
 services, including the Cloud Networks API, to authorized users only. RBAC enables 
 Rackspace Cloud customers to specify which account users of their Cloud account have access 
 to which Cloud Networks API service capabilities, based on roles defined by Rackspace 
-(see Cloud Servers Product Roles and Permissions). The permissions to perform certain 
+(see :ref:`Roles Available for Cloud Networks <rbac-roles>`). The permissions to perform certain 
 operations in Cloud Networks API – create, read, update, delete – are assigned to specific 
 roles. The account owner user assigns these roles, either global (multiproduct) or 
 product-specific (for example, Cloud Networks), to account users.
@@ -34,11 +34,13 @@ following tasks:
     The account owner (identity:user-admin) role cannot hold any additional roles because 
     it already has full access to all capabilities.
 
+.. _rbac-roles:
+
 Roles Available for Cloud Networks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Three roles (observer, creator, and admin) can be used to access the Cloud Networks API 
-specifically. The following table describes these roles and their permissions.
+specifically. The following list describes these roles and their permissions.
 
 **Cloud Networks Product Roles and Permissions**
 
@@ -53,7 +55,7 @@ specifically. The following table describes these roles and their permissions.
 
 Additionally, two multiproduct roles apply to all products. Users with multiproduct roles 
 inherit access to future products when those products become RBAC-enabled. The following 
-table describes these roles and their permissions.
+list describes these roles and their permissions.
 
 **Multiproduct (Global) Roles and Permissions**
 
@@ -96,6 +98,6 @@ RBAC Permissions Cross-reference to Cloud Networks API Operations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 API operations for Cloud Networks may or may not be available to all roles. To see which 
-operations are permitted to invoke which calls, please review `the Knowledge Center 
-article <http://www.rackspace.com/knowledge_center/article/permissions-matrix-for-next-generation-cloud-servers>`_.
+operations are permitted to invoke which calls, please review the `Permissions Matrix Knowledge Center 
+article <http://www.rackspace.com/knowledge_center/article/permissions-matrix-for-cloud-networks>`_.
 

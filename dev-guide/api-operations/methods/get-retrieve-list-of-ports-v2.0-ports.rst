@@ -12,7 +12,9 @@ Retrieve list of ports
 
 Retrieves list of ports to which the tenant has access.
 
-Default policy settings for this operation return those subnets that are owned by the tenant who submits the request. You can control which attributes are returned by using the ``fields`` query parameter.
+Default policy settings for this operation return those subnets that are owned by the 
+tenant who submits the request. You can control which attributes are returned by using 
+the ``fields`` query parameter. For more information, see :ref:`Filtering Requests <generalapi-filtering>`.
 
 
 
@@ -56,53 +58,53 @@ This table shows the body parameters for the response:
 +------------------------------+-----------------------+-----------------------+
 |Name                          |Type                   |Description            |
 +==============================+=======================+=======================+
-|parameters.\ **ports**        |Array                  |The array of ports.    |
+|**ports**                     |Array                  |The array of ports.    |
 +------------------------------+-----------------------+-----------------------+
-|parameters.ports.\ **status** |String                 |The port status (      |
+|ports.\ **status**            |String                 |The port status (      |
 |                              |                       |``ACTIVE`` or ``DOWN`` |
 |                              |                       |).                     |
 +------------------------------+-----------------------+-----------------------+
-|parameters.ports.\ **name**   |String                 |The port name.         |
+|ports.\ **name**              |String                 |The port name.         |
 +------------------------------+-----------------------+-----------------------+
-|parameters.ports.\            |Bool                   |The administrative     |
-|**admin_state_up**            |                       |state of the network.  |
+|ports.\  **admin_state_up**   |Bool                   |The administrative     |
+|                              |                       |state of the network.  |
 |                              |                       |The default value is   |
 |                              |                       |``true`` and cannot be |
 |                              |                       |changed by the user.   |
 +------------------------------+-----------------------+-----------------------+
-|parameters.ports.\            |Uuid                   |The ID of the attached |
-|**network_id**                |                       |network.               |
+|ports.\ **network_id**        |Uuid                   |The ID of the attached |
+|                              |                       |network.               |
 +------------------------------+-----------------------+-----------------------+
-|parameters.ports.\            |Uuid                   |An array of security   |
-|**security_groups**           |                       |group IDs attached to  |
+|ports.\ **security_groups**   |Uuid                   |An array of security   |
+|                              |                       |group IDs attached to  |
 |                              |                       |this port.             |
 +------------------------------+-----------------------+-----------------------+
-|parameters.ports.\            |Uuid                   |The ID of the tenant   |
-|**tenant_id**                 |                       |who owns the port.     |
+|ports.\ **tenant_id**         |Uuid                   |The ID of the tenant   |
+|                              |                       |who owns the port.     |
 +------------------------------+-----------------------+-----------------------+
-|parameters.ports.\            |String                 |The ID of the entity   |
-|**device_owner**              |                       |that uses this port -  |
+|ports.\ **device_owner**      |String                 |The ID of the entity   |
+|                              |                       |that uses this port -  |
 |                              |                       |for example, a DHCP    |
 |                              |                       |agent.                 |
 +------------------------------+-----------------------+-----------------------+
-|parameters.ports.\            |String                 |The MAC address of the |
-|**mac_address**               |                       |port.                  |
+|ports.\ **mac_address**       |String                 |The MAC address of the |
+|                              |                       |port.                  |
 +------------------------------+-----------------------+-----------------------+
-|parameters.ports.\            |Array                  |Array of fixed IP      |
-|**fixed_ips**                 |                       |address objects.       |
+|ports.\  **fixed_ips**        |Array                  |Array of fixed IP      |
+|                              |                       |address objects.       |
 +------------------------------+-----------------------+-----------------------+
-|parameters.ports.fixed_ips.\  |Uuid                   |The subnet ID for the  |
+|ports.fixed_ips.\             |Uuid                   |The subnet ID for the  |
 |**subnet_id**                 |                       |fixed IP address for a |
 |                              |                       |port.                  |
 +------------------------------+-----------------------+-----------------------+
-|parameters.ports.fixed_ips.\  |String                 |The IP address for the |
+|ports.fixed_ips.\             |String                 |The IP address for the |
 |**ip_address**                |                       |fixed IP address for a |
 |                              |                       |port.                  |
 +------------------------------+-----------------------+-----------------------+
-|parameters.ports.\ **id**     |Uuid                   |The ID of the port.    |
+|ports.\ **id**                |Uuid                   |The ID of the port.    |
 +------------------------------+-----------------------+-----------------------+
-|parameters.ports.\            |Uuid                   |The ID of the device   |
-|**device_id**                 |                       |that uses this port -  |
+|ports.\  **device_id**        |Uuid                   |The ID of the device   |
+|                              |                       |that uses this port -  |
 |                              |                       |for example, a virtual |
 |                              |                       |server.                |
 +------------------------------+-----------------------+-----------------------+

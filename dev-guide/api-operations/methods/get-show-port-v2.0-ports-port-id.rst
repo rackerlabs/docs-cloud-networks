@@ -12,8 +12,8 @@ Show port
 
 Retrieves information for a specified port.
 
-You can control which attributes are returned by using the ``fields`` query parameter. For information, see `Filtering Requests <http://docs.rackspace.com/networks/api/v2/cn-devguide/content/section_filtering.html>`__.
-
+You can control which attributes are returned by using the ``fields`` query parameter. 
+For more information, see :ref:`Filtering Requests <generalapi-filtering>`.
 
 
 This table shows the possible response codes for this operation:
@@ -63,59 +63,60 @@ Response
 
 This table shows the body parameters for the response:
 
-+-----------------------------+------------------------+-----------------------+
-|Name                         |Type                    |Description            |
-+=============================+========================+=======================+
-|parameters.\ **port**        |Object                  |The container for the  |
-|                             |                        |port details.          |
-+-----------------------------+------------------------+-----------------------+
-|parameters.port.\ **status** |String                  |The port status (      |
-|                             |                        |``ACTIVE`` or ``DOWN`` |
-|                             |                        |).                     |
-+-----------------------------+------------------------+-----------------------+
-|parameters.port.\ **name**   |String                  |The port name.         |
-+-----------------------------+------------------------+-----------------------+
-|parameters.port.\            |Bool                    |The administrative     |
-|**admin_state_up**           |                        |state of the network.  |
-|                             |                        |The default value is   |
-|                             |                        |``true`` and cannot be |
-|                             |                        |changed by the user.   |
-+-----------------------------+------------------------+-----------------------+
-|parameters.port.\            |Uuid                    |The ID of the attached |
-|**network_id**               |                        |network.               |
-+-----------------------------+------------------------+-----------------------+
-|parameters.port.\            |Uuid                    |An array of security   |
-|**security_groups**          |                        |group IDs attached to  |
-|                             |                        |this port.             |
-+-----------------------------+------------------------+-----------------------+
-|parameters.port.\            |Uuid                    |The ID of the tenant   |
-|**tenant_id**                |                        |who owns the port.     |
-+-----------------------------+------------------------+-----------------------+
-|parameters.port.\            |String                  |The ID of the entity   |
-|**device_owner**             |                        |that uses this port -  |
-|                             |                        |for example, a DHCP    |
-|                             |                        |agent.                 |
-+-----------------------------+------------------------+-----------------------+
-|parameters.port.\            |String                  |The MAC address of the |
-|**mac_address**              |                        |port.                  |
-+-----------------------------+------------------------+-----------------------+
-|parameters.port.\            |Uuid                    |Array of fixed IP      |
-|**fixed_ips**                |                        |address objects.       |
-+-----------------------------+------------------------+-----------------------+
-|parameters.port.fixed_ips.\  |Uuid                    |The subnet ID for the  |
-|**subnet_id**                |                        |fixed IP address for a |
-|                             |                        |port.                  |
-+-----------------------------+------------------------+-----------------------+
-|parameters.port.fixed_ips.\  |String                  |The fixed IP address   |
-|**ip_address**               |                        |for a port.            |
-+-----------------------------+------------------------+-----------------------+
-|parameters.port.\ **id**     |Uuid                    |The ID of the port.    |
-+-----------------------------+------------------------+-----------------------+
-|parameters.port.\            |Uuid                    |The ID of the device   |
-|**device_id**                |                        |that uses this port -  |
-|                             |                        |for example, a virtual |
-|                             |                        |server.                |
-+-----------------------------+------------------------+-----------------------+
++------------------------------+-----------------------+-----------------------+
+|Name                          |Type                   |Description            |
++==============================+=======================+=======================+
+|**port**                      |Object                 |The container of port  |
+|                              |                       |information.           |
++------------------------------+-----------------------+-----------------------+
+|port.\ **status**             |String                 |The port status (      |
+|                              |                       |``ACTIVE`` or ``DOWN`` |
+|                              |                       |).                     |
++------------------------------+-----------------------+-----------------------+
+|port.\ **name**               |String                 |The port name.         |
++------------------------------+-----------------------+-----------------------+
+|port.\  **admin_state_up**    |Bool                   |The administrative     |
+|                              |                       |state of the network.  |
+|                              |                       |The default value is   |
+|                              |                       |``true`` and cannot be |
+|                              |                       |changed by the user.   |
++------------------------------+-----------------------+-----------------------+
+|port.\ **network_id**         |Uuid                   |The ID of the attached |
+|                              |                       |network.               |
++------------------------------+-----------------------+-----------------------+
+|port.\ **security_groups**    |Uuid                   |An array of security   |
+|                              |                       |group IDs attached to  |
+|                              |                       |this port.             |
++------------------------------+-----------------------+-----------------------+
+|port.\ **tenant_id**          |Uuid                   |The ID of the tenant   |
+|                              |                       |who owns the port.     |
++------------------------------+-----------------------+-----------------------+
+|port.\ **device_owner**       |String                 |The ID of the entity   |
+|                              |                       |that uses this port -  |
+|                              |                       |for example, a DHCP    |
+|                              |                       |agent.                 |
++------------------------------+-----------------------+-----------------------+
+|port.\ **mac_address**        |String                 |The MAC address of the |
+|                              |                       |port.                  |
++------------------------------+-----------------------+-----------------------+
+|port.\  **fixed_ips**         |Array                  |Array of fixed IP      |
+|                              |                       |address objects.       |
++------------------------------+-----------------------+-----------------------+
+|port.fixed_ips.\              |Uuid                   |The subnet ID for the  |
+|**subnet_id**                 |                       |fixed IP address for a |
+|                              |                       |port.                  |
++------------------------------+-----------------------+-----------------------+
+|port.fixed_ips.\              |String                 |The IP address for the |
+|**ip_address**                |                       |fixed IP address for a |
+|                              |                       |port.                  |
++------------------------------+-----------------------+-----------------------+
+|port.\ **id**                 |Uuid                   |The ID of the port.    |
++------------------------------+-----------------------+-----------------------+
+|port.\  **device_id**         |Uuid                   |The ID of the device   |
+|                              |                       |that uses this port -  |
+|                              |                       |for example, a virtual |
+|                              |                       |server.                |
++------------------------------+-----------------------+-----------------------+
 
 
 

@@ -1,4 +1,4 @@
-.. _cn-dg-overview-neutronvnova:
+.. _neutron-vs-nova:
 
 =======================================
 Networking: Neutron versus Nova-Network

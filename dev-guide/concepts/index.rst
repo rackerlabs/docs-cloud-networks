@@ -14,4 +14,3 @@ API v2 supports JSON request and response formats.
    concepts-subnet
    concepts-port
    concepts-security-groups
-   concepts-shared-ips

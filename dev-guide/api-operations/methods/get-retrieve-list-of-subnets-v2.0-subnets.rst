@@ -12,7 +12,8 @@ Retrieve list of subnets
 
 Retrieves list of subnets to which the specified tenant has access.
 
-You can control which attributes are returned by using the ``fields`` query parameter. For more information, see `Filtering Requests <http://docs.rackspace.com/networks/api/v2/cn-devguide/content/section_filtering.html>`__.
+You can control which attributes are returned by using the ``fields`` query parameter. 
+For more information, see :ref:`Filtering Requests <generalapi-filtering>`.
 
 
 
@@ -56,58 +57,58 @@ This table shows the body parameters for the response:
 +---------------------------------------+-------------------+------------------+
 |Name                                   |Type               |Description       |
 +=======================================+===================+==================+
-|parameters.\ **subnets**               |Array              |The array of      |
+|**subnets**                            |Array              |The array of      |
 |                                       |                   |subnets.          |
 +---------------------------------------+-------------------+------------------+
-|parameters.subnets.\ **name**          |String             |The subnet name.  |
+|subnets.\ **name**                     |String             |The subnet name.  |
 +---------------------------------------+-------------------+------------------+
-|parameters.subnets.\ **enable_dhcp**   |Boolean            |Indicates if DHCP |
+|subnets.\ **enable_dhcp**              |Boolean            |Indicates if DHCP |
 |                                       |                   |for the subnet is |
 |                                       |                   |enabled. This     |
 |                                       |                   |value is          |
 |                                       |                   |``false`` and     |
 |                                       |                   |cannot be changed.|
 +---------------------------------------+-------------------+------------------+
-|parameters.subnets.\ **network_id**    |Uuid               |The ID of the     |
+|subnets.\ **network_id**               |Uuid               |The ID of the     |
 |                                       |                   |attached network. |
 +---------------------------------------+-------------------+------------------+
-|parameters.subnets.\ **tenant_id**     |Uuid               |The ID of the     |
+|subnets.\ **tenant_id**                |Uuid               |The ID of the     |
 |                                       |                   |tenant who owns   |
 |                                       |                   |the subnet.       |
 +---------------------------------------+-------------------+------------------+
-|parameters.subnets.\                   |Array              |The array of dns  |
-|**dns_nameservers**                    |                   |name servers for  |
+|subnets.\ **dns_nameservers**          |Array              |The array of dns  |
+|                                       |                   |name servers for  |
 |                                       |                   |the subnet.       |
 +---------------------------------------+-------------------+------------------+
-|parameters.subnets.\                   |Array              |The array of      |
-|**allocation_pools**                   |                   |allocation pool   |
+|subnets.\ **allocation_pools**         |Array              |The array of      |
+|                                       |                   |allocation pool   |
 |                                       |                   |objects.          |
 +---------------------------------------+-------------------+------------------+
-|parameters.subnets.allocation_pools.\  |String             |The ending IP     |
-|**end**                                |                   |address of the    |
+|subnets.allocation_pools.\ **end**     |String             |The ending IP     |
+|                                       |                   |address of the    |
 |                                       |                   |subnet allocation |
 |                                       |                   |pool.             |
 +---------------------------------------+-------------------+------------------+
-|parameters.subnets.allocation_pools.\  |String             |The starting IP   |
-|**start**                              |                   |address of the    |
+|subnets.allocation_pools.\ **start**   |String             |The starting IP   |
+|                                       |                   |address of the    |
 |                                       |                   |subnet allocation |
 |                                       |                   |pool.             |
 +---------------------------------------+-------------------+------------------+
-|parameters.subnets.\ **host_routes**   |Array              |The array of host |
+|subnets.\ **host_routes**              |Array              |The array of host |
 |                                       |                   |routes for the    |
 |                                       |                   |subnet.           |
 +---------------------------------------+-------------------+------------------+
-|parameters.subnets.\ **ip_version**    |String             |The subnet IP     |
+|subnets.\ **ip_version**               |String             |The subnet IP     |
 |                                       |                   |version, which is |
 |                                       |                   |``4`` or ``6``.   |
 +---------------------------------------+-------------------+------------------+
-|parameters.subnets.\ **gateway_ip**    |String             |The gateway IP    |
+|subnets.\ **gateway_ip**               |String             |The gateway IP    |
 |                                       |                   |address.          |
 +---------------------------------------+-------------------+------------------+
-|parameters.subnets.\ **cidr**          |String             |The CIDR for the  |
+|subnets.\ **cidr**                     |String             |The CIDR for the  |
 |                                       |                   |subnet.           |
 +---------------------------------------+-------------------+------------------+
-|parameters.subnets.\ **id**            |Uuid               |The ID of the     |
+|subnets.\ **id**                       |Uuid               |The ID of the     |
 |                                       |                   |subnet.           |
 +---------------------------------------+-------------------+------------------+
 

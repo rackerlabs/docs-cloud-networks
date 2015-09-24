@@ -1,4 +1,4 @@
-.. _cn-dg-generalapi-filtering:
+.. _generalapi-filtering:
 
 ==================
 Filtering requests

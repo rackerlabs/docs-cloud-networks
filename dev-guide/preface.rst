@@ -15,11 +15,10 @@ as **Account #**.
 
 Cloud Networks was originally released using the Cloud Servers the Nova-Network API, whose 
 operations are detailed in `Network extension`_ of the *Next Generation Cloud Servers Developers Guide*. 
-Now Cloud Networks has been released using the Neutron API 
-(see `API operations <api_operations_neutron.html>`_). We recommend that you use the 
-Neutron API operations even though the Nova-Network API operations still work. For information 
-that helps you determine which method is better for you, see `Networking: neutron versus 
-nova-network <section_nova_v_neutron.html>`__.
+Now Rackspace Cloud Networks has been released using the Neutron API, detailed in this guide. 
+We recommend that you use the Neutron API operations even though the Nova-Network API 
+operations still work. For information that helps you determine which method is better for 
+you, see :ref:`Networking: neutron versus nova-network <neutron-vs-nova>`.
 
 We welcome `feedback, comments, and bug reports`_.
 

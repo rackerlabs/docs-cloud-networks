@@ -4,10 +4,11 @@
 Shared IP Addresses
 =========================
 
-#   .. important::
-#      The shared IP address API is currently in Limited Availability. It is available only to 
-#      Managed Infrastructure customers and not to RackConnect or Managed Operations customers. 
-#      To use this feature, contact Rackspace Support.
+.. COMMENTS
+   important
+   The shared IP address API is currently in Limited Availability. It is available only to 
+   Managed Infrastructure customers and not to RackConnect or Managed Operations customers. 
+   To use this feature, contact Rackspace Support.
 
 A shared IP address is a special case where an additional IP address is shared between 2 or more virtual machines 
 (or a virtual machine cluster) to facilitate fail-over in a redundant configuration.

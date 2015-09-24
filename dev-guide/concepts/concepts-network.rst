@@ -1,4 +1,4 @@
-.. concepts-network:
+.. _concepts-network:
 
 ================
 Network concepts
