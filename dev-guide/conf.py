@@ -45,6 +45,10 @@ source_suffix = '.rst'
 # The master toctree document.
 master_doc = 'index'
 
+# The builder to use when running via the deconst preparer
+# builder = 'deconst-serial'
+builder = 'deconst-single'
+
 # General information about the project.
 project = u'Rackspace Developer Portal'
 copyright = u'2015, Rackspace'
