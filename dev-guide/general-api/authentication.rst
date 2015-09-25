@@ -1,4 +1,4 @@
-.. _cn-dg-generalapi-auth:
+.. _generalapi-auth:
 
 ============================
 Get the authentication token
@@ -22,7 +22,7 @@ Client Developer Guide API v2.0`_.
 
 .. _Cloud Identity Client Developer Guide API v2.0: http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/index.html
 
-.. _cn-dg-generalapi-auth-curl:
+.. _generalapi-auth-curl:
 
 Authenticate with cURL
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -74,9 +74,6 @@ the **API Key** field.
               -d '{"auth":{"RAX-KSKEY:apiKeyCredentials":{"username":"yourUserName", "apiKey":"yourApiKey"}}}' \
               -H "Content-Type: application/json" | python -m json.tool
 
-   ..  note::
-
-        For information about the json.tool, see :ref:`More about json.tool <cn-dg-generalapi-curl-json>`.
 
    In response to valid credentials, your request returns an authentication token and a 
    service catalog with the endpoints that you need to request services.
@@ -105,23 +102,38 @@ the **API Key** field.
                    {
                        "endpoints": [
                            {
-                               "publicURL": "https://ord.images.api.rackspacecloud.com/v2",
-                               "region": "ORD",
-                               "tenantId": "010101"
+                                "region": "IAD",
+                                "tenantId": "820712",
+                                "publicURL": "https://iad.networks.api.rackspacecloud.com/v2.0"
                            },
                            {
-                               "publicURL": "https://hkg.images.api.rackspacecloud.com/v2",
-                               "region": "HKG",
-                               "tenantId": "010101"
+                                "region": "LON",
+                                "tenantId": "820712",
+                                "publicURL": "https://lon.networks.api.rackspacecloud.com/v2.0"
                            },
                            {
-                               "publicURL": "https://dfw.images.api.rackspacecloud.com/v2",
+                                "region": "ORD",
+                                "tenantId": "820712",
+                                "publicURL": "https://ord.networks.api.rackspacecloud.com/v2.0"
+                           },
+                           {
+                               "region": "SYD",
+                               "tenantId": "820712",
+                               "publicURL": "https://syd.networks.api.rackspacecloud.com/v2.0"
+                           },
+                           {
                                "region": "DFW",
-                               "tenantId": "010101"
+                               "tenantId": "820712",
+                               "publicURL": "https://dfw.networks.api.rackspacecloud.com/v2.0"
+                           },
+                           {
+                               "region": "HKG",
+                               "tenantId": "820712",
+                               "publicURL": "https://hkg.networks.api.rackspacecloud.com/v2.0"
                            }
                        ],
-                       "name": "cloudImages",
-                       "type": "image"
+                       "name": "cloudNetworks",
+                       "type": "network"
                    },
                    {
                        "endpoints": [ 

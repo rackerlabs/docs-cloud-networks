@@ -4,9 +4,7 @@
 Cloud Networks - Neutron API v2
 ===============================
 
-
-
-.. toctree::
+.. toctree:: :hidden:
    :maxdepth: 2
 
    preface

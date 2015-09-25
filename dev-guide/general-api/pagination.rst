@@ -15,7 +15,7 @@ For example, the following request returns up to 100 pages, starting with the it
     ?limit=100&marker=1234&page_reverse=False
 
 The ``marker`` parameter is the ID of the last item in the previous list. The ``limit`` 
-parameter sets the page size. The `page_reverse` parameter sets the page direction. These 
+parameter sets the page size. The ``page_reverse`` parameter sets the page direction. These 
 parameters are optional. If the client requests a limit beyond the maximum limit configured 
 by the deployment, the server returns the number of items equal to the maximum limit.
 

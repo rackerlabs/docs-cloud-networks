@@ -17,6 +17,7 @@ The API v2 supports JSON request and response formats.
    
    general-api-info
    authentication
+   request-response-types
    role-based-access-control
    how-curl-commands-work
    filtering-requests
