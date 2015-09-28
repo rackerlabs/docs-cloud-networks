@@ -1,8 +1,8 @@
 .. _cn-dg-preface:
 
-===============================
-Cloud Networks - Neutron API v2
-===============================
+===============
+About the API
+===============
 
 Rackspace Cloud Networks enables you to create isolated networks and provision server 
 instances with Rackspace networks or the isolated networks that you created.
@@ -47,18 +47,21 @@ account and access to Cloud Networks. You should also be familiar with the follo
 
 .. _cn-dg-preface-pricing:
 
-Pricing and service level
-~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Cloud Networks is part of the Rackspace Cloud and your use through the API is billed 
+Pricing and terms of service
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Cloud Networks is part of the Rackspace Cloud. and your use through the API is billed 
 according to the `pricing schedule for Cloud Servers`_.
 
-The `Service Level Agreement`_ (SLA) for Cloud Networks is available as part of Cloud Servers.
+The service level agreement (SLA) for Rackspace Cloud Services is included in the `Rackspace Cloud SLA`_.
+
+The terms of service are part of the `Rackspace Cloud Terms of Service`_. Periodically 
+review these terms because they can be updated any time.
 
 .. _pricing schedule for Cloud Servers: http://www.rackspace.com/cloud/servers/pricing/
-.. _Service Level Agreement: http://www.rackspace.com/cloud/servers/service-levels/
-
-.. _cn-dg-preface-resources:
+.. _Rackspace Cloud SLA: http://www.rackspace.com/information/legal/cloud/sla
+.. _Rackspace Cloud Terms of Service: http://www.rackspace.com/information/legal/cloud/tos
 
 Resources
 ~~~~~~~~~

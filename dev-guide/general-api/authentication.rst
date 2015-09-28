@@ -197,8 +197,7 @@ the **API Key** field.
    **Endpoints to request Rackspace Cloud services**. Appears in the
    ``endpoints`` element in the ``serviceCatalog`` element.
 
-   - Endpoint information includes the public URL, which is the endpoint that
-   	 you use to access the service, as well as region, tenant ID, and version information.
+   - Endpoint information includes the public URL, which is the endpoint that you use to access the service, as well as region, tenant ID, and version information.
    	 
    	 .. note:: To help you decide which regionalized endpoint to use, read about `special considerations <http://www.rackspace.com/knowledge_center/article/about-regions>`_ for choosing a data center.
 
