@@ -15,7 +15,6 @@ The API v2 supports JSON request and response formats.
 .. toctree::
    :maxdepth: 2
    
-   general-api-info
    authentication
    request-response-types
    role-based-access-control
