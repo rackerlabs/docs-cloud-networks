@@ -558,9 +558,9 @@
     </section>
 
     <!-- Shared IPs -->
-    <section xml:id="conceptSharedIPs">
+<!--    <section xml:id="conceptSharedIPs">
         <title>Sharing IP Addresses</title>
-        <!--availwarn-->
+        <!-\-availwarn-\->
         <important>
             <para>The Shared IP Address API is currently in Early Access. It is available for Managed Infrastructure
                 customers and Managed Operations customers. It is not available for RackConnect customers. To use
@@ -595,8 +595,7 @@
                 servers. At another moment, all 8 may need to be assigned to just one of the servers. The cluster may decide
                 to move 1 or more of the shared IP addresses to another server in the cluster at any time.</para>
         </section>
-    </section>
-
+    </section>-->
     <!-- Layer 3 Router -->
     <!--<section xml:id="conceptRouter">
         <title>Router</title>

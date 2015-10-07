@@ -35,18 +35,18 @@
                         </mediaobject>
                 </figure></para>
 
-        <!--<para>The sections are also organized by example type. To simplify your path through this chapter, decide whether you
-                prefer neutron-client or cURL examples.</para>-->
+        <para>The sections are also organized by example type. To simplify your path through this chapter, decide whether you
+                prefer client (nova and neutron) or cURL examples.</para>
         <sidebar>
-                <para><emphasis role="bold">Next step:</emphasis> Choose <!--one of--> the following method<!--s-->:<itemizedlist>
-                                <!--<listitem>
-                                        <para><link xlink:href="cfn_neutron_neutron.html">Share IP address with neutron client</link></para>
-                                </listitem>-->
+                <para><emphasis role="bold">Next step:</emphasis> Choose one of the following methods:<itemizedlist>
+                                <listitem>
+                                        <para><link xlink:href="si_neutron_neutron.html">Share IP address with nova and neutron client</link></para>
+                                </listitem>
                                 <listitem>
                                         <para><link xlink:href="si_neutron_curl.html">Share IP address with cURL</link></para>
                                 </listitem>
                         </itemizedlist></para>
         </sidebar>
-        <!--<xi:include href="si_neutron_neutron.xml"/>-->
+        <xi:include href="si_neutron_neutron.xml"/>
         <xi:include href="si_neutron_curl.xml"/>
 </chapter>

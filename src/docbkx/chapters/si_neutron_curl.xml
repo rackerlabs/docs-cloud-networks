@@ -177,8 +177,8 @@
         <procedure>
             <title>To verify servers share the same <literal>publicIPZoneId</literal></title>
             <step>
-                <para>Issue the following cURL command twice, once for each server id, substituting your own values for
-                    server A and server B for the ones shown. This example is for server B.
+                <para>You have already run this command for server A and noted the <literal>RAX-PUBLIC-IP-ZONE-ID:publicIPZoneId</literal>.
+                    Now, issue the following cURL command, substituting your own Server B id for the server id in the command.
                     <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
                             <prompt>$</prompt> curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/servers/1a861bf7-2a5e-40a4-acb3-1fb058cf2a74 \
        -X GET \
@@ -218,7 +218,7 @@
         <title>Show server ports (cURL)</title>
         <para>The following steps show you how to identify the public IP port IDs for both servers.</para>
         <procedure>
-            <title>To show a port</title>
+            <title>To show ports</title>
             <step>
                 <para>Issue the following cURL command for server A, where the value for device_id is your server A ID:
                     <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
@@ -335,21 +335,21 @@
                             </programlisting></para>
             </step>
             <step>
-                <para>Note the new shared IP address for future reference. In this example, the address is
-                        <literal>23.253.64.51</literal>), but use the address from your response.</para>
+                <para>Note the new shared IP ID for future reference. In this example, the ID is
+                    <literal>89875b4a-b098-414f-980a-5e9f89078a49</literal>), but use the ID from your response.</para>
             </step>
         </procedure>
         <sidebar>
             <para><emphasis role="bold">Next step: </emphasis>
-                <link xlink:href="neutron_associate_ip_to_servers_curl.html">Associate shared IP address to both servers (cURL)</link></para>
+                <link xlink:href="nova_associate_ip_to_servers_curl.html">Associate shared IP address to both servers (cURL)</link></para>
         </sidebar>
     </section>
 
-    <section xml:id="neutron_associate_ip_to_servers_curl">
+    <section xml:id="nova_associate_ip_to_servers_curl">
         <title>Associate shared IP address to both servers (cURL)</title>
-        <para>The following steps show you how to explicitly associate the new shared IP address to server A and B.</para>
+        <para>The following steps show you how to explicitly associate the new shared IP address to servers A and B.</para>
         <procedure>
-            <title>To associate shared IP to server A</title>
+            <title>To associate shared IP to server A and B</title>
             <step>
                 <para>Issue the following cURL command, using your server A ID and shared IP address ID:
                     <programlisting language="bash" role="gutter: false"><?db-font-size 70%?>
@@ -404,12 +404,13 @@
                             </programlisting></para>
             </step>
         </procedure>
-        <!--        <sidebar>
+        <sidebar>
             <para><emphasis role="bold">Next step: </emphasis>
                 <link xlink:href="neutron_verify_shared_ip_curl.html">Verify shared IP address (cURL)</link></para>
-        </sidebar>-->
+        </sidebar>
     </section>
-    <!--<section xml:id="neutron_verify_shared_ip_curl">
+    
+    <section xml:id="neutron_verify_shared_ip_curl">
         <title>Verify shared IP address (cURL)</title>
         <para>The following steps show you how verify that the shared IP address is set for the Server A and B public network
             ports.</para>
@@ -470,13 +471,9 @@
                             </programlisting></para>
             </step>
             <step>
-                <para>Note that both ports show up for the IP address you created. In this case, the sahred IP address is
+                <para>Note that both ports show up for the IP address you created. In this case, the shared IP address is
                         <literal>23.253.64.51</literal> and both ports are listed.</para>
             </step>
         </procedure>
-        <sidebar>
-            <para><emphasis role="bold">Next step: </emphasis>
-                <link xlink:href="neutron_associate_servers_curl.html">Associate servers with shared IP address (cURL)</link></para>
-        </sidebar>
-    </section>-->
+    </section>
 </section>
