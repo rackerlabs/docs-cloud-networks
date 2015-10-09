@@ -10,6 +10,6 @@
    subnet-operations
    port-operations
    sec-group-operations
-   
+   ip-address-operations
 
 
