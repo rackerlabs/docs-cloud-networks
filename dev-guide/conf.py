@@ -106,23 +106,27 @@ pygments_style = 'sphinx'
 
 # External link library
 extlinks = {
-    'rax': ('http://www.rackspace.com/%s', ''),
-    'rax-cloud': ('http://www.rackspace.com/cloud/%s', ''),
-    'rax-docs': ('http://docs.rackspace.com/%s', ''),
-    'rax-dev': ('https://developer.rackspace.com/%s', ''),
-    'rax-api': ('http://api.rackspace.com/%s', ''),
-    'rax-git': ('https://github.com/rackspace/%s', ''),
-    'mycloud': ('https://mycloud.rackspace.com/%s', ''),
-    'kc': ('http://www.rackspace.com/knowledge_center/%s', ''),
-    'kc-article': ('http://www.rackspace.com/knowledge_center/article/%s', ''),
-    'kc-faq': ('http://www.rackspace.com/knowledge_center/frequently-asked-question/%s', ''),
-    'kc-product-faq': ('http://www.rackspace.com/knowledge_center/product-faq/%s', ''),
-    'os': ('http://www.openstack.org/%s', ''),
-    'os-docs': ('http://docs.openstack.org/%s', ''),
-    'os-wiki': ('http://wiki.openstack.org/%s', ''),
-    'git-repo': ('https://github.com/rackerlabs/docs-core-infra-user-guide/%s', ''),
-    'rackerlabs': ('https://github.com/rackerlabs/%s', ''),
-    'rocket': ('https://objectrocket.com/%s', '')
+     'rax': ('http://www.rackspace.com/%s', ''),
+     'rax-cloud': ('http://www.rackspace.com/cloud/%s', ''),
+     'rax-dev': ('https://developer.rackspace.com/%s', ''),
+     'rax-devdocs': ('http://developer.rackspace.com/docs/%s', ''),
+     'rax-devguide':('http:/developer.rackspace.com/docs/%s/developer-guide/',''),
+     'rax-api': ('http:/developer.rackspace.com/docs/%s/developer-guide/#api-reference',''),
+     'rax-git': ('https://github.com/rackspace/%s', ''),
+     'mycloud': ('https://mycloud.rackspace.com/%s', ''),
+     'kc': ('http://www.rackspace.com/knowledge_center/%s', ''),
+     'kc-article': ('http://www.rackspace.com/knowledge_center/article/%s', ''),
+     'kc-faq': ('http://www.rackspace.com/knowledge_center/'
+                'frequently-asked-question/%s', ''),
+     'kc-product-faq': ('http://www.rackspace.com/knowledge_center/'
+                        'product-faq/%s', ''),
+     'os': ('http://www.openstack.org/%s', ''),
+     'os-docs': ('http://docs.openstack.org/%s', ''),
+     'os-wiki': ('http://wiki.openstack.org/%s', ''),
+     'git-repo': ('https://github.com/rackerlabs/'
+                  'docs-core-infra-user-guide/%s', ''),
+     'rackerlabs': ('https://github.com/rackerlabs/%s', ''),
+     'rocket': ('https://objectrocket.com/%s', '')
 }
 
 # A list of ignored prefixes for module index sorting.
