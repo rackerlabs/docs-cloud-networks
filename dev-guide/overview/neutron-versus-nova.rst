@@ -34,7 +34,6 @@ As part of the new API, the following new capabilities are available to users:
 
 The Neutron API supports JSON data serialization format for requests and responses.
 
-For guidance on the Nova-Network API networking operations, see `Network extension`_ of 
-the *Next Generation Cloud Servers Developers Guide*.
-
-.. _Network extension: http://docs.rackspace.com/servers/api/v2/cs-devguide/content/network_extension.html
+For guidance on the Nova-Network API networking operations, see the 
+:rax-devdocs:`Network section <cloud-servers/v2/developer-guide/#document-api-operations/svr-networks-operations>`
+of the *Next Generation Cloud Servers Developers Guide*.

@@ -9,22 +9,21 @@ instances with Rackspace networks or the isolated networks that you created.
 
 When you create an isolated network, it is associated with your tenant ID, which is also 
 known as your account ID or account number. If you don't know your tenant ID, you can find 
-it by logging in to the `Cloud Control Panel`_ and expanding the **Account** menu in the 
+it by logging in to the :mycloud:`Cloud Control Panel<>` and expanding the **Account** menu in the 
 upper-right corner of the screen. Your tenant ID is shown at the top of the menu, listed 
 as **Account #**.
 
 Cloud Networks was originally released using the Cloud Servers the Nova-Network API, whose 
-operations are detailed in `Network extension`_ of the *Next Generation Cloud Servers Developers Guide*. 
+operations are detailed in the   
+:rax-devdocs:`Network section <cloud-servers/v2/developer-guide/#document-api-operations/svr-networks-operations>`
+of the *Next Generation Cloud Servers Developers Guide*.
+
 Now Rackspace Cloud Networks has been released using the Neutron API, detailed in this guide. 
 We recommend that you use the Neutron API operations even though the Nova-Network API 
 operations still work. For information that helps you determine which method is better for 
 you, see :ref:`Networking: neutron versus nova-network <neutron-vs-nova>`.
 
-We welcome `feedback, comments, and bug reports`_.
-
-.. _Cloud Control Panel: http://mycloud.rackspace.com
-.. _Network extension: http://docs.rackspace.com/servers/api/v2/cs-devguide/content/network_extension.html
-.. _feedback, comments, and bug reports: https://feedback.rackspace.com/
+We welcome feedback, comments, and bug reports. Visit the :rax-special:`Rackspace customer portal <feedback>`.
 
 .. _cn-dg-preface-intended:
 
@@ -52,29 +51,30 @@ Pricing and terms of service
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Cloud Networks is part of the Rackspace Cloud. and your use through the API is billed 
-according to the `pricing schedule for Cloud Servers`_.
+according to the :rax:`pricing schedule for Cloud Servers <cloud/servers/pricing>`.
 
-The service level agreement (SLA) for Rackspace Cloud Services is included in the `Rackspace Cloud SLA`_.
+The service level agreement (SLA) for Rackspace Cloud Services is included in the 
+:rax:`Rackspace Cloud SLA <information/legal/cloud/sla>`.
 
-The terms of service are part of the `Rackspace Cloud Terms of Service`_. Periodically 
-review these terms because they can be updated any time.
+The terms of service are part of the :rax:`Rackspace Cloud Terms of Service <information/legal/cloud/tos>`. 
+Periodically review these terms because they can be updated any time.
 
-.. _pricing schedule for Cloud Servers: http://www.rackspace.com/cloud/servers/pricing/
-.. _Rackspace Cloud SLA: http://www.rackspace.com/information/legal/cloud/sla
-.. _Rackspace Cloud Terms of Service: http://www.rackspace.com/information/legal/cloud/tos
 
 Resources
 ~~~~~~~~~
 
-For additional Cloud Servers and Cloud Networks service resources, see the 
-`Rackspace Cloud`_ site, which provides related documents and links to Rackspace support 
-channels including `Knowledge Center articles`_, phone, chat, and tickets.
+We welcome feedback, comments, and bug reports. Visit the :rax-special:`Rackspace customer portal <feedback>`.
 
-For product updates and announcements through Twitter, see http://twitter.com/rackspace.
+Use the links below to learn more about the Rackspace Cloud Servers service and API.
 
-For information about the supernova client, which is an unsupported wrapper for the nova 
-client that is useful for managing multiple nova environments, see `supernova client`_.
+- To learn more about the Cloud Networks service and the various ways you can interact 
+  with it (API, SDK, CLI, and Control Panel), see the :rax-devdocs:`Rackspace Cloud Guide 
+  to Core Infrastructure Services <user-guides/infrastructure/>`.
+  
+- To learn about using Rackspace Cloud SDKs, see :rax-dev:`Software Development Kits & Tools <docs/#sdks>`. 
+    
+- To get information about other Rackspace Cloud services APIs, see the
+  :rax-devdocs:`Rackspace API Documentation <>`.
 
-.. _Rackspace Cloud: http://www.rackspacecloud.com/cloud_hosting_products/servers
-.. _Knowledge Center articles: http://www.rackspace.com/knowledge_center/
-.. _supernova client: http://major.github.io/supernova/
+Read product updates and announcements by using `Twitter <http://twitter.com/rackspace>`_.
+

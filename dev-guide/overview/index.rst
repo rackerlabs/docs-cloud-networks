@@ -23,7 +23,9 @@ You can use the Cloud Networks service Neutron API to perform the following task
 
         To detach a network from a server, you must use the Cloud Networks virtual interface 
         extension to delete the virtual interface for the network from the server. For more 
-        information, see the `Cloud Servers Developer Guide`_.
+        information, see 
+        :rax-devdocs:`Delete virtual interface <cloud-servers/v2/developer-guide/#delete-virtual-interface>`
+        in the *Cloud Servers Developer Guide*.
 
 -  Manage subnets.
 
@@ -39,6 +41,4 @@ You can use the Cloud Networks service Neutron API to perform the following task
    available-networks
    networks-attached-during-provisioning
    consequences-of-detaching
-
-.. _Cloud Servers Developer Guide: http://docs.rackspace.com/servers/api/v2/cs-devguide/content/section_virt_ext.html
 
