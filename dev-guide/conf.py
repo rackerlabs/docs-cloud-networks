@@ -107,6 +107,8 @@ pygments_style = 'sphinx'
 # External link library
 extlinks = {
      'rax': ('http://www.rackspace.com/%s', ''),
+     'rax-cart': ('http://cart.rackspace.com/%s', ''),
+     'rax-special': ('http://%s.rackspace.com/', ''),
      'rax-cloud': ('http://www.rackspace.com/cloud/%s', ''),
      'rax-dev': ('https://developer.rackspace.com/%s', ''),
      'rax-devdocs': ('http://developer.rackspace.com/docs/%s', ''),

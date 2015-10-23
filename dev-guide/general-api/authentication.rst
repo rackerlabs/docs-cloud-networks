@@ -17,10 +17,8 @@ service returns an authentication token and a service catalog that contains a li
 services and endpoints available for this token. Because the authentication token expires 
 after 24 hours, you must generate a new token once a day.
 
-For detailed information about the Rackspace Identity Service v2.0, see `Cloud Identity 
-Client Developer Guide API v2.0`_.
-
-.. _Cloud Identity Client Developer Guide API v2.0: http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/index.html
+For detailed information about the Identity Service v2.0, see the 
+:rax-devdocs:`Cloud Identity Client Developer Guide <cloud-identity/v2/developer-guide/#document-overview>`.
 
 .. _generalapi-auth-curl:
 
@@ -44,13 +42,19 @@ Control Panel.
     If you authenticate with username and password credentials, you can use multi-factor 
     authentication to add an additional level of account security. This feature is not 
     implemented for username and API credentials. For more information, see 
-    `Multifactor authentication`_ in the *Cloud Identity Client Developer Guide*.
+    :rax-devdocs:`multi-factor authentication <cloud-identity/v2/developer-guide/#document-authentication-info/use-mfa-ops>` 
+    in the *Cloud Identity Client Developer Guide*.
 
-.. _Multifactor authentication: http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/MFA_Ops.html
+To find your API key, perform the following steps:
 
-To obtain your API key, log in to http://mycloud.rackspace.com,  
-select **Account:**\ *username* > **Account Settings**, and click **Show** next to 
-the **API Key** field.
+#. Log in to the :mycloud:`Cloud Control Panel<>`.
+
+#. On the upper-right side of the top navigation pane, click your username.
+
+#. From the menu, select Account Settings.
+
+#. In the Login Details section of the Account Settings page, locate the API Key field and 
+   click Show.
 
 **To authenticate with cURL:**
 
@@ -80,13 +84,13 @@ the **API Key** field.
 
    ..  note:: 
         
-        If you authenticated with username and password credentials, and the Identity service 
-        returns a 401 message requesting additional credentials, your account is configured 
-        for multi-factor authentication. To complete the authentication process, `submit a 
-        second POST tokens request with multi-factor authentication credentials`_.
-
-   .. _submit a second POST tokens request with multi-factor authentication credentials: http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/proc_mfa_auth.html
-
+       If you authenticated with username and password credentials, and the Identity service 
+       returns a 401 message requesting additional credentials, your account is configured 
+       for :rax-devdocs:`multi-factor authentication <cloud-identity/v2/developer-guide/#document-authentication-info/use-mfa-ops>`. 
+        
+       To complete the authentication process, submit a second POST tokens request with 
+       multi-factor authentication credentials.
+       
    Do not include explicit API endpoints in your scripts and applications. Instead, find 
    the endpoint for your service and region.
 
@@ -197,10 +201,9 @@ the **API Key** field.
    **Endpoints to request Rackspace Cloud services**. Appears in the
    ``endpoints`` element in the ``serviceCatalog`` element.
 
-   - Endpoint information includes the public URL, which is the endpoint that you use to access the service, as well as region, tenant ID, and version information.
-   	 
-   	 .. note:: To help you decide which regionalized endpoint to use, read about `special considerations <http://www.rackspace.com/knowledge_center/article/about-regions>`_ for choosing a data center.
-
+   - Endpoint information includes the public URL, which is the endpoint that you use to 
+     access the service, as well as region, tenant ID, and version information.
+        
    **Tenant ID**. Appears in the ``tenantId`` field in the ``endpoints``
    element. The tenant ID is also known as the account number.
 
@@ -215,9 +218,8 @@ the **API Key** field.
      choice. Select the appropriate endpoint for the region that you want
      to interact with by examining the ``region`` field.
 
-     .. note:: To help you decide which regionalized endpoint to use, read about
-        special considerations for choosing a data center at
-        http://ord.admin.kc.rakr.net/knowledge_center/article/about-regions.
+     .. tip:: To help you decide which regionalized endpoint to use, read about
+        :kc-article:`special considerations<about-regions>` for choosing a data center.
 
    **Expiration date and time for authentication token**. Appears in the
    ``expires`` field in the ``token`` element.
