@@ -12,7 +12,7 @@ What's new
    security groups, and, using the port API operations, assign the groups to servers to 
    manage the ingress (inbound) traffic for a port on a server.
 
-Resolved Issues
+Resolved issues
 ---------------
 |no changes|
 

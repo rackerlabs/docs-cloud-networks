@@ -1,5 +1,6 @@
+===================================================
 API |contract version| Release, September 30, 2014 
----------------------------------------------------
+===================================================
 
 Cloud Networks was originally released using the Cloud Servers the Nova-Network API, whose 
 operations are detailed in the   
@@ -35,7 +36,7 @@ What's new
 	associated with a port, the port is associated with a subnet, because the IP address was 
 	taken from the allocation pool for a specific subnet.
 
-Resolved Issues
+Resolved issues
 ---------------
 |no changes|
 
