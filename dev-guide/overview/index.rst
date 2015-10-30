@@ -4,10 +4,11 @@
 Overview
 ========
 
-This overview introduces the types of Cloud Networks API operations, Cloud Networks service 
-limits, a comparison between the Neutron API and the Nova-Network API, the available networks, 
+This overview introduces the types of |apiservice| operations, service limits, a 
+comparison between the Neutron API and the Nova-Network API, the available networks, 
 which networks are attached to a server (based on the provisioning method), and a discussion 
-about the consequences of choosing not to attach to Rackspace PublicNet and ServiceNet networks.
+about the consequences of choosing not to attach to Rackspace PublicNet and ServiceNet 
+networks.
 
 You can use the Cloud Networks service Neutron API to perform the following tasks:
 

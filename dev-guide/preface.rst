@@ -25,30 +25,11 @@ you, see :ref:`Networking: neutron versus nova-network <neutron-vs-nova>`.
 
 We welcome feedback, comments, and bug reports. Visit the :rax-special:`Rackspace customer portal <feedback>`.
 
-.. _cn-dg-preface-intended:
-
-Intended Audience
-~~~~~~~~~~~~~~~~~
-
-This guide assists software developers who want to develop applications by using Cloud 
-Networks with the Neutron API.
-
-To use this information, you should have access to an active Rackspace Cloud Servers 
-account and access to Cloud Networks. You should also be familiar with the following concepts:
-
--  Cloud Servers service
-
--  RESTful web services
-
--  HTTP/1.1
-
--  JSON data serialization formats
-
 .. _cn-dg-preface-pricing:
 
 
 Pricing and terms of service
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------
 
 Cloud Networks is part of the Rackspace Cloud. and your use through the API is billed 
 according to the :rax:`pricing schedule for Cloud Servers <cloud/servers/pricing>`.
@@ -61,7 +42,7 @@ Periodically review these terms because they can be updated any time.
 
 
 Resources
-~~~~~~~~~
+---------
 
 We welcome feedback, comments, and bug reports. Visit the :rax-special:`Rackspace customer portal <feedback>`.
 
@@ -78,3 +59,17 @@ Use the links below to learn more about the Rackspace Cloud Servers service and 
 
 Read product updates and announcements by using `Twitter <http://twitter.com/rackspace>`_.
 
+.. software-updates:
+
+.. Comment This file includes the current release information at the top of the document.
+
+Service updates
+-------------------
+
+Rackspace provides software updates to introduce backward-compatible updates and 
+modifications to |apiservice| |contract version|. These changes are not intended to break 
+any existing code that relies on the API (SDK, web applications, scripts, and so on). 
+However, you might want to update or extend your code to use new features and enhancements.
+
+To learn about updates and changes included in this and other releases, see the 
+:ref:`Release Notes <release-notes>`. 

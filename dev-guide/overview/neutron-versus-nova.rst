@@ -6,12 +6,12 @@ Networking: Neutron versus Nova-Network
 
 Rackspace first introduced networking services that were based on the OpenStack Nova-Network 
 API and exposed these services via the `/os-networksv2` Cloud Servers extension. For 
-documentation on these operations, see `Network extension`_ of the *Next Generation Cloud 
-Servers Developers Guide*. This version of the service is now superseded by the current 
-networking API, based on OpenStack Neutron, which offers a richer suite of networking 
-services. Both APIs continue to function, but the Neutron API will be the base for all the 
-future networking services that Rackspace offers. We recommend that you use the Neutron API 
-for your Cloud Networks API operations.
+documentation on these operations, :rax-devdocs:`Network extension <cloud-servers/v2/developer-guide/#document-extensions/ext-network>`
+of the *Next Generation Cloud Servers Developers Guide*. This version of the service is now 
+superseded by the current networking API, based on OpenStack Neutron, which offers a richer 
+suite of networking services. Both APIs continue to function, but the Neutron API will be 
+the base for all the future networking services that Rackspace offers. We recommend that you 
+use the Neutron API for your Cloud Networks API operations.
 
 The current API introduces three new top-level resources — ``/networks``, ``/ports``, and 
 ``/subnets`` — which are included in the OpenStack Neutron API. All new networking services 
