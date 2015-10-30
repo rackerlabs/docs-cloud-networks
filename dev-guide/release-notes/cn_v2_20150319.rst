@@ -1,5 +1,6 @@
-API |contract version| Updates, March 19, 2015 
-----------------------------------------------
+===============================================
+API |contract version| updates, March 19, 2015 
+===============================================
 
 What's new
 ----------
@@ -10,7 +11,7 @@ What's new
    client for Cloud Servers or the trove client for Cloud Databases. All these clients are 
    actually executing cURL operations in the background.
 
-Resolved Issues
+Resolved issues
 ---------------
 |no changes|
 
