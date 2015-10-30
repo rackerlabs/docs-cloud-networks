@@ -18,5 +18,3 @@ to the Cloud Networks service. You should also be familiar with the following te
 -  *HTTP*/1.1
 
 -  JSON data serialization format
-
-

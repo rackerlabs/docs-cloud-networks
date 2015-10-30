@@ -1,0 +1,19 @@
+API |contract version| Updates, March 19, 2015 
+----------------------------------------------
+
+What's new
+----------
+
+-  The Cloud Networks API |contract version| now includes installation instructions for the
+   neutron client and usage examples in the Getting Started Guide. The neutron client 
+   provides a simple, command line interface to the Cloud Networks API, similar to the nova 
+   client for Cloud Servers or the trove client for Cloud Databases. All these clients are 
+   actually executing cURL operations in the background.
+
+Resolved Issues
+---------------
+|no changes|
+
+Known issues
+------------
+|no changes|
