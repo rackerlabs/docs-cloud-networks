@@ -30,9 +30,6 @@ replaces the ``fixed_ips`` attribute when it is specified in the request body.
    the attributes of the port are updated. As a result, this operation is useful only for 
    ports that are not attached to any server. After the port attributes are updated they 
    can be passed to a Cloud Server instance at boot time.
-   
-   
-
 
 
 This table shows the possible response codes for this operation:

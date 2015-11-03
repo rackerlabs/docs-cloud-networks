@@ -34,6 +34,8 @@ You can use the Cloud Networks service Neutron API to perform the following task
 
 -  Manage security groups and security group rules.
 
+.. COMMENT -  Manage and share IP addresses between servers in the same public zone.
+
 .. toctree::
    :maxdepth: 2
    
