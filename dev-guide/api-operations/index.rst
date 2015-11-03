@@ -1,7 +1,7 @@
 
 .. meta::
-   :description: Rackspace Cloud Images API Reference
-   :keywords: Rackspace, Cloud Images ReST API, API resources, API methods
+   :description: Rackspace Cloud Networks API Reference
+   :keywords: Rackspace, Cloud Networks ReST API, API resources, API methods
 
 .. toctree:: 
    :maxdepth: 2
@@ -10,6 +10,6 @@
    subnet-operations
    port-operations
    sec-group-operations
-   ip-address-operations
+.. COMMENT   ip-address-operations
 
 
