@@ -4,12 +4,14 @@
 **Release Notes**
 ======================
 
-This section describes, for each release, the new features, changes to existing features, 
-and any known issues.
+Learn about new features, enhancements, known issues,
+resolved issues, and other important details about |apiservice| |version| service updates.
+
+.. note:: For information about using the API, see the :ref:`documentation overview <index>`.
 
 .. toctree::
    :maxdepth: 2
 
-   release-notes/cn_v2_20150324
-   release-notes/cn_v2_20150319
-   release-notes/cn_v2_20140903
+   March 24, 2015 <release-notes/cn_v2_20150324>
+   March 19, 2015 <release-notes/cn_v2_20150319>
+   September 3, 2014 <release-notes/cn_v2_20140903>
