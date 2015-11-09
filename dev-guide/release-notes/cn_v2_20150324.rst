@@ -1,16 +1,16 @@
 ===============================================
-API |contract version| Updates, March 24, 2015
+API |contract version| updates, March 24, 2015
 ===============================================
 
 What's new
 ----------
 
--  The Cloud Networks API |contract version| now includes operations for security groups
-   and security group rules. These operations, described in detail in the Cloud Networks 
-   API Developer Guide, allow you to create, read, update, and delete security groups and 
-   to create, read, update, and delete security group rules. You can add rules to the 
-   security groups, and, using the port API operations, assign the groups to servers to 
-   manage the ingress (inbound) traffic for a port on a server.
+The Cloud Networks API |contract version| now includes operations for security groups
+and security group rules. These operations, described in detail in the Cloud Networks 
+API Developer Guide (see :ref:`Security groups operations <api-operations-sec-groups>` ), 
+allow you to create, read, update, and delete security groups and security group rules. You 
+can add rules to the security groups, and, using the port API operations, assign the groups 
+to servers to manage the ingress (inbound) traffic for a port on a server.
 
 Resolved issues
 ---------------
