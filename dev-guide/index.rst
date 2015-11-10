@@ -17,7 +17,9 @@ API.
 .. toctree:: :hidden:
    :maxdepth: 2
 
-   preface
+   Cloud Networks 2.0 <self>
+   API Status <http://www.rackspacestatus.com/>
+   About the API <preface>
    developer-guide
    overview/index
    concepts/index
