@@ -1,6 +1,6 @@
-==============
-Using Networks
-==============
+=================
+Managing Networks
+=================
 
 This overview introduces the types of Cloud Networks API operations,
 Cloud Networks service limits, a comparison between the Neutron API and
@@ -19,8 +19,6 @@ following tasks:
 -  Show details for isolated networks.
 
 -  Delete an isolated network, if it is not associated with any server.
-
-      style="margin-left: 0.5in; margin-right: 0.5in;">
 
 .. note::
 
