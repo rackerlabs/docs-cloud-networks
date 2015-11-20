@@ -12,4 +12,6 @@ This section provides simple cURL examples of common Network service operations.
 
    Learn how to use the examples <getting-started/learning-examples>
    Set up the environment and authenticate <getting-started/setting-up-enviro>
-   Using Networks <getting-started/using-networks>
+   Managing Networks <getting-started/managing-networks>
+   Configuring Networks <getting-started/configuring-networks>
+   Controlling Access <getting-started/controlling-access>
