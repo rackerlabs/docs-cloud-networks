@@ -20,9 +20,8 @@ You have several options for sending requests through an API:
   :ref:`Install the nova client <install-nova>`
 
 - If you are developing applications or automation, try using 
-  `Rackspace SDKs <https://developer.rackspace.com/sdks/>`__, 
-  `Rackspace CLI <https://developer.rackspace.com/docs/rack-cli/>`__, or 
-  `OpenStack client applications <https://wiki.openstack.org/wiki/OpenStackClients>`__.
+  :rax-dev:`Rackspace SDKs<sdks>`, :rax-devdocs:`Rackspace CLI<rack-cli/>`, 
+  or :os-wiki:`OpenStack client applications <wiki/OpenStackClients>`.
         
 - If you like to use a more graphical interface, the REST client for Mozilla Firefox also
   works well for testing and trying out commands. See
@@ -31,7 +30,7 @@ You have several options for sending requests through an API:
   Other browser plug-ins are available for the browser of your choice.
 
 - You can also download and install RESTclient, a Java application for testing ReSTful web
-  services, from http://code.google.com/p/rest-client/.
+  services, from http://code.google.com/p/rest-client/<http://code.google.com/p/rest-client/.
 
 When submitting a request using cURL, browser plugins, or RESTclient, you specify your 
 authentication token in the ``X-Auth-Token`` header. The syntax for the ``X-Auth-Token`` 
