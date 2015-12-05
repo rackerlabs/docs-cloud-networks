@@ -15,14 +15,9 @@ The API v2 supports JSON request and response formats.
 .. toctree::
    :maxdepth: 2
    
-   request-response-types
    how-curl-commands-work
-   export-environment-variables
-   how-the-neutron-client-works
-   install-neutron
-   how-the-nova-client-works 
-   install-nova
-   authentication
+   authenticate-ovw
+   request-response-types
    service-access-endpoints
    role-based-access-control
    filtering-requests

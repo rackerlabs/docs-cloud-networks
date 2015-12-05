@@ -29,12 +29,8 @@ For each exercise, choose one of the following methods to make Cloud Networks AP
    This is a good way to become familiar with API requests. For example: neutron --debug 
    net-list.
 
-   For more information, see :ref:`How the neutron client works <neutron-client>`.
-
 -  **The nova client** Use the nova client to run simple Nova-Network API commands such as 
    those required to boot servers and to attach and detach networks.
-   
-   For more information, see :ref:`How the nova client works <nova-client>`.
 
 You can use cURL in one example and switch to a client in the next example, so you are
 not locked into to one method. 
