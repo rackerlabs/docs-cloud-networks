@@ -1,7 +1,7 @@
 .. _controlling-access-intro:
 
 ===========================
-Controlling Network Access
+Control network access
 ===========================
 
 This section provides neutron client (or nova client) and cURL examples of |service| 

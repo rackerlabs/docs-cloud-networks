@@ -1,7 +1,7 @@
 .. _managing-networks-intro:
 
 =================
-Managing Networks
+Manage networks
 =================
 
 This section provides neutron client (or nova client) and cURL examples of |service| 

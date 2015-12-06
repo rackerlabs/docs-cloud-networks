@@ -1,7 +1,7 @@
 .. _configuring-networks-intro:
 
 ==============================
-Configuring Network Variations
+Configure network variations
 ==============================
 
 This section provides neutron client (or nova client) and cURL examples of |service| 
