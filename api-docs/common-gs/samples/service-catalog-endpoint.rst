@@ -1,32 +1,38 @@
 .. code:: json
   
-			{
-					"name": "cloudQueues",
-					"endpoints": [
-							{
-									"region": "HKG",
-									"tenantId": "123456",
-									"publicURL": "https://hkg.queues.api.rackspacecloud.com/v1/123456",
-									"internalURL": "https://snet-hkg.queues.api.rackspacecloud.com/v1/123456"
-							},
-							{
-									"region": "SYD",
-									"tenantId": "123456",
-									"publicURL": "https://syd.queues.api.rackspacecloud.com/v1/123456",
-									"internalURL": "https://snet-syd.queues.api.rackspacecloud.com/v1/123456"
-							},
-							{
-									"region": "DFW",
-									"tenantId": "123456",
-									"publicURL": "https://dfw.queues.api.rackspacecloud.com/v1/123456",
-									"internalURL": "https://snet-dfw.queues.api.rackspacecloud.com/v1/123456"
-							},
-							{
-									"region": "IAD",
-									"tenantId": "123456",
-									"publicURL": "https://iad.queues.api.rackspacecloud.com/v1/123456",
-									"internalURL": "https://snet-iad.queues.api.rackspacecloud.com/v1/123456"
-							}
-					],
-					"type": "rax:queues"
-			},
+			 {
+                "name": "cloudNetworks",
+                "endpoints": [
+                    {
+                        "region": "IAD",
+                        "tenantId": "661145",
+                        "publicURL": "https://iad.networks.api.rackspacecloud.com/v2.0"
+                    },
+                    {
+                        "region": "LON",
+                        "tenantId": "661145",
+                        "publicURL": "https://lon.networks.api.rackspacecloud.com/v2.0"
+                    },
+                    {
+                        "region": "ORD",
+                        "tenantId": "661145",
+                        "publicURL": "https://ord.networks.api.rackspacecloud.com/v2.0"
+                    },
+                    {
+                        "region": "SYD",
+                        "tenantId": "661145",
+                        "publicURL": "https://syd.networks.api.rackspacecloud.com/v2.0"
+                    },
+                    {
+                        "region": "DFW",
+                        "tenantId": "661145",
+                        "publicURL": "https://dfw.networks.api.rackspacecloud.com/v2.0"
+                    },
+                    {
+                        "region": "HKG",
+                        "tenantId": "661145",
+                        "publicURL": "https://hkg.networks.api.rackspacecloud.com/v2.0"
+                    }
+                ],
+                "type": "network"
+            },

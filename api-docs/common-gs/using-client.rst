@@ -3,6 +3,10 @@
 Using the clients
 ~~~~~~~~~~~~~~~~~
 
+.. contents::
+  :local:
+  :depth: 1
+
 The nova client is an open-source Python client provides access to all public |apiservice| 
 methods. You can use the nova client to perform the following operations:
 

@@ -1,7 +1,7 @@
 .. _controlling-access-intro:
 
 ===========================
-Controlling Network Access
+Control network access
 ===========================
 
 This section provides neutron client (or nova client) and cURL examples of |service| 
@@ -13,4 +13,4 @@ service operations for the following task:
 .. toctree::
    :maxdepth: 2
 
-   controlling-network-access/security-groups
+   Controlling network traffic <controlling-network-access/security-groups>

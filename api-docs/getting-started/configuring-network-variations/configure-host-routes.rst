@@ -1,8 +1,8 @@
 .. _configure-host-routes:
 
-=====================
-Configure host routes
-=====================
+=========================
+Configuring host routes
+=========================
 
 At server boot time, you can use the host routes in the ``subnets`` resource to pass 
 specific static routes to the server.

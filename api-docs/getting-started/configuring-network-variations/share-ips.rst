@@ -1,8 +1,8 @@
 .. _share-ips:
 
-================================
-Share IP address between servers
-================================
+===================================
+Sharing IP address between servers
+===================================
 
 .. Important:: 
 

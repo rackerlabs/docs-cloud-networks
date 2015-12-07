@@ -1,7 +1,7 @@
 .. _send-api-requests:
 
-Sending API requests to |service|
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Send API requests
+_____________________________________
 
 .. contents::
    :local:

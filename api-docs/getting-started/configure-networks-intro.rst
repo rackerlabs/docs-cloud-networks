@@ -1,7 +1,7 @@
 .. _configuring-networks-intro:
 
 ==============================
-Configuring Network Variations
+Configure network variations
 ==============================
 
 This section provides neutron client (or nova client) and cURL examples of |service| 
@@ -16,8 +16,8 @@ service operations for the following tasks:
 .. toctree::
    :maxdepth: 2
 
-   configuring-network-variations/use-allocation-pools
+   Controlling dynamic IP address allocation with allocation pools <configuring-network-variations/use-allocation-pools>
    configuring-network-variations/configure-host-routes
-   configuring-network-variations/provision-port-ips
+   Provisioning IP addresses on isolated network ports <configuring-network-variations/provision-port-ips>
 
 .. COMMENT   configuring-network-variations/share-ips

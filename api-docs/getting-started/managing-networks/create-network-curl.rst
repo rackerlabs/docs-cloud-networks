@@ -1,7 +1,7 @@
 .. _create-network-with-curl:
 
-Create and list network and subnet with cURL
---------------------------------------------
+Creating and listing network and subnet with cURL
+-------------------------------------------------
 
 These sections walk you through creating your network and subnet and then listing them by 
 using cURL.
