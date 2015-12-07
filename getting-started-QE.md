@@ -2,11 +2,11 @@
 
 **Getting Started navigation**
 
-- [ ] Link at top of doc
+- [X] Link at top of doc
   
       ![Part links](https://github.com/rackerlabs/docs-common/blob/master/rst/getting-started-content-architecture/QE-images/GS-part-links.png)
   
-- [ ] Content hierarchy for top-sections looks like one of these two models, with GS title in nav
+- [X] Content hierarchy for top-sections looks like one of these two models, with GS title in nav
   
       ![Nav with curl](https://github.com/rackerlabs/docs-common/blob/master/rst/getting-started-content-architecture/QE-images/GS-nav-curl-only.png) 
       ![Nav with curl](https://github.com/rackerlabs/docs-common/blob/master/rst/getting-started-content-architecture/QE-images/GS-nav-with-client.png) 
@@ -15,9 +15,9 @@
 
 **Use cases and examples**
 
-- [ ] Compare use case (topics) in migrated content to original content on docs.rackspace.com to identify any missing content
+- [X] Compare use case (topics) in migrated content to original content on docs.rackspace.com to identify any missing content
 
-- [ ] Use case H1 topics use imperative, H2 topics use gerund
+- [X] Use case H1 topics use imperative, H2 topics use gerund
 
       ![Use case titles](https://github.com/rackerlabs/docs-common/blob/master/rst/getting-started-content-architecture/QE-images/GS-use-case-titles.png) 
 
