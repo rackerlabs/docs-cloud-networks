@@ -3,6 +3,7 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Service access and endpoints
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 The |service| service is a regionalized service that allows customers to select the
 regional endpoint where the |service| service is provisioned.
 
@@ -12,22 +13,31 @@ regional endpoint where the |service| service is provisioned.
    choosing a data center in the :kc-article:`About regions <about-regions>` Rackspace 
    Knowledge Center article.
 
+
 If you are working with cloud servers that are in one of the Rackspace data centers, using 
 the ServiceNet endpoint in the same data center has no network costs and provides a faster 
-connection. ServiceNet is the data center internet network. In your authentication response 
-(see :ref:`authentication-ovw`), it is listed as InternalURL.
+connection. ServiceNet is the data center internet network. In your 
+:ref:`authentication response <review-auth-resp>`, the service catalog lists the 
+ServiceNet endpoint values in the ``InternalURL`` field.
 
-If you are working with servers that are not in one of the Rackspace data centers, you 
-must use a public endpoint to connect. In your authentication response, public endpoints 
-are listed as publicURL. If you are working with servers in multiple data centers or have 
-a mixed environment where you have servers in your data centers and in Rackspace data 
-centers, use a public endpoint because it is accessible from all the servers in the 
-different environments.
+In some cases, you must use a public endpoint to access the |service|.
 
-.. note::
+- If you are working with servers that are not in one of the Rackspace data centers, you 
+  must use a public endpoint to connect.  
 
-   You should copy the base URLs directly from the catalog rather than trying to construct 
-   them manually.
+- If you are working with servers in multiple data centers or a mixed environment where 
+  you have servers in your data centers and in Rackspace data centers, use a public 
+  endpoint because it is accessible from all the servers in the 
+  different environments.
+
+You can find the public endpoints to access the Cloud Orchestration API in the service 
+catalog returned in the 
+:ref:`authentication response <`authentication response <review-auth-resp>`. 
+
+Search the response for the service name, ``cloudNetworks``. 
+Then copy the URI from the ``publicURL`` field for the regional data center that you 
+want to use. Use this value when you configure environment variables to use in API requests. 
+      
 
 .. tip::
 
