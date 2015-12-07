@@ -24,28 +24,28 @@
 
 **Getting Started common content**
 
-- [ ]  Prerequisites include config environment variables (late change)
+- [NOT DONE]  Prerequisites include config environment variables (late change) 
        
        ![Gen API authl](https://github.com/rackerlabs/docs-common/blob/master/rst/getting-started-content-architecture/QE-images/GS-prereqs.png) 
        
 
-- [ ]  GS intro topic that follows boiler plate, might have extra content depending on product.
+- [X]  GS intro topic that follows boiler plate, might have extra content depending on product.
 
        ![Gen API authl](https://github.com/rackerlabs/docs-common/blob/master/rst/getting-started-content-architecture/QE-images/GS-intro.png) 
        
 
-- [ ]  Uses common Get Credentials topic ==> Save your API Key, Save your Account number are heading levels.
+- [X]  Uses common Get Credentials topic ==> Save your API Key, Save your Account number are heading levels.
 
        ![Get Credsl](https://github.com/rackerlabs/docs-common/blob/master/rst/getting-started-content-architecture/QE-images/GS-getcreds.png) 
 
 
-- [ ]  Send API requests content follows template (some docs have only cURL, some have cURL and CLI)
+- [X]  Send API requests content follows template (some docs have only cURL, some have cURL and CLI)
       
 
-- [ ]  Authenticate uses [common content](https://developer.rackspace.com/docs/cloud-big-data/v2/developer-guide/#document-getting-started/authenticate) 
+- [X]  Authenticate uses [common content](https://developer.rackspace.com/docs/cloud-big-data/v2/developer-guide/#document-getting-started/authenticate) 
 
 
-- [ ]  Review auth response section has link to annotated auth response.
+- [NOT DONE]  Review auth response section has link to annotated auth response.
 
        ![Get Credsl](https://github.com/rackerlabs/docs-common/blob/master/rst/getting-started-content-architecture/QE-images/GS-note-annotated-auth-ref.png) 
 
