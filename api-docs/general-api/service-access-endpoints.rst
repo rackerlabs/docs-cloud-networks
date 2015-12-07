@@ -32,7 +32,7 @@ In some cases, you must use a public endpoint to access the |service|.
 
 You can find the public endpoints to access the Cloud Orchestration API in the service 
 catalog returned in the 
-:ref:`authentication response <`authentication response <review-auth-resp>`. 
+:ref:`authentication response <review-auth-resp>`. 
 
 Search the response for the service name, ``cloudNetworks``. 
 Then copy the URI from the ``publicURL`` field for the regional data center that you 
@@ -41,5 +41,6 @@ want to use. Use this value when you configure environment variables to use in A
 
 .. tip::
 
-   If you do not know your account ID or which data center you are working in, you can 
-   find that information in the :mycloud:`Cloud Control Panel <>`.
+    You can find your account ID and default data center in the 
+    :mycloud:`Cloud Control Panel <>`. For details, see 
+    :ref:`Get credentials <get-credentials>` .
