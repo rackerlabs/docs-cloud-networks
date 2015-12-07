@@ -18,6 +18,6 @@ service operations for the following tasks:
 
    Controlling dynamic IP address allocation with allocation pools <configuring-network-variations/use-allocation-pools>
    configuring-network-variations/configure-host-routes
-   Configuring IP addresses on isolated network ports <configuring-network-variations/provision-port-ips>
+   Provisioning IP addresses on isolated network ports <configuring-network-variations/provision-port-ips>
 
 .. COMMENT   configuring-network-variations/share-ips
