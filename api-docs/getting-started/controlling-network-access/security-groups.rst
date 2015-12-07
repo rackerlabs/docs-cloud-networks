@@ -1,7 +1,7 @@
 .. _use-security-groups-and-rules:
 
-Use security groups and rules to control traffic
--------------------------------------------------
+Controlling network traffic by using security groups and rules 
+----------------------------------------------------------------
 
 .. Important:: 
 

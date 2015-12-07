@@ -10,7 +10,7 @@
    prerequisites <prerequisites-for-using-api>
    Send API requests <send-request-ovw>
    Authenticate <authenticate>
-   Managing Networks <managing-networks-intro>
-   Configuring Networks <configuring-networks-intro>
-   Controlling Network Access <controlling-access-intro>
+   manage-networks-intro
+   configure-networks-intro
+   control-access-intro
    

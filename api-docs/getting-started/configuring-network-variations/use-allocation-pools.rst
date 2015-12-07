@@ -1,8 +1,8 @@
 .. _use-alloc-pools:
 
-=============================================================
-Use allocation pools to control dynamic IP address allocation
-=============================================================
+=====================================================================
+Controlling dynamic IP address allocation by using allocation pools 
+=====================================================================
 
 Allocation pools are a property of the ``subnets`` resource and can be used to control 
 dynamic address allocation within a CIDR. 

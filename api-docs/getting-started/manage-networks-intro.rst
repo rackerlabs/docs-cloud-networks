@@ -16,6 +16,6 @@ service operations for the following tasks:
    :maxdepth: 2
 
    Creating and listing networks <managing-networks/create-network>
-   Boot a new server with your cloud network <managing-networks/boot-server>
-   Delete your cloud network <managing-networks/delete-network>
-   Attach your network to an existing server <managing-networks/attach-network-to-existing-server>
+   Booting a new server <managing-networks/boot-server>
+   Deleting a network <managing-networks/delete-network>
+   Attaching a network to an existing server <managing-networks/attach-network-to-existing-server>

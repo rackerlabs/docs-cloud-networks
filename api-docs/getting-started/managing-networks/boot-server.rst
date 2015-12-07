@@ -1,8 +1,8 @@
 .. _boot-new-server:
 
-=========================================
-Boot a new server with your cloud network
-=========================================
+=============================================
+Booting a new server with your cloud network
+=============================================
 
 Now that you have a cloud network, you can attach it to a new server.
 

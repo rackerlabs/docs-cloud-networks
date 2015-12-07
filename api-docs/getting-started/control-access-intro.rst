@@ -13,4 +13,4 @@ service operations for the following task:
 .. toctree::
    :maxdepth: 2
 
-   controlling-network-access/security-groups
+   Controlling network traffic <controlling-network-access/security-groups>
