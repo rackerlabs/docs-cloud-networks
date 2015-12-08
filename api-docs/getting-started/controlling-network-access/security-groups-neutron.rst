@@ -25,7 +25,7 @@ The following steps show you how to create a security group.
            
    **Positional arguments:**
 
-   -  **description** The description of the security group. In this example, the 
+   -  ``description`` The description of the security group. In this example, the 
       description is ``"security group for webservers"``.
 
    -  The name of the security group. In this example, the name is ``1-new-tcp``.
@@ -69,16 +69,16 @@ Add a rule for SSH traffic (neutron client)
 
    **Positional arguments:**
 
-   -  **direction** The direction in which the security group rule is applied. In this 
+   -  ``direction`` The direction in which the security group rule is applied. In this 
       example, we used direction ``ingress``.
-   -  **ethertype** Must be IPv4 or IPv6. In this example, we used the ethertype ``IPv4``.
-   -  **port-range-min** The minimum port number in the range that is matched by the 
+   -  ``ethertype`` Must be IPv4 or IPv6. In this example, we used the ethertype ``IPv4``.
+   -  ``port-range-min`` The minimum port number in the range that is matched by the 
       security group rule. In this example, we used the minimum ``22``.
-   -  **port-range-max** The maximum port number in the range that is matched by the 
+   -  ``port-range-max`` The maximum port number in the range that is matched by the 
       security group rule. In this example, we used the maximum ``22``.
    -  The ID of the security group. In this example, we used security group 
       ``fd269d7a-0909-488f-b5fc-5606c8aa489f``.
-   -  **protocol** The protocol that is matched by the security group rule. Valid values 
+   -  ``protocol`` The protocol that is matched by the security group rule. Valid values 
       are ``null``, ``tcp``, ``udp``, and ``icmp``. In this example, we used the protocol 
       ``tcp``.
 
@@ -112,7 +112,7 @@ Add a rule for SSH traffic (neutron client)
 
       $ neutron security-group-rule-list
 
-   Te operation returns the response, as shown in the following output:
+   The operation returns the response, as shown in the following output:
 
    .. code::  
 
@@ -124,9 +124,6 @@ Add a rule for SSH traffic (neutron client)
 
 #. Notice that your group, ``fd269d7a-0909-488f-b5fc-5606c8aa489f``, contains your new rule, 
    ``ea794fe0-5f82-4b4e-8c38-7ab5d278973a`` in this example.                       
-
-#. Notice that your group, ``fd269d7a-0909-488f-b5fc-5606c8aa489f``, contains your new 
-   rule, ``ea794fe0-5f82-4b4e-8c38-7ab5d278973a`` in this example.
 
 .. _sg-find-port-neutron:
 
@@ -146,7 +143,7 @@ that port IP address. You need the port ID to apply the security group to the se
    **Positional argument:**
 
    -  ``id``. The ID of the server to which you want to add the security group. In this 
-       example, the server ID is ``6ae4be93-4ec7-4b55-897a-c250f3a6e161``.
+      example, the server ID is ``6ae4be93-4ec7-4b55-897a-c250f3a6e161``.
 
 
    The operation returns the response, as shown in the following output:
@@ -217,6 +214,10 @@ First, apply the security group to the server port. Then test the security group
    port, issue the following neutron client command, substituting your port ID and security 
    group for the ones shown.
 
+   .. code::  
+
+      $ neutron port-update <9dd49b03-956d-4cd5-ae23-6dbf89b76aeb> --security-group <fd269d7a-0909-488f-b5fc-5606c8aa489f>
+
    **Positional arguments:**
 
    -  The port ID to which the security group is attached. In this example, the port ID is 
@@ -224,11 +225,7 @@ First, apply the security group to the server port. Then test the security group
 
    -  ``security-group``. The security group. In this example, the security group ID is 
       ``fd269d7a-0909-488f-b5fc-5606c8aa489f``.
-
-   .. code::  
-
-      $ neutron port-update <9dd49b03-956d-4cd5-ae23-6dbf89b76aeb> --security-group <fd269d7a-0909-488f-b5fc-5606c8aa489f>
-
+      
    The operation returns the result as shown in the following output:
 
    .. code::  
@@ -289,16 +286,16 @@ that the security group contains the rule.
 
    **Positional arguments:**
 
-   -  **direction** The direction in which the security group rule is applied. In this 
+   -  ``direction`` The direction in which the security group rule is applied. In this 
       example, we used direction ``ingress``.
-   -  **ethertype** Must be IPv4 or IPv6. In this example, we used the ethertype ``IPv4``.
-   -  **port-range-min** The minimum port number in the range that is matched by the 
+   -  ``ethertype`` Must be IPv4 or IPv6. In this example, we used the ethertype ``IPv4``.
+   -  ``port-range-min`` The minimum port number in the range that is matched by the 
       security group rule. In this example, we used the minimum ``null``.
-   -  **port-range-max** The maximum port number in the range that is matched by the 
+   -  ``port-range-max`` The maximum port number in the range that is matched by the 
       security group rule. In this example, we used the maximum ``null``.
    -  The name or ID of the network. In this example, we use the network ID, which is 
       ``fd269d7a-0909-488f-b5fc-5606c8aa489f``.
-   -  **protocol** The protocol that is matched by the security group rule. Valid values 
+   -  ``protocol` The protocol that is matched by the security group rule. Valid values 
       are ``null``, ``tcp``, ``udp``, and ``icmp``. In this example, we used the protocol ``icmp``.
 
    The operation returns the response, as shown in the following output:

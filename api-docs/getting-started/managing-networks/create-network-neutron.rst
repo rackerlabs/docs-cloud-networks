@@ -56,9 +56,9 @@ After you create a subnet, copy its subnet ID for future reference.
 
 #. Issue the following neutron command:
 
-   -  **name** The subnet name. In this example, the name is ``Subamp``.
+   -  ``name`` The subnet name. In this example, the name is ``Subamp``.
 
-   -  **ip-version** The version of the subnet IP. In this example, the version is ``4``.
+   -  ``ip-version`` The version of the subnet IP. In this example, the version is ``4``.
 
    -  The network ID or name. In this example, we used the network ID
       ``29f52c7e-6efd-4335-a14a-db77d32a2555``.

@@ -1,11 +1,11 @@
 .. _provision-port-ips:
 
-===================================================================================
-Provisioning additional IP and dual-stack IP addresses on an isolated network port
-===================================================================================
+=================================================================
+Provisioning additional IP and dual-stack IP addresses on a port
+=================================================================
 
-For extra flexibility, you can configure a port to have both IPv4 and IPv6 IP addresses 
-and boot a server using that port.
+For extra flexibility, you can configure an isolated network  port to have both IPv4 and 
+IPv6 IP addresses and boot a server using that port.
 
 The following flow chart shows the steps for using dual-stack IP addresses on a port. 
 Detailed steps are provided in this section.

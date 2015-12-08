@@ -66,17 +66,17 @@ and host routes for your subnet.
            
    **Positional arguments:**
 
-   -  **ip-version** The version of the subnet IP. In this example, the version is ``4``.
+   -  ``ip-version`` The version of the subnet IP. In this example, the version is ``4``.
 
-   -  **allocation-pool** The start and end addresses for one or more
+   -  ``allocation-pool`` The start and end addresses for one or more
       allocation pools. In this example, there are two pools
       ``start=192.168.5.3,end=192.168.5.100`` and
       ``start=192.168.5.103,end=192.168.5.254``.
 
-   -  **host-route** A list of host route dictionaries for the subnet.
+   -  ``host-route`` A list of host route dictionaries for the subnet.
       In this example, we used ``"destination": "1.1.1.0/24", "nexthop": "192.168.5.254"``.
 
-   -  **tenant-id** The tenant ID. In this example, we used the tenant ID ``5831008``.
+   -  ``tenant-id`` The tenant ID. In this example, we used the tenant ID ``5831008``.
 
    -  The network ID or name. In this example, we used the network ID
       ``a8fde776-e80f-47bb-a050-0c057d89afc3``.

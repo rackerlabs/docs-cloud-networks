@@ -193,7 +193,7 @@ that port IP address. You need the port ID to apply the security group to the se
               -H "User-Agent: python-novaclient" \
               -H "Accept: application/json" | python -m json.tool
 
-   ** Positional arguments:**
+   **Positional arguments:**
 
    -  Your account, or tenant ID. In this example, the tenant ID is ``5831008``.
    -  The ID of the server to which you want to add the security group. In this example, 
