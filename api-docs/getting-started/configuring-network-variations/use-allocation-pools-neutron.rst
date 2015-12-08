@@ -68,13 +68,13 @@ allocation pools, and host routes for your subnet.
 
    **Positional arguments:**
 
-   -  **ip-version** The version of the subnet IP. In this example, the version is ``4``.
-   -  **allocation-pool** The start and end addresses for one or more allocation pools. In 
+   -  ``ip-version`` The version of the subnet IP. In this example, the version is ``4``.
+   -  ``allocation-pool** The start and end addresses for one or more allocation pools. In 
       this example, there are two pools ``start=192.168.5.3,end=192.168.5.100`` and
       ``start=192.168.5.103,end=192.168.5.254``.
-   -  **host-route** A list of host route dictionaries for the subnet. In this example, we 
+   -  ``host-route`` A list of host route dictionaries for the subnet. In this example, we 
       used ``destination=1.1.1.0/24,nexthop=192.168.5.254``.
-   -  **tenant-id** The tenant ID. In this example, we used the tenant ID ``5831008``.
+   -  ``tenant-id`` The tenant ID. In this example, we used the tenant ID ``5831008``.
    -  The network ID or name. In this example, we used the network ID
       ``a8fde776-e80f-47bb-a050-0c057d89afc3``.
    -  The network CIDR. In this example, the CIDR is ``192.168.5.0/24``.
@@ -228,9 +228,9 @@ Issue the following neutron command:
 
 **Positional arguments:**
 
--  **name** The port name. In this example, the port name is ``Rackerport``.
+-  ``name``. The port name. In this example, the port name is ``Rackerport``.
 
--  **fixed-ip** The subnet id and IP address. In this example, the fixed IP is
+-  ``fixed-ip``. The subnet id and IP address. In this example, the fixed IP is
    ``subnet_id=98c1af30-05c9-4502-8b1f-9bffde843cba,ip_address=192.168.5.1``.
 
 -  The network ID or name. In this example, the ID is ``a8fde776-e80f-47bb-a050-0c057d89afc3``.

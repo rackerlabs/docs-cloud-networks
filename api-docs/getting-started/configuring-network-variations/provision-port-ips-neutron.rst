@@ -14,7 +14,7 @@ Show a port with an IPv6 address (neutron)
 First, look at your port with an IPv6 IP address. In this example, note the fixed_ips 
 ip_address of ``fc01::7``, which is an IPv6 address in hexadecimal format.
 
- #. Issue the following neutron client command:
+#. Issue the following neutron client command:
 
    .. code::  
 
@@ -48,8 +48,6 @@ already been created, run the following command and note the CIDR to identify th
    .. code::  
 
       $ neutron subnet-list
-
-   **Output:**
 
    The operation returns the result as shown in the following output:
 
@@ -88,7 +86,7 @@ Issue the following neutron client command, using the port ID from the preceding
            
 **Positional argument:**
 
--  **fixed-ip** The subnet IDs and IP addresses. In this example, there are two:
+-  ``fixed-ip`` The subnet IDs and IP addresses. In this example, there are two:
    ``subnet_id=1d18d76b-a04a-4147-a04c-151630ec80d0,ip_address=fc01::7`` and
    ``subnet_id=03f240c5-6fb8-47a0-860a-c7ba83be519f,ip_address=192.168.7.250``.
 -  The port ID. In this example, we used the port ID ``79bf47e2-5107-4d93-b9c3-b78ddbc94c93``.

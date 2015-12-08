@@ -57,13 +57,35 @@ and host routes for your subnet.
 
    .. code::  
 
-      $ neutron subnet-create \
-           --ip-version 4 \
-           --allocation-pool start=192.168.5.3,end=192.168.5.100 \
-           --allocation-pool start=192.168.5.103,end=192.168.5.254 \
-           --host-route destination=1.1.1.0/24,nexthop=192.168.5.254 \
-           --tenant-id 5831008 \
-           a8fde776-e80f-47bb-a050-0c057d89afc3 192.168.5.0/24
+      $ curl -s https://dfw.networks.api.rackspacecloud.com/v2.0/subnets \
+           -X POST \
+           -H "Content-Type: application/json" \
+           -H "User-Agent: python-novaclient" \
+           -H "Accept: application/json" \
+           -H "X-Auth-Token: $token" \
+           -d '{"subnet":
+                 {
+                   "network_id": "a8fde776-e80f-47bb-a050-0c057d89afc3",
+                   "ip_version": 4,
+                   "cidr": "192.168.5.0/24",
+                   "gateway_ip": null,
+                   "allocation_pools": [
+                      {
+                         "end": "192.168.5.100",
+                         "start": "192.168.5.3"
+                      },
+                      {
+                          "end": "192.168.5.254",
+                          "start": "192.168.5.103"
+                      }
+                   ],
+                   "host_routes": [
+                      {
+                          "destination": "1.1.1.0/24",
+                          "nexthop": "192.168.5.254"
+                      }
+                   ],
+                   "tenant_id": "5831008"}}' | python -m json.tool
            
    **Positional arguments:**
 
@@ -122,7 +144,7 @@ Boot a Server (cURL)
    -  The flavor ID. 
    -  The network ID of the network, which is ``net-id=a8fde776-e80f-47bb-a050-0c057d89afc3``.
 
-1. Issue the following cURL command, substituting your own values for the ones shown:
+#. Issue the following cURL command, substituting your own values for the ones shown:
 
    .. code::  
 
@@ -173,7 +195,7 @@ Verify the IP on the server port (cURL)
 The following step shows you how to verify the IP address on the server port. In this case, 
 the IP address should be ``192.168.5.3`` from the start of the allocation pool.
 
-#  Issue the following cURL command, substituting your own values for the ones shown:
+#. Issue the following cURL command, substituting your own values for the ones shown:
 
    .. code::  
 
@@ -265,7 +287,7 @@ the IP address should be ``192.168.5.3`` from the start of the allocation pool.
        }
                                
 
-#  Note the IP address on the ``public`` interface (in this case, ``10.23.233.124``). Use 
+#. Note the IP address on the ``public`` interface (in this case, ``10.23.233.124``). Use 
    this to log in to the server in the next step.
 
 .. _chr-login-to-server-sshcurl:
