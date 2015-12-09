@@ -46,7 +46,7 @@ Use one of the following service access/endpoint to access the |apiservice| serv
 .. note::
    
    You should copy the base URLs directly from the catalog rather than trying to construct 
-   them manually. You can find the complete URI to access the Cloud Servers API  in the 
+   them manually. You can find the complete URI to access the Cloud Networks API  in the 
    service catalog returned in the :ref:`authentication response <review-auth-resp>`. 
    Search the catalog for the service name, ``cloudNetworks``. Then copy the URI from the 
    *publicURL* field included in the service information. 
