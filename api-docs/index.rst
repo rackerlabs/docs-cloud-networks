@@ -18,7 +18,7 @@ using the |apiservice|.
    :maxdepth: 2
 
    Cloud Networks 2.0 <self>
-   API Status <http://www.rackspacestatus.com/>
+   API Status <https://status.rackspace.com>
    About the API <preface>
    getting-started
    getting-started/index
