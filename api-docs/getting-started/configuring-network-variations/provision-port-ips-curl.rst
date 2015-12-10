@@ -14,18 +14,18 @@ Show a port with an IPv6 address (cURL)
 First, look at your port with an IPv6 IP address. In this example, note the 
 fixed_ips ip_address of ``fc01::7``, which is an IPv6 address in hexadecimal format.
 
-#. Issue the following cURL command:
+#. **List ports with cURL request**
 
    .. code::  
 
-      $ curl -s https://dfw.networks.api.rackspacecloud.com/v2.0/ports \
+      $ curl -s https://$API_ENDPOINT/v2.0/ports \
            -X GET \
            -H "Content-Type: application/json" \
            -H "User-Agent: python-novaclient" \
            -H "Accept: application/json" \
-           -H "X-Auth-Token: $token" | python -m json.tool
+           -H "X-Auth-Token: $AUTH_TOKEN" | python -m json.tool
 
-   The operation returns the response body, as shown in the following example:
+   **List ports with cURL response**
 
    .. code::  
 
@@ -66,18 +66,18 @@ created this subnet on the same network. If you have not done so, create an IPv4
 (**POST /subnets**) on the same network. Because this example assumes that the subnet has 
 already been created, run the following command and note the CIDR to identify the IPv4 address.
 
-#. Issue the following cURL command:
+#. **List subnets with cURL request**
 
    .. code::  
 
-      $ curl -s https://dfw.networks.api.rackspacecloud.com/v2.0/subnets \
+      $ curl -s https://$API_ENDPOINT/v2.0/subnets \
            -X GET \
            -H "Content-Type: application/json" \
            -H "User-Agent: python-novaclient" \
            -H "Accept: application/json" \
-           -H "X-Auth-Token: $token" | python -m json.tool
+           -H "X-Auth-Token: $AUTH_TOKEN" | python -m json.tool
 
-   The operation returns the response body, as shown in the following example:
+   **List subnets with cURL response**
 
    .. code::  
 
@@ -119,16 +119,18 @@ address, the subnet's IPv4 ID, and the IP address from the subnet's IPv4 CIDR. I
 example, the IPv4 IP address is ``192.168.7.250`` and the subnet_id is 
 ``321caa1c-2105-4186-b53b-366fa623c09a``.
 
-Issue the following cURL command, using the port ID from the preceding step in the URI:
+Issue the following cURL command, using the port ID from the preceding step in the URI.
+
+**Update port with cURL request**
 
 .. code::  
 
-   $ curl -s https://dfw.networks.api.rackspacecloud.com/v2.0/ports/79bf47e2-5107-4d93-b9c3-b78ddbc94c93 \
+   $ curl -s https://$API_ENDPOINT/v2.0/ports/79bf47e2-5107-4d93-b9c3-b78ddbc94c93 \
          -X PUT \
          -H "Content-Type: application/json" \
          -H "User-Agent: python-novaclient" \
          -H "Accept: application/json" \
-         -H "X-Auth-Token: $token" \
+         -H "X-Auth-Token: $AUTH_TOKEN" \
          -d '{"port":
                {
                  "fixed_ips": [
@@ -144,7 +146,11 @@ Issue the following cURL command, using the port ID from the preceding step in t
                }
              }' | python -m json.tool
 
-The operation returns the response body, as shown in the following example:
+**Positional arguments**
+
+- The port ID.  In this example, the ID is ``79bf47e2-5107-4d93-b9c3-b78ddbc94c93``.
+
+*Update port with cURL response**
 
 .. code::  
 
@@ -184,18 +190,22 @@ The following step shows you how to show port details to verify that
 both IPv4 and IPv6 IP addresses are configured by using cURL.
 
 
-Issue the following cURL command, substituting your own values for the ones shown:
+**Show port with cURL request**
 
 .. code::  
 
-   $ curl https://dfw.networks.api.rackspacecloud.com/v2.0/ports/79bf47e2-5107-4d93-b9c3-b78ddbc94c93 \
+   $ curl https://$API_ENDPOINT/v2.0/ports/79bf47e2-5107-4d93-b9c3-b78ddbc94c93 \
          -X GET \
          -H "Content-Type: application/json" \
          -H "User-Agent: python-novaclient" \
          -H "Accept: application/json" \
-         -H "X-Auth-Token: $token" | python -m json.tool
+         -H "X-Auth-Token: $AUTH_TOKEN" | python -m json.tool
+         
+**Positional arguments**
 
-The operation returns the response body as shown in the following example:
+- The port ID.  In this example, the ID is ``79bf47e2-5107-4d93-b9c3-b78ddbc94c93``.
+
+**Show port with cURL response**
 
 .. code::  
 
@@ -237,14 +247,16 @@ you configured with dual-stack IP addresses in the second step of this procedure
 
 #. Issue the following cURL command, substituting your own values for the ones shown:
 
+   **Boot server with cURL request**
+
    .. code::  
 
-      $ curl https://dfw.servers.api.rackspacecloud.com/v2.0/$account/servers \
+      $ curl https://dfw.servers.api.rackspacecloud.com/v2.0/$TENANT_ID/servers \
               -X POST \
               -H "Content-Type: application/json" \
               -H "User-Agent: python-novaclient" \
               -H "Accept: application/json" \
-              -H "X-Auth-Token: $token" \
+              -H "X-Auth-Token: $AUTH_TOKEN" \
               -d '{"server":
                      {"name": "ata",
                       "imageRef": "c63e20ad-6e3b-4e0b-943c-95cf3ba6c3a6",
@@ -254,7 +266,7 @@ you configured with dual-stack IP addresses in the second step of this procedure
                       "networks": [{"uuid": "00000000-0000-0000-0000-000000000000"}, {"uuid": "11111111-1111-1111-1111-111111111111"}, {"port":"79bf47e2-5107-4d93-b9c3-b78ddbc94c93"} ]
                }}' | python -m json.tool
 
-   The operation returns the response body as shown in the following example:
+   **Boot server with cURL response**
 
    .. code::  
 
@@ -286,21 +298,21 @@ is ``1ed5bc31-153d-4570-a361-92d5a02fd428``, but use the ID from your response.
 Verify IP addresses on the server port (cURL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following step shows you how to verify the IP addresses on the server port. In this 
+The following example shows you how to verify the IP addresses on the server port. In this 
 case, the IP addresses should be ``192.168.7.250`` and ``fc01::7``.
 
-Issue the following cURL command:
+**Show port with cURL request**
 
 .. code::  
 
-   $ curl -k https://dfw.servers.api.rackspacecloud.com/v2.0/$account/servers/1ed5bc31-153d-4570-a361-92d5a02fd428  \
+   $ curl -k https://dfw.servers.api.rackspacecloud.com/v2.0/$TENANT_ID/servers/1ed5bc31-153d-4570-a361-92d5a02fd428  \
          -X GET
          -H "Content-Type: application/json" \
          -H "User-Agent: python-novaclient" \
          -H "Accept: application/json" \
-         -H "X-Auth-Token: $token" | python -m json.tool
+         -H "X-Auth-Token: $AUTH_TOKEN" | python -m json.tool
 
-The operation returns the response body as shown in the following example:
+**Show port with cURL response**
 
 .. code::  
 

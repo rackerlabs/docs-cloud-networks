@@ -14,19 +14,21 @@ Create a network (cURL)
 First, create a network, and then copy the network ID. You use this ID to create a subnet 
 and boot the server.
 
-#. Issue the following cURL command, substituting your own values for the ones shown:
+#. Issue the following cURL command, substituting your own values for the ones shown.
+
+   **Create network with cURL request**
 
    .. code::  
 
-      $ curl -s https://dfw.networks.api.rackspacecloud.com/v2.0/networks \
+      $ curl -s https://$API_ENDPOINT/v2.0/networks \
           -X POST \
           -H "Content-Type: application/json" \
           -H "User-Agent: python-novaclient" \
           -H "Accept: application/json" \
-          -H "X-Auth-Token: $token" \
+          -H "X-Auth-Token: $AUTH_TOKEN" \
           -d '{"network": {"name": "Rackernet"}}' | python -m json.tool
 
-   The operation returns the response body, as shown in the following example:
+   **Create network with cURL response**
 
    .. code::  
 
@@ -55,17 +57,18 @@ Create a subnet with allocation pools (cURL)
 To create a subnet with allocation pools, you specify a network, an IP
 address, allocation pools, and host routes for your subnet.
 
-#. Issue the following cURL command, substituting your own values for
-   the ones shown:
+#. Issue the following cURL command, substituting your own values for the ones shown.
+   
+   **Create subnet with cURL request**
 
    .. code::  
 
-      $ curl -s https://dfw.networks.api.rackspacecloud.com/v2.0/subnets \
+      $ curl -s https://$API_ENDPOINT/v2.0/subnets \
           -X POST \
           -H "Content-Type: application/json" \
           -H "User-Agent: python-novaclient" \
           -H "Accept: application/json" \
-          -H "X-Auth-Token: $token" \
+          -H "X-Auth-Token: $AUTH_TOKEN" \
           -d '{"subnet":
                {
                  "network_id": "a8fde776-e80f-47bb-a050-0c057d89afc3",
@@ -92,7 +95,7 @@ address, allocation pools, and host routes for your subnet.
                }
               }' | python -m json.tool
 
-   The operation returns the response body, as shown in the following example:
+   **Create subnet with cURL response**
 
    .. code::  
 
@@ -148,16 +151,18 @@ network you created in the first step of this procedure.
    -  The flavor ID. 
    -  The network ID of the network, which is ``net-id=a8fde776-e80f-47bb-a050-0c057d89afc3``.
 
-1. Issue the following cURL command, substituting your own values for the ones shown:
+1. Issue the following cURL command, substituting your own values for the ones shown.
+
+   **Boot server with cURL request**
 
    .. code::  
 
-      $ curl https://dfw.servers.api.rackspacecloud.com/v2/$account/servers \
+      $ curl https://dfw.servers.api.rackspacecloud.com/v2/$TENANT_ID/servers \
           -X POST \
           -H "Content-Type: application/json" \
           -H "User-Agent: python-novaclient" \
           -H "Accept: application/json" \
-          -H "X-Auth-Token: $token" \
+          -H "X-Auth-Token: $AUTH_TOKEN" \
           -d '{"server":
                 {
                   "name": "ata",
@@ -171,7 +176,7 @@ network you created in the first step of this procedure.
                 }
               }' | python -m json.tool
 
-   The operation returns the response body as shown in the following example:
+   **Boot server with cURL response**
 
    .. code::  
 
@@ -199,18 +204,24 @@ Verify IP on server port (curl)
 The following step shows you how to verify the IP address on the server port. In this case, 
 the IP address should be ``192.168.5.3`` from the start of the allocation pool.
 
-Issue the following cURL command, substituting your own values for the ones shown:
+Issue the following cURL command, substituting your own values for the ones shown.
+
+**Show server details with cURL request**
 
 .. code::  
 
-   $ curl -k https://dfw.servers.api.rackspacecloud.com/v2/$account/servers/a1061a57-0136-4c29-aac1-8b1a646a3001  \
+   $ curl -k https://dfw.servers.api.rackspacecloud.com/v2/$TENANT_ID/servers/a1061a57-0136-4c29-aac1-8b1a646a3001  \
          -X GET
          -H "Content-Type: application/json" \
          -H "User-Agent: python-novaclient" \
          -H "Accept: application/json" \
-         -H "X-Auth-Token: $token" | python -m json.tool
+         -H "X-Auth-Token: $AUTH_TOKEN" | python -m json.tool
+         
+**Positional arguments**
 
-The operation returns the response body as shown in the following example:
+- The server ID.  In this example, the ID is ``a1061a57-0136-4c29-aac1-8b1a646a3001``.
+
+**Show server details with cURL response**
 
 .. code::  
 
@@ -301,16 +312,18 @@ Do this by using the ``fixed_ips`` attribute and assigning the new IP address to
 In this case, the allocation pool IP addresses range from ``192.168.5.3`` to 
 ``192.168.5.100`` and the IP address for the new port is ``192.168.5.1``.
 
-Issue the following cURL command, substituting your own values for the ones shown:
+Issue the following cURL command, substituting your own values for the ones shown.
+
+**Create port with cURL request**
 
 .. code::  
 
-   $ curl -k https://dfw.networks.api.rackspacecloud.com/v2.0/ports \
+   $ curl -k https://$API_ENDPOINT/v2.0/ports \
        -X POST
        -H "Content-Type: application/json" \
        -H "User-Agent: python-novaclient" \
        -H "Accept: application/json" \
-       -H "X-Auth-Token: $token"
+       -H "X-Auth-Token: $AUTH_TOKEN"
        -d '{
              "port": 
              {
@@ -327,7 +340,7 @@ Issue the following cURL command, substituting your own values for the ones show
              }
            }' | python -m json.tool
 
-The operation returns the response body as shown in the following example:
+**Create port with cURL response**
 
 .. code::  
 

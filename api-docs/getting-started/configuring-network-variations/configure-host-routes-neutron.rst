@@ -14,7 +14,9 @@ After you create a network, copy its network ID. You use this ID to create a sub
 boot the server.
 
 #. Issue the following neutron client command, substituting your own values for the ones 
-   shown:
+   shown.
+   
+   **Create network with neutron request**
 
    .. code::
    
@@ -24,7 +26,7 @@ boot the server.
    
       -  The network name. In this example, the network name is ``Rackernet``.
 
-   The operation returns the response, as shown in the following output:
+   **Create network with neutron response**
 
    .. code::  
 
@@ -52,7 +54,9 @@ Create a subnet with host routes (neutron client)
 To create a subnet with host routes, you specify a network, an IP address, allocation pools, 
 and host routes for your subnet.
 
-#. Issue the following cURL command, substituting your own values for the ones shown:
+#. Issue the following cURL command, substituting your own values for the ones shown.
+
+   **Create subnet with neutron request**
 
    .. code::  
 
@@ -83,7 +87,7 @@ and host routes for your subnet.
 
    -  The network CIDR. In this example, the CIDR is ``192.168.5.0/24``.
 
-   The operation returns the response, as shown in the following output:
+   **Create subnet with neutron response**
 
    .. code::  
 
@@ -124,14 +128,23 @@ of the network you created in the first step of this procedure.
    -  The flavor ID. 
    -  The network ID of the network, which is ``net-id=a8fde776-e80f-47bb-a050-0c057d89afc3``.
 
-#. Issue the following nova client command:
+#. Issue the following nova client command.
+
+   **Boot server with nova request**
 
    .. code::  
 
        $ nova boot ata --image ffa476b1-9b14-46bd-99a8-862d1d94eb7a /
               --flavor 2 --nic net-id=a8fde776-e80f-47bb-a050-0c057d89afc3
-
-   The operation returns information about the new server, as shown in the following example:
+              
+   **Positional arguments**
+   
+   - The server name. In this example, the name is ``ata``.
+   - ``image``.  The image ID. In this example, the ID is ``ffa476b1-9b14-46bd-99a8-862d1d94eb7a``.
+   - ``flavor``. The flavor ID.  In this example, the ID is ``2``
+   - ``nic net-id``.  The network ID. In this example, the ID is ``a8fde776-e80f-47bb-a050-0c057d89afc3``.
+   
+   **Boot server with nova response**
 
    .. code::  
 
@@ -171,7 +184,9 @@ Verify the IP on the server port (nova client)
 The following step shows you how to verify the IP address on the server port. In this case, 
 the IP address should be ``192.168.5.3`` from the start of the allocation pool.
 
-#. Issue the following nova client command:
+#. Issue the following command, substituting your value for the one shown.
+
+   **Show server details with nova request**
 
    .. code::  
 
@@ -181,7 +196,7 @@ the IP address should be ``192.168.5.3`` from the start of the allocation pool.
 
    -  The server ID. In this example, the ID is ``a1061a57-0136-4c29-aac1-8b1a646a3001``.
 
-   The operation returns the response, as shown in the following output:
+   **Show server details with nova response**
 
    .. code::  
 
@@ -222,7 +237,7 @@ Log in to the server and verify the route (ssh)
 The following steps show you how to log in to the server and verify that the host route is 
 configured correctly by using the command line.
 
-#. Issue the following command at the prompt, substituting your own values for the ones shown:
+#. Issue the following command at the prompt, substituting your own value for the one shown.
 
    .. code::  
 
@@ -245,7 +260,7 @@ configured correctly by using the command line.
 
    .. code::  
 
-      $ root@ata:~# route
+      root@ata:~# route
 
    The command returns output like the following example:
 

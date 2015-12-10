@@ -12,11 +12,11 @@ Delete a subnet (neutron client)
 
 To delete a subnet, specify the subnet ID.
 
-Issue the following neutron client command:
+**Delete subnet with neutron request**
 
 .. code::
 
-   $ neutron subnet-delete <23e3059e-4f39-4f7f-8cf2-c326e5de6c37>
+   $ neutron subnet-delete 23e3059e-4f39-4f7f-8cf2-c326e5de6c37
    
 **Positional argument:**
 
@@ -32,11 +32,11 @@ Delete a network (neutron client)
 
 To delete a network, specify the network ID.
 
-Issue the following neutron client command:
+**Delete network with neutron request**
 
 .. code::  
 
-   $ neutron net-delete <29f52c7e-6efd-4335-a14a-db77d32a2555>
+   $ neutron net-delete 29f52c7e-6efd-4335-a14a-db77d32a2555
    
 **Positional argument:**
 

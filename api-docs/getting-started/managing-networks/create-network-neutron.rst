@@ -14,17 +14,17 @@ Create a network (neutron client)
 To create a network, you specify a name for your network. After you create a network, copy 
 its network ID. You use this ID to create a subnet and attach it to a port.
 
-#. Issue the following neutron command:
+#. **Create network with neutron request**
 
+   .. code::  
+
+      $ neutron net-create amp
+      
    **Positional arguments:**
 
    -  The network name. In this example, the name is ``amp``.
 
-   .. code::  
-
-      $ neutron net-create <amp>
-
-   The operation returns the response, as shown in the following output:
+   **Create network with neutron response**
 
    .. code::  
 
@@ -52,10 +52,15 @@ Create a subnet (neutron client)
 To create a subnet, you specify a network, an IP address, and a name for your subnet. 
 After you create a subnet, copy its subnet ID for future reference.
 
-**Procedure: To create a subnet**
+#. **Create subnet with neutron request**
 
-#. Issue the following neutron command:
+   .. code::  
 
+      $ neutron subnet-create --name Subamp /
+        --ip-version 4 29f52c7e-6efd-4335-a14a-db77d32a2555 120.1.2.0/24
+
+   **Positional arguments:**
+   
    -  ``name`` The subnet name. In this example, the name is ``Subamp``.
 
    -  ``ip-version`` The version of the subnet IP. In this example, the version is ``4``.
@@ -65,13 +70,7 @@ After you create a subnet, copy its subnet ID for future reference.
 
    -  The network CIDR. In this example, the CIDR is ``120.1.2.0/24``.
 
-   .. code::  
-
-      $ neutron subnet-create --name <Subamp> --ip-version <4> <29f52c7e-6efd-4335-a14a-db77d32a2555> <120.1.2.0/24>
-
-   **Positional arguments:**
-
-   The operation returns the response, as shown in the following output:
+   **Create subnet with neutron response**
 
    .. code::  
 
@@ -99,13 +98,13 @@ After you create a subnet, copy its subnet ID for future reference.
 List networks (neutron client)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Issue the following neutron client command:
+**List networks with neutron request**
 
 .. code::  
 
    $ neutron net-list 
 
-The operation returns the result as shown in the following output
+**List networks with neutron response**
 
 .. code::  
 
@@ -120,13 +119,13 @@ The operation returns the result as shown in the following output
 List subnets (neutron client)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Issue the following neutron client command:
+**List subnets with neutron request**
 
 .. code::
 
    $ neutron subnet-list 
 
-The operation returns the result as shown in the following output
+**List subnets with neutron response**
 
 .. code::
 

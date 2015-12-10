@@ -12,20 +12,22 @@ Delete a subnet (cURL)
 
 To delete a subnet, specify the subnet ID.
 
-Issue the following cURL command, substituting your own values for the ones shown:
+Issue the following cURL command, substituting your own values for the ones shown.
+
+**Delete subnet with cURL request**
 
 .. code::
 
-   $ curl -i https://dfw.networks.api.rackspacecloud.com/v2.0/subnets/23e3059e-4f39-4f7f-8cf2-c326e5de6c37 \
+   $ curl -i https://$API_ENDPOINT/v2.0/subnets/23e3059e-4f39-4f7f-8cf2-c326e5de6c37 \
         -X 'DELETE' \
-        -H "X-Auth-Token: $token" \
+        -H "X-Auth-Token: $AUTH_TOKEN" \
         -H "X-Auth-Project-Id: $account" \
         -H "Accept: application/json" 
         
 **Positional argument:**
 
--  ``id``. The ID of the network that you want to delete. In this example, the network 
-   ID is ``29f52c7e-6efd-4335-a14a-db77d32a2555``.
+-  The ID of the subnet that you want to delete. In this example, the ID is 
+   ``23e3059e-4f39-4f7f-8cf2-c326e5de6c37``.
 
 .. note::
 
@@ -33,8 +35,9 @@ Issue the following cURL command, substituting your own values for the ones show
    ``| python -m json.tool`` clause from the command because the API operation does not 
    return a JSON response.
 
+The operation returns the header as shown in the following example.
 
-The operation returns the header as shown in the following example:
+**Delete subnet with cURL response**
 
 .. code::
 
@@ -55,20 +58,22 @@ Delete a network (cURL)
 
 To delete a network, specify the network ID.
 
-Issue the following cURL command, substituting your own values for the ones shown:
+Issue the following cURL command, substituting your own values for the ones shown.
+
+**Delete network with cURL request**
 
 .. code::
 
-   $ curl -i https://dfw.networks.api.rackspacecloud.com/v2.0/networks/29f52c7e-6efd-4335-a14a-db77d32a2555 \
+   $ curl -i https://$API_ENDPOINT/v2.0/networks/29f52c7e-6efd-4335-a14a-db77d32a2555 \
          -X 'DELETE' \
-         -H "X-Auth-Token: $token" \
-         -H "X-Auth-Project-Id: $account" \
+         -H "X-Auth-Token: $AUTH_TOKEN" \
+         -H "X-Auth-Project-Id: $TENANT_ID" \
          -H "Accept: application/json" 
 
 **Positional argument:**
 
-   -  ``id``. The ID of the subnet that you want to delete. In this example, the subnet ID 
-      is ``23e3059e-4f39-4f7f-8cf2-c326e5de6c37``.
+   -  The ID of the network that you want to delete. In this example, the ID 
+      is ``29f52c7e-6efd-4335-a14a-db77d32a2555``.
 
 .. note::
 
@@ -76,7 +81,9 @@ Issue the following cURL command, substituting your own values for the ones show
    ``| python -m json.tool`` clause from the command because the API operation does not 
    return a JSON response.
 
-The operation returns the header as shown in the following example:
+The operation returns the header as shown in the following example.
+
+**Delete network with cURL response**
 
 .. code::
 

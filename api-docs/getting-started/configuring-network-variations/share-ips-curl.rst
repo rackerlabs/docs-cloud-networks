@@ -20,18 +20,26 @@ Create server A (cURL)
 
 Create the first server by using the standard Nova boot process.
 
-#. Issue the following cURL command, substituting your own values for the ones shown:
+#. Issue the following cURL command, substituting your own values for the ones shown.
+
+   **Boot server A with cURL request**
 
    .. code::  
 
-      $ curl -i -vv https://dfw.servers.api.rackspacecloud.com/v2/$account/servers
+      $ curl -i -vv https://dfw.servers.api.rackspacecloud.com/v2/$TENANT_ID/servers
               -X POST \
               -H "Content-Type: application/json" \
               -H "Accept: application/json" \
-              -H "X-Auth-Token: $token" \
-              -d '{"server": {"name": "serverA", "imageRef": "2f85a777-9ffd-4b49-a60e-1155ceb93a5e", "flavorRef": "4", "max_count": 1, "min_count": 1, "networks": [{"uuid": "00000000-0000-0000-0000-000000000000"}, {"uuid": "11111111-1111-1111-1111-111111111111"}]}}' | python -m json.tool
+              -H "X-Auth-Token: $AUTH_TOKEN" \
+              -d '{"server": {"name": "serverA", 
+                 "imageRef": "2f85a777-9ffd-4b49-a60e-1155ceb93a5e", 
+                 "flavorRef": "4", "max_count": 1, "min_count": 1, 
+                 "networks": [
+                    {"uuid": "00000000-0000-0000-0000-000000000000"}, 
+                    {"uuid": "11111111-1111-1111-1111-111111111111"}
+                 ]}}' | python -m json.tool
 
-   The operation returns the response body, as shown in the following example:
+   **Boot server A with cURL response**
 
    .. code::  
 
@@ -72,18 +80,19 @@ find the ``RAX-PUBLIC-IP-ZONE-ID:publicIPZoneId`` attribute.
     If you want to share a Cloud Networks (or isolated network) address, the servers do not 
     need to be in the same ``publicIPZoneId``.
 
-#. Issue the following cURL command, substituting your own values for
-   the ones shown:
+#. Issue the following cURL command, substituting your own values for the ones shown.
+
+   **Show server A details with cURL request**
 
    .. code::  
 
-      $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/servers/f387799f-9668-4cc7-9f0f-03c9cfc43af6 \
+      $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$TENANT_ID/servers/f387799f-9668-4cc7-9f0f-03c9cfc43af6 \
               -X GET \
               -H "Content-Type: application/json" \
               -H "Accept: application/json" \
-              -H "X-Auth-Token: $token" | python -m json.tool
+              -H "X-Auth-Token: $AUTH_TOKEN" | python -m json.tool
 
-   The operation returns the response body, as shown in the following example:
+   **Show server A details with cURL response**
 
    .. code::  
 
@@ -116,18 +125,28 @@ The following step shows you how create server B in the same ``publicIPZoneId`` 
 A, by using a scheduler hint to direct the service to create server B near to server A 
 (``f387799f-9668-4cc7-9f0f-03c9cfc43af6``).
 
-Issue the following cURL command, substituting your own values for the ones shown:
+Issue the following cURL command, substituting your own values for the ones shown.
+
+**Boot server B with cURL request**
 
 .. code::  
 
-   $ curl -i -vv https://dfw.servers.api.rackspacecloud.com/v2/$account/servers
+   $ curl -i -vv https://dfw.servers.api.rackspacecloud.com/v2/$TENANT_ID/servers
          -X POST \
          -H "Content-Type: application/json" \
          -H "Accept: application/json" \
-         -H "X-Auth-Token: $token" \
-         -d '{"server": {"name": "serverB", "os:scheduler_hints": {"public_ip_zone:near": ["f387799f-9668-4cc7-9f0f-03c9cfc43af6"]},"imageRef": "2f85a777-9ffd-4b49-a60e-1155ceb93a5e", "flavorRef": "4", "max_count": 1, "min_count": 1, "networks": [{"uuid": "00000000-0000-0000-0000-000000000000"}, {"uuid": "11111111-1111-1111-1111-111111111111"}]}}' | python -m json.tool
+         -H "X-Auth-Token: $AUTH_TOKEN" \
+         -d '{"server": {"name": "serverB", 
+            "os:scheduler_hints": {"public_ip_zone:near": 
+            ["f387799f-9668-4cc7-9f0f-03c9cfc43af6"]},
+            "imageRef": "2f85a777-9ffd-4b49-a60e-1155ceb93a5e", 
+            "flavorRef": "4", "max_count": 1, "min_count": 1, 
+            "networks": [
+               {"uuid": "00000000-0000-0000-0000-000000000000"}, 
+               {"uuid": "11111111-1111-1111-1111-111111111111"}
+            ]}}' | python -m json.tool
 
-The operation returns the response body as shown in the following example:
+**Boot server B with cURL response**
 
 .. code::  
 
@@ -161,16 +180,18 @@ The following steps show you how to verify that both servers are in the same
 #. You have already run this command for server A and noted the 
    ``RAX-PUBLIC-IP-ZONE-ID:publicIPZoneId``. Now, issue the following cURL command, 
    substituting your own Server B id for the server id in the command.
+   
+   **Show server B details with cURL request**
 
    .. code::  
 
-      $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/servers/1a861bf7-2a5e-40a4-acb3-1fb058cf2a74 \
+      $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$TENANT_ID/servers/1a861bf7-2a5e-40a4-acb3-1fb058cf2a74 \
               -X GET \
               -H "Content-Type: application/json" \
               -H "Accept: application/json" \
-              -H "X-Auth-Token: $token" | python -m json.tool
+              -H "X-Auth-Token: $AUTH_TOKEN" | python -m json.tool
 
-   The operation returns the response body as shown in the following example:
+   **Show server B details with cURL response**
 
    .. code::  
 
@@ -198,18 +219,24 @@ The following step shows you how to boot a server by using the port ID of the po
 you configured with dual-stack IP addresses in the second step of this procedure.
 
 #. Issue the following cURL command for server A, where the value for device_id is your 
-   server A ID:
+   server A ID.
+   
+   **List server A ports with cURL request**
 
    .. code::  
 
-      $ curl -s https://dfw.networks.api.rackspacecloud.com/v2.0/ports?device_id=f387799f-9668-4cc7-9f0f-03c9cfc43af6 \
+      $ curl -s https://$API_ENDPOINT/v2.0/ports?device_id=f387799f-9668-4cc7-9f0f-03c9cfc43af6 \
               -X GET \
               -H "Content-Type: application/json" \
               -H "User-Agent: python-novaclient" \
               -H "Accept: application/json" \
-              -H "X-Auth-Token: $token" | python -m json.tool
+              -H "X-Auth-Token: $AUTH_TOKEN" | python -m json.tool
 
-   The operation returns the response body, as shown in the following example:
+   **Positional arguments**
+   
+   - The server A ID.  In this example, the ID is ``f387799f-9668-4cc7-9f0f-03c9cfc43af6``.
+   
+   **List server A ports with cURL response**
 
    .. code::  
 
@@ -265,11 +292,11 @@ you configured with dual-stack IP addresses in the second step of this procedure
        }
                                    
 
-#. Note the id value for the port where the network\_id is 
+#. Note the id value for the port where the network_id is 
    ``00000000-0000-0000-0000-000000000000`` for future reference. In this example, the ID 
    is ``ad88326b-b232-45e8-9fe6-ff0618ff5de6``), but use the ID from your response.
 
-#. Repeat the GET /ports command (step 1 in this procedure) for server B, and note the port 
+#. Repeat the ``GET /ports`` command (step 1 in this procedure) for server B, and note the port 
    ID for that server's public network.
 
 .. _si-create-shared-ip-curl:
@@ -280,20 +307,26 @@ Create shared IP address (cURL)
 The following steps show you how create shared IP address for the Server A and B public 
 network ports identified in the previous step.
 
-#. Issue the following cURL command, using your port IDs and tenant ID:
+#. Issue the following cURL command, using your port IDs and tenant ID.
+
+   **Create IP address with cURL request**
 
    .. code::  
 
-      $ curl -s https://dfw.networks.api.rackspacecloud.com/v2.0/ip_addresses \
+      $ curl -s https://$API_ENDPOINT/v2.0/ip_addresses \
               -X POST \
               -H "Content-Type: application/json" \
               -H "User-Agent: python-novaclient" \
               -H "Accept: application/json" \
-              -H "X-Auth-Token: $token" \
-              -d "{"ip_address":{"network_id": "00000000-0000-0000-0000-000000000000", "port_ids": ["ad88326b-b232-45e8-9fe6-ff0618ff5de6", "51ca694d-c60a-4162-8070-54b3385a7833"], "tenant_id": "1234567", "version": 4}}"
+              -H "X-Auth-Token: $AUTH_TOKEN" \
+              -d "{"ip_address":{"network_id": "00000000-0000-0000-0000-000000000000", 
+                 "port_ids": [
+                    "ad88326b-b232-45e8-9fe6-ff0618ff5de6", 
+                    "51ca694d-c60a-4162-8070-54b3385a7833"
+                 ], "tenant_id": "1234567", "version": 4}}"
               | python -m json.tool
 
-   The operation returns the response body, as shown in the following example:
+   **Create IP address with cURL response**
 
    .. code::  
 
@@ -325,18 +358,26 @@ Associate shared IP address to both servers (cURL)
 The following steps show you how to explicitly associate the new shared IP address to 
 servers A and B.
 
-1. Issue the following cURL command, using your server A ID and shared IP address ID:
+#. Issue the following cURL command, using your server A ID and shared IP address ID.
+
+   **Associate IP address to server A with cURL request**
 
    .. code::  
 
-      $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/servers/f387799f-9668-4cc7-9f0f-03c9cfc43af6/ip_associations/89875b4a-b098-414f-980a-5e9f89078a49 \
+      $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$TENANT_ID/servers/f387799f-9668-4cc7-9f0f-03c9cfc43af6/ip_associations/89875b4a-b098-414f-980a-5e9f89078a49 \
               -X PUT \
               -H "Content-Type: application/json" \
               -H "User-Agent: python-novaclient" \
               -H "Accept: application/json" \
-              -H "X-Auth-Token: $token" | python -m json.tool
+              -H "X-Auth-Token: $AUTH_TOKEN" | python -m json.tool
 
-   The operation returns the response body, as shown in the following example:
+   
+   **Positional arguments**
+   
+   - The server A ID. In this example, the ID is ``f387799f-9668-4cc7-9f0f-03c9cfc43af6``.
+   - The shared IP address.  In this example, the IP address is ``89875b4a-b098-414f-980a-5e9f89078a49``.
+   
+   **Associate IP address to server A with cURL response**
 
    .. code::  
 
@@ -357,18 +398,25 @@ servers A and B.
 
 #. Repeat the process for server B.
 
-   Issue the following cURL command, using your server B ID and shared IP address ID:
+   Issue the following cURL command, using your server B ID and shared IP address ID.
+   
+   **Associate IP address to server B with cURL request**
 
    .. code::  
 
-      $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/servers/1a861bf7-2a5e-40a4-acb3-1fb058cf2a74/ip_associations/89875b4a-b098-414f-980a-5e9f89078a49 \
+      $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$TENANT_ID/servers/1a861bf7-2a5e-40a4-acb3-1fb058cf2a74/ip_associations/89875b4a-b098-414f-980a-5e9f89078a49 \
               -X PUT \
               -H "Content-Type: application/json" \
               -H "User-Agent: python-novaclient" \
               -H "Accept: application/json" \
-              -H "X-Auth-Token: $token" | python -m json.tool
+              -H "X-Auth-Token: $AUTH_TOKEN" | python -m json.tool
+              
+   **Positional arguments**
+   
+   - The server B ID. In this example, the ID is ``1a861bf7-2a5e-40a4-acb3-1fb058cf2a74``.
+   - The shared IP address.  In this example, the IP address is ``89875b4a-b098-414f-980a-5e9f89078a49``.
 
-   The operation returns the response body, as shown in the following example:
+   **Associate IP address to server B with cURL response**
 
    .. code::  
 
@@ -394,18 +442,20 @@ Verify shared IP address (cURL)
 The following steps show you how verify that the shared IP address is set for the Server A 
 and B public network ports.
 
-#. Issue the following cURL command, using your port IDs and tenant ID:
+#. Issue the following cURL command, using your port IDs and tenant ID.
+
+   **List IP addresses with cURL request**
 
    .. code::  
 
-      $ curl -s https://dfw.networks.api.rackspacecloud.com/v2.0/ip_addresses \
+      $ curl -s https://$API_ENDPOINT/v2.0/ip_addresses \
               -X GET \
               -H "Content-Type: application/json" \
               -H "User-Agent: python-novaclient" \
               -H "Accept: application/json" \
-              -H "X-Auth-Token: $token" | python -m json.tool
+              -H "X-Auth-Token: $AUTH_TOKEN" | python -m json.tool
 
-   The operation returns the response body, as shown in the following example:
+   **List IP addresses with cURL response**
 
    .. code::  
 

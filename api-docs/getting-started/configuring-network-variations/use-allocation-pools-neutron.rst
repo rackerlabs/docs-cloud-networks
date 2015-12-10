@@ -15,17 +15,19 @@ First, create a network, and then copy the network ID. You use this ID to create
 and boot the server.
 
 #. Issue the following neutron client command, substituting your own values for the ones 
-   shown:
+   shown.
+   
+   **Create network with neutron request**
 
    .. code::  
 
-      $ neutron net-create <Rackernet>
+      $ neutron net-create Rackernet
       
    **Positional argument:**
 
    -  The network name. In this example, the network name is ``Rackernet``.
 
-   The operation returns the response, as shown in the following output:
+   **Create network with neutron response**
 
    .. code::  
 
@@ -54,17 +56,19 @@ To create a subnet with allocation pools, you specify a network, an IP address a
 allocation pools, and host routes for your subnet.
 
 #. Issue the following neutron client command, substituting your own values for the ones 
-   shown:
+   shown.
+   
+   **Create subnet with neutron request**
 
    .. code::  
 
       $ neutron subnet-create \
-           --ip-version <4> \
-           --allocation-pool start=<192.168.5.3>,end=<192.168.5.100> \
-           --allocation-pool start=<192.168.5.103>,end=<192.168.5.254> \
-           --host-route destination=<1.1.1.0/24>,nexthop=<192.168.5.254> \
-           --tenant-id <5831008> \
-           <a8fde776-e80f-47bb-a050-0c057d89afc3> <192.168.5.0/24>
+           --ip-version 4 \
+           --allocation-pool start=192.168.5.3,end=192.168.5.100 \
+           --allocation-pool start=192.168.5.103,end=192.168.5.254 \
+           --host-route destination=1.1.1.0/24,nexthop=192.168.5.254 \
+           --tenant-id 5831008 \
+           a8fde776-e80f-47bb-a050-0c057d89afc3 192.168.5.0/24
 
    **Positional arguments:**
 
@@ -79,7 +83,7 @@ allocation pools, and host routes for your subnet.
       ``a8fde776-e80f-47bb-a050-0c057d89afc3``.
    -  The network CIDR. In this example, the CIDR is ``192.168.5.0/24``.
    
-   The operation returns the response, as shown in the following output:
+   **Create subnet with neutron response**
 
    .. code::  
 
@@ -122,11 +126,21 @@ of the network you created in the first step of this procedure.
 
 #. Issue the following nova client command:
 
+   **Boot server with nova request**
+
    .. code::  
 
-       $ nova boot <ata> --image <ffa476b1-9b14-46bd-99a8-862d1d94eb7a> --flavor <2> --nic net-id=<a8fde776-e80f-47bb-a050-0c057d89afc3>
+       $ nova boot ata --image ffa476b1-9b14-46bd-99a8-862d1d94eb7a --flavor 2 \
+         --nic net-id=a8fde776-e80f-47bb-a050-0c057d89afc3
 
-   The operation returns information about the new server, as shown in the following example:
+   **Positional arguments**
+   
+   - The server name. In this example, the name is ``ata``.
+   - ``image``.  The image ID. In this example, the ID is ``ffa476b1-9b14-46bd-99a8-862d1d94eb7a``.
+   - ``flavor``. The flavor ID.  In this example, the ID is ``2``
+   - ``nic net-id``.  The network ID. In this example, the ID is ``a8fde776-e80f-47bb-a050-0c057d89afc3``.
+   
+   **Boot server with nova response**
 
    .. code::  
 
@@ -164,19 +178,20 @@ Verify IP on server port (nova client)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following step shows you how to verify the IP address on the server port. In this case, 
-the IP address should be ``192.168.5.3`` from the start of the allocation pool.
+the IP address should be ``192.168.5.3`` from the start of the allocation pool. Issue the
+following command, substituting your values for the ones shown.
 
-Issue the following nova command:
+**Show server details with nova request**
 
 .. code::  
 
-   $ nova list <a1061a57-0136-4c29-aac1-8b1a646a3001>
+   $ nova list a1061a57-0136-4c29-aac1-8b1a646a3001
 
 **Positional arguments:**
 
 -  The server ID. In this example, the ID is ``a1061a57-0136-4c29-aac1-8b1a646a3001``.
 
-The operation returns the response, as shown in the following output:
+**Show server details with nova response**
 
 .. code::  
 
@@ -217,25 +232,23 @@ Do this by using the ``fixed_ips`` attribute and assigning the new IP address to
 In this case, the allocation pool IP addresses range from ``192.168.5.3`` to 
 ``192.168.5.100`` and the IP address for the new port is ``192.168.5.1``.
 
-Issue the following neutron command:
+**Create port with neutron request**
 
 .. code::  
 
    $ neutron port-create \
-      --name <Rackerport> \
-      --fixed-ip subnet_id=<98c1af30-05c9-4502-8b1f-9bffde843cba>,ip_address=<192.168.5.1> \
-      <a8fde776-e80f-47bb-a050-0c057d89afc3>
+      --name Rackerport \
+      --fixed-ip subnet_id=98c1af30-05c9-4502-8b1f-9bffde843cba,ip_address=192.168.5.1 \
+      a8fde776-e80f-47bb-a050-0c057d89afc3
 
 **Positional arguments:**
 
 -  ``name``. The port name. In this example, the port name is ``Rackerport``.
-
 -  ``fixed-ip``. The subnet id and IP address. In this example, the fixed IP is
    ``subnet_id=98c1af30-05c9-4502-8b1f-9bffde843cba,ip_address=192.168.5.1``.
-
 -  The network ID or name. In this example, the ID is ``a8fde776-e80f-47bb-a050-0c057d89afc3``.
 
-The operation returns the response, as shown in the following output:
+**Create port with neutron repose**
 
 .. code::  
 
