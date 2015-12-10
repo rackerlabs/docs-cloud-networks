@@ -14,13 +14,13 @@ Show a port with an IPv6 address (neutron)
 First, look at your port with an IPv6 IP address. In this example, note the fixed_ips 
 ip_address of ``fc01::7``, which is an IPv6 address in hexadecimal format.
 
-#. Issue the following neutron client command:
+#. **List ports with neutron request**
 
    .. code::  
 
       $ neutron port-list
 
-   The operation returns the response, as shown in the following output:
+   **List ports with neutron response**
 
    .. code::  
 
@@ -43,13 +43,13 @@ created this subnet on the same network. If you have not done so, create an IPv4
 (**POST /subnets**) on the same network. Because this example assumes that the subnet has 
 already been created, run the following command and note the CIDR to identify the IPv4 address.
 
-#. Issue the following neutron client command:
+#. **List subnets with neutron request**
  
    .. code::  
 
       $ neutron subnet-list
 
-   The operation returns the result as shown in the following output:
+   **List subnets with neutron response**
 
    .. code::  
 
@@ -75,23 +75,25 @@ address, the subnet's IPv4 ID, and the IP address from the subnet's IPv4 CIDR. I
 example, the IPv4 IP address is ``192.168.7.250`` and the subnet_id is 
 ``321caa1c-2105-4186-b53b-366fa623c09a``.
 
-Issue the following neutron client command, using the port ID from the preceding step:
+Issue the following neutron client command, using the port ID from the preceding step.
+
+**Update port with neutron request**
 
 .. code::  
 
   $ neutron port-update \
-      --fixed-ip subnet_id=<1d18d76b-a04a-4147-a04c-151630ec80d0,ip_address=fc01::7> \
-      --fixed-ip subnet_id=<03f240c5-6fb8-47a0-860a-c7ba83be519f,ip_address=192.168.7.250> \
-      <79bf47e2-5107-4d93-b9c3-b78ddbc94c93>
+      --fixed-ip subnet_id=1d18d76b-a04a-4147-a04c-151630ec80d0,ip_address=fc01::7 \
+      --fixed-ip subnet_id=03f240c5-6fb8-47a0-860a-c7ba83be519f,ip_address=192.168.7.250 \
+      79bf47e2-5107-4d93-b9c3-b78ddbc94c93
            
-**Positional argument:**
+**Positional arguments:**
 
 -  ``fixed-ip`` The subnet IDs and IP addresses. In this example, there are two:
    ``subnet_id=1d18d76b-a04a-4147-a04c-151630ec80d0,ip_address=fc01::7`` and
    ``subnet_id=03f240c5-6fb8-47a0-860a-c7ba83be519f,ip_address=192.168.7.250``.
 -  The port ID. In this example, we used the port ID ``79bf47e2-5107-4d93-b9c3-b78ddbc94c93``.
 
-The operation returns the result as shown in the following output
+**Update port with neutron response**
 
 .. code::  
 
@@ -122,17 +124,19 @@ The following step shows you how to show port details to verify that both IPv4 a
 addresses are configured by using the neutron client.
 
 
-Issue the following neutron client command, substituting your own values for the ones shown:
+Issue the following neutron client command, substituting your own values for the ones shown.
+
+**Show port details with neutron request**
 
 .. code::  
 
-   $ neutron port <79bf47e2-5107-4d93-b9c3-b78ddbc94c93>
+   $ neutron port 79bf47e2-5107-4d93-b9c3-b78ddbc94c93
    
 **Positional argument:**
 
    -  The port ID. In this example, we used the port ID ``79bf47e2-5107-4d93-b9c3-b78ddbc94c93``.
 
-The operation returns the result as shown in the following output
+**Show port details with neutron response**
 
 .. code::  
 
@@ -172,14 +176,23 @@ you configured with dual-stack IP addresses in the second step of this procedure
    -  The network ID of the network, which is ``net-id=79bf47e2-5107-4d93-b9c3-b78ddbc94c93``.
 
 
-#. Issue the following nova client command:
+#. Issue the following nova client command.
+
+   **Boot server with nova request**
 
    .. code::  
 
-       $ nova boot <ata> --image <c63e20ad-6e3b-4e0b-943c-95cf3ba6c3a6> /
-                   --flavor <2> --nic port-id=<79bf47e2-5107-4d93-b9c3-b78ddbc94c93>
+       $ nova boot ata --image c63e20ad-6e3b-4e0b-943c-95cf3ba6c3a6 /
+                   --flavor 2 --nic port-id=79bf47e2-5107-4d93-b9c3-b78ddbc94c93
+                   
+   **Positional arguments**
+   
+   - The server name. In this example, the name is ``ata``.
+   - ``image``.  The image ID. In this example, the ID is ``c63e20ad-6e3b-4e0b-943c-95cf3ba6c3a6``.
+   - ``flavor``. The flavor ID.  In this example, the ID is ``2``
+   - ``nic port-id``.  The port ID. In this example, the ID is ``79bf47e2-5107-4d93-b9c3-b78ddbc94c93``.
 
-   The operation returns information about the new server, as shown in the following example:
+   **Boot server with nova response**
 
    .. code::  
 
@@ -219,17 +232,19 @@ Verify IP addresses on the server port (nova)
 The following step shows you how to verify the IP addresses on the server port. In this 
 case, the IP addresses should be ``192.168.7.250`` and ``fc01::7``.
 
-Issue the following nova client command:
+Issue the following nova client command, substituting your value for the one shown.
+
+**Show server details with nova request**
 
 .. code::  
 
-   $ nova list <1ed5bc31-153d-4570-a361-92d5a02fd428>
+   $ nova list 1ed5bc31-153d-4570-a361-92d5a02fd428
 
 **Positional arguments:**
 
 -  The server ID. In this example, the ID is ``1ed5bc31-153d-4570-a361-92d5a02fd428``.
 
-The operation returns the response, as shown in the following output:
+**Show server details with nova response**
 
 .. code::  
 

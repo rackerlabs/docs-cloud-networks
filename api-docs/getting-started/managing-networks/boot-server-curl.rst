@@ -16,18 +16,21 @@ Before you can attach a port and network to a server, you need to create the por
 To create a port, you specify a name for your port and the network name. After you create 
 a port, copy its port ID. Use this ID to attach it to a new server.
 
-#. Issue the following cURL command, substituting your own values for  the ones shown:
+#. Issue the following cURL command, substituting your own values for  the ones shown.
 
+   **Create port with cURL request**
+   
    .. code::  
 
-      $ curl -s https://dfw.networks.api.rackspacecloud.com/v2.0/ports \
+      $ curl -s https://$API_ENDPOINT/v2.0/ports \
         -X POST \
         -H "Content-Type: application/json" \
         -H "Accept: application/json" \
-        -H "X-Auth-Token: $token" \
-        -d '{"port": {"admin_state_up": true,"device_id": "","name": "port1", "network_id": "03f240c5-6fb8-47a0-860a-c7ba83be519f"}}'| python -m json.tool
+        -H "X-Auth-Token: $AUTH_TOKEN" \
+        -d '{"port": {"admin_state_up": true,"device_id": "","name": "port1", 
+        "network_id": "03f240c5-6fb8-47a0-860a-c7ba83be519f"}}'| python -m json.tool
 
-   The operation returns the response body, as shown in the following example:
+   **Create port with cURL response**
 
    .. code::  
 
@@ -60,22 +63,22 @@ a port, copy its port ID. Use this ID to attach it to a new server.
 
 .. _bns-list-port-curl:
 
-List port (cURL)
-~~~~~~~~~~~~~~~~
+List ports (cURL)
+~~~~~~~~~~~~~~~~~
 
 After you create a port, you might want to list ports to confirm creation.
 
-#. Issue the following cURL command:
+#. **List ports with cURL request**
 
    .. code::  
 
-      $ curl https://dfw.networks.api.rackspacecloud.com/v2.0/ports \
+      $ curl https://$API_ENDPOINT/v2.0/ports \
         -X GET 
         -H "User-Agent: python-novaclient" \
         -H "Accept: application/json" \
-        -H "X-Auth-Token: $token" | python -m json.tool
+        -H "X-Auth-Token: $AUTH_TOKEN" | python -m json.tool
 
-   The operation returns the response body as shown in the following example:
+   **List ports with cURL response**
 
    .. code::  
 
@@ -128,20 +131,25 @@ Create your new server and attach a port with an isolated network.
    -  The network ID of PublicNet, which is ``00000000-0000-0000-0000-000000000000``, and 
       ServiceNet, which is ``11111111-1111-1111-1111-111111111111``.
 
-Issue the following cURL command, substituting your own values for the ones shown:
+Issue the following cURL command, substituting your own values for the ones shown.
+
+**Boot server with cURL request**
 
 .. code::  
 
-   $ curl https://dfw.servers.api.rackspacecloud.com/v2/$account/servers \
+   $ curl https://dfw.servers.api.rackspacecloud.com/v2/$TENANT_ID/servers \
      -X POST \
      -H "Content-Type: application/json" \
      -H "User-Agent: python-novaclient" \
      -H "Accept: application/json" \
-     -H "X-Auth-Token: $token" \
-     -d '{"server": {"name": "ata", "imageRef": "c63e20ad-6e3b-4e0b-943c-95cf3ba6c3a6", "flavorRef": "2", "max_count": 1, "min_count": 1, "networks":[{"uuid":"00000000-0000-0000-0000-000000000000"},{"uuid": "11111111-1111-1111-1111-111111111111"},{"port":"79bf47e2-5107-4d93-b9c3-b78ddbc94c93"}]}}' \
-          | python -m json.tool
+     -H "X-Auth-Token: $AUTH_TOKEN" \
+     -d '{"server": {"name": "ata", "imageRef": "c63e20ad-6e3b-4e0b-943c-95cf3ba6c3a6", 
+        "flavorRef": "2", "max_count": 1, "min_count": 1, 
+        "networks":[{"uuid":"00000000-0000-0000-0000-000000000000"}, 
+        {"uuid": "11111111-1111-1111-1111-111111111111"}, 
+        {"port":"79bf47e2-5107-4d93-b9c3-b78ddbc94c93"}]}}' | python -m json.tool
 
-The operation returns the response body as shown in the following example:
+**Boot server with cURL response**
 
 .. code::  
 
@@ -164,28 +172,36 @@ The operation returns the response body as shown in the following example:
                        
 .. _bns-list-networks-curl:
 
-List server and attached networks (cURL)
+Show server and attached networks (cURL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 After you provision your server, ensure that the server and attached network are listed.
 
 
-#. Issue the following command, substituting your own values for the ones shown:
+#. Issue the following command, substituting your own values for the ones shown.
+
+   **Show server with cURL request**
 
    .. code::  
 
-      $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$account/servers/cfe9a69d-92ef-462f-9240-ed5b43d3d1af  \
+      $ curl -s https://dfw.servers.api.rackspacecloud.com/v2/$TENANT_ID/servers/cfe9a69d-92ef-462f-9240-ed5b43d3d1af  \
         -X GET \
         -H "Content-Type: application/json" \
         -H "User-Agent: python-novaclient" \
         -H "Accept: application/json" \
-        -H "X-Auth-Token: $token" | python -m json.tool
+        -H "X-Auth-Token: $AUTH_TOKEN" | python -m json.tool
+        
+   **Positional arguments**
+   
+   - The server ID.  In this example, the server ID is ``cfe9a69d-92ef-462f-9240-ed5b43d3d1af``.
 
    The operation returns the disk configuration, the addresses of any attached networks, 
    flavor and image information, the server ID, and the server status. The networks include 
    any isolated networks that you have created, in addition to Rackspace public and private 
    networks.
 
+   **Show server with cURL response**
+   
    .. code::  
 
        {
@@ -278,19 +294,19 @@ After you provision your server, ensure that the server and attached network are
 List ports (cURL)
 ~~~~~~~~~~~~~~~~~
 
-Confirm the port information.
+Confirm the port information, by issuing the following command.
 
-Issue the following cURL command:
+**List ports with cURL request**
 
 .. code::  
 
-   $ curl https://dfw.networks.api.rackspacecloud.com/v2.0/ports \
+   $ curl https://$API_ENDPOINT/v2.0/ports \
      -X GET \
      -H "User-Agent: python-novaclient" \
      -H "Accept: application/json" \
-     -H "X-Auth-Token: $token" | python -m json.tool
+     -H "X-Auth-Token: $AUTH_TOKEN" | python -m json.tool
 
-The operation returns the response body as shown in the following example:
+**List ports with cURL response**
 
 .. code::  
 

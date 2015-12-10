@@ -17,18 +17,20 @@ attach the network to a server.
 The Cloud Networks API supports only JSON formatting. XML is not supported.
 
 #. Issue the following cURL command, substituting your own values for
-   the ones shown:
+   the ones shown.
+   
+   **Create network with cURL request**
 
    .. code::
 
-      $ curl -s https://dfw.networks.api.rackspacecloud.com/v2.0/networks \
+      $ curl -s https://$API_ENDPOINT/v2.0/networks \
               -X POST \
               -H "Content-Type: application/json" \
               -H "Accept: application/json" \
-              -H "X-Auth-Token: $token" \
+              -H "X-Auth-Token: $AUTH_TOKEN" \
               -d '{"network": {"name": "amp"}}' | python -m json.tool
 
-   The operation returns the response body, as shown in the following example:
+   **Create network with cURL response**
 
    .. code::
 
@@ -58,19 +60,22 @@ To create a subnet, you specify a network ID (using the ID that you copied in th
 preceding step), an IP address, and a name for your subnet. After you create a subnet, 
 copy its ID for future reference.
 
-#. Issue the following cURL command, substituting your own values for the ones shown:
+#. Issue the following cURL command, substituting your own values for the ones shown.
+
+   **Create subnet with cURL request**
 
    .. code::
 
-      $ curl -s https://dfw.networks.api.rackspacecloud.com/v2.0/subnets \
+      $ curl -s https://$API_ENDPOINT/v2.0/subnets \
               -X POST \
               -H "Content-Type: application/json" \
               -H "Accept: application/json" \
-              -H "X-Auth-Token: $token" \
-              -d '{"subnet":{"name":"Subamp","cidr":"120.1.2.0/24","ip_version":4,"network_id":"29f52c7e-6efd-4335-a14a-db77d32a2555"}}' \
+              -H "X-Auth-Token: $AUTH_TOKEN" \
+              -d '{"subnet":{"name":"Subamp","cidr":"120.1.2.0/24","ip_version":4,
+                 "network_id":"29f52c7e-6efd-4335-a14a-db77d32a2555"}}' \
               | python -m json.tool
 
-   The operation returns the response body, as shown in the following example:
+   **Create subnet with cURL response**
 
    .. code::
 
@@ -105,14 +110,14 @@ copy its ID for future reference.
 List networks (cURL)
 ~~~~~~~~~~~~~~~~~~~~
 
-Issue the following cURL command:
+**List networks with cURL request**
 
 .. code::
 
-   $ curl https://dfw.networks.api.rackspacecloud.com/v2.0/networks \
-        -X GET -H "X-Auth-Token: $token" | python -m json.tool
+   $ curl https://$API_ENDPOINT/v2.0/networks \
+        -X GET -H "X-Auth-Token: $AUTH_TOKEN" | python -m json.tool
 
-The operation returns the response body as shown in the following example:
+**List networks with cURL response**
 
 .. code::
 
@@ -137,14 +142,14 @@ The operation returns the response body as shown in the following example:
 List subnets (cURL)
 ~~~~~~~~~~~~~~~~~~~
 
-Issue the following cURL command:
+**List subnets with cURL request**
 
 .. code::
 
-   $ curl https://dfw.networks.api.rackspacecloud.com/v2.0/subnets \
-       -X GET -H "X-Auth-Token: $token" | python -m json.tool
+   $ curl https://$API_ENDPOINT/v2.0/subnets \
+       -X GET -H "X-Auth-Token: $AUTH_TOKEN" | python -m json.tool
 
-The operation returns the response body as shown in the following example:
+**List subnets with cURL response**
 
 .. code::
 

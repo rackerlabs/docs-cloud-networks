@@ -16,13 +16,13 @@ List networks (neutron client)
 The following steps detail how to list networks. You need to identify the right network 
 from this listing to boot your server.
 
-#. Issue the following neutron command:
+#. **List networks with neutron request**
 
    .. code::  
 
        $ neutron net-list
 
-   The operation returns the response, as shown in the following output:
+   **List networks with neutron response**
 
    .. code::  
 
@@ -46,19 +46,21 @@ Before you can attach port and network to a server, you need to create the port.
 To create a network, you specify a name for your port and the network name. After you 
 create a port, copy its port ID. Use this ID to attach it to a new server.
 
-#. Issue the following neutron command:
+#. Issue the following neutron command, substituting your own values for the ones shown.
+
+   **Create port with neutron request**
 
    .. code::  
 
-       $ neutron port-create --name <port1> <03f240c5-6fb8-47a0-860a-c7ba83be519f>
+       $ neutron port-create --name port1 03f240c5-6fb8-47a0-860a-c7ba83be519f
        
    **Positional arguments:**
 
-   -  The port name. In this example, the port name is ``port1``.
+   -  ``name``. The port name. In this example, the port name is ``port1``.
 
    -  The network ID or name. In this example, the ID is ``03f240c5-6fb8-47a0-860a-c7ba83be519f``.
 
-   The operation returns the response, as shown in the following output:
+   **Create port with neutron response**
 
    .. code::  
 
@@ -90,21 +92,21 @@ List ports (neutron client)
 
 After you create a port, you may want to list ports to confirm creation.
 
--  Issue the following neutron client command:
+**List ports with neutron request**
 
-   .. code::  
+.. code::  
 
-       $ neutron port-list 
+   $ neutron port-list 
 
-   For each port, the operation returns the result as shown in the following output:
+**List ports with neutron response**
 
-   .. code::  
+.. code::  
 
-       +--------------------------------------+---------+-------------------+----------------------------------------------------------------------------------+
-       | id                                   | name    | mac_address       | fixed_ips                                                                        |
-       +--------------------------------------+---------+-------------------+----------------------------------------------------------------------------------+
-       | 79bf47e2-5107-4d93-b9c3-b78ddbc94c93 | port1   | AA:BB:CC:00:01:4A | {"subnet_id": "1d18d76b-a04a-4147-a04c-151630ec80d0", "ip_address": "fc01::7"}   |
-       +--------------------------------------+---------+-------------------+----------------------------------------------------------------------------------+
+   +--------------------------------------+---------+-------------------+----------------------------------------------------------------------------------+
+   | id                                   | name    | mac_address       | fixed_ips                                                                        |
+   +--------------------------------------+---------+-------------------+----------------------------------------------------------------------------------+
+   | 79bf47e2-5107-4d93-b9c3-b78ddbc94c93 | port1   | AA:BB:CC:00:01:4A | {"subnet_id": "1d18d76b-a04a-4147-a04c-151630ec80d0", "ip_address": "fc01::7"}   |
+   +--------------------------------------+---------+-------------------+----------------------------------------------------------------------------------+
 
 
 .. _bns-boot-server-nova:
@@ -126,13 +128,23 @@ Create your new server and attach a port with an isolated network.
    -  The network ID of PublicNet, which is ``00000000-0000-0000-0000-000000000000``, and 
       ServiceNet, which is ``11111111-1111-1111-1111-111111111111``.
 
-Issue the following nova client command, substituting your own values for the ones shown:
+Issue the following nova client command, substituting your own values for the ones shown.
+
+**Boot server with nova request**
 
 .. code::  
 
-   $ nova boot <ServerAmp> --image <82e72de5-6366-4217-8c87-a570a9b17e73> --nic port-id=<79bf47e2-5107-4d93-b9c3-b78ddbc94c93> --flavor <1>
+   $ nova boot ServerAmp --image 82e72de5-6366-4217-8c87-a570a9b17e73 \
+     --nic port-id=79bf47e2-5107-4d93-b9c3-b78ddbc94c93 --flavor 1
 
-The operation returns information about the new server, as shown in the following example:
+**Positional arguments:**
+
+-  The server name. In this example, the name is ``ServerAmp``.
+-  ``image``.  The image ID. In this example, the ID is ``82e72de5-6366-4217-8c87-a570a9b17e73``.
+-  ``nic port-id``. The port ID. In this example, the ID is ``79bf47e2-5107-4d93-b9c3-b78ddbc94c93``.
+- ``flavor``. The flavor id. In this example, the ID is ``1``.
+
+**Boot server with nova response**
 
 .. code::  
 
@@ -169,18 +181,18 @@ Show port details (neutron client)
 
 The following procedure shows you how to view details for a port.
 
-Issue the following neutron client command:
+**Show port with neutron request**
 
 .. code::  
 
-   $ neutron port-show <79bf47e2-5107-4d93-b9c3-b78ddbc94c93>
+   $ neutron port-show 79bf47e2-5107-4d93-b9c3-b78ddbc94c93
    
 **Positional argument:**
 
 -  The ID of the port for which you want to show information. In this example, the ID 
    is ``79bf47e2-5107-4d93-b9c3-b78ddbc94c93``
 
-The operation returns the result as shown in the following output:
+**Show port with neutron response**
 
 .. code::  
 
@@ -211,14 +223,16 @@ After you provision your server, list servers to make sure the server and attach
 are listed.
 
 
-#. Issue the following command:
+#. **List servers with nova request**
 
    .. code::  
 
        $ nova list
 
    For each server, the operation returns the server ID, name, status, and addresses for any 
-   attached networks, as shown in the following output:
+   attached networks, as shown in the following output.
+   
+   **List servers with nova response**
 
    .. code::  
 

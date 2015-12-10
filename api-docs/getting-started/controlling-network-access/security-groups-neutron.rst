@@ -13,9 +13,9 @@ Create a security group (neutron client)
 
 The following steps show you how to create a security group.
 
-#. **Create the security group**
+#. Issue the following neutron client command.
 
-   Issue the following neutron client command:
+     **Create security group with neutron request**
 
    .. code::  
 
@@ -31,7 +31,7 @@ The following steps show you how to create a security group.
    -  The name of the security group. In this example, the name is ``1-new-tcp``.
 
 
-   The operation returns the response, as shown in the following output:
+   **Create security group with neutron response**
 
    .. code::  
 
@@ -55,7 +55,9 @@ Add a rule for SSH traffic (neutron client)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Issue the following neutron client command, substituting your own
-   values for the ones shown:
+   values for the ones shown.
+   
+   **Add SSH rule with neutron request**
 
    .. code::  
 
@@ -82,7 +84,7 @@ Add a rule for SSH traffic (neutron client)
       are ``null``, ``tcp``, ``udp``, and ``icmp``. In this example, we used the protocol 
       ``tcp``.
 
-   The operation returns the response, as shown in the following output:
+   **Add SSH rule with neutron response**
 
    .. code::  
 
@@ -105,14 +107,15 @@ Add a rule for SSH traffic (neutron client)
    verification. In this example, the ID is ``ea794fe0-5f82-4b4e-8c38-7ab5d278973a``, but 
    use the ID from your response.
 
-#. To see the rule in your group, issue the following neutron client command, substituting 
-   your own values for the ones shown:
+#. To see the rule in your group, issue the following neutron client command.
+   
+   **List security group rules with neutron request**
 
    .. code::  
 
       $ neutron security-group-rule-list
 
-   The operation returns the response, as shown in the following output:
+   **List security group rules with neutron response**
 
    .. code::  
 
@@ -134,7 +137,9 @@ First, display your server details to find the port IP address. Then find the po
 that port IP address. You need the port ID to apply the security group to the server port.
 
 #. To list server details, issue the following nova client command, substituting your 
-   server ID for the ones shown:
+   server ID for the ones shown.
+   
+   **List server details with nova request**
    
    .. code::  
 
@@ -146,7 +151,7 @@ that port IP address. You need the port ID to apply the security group to the se
       example, the server ID is ``6ae4be93-4ec7-4b55-897a-c250f3a6e161``.
 
 
-   The operation returns the response, as shown in the following output:
+   **List server details with nova response**
 
    .. code::  
 
@@ -180,14 +185,15 @@ that port IP address. You need the port ID to apply the security group to the se
    (``addr``) value from the output. In this example, the IP address is ``10.22.253.123``, 
    but use the IP address from your response.
 
-#. To find the port ID that corresponds to the port IP address, issue the following neutron 
-   client command:
+#. To find the port ID that corresponds to the port IP address.
+
+   **List ports with neutron request**
 
    .. code::  
 
        $ neutron port-list 
 
-   For each port, the operation returns the result as shown in the following output:
+   **List ports with neutron response**
 
    .. code::  
 
@@ -213,10 +219,13 @@ First, apply the security group to the server port. Then test the security group
 #. To apply the group (in this example ``fd269d7a-0909-488f-b5fc-5606c8aa489f``) to the 
    port, issue the following neutron client command, substituting your port ID and security 
    group for the ones shown.
+   
+   **Apply security group to port with neutron request**
 
    .. code::  
 
-      $ neutron port-update <9dd49b03-956d-4cd5-ae23-6dbf89b76aeb> --security-group <fd269d7a-0909-488f-b5fc-5606c8aa489f>
+      $ neutron port-update 9dd49b03-956d-4cd5-ae23-6dbf89b76aeb \
+        --security-group fd269d7a-0909-488f-b5fc-5606c8aa489f
 
    **Positional arguments:**
 
@@ -226,7 +235,7 @@ First, apply the security group to the server port. Then test the security group
    -  ``security-group``. The security group. In this example, the security group ID is 
       ``fd269d7a-0909-488f-b5fc-5606c8aa489f``.
       
-   The operation returns the result as shown in the following output:
+   **Apply security group to port with neutron response**
 
    .. code::  
 
@@ -273,6 +282,8 @@ that the security group contains the rule.
 
 #. To add the rule, issue the following neutron client command, substituting your own 
    values for the ones shown:
+   
+   **Add ICMP rule with neutron request**
 
    .. code::  
 
@@ -298,7 +309,7 @@ that the security group contains the rule.
    -  ``protocol` The protocol that is matched by the security group rule. Valid values 
       are ``null``, ``tcp``, ``udp``, and ``icmp``. In this example, we used the protocol ``icmp``.
 
-   The operation returns the response, as shown in the following output:
+   **Add ICMP rule with neutron response**
 
    .. code::  
 
@@ -321,14 +332,15 @@ that the security group contains the rule.
    verification. In this example, the ID is ``483b107a-dbf8-41a9-8494-f47558b58524``, but 
    use the ID from your response.
 
-#. To see the rule in your group, issue the following neutron client command, substituting 
-   your own values for the ones shown:
+#. To see the rule in your group, issue the following neutron client command.
+   
+   **List security group rules with neutron request**
 
    .. code::  
 
       $ neutron security-group-rule-list
 
-   The operation returns the response, as shown in the following output:
+   **List security group rules with neutron response**
 
    .. code::  
 
@@ -352,11 +364,14 @@ First, apply the security group to the server port. Then test the security group
 
 #. To apply the group, in this example ``fd269d7a-0909-488f-b5fc-5606c8aa489f``, to the 
    port, issue the following neutron client command, substituting your port ID for the one 
-   shown:
+   shown.
+   
+   **Apply security group to port with neutron request**
 
    .. code::  
 
-      $ neutron port-update <9dd49b03-956d-4cd5-ae23-6dbf89b76aeb> --security-group <fd269d7a-0909-488f-b5fc-5606c8aa489f>
+      $ neutron port-update 9dd49b03-956d-4cd5-ae23-6dbf89b76aeb \
+        --security-group fd269d7a-0909-488f-b5fc-5606c8aa489f
    
    **Positional arguments:**
 
@@ -366,7 +381,7 @@ First, apply the security group to the server port. Then test the security group
    -  ``security-group``. The security group. In this example, the
       security group ID is ``fd269d7a-0909-488f-b5fc-5606c8aa489f``.
       
-   The operation returns the result as shown in the following output:
+   **Apply security group to port with neutron response**
 
    .. code::  
 

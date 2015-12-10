@@ -12,19 +12,22 @@ Create a security group (cURL)
 
 The following steps show you how to create a security group.
 
-#. Issue the following cURL command, substituting your own values for the ones shown:
+#. Issue the following cURL command, substituting your own values for the ones shown.
+
+   **Create security group with cURL request**
 
    .. code::  
 
-      $ curl -i https://dfw.networks.api.rackspacecloud.com/v2.0/security-groups \
+      $ curl -i https://$API_ENDPOINT/v2.0/security-groups \
               -X 'POST' \
               -H "Content-Type: application/json" \
-              -H "X-Auth-Token: $token" \
+              -H "X-Auth-Token: $AUTH_TOKEN" \
               -H "X-User-Agent: python-novaclient" \
               -H "Accept: application/json" \
-              -d '{"security_group":{"name":"1-new-tcp","description":"security group for webservers"}}' | python -m json.tool
+              -d '{"security_group":{"name":"1-new-tcp",
+                 "description":"security group for webservers"}}' | python -m json.tool
 
-   The operation returns the response body, as shown in the following example:
+   **Create security group with cURL response**
 
    .. code::  
 
@@ -52,19 +55,24 @@ First, add a rule for SSH traffic to the security group. Then verify the rule, a
 that the security group contains the rule.
 
 #. To add the rule, issue the following cURL command, substituting your
-   own values for the ones shown:
+   own values for the ones shown.
+   
+   **Add SSH rule with cURL request**
 
    .. code::  
 
-      $ curl -i https://dfw.networks.api.rackspacecloud.com/v2.0/security-group-rules \
+      $ curl -i https://$API_ENDPOINT/v2.0/security-group-rules \
               -X 'POST' \
               -H "Content-Type: application/json" \
-              -H "X-Auth-Token: $token" \
+              -H "X-Auth-Token: $AUTH_TOKEN" \
               -H "User-Agent: python-novaclient" \
               -H "Accept: application/json" \
-              -d '{"security_group_rule":{"direction":"ingress","port_range_min":"22","ethertype":"IPv4","port_range_max":"22","protocol":"tcp","security_group_id":"fd269d7a-0909-488f-b5fc-5606c8aa489f"}}' | python -m json.tool
+              -d '{"security_group_rule":{"direction":"ingress","port_range_min":"22",
+                 "ethertype":"IPv4","port_range_max":"22","protocol":"tcp",
+                 "security_group_id":"fd269d7a-0909-488f-b5fc-5606c8aa489f"}}' \
+                 | python -m json.tool
 
-   The operation returns the response body, as shown in the following example:
+   **Add SSH rule with cURL response**
 
    .. code::  
 
@@ -88,19 +96,20 @@ that the security group contains the rule.
    verification. In this example, the ID is ``ea794fe0-5f82-4b4e-8c38-7ab5d278973a``, but 
    use the ID from your response.
 
-#. To see the rule, issue the following cURL command, substituting your own values for the 
-   ones shown:
+#. To see the rule, issue the following cURL command.
+   
+   **List security group rules with cURL request**
 
    .. code::  
 
-      $ curl -i https://dfw.networks.api.rackspacecloud.com/v2.0/security-group-rules \
+      $ curl -i https://$API_ENDPOINT/v2.0/security-group-rules \
               -X 'GET' \
               -H "Content-Type: application/json" \
-              -H "X-Auth-Token: $token" \
+              -H "X-Auth-Token: $AUTH_TOKEN" \
               -H "X-User-Agent: python-novaclient" \
               -H "Accept: application/json" | python -m json.tool
 
-   The operation returns the response body, as shown in the following example:
+   **List security group rules with cURL response**
 
    .. code::  
 
@@ -125,21 +134,20 @@ that the security group contains the rule.
 #. Notice that your new rule, ``ea794fe0-5f82-4b4e-8c38-7ab5d278973a`` in this example, is 
    included in the list of rules.
 
-#. To see the rule in your group, issue the following cURL command, substituting your own 
-   values for the ones shown:
+#. To see the rule in your group, issue the following cURL command.
+   
+   **List security groups with cURL request**
 
    .. code::  
 
-      $ curl -i https://dfw.networks.api.rackspacecloud.com/v2.0/security-groups \
+      $ curl -i https://$API_ENDPOINT/v2.0/security-groups \
               -X 'GET' \
               -H "Content-Type: application/json" \
-              -H "X-Auth-Token: $token" \
+              -H "X-Auth-Token: $AUTH_TOKEN" \
               -H "X-User-Agent: python-novaclient" \
               -H "Accept: application/json" | python -m json.tool
 
-      style="margin-left: 0.5in; margin-right: 0.5in;">
-
-   The operation returns the response body, as shown in the following example:
+   **List security groups with cURL response**
 
    .. code::  
 
@@ -183,23 +191,24 @@ that port IP address. You need the port ID to apply the security group to the se
 
 #. To list server details, issue the following cURL command,
    substituting your account and server ID for the ones shown.
+   
+   **List server details with cURL request**
 
    .. code::  
 
-      $ curl -k -i https://dfw.servers.api.rackspacecloud.com/v2/5831008/servers/6ae4be93-4ec7-4b55-897a-c250f3a6e161 \
+      $ curl -k -i https://dfw.servers.api.rackspacecloud.com/v2/$TENANT_ID/servers/6ae4be93-4ec7-4b55-897a-c250f3a6e161 \
               -X 'GET' \
               -H "Content-Type: application/json" \
-              -H "X-Auth-Token: $token" \
+              -H "X-Auth-Token: $AUTH_TOKEN" \
               -H "User-Agent: python-novaclient" \
               -H "Accept: application/json" | python -m json.tool
 
    **Positional arguments:**
 
-   -  Your account, or tenant ID. In this example, the tenant ID is ``5831008``.
    -  The ID of the server to which you want to add the security group. In this example, 
       the server ID is ``6ae4be93-4ec7-4b55-897a-c250f3a6e161``.
 
-   The operation returns the response body, as shown in the following example:
+   **List server details with cURL response**
 
    .. code::  
 
@@ -278,18 +287,20 @@ that port IP address. You need the port ID to apply the security group to the se
    ``10.22.253.123``, but use the IP address from your response.
 
 #. To find the port ID that corresponds to the port IP address, issue the following cURL 
-   command, substituting your own values for the ones shown:
+   command.
+   
+   **List ports with cURL request**
 
    .. code::  
 
-      $ curl -i https://dfw.networks.api.rackspacecloud.com/v2.0/ports \
+      $ curl -i https://$API_ENDPOINT/v2.0/ports \
               -X 'GET' \
               -H "Content-Type: application/json" \
-              -H "X-Auth-Token: $token" \
+              -H "X-Auth-Token: $AUTH_TOKEN" \
               -H "X-User-Agent: python-novaclient" \
               -H "Accept: application/json" | python -m json.tool
 
-   The operation returns the response body, as shown in the following example:
+   **List ports with cURL response**
 
    .. code::  
 
@@ -352,23 +363,26 @@ First, apply the security group to the server port. Then test the security group
 
 #. To apply the group (in this example ``fd269d7a-0909-488f-b5fc-5606c8aa489f``) to the 
    port, issue the following cURL command, substituting your port ID for the one shown.
+   
+   **Apply security group to port with cURL request**
 
    .. code::  
 
-      $ curl -i https://dfw.networks.api.rackspacecloud.com/v2.0/ports/9dd49b03-956d-4cd5-ae23-6dbf89b76aeb \
+      $ curl -i https://$API_ENDPOINT/v2.0/ports/9dd49b03-956d-4cd5-ae23-6dbf89b76aeb \
               -X 'PUT' \
               -H "Content-Type: application/json" \
-              -H "X-Auth-Token: $token" \
+              -H "X-Auth-Token: $AUTH_TOKEN" \
               -H "User-Agent: python-novaclient" \
               -H "Accept: application/json" \
-              -d '{"port": {"security_groups": ["fd269d7a-0909-488f-b5fc-5606c8aa489f"]}}' | python -m json.tool
+              -d '{"port": {"security_groups": ["fd269d7a-0909-488f-b5fc-5606c8aa489f"]}}' \
+              | python -m json.tool
 
    **Positional argument:**
 
    -  The port ID to which the security group is attached. In this example, the port ID is 
       ``9dd49b03-956d-4cd5-ae23-6dbf89b76aeb``.
 
-   The operation returns the response body, as shown in the following example:
+   **Apply security group to port with cURL response**
 
    .. code::  
 
@@ -422,19 +436,25 @@ First, add a rule for ICMP traffic to the security group. Then verify the rule, 
 that the security group contains the rule.
 
 #. To add the rule, issue the following cURL command, substituting your own values for the 
-   ones shown:
+   ones shown.
+   
+   **Add ICMP rule with cURL request**
 
    .. code::  
 
-      $ curl -i https://dfw.networks.api.rackspacecloud.com/v2.0/security-group-rules \
+      $ curl -i https://$API_ENDPOINT/v2.0/security-group-rules \
               -X 'POST' \
               -H "Content-Type: application/json" \
-              -H "X-Auth-Token: $token" \
+              -H "X-Auth-Token: $AUTH_TOKEN" \
               -H "User-Agent: python-novaclient" \
               -H "Accept: application/json" \
-              -d '{"security_group_rule":{"direction":"ingress","port_range_min":null,"ethertype":"IPv4","port_range_max":null,"protocol":"icmp","remote_ip_prefix":null,"security_group_id":"fd269d7a-0909-488f-b5fc-5606c8aa489f"}}' | python -m json.tool
+              -d '{"security_group_rule":{"direction":"ingress", "port_range_min":null, 
+                 "ethertype":"IPv4", "port_range_max":null, "protocol":"icmp", 
+                 "remote_ip_prefix":null, 
+                 "security_group_id":"fd269d7a-0909-488f-b5fc-5606c8aa489f"}}' \
+                 | python -m json.tool
 
-   The operation returns the response body, as shown in the following example:
+   **Add ICMP rule with cURL response**
 
    .. code::  
 
@@ -458,19 +478,20 @@ that the security group contains the rule.
    verification. In this example, the ID is ``483b107a-dbf8-41a9-8494-f47558b58524``, but 
    use the ID from your response.
 
-#. To see the rule, issue the following cURL command, substituting your own values for the 
-   ones shown:
+#. To see the rule, issue the following cURL command.
+   
+   **List security group rules with cURL request**
 
    .. code::  
 
-      $ curl -i https://dfw.networks.api.rackspacecloud.com/v2.0/security-group-rules \
+      $ curl -i https://$API_ENDPOINT/v2.0/security-group-rules \
               -X 'GET' \
               -H "Content-Type: application/json" \
-              -H "X-Auth-Token: $token" \
+              -H "X-Auth-Token: $AUTH_TOKEN" \
               -H "X-User-Agent: python-novaclient" \
               -H "Accept: application/json" | python -m json.tool
 
-   The operation returns the response body, as shown in the following example:
+   **List security group rules with cURL response**
 
    .. code::  
 
@@ -506,19 +527,20 @@ that the security group contains the rule.
 #. Notice that your new rule, ``483b107a-dbf8-41a9-8494-f47558b58524`` in this example, is 
    included in the list of rules.
 
-#. To see the rule in your group, issue the following cURL command, substituting your own 
-   values for the ones shown:
+#. To see the rule in your group, issue the following cURL command.
+   
+   **List security groups with cURL request**
 
    .. code::  
 
-      $ curl -i https://dfw.networks.api.rackspacecloud.com/v2.0/security-groups \
+      $ curl -i https://$API_ENDPOINT/v2.0/security-groups \
               -X 'GET' \
               -H "Content-Type: application/json" \
-              -H "X-Auth-Token: $token" \
+              -H "X-Auth-Token: $AUTH_TOKEN" \
               -H "X-User-Agent: python-novaclient" \
               -H "Accept: application/json" | python -m json.tool
 
-   The operation returns the response body, as shown in the following example:
+   **List security groups with cURL response**
 
    .. code::  
 
@@ -572,16 +594,19 @@ First, apply the security group to the server port. Then test the security group
 
 #. To apply the group, in this example ``fd269d7a-0909-488f-b5fc-5606c8aa489f``, to the 
    port, issue the following cURL command, substituting your port ID for the one shown.
+   
+   **Apply security group to port with cURL request**
 
    .. code::  
 
-      $ curl -i https://dfw.networks.api.rackspacecloud.com/v2.0/ports/9dd49b03-956d-4cd5-ae23-6dbf89b76aeb \
+      $ curl -i https://$API_ENDPOINT/v2.0/ports/9dd49b03-956d-4cd5-ae23-6dbf89b76aeb \
               -X 'PUT' \
               -H "Content-Type: application/json" \
-              -H "X-Auth-Token: $token" \
+              -H "X-Auth-Token: $AUTH_TOKEN" \
               -H "User-Agent: python-novaclient" \
               -H "Accept: application/json" \
-              -d '{"port": {"security_groups": ["fd269d7a-0909-488f-b5fc-5606c8aa489f"]}}' | python -m json.tool
+              -d '{"port": {"security_groups": ["fd269d7a-0909-488f-b5fc-5606c8aa489f"]}}' \
+              | python -m json.tool
 
    **Positional argument:**
 
@@ -589,7 +614,7 @@ First, apply the security group to the server port. Then test the security group
       ``9dd49b03-956d-4cd5-ae23-6dbf89b76aeb``.
 
 
-   The operation returns the response body, as shown in the following example:
+   **Apply security group to port with cURL response**
 
    .. code::  
 

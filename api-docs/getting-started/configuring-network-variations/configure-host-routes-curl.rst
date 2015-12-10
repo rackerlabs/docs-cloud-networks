@@ -13,19 +13,19 @@ Create a network (cURL)
 After you create a network, copy its network ID. You use this ID to create a subnet and 
 boot the server.
 
-#. Issue the following cURL command:
+#. **Create network with cURL request**
 
    .. code::  
 
-      $ curl -s https://dfw.networks.api.rackspacecloud.com/v2.0/networks \
+      $ curl -s https://$API_ENDPOINT/v2.0/networks \
             -X POST \
             -H "Content-Type: application/json" \
             -H "User-Agent: python-novaclient" \
             -H "Accept: application/json" \
-            -H "X-Auth-Token: $token" \
+            -H "X-Auth-Token: $AUTH_TOKEN" \
             -d '{"network": {"name": "Rackernet"}}' | python -m json.tool
 
-   The operation returns the response body, as shown in the following example:
+   **Create network with cURL response**
 
    .. code::  
 
@@ -53,16 +53,18 @@ Create a subnet with host routes (cURL)
 To create a subnet with host routes, you specify a network, an IP address, allocation pools, 
 and host routes for your subnet.
 
-#. Issue the following cURL command, substituting your own values for the ones shown:
+#. Issue the following cURL command, substituting your own values for the ones shown.
+
+   **Create subnet with cURL request**
 
    .. code::  
 
-      $ curl -s https://dfw.networks.api.rackspacecloud.com/v2.0/subnets \
+      $ curl -s https://$API_ENDPOINT/v2.0/subnets \
            -X POST \
            -H "Content-Type: application/json" \
            -H "User-Agent: python-novaclient" \
            -H "Accept: application/json" \
-           -H "X-Auth-Token: $token" \
+           -H "X-Auth-Token: $AUTH_TOKEN" \
            -d '{"subnet":
                  {
                    "network_id": "a8fde776-e80f-47bb-a050-0c057d89afc3",
@@ -86,27 +88,8 @@ and host routes for your subnet.
                       }
                    ],
                    "tenant_id": "5831008"}}' | python -m json.tool
-           
-   **Positional arguments:**
 
-   -  **ip-version** The version of the subnet IP. In this example, the version is ``4``.
-
-   -  **allocation-pool** The start and end addresses for one or more
-      allocation pools. In this example, there are two pools
-      ``start=192.168.5.3,end=192.168.5.100`` and
-      ``start=192.168.5.103,end=192.168.5.254``.
-
-   -  **host-route** A list of host route dictionaries for the subnet.
-      In this example, we used ``"destination": "1.1.1.0/24", "nexthop": "192.168.5.254"``.
-
-   -  **tenant-id** The tenant ID. In this example, we used the tenant ID ``5831008``.
-
-   -  The network ID or name. In this example, we used the network ID
-      ``a8fde776-e80f-47bb-a050-0c057d89afc3``.
-
-   -  The network CIDR. In this example, the CIDR is ``192.168.5.0/24``.
-
-   The operation returns the response, as shown in the following output:
+    **Create subnet with cURL response**
 
    .. code::  
 
@@ -127,7 +110,7 @@ and host routes for your subnet.
        | tenant_id        | 5831008                                                   |
        +------------------+-----------------------------------------------------------+
 
-#. Note the host\_routes attribute with the destination of ``1.1.1.0/24`` and the nexthop 
+#. Note the host_routes attribute with the destination of ``1.1.1.0/24`` and the nexthop 
    of ``192.168.5.254``.
 
 .. _chr-boot-server-curl:
@@ -144,16 +127,18 @@ Boot a Server (cURL)
    -  The flavor ID. 
    -  The network ID of the network, which is ``net-id=a8fde776-e80f-47bb-a050-0c057d89afc3``.
 
-#. Issue the following cURL command, substituting your own values for the ones shown:
+#. Issue the following cURL command, substituting your own values for the ones shown.
+
+    **Boot server with cURL request**
 
    .. code::  
 
-      $ curl https://dfw.servers.api.rackspacecloud.com/v2/$account/servers \
+      $ curl https://dfw.servers.api.rackspacecloud.com/v2/$TENANT_ID/servers \
           -X POST \
           -H "Content-Type: application/json" \
           -H "User-Agent: python-novaclient" \
           -H "Accept: application/json" \
-          -H "X-Auth-Token: $token" \
+          -H "X-Auth-Token: $AUTH_TOKEN" \
           -d '{"server":
                 {
                   "name": "ata",
@@ -162,12 +147,14 @@ Boot a Server (cURL)
                   "max_count": 1,
                   "min_count": 1,
                   "networks": [
-                     {"uuid": "00000000-0000-0000-0000-000000000000"}, {"uuid": "11111111-1111-1111-1111-111111111111"}, {"uuid":"a8fde776-e80f-47bb-a050-0c057d89afc3"} 
+                     {"uuid": "00000000-0000-0000-0000-000000000000"}, 
+                     {"uuid": "11111111-1111-1111-1111-111111111111"}, 
+                     {"uuid":"a8fde776-e80f-47bb-a050-0c057d89afc3"} 
                   ]
                 }
               }' | python -m json.tool
 
-   The operation returns the response body as shown in the following example:
+   **Boot server with cURL response**
 
    .. code::  
 
@@ -195,18 +182,24 @@ Verify the IP on the server port (cURL)
 The following step shows you how to verify the IP address on the server port. In this case, 
 the IP address should be ``192.168.5.3`` from the start of the allocation pool.
 
-#. Issue the following cURL command, substituting your own values for the ones shown:
+#. Issue the following cURL command, substituting your own values for the ones shown.
+
+   **Show server details with cURL request**
 
    .. code::  
 
-      $ curl -k https://dfw.servers.api.rackspacecloud.com/v2.0/$account/servers/a1061a57-0136-4c29-aac1-8b1a646a3001  \
+      $ curl -k https://dfw.servers.api.rackspacecloud.com/v2.0/$TENANT_ID/servers/a1061a57-0136-4c29-aac1-8b1a646a3001  \
             -X GET
             -H "Content-Type: application/json" \
             -H "User-Agent: python-novaclient" \
             -H "Accept: application/json" \
-            -H "X-Auth-Token: $token" | python -m json.tool
+            -H "X-Auth-Token: $AUTH_TOKEN" | python -m json.tool
+            
+   **Positional arguments**
+   
+   - The server ID. In this example, the ID is ``a1061a57-0136-4c29-aac1-8b1a646a3001``.
 
-   The operation returns the response body as shown in the following example:
+   **Show server details with cURL response**
 
    .. code::  
 
@@ -321,7 +314,7 @@ configured correctly by using the command line.
 
    .. code::  
 
-      $ root@ata:~# route
+      root@ata:~# route
 
    The command returns output like the following example:
 
