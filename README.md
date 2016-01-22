@@ -47,7 +47,7 @@ Content | File
 |Sphinx documentation configuration file| [conf.py](https://github.com/rackerlabs/docs-cloud-networks/blob/master/api-docs/conf.py) (Typically, this file does not require changes.)
 |Index page for the main content structure| [index.rst](https://github.com/rackerlabs/docs-cloud-networks/blob/master/api-docs/index.rst)
 |About the API index| [overview/index.rst](https://github.com/rackerlabs/docs-cloud-networks/blob/master/api-docs/overview/index.rst)
-|Getting Startted introduction| [getting-started.rst](https://github.com/rackerlabs/docs-cloud-networks/blob/master/api-docs/getting-started.rst)
+|Getting Started introduction| [getting-started.rst](https://github.com/rackerlabs/docs-cloud-networks/blob/master/api-docs/getting-started.rst)
 |Getting Started index|[getting-started/index.rst](https://github.com/rackerlabs/docs-cloud-networks/blob/master/api-docs/getting-started/index.rst)
 |Developer Guide introduction|[developer-guide.rst](https://github.com/rackerlabs/docs-cloud-networks/blob/master/api-docs/developer-guide.rst)
 |Concepts section| [concepts.rst](https://github.com/rackerlabs/docs-cloud-networks/blob/master/api-docs/concepts/index.rst)
