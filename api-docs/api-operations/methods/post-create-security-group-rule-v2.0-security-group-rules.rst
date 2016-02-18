@@ -38,12 +38,6 @@ Request
 """"""""""""""""
 
 
-
-
-
-
-
-
 This table shows the body parameters for the request:
 
 +----------------------------------+---------------------+---------------------+
@@ -53,18 +47,14 @@ This table shows the body parameters for the request:
 |                                  |                     |the security group   |
 |                                  |                     |rules.               |
 +----------------------------------+---------------------+---------------------+
-|security_group_rule.\             |String               |The direction in     |
-|**direction**                     |                     |which the security   |
-|                                  |                     |group rule is        |
-|                                  |                     |applied (            |
-|                                  |                     |``ingress`` ). For a |
-|                                  |                     |Cloud Servers        |
-|                                  |                     |instance, an ingress |
-|                                  |                     |security group rule  |
-|                                  |                     |is applied to        |
-|                                  |                     |incoming (ingress)   |
-|                                  |                     |traffic for that     |
-|                                  |                     |instance.            |
+|security_group_rule.\             |String               |The direction of     |
+|**direction**                     |                     |traffic. An          |
+|                                  |                     |``ingress`` rule is  |
+|                                  |                     |applied to incoming  |
+|                                  |                     |server traffic and an|
+|                                  |                     |``egress`` rule is   |
+|                                  |                     |applied to outgoing  |
+|                                  |                     |server traffic.      |
 +----------------------------------+---------------------+---------------------+
 |security_group_rule.\             |String               |The network ether    |
 |**ethertype**                     |                     |type, either         |
@@ -147,9 +137,6 @@ This table shows the body parameters for the request:
 +----------------------------------+---------------------+---------------------+
 
 
-
-
-
 **Example Create security group rule: JSON request**
 
 
@@ -170,14 +157,8 @@ This table shows the body parameters for the request:
    }
 
 
-
-
-
 Response
 """"""""""""""""
-
-
-
 
 
 This table shows the body parameters for the response:
@@ -191,15 +172,14 @@ This table shows the body parameters for the response:
 |security_group_rule.\ **id**      |Uuid                 |The ID for the       |
 |                                  |                     |security group rule. |
 +----------------------------------+---------------------+---------------------+
-|security_group_rule.\             |String               |The direction (      |
-|**direction**                     |                     |``ingress`` ). For a |
-|                                  |                     |Cloud Servers        |
-|                                  |                     |instance, an         |
-|                                  |                     |``ingress`` security |
-|                                  |                     |group rule is        |
+|security_group_rule.\             |String               |The direction of     |
+|**direction**                     |                     |traffic. An          |
+|                                  |                     |``ingress`` rule is  |
 |                                  |                     |applied to incoming  |
-|                                  |                     |traffic for that     |
-|                                  |                     |instance.            |
+|                                  |                     |server traffic and an|
+|                                  |                     |``egress`` rule is   |
+|                                  |                     |applied to outgoing  |
+|                                  |                     |server traffic.      |
 +----------------------------------+---------------------+---------------------+
 |security_group_rule.\             |String               |The network ether    |
 |**ethertype**                     |                     |type, either         |
@@ -270,11 +250,6 @@ This table shows the body parameters for the response:
 |                                  |                     |IP address of the IP |
 |                                  |                     |packet.              |
 +----------------------------------+---------------------+---------------------+
-
-
-
-
-
 
 
 **Example Create security group rule: JSON response**
