@@ -77,15 +77,14 @@ This table shows the body parameters for the response:
 |security_groups.security_group_rules.\ **id**     |Uuid   |The ID for the      |
 |                                                  |       |security group rule.|
 +--------------------------------------------------+-------+--------------------+
-|security_groups.security_group_rules.\            |String |The direction (     |
-|**direction**                                     |       |``ingress`` ). For  |
-|                                                  |       |a Cloud Servers     |
-|                                                  |       |instance, an        |
-|                                                  |       |``ingress``         |
-|                                                  |       |security group rule |
-|                                                  |       |is applied to       |
-|                                                  |       |incoming traffic    |
-|                                                  |       |for that instance.  |
+|security_groups.security_group_rules.\            |String |The direction of    |
+|**direction**                                     |       |traffic. An         |
+|                                                  |       |``ingress`` rule    |
+|                                                  |       |applies to incoming |
+|                                                  |       |server traffic and  |
+|                                                  |       |an ``egress`` rule  |
+|                                                  |       |applies to outgoing |
+|                                                  |       |server traffic.     |
 +--------------------------------------------------+-------+--------------------+
 |security_groups.security_group_rules.\            |String |The network ether   |
 |**ethertype**                                     |       |type, either        |
