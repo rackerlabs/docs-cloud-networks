@@ -14,4 +14,5 @@ API v2 supports JSON request and response formats.
    concepts-subnet
    concepts-port
    concepts-security-groups
+.. COMMENT   concepts-floating-ips
 .. COMMENT concepts-shared-ips

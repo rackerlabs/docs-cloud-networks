@@ -10,6 +10,7 @@
    subnet-operations
    port-operations
    sec-group-operations
-.. COMMENT   ip-address-operations
+.. COMMENT   floating-ip-address-operations
+.. COMMENT   shared-ip-address-operations
 
 

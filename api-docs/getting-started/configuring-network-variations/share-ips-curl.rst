@@ -121,7 +121,7 @@ find the ``RAX-PUBLIC-IP-ZONE-ID:publicIPZoneId`` attribute.
 Create server B (cURL)
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The following step shows you how create server B in the same ``publicIPZoneId`` as server 
+The following step shows you how to create server B in the same ``publicIPZoneId`` as server 
 A, by using a scheduler hint to direct the service to create server B near to server A 
 (``f387799f-9668-4cc7-9f0f-03c9cfc43af6``).
 
@@ -304,7 +304,7 @@ you configured with dual-stack IP addresses in the second step of this procedure
 Create shared IP address (cURL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following steps show you how create shared IP address for the Server A and B public 
+The following steps show you how to create a shared IP address for the Server A and B public 
 network ports identified in the previous step.
 
 #. Issue the following cURL command, using your port IDs and tenant ID.
@@ -439,7 +439,7 @@ servers A and B.
 Verify shared IP address (cURL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following steps show you how verify that the shared IP address is set for the Server A 
+The following steps show you how to verify that the shared IP address is set for the Server A 
 and B public network ports.
 
 #. Issue the following cURL command, using your port IDs and tenant ID.
