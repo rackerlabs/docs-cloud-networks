@@ -27,11 +27,11 @@ Security groups
 
 -  act as a firewall for your cloud server instances.
 
--  can be applied to Rackspace Cloud Servers on Public and ServiceNet Neutron ports. They 
-   are not supported for Cloud Networks ports (Isolated Networks).
+-  can be applied to Rackspace Cloud Servers on Public, ServiceNet Neutron ports and 
+   Cloud Networks ports.
 
--  can only contain rules for the inbound traffic, also known as ingress direction. 
-   Outbound traffic, or egress direction, rules are not supported at this time.
+-  can contain rules for both the inbound traffic, also known as ingress direction, and 
+   outbound traffic, or egress direction.
 
 -  are limited to no more than 5 security groups per Neutron port. When a Neutron port 
    has multiple security groups applied, the rules from each security group are effectively 
@@ -45,9 +45,9 @@ Security groups
 
 -  may contain up to 20 security group rules.
 
-The rules of a security group control the incoming traffic that is allowed to reach an 
-instance through the Public and ServiceNet Neutron ports, where the security group is 
-applied to those ports.
+The rules of a security group control the incoming and outgoing traffic that is allowed to 
+reach or leave an instance through the Public, ServiceNet Neutron, and Cloud Networks ports 
+to which the security group is applied.
 
 .. _concepts-security-rules:
 
@@ -74,8 +74,8 @@ Security group rules
 -  are limited to a total of 100 security group rules per user, across all the user's 
    security groups.
 
-There are some limits and quotas around security groups and securit group rules, as shown 
-the preceding lists. Here they are again, for convenience.
+There are some limits and quotas around security groups and security group rules, as shown 
+in the preceding lists. Here they are again, for convenience.
 
 .. _cn-dg-concepts-security-quotas:
 
