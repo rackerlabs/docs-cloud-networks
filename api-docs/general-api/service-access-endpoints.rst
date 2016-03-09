@@ -8,7 +8,7 @@ for selecting the appropriate regional endpoint to ensure access to servers, net
 other Cloud services.
 
 .. tip:: To help you decide which regionalized endpoint to use, read about
-   :kc-article:`special considerations<about-regions>` for choosing a data center.
+   :how-to:`special considerations<about-regions>` for choosing a data center.
 
 If you are working with cloud servers that are in one of the Rackspace data centers, using 
 the ``ServiceNet`` endpoint in the same data center has no network costs and provides a 
