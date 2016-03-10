@@ -1,18 +1,18 @@
-.. _api-operations-ip-addresses:
+.. _api-operations-shared-ip-addresses:
 
-IP address operations
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Shared IP address operations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This section describes the API operations for IP addresses. For general information about 
-IP addresses and shared IP addresses, see :ref:`Shared IP addresses concepts <concepts-shared-ips>`.
+This section describes the API operations for Shared IP addresses. For general information about 
+shared IP addresses, see :ref:`Shared IP addresses concepts <concepts-shared-ips>`.
 
 .. note::
-	The IP Addresses API is currently in Limited Availability. It is available only to 
+	The Shared IP Addresses API is currently in Limited Availability. It is available only to 
 	Managed Infrastructure customers and not to RackConnect or Managed Operations customers. 
 	To use this feature, contact Rackspace Support.
 
 
-.. IP ADDRESS OPS
+.. SHARED IP ADDRESS OPS
 
 .. include:: methods/get-retrieve-list-of-ip-addresses-v2.0-ip-addresses.rst
 .. include:: methods/post-provision-ip-address-v2.0-ip-addresses.rst
@@ -21,7 +21,7 @@ IP addresses and shared IP addresses, see :ref:`Shared IP addresses concepts <co
 .. include:: methods/delete-de-allocate-ip-address-v2.0-ip-addresses-ipaddressid.rst
 
 
-.. IP ASSOCIATION OPS
+.. SHARED IP ASSOCIATION OPS
 
 .. include:: methods/get-retrieve-list-of-ip-addresses-explicitly-associated-with-a-server-v2-servers-serverid-ip-associations.rst
 .. include:: methods/put-explicitly-associate-ip-address-with-server-v2-servers-serverid-ip-associations-ipaddressid.rst
