@@ -25,7 +25,7 @@ using the |apiservice|.
    developer-guide
    overview/index
    concepts/index
-   general-api/index
+   general-api-info/index
    api-reference
    api-operations/index
    release-notes

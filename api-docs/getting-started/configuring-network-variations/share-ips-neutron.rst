@@ -77,7 +77,7 @@ Get server A publicIPZoneId (nova client)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In order to share a public IP address, the servers have to be in the same ``publicIPZoneId``. 
-To determine the server's ``publicIPZoneId``, perform the GET server details operation and 
+To determine the server's ``publicIPZoneId``, use the GET server details operation and 
 find the ``RAX-PUBLIC-IP-ZONE-ID:publicIPZoneId`` attribute.
 
 ..  note:: 
@@ -139,7 +139,7 @@ find the ``RAX-PUBLIC-IP-ZONE-ID:publicIPZoneId`` attribute.
 Create server B (nova client)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following step shows you how create server B in the same ``publicIPZoneId`` as server 
+The following step shows you how to create server B in the same ``publicIPZoneId`` as server 
 A, by using a scheduler hint to direct the service to create server B near to server A.
 
 Issue the following nova client command, substituting your values for the ones shown.
@@ -290,7 +290,7 @@ you configured with dual-stack IP addresses in the second step of this procedure
 Create shared IP address (neutron client)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following steps show you how create shared IP address for the Server A and B public 
+The following steps show you how to create a shared IP address for the Server A and B public 
 network ports identified in the previous step.
 
 #. Issue the following neutron client command for server A, substituting your value for the
@@ -401,7 +401,7 @@ servers A and B.
 Verify shared IP address (neutron client)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following steps show you how verify that the shared IP address is set for the Server A 
+The following steps show you how to verify that the shared IP address is set for the Server A 
 and B public network ports.
 
 #. **List IP addresses with neutron request**
