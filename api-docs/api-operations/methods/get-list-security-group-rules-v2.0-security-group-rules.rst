@@ -32,23 +32,11 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
-
-
-
-
 This operation does not accept a request body.
-
-
 
 
 Response
 """"""""""""""""
-
-
-
 
 
 This table shows the body parameters for the response:
@@ -60,18 +48,14 @@ This table shows the body parameters for the response:
 |                                  |                     |the security group   |
 |                                  |                     |rules.               |
 +----------------------------------+---------------------+---------------------+
-|security_group_rules.\            |String               |The direction in     |
-|**direction**                     |                     |which the security   |
-|                                  |                     |group rule is        |
-|                                  |                     |applied (            |
-|                                  |                     |``ingress`` ). For a |
-|                                  |                     |Cloud Servers        |
-|                                  |                     |instance, an ingress |
-|                                  |                     |security group rule  |
-|                                  |                     |is applied to        |
-|                                  |                     |incoming (ingress)   |
-|                                  |                     |traffic for that     |
-|                                  |                     |instance.            |
+|security_group_rules.\            |String               |The direction of     |
+|**direction**                     |                     |traffic. An          |
+|                                  |                     |``ingress`` rule is  |
+|                                  |                     |applied to incoming  |
+|                                  |                     |server traffic and an|
+|                                  |                     |``egress`` rule is   |
+|                                  |                     |applied to outgoing  |
+|                                  |                     |server traffic.      |
 +----------------------------------+---------------------+---------------------+
 |security_group_rules.\            |String               |The network ether    |
 |**ethertype**                     |                     |type, either         |
