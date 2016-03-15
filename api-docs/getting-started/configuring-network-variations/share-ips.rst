@@ -20,7 +20,9 @@ the contents of the ``RAX-PUBLIC-IP-ZONE-ID:publicIPZoneId`` attributes.
     in the same publicIPZoneId.
 
 The user needs to configure a heartbeat mechanism between using an application, such as 
-VRRP, keepalived, and so on, to control ownership of the Shared IP.
+keepalived, to control ownership of the Shared IP.  Corosync and pacemaker can be used for
+this purpose, but they work in isolated networks only if multicast is used. They work 
+normally on provider networks. Currently, VRRP is not supported.
 
 The following flow chart shows the steps for sharing a public IPv4 address between two 
 newly created servers or two existing servers with the same ``publicIPZoneId``. Detailed 
