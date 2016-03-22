@@ -1,8 +1,8 @@
-.. _remove-network:
+.. _removing-network:
 
-=========================
-Delete your cloud network
-=========================
+============================
+Deleting your cloud network
+============================
 
 When you no longer need your cloud network, delete it.
 
@@ -21,14 +21,14 @@ topic, decide whether you prefer neutron-client or cURL examples.
 
 **Next step:** Choose one of the following methods:
 
--  :ref:`Delete your network with neutron client <delete-network-with-neutron>`
--  :ref:`Delete your network with cURL <delete-network-with-curl>`
+-  :ref:`Deleting your network with neutron client <deleting-network-with-neutron>`
+-  :ref:`Deleting your network with cURL <deleting-network-with-curl>`
 
 
 .. toctree::
    :maxdepth: 2
 
-   delete-network-neutron
-   delete-network-curl
+   deleting-network-neutron
+   deleting-network-curl
 
 

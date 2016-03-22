@@ -1,4 +1,4 @@
-.. _create-network-with-curl:
+.. _creating-network-with-curl:
 
 Creating and listing network and subnet with cURL
 -------------------------------------------------
@@ -6,10 +6,10 @@ Creating and listing network and subnet with cURL
 These sections walk you through creating your network and subnet and then listing them by 
 using cURL.
 
-.. _cn-create-network-curl:
+.. _cn-creating-network-curl:
 
-Create a network (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~
+Creating a network (cURL)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 After you create a network, copy its network ID. You use this ID to create a subnet or 
 attach the network to a server.
@@ -51,10 +51,10 @@ The Cloud Networks API supports only JSON formatting. XML is not supported.
    provision your server, or perform other related activities. In this example, the ID is
    ``29f52c7e-6efd-4335-a14a-db77d32a2555``, but use the ID from your response.
 
-.. _cn-create-subnet-curl:
+.. _cn-creating-subnet-curl:
 
-Create a subnet (cURL)
-~~~~~~~~~~~~~~~~~~~~~~
+Creating a subnet (cURL)
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To create a subnet, you specify a network ID (using the ID that you copied in the 
 preceding step), an IP address, and a name for your subnet. After you create a subnet, 
@@ -105,10 +105,10 @@ copy its ID for future reference.
 #. Copy the ``id`` value from the output for future reference. In this example, the ID is 
    ``23e3059e-4f39-4f7f-8cf2-c326e5de6c37``, but use the ID from your response.
 
-.. _cn-list-networks-curl:
+.. _cn-listing-networks-curl:
 
-List networks (cURL)
-~~~~~~~~~~~~~~~~~~~~
+Listing networks (cURL)
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 **List networks with cURL request**
 
@@ -137,10 +137,10 @@ List networks (cURL)
       ]
    }
 
-.. _cn-list-subnets-curl:
+.. _cn-listing-subnets-curl:
 
-List subnets (cURL)
-~~~~~~~~~~~~~~~~~~~
+Listing subnets (cURL)
+~~~~~~~~~~~~~~~~~~~~~~
 
 **List subnets with cURL request**
 
@@ -177,5 +177,5 @@ List subnets (cURL)
          }
    }
 
-**Next topic:**  :ref:`Boot a new server with your cloud network<boot-new-server>`
+**Next topic:**  :ref:`Booting a new server with your cloud network<booting-new-server>`
 

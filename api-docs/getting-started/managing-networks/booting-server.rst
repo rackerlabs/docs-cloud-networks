@@ -1,4 +1,4 @@
-.. _boot-new-server:
+.. _booting-new-server:
 
 =============================================
 Booting a new server with your cloud network
@@ -26,11 +26,11 @@ topic, decide whether you prefer neutron-client or cURL examples.
 
 **Next step:** Choose one of the following methods:
 
--  :ref:`Boot server with neutron client <boot-server-with-neutron>`
--  :ref:`Boot server with cURL <boot-server-with-curl>`
+-  :ref:`Booting server with neutron client <booting-server-with-neutron>`
+-  :ref:`Booting server with cURL <booting-server-with-curl>`
 
 .. toctree::
    :maxdepth: 2
    
-   boot-server-neutron
-   boot-server-curl
+   booting-server-neutron
+   booting-server-curl

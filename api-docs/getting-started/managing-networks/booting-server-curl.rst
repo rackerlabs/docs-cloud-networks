@@ -1,15 +1,15 @@
-.. _boot-server-with-curl:
+.. _booting-server-with-curl:
 
-Boot server with cURL
----------------------
+Booting server with cURL
+-------------------------
 
 These sections walk you through listing subnets, creating a port for your network, listing 
 the ports, provisioning a server with an attached port, listing servers, and listing servers.
 
-.. _bns-create-port-curl:
+.. _bns-creating-port-curl:
 
-Create a port (cURL)
-~~~~~~~~~~~~~~~~~~~~
+Creating a port (cURL)
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Before you can attach a port and network to a server, you need to create the port.
 
@@ -61,10 +61,10 @@ a port, copy its port ID. Use this ID to attach it to a new server.
    server. In this example, the port ID is ``79bf47e2-5107-4d93-b9c3-b78ddbc94c93``, but 
    use the value from your response.
 
-.. _bns-list-port-curl:
+.. _bns-listing-port-curl:
 
-List ports (cURL)
-~~~~~~~~~~~~~~~~~
+Listing ports (cURL)
+~~~~~~~~~~~~~~~~~~~~
 
 After you create a port, you might want to list ports to confirm creation.
 
@@ -112,10 +112,10 @@ After you create a port, you might want to list ports to confirm creation.
 
    Also, notice the ``ip_address`` with the value of ``fc01::7``.
 
-.. _bns-boot-server-curl:
+.. _bns-booting-server-curl:
 
-Provision a server with a port on an isolated network (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Provisioning a server with a port on an isolated network (cURL)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Create your new server and attach a port with an isolated network.
 
@@ -170,10 +170,10 @@ Issue the following cURL command, substituting your own values for the ones show
          "adminPass": "27L93SfBWttf"
    }
                        
-.. _bns-list-networks-curl:
+.. _bns-listing-networks-curl:
 
-Show server and attached networks (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Showing server and attached networks (cURL)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 After you provision your server, ensure that the server and attached network are listed.
 
@@ -289,10 +289,10 @@ After you provision your server, ensure that the server and attached network are
 
    Use the public IP address when you log in to your server.
 
-.. _bns-list-ports-curl:
+.. _bns-listing-ports-curl:
 
-List ports (cURL)
-~~~~~~~~~~~~~~~~~
+Listing ports (cURL)
+~~~~~~~~~~~~~~~~~~~~~
 
 Confirm the port information, by issuing the following command.
 
@@ -374,4 +374,4 @@ Confirm the port information, by issuing the following command.
    }
                            
 
-**Next topic:** :ref:`Delete your cloud network<remove-network>` 
+**Next topic:** :ref:`Deleting your cloud network<removing-network>` 

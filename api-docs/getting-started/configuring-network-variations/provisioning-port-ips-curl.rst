@@ -1,15 +1,15 @@
-.. _provision-port-ips-with-curl:
+.. _provisioning-port-ips-with-curl:
 
-Provision a port with additional IP and dual-stack IPs with cURL
-----------------------------------------------------------------
+Provisioning a port with additional IP and dual-stack IPs with cURL
+--------------------------------------------------------------------
 
 These sections walk you through provisioning an additional IP and dual-stack (v4 and v6) 
 IP addresses on an isolated network port by using cURL.
 
-.. _ppi-show-port-curl:
+.. _ppi-showing-port-curl:
 
-Show a port with an IPv6 address (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Showing a port with an IPv6 address (cURL)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 First, look at your port with an IPv6 IP address. In this example, note the 
 fixed_ips ip_address of ``fc01::7``, which is an IPv6 address in hexadecimal format.
@@ -56,10 +56,10 @@ fixed_ips ip_address of ``fc01::7``, which is an IPv6 address in hexadecimal for
 #. Note the id value for future reference. In this example, the ID is
    ``79bf47e2-5107-4d93-b9c3-b78ddbc94c93``), but use the ID from your response.
 
-.. _ppi-get-cidr-curl:
+.. _ppi-getting-cidr-curl:
 
-Get the IPv4 CIDR for the network (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Getting the IPv4 CIDR for the network (cURL)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Now, note the IPv4 CIDR on the same network as the IPv6 CIDR. You should have already 
 created this subnet on the same network. If you have not done so, create an IPv4 subnet 
@@ -109,10 +109,10 @@ already been created, run the following command and note the CIDR to identify th
    network_id is ``03f240c5-6fb8-47a0-860a-c7ba83be519f`` and the CIDR is 
    ``192.168.7.0/24``, but use the values from your response.
 
-.. _ppi-add-ip-to-port-curl:
+.. _ppi-adding-ip-to-port-curl:
 
-Add an IPv4 address on the same port (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Adding an IPv4 address on the same port (cURL)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To add an IPv4 address on the same port, update the IPv6 port with the existing IPv6 IP 
 address, the subnet's IPv4 ID, and the IP address from the subnet's IPv4 CIDR. In this 
@@ -181,10 +181,10 @@ Issue the following cURL command, using the port ID from the preceding step in t
    }
                                    
 
-.. _ppi-show-port-again-curl:
+.. _ppi-showing-port-again-curl:
 
-Show the port with both IP addresses (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Showing the port with both IP addresses (cURL)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following step shows you how to show port details to verify that
 both IPv4 and IPv6 IP addresses are configured by using cURL.
@@ -237,10 +237,10 @@ both IPv4 and IPv6 IP addresses are configured by using cURL.
    }
                                
 
-.. _ppi-boot-server-curl:
+.. _ppi-booting-server-curl:
 
-Boot a Server (cURL)
-~~~~~~~~~~~~~~~~~~~~
+Booting a Server (cURL)
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following step shows you how to boot a server by using the port ID of the port that 
 you configured with dual-stack IP addresses in the second step of this procedure.
@@ -293,10 +293,10 @@ you configured with dual-stack IP addresses in the second step of this procedure
 #. Copy the server id value from the output for future reference. In this example, the ID 
 is ``1ed5bc31-153d-4570-a361-92d5a02fd428``, but use the ID from your response.
 
-.. _ppi-verify-ips-curl:
+.. _ppi-verifying-ips-curl:
 
-Verify IP addresses on the server port (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Verifying IP addresses on the server port (cURL)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following example shows you how to verify the IP addresses on the server port. In this 
 case, the IP addresses should be ``192.168.7.250`` and ``fc01::7``.
@@ -395,4 +395,4 @@ case, the IP addresses should be ``192.168.7.250`` and ``fc01::7``.
       }
    }
                                
-**Next topic:** :ref:`Controlling Network Access<controlling-access-intro>`
+**Next topic:** :ref:`Control Network Access<control-access-intro>`

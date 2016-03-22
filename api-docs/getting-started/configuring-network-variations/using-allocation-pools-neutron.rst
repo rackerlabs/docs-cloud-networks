@@ -1,15 +1,15 @@
-.. _use-allocation-pools-with-neutron:
+.. _using-allocation-pools-with-neutron:
 
-Use allocation pools to control dynamic IP address allocation with neutron client
----------------------------------------------------------------------------------
+Using allocation pools to control dynamic IP address allocation with neutron client
+------------------------------------------------------------------------------------
 
 These sections walk you through using allocation pools to control dynamic IP address 
 allocation by using the neutron client.
 
-.. _uap-create-network-neutron:
+.. _uap-creating-network-neutron:
 
-Create a network (neutron client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Creating a network (neutron client)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 First, create a network, and then copy the network ID. You use this ID to create a subnet 
 and boot the server.
@@ -47,10 +47,10 @@ and boot the server.
 provision your server, or perform other related activities. In this example, the ID is 
 ``a8fde776-e80f-47bb-a050-0c057d89afc3``, but use the ID from your response.
 
-.. _uap-create-subnet-neutron:
+.. _uap-creating-subnet-neutron:
 
-Create a subnet with allocation pools (neutron client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Creating a subnet with allocation pools (neutron client)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To create a subnet with allocation pools, you specify a network, an IP address and version, 
 allocation pools, and host routes for your subnet.
@@ -107,10 +107,10 @@ allocation pools, and host routes for your subnet.
 #. Copy the ID value from the output for future reference. In this example, the ID is 
    ``98c1af30-05c9-4502-8b1f-9bffde843cba``, but use the ID from your response.
 
-.. _uap-boot-server-nova:
+.. _uap-booting-server-nova:
 
-Boot server (nova client)
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Booting server (nova client)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following step shows you how to boot server with the nova client, using the network ID 
 of the network you created in the first step of this procedure. 
@@ -172,10 +172,10 @@ of the network you created in the first step of this procedure.
 #. Copy the ``id`` value from the output for future reference. In this example, the ID is 
    ``a1061a57-0136-4c29-aac1-8b1a646a3001``, but use the ID from your response.
 
-.. _uap-verify-ip-nova:
+.. _uap-verifying-ip-nova:
 
-Verify IP on server port (nova client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Verifying IP on server port (nova client)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following step shows you how to verify the IP address on the server port. In this case, 
 the IP address should be ``192.168.5.3`` from the start of the allocation pool. Issue the
@@ -221,10 +221,10 @@ following command, substituting your values for the ones shown.
    | user_id                 | 28be72f8fc5b45589c93f55274e459ce                                                   |
    +-------------------------+------------------------------------------------------------------------------------+
 
-.. _uap-create-port-neutron:
+.. _uap-creating-port-neutron:
 
-Create a port outside the allocation pool (neutron client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Creating a port outside the allocation pool (neutron client)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Before you can attach port and network to a server, you need to create the port.
 
@@ -268,4 +268,4 @@ In this case, the allocation pool IP addresses range from ``192.168.5.3`` to
 	| tenant_id       | 5831008                                                                            |
 	+-----------------+------------------------------------------------------------------------------------+
 
-**Next topic:** :ref:`Configure host routes<configure-host-routes>`
+**Next topic:** :ref:`Configuring host routes<configuring-host-routes>`

@@ -1,14 +1,14 @@
-.. _delete-network-with-neutron:
+.. _deleting-network-with-neutron:
 
-Delete your network with neutron client
----------------------------------------
+Deleting your network with neutron client
+-------------------------------------------
 
 These sections walk you through deleting your subnet and network by using the neutron client.
 
 .. _dn-delete-subnet:
 
-Delete a subnet (neutron client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Deleting a subnet (neutron client)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To delete a subnet, specify the subnet ID.
 
@@ -27,8 +27,8 @@ The operation returns an ``Accepted (204)`` response code, if successful.
 
 .. _dn-delete-network:
 
-Delete a network (neutron client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Deleting a network (neutron client)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To delete a network, specify the network ID.
 
@@ -45,5 +45,5 @@ To delete a network, specify the network ID.
 
 The operation returns an ``Accepted (204)`` response code, if successful.
 
-**Next topic:** :ref:`Attach your network to an existing server<attach-network-to-existing-server>`
+**Next topic:** :ref:`Attaching your network to an existing server<attaching-network-to-existing-server>`
 

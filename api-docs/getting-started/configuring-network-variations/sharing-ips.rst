@@ -1,4 +1,4 @@
-.. _share-ips:
+.. _sharing-ips:
 
 ===================================
 Sharing IP address between servers
@@ -35,11 +35,11 @@ chapter, decide whether you prefer neutron-client or cURL examples.
 
 **Next step:** Choose one of the following methods:
 
--  :ref:`Share IP address with nova and neutron client <share-ips-with-neutron>`
--  :ref:`Share IP address with cURL <share-ips-with-curl>`
+-  :ref:`Sharing IP address with nova and neutron client <sharing-ips-with-neutron>`
+-  :ref:`Sharing IP address with cURL <sharing-ips-with-curl>`
 
 .. toctree::
    :maxdepth: 2
 
-   share-ips-neutron
-   share-ips-curl
+   sharing-ips-neutron
+   sharing-ips-curl

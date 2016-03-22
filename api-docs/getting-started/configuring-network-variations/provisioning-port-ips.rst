@@ -1,4 +1,4 @@
-.. _provision-port-ips:
+.. _provisioning-port-ips:
 
 =================================================================
 Provisioning additional IP and dual-stack IP addresses on a port
@@ -17,11 +17,11 @@ chapter, decide whether you prefer neutron-client or cURL examples.
 
 **Next step:** Choose one of the following methods:
 
--  :ref:`Provision a port with additional IP and dual-stack IPs with neutron client <provision-port-ips-with-neutron>`
--  :ref:`Provision a port with additional IP and dual-stack IPs with cURL <provision-port-ips-with-curl>`
+-  :ref:`Provisioning a port with additional IP and dual-stack IPs with neutron client <provisioning-port-ips-with-neutron>`
+-  :ref:`Provisioning a port with additional IP and dual-stack IPs with cURL <provisioning-port-ips-with-curl>`
 
 .. toctree::
    :maxdepth: 2
 
-   provision-port-ips-neutron
-   provision-port-ips-curl
+   provisioning-port-ips-neutron
+   provisioning-port-ips-curl

@@ -1,17 +1,17 @@
-.. _boot-server-with-neutron:
+.. _booting-server-with-neutron:
 
-Boot server with neutron client
--------------------------------
+Booting server with neutron client
+----------------------------------
 
 These sections walk you through creating a port for your network, listing the ports and 
 showing the port details by using the neutron API. They also show the steps for 
 provisioning a server with an attached port and for listing servers by using the 
 nova-network API.
 
-.. _bns-list-networks-neutron:
+.. _bns-listing-networks-neutron:
 
-List networks (neutron client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Listing networks (neutron client)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following steps detail how to list networks. You need to identify the right network 
 from this listing to boot your server.
@@ -36,10 +36,10 @@ from this listing to boot your server.
    your server. In this example, the network ID is ``03f240c5-6fb8-47a0-860a-c7ba83be519f``.
 
 
-.. _bns-create-port-neutron:
+.. _bns-creating-port-neutron:
 
-Create a port (neutron client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Creating a port (neutron client)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Before you can attach port and network to a server, you need to create the port.
 
@@ -85,10 +85,10 @@ create a port, copy its port ID. Use this ID to attach it to a new server.
    server. In this example, the port id is ``79bf47e2-5107-4d93-b9c3-b78ddbc94c93``.
 
 
-.. _bns-list-ports-neutron:
+.. _bns-listing-ports-neutron:
 
-List ports (neutron client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Listing ports (neutron client)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 After you create a port, you may want to list ports to confirm creation.
 
@@ -109,10 +109,10 @@ After you create a port, you may want to list ports to confirm creation.
    +--------------------------------------+---------+-------------------+----------------------------------------------------------------------------------+
 
 
-.. _bns-boot-server-nova:
+.. _bns-booting-server-nova:
 
-Provision a server with a port and an isolated network (nova client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Provisioning a server with a port and an isolated network (nova client)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Create your new server and attach a port with an isolated network.
 
@@ -174,10 +174,10 @@ Issue the following nova client command, substituting your own values for the on
    +-------------------------+-----------------------------------------------------------------+
 
 
-.. _bns-show-port-neutron:
+.. _bns-showing-port-neutron:
 
-Show port details (neutron client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Showing port details (neutron client)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following procedure shows you how to view details for a port.
 
@@ -214,10 +214,10 @@ The following procedure shows you how to view details for a port.
    | tenant_id             | 53501b3c25d34f8ea293c03298caed60                                                 |
    +-----------------------+----------------------------------------------------------------------------------+
 
-.. _bns-list-servers-nova:
+.. _bns-listing-servers-nova:
 
-List servers (nova client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Listing servers (nova client)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 After you provision your server, list servers to make sure the server and attached network 
 are listed.
@@ -251,4 +251,4 @@ are listed.
 
    Use the public IP address when you log into your server.
 
-**Next topic:** :ref:`Delete your cloud network<remove-network>`
+**Next topic:** :ref:`Deleting your cloud network<removing-network>`
