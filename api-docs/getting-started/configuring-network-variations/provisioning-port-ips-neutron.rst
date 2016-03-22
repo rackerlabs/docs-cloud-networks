@@ -1,15 +1,15 @@
-.. _provision-port-ips-with-neutron:
+.. _provisioning-port-ips-with-neutron:
 
-Provision a port with additional IP and dual-stack IPs with neutron
--------------------------------------------------------------------
+Provisioning a port with additional IP and dual-stack IPs with neutron
+------------------------------------------------------------------------
 
 These sections walk you through provisioning an additional IP and dual-stack (v4 and v6) 
 IP addresses on an isolated network port by using the neutron client.
 
-.. _ppi-show-port-neutron:
+.. _ppi-showing-port-neutron:
 
-Show a port with an IPv6 address (neutron)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Showing a port with an IPv6 address (neutron)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 First, look at your port with an IPv6 IP address. In this example, note the fixed_ips 
 ip_address of ``fc01::7``, which is an IPv6 address in hexadecimal format.
@@ -33,10 +33,10 @@ ip_address of ``fc01::7``, which is an IPv6 address in hexadecimal format.
 #. Note the id value for future reference. In this example, the ID is
    ``79bf47e2-5107-4d93-b9c3-b78ddbc94c93``), but use the ID from your response.
 
-.. _ppi-get-cidr-neutron:
+.. _ppi-getting-cidr-neutron:
 
-Get the IPv4 CIDR for the network (neutron)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Getting the IPv4 CIDR for the network (neutron)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Now, note the IPv4 CIDR on the same network as the IPv6 CIDR. You should have already 
 created this subnet on the same network. If you have not done so, create an IPv4 subnet 
@@ -65,10 +65,10 @@ already been created, run the following command and note the CIDR to identify th
    network_id is ``03f240c5-6fb8-47a0-860a-c7ba83be519f`` and the CIDR is 
    ``192.168.7.0/24``, but use the values from your response.
 
-.. _ppi-add-ip-to-port-neutron:
+.. _ppi-adding-ip-to-port-neutron:
 
-Add an IPv4 address on the same port (neutron)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Adding an IPv4 address on the same port (neutron)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To add an IPv4 address on the same port, update the IPv6 port with the existing IPv6 IP 
 address, the subnet's IPv4 ID, and the IP address from the subnet's IPv4 CIDR. In this 
@@ -115,10 +115,10 @@ Issue the following neutron client command, using the port ID from the preceding
    | tenant_id             | 53501b3c25d34f8ea293c03298caed60                                                       |
    +-----------------------+----------------------------------------------------------------------------------------+                            
 
-.. _ppi-show-port-again-neutron:
+.. _ppi-showing-port-again-neutron:
 
-Show the port with both IP addresses (neutron)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Showing the port with both IP addresses (neutron)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following step shows you how to show port details to verify that both IPv4 and IPv6 IP 
 addresses are configured by using the neutron client.
@@ -158,10 +158,10 @@ Issue the following neutron client command, substituting your own values for the
    | tenant_id             | 53501b3c25d34f8ea293c03298caed60                                                       |
    +-----------------------+----------------------------------------------------------------------------------------+
                            
-.. _ppi-boot-server-nova:
+.. _ppi-booting-server-nova:
 
-Boot a Server (nova)
-~~~~~~~~~~~~~~~~~~~~
+Booting a Server (nova)
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following step shows you how to boot a server by using the port ID of the port that 
 you configured with dual-stack IP addresses in the second step of this procedure.
@@ -224,10 +224,10 @@ you configured with dual-stack IP addresses in the second step of this procedure
 #. Copy the server id value from the output for future reference. In this example, the ID 
    is ``1ed5bc31-153d-4570-a361-92d5a02fd428``, but use the ID from your response.
 
-.. _ppi-verify-ips-nova:
+.. _ppi-verifying-ips-nova:
 
-Verify IP addresses on the server port (nova)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Verifying IP addresses on the server port (nova)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following step shows you how to verify the IP addresses on the server port. In this 
 case, the IP addresses should be ``192.168.7.250`` and ``fc01::7``.
@@ -275,4 +275,4 @@ Issue the following nova client command, substituting your value for the one sho
    +-------------------------+------------------------------------------------------------------------------------+
                                
 
-**Next topic:** :ref:`Controlling Network Access<controlling-access-intro>`
+**Next topic:** :ref:`Control Network Access<control-access-intro>`

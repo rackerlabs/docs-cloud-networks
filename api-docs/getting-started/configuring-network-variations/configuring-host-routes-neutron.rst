@@ -1,14 +1,14 @@
-.. _configure-host-routes-with-neutron:
+.. _configuring-host-routes-with-neutron:
 
-Configure host routes with neutron
-----------------------------------
+Configuring host routes with neutron
+-------------------------------------
 
 These sections walk you through configuring host routes by using the neutron client.
 
-.. _chr-create-network-neutron:
+.. _chr-creating-network-neutron:
 
-Create a network (neutron client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Creating a network (neutron client)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 After you create a network, copy its network ID. You use this ID to create a subnet and 
 boot the server.
@@ -46,10 +46,10 @@ boot the server.
    provision your server, or perform other related activities. In this example, the ID is 
    ``a8fde776-e80f-47bb-a050-0c057d89afc3``, but use the ID from your response.
 
-.. _chr-create-subnet-neutron:
+.. _chr-creating-subnet-neutron:
 
-Create a subnet with host routes (neutron client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Creating a subnet with host routes (neutron client)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To create a subnet with host routes, you specify a network, an IP address, allocation pools, 
 and host routes for your subnet.
@@ -111,10 +111,10 @@ and host routes for your subnet.
 #. Note the host\_routes attribute with the destination of ``1.1.1.0/24`` and the nexthop 
    of ``192.168.5.254``.
 
-.. _chr-boot-server-nova:
+.. _chr-booting-server-nova:
 
-Boot a Server (nova client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Booting a Server (nova client)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following step shows you how to boot server with the nova client, using the network ID 
 of the network you created in the first step of this procedure. 
@@ -176,10 +176,10 @@ of the network you created in the first step of this procedure.
 #. Copy the ``id`` value from the output for future reference. In this example, the ID is 
    ``a1061a57-0136-4c29-aac1-8b1a646a3001``, but use the ID from your response.
 
-.. _chr-verify-ip-on-port-nova:
+.. _chr-verifying-ip-on-port-nova:
 
-Verify the IP on the server port (nova client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Verifying the IP on the server port (nova client)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following step shows you how to verify the IP address on the server port. In this case, 
 the IP address should be ``192.168.5.3`` from the start of the allocation pool.
@@ -229,10 +229,10 @@ the IP address should be ``192.168.5.3`` from the start of the allocation pool.
 #. Note the IP address on the ``public`` interface (in this case, ``10.23.233.124``). Use 
    this to log in to the server in the next step.
 
-.. _chr-login-to-server-sshneutron:
+.. _chr-logging-in-to-server-sshneutron:
 
-Log in to the server and verify the route (ssh)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Logging in to the server and verify the route (ssh)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following steps show you how to log in to the server and verify that the host route is 
 configured correctly by using the command line.
@@ -279,4 +279,4 @@ configured correctly by using the command line.
    preceding output. That is what was expected.
 
 
-**Next topic:** :ref:`Provision additional IP address and dual-stack IP addresses on an isolated network port<provision-port-ips>`
+**Next topic:** :ref:`Provisioning additional IP address and dual-stack IP addresses on an isolated network port<provisioning-port-ips>`

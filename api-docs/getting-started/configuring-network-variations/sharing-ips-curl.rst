@@ -1,7 +1,7 @@
-.. _share-ips-with-curl:
+.. _sharing-ips-with-curl:
 
-Share IP Adresses with cURL
----------------------------
+Sharing IP Adresses with cURL
+------------------------------
 
 These sections walk you through creating a shared IP address and attaching it to two 
 existing servers or two new servers by using cURL.
@@ -10,13 +10,13 @@ Once the steps are completed, there will be a shared IP address common to 2 serv
 control plane. However, you will still need to configure the guest on the servers, perhaps 
 an application like Linux-HA or VRRP, to take advantage of the shared IP during a failover.
 
-**If you already have two active servers, start here:** `Verify servers share ``publicIPZoneId`` (cURL) <si-verify-servers-zone-curl>`
-**If you need to create servers, start here:** `Create server A (cURL) <si-create-serverA-curl>`
+**If you already have two active servers, start here:** `Verifying servers share ``publicIPZoneId`` (cURL) <si-verifying-servers-zone-curl>`
+**If you need to create servers, start here:** `Creating server A (cURL) <si-creating-serverA-curl>`
 
-.. _si-create-serverA-curl:
+.. _si-creating-serverA-curl:
 
-Create server A (cURL)
-~~~~~~~~~~~~~~~~~~~~~~
+Creating server A (cURL)
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Create the first server by using the standard Nova boot process.
 
@@ -66,10 +66,10 @@ Create the first server by using the standard Nova boot process.
    other related activities. In this example, the ID is ``f387799f-9668-4cc7-9f0f-03c9cfc43af6``, 
    but use the ID from your response.
 
-.. _si-get-serverA-zone-curl:
+.. _si-getting-serverA-zone-curl:
 
-Get server A publicIPZoneId (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Getting server A publicIPZoneId (cURL)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In order to share a public IP address, the servers have to be in the same ``publicIPZoneId``. 
 To determine the server's ``publicIPZoneId``, perform the GET server details operation and 
@@ -116,10 +116,10 @@ find the ``RAX-PUBLIC-IP-ZONE-ID:publicIPZoneId`` attribute.
    ``RAX-PUBLIC-IP-ZONE-ID:publicIPZoneId`` value, in this example
    ``85013d5f5100b7b903bc99c3a333d9af01ecd4b4f0df970a2c27a796``.
 
-.. _si-create-serverB-curl:
+.. _si-creating-serverB-curl:
 
-Create server B (cURL)
-~~~~~~~~~~~~~~~~~~~~~~
+Creating server B (cURL)
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following step shows you how to create server B in the same ``publicIPZoneId`` as server 
 A, by using a scheduler hint to direct the service to create server B near to server A 
@@ -168,10 +168,10 @@ Issue the following cURL command, substituting your own values for the ones show
       }
    }
             
-.. _si-verify-servers-zone-curl:
+.. _si-verifying-servers-zone-curl:
 
-Verify servers share publicIPZoneId (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Verifying servers share publicIPZoneId (cURL)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following steps show you how to verify that both servers are in the same 
 ``publicIPZoneId`` using cURL.
@@ -210,10 +210,10 @@ The following steps show you how to verify that both servers are in the same
 #. Make sure the ``RAX-PUBLIC-IP-ZONE-ID:publicIPZoneId`` value is the same for both server 
    A and server B.                         
 
-.. _si-show-server-ports-curl:
+.. _si-showing-server-ports-curl:
 
-Show server ports (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~
+Showing server ports (cURL)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following step shows you how to boot a server by using the port ID of the port that 
 you configured with dual-stack IP addresses in the second step of this procedure.
@@ -299,10 +299,10 @@ you configured with dual-stack IP addresses in the second step of this procedure
 #. Repeat the ``GET /ports`` command (step 1 in this procedure) for server B, and note the port 
    ID for that server's public network.
 
-.. _si-create-shared-ip-curl:
+.. _si-creating-shared-ip-curl:
 
-Create shared IP address (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Creating shared IP address (cURL)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following steps show you how to create a shared IP address for the Server A and B public 
 network ports identified in the previous step.
@@ -350,10 +350,10 @@ network ports identified in the previous step.
 #. Note the new shared IP ID for future reference. In this example, the ID is 
    ``89875b4a-b098-414f-980a-5e9f89078a49``), but use the ID from your response.
    
-.. _si-associate-shared-ip-curl:
+.. _si-associating-shared-ip-curl:
 
-Associate shared IP address to both servers (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Associating shared IP address to both servers (cURL)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following steps show you how to explicitly associate the new shared IP address to 
 servers A and B.
@@ -434,10 +434,10 @@ servers A and B.
            ]
        }
        
-.. _si-verify-shared-ip-curl:
+.. _si-verifying-shared-ip-curl:
 
-Verify shared IP address (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Verifying shared IP address (cURL)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following steps show you how to verify that the shared IP address is set for the Server A 
 and B public network ports.
@@ -505,4 +505,4 @@ and B public network ports.
 2. Note that both ports show up for the IP address you created. In this case, the shared 
    IP address is ``23.253.64.51`` and both ports are listed.
                                
-**Next topic:** :ref:`Controlling Network Access<controlling-access-intro>`
+**Next topic:** :ref:`Control Network Access<control-access-intro>`

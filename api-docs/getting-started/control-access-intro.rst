@@ -1,4 +1,4 @@
-.. _controlling-access-intro:
+.. _control-access-intro:
 
 ===========================
 Control network access

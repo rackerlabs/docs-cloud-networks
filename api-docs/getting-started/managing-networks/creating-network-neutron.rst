@@ -1,15 +1,15 @@
-.. _create-network-with-neutron:
+.. _creating-network-with-neutron:
 
-Create and list network and subnet with neutron
------------------------------------------------
+Creating and listing network and subnet with neutron
+----------------------------------------------------
 
 These sections walk you through creating your network and subnet and then listing them by 
 using the neutron client.
 
-.. _cn-create-network-neutron:
+.. _cn-creating-network-neutron:
 
-Create a network (neutron client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Creating a network (neutron client)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To create a network, you specify a name for your network. After you create a network, copy 
 its network ID. You use this ID to create a subnet and attach it to a port.
@@ -44,10 +44,10 @@ its network ID. You use this ID to create a subnet and attach it to a port.
    provision your server, or perform other related activities. In this example, the ID is
    ``29f52c7e-6efd-4335-a14a-db77d32a2555``, but use the ``id`` from your response.
 
-.. _cn-create-subnet-neutron:
+.. _cn-creating-subnet-neutron:
 
-Create a subnet (neutron client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Creating a subnet (neutron client)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To create a subnet, you specify a network, an IP address, and a name for your subnet. 
 After you create a subnet, copy its subnet ID for future reference.
@@ -93,10 +93,10 @@ After you create a subnet, copy its subnet ID for future reference.
 #. Copy the id value from the output for future reference. In this example, the id is 
    ``23e3059e-4f39-4f7f-8cf2-c326e5de6c37``, but use the ``id`` from your response.
 
-.. _cn-list-networks-neutron:
+.. _cn-listing-networks-neutron:
 
-List networks (neutron client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Listing networks (neutron client)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **List networks with neutron request**
 
@@ -114,10 +114,10 @@ List networks (neutron client)
    | 29f52c7e-6efd-4335-a14a-db77d32a2555 | amp  | 23e3059e-4f39-4f7f-8cf2-c326e5de6c37 120.1.2.0/24 |
    +--------------------------------------+------+---------------------------------------------------+
 
-.. _cn-list-subnets-neutron:
+.. _cn-listing-subnets-neutron:
 
-List subnets (neutron client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Listing subnets (neutron client)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **List subnets with neutron request**
 
@@ -135,5 +135,5 @@ List subnets (neutron client)
    | 23e3059e-4f39-4f7f-8cf2-c326e5de6c37 | Subamp | 120.1.2.0/24 | {"start": "120.1.2.1", "end": "120.1.2.254"} |
    +--------------------------------------+--------+--------------+----------------------------------------------+
 
-**Next topic:** :ref:`Boot a new server with your cloud network<boot-new-server>` 
+**Next topic:** :ref:`Booting a new server with your cloud network<booting-new-server>` 
 

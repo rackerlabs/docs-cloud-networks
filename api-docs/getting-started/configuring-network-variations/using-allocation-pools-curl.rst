@@ -1,14 +1,14 @@
-.. _use-allocation-pools-with-curl:
+.. _using-allocation-pools-with-curl:
 
-Use allocation pools to control dynamic IP address allocation with cURL
+Using allocation pools to control dynamic IP address allocation with cURL
 ---------------------------------------------------------------------------------
 
 These sections walk you through using allocation pools to control dynamic IP address 
 allocation by using cURL.
 
-.. _uap-create-network-curl:
+.. _uap-creating-network-curl:
 
-Create a network (cURL)
+Creating a network (cURL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 First, create a network, and then copy the network ID. You use this ID to create a subnet 
@@ -49,9 +49,9 @@ and boot the server.
    provision your server, or perform other related activities. In this example, the ID is 
    ``a8fde776-e80f-47bb-a050-0c057d89afc3``, but use the ID from your response.
 
-.. _uap-create-subnet-curl:
+.. _uap-creating-subnet-curl:
 
-Create a subnet with allocation pools (cURL)
+Creating a subnet with allocation pools (cURL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To create a subnet with allocation pools, you specify a network, an IP
@@ -134,9 +134,9 @@ address, allocation pools, and host routes for your subnet.
 #. Copy the ID value from the output for future reference. In this example, the ID is 
 ``98c1af30-05c9-4502-8b1f-9bffde843cba``, but use the ID from your response.
 
-.. _uap-boot-server-curl:
+.. _uap-booting-server-curl:
 
-Boot server (cURL)
+Booting server (cURL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following step shows you how to boot server with cURL, using the network ID of the 
@@ -196,9 +196,9 @@ network you created in the first step of this procedure.
 #. Copy the ``id`` value from the output for future reference. In this example, the ID is 
    ``a1061a57-0136-4c29-aac1-8b1a646a3001``, but use the ID from your response.
 
-.. _uap-verify-ip-curl:
+.. _uap-verifying-ip-curl:
 
-Verify IP on server port (curl)
+Verifying IP on server port (curl)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following step shows you how to verify the IP address on the server port. In this case, 
@@ -301,9 +301,9 @@ Issue the following cURL command, substituting your own values for the ones show
          }
    }
    
-.. _uap-create-port-curl:
+.. _uap-creating-port-curl:
 
-Create a port outside the allocation pool (cURL)
+Creating a port outside the allocation pool (cURL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Before you can attach port and network to a server, you need to create the port.
@@ -366,4 +366,4 @@ Issue the following cURL command, substituting your own values for the ones show
       }
    }
 
-**Next topic:** :ref:`Configure host routes<configure-host-routes>`
+**Next topic:** :ref:`Configuring host routes<configuring-host-routes>`

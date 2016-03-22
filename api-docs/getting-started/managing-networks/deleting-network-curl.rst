@@ -1,14 +1,14 @@
-.. _delete-network-with-curl:
+.. _deleting-network-with-curl:
 
-Delete your network with cURL
------------------------------
+Deleting your network with cURL
+--------------------------------
 
 These sections walk you through deleting your subnet and network by using cURL.
 
 .. _dn-delete-subnet-curl:
 
-Delete a subnet (cURL)
-~~~~~~~~~~~~~~~~~~~~~~
+Deleting a subnet (cURL)
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 To delete a subnet, specify the subnet ID.
 
@@ -51,10 +51,10 @@ The operation returns the header as shown in the following example.
 
    The request is accepted for processing.
 
-.. _dn-delete-network-curl:
+.. _dn-deleting-network-curl:
 
-Delete a network (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~
+Deleting a network (cURL)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To delete a network, specify the network ID.
 
@@ -97,5 +97,5 @@ The operation returns the header as shown in the following example.
 
    The request is accepted for processing.
 
-**Next topic:** :ref:`Attach your network to an existing server<attach-network-to-existing-server>`
+**Next topic:** :ref:`Attaching your network to an existing server<attaching-network-to-existing-server>`
 

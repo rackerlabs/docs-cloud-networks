@@ -1,4 +1,4 @@
-.. _configure-host-routes:
+.. _configuring-host-routes:
 
 =========================
 Configuring host routes
@@ -17,12 +17,12 @@ decide whether you prefer neutron-client or cURL examples.
 
 .. image:: /_images/chr-neutron-api.png
 
--  :ref:`Configure host routes with neutron <configure-host-routes-with-neutron>`
--  :ref:`Configure host routes with cURL <configure-host-routes-with-curl>`
+-  :ref:`Configuring host routes with neutron <configuring-host-routes-with-neutron>`
+-  :ref:`Configuring host routes with cURL <configuring-host-routes-with-curl>`
 
 .. toctree::
    :maxdepth: 2
 
-   configure-host-routes-neutron
-   configure-host-routes-curl
+   configuring-host-routes-neutron
+   configuring-host-routes-curl
 

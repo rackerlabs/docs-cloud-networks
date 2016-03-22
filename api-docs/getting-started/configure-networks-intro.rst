@@ -1,4 +1,4 @@
-.. _configuring-networks-intro:
+.. _configure-networks-intro:
 
 ==============================
 Configure network variations
@@ -7,17 +7,17 @@ Configure network variations
 This section provides neutron client (or nova client) and cURL examples of |service| 
 service operations for the following tasks:
 
--  :ref:`Use allocation pools to control dynamic IP address allocation<use-alloc-pools>`
--  :ref:`Configure host routes<configure-host-routes>`
--  :ref:`Provision additional IP and dual-stack IP addresses on an isolated network port<provision-port-ips>`
+-  :ref:`Controlling dynamic IP address allocation by using allocation pools<using-alloc-pools>`
+-  :ref:`Configuring host routes<configuring-host-routes>`
+-  :ref:`Provisioning additional IP and dual-stack IP addresses on a port<provisioning-port-ips>`
 
-.. COMMENT-  :ref:`Use shared IP addresses<share-ips>`
+.. COMMENT-  :ref:`Using shared IP addresses<sharing-ips>`
 
 .. toctree::
    :maxdepth: 2
 
-   Controlling dynamic IP address allocation with allocation pools <configuring-network-variations/use-allocation-pools>
-   configuring-network-variations/configure-host-routes
-   Provisioning IP addresses on isolated network ports <configuring-network-variations/provision-port-ips>
+   Controlling dynamic IP address allocation by using allocation pools <configuring-network-variations/using-allocation-pools>
+   Configuring host routes <configuring-network-variations/configuring-host-routes>
+   Provisioning IP addresses on isolated network ports <configuring-network-variations/provisioning-port-ips>
 
-.. COMMENT   configuring-network-variations/share-ips
+.. COMMENT   configuring-network-variations/sharing-ips

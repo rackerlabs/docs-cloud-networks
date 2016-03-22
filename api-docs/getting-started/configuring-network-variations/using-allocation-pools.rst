@@ -1,4 +1,4 @@
-.. _use-alloc-pools:
+.. _using-alloc-pools:
 
 =====================================================================
 Controlling dynamic IP address allocation by using allocation pools 
@@ -24,12 +24,12 @@ topic, decide whether you prefer neutron-client or cURL examples.
 
 **Next step:** Choose one of the following methods:
 
--  :ref:`Use allocation pools to control dynamic IP address allocation with neutron client <use-allocation-pools-with-neutron>`
--  :ref:`Use allocation pools to control dynamic IP address allocation with cURL <use-allocation-pools-with-curl>`
+-  :ref:`Using allocation pools to control dynamic IP address allocation with neutron client <using-allocation-pools-with-neutron>`
+-  :ref:`Using allocation pools to control dynamic IP address allocation with cURL <using-allocation-pools-with-curl>`
 
 
 .. toctree::
    :maxdepth: 2
 
-   use-allocation-pools-neutron
-   use-allocation-pools-curl
+   using-allocation-pools-neutron
+   using-allocation-pools-curl
