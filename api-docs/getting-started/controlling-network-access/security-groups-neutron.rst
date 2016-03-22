@@ -1,4 +1,4 @@
-.. _use-security-groups-with-neutron:
+.. _using-security-groups-with-neutron:
 
 Using security groups and rules with neutron
 --------------------------------------------
@@ -6,10 +6,10 @@ Using security groups and rules with neutron
 This section provides steps for creating, using, and modifying security groups and rules 
 by using the neutron client.
 
-.. _sg-create-group-neutron:
+.. _sg-creating-group-neutron:
 
-Create a security group (neutron client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Creating a security group (neutron client)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following steps show you how to create a security group.
 
@@ -49,10 +49,10 @@ The following steps show you how to create a security group.
    activities. In this example, the ID is ``fd269d7a-0909-488f-b5fc-5606c8aa489f``, but use 
    the ID from your response.
    
-.. _sg-add-ssh-rule-neutron:
+.. _sg-adding-ssh-rule-neutron:
 
-Add a rule for SSH traffic (neutron client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Adding a rule for SSH traffic (neutron client)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Issue the following neutron client command, substituting your own
    values for the ones shown.
@@ -128,10 +128,10 @@ Add a rule for SSH traffic (neutron client)
 #. Notice that your group, ``fd269d7a-0909-488f-b5fc-5606c8aa489f``, contains your new rule, 
    ``ea794fe0-5f82-4b4e-8c38-7ab5d278973a`` in this example.                       
 
-.. _sg-find-port-neutron:
+.. _sg-finding-port-neutron:
 
-Find the port to use on the server (nova/neutron client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finding the port to use on the server (nova/neutron client)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 First, display your server details to find the port IP address. Then find the port ID for 
 that port IP address. You need the port ID to apply the security group to the server port.
@@ -209,10 +209,10 @@ that port IP address. You need the port ID to apply the security group to the se
    In this example, the port ID is ``9dd49b03-956d-4cd5-ae23-6dbf89b76aeb``, but use the 
    value from your response for the next step.
    
-.. _sg-apply-ssh-to-port-neutron:
+.. _sg-applying-ssh-to-port-neutron:
 
-Apply security group with SSH rule to a port on the server (neutron client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Applying security group with SSH rule to a port on the server (neutron client)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 First, apply the security group to the server port. Then test the security group rule.
 
@@ -272,10 +272,10 @@ First, apply the security group to the server port. Then test the security group
        Request timeout for icmp_seq 1
        Request timeout for icmp_seq 2                    
                        
-.. _sg-add-icmp-rule-neutron:
+.. _sg-adding-icmp-rule-neutron:
 
-Add a rule for ICMP traffic (neutron client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Adding a rule for ICMP traffic (neutron client)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 First, add a rule for ICMP traffic to the security group. Then verify the rule, and ensure 
 that the security group contains the rule.
@@ -355,10 +355,10 @@ that the security group contains the rule.
    rules, ``483b107a-dbf8-41a9-8494-f47558b58524`` and 
    ``ea794fe0-5f82-4b4e-8c38-7ab5d278973a`` in this example.
 
-.. _sg-apply-icmp-to-port-neutron:
+.. _sg-applying-icmp-to-port-neutron:
 
-Apply security group with ICMP rule to the port on the server (neutron client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Applying security group with ICMP rule to the port on the server (neutron client)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 First, apply the security group to the server port. Then test the security group rule.
 

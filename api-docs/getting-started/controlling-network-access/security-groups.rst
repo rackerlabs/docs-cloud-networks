@@ -1,4 +1,4 @@
-.. _use-security-groups-and-rules:
+.. _using-security-groups-and-rules:
 
 Controlling network traffic by using security groups and rules 
 ----------------------------------------------------------------
@@ -35,8 +35,8 @@ decide whether you prefer neutron-client or cURL examples.
 
 **Next step:** Choose one of the following methods:
 
--  :ref:`Using security groups and rules with neutron client <use-security-groups-with-neutron>`
--  :ref:`Using security groups and rules with cURL <use-security-groups-with-curl>`
+-  :ref:`Using security groups and rules with neutron client <using-security-groups-with-neutron>`
+-  :ref:`Using security groups and rules with cURL <using-security-groups-with-curl>`
 
 .. toctree::
    :maxdepth: 2
