@@ -99,5 +99,6 @@ RBAC Permissions Cross-reference to Cloud Networks API Operations
 
 API operations for Cloud Networks may or may not be available to all roles. To see which 
 operations are permitted to invoke which calls, please review 
-:how-to:`Detailed Permissions Matrix for RBAC<permissions-matrix-for-cloud-networks>`.
+:how-to:`Permissions Matrix for Role-Based Access Control<permissions-matrix-for-cloud-networks>`.
+
 

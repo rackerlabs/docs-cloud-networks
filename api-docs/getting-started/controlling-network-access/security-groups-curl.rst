@@ -1,14 +1,14 @@
-.. _use-security-groups-with-curl:
+.. _using-security-groups-with-curl:
 
 Using security groups and rules with cURL
 -----------------------------------------
 
 This section provides steps for creating, using, and modifying security groups and rules by using cURL.
 
-.. _sg-create-group-curl:
+.. _sg-creating-group-curl:
 
-Create a security group (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Creating a security group (cURL)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following steps show you how to create a security group.
 
@@ -46,10 +46,10 @@ The following steps show you how to create a security group.
    activities. In this example, the ID is ``fd269d7a-0909-488f-b5fc-5606c8aa489f``, but 
    use the ID from your response.
    
-.. _sg-add-ssh-rule-curl:
+.. _sg-adding-ssh-rule-curl:
 
-Add a rule for SSH traffic (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Adding a rule for SSH traffic (cURL)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 First, add a rule for SSH traffic to the security group. Then verify the rule, and ensure 
 that the security group contains the rule.
@@ -180,10 +180,10 @@ that the security group contains the rule.
 #. Notice that your group, ``fd269d7a-0909-488f-b5fc-5606c8aa489f``, contains your new 
    rule, ``ea794fe0-5f82-4b4e-8c38-7ab5d278973a`` in this example.
 
-.. _sg-find-port-curl:
+.. _sg-finding-port-curl:
 
-Find the port to use on the server (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finding the port to use on the server (cURL)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 First, display your server details to find the port IP address. Then find the port ID for 
 that port IP address. You need the port ID to apply the security group to the server port.
@@ -354,10 +354,10 @@ that port IP address. You need the port ID to apply the security group to the se
    ``9dd49b03-956d-4cd5-ae23-6dbf89b76aeb``, but use the value from your
    response for the next step.
    
-.. _sg-apply-ssh-to-port-curl:
+.. _sg-applying-ssh-to-port-curl:
 
-Apply security group with SSH rule to a port on the server (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Applying security group with SSH rule to a port on the server (cURL)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 First, apply the security group to the server port. Then test the security group rule.
 
@@ -427,10 +427,10 @@ First, apply the security group to the server port. Then test the security group
        Request timeout for icmp_seq 1
        Request timeout for icmp_seq 2                    
                        
-.. _sg-add-icmp-rule-curl:
+.. _sg-adding-icmp-rule-curl:
 
-Add a rule for ICMP traffic (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Adding a rule for ICMP traffic (cURL)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 First, add a rule for ICMP traffic to the security group. Then verify the rule, and ensure 
 that the security group contains the rule.
@@ -585,10 +585,10 @@ that the security group contains the rule.
    contains both your rules, ``483b107a-dbf8-41a9-8494-f47558b58524`` and 
    ``ea794fe0-5f82-4b4e-8c38-7ab5d278973a`` in this example.
 
-.. _sg-apply-icmp-to-port-curl:
+.. _sg-applying-icmp-to-port-curl:
 
-Apply security group with ICMP rule to the port on the server (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Applying security group with ICMP rule to the port on the server (cURL)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 First, apply the security group to the server port. Then test the security group rule.
 

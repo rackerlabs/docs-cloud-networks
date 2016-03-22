@@ -7,7 +7,7 @@ Control network access
 This section provides neutron client (or nova client) and cURL examples of |service| 
 service operations for the following task:
 
--  :ref:`Use security groups and rules to control traffic<use-security-groups-and-rules>`
+-  :ref:`Using security groups and rules to control traffic<using-security-groups-and-rules>`
 
 
 .. toctree::
