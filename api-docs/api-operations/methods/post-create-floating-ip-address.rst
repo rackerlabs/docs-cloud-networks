@@ -60,7 +60,7 @@ This table shows the body parameters for the request:
 |                          |                         |IP request parameters.    |
 +--------------------------+-------------------------+--------------------------+
 |floatingip.\              |Uuid *(Required)*        |The ID of the network. A  |
-|**floating_ip_network**   |                         |"network_id" of           |
+|**floating_network_id**   |                         |"network_id" of           |
 |                          |                         |``00000000-0000-0000-     |
 |                          |                         |0000-000000000000``       |
 |                          |                         |provisions an IP address  |
@@ -76,7 +76,7 @@ This table shows the body parameters for the request:
 
    {
      "floatingip": {
-        "floating_network_id": "376da547-b977-4cfe-9cba-275c80debf57",
+        "floating_network_id": "00000000-0000-0000-0000-000000000000",
         "port_id": "ce705c24-c1ef-408a-bda3-7bbd946164ab"
      }
    }
