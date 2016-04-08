@@ -3,6 +3,6 @@
   "githubUrl": "https://github.com/rackerlabs/docs-cloud-networks/",
   "githubBranch": "master",
   "meta": {
-    "preferGithubIssues": false
+    "preferGithubIssues": true
   }
 }
