@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-show-ip-address-details-v2.0-ip-addresses-ipaddressid:
 
 Show IP address details
@@ -77,16 +74,16 @@ This table shows the body parameters for the response:
 |                           |                         |port ID indicates a     |
 |                           |                         |shared IP.              |
 +---------------------------+-------------------------+------------------------+
-|ip_address.\ **subnet_id** |Uuid *(Required)*        |The subnet UUID of the  |
+|ip_address.\ **subnet_id** |Uuid                     |The subnet UUID of the  |
 |                           |                         |IP address.             |
 +---------------------------+-------------------------+------------------------+
-|ip_address.\ **tenant_id** |Uuid *(Required)*        |The ID of the tenant    |
+|ip_address.\ **tenant_id** |Uuid                     |The ID of the tenant    |
 |                           |                         |who owns the IP address.|
 +---------------------------+-------------------------+------------------------+
-|ip_address.\ **version**   |String *(Required)*      |The subnet IP version,  |
+|ip_address.\ **version**   |String                   |The subnet IP version,  |
 |                           |                         |which is ``4`` or ``6``.|
 +---------------------------+-------------------------+------------------------+
-|ip_address.\ **type**      |String *(Required)*      |The type of IP address. |
+|ip_address.\ **type**      |String                   |The type of IP address. |
 |                           |                         |Valid types are         |
 |                           |                         |``fixed`` or ``shared``.|
 +---------------------------+-------------------------+------------------------+
@@ -112,7 +109,5 @@ This table shows the body parameters for the response:
        }
    }
    
-
-
 
 

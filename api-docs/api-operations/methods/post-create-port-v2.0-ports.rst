@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 ..  _post-create-port-v2.0-ports: 
 
 Create port
@@ -47,22 +44,15 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
-
-
-
-
 This table shows the body parameters for the request:
 
 +-----------------------------+------------------------+-----------------------+
 |Name                         |Type                    |Description            |
 +=============================+========================+=======================+
-|**port**                     |Object *(Required)*     |The container for the  |
+|**port**                     |Object                  |The container for the  |
 |                             |                        |port details.          |
 +-----------------------------+------------------------+-----------------------+
-|port.\ **network_id**        |Uuid *(Required)*       |The ID of the attached |
+|port.\ **network_id**        |Uuid                    |The ID of the attached |
 |                             |                        |network.               |
 +-----------------------------+------------------------+-----------------------+
 |port.\ **admin_state_up**    |Bool *(Optional)*       |The administrative     |

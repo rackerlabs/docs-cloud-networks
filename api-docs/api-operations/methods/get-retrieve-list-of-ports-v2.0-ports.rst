@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 ..  _get-retrieve-list-of-ports-v2.0-ports: 
 
 Retrieve list of ports
@@ -34,24 +31,10 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
-
-
-
-
 This operation does not accept a request body.
-
-
-
 
 Response
 """"""""""""""""
-
-
-
-
 
 This table shows the body parameters for the response:
 
@@ -109,12 +92,6 @@ This table shows the body parameters for the response:
 |                              |                       |server.                |
 +------------------------------+-----------------------+-----------------------+
 
-
-
-
-
-
-
 **Example Retrieve list of ports: JSON response**
 
 
@@ -142,7 +119,4 @@ This table shows the body parameters for the response:
            }
        ]
    }
-
-
-
 

@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 ..  _post-create-security-group-v2.0-security-groups: 
 
 Create security group
@@ -42,10 +39,10 @@ This table shows the body parameters for the request:
 +-----------------------------+------------------------+-----------------------+
 |Name                         |Type                    |Description            |
 +=============================+========================+=======================+
-|**security_group**           |Object *(Required)*     |A container for        |
+|**security_group**           |Object                  |A container for        |
 |                             |                        |security group details.|
 +-----------------------------+------------------------+-----------------------+
-|security_group.\ **name**    |String *(Required)*     |A symbolic name for    |
+|security_group.\ **name**    |String                  |A symbolic name for    |
 |                             |                        |the security group,    |
 |                             |                        |which does not need to |
 |                             |                        |be unique.             |

@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _put-update-ports-with-an-ip-address-v2.0-ip-addresses-ipaddressid:
 
 Update ports with an IP address
@@ -60,10 +57,10 @@ This table shows the body parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|**ip_address**            |Array *(Required)*       |The container for shared |
+|**ip_address**            |Array                    |The container for shared |
 |                          |                         |IP request parasmeters.  |
 +--------------------------+-------------------------+-------------------------+
-|ip_address.\ **port_ids** |Array *(Required)*       |The array of port        |
+|ip_address.\ **port_ids** |Array                    |The array of port        |
 |                          |                         |objects, containing port |
 |                          |                         |IDs which have the       |
 |                          |                         |shared IP.               |
@@ -108,16 +105,16 @@ This table shows the body parameters for the response:
 |                           |                         |port ID indicates a     |
 |                           |                         |shared IP.              |
 +---------------------------+-------------------------+------------------------+
-|ip_address.\ **subnet_id** |Uuid *(Required)*        |The subnet UUID of the  |
+|ip_address.\ **subnet_id** |Uuid                     |The subnet UUID of the  |
 |                           |                         |IP address.             |
 +---------------------------+-------------------------+------------------------+
-|ip_address.\ **tenant_id** |Uuid *(Required)*        |The ID of the tenant    |
+|ip_address.\ **tenant_id** |Uuid                     |The ID of the tenant    |
 |                           |                         |who owns the IP address.|
 +---------------------------+-------------------------+------------------------+
-|ip_address.\ **version**   |String *(Required)*      |The subnet IP version,  |
+|ip_address.\ **version**   |String                   |The subnet IP version,  |
 |                           |                         |which is ``4`` or ``6``.|
 +---------------------------+-------------------------+------------------------+
-|ip_address.\ **type**      |String *(Required)*      |The type of IP address. |
+|ip_address.\ **type**      |String                   |The type of IP address. |
 |                           |                         |Valid types are         |
 |                           |                         |``fixed`` or ``shared``.|
 +---------------------------+-------------------------+------------------------+

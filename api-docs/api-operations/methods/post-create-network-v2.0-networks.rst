@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 ..  _post-create-network-v2.0-networks: 
 
 Create network
@@ -38,21 +35,14 @@ This table shows the possible response codes for this operation:
 
 
 Request
-""""""""""""""""
-
-
-
-
-
-
-
+"""""""""""""""
 
 This table shows the body parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|**network**               |Object *(Required)*      |The container for the    |
+|**network**               |Object                   |The container for the    |
 |                          |                         |network details.         |
 +--------------------------+-------------------------+-------------------------+
 |network.\                 |Bool *(Optional)*        |The administrative state |
@@ -79,11 +69,7 @@ This table shows the body parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 
 
-
-
-
 **Example Create network: JSON request**
-
 
 .. code::
 
@@ -97,15 +83,8 @@ This table shows the body parameters for the request:
    }
 
 
-
-
-
 Response
 """"""""""""""""
-
-
-
-
 
 This table shows the body parameters for the response:
 
@@ -146,11 +125,6 @@ This table shows the body parameters for the response:
 +--------------------------+-------------------------+-------------------------+
 
 
-
-
-
-
-
 **Example Create network: JSON response**
 
 
@@ -169,7 +143,4 @@ This table shows the body parameters for the response:
            "tenant_id": "123456"
        }
    }
-
-
-
 

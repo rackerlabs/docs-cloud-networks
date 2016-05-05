@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 ..  _put-update-port-v2.0-ports-port-id: 
 
 Update port
@@ -78,8 +75,11 @@ This table shows the body parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|**port**                  |Object *(Required)*      |The container for the    |
+|**port**                  |Object                   |The container for the    |
 |                          |                         |port details.            |
++--------------------------+-------------------------+-------------------------+
+|port.\ **network_id**     |String                   |A symbolic name for the  |
+|                          |                         |port.                    |
 +--------------------------+-------------------------+-------------------------+
 |port.\ **name**           |String *(Optional)*      |A symbolic name for the  |
 |                          |                         |port.                    |

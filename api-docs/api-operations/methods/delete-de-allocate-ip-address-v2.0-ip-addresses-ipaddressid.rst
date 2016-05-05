@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _delete-de-allocate-ip-address-v2.0-ip-addresses-ipaddressid:
 
 De-allocate IP address

@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _put-update-subnet-v2.0-subnets-subnet-id: 
 
 Update subnet
@@ -70,13 +67,13 @@ This table shows the body parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|**subnet**                |Object *(Required)*      |The container for subnet |
+|**subnet**                |Object                   |The container for subnet |
 |                          |                         |details.                 |
 +--------------------------+-------------------------+-------------------------+
-|subnet.\ **name**         |String *(Required)*      |The subnet name.         |
+|subnet.\ **name**         |String                   |The subnet name.         |
 |                          |                         |                         |
 +--------------------------+-------------------------+-------------------------+
-|subnet.\ **gateway_ip**   |String *(Optional)*      |The gateway IP address.  |
+|subnet.\ **gateway_ip**   |String                   |The gateway IP address.  |
 |                          |                         |                         |
 +--------------------------+-------------------------+-------------------------+
 

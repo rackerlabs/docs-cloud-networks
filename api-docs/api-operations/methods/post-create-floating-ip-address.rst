@@ -56,10 +56,10 @@ This table shows the body parameters for the request:
 +--------------------------+-------------------------+--------------------------+
 |Name                      |Type                     |Description               |
 +==========================+=========================+==========================+
-|**floatingip**            |Object *(Required)*      |The container for floating|
+|**floatingip**            |Object                   |The container for floating|
 |                          |                         |IP request parameters.    |
 +--------------------------+-------------------------+--------------------------+
-|floatingip.\              |Uuid *(Required)*        |The ID of the network. A  |
+|floatingip.\              |Uuid                     |The ID of the network. A  |
 |**floating_network_id**   |                         |"network_id" of           |
 |                          |                         |``00000000-0000-0000-     |
 |                          |                         |0000-000000000000``       |
@@ -112,7 +112,7 @@ This table shows the body parameters for the response:
 |floatingip.\ **id**        |Uuid                     |The ID of the floating  |
 |                           |                         |IP address.             |
 +---------------------------+-------------------------+------------------------+
-|floatingip.\ **status**    |String *(Required)*      |The status of the       |
+|floatingip.\ **status**    |String                   |The status of the       |
 |                           |                         |floating IP address.    |
 +---------------------------+-------------------------+------------------------+
 

@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-retrieve-list-of-ip-addresses-v2.0-ip-addresses:
 
 Retrieve list of IP addresses
@@ -11,8 +8,6 @@ Retrieve list of IP addresses
     GET /v2.0/ip_addresses
 
 Retrieves list of IP addresses for specified tenant.
-
-
 
 This table shows the possible response codes for this operation:
 
@@ -29,7 +24,6 @@ This table shows the possible response codes for this operation:
 
 Request
 """"""""""""""""
-
 
 This operation does not accept a request body.
 
@@ -59,16 +53,16 @@ This table shows the body parameters for the response:
 |                           |                         |port ID indicates a     |
 |                           |                         |shared IP.              |
 +---------------------------+-------------------------+------------------------+
-|ip_addresses.\             |Uuid *(Required)*        |The subnet UUID of the  |
+|ip_addresses.\             |Uuid                     |The subnet UUID of the  |
 |**subnet_id**              |                         |IP address.             |
 +---------------------------+-------------------------+------------------------+
-|ip_addresses.\             |Uuid *(Required)*        |The ID of the tenant    |
+|ip_addresses.\             |Uuid                     |The ID of the tenant    |
 |**tenant_id**              |                         |who owns the IP address.|
 +---------------------------+-------------------------+------------------------+
-|ip_addresses.\ **version** |String *(Required)*      |The subnet IP version,  |
+|ip_addresses.\ **version** |String                   |The subnet IP version,  |
 |                           |                         |which is ``4`` or ``6``.|
 +---------------------------+-------------------------+------------------------+
-|ip_addresses.\ **type**    |String *(Required)*      |The type of IP address. |
+|ip_addresses.\ **type**    |String                   |The type of IP address. |
 |                           |                         |Valid types are         |
 |                           |                         |``fixed`` or ``shared``.|
 +---------------------------+-------------------------+------------------------+
@@ -96,7 +90,5 @@ This table shows the body parameters for the response:
        ]
    }
    
-
-
 
 

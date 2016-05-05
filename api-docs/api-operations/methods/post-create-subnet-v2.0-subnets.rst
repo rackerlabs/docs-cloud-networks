@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 ..  _post-create-subnet-v2.0-subnets: 
 
 Create subnet
@@ -56,29 +53,22 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
-
-
-
-
 This table shows the body parameters for the request:
 
 +--------------------------------------+-------------------+-------------------+
 |Name                                  |Type               |Description        |
 +======================================+===================+===================+
-|**subnet**                            |Object *(Required)*|The container for  |
+|**subnet**                            |Object             |The container for  |
 |                                      |                   |subnet details.    |
 +--------------------------------------+-------------------+-------------------+
 |subnet.\ **name**                     |String *(Optional)*|The subnet name.   |
 +--------------------------------------+-------------------+-------------------+
-|subnet.\ **network_id**               |Uuid *(Required)*  |The ID of the      |
+|subnet.\ **network_id**               |Uuid               |The ID of the      |
 |                                      |                   |attached network.  |
 +--------------------------------------+-------------------+-------------------+
-|subnet.\ **cidr**                     |String *(Required)*|The subnet CIDR.   |
+|subnet.\ **cidr**                     |String             |The subnet CIDR.   |
 +--------------------------------------+-------------------+-------------------+
-|subnet.\ **ip_version**               |String *(Required)*|The subnet IP      |
+|subnet.\ **ip_version**               |String             |The subnet IP      |
 |                                      |                   |version, which is  |
 |                                      |                   |``4`` or ``6``.    |
 +--------------------------------------+-------------------+-------------------+

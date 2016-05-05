@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 ..  _delete-delete-network-v2.0-networks-network-id:
 
 Delete network

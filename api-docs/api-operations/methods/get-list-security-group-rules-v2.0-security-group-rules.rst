@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 ..  _get-list-security-group-rules-v2.0-security-group-rules: 
 
 List security group rules
@@ -13,8 +10,6 @@ List security group rules
 Retrieves a list of all security group rules that the requester can access.
 
 This operation provides a list of security group rules for the requester with the unique ID for each security group rule.
-
-
 
 This table shows the possible response codes for this operation:
 
@@ -137,12 +132,6 @@ This table shows the body parameters for the response:
 |                                  |                     |packet.              |
 +----------------------------------+---------------------+---------------------+
 
-
-
-
-
-
-
 **Example List security group rules: JSON response**
 
 
@@ -176,7 +165,4 @@ This table shows the body parameters for the response:
          }
       ]
    }
-
-
-
 

@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _delete-delete-association-between-ip-address-and-server-v2-servers-serverid-ip-associations-ipaddressid:
 
 Delete association between IP address and server
