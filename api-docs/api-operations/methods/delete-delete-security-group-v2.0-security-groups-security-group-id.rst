@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 ..  _delete-delete-security-group-v2.0-security-groups-security-group-id: 
 
 Delete security group

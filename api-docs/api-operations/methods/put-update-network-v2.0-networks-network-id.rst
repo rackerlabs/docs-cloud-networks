@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 ..  _put-update-network-v2.0-networks-network-id: 
 
 Update network
@@ -66,7 +63,7 @@ This table shows the body parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|**network**               |Object *(Required)*      |The container for the    |
+|**network**               |Object                   |The container for the    |
 |                          |                         |network details.         |
 +--------------------------+-------------------------+-------------------------+
 |networks.\ **name**       |String *(Optional)*      |The network name.        |

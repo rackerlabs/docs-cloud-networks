@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 ..  _delete-delete-port-v2.0-ports-port-id: 
 
 Delete port

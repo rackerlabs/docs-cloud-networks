@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-retrieve-list-of-ip-addresses-explicitly-associated-with-a-server-v2-servers-serverid-ip-associations:
 
 Retrieve list of IP addresses explicitly associated with a server
@@ -20,8 +17,6 @@ the ``/ip_associations`` API will not be able to forward traffic from the intend
 need to share IP address between two ports, belonging to two servers, you must use a POST ``/ip_addresses`` for 
 the relevant ports, followed by an IP association. The IP association must be done for the IP address for both 
 the servers so that they can forward traffic for the IP address.
-
-
 
 This table shows the possible response codes for this operation:
 
@@ -55,7 +50,6 @@ This table shows the possible response codes for this operation:
 
 Request
 """"""""""""""""
-
 
 This operation does not accept a request body.
 

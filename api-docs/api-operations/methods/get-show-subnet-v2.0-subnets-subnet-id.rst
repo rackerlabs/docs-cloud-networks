@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 ..  _get-show-subnet-v2.0-subnets-subnet-id: 
 
 Show subnet
@@ -34,9 +31,6 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -46,20 +40,10 @@ This table shows the URI parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 
 
-
-
-
 This operation does not accept a request body.
-
-
-
 
 Response
 """"""""""""""""
-
-
-
-
 
 This table shows the body parameters for the response:
 
@@ -122,12 +106,6 @@ This table shows the body parameters for the response:
 +---------------------------------------+-------------------+------------------+
 
 
-
-
-
-
-
-
 **Example Show subnet: JSON response**
 
 
@@ -156,7 +134,4 @@ This table shows the body parameters for the response:
        }
    }
    
-
-
-
 

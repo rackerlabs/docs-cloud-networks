@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 ..  _delete-delete-subnet-v2.0-subnets-subnet-id: 
 
 Delete subnet

@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _post-provision-ip-address-v2.0-ip-addresses:
 
 Provision IP address
@@ -45,27 +42,27 @@ This table shows the body parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|**ip_address**            |Object *(Required)*      |The container for shared |
+|**ip_address**            |Object                   |The container for shared |
 |                          |                         |IP request parameters.   |
 +--------------------------+-------------------------+-------------------------+
-|ip_address.\              |Uuid *(Required)*        |The ID of the network. A |
+|ip_address.\              |Uuid                     |The ID of the network. A |
 |**network_id**            |                         |"network_id" of          |
 |                          |                         |``00000000-0000-0000-    |
 |                          |                         |0000-000000000000``      |
 |                          |                         |provisions an IP address |
 |                          |                         |on PublicNet             |
 +--------------------------+-------------------------+-------------------------+
-|ip_address.\ **port_ids** |Array *(Required)*       |The array of port        |
+|ip_address.\ **port_ids** |Array                    |The array of port        |
 |                          |                         |objects, containing port |
 |                          |                         |IDs. At least two ports  |
 |                          |                         |are required to          |
 |                          |                         |provision a shared IP    |
 |                          |                         |address.                 |
 +--------------------------+-------------------------+-------------------------+
-|ip_address.\ **version**  |String *(Required)*      |The subnet IP version,   |
+|ip_address.\ **version**  |String                   |The subnet IP version,   |
 |                          |                         |which is ``4`` or ``6``. |
 +--------------------------+-------------------------+-------------------------+
-|ip_address.\ **tenant_id**|String *(Required)*      |The ID of the tenant.    |
+|ip_address.\ **tenant_id**|String                   |The ID of the tenant.    |
 |                          |                         |                         |
 +--------------------------+-------------------------+-------------------------+
 
@@ -114,16 +111,16 @@ This table shows the body parameters for the response:
 |                           |                         |port ID indicates a     |
 |                           |                         |shared IP.              |
 +---------------------------+-------------------------+------------------------+
-|ip_address.\ **subnet_id** |Uuid *(Required)*        |The subnet UUID of the  |
+|ip_address.\ **subnet_id** |Uuid                     |The subnet UUID of the  |
 |                           |                         |IP address.             |
 +---------------------------+-------------------------+------------------------+
-|ip_address.\ **tenant_id** |Uuid *(Required)*        |The ID of the tenant    |
+|ip_address.\ **tenant_id** |Uuid                     |The ID of the tenant    |
 |                           |                         |who owns the IP address.|
 +---------------------------+-------------------------+------------------------+
-|ip_address.\ **version**   |String *(Required)*      |The subnet IP version,  |
+|ip_address.\ **version**   |String                   |The subnet IP version,  |
 |                           |                         |which is ``4`` or ``6``.|
 +---------------------------+-------------------------+------------------------+
-|ip_address.\ **type**      |String *(Required)*      |The type of IP address. |
+|ip_address.\ **type**      |String                   |The type of IP address. |
 |                           |                         |Valid types are         |
 |                           |                         |``fixed`` or ``shared``.|
 +---------------------------+-------------------------+------------------------+

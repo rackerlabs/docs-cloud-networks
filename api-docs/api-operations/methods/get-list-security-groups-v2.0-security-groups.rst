@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 ..  _get-list-security-groups-v2.0-security-groups: 
 
 List security groups
@@ -11,8 +8,6 @@ List security groups
     GET /v2.0/security-groups
 
 Retrieves a list of all security groups to which the specified tenant has access.
-
-
 
 This table shows the possible response codes for this operation:
 
@@ -30,24 +25,10 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
-
-
-
-
 This operation does not accept a request body.
-
-
-
 
 Response
 """"""""""""""""
-
-
-
-
 
 This table shows the body parameters for the response:
 
@@ -162,11 +143,6 @@ This table shows the body parameters for the response:
 +--------------------------------------------------+-------+--------------------+
 
 
-
-
-
-
-
 **Example List security groups: JSON response**
 
 
@@ -208,7 +184,4 @@ This table shows the body parameters for the response:
            }
        ]
    }
-
-
-
 

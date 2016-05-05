@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 ..  _get-retrieve-list-of-networks-v2.0-networks: 
 
 Retrieve list of networks
@@ -33,24 +30,10 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
-
-
-
-
 This operation does not accept a request body.
-
-
-
 
 Response
 """"""""""""""""
-
-
-
-
 
 This table shows the body parameters for the response:
 
@@ -89,12 +72,6 @@ This table shows the body parameters for the response:
 |                          |                         |cannot be changed by the |
 |                          |                         |user.                    |
 +--------------------------+-------------------------+-------------------------+
-
-
-
-
-
-
 
 **Example Retrieve list of networks: JSON response**
 
@@ -144,7 +121,4 @@ This table shows the body parameters for the response:
            }
        ]
    }
-
-
-
 

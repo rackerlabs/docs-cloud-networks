@@ -1,6 +1,3 @@
-
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 ..  _get-retrieve-list-of-subnets-v2.0-subnets: 
 
 Retrieve list of subnets
@@ -14,8 +11,6 @@ Retrieves list of subnets to which the specified tenant has access.
 
 You can control which attributes are returned by using the ``fields`` query parameter. 
 For more information, see :ref:`Filtering Requests <generalapi-filtering>`.
-
-
 
 This table shows the possible response codes for this operation:
 
@@ -33,24 +28,10 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
-
-
-
-
 This operation does not accept a request body.
-
-
-
 
 Response
 """"""""""""""""
-
-
-
-
 
 This table shows the body parameters for the response:
 
@@ -112,12 +93,6 @@ This table shows the body parameters for the response:
 |                                       |                   |subnet.           |
 +---------------------------------------+-------------------+------------------+
 
-
-
-
-
-
-
 **Example Retrieve list of subnets: JSON response**
 
 
@@ -146,7 +121,4 @@ This table shows the body parameters for the response:
        ]
    }
    
-
-
-
 
