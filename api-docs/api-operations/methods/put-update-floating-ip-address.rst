@@ -104,7 +104,7 @@ This table shows the body parameters for the response:
 |floatingip.\ **id**        |Uuid                     |The ID of the floating  |
 |                           |                         |IP address.             |
 +---------------------------+-------------------------+------------------------+
-|floatingip.\ **status**    |String *(Required)*      |The status of the       |
+|floatingip.\ **status**    |String                   |The status of the       |
 |                           |                         |floating IP address.    |
 +---------------------------+-------------------------+------------------------+
 
