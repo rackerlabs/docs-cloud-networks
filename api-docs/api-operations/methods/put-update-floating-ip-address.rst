@@ -52,6 +52,17 @@ This table shows the URI parameters for the request:
 |                          |                         |itself.                  |
 +--------------------------+-------------------------+-------------------------+
 
+This table shows the body parameters for the response:
+
++---------------------------+-------------------------+------------------------+
+|Name                       |Type                     |Description             |
++===========================+=========================+========================+
+|**floatingip**             |Object                   |The container for the   |
+|                           |                         |floating IP address info|
++---------------------------+-------------------------+------------------------+
+|floatingip.\ **port_id**   |Uuid                     |The ID of the port.     |
++---------------------------+-------------------------+------------------------+
+
 **Example Update floating IP address (association): JSON request**
 
 .. code::
@@ -79,34 +90,34 @@ Response
 
 This table shows the body parameters for the response:
 
-+---------------------------+-------------------------+------------------------+
-|Name                       |Type                     |Description             |
-+===========================+=========================+========================+
-|**floatingip**             |Object                   |The container for the   |
-|                           |                         |floating IP address info|
-+---------------------------+-------------------------+------------------------+
-|floatingip.\ **router_id** |Uuid                     |The ID of the router    |
-+---------------------------+-------------------------+------------------------+
-|floatingip.\ **tenant_id** |Uuid                     |The tenant ID           |
-+---------------------------+-------------------------+------------------------+
-|floatingip.\               |Uuid                     |The ID of the network   |
-|**floating_network_id**    |                         |                        |
-+---------------------------+-------------------------+------------------------+
-|floatingip.\               |String                   |The fixed IP address    |
-|**fixed_ip_address**       |                         |that is associated with |
-|                           |                         |the floating IP.        |
-+---------------------------+-------------------------+------------------------+
-|floatingip.\               |String                   |The floating IP address.|
-|**floating_ip_address**    |                         |                        |
-+---------------------------+-------------------------+------------------------+
-|floatingip.\ **port_id**   |Uuid                     |The ID of the port.     |
-+---------------------------+-------------------------+------------------------+
-|floatingip.\ **id**        |Uuid                     |The ID of the floating  |
-|                           |                         |IP address.             |
-+---------------------------+-------------------------+------------------------+
-|floatingip.\ **status**    |String                   |The status of the       |
-|                           |                         |floating IP address.    |
-+---------------------------+-------------------------+------------------------+
++---------------------------+-------------------------+-------------------------+
+|Name                       |Type                     |Description              |
++===========================+=========================+=========================+
+|**floatingip**             |Object                   |The container for the    |
+|                           |                         |floating IP address info.|
++---------------------------+-------------------------+-------------------------+
+|floatingip.\ **router_id** |Uuid                     |The ID of the router.    |
++---------------------------+-------------------------+-------------------------+
+|floatingip.\ **tenant_id** |Uuid                     |The tenant ID.           |
++---------------------------+-------------------------+-------------------------+
+|floatingip.\               |Uuid                     |The ID of the network.   |
+|**floating_network_id**    |                         |                         |
++---------------------------+-------------------------+-------------------------+
+|floatingip.\               |String                   |The fixed IP address     |
+|**fixed_ip_address**       |                         |that is associated with  |
+|                           |                         |the floating IP.         |
++---------------------------+-------------------------+-------------------------+
+|floatingip.\               |String                   |The floating IP address. |
+|**floating_ip_address**    |                         |                         |
++---------------------------+-------------------------+-------------------------+
+|floatingip.\ **port_id**   |Uuid                     |The ID of the port.      |
++---------------------------+-------------------------+-------------------------+
+|floatingip.\ **id**        |Uuid                     |The ID of the floating   |
+|                           |                         |IP address.              |
++---------------------------+-------------------------+-------------------------+
+|floatingip.\ **status**    |String                   |The status of the        |
+|                           |                         |floating IP address.     |
++---------------------------+-------------------------+-------------------------+
 
 
 **Example Update floating IP address (association): JSON response**

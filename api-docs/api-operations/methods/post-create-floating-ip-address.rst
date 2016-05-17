@@ -17,7 +17,8 @@ request instead of a **POST** request.
 By default, this operation associates the floating IP address with a single fixed IP 
 address that is configured on a networking port. If a port has multiple IP addresses, you 
 must specify the ``fixed_ip_address`` attribute in the request body to associate a fixed IP
-address with the floating IP address.
+address with the floating IP address. If you don't specify which fixed IP address to use, 
+the service chooses the first fixed IP address.
 
 You must configure an IP address with the internal Networking port that is associated with 
 the floating IP address.
@@ -38,6 +39,8 @@ This table shows the possible response codes for this operation:
 |400                       |Bad Request         |A general error has occurred. Most      |
 |                          |                    |likely the requested floating IP address|
 |                          |                    |network was not passed in the request.  |
++--------------------------+--------------------+----------------------------------------+
+|401                       |Unauthorized        |The operation is not authorized.        |
 +--------------------------+--------------------+----------------------------------------+
 |404                       |Not Found           |The floating IP address network does not|
 |                          |                    |exist or the requested port does not    |
@@ -66,7 +69,19 @@ This table shows the body parameters for the request:
 |                          |                         |provisions an IP address  |
 |                          |                         |on PublicNet              |
 +--------------------------+-------------------------+--------------------------+
-|floatingip.\ **port_id**  |Uuid                     |The ID of the port.       |
+|floatingip.\ **port_id**  |Uuid **(Optional)**      |The ID of the port.       |
++--------------------------+-------------------------+--------------------------+
+|floatingip.\ **tenant_id**|Uuid **(Optional)**      |The tenat ID. Only        |
+|                          |                         |administrative users can  |
+|                          |                         |specify a tenant ID other |
+|                          |                         |than their own.           |
++--------------------------+-------------------------+--------------------------+
+|floatingip.\              |Uuid **(Optional)**      |The fixed IP address that |
+|**fixed_ip_address**      |                         |is associated with the    |
+|                          |                         |floating IP.              |
++--------------------------+-------------------------+--------------------------+
+|floatingip.\              |Uuid **(Optional)**      |The floating IP address.  |
+|**floating_ip_address**   |                         |                          |
 +--------------------------+-------------------------+--------------------------+
 
 **Example Create floating IP address: JSON request**

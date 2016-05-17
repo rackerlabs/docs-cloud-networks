@@ -13,7 +13,8 @@ This operation retrieves information for a specified floating IP address, using 
 address ID.
 
 You may use the `fields` query parameter to control which fields are returned in the 
-response body. 
+response body. For more information about filering, see 
+:ref:`Filtering requests<cgeneralapi-filtering>`.
 
 This table shows the possible response codes for this operation:
 
@@ -41,6 +42,16 @@ This table shows the URI parameters for the request:
 |                          |                         |itself.                  |
 +--------------------------+-------------------------+-------------------------+
 
+This table shows the query parameters for the request:
+
++-----------+----------+-------------------------------------------------------+
+|Name       |Type      |Description                                            |
++===========+==========+=======================================================+
+|fields     |String    |Use this query parameter to control which fields are   | 
+|           |          |returned in the response body. For example,            |
+|           |          |``?fields=fixed_ip_address&fields=floating_ip_address``|
+|           |          |would filter the response to those two columns.        |
++-----------+----------+-------------------------------------------------------+
 
 This operation does not accept a request body.
 
