@@ -4,7 +4,7 @@
 Limits
 ======================
 
-In the |apiservice|, the following quotas apply.
+In the |apiservice|, the following limits apply.
 
 +-----------------+------------------------------+
 | Resource        | Quota                        |
