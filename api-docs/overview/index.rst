@@ -39,7 +39,6 @@ You can use the Cloud Networks service Neutron API to perform the following task
 .. toctree::
    :maxdepth: 2
    
-   service-limits
    neutron-versus-nova
    available-networks
    networks-attached-during-provisioning
