@@ -1,8 +1,0 @@
-{
-    "network": 
-    {
-        "name": "testnet-3",
-        "shared": false,
-        "tenant_id": "123456"
-    }
-}

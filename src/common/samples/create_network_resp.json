@@ -1,7 +1,0 @@
-{
-    "network": {
-        "cidr": "192.168.0.0/24", 
-        "id": "1ff4489e-db0e-45a6-8c9f-4616c6ef5db1", 
-        "label": "superprivate"
-    }
-}
