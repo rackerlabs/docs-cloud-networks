@@ -1,21 +1,21 @@
-.. _servicelimits:
+.. _serviceQuotas:
 
 ======================
-Limits
+Quotas
 ======================
 
-In the |apiservice|, the following limits apply.
+In the |apiservice|, the following resource quotas apply per region.
 
 +-----------------+------------------------------+
 | Resource        | Quota                        |
 +=================+==============================+
-| network         | 10 max                       |
+| Network         | 10 max                       |
 +-----------------+------------------------------+
-| subnets         | 2 per network                |
+| Subnets         | 2 per network                |
 +-----------------+------------------------------+
-| v4_subnets      | 1 per network                |
+| v4 subnets      | 1 per network                |
 +-----------------+------------------------------+
-| v6_subnets      | 1 per_network                |
+| v6 subnets      | 1 per network                |
 +-----------------+------------------------------+
 | DNS nameservers | 2 per subnet                 |
 +-----------------+------------------------------+
@@ -23,15 +23,15 @@ In the |apiservice|, the following limits apply.
 +-----------------+------------------------------+
 | Allocation pools| 5 per subnet                 |
 +-----------------+------------------------------+
-| ports           | 250 per network              |
+| Ports           | 250 per network              |
 +-----------------+------------------------------+
-| fixed_ips       | 6 per port                   |
+| Fixed IPs       | 6 per port                   |
 +-----------------+------------------------------+
-| security groups | 10 max                       |
+| Security groups | 10 max                       |
 +-----------------+------------------------------+
-| security groups | 5 per port                   |
+| Security groups | 5 per port                   |
 +-----------------+------------------------------+
-| security rules  | 100 max                      |
+| Security rules  | 100 max                      |
 +-----------------+------------------------------+
-| security rules  | 10 per group                 |
+| Security rules  | 10 per group                 |
 +-----------------+------------------------------+
