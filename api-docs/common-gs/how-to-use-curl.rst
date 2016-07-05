@@ -118,13 +118,12 @@ If you do not want to pretty-print JSON output, omit this code.
 
 .. note::
 
-   If your request includes the ``-i`` option to show header output, do not try to pretty-print the output. Header information is not in JSON format, and the API service returns an error if you specify json.tool.
+   If your request includes the ``-i`` option to show header output, do not try to
+   pretty-print the output. Header information is not in JSON format, and the API service
+   returns an error if you specify json.tool.
 
-.. _json encoder and decoder: http://docs.python.org/2/library/json.html
-.. _simplejson encoder and decoder: http://simplejson.googlecode.com/svn/tags/simplejson-2.0.9/docs/index.html
-
-.. _json.tool: http://docs.python.org/2/library/json.html
-.. _simplejson.tool: http://simplejson.googlecode.com/svn/tags/simplejson-2.0.9/docs/index.html
+.. _JSON encoder and decoder: http://docs.python.org/2/library/json.html
+.. _simplejson encoder and decoder: https://simplejson.readthedocs.io/en/latest/
 
 
 .. _convert-cURL-examples-for-windows:
@@ -136,10 +135,12 @@ The cURL examples in the Rackspace API documentation use syntax supported
 on Mac OS® X, Linux and UNIX systems. Microsoft Windows does not support
 the same format. However, you can run the examples after making the following changes:
 
-- Replace all the line continuation backslash characters (``\``) with a caret (``^``), and remove any trailing spaces after
-  the ``^``.
+- Replace all the line continuation backslash characters (``\``) with a caret (``^``), and
+  remove any trailing spaces after the ``^``.
 
-- If an example includes JSON data, export the data to a text file. When you run the cURL command, use the ``@filename`` syntax to import the JSON data. Save the JSON data files in a directory, and run cURL commands from that directory.
+- If an example includes JSON data, export the data to a text file. When you run the cURL
+  command, use the ``@filename`` syntax to import the JSON data. Save the JSON data files
+  in a directory, and run cURL commands from that directory.
 
 The following example shows the format for Linux and UNIX systems:
 
