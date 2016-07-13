@@ -27,6 +27,8 @@ In the |apiservice|, the following resource quotas apply per region.
 +-----------------+------------------------------+
 | Fixed IPs       | 6 per port                   |
 +-----------------+------------------------------+
+| Floating IPs    | 5 per tenant                 |
++-----------------+------------------------------+
 | Security groups | 10 max                       |
 +-----------------+------------------------------+
 | Security groups | 5 per port                   |

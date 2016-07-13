@@ -13,7 +13,7 @@ addresses.
 
 You may use the `fields` query parameter to control which fields are returned in the 
 response body. Additionally, you may filter results by using query string parameters.
-For more information about filering, see :ref:`Filtering requests<cgeneralapi-filtering>`.
+For more information about filering, see :ref:`Filtering requests<generalapi-filtering>`.
 
 This table shows the possible response codes for this operation:
 
