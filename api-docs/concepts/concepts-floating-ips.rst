@@ -44,9 +44,11 @@ following caveats.
 - Floating IP addresses are compatible with only virtual Cloud Servers.
 - Floating IP addresses are not compatible with RackConnect V3.
 - You are limited to five floating IP addresses per account during the EA period.
-- When associating a floating IP address with a Cloud Server, disassociate the current,
-  non-floating, associated public IP address from the Cloud Server. Before doing this,
-  make sure you are willing to relinquish the non-floating public IP address.
+- When associating a floating IP address with a Cloud Server, we recommend that you
+  disassociate the current associated fixed public IP address from the Cloud
+  Server. Before doing this,  make sure you are willing to relinquish the fixed
+  public IP address. If you prefer to maintain the fixed IP address, you must manually
+  add default routes to the instance.
 - You must provision a new floating IP address instead of using an existing IP address,
   because current public IPv4 addresses cannot be converted to a floating IP address.
 - Floating IP addresses may be only IPv4. IPv6 is not supported.
