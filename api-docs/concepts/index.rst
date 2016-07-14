@@ -9,11 +9,11 @@ API v2 supports JSON request and response formats.
 
 .. toctree::
    :maxdepth: 2
-   
+
    concepts-network
    concepts-subnet
    concepts-port
    concepts-security-groups
-.. COMMENT   concepts-floating-ips
+.. COMMENT concepts-floating-ips
 .. COMMENT concepts-shared-ips
 
