@@ -8,7 +8,7 @@ existing servers or two new servers by using cURL.
 
 Once the steps are completed, there will be a shared IP address common to 2 servers in the 
 control plane. However, you will still need to configure the guest on the servers, perhaps 
-an application like Linux-HA or VRRP, to take advantage of the shared IP during a failover.
+an application like Linux-HA to take advantage of the shared IP during a failover.
 
 **If you already have two active servers, start here:** `Verifying servers share ``publicIPZoneId`` (neutron) <si-verifying-servers-zone-nova>`
 **If you need to create servers, start here:** `Creating server A (neutron) <si-creating-serverA-nova>`
