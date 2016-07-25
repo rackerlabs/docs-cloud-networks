@@ -29,6 +29,8 @@ for REST, and various programming languages and tools.
 
 		The neutron API is in Unlimited Availability and is available for all Managed 
 		Infrastructure and Managed Operations customers except for RackConnect v3 customers. 
-		The Security Groups API is currently in Limited Availability. It is available only 
+		The Security Groups API is currently in Limited Availability, and the Floating IP Address
+		API is in Early Access. They are available only 
 		to Managed Infrastructure customers and not to RackConnect or Managed Operations 
-		customers. To use the security groups feature, contact Rackspace Support.
+		customers. To use the security groups or floating IP address features, contact 
+		Rackspace Support.

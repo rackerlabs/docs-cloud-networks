@@ -7,7 +7,7 @@ This section describes the API operations for floating IP addresses. For general
 information about floating IP addresses, see :ref:`Floating IP addresses concepts <concepts-floating-ips>`.
 
 .. note::
-	The floating IP addresses API is currently in Limited Availability. It is available only to 
+	The floating IP addresses API is currently in Early Accesss. It is available only to 
 	Managed Infrastructure customers and not to RackConnect or Managed Operations customers. 
 	To use this feature, contact Rackspace Support.
 
