@@ -12,8 +12,7 @@ resolved issues, and other important details about |apiservice| |version| servic
 .. toctree::
    :maxdepth: 2
 
+   July 25, 2016 <release-notes/cn_v2_20160725>
    March 24, 2015 <release-notes/cn_v2_20150324>
    March 19, 2015 <release-notes/cn_v2_20150319>
    September 3, 2014 <release-notes/cn_v2_20140903>
-
-.. COMMENT July 20, 2016 <release-notes/cn_v2_20160720>
