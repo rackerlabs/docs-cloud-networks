@@ -4,12 +4,12 @@
 Creating and listing your first cloud network
 ==============================================
 
-The following flow chart shows the steps for creating a network. Detailed steps are 
+The following flow chart shows the steps for creating a network. Detailed steps are
 provided in this section.
 
-.. image:: /_images/cfn-neutron-api.png
+.. image:: /_images/cfn-neutron-api.svg
 
-The sections are also organized by example type. To simplify your path through this 
+The sections are also organized by example type. To simplify your path through this
 topic, decide whether you prefer neutron-client or cURL examples.
 
 .. note::
@@ -29,6 +29,6 @@ topic, decide whether you prefer neutron-client or cURL examples.
 
 .. toctree::
    :maxdepth: 2
-   
+
    creating-network-neutron
    creating-network-curl

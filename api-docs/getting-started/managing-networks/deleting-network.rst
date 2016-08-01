@@ -8,15 +8,15 @@ When you no longer need your cloud network, delete it.
 
 .. note::
 
-   You cannot delete a network while its port is still attached to a server. Also, you 
+   You cannot delete a network while its port is still attached to a server. Also, you
    cannot delete the PublicNet and ServiceNet networks .
 
-The following flow chart shows the steps for deleting an isolated network. Detailed steps 
+The following flow chart shows the steps for deleting an isolated network. Detailed steps
 are provided in this section.
 
-.. image:: /_images/dn-neutron-api.png
+.. image:: /_images/dn-neutron-api.svg
 
-The sections are also organized by example type. To simplify your path through this 
+The sections are also organized by example type. To simplify your path through this
 topic, decide whether you prefer neutron-client or cURL examples.
 
 **Next step:** Choose one of the following methods:
@@ -30,5 +30,3 @@ topic, decide whether you prefer neutron-client or cURL examples.
 
    deleting-network-neutron
    deleting-network-curl
-
-
