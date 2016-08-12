@@ -150,7 +150,7 @@ step 2.
        returns an ``HTTP 200`` return code.
 
    1.2. Create a port on the network, by issuing the following cURL command,
-        substituting your own values for the ones shown.
+   substituting your own values for the ones shown.
 
         **Create port with cURL request**
 
@@ -194,13 +194,13 @@ step 2.
          }
 
    1.3. Note the port id, in this case ``e84fb78e-fc92-45aa-90b3-8786c82b5112``,
-        but use your own value.
+   but use your own value.
 
 2. New server option
 
-   2.1 If you don't already have a server, issue the following cURL command to
-       create one without a public interface, substituting your own values for
-       the ones shown.
+   2.1. If you don't already have a server, issue the following cURL command to
+   create one without a public interface, substituting your own values for
+   the ones shown.
 
        **Boot server without a public interface with cURL request**
 
@@ -244,8 +244,8 @@ step 2.
           }
 
    2.2 Once you've created the server, identify the correct port by issuing the
-       following cURL command. In this example the server id is
-       ``1ed5bc31-153d-4570-a361-92d5a02fd428``, but substitute your own value.
+   following cURL command. In this example the server id is
+   ``1ed5bc31-153d-4570-a361-92d5a02fd428``, but substitute your own value.
 
        **Find port with cURL request**
 
@@ -285,7 +285,7 @@ step 2.
           }
 
    2.3 Note the port id, in this case ``94cae8b5-3319-48fa-add9-537bcbc77535``,
-       but use your own value.
+   but use your own value.
 
 .. _fi-allocate-floating-ip-curl:
 
