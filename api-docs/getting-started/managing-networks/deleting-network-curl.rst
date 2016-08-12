@@ -18,21 +18,21 @@ Issue the following cURL command, substituting your own values for the ones show
 
 .. code::
 
-   $ curl -i https://$API_ENDPOINT/v2.0/subnets/23e3059e-4f39-4f7f-8cf2-c326e5de6c37 \
+   $ curl -i $API_ENDPOINT/subnets/23e3059e-4f39-4f7f-8cf2-c326e5de6c37 \
         -X 'DELETE' \
         -H "X-Auth-Token: $AUTH_TOKEN" \
         -H "X-Auth-Project-Id: $account" \
-        -H "Accept: application/json" 
-        
+        -H "Accept: application/json"
+
 **Positional argument:**
 
--  The ID of the subnet that you want to delete. In this example, the ID is 
+-  The ID of the subnet that you want to delete. In this example, the ID is
    ``23e3059e-4f39-4f7f-8cf2-c326e5de6c37``.
 
 .. note::
 
-   Include the ``-i`` option in the cURL command to show the response header. Omit the 
-   ``| python -m json.tool`` clause from the command because the API operation does not 
+   Include the ``-i`` option in the cURL command to show the response header. Omit the
+   ``| python -m json.tool`` clause from the command because the API operation does not
    return a JSON response.
 
 The operation returns the header as shown in the following example.
@@ -64,21 +64,21 @@ Issue the following cURL command, substituting your own values for the ones show
 
 .. code::
 
-   $ curl -i https://$API_ENDPOINT/v2.0/networks/29f52c7e-6efd-4335-a14a-db77d32a2555 \
+   $ curl -i $API_ENDPOINT/networks/29f52c7e-6efd-4335-a14a-db77d32a2555 \
          -X 'DELETE' \
          -H "X-Auth-Token: $AUTH_TOKEN" \
          -H "X-Auth-Project-Id: $TENANT_ID" \
-         -H "Accept: application/json" 
+         -H "Accept: application/json"
 
 **Positional argument:**
 
-   -  The ID of the network that you want to delete. In this example, the ID 
+   -  The ID of the network that you want to delete. In this example, the ID
       is ``29f52c7e-6efd-4335-a14a-db77d32a2555``.
 
 .. note::
 
-   Include the ``-i`` option in the cURL command to show the response header. Omit the 
-   ``| python -m json.tool`` clause from the command because the API operation does not 
+   Include the ``-i`` option in the cURL command to show the response header. Omit the
+   ``| python -m json.tool`` clause from the command because the API operation does not
    return a JSON response.
 
 The operation returns the header as shown in the following example.

@@ -3,7 +3,7 @@
 Provisioning a port with additional IP and dual-stack IPs with cURL
 --------------------------------------------------------------------
 
-These sections walk you through provisioning an additional IP and dual-stack (v4 and v6) 
+These sections walk you through provisioning an additional IP and dual-stack (v4 and v6)
 IP addresses on an isolated network port by using cURL.
 
 .. _ppi-showing-port-curl:
@@ -11,14 +11,14 @@ IP addresses on an isolated network port by using cURL.
 Showing a port with an IPv6 address (cURL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-First, look at your port with an IPv6 IP address. In this example, note the 
+First, look at your port with an IPv6 IP address. In this example, note the
 fixed_ips ip_address of ``fc01::7``, which is an IPv6 address in hexadecimal format.
 
 #. **List ports with cURL request**
 
-   .. code::  
+   .. code::
 
-      $ curl -s https://$API_ENDPOINT/v2.0/ports \
+      $ curl -s $API_ENDPOINT/ports \
            -X GET \
            -H "Content-Type: application/json" \
            -H "User-Agent: python-novaclient" \
@@ -27,7 +27,7 @@ fixed_ips ip_address of ``fc01::7``, which is an IPv6 address in hexadecimal for
 
    **List ports with cURL response**
 
-   .. code::  
+   .. code::
 
        {
            "ports": [
@@ -51,7 +51,7 @@ fixed_ips ip_address of ``fc01::7``, which is an IPv6 address in hexadecimal for
                }
           ]
        }
-                                   
+
 
 #. Note the id value for future reference. In this example, the ID is
    ``79bf47e2-5107-4d93-b9c3-b78ddbc94c93``), but use the ID from your response.
@@ -61,16 +61,16 @@ fixed_ips ip_address of ``fc01::7``, which is an IPv6 address in hexadecimal for
 Getting the IPv4 CIDR for the network (cURL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Now, note the IPv4 CIDR on the same network as the IPv6 CIDR. You should have already 
-created this subnet on the same network. If you have not done so, create an IPv4 subnet 
-(**POST /subnets**) on the same network. Because this example assumes that the subnet has 
+Now, note the IPv4 CIDR on the same network as the IPv6 CIDR. You should have already
+created this subnet on the same network. If you have not done so, create an IPv4 subnet
+(**POST /subnets**) on the same network. Because this example assumes that the subnet has
 already been created, run the following command and note the CIDR to identify the IPv4 address.
 
 #. **List subnets with cURL request**
 
-   .. code::  
+   .. code::
 
-      $ curl -s https://$API_ENDPOINT/v2.0/subnets \
+      $ curl -s $API_ENDPOINT/subnets \
            -X GET \
            -H "Content-Type: application/json" \
            -H "User-Agent: python-novaclient" \
@@ -79,7 +79,7 @@ already been created, run the following command and note the CIDR to identify th
 
    **List subnets with cURL response**
 
-   .. code::  
+   .. code::
 
        {
            "subnet": {
@@ -103,10 +103,10 @@ already been created, run the following command and note the CIDR to identify th
                }
            }
        }
-                                   
 
-#. Note the network_id and CIDR values for future reference. In this example, the 
-   network_id is ``03f240c5-6fb8-47a0-860a-c7ba83be519f`` and the CIDR is 
+
+#. Note the network_id and CIDR values for future reference. In this example, the
+   network_id is ``03f240c5-6fb8-47a0-860a-c7ba83be519f`` and the CIDR is
    ``192.168.7.0/24``, but use the values from your response.
 
 .. _ppi-adding-ip-to-port-curl:
@@ -114,18 +114,18 @@ already been created, run the following command and note the CIDR to identify th
 Adding an IPv4 address on the same port (cURL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To add an IPv4 address on the same port, update the IPv6 port with the existing IPv6 IP 
-address, the subnet's IPv4 ID, and the IP address from the subnet's IPv4 CIDR. In this 
-example, the IPv4 IP address is ``192.168.7.250`` and the subnet_id is 
+To add an IPv4 address on the same port, update the IPv6 port with the existing IPv6 IP
+address, the subnet's IPv4 ID, and the IP address from the subnet's IPv4 CIDR. In this
+example, the IPv4 IP address is ``192.168.7.250`` and the subnet_id is
 ``321caa1c-2105-4186-b53b-366fa623c09a``.
 
 Issue the following cURL command, using the port ID from the preceding step in the URI.
 
 **Update port with cURL request**
 
-.. code::  
+.. code::
 
-   $ curl -s https://$API_ENDPOINT/v2.0/ports/79bf47e2-5107-4d93-b9c3-b78ddbc94c93 \
+   $ curl -s $API_ENDPOINT/ports/79bf47e2-5107-4d93-b9c3-b78ddbc94c93 \
          -X PUT \
          -H "Content-Type: application/json" \
          -H "User-Agent: python-novaclient" \
@@ -152,34 +152,34 @@ Issue the following cURL command, using the port ID from the preceding step in t
 
 *Update port with cURL response**
 
-.. code::  
+.. code::
 
    {
-      "port": 
+      "port":
       {
-         "status": "ACTIVE", 
-         "name": "port1", 
-         "admin_state_up": true, 
-         "network_id": "03f240c5-6fb8-47a0-860a-c7ba83be519f", 
-         "tenant_id": "5831008", 
-         "device_owner": "compute:None", 
-         "mac_address": "AA:BB:CC:00:01:4A", 
+         "status": "ACTIVE",
+         "name": "port1",
+         "admin_state_up": true,
+         "network_id": "03f240c5-6fb8-47a0-860a-c7ba83be519f",
+         "tenant_id": "5831008",
+         "device_owner": "compute:None",
+         "mac_address": "AA:BB:CC:00:01:4A",
          "fixed_ips": [
                {
-                  "subnet_id": "1d18d76b-a04a-4147-a04c-151630ec80d0", 
+                  "subnet_id": "1d18d76b-a04a-4147-a04c-151630ec80d0",
                   "ip_address": "fc01::7"
-               }, 
+               },
                {
-                  "subnet_id": "321caa1c-2105-4186-b53b-366fa623c09a", 
+                  "subnet_id": "321caa1c-2105-4186-b53b-366fa623c09a",
                   "ip_address": "192.168.7.250"
                }
-         ], 
-         "id": "79bf47e2-5107-4d93-b9c3-b78ddbc94c93", 
-         "security_groups": [], 
+         ],
+         "id": "79bf47e2-5107-4d93-b9c3-b78ddbc94c93",
+         "security_groups": [],
          "device_id": "cfe9a69d-92ef-462f-9240-ed5b43d3d1af"
       }
    }
-                                   
+
 
 .. _ppi-showing-port-again-curl:
 
@@ -192,22 +192,22 @@ both IPv4 and IPv6 IP addresses are configured by using cURL.
 
 **Show port with cURL request**
 
-.. code::  
+.. code::
 
-   $ curl https://$API_ENDPOINT/v2.0/ports/79bf47e2-5107-4d93-b9c3-b78ddbc94c93 \
+   $ curl $API_ENDPOINT/ports/79bf47e2-5107-4d93-b9c3-b78ddbc94c93 \
          -X GET \
          -H "Content-Type: application/json" \
          -H "User-Agent: python-novaclient" \
          -H "Accept: application/json" \
          -H "X-Auth-Token: $AUTH_TOKEN" | python -m json.tool
-         
+
 **Positional arguments**
 
 - The port ID.  In this example, the ID is ``79bf47e2-5107-4d93-b9c3-b78ddbc94c93``.
 
 **Show port with cURL response**
 
-.. code::  
+.. code::
 
    {
       "ports": [
@@ -235,21 +235,21 @@ both IPv4 and IPv6 IP addresses are configured by using cURL.
          }
       ]
    }
-                               
+
 
 .. _ppi-booting-server-curl:
 
 Booting a Server (cURL)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following step shows you how to boot a server by using the port ID of the port that 
+The following step shows you how to boot a server by using the port ID of the port that
 you configured with dual-stack IP addresses in the second step of this procedure.
 
 #. Issue the following cURL command, substituting your own values for the ones shown:
 
    **Boot server with cURL request**
 
-   .. code::  
+   .. code::
 
       $ curl https://dfw.servers.api.rackspacecloud.com/v2.0/$TENANT_ID/servers \
               -X POST \
@@ -268,42 +268,42 @@ you configured with dual-stack IP addresses in the second step of this procedure
 
    **Boot server with cURL response**
 
-   .. code::  
+   .. code::
 
        {
-           "server": 
+           "server":
            {
-               "OS-DCF:diskConfig": "AUTO", 
-               "id": "1ed5bc31-153d-4570-a361-92d5a02fd428", 
+               "OS-DCF:diskConfig": "AUTO",
+               "id": "1ed5bc31-153d-4570-a361-92d5a02fd428",
                "links":[
-                   { 
-                       "href": "https://netdev-ord.ohthree.com/v2/5831008/servers/1ed5bc31-153d-4570-a361-92d5a02fd428", 
-                       "rel": "self"
-                   }, 
                    {
-                       "href": "https://netdev-ord.ohthree.com/5831008/servers/1ed5bc31-153d-4570-a361-92d5a02fd428", 
+                       "href": "https://netdev-ord.ohthree.com/v2/5831008/servers/1ed5bc31-153d-4570-a361-92d5a02fd428",
+                       "rel": "self"
+                   },
+                   {
+                       "href": "https://netdev-ord.ohthree.com/5831008/servers/1ed5bc31-153d-4570-a361-92d5a02fd428",
                        "rel": "bookmark"
                    }
-               ], 
+               ],
                "adminPass": "LuXD49ijFf3D"
            }
        }
-                               
 
-#. Copy the server id value from the output for future reference. In this example, the ID 
+
+#. Copy the server id value from the output for future reference. In this example, the ID
 is ``1ed5bc31-153d-4570-a361-92d5a02fd428``, but use the ID from your response.
 
 .. _ppi-verifying-ips-curl:
 
 Verifying IP addresses on the server port (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following example shows you how to verify the IP addresses on the server port. In this 
+The following example shows you how to verify the IP addresses on the server port. In this
 case, the IP addresses should be ``192.168.7.250`` and ``fc01::7``.
 
 **Show port with cURL request**
 
-.. code::  
+.. code::
 
    $ curl -k https://dfw.servers.api.rackspacecloud.com/v2.0/$TENANT_ID/servers/1ed5bc31-153d-4570-a361-92d5a02fd428  \
          -X GET
@@ -314,7 +314,7 @@ case, the IP addresses should be ``192.168.7.250`` and ``fc01::7``.
 
 **Show port with cURL response**
 
-.. code::  
+.. code::
 
    {
       "server": {
@@ -394,5 +394,5 @@ case, the IP addresses should be ``192.168.7.250`` and ``fc01::7``.
          "user_id": "207638"
       }
    }
-                               
-**Next topic:** :ref:`Control Network Access<control-access-intro>`
+
+**Next topic:** :ref:`Using floating IP addresses<floating-ips>`
