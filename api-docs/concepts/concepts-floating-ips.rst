@@ -37,7 +37,7 @@ constantly changing IP addresses.
 
 .. important::
 
-   At this time floating IP functionality is only available in the ```IAD``
+   At this time floating IP functionality is only available in the ``IAD``
    datacenter, so all your regional resources should be located in that
    region.
 
@@ -60,5 +60,5 @@ following caveats.
 - You must provision a new floating IP address instead of using an existing IP address,
   because current public IPv4 addresses cannot be converted to a floating IP address.
 - Floating IP addresses may be only IPv4. IPv6 is not supported.
-- Floating IP functionality is only available in the ```IAD`` datacenter, so all your
+- Floating IP functionality is only available in the ``IAD`` datacenter, so all your
   regional resources should be located in that region.
