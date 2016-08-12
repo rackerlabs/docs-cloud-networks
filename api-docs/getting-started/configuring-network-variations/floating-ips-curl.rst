@@ -131,10 +131,10 @@ step 2.
 
 1. Existing server option
 
-   1.1 For an existing server, issue the following cURL command to remove the
-       public interface, substituting your own values for the ones shown. In
-       this example, the server id is ``1ed5bc31-153d-4570-a361-92d5a02fd428``
-       and the interface is ``a589b11b-cd51-4274-8ec0-832ce799d156``.
+   1.1. For an existing server, issue the following cURL command to remove the
+   public interface, substituting your own values for the ones shown. In
+   this example, the server id is ``1ed5bc31-153d-4570-a361-92d5a02fd428``
+   and the interface is ``a589b11b-cd51-4274-8ec0-832ce799d156``.
 
        **Remove public interface from existing server with cURL request**
 
@@ -149,14 +149,14 @@ step 2.
        This operation does not return a request body.  If it is successful, it
        returns an ``HTTP 200`` return code.
 
-   1.2 Create a port on the network, by issuing the following cURL command,
-       substituting your own values for the ones shown.
+   1.2. Create a port on the network, by issuing the following cURL command,
+        substituting your own values for the ones shown.
 
-       **Create port with cURL request**
+        **Create port with cURL request**
 
-       .. code::
+        .. code::
 
-          $ curl -s $API_ENDPOINT/ports
+           $ curl -s $API_ENDPOINT/ports
               -X POST
               -H "Content-Type: application/json" \
               -H "Accept: application/json" \
@@ -168,11 +168,11 @@ step 2.
                       "network_id": "29f52c7e-6efd-4335-a14a-db77d32a2555"}
                     }' | python -m json.tool
 
-       **Create port with cURL response**
+        **Create port with cURL response**
 
-       .. code::
+        .. code::
 
-          {
+           {
             "port": {
                "admin_state_up": true,
                "device_id": "",
@@ -191,10 +191,10 @@ step 2.
                "status": "ACTIVE",
                "tenant_id": "53501b3c25d34f8ea293c03298caed605"
             }
-        }
+         }
 
-   1.3 Note the port id, in this case ``e84fb78e-fc92-45aa-90b3-8786c82b5112``,
-       but use your own value.
+   1.3. Note the port id, in this case ``e84fb78e-fc92-45aa-90b3-8786c82b5112``,
+        but use your own value.
 
 2. New server option
 
