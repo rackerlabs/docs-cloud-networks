@@ -12,7 +12,7 @@ This section provides neutron client (or nova client) and cURL examples of
 -  :ref:`Configuring host routes<configuring-host-routes>`
 -  :ref:`Provisioning additional IP and dual-stack IP addresses on a
    port<provisioning-port-ips>`
--  :ref:`Using floating IP addresses<sharing-ips>`
+-  :ref:`Using floating IP addresses<floating-ips>`
 -  :ref:`Sharing IP addresses<sharing-ips>`
 
 .. toctree::
