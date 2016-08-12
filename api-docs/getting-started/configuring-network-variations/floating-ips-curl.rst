@@ -131,32 +131,32 @@ step 2.
 
 1. Existing server option
 
-1.1 For an existing server, issue the following cURL command to remove the
-    public interface, substituting your own values for the ones shown. In this
-    example, the server id is ``1ed5bc31-153d-4570-a361-92d5a02fd428`` and the
-    interface is ``a589b11b-cd51-4274-8ec0-832ce799d156``.
+   1.1 For an existing server, issue the following cURL command to remove the
+       public interface, substituting your own values for the ones shown. In
+       this example, the server id is ``1ed5bc31-153d-4570-a361-92d5a02fd428``
+       and the interface is ``a589b11b-cd51-4274-8ec0-832ce799d156``.
 
-    **Remove public interface from existing server with cURL request**
+       **Remove public interface from existing server with cURL request**
 
-    .. code::
+       .. code::
 
-       $ curl -s https://iad.servers.api.rackspacecloud.com/v2/$TENANT_ID/servers/1ed5bc31-153d-4570-a361-92d5a02fd428/os-virtual-interfacesv2/a589b11b-cd51-4274-8ec0-832ce799d156
-         -X DELETE \
-         -H "X-Auth-Token: $AUTH_TOKEN"
+          $ curl -s https://iad.servers.api.rackspacecloud.com/v2/$TENANT_ID/servers/1ed5bc31-153d-4570-a361-92d5a02fd428/os-virtual-interfacesv2/a589b11b-cd51-4274-8ec0-832ce799d156
+            -X DELETE \
+            -H "X-Auth-Token: $AUTH_TOKEN"
 
-    **Remove public interface from existing server with cURL response**
+       **Remove public interface from existing server with cURL response**
 
-    This operation does not return a request body.  If it is successful, it
-    returns an ``HTTP 200`` return code.
+       This operation does not return a request body.  If it is successful, it
+       returns an ``HTTP 200`` return code.
 
-1.2 Create a port on the network, by issuing the following cURL command,
-    substituting your own values for the ones shown.
+   1.2 Create a port on the network, by issuing the following cURL command,
+       substituting your own values for the ones shown.
 
-    **Create port with cURL request**
+       **Create port with cURL request**
 
-    .. code::
+       .. code::
 
-       $ curl -s $API_ENDPOINT/ports
+          $ curl -s $API_ENDPOINT/ports
               -X POST
               -H "Content-Type: application/json" \
               -H "Accept: application/json" \
@@ -168,45 +168,45 @@ step 2.
                       "network_id": "29f52c7e-6efd-4335-a14a-db77d32a2555"}
                     }' | python -m json.tool
 
-    **Create port with cURL response**
+       **Create port with cURL response**
 
-    .. code::
+       .. code::
 
-       {
-         "port": {
-             "admin_state_up": true,
-             "device_id": "",
-             "device_owner": null,
-             "fixed_ips": [
+          {
+            "port": {
+               "admin_state_up": true,
+               "device_id": "",
+               "device_owner": null,
+               "fixed_ips": [
                  {
                      "ip_address": "192.168.33.2",
                      "subnet_id": "525b1720-4a27-4e6d-9cc7-14829e97b8b5"
                  }
-             ],
-             "id": "e84fb78e-fc92-45aa-90b3-8786c82b5112",
-             "mac_address": "BC:76:4E:20:3F:09",
-             "name": "FLIP_port",
-             "network_id": "29f52c7e-6efd-4335-a14a-db77d32a2555",
-             "security_groups": [],
-             "status": "ACTIVE",
-             "tenant_id": "53501b3c25d34f8ea293c03298caed605"
-         }
-     }
+               ],
+               "id": "e84fb78e-fc92-45aa-90b3-8786c82b5112",
+               "mac_address": "BC:76:4E:20:3F:09",
+               "name": "FLIP_port",
+               "network_id": "29f52c7e-6efd-4335-a14a-db77d32a2555",
+               "security_groups": [],
+               "status": "ACTIVE",
+               "tenant_id": "53501b3c25d34f8ea293c03298caed605"
+            }
+        }
 
-1.3 Note the port id, in this case ``e84fb78e-fc92-45aa-90b3-8786c82b5112``,
-    but use your own value.
+   1.3 Note the port id, in this case ``e84fb78e-fc92-45aa-90b3-8786c82b5112``,
+       but use your own value.
 
 2. New server option
 
-2.1 If you don't already have a server, issue the following cURL command to
-    create one without a public interface, substituting your own values for the
-    ones shown.
+   2.1 If you don't already have a server, issue the following cURL command to
+       create one without a public interface, substituting your own values for
+       the ones shown.
 
-    **Boot server without a public interface with cURL request**
+       **Boot server without a public interface with cURL request**
 
-    .. code::
+       .. code::
 
-       $ curl https://iad.servers.api.rackspacecloud.com/v2/$TENANT_ID/servers \
+          $ curl https://iad.servers.api.rackspacecloud.com/v2/$TENANT_ID/servers \
               -X POST \
               -H "Content-Type: application/json" \
               -H "Accept: application/json" \
@@ -220,13 +220,13 @@ step 2.
                       "networks": [{"uuid": "29f52c7e-6efd-4335-a14a-db77d32a2555"}, {"uuid": "11111111-1111-1111-1111-111111111111"}]
                }}' | python -m json.tool
 
-    **Boot server with cURL response**
+       **Boot server with cURL response**
 
-    .. code::
+       .. code::
 
-       {
-           "server":
-           {
+          {
+            "server":
+             {
                "OS-DCF:diskConfig": "AUTO",
                "id": "1ed5bc31-153d-4570-a361-92d5a02fd428",
                "links":[
@@ -240,52 +240,52 @@ step 2.
                    }
                ],
                "adminPass": "LuXD49ijFf3D"
-           }
-       }
+             }
+          }
 
-2.2 Once you've created the server, identify the correct port by issuing the
-    following cURL command. In this example the server id is ``1ed5bc31-153d-4570-a361-92d5a02fd428``, but
-    substitute your own value.
+   2.2 Once you've created the server, identify the correct port by issuing the
+       following cURL command. In this example the server id is
+       ``1ed5bc31-153d-4570-a361-92d5a02fd428``, but substitute your own value.
 
-    **Find port with cURL request**
+       **Find port with cURL request**
 
-    .. code::
+       .. code::
 
-       curl -s -X GET https://iad.servers.api.rackspacecloud.com/v2/$TENANT_ID/servers/1ed5bc31-153d-4570-a361-92d5a02fd428/os-virtual-interfacesv2'
+          curl -s -X GET https://iad.servers.api.rackspacecloud.com/v2/$TENANT_ID/servers/1ed5bc31-153d-4570-a361-92d5a02fd428/os-virtual-interfacesv2'
 
-    **Find port with cURL request**
+       **Find port with cURL request**
 
-    .. code::
+       .. code::
 
-       {
-          "virtual_interfaces": [
-            {
-              "ip_addresses": [
-                {
-                  "network_id": "11111111-1111-1111-1111-111111111111",
-                  "network_label": "private",
-                  "address": "10.176.8.112"
-                }
-              ],
-              "id": "45314c82-47a5-4448-8937-2b01be1980bf",
-              "mac_address": "BC:76:4E:20:B4:BF"
-            },
-            {
-              "ip_addresses": [
-                {
-                  "network_id": "29f52c7e-6efd-4335-a14a-db77d32a2555",
-                  "network_label": "FLIPnet",
-                  "address": "192.168.33.2"
-                }
-              ],
-              "id": "94cae8b5-3319-48fa-add9-537bcbc77535",
-              "mac_address": "BC:76:4E:20:B4:9E"
-            }
-          ]
-        }
+          {
+            "virtual_interfaces": [
+              {
+                "ip_addresses": [
+                  {
+                    "network_id": "11111111-1111-1111-1111-111111111111",
+                    "network_label": "private",
+                    "address": "10.176.8.112"
+                  }
+                ],
+                "id": "45314c82-47a5-4448-8937-2b01be1980bf",
+                "mac_address": "BC:76:4E:20:B4:BF"
+              },
+              {
+                "ip_addresses": [
+                  {
+                    "network_id": "29f52c7e-6efd-4335-a14a-db77d32a2555",
+                    "network_label": "FLIPnet",
+                   "address": "192.168.33.2"
+                  }
+                ],
+                "id": "94cae8b5-3319-48fa-add9-537bcbc77535",
+                "mac_address": "BC:76:4E:20:B4:9E"
+              }
+            ]
+          }
 
-2.3 Note the port id, in this case ``94cae8b5-3319-48fa-add9-537bcbc77535``,
-    but use your own value.
+   2.3 Note the port id, in this case ``94cae8b5-3319-48fa-add9-537bcbc77535``,
+       but use your own value.
 
 .. _fi-allocate-floating-ip-curl:
 
