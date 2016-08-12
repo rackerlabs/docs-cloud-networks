@@ -10,14 +10,14 @@ These sections walk you through configuring host routes by using cURL.
 Creating a network (cURL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-After you create a network, copy its network ID. You use this ID to create a subnet and 
+After you create a network, copy its network ID. You use this ID to create a subnet and
 boot the server.
 
 #. **Create network with cURL request**
 
-   .. code::  
+   .. code::
 
-      $ curl -s https://$API_ENDPOINT/v2.0/networks \
+      $ curl -s $API_ENDPOINT/networks \
             -X POST \
             -H "Content-Type: application/json" \
             -H "User-Agent: python-novaclient" \
@@ -27,7 +27,7 @@ boot the server.
 
    **Create network with cURL response**
 
-   .. code::  
+   .. code::
 
        {
           "network":{
@@ -40,9 +40,9 @@ boot the server.
                "tenant_id": "5831008"
           }
        }
-           
-#. Copy the ``id`` value from the output. You will use this value when you create a subnet, 
-   provision your server, or perform other related activities. In this example, the ID is 
+
+#. Copy the ``id`` value from the output. You will use this value when you create a subnet,
+   provision your server, or perform other related activities. In this example, the ID is
    ``a8fde776-e80f-47bb-a050-0c057d89afc3``, but use the ID from your response.
 
 .. _chr-creating-subnet-curl:
@@ -50,16 +50,16 @@ boot the server.
 Creating a subnet with host routes (cURL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To create a subnet with host routes, you specify a network, an IP address, allocation pools, 
+To create a subnet with host routes, you specify a network, an IP address, allocation pools,
 and host routes for your subnet.
 
 #. Issue the following cURL command, substituting your own values for the ones shown.
 
    **Create subnet with cURL request**
 
-   .. code::  
+   .. code::
 
-      $ curl -s https://$API_ENDPOINT/v2.0/subnets \
+      $ curl -s $API_ENDPOINT/subnets \
            -X POST \
            -H "Content-Type: application/json" \
            -H "User-Agent: python-novaclient" \
@@ -91,7 +91,7 @@ and host routes for your subnet.
 
     **Create subnet with cURL response**
 
-   .. code::  
+   .. code::
 
        +------------------+-----------------------------------------------------------+
        | Field            | Value                                                     |
@@ -110,7 +110,7 @@ and host routes for your subnet.
        | tenant_id        | 5831008                                                   |
        +------------------+-----------------------------------------------------------+
 
-#. Note the host_routes attribute with the destination of ``1.1.1.0/24`` and the nexthop 
+#. Note the host_routes attribute with the destination of ``1.1.1.0/24`` and the nexthop
    of ``192.168.5.254``.
 
 .. _chr-booting-server-curl:
@@ -121,17 +121,17 @@ Booting a Server (cURL)
 .. note::
 
 	To create your new server, you need the following information:
-	
+
    -  The name of the new server. Use a name of your choice.
-   -  The image ID. 
-   -  The flavor ID. 
+   -  The image ID.
+   -  The flavor ID.
    -  The network ID of the network, which is ``net-id=a8fde776-e80f-47bb-a050-0c057d89afc3``.
 
 #. Issue the following cURL command, substituting your own values for the ones shown.
 
     **Boot server with cURL request**
 
-   .. code::  
+   .. code::
 
       $ curl https://dfw.servers.api.rackspacecloud.com/v2/$TENANT_ID/servers \
           -X POST \
@@ -147,16 +147,16 @@ Booting a Server (cURL)
                   "max_count": 1,
                   "min_count": 1,
                   "networks": [
-                     {"uuid": "00000000-0000-0000-0000-000000000000"}, 
-                     {"uuid": "11111111-1111-1111-1111-111111111111"}, 
-                     {"uuid":"a8fde776-e80f-47bb-a050-0c057d89afc3"} 
+                     {"uuid": "00000000-0000-0000-0000-000000000000"},
+                     {"uuid": "11111111-1111-1111-1111-111111111111"},
+                     {"uuid":"a8fde776-e80f-47bb-a050-0c057d89afc3"}
                   ]
                 }
               }' | python -m json.tool
 
    **Boot server with cURL response**
 
-   .. code::  
+   .. code::
 
        {
            "server": {
@@ -169,9 +169,9 @@ Booting a Server (cURL)
                "adminPass": "ugZmn5Le6S8y"
            }
        }
-                               
 
-#. Copy the ``id`` value from the output for future reference. In this example, the ID is 
+
+#. Copy the ``id`` value from the output for future reference. In this example, the ID is
    ``a1061a57-0136-4c29-aac1-8b1a646a3001``, but use the ID from your response.
 
 .. _chr-verifying-ip-on-port-curl:
@@ -179,14 +179,14 @@ Booting a Server (cURL)
 Verifying the IP on the server port (cURL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following step shows you how to verify the IP address on the server port. In this case, 
+The following step shows you how to verify the IP address on the server port. In this case,
 the IP address should be ``192.168.5.3`` from the start of the allocation pool.
 
 #. Issue the following cURL command, substituting your own values for the ones shown.
 
    **Show server details with cURL request**
 
-   .. code::  
+   .. code::
 
       $ curl -k https://dfw.servers.api.rackspacecloud.com/v2.0/$TENANT_ID/servers/a1061a57-0136-4c29-aac1-8b1a646a3001  \
             -X GET
@@ -194,17 +194,17 @@ the IP address should be ``192.168.5.3`` from the start of the allocation pool.
             -H "User-Agent: python-novaclient" \
             -H "Accept: application/json" \
             -H "X-Auth-Token: $AUTH_TOKEN" | python -m json.tool
-            
+
    **Positional arguments**
-   
+
    - The server ID. In this example, the ID is ``a1061a57-0136-4c29-aac1-8b1a646a3001``.
 
    **Show server details with cURL response**
 
-   .. code::  
+   .. code::
 
        {
-           "server": 
+           "server":
            {
                "OS-DCF:diskConfig": "AUTO",
                "OS-EXT-STS:power_state": 1,
@@ -278,9 +278,9 @@ the IP address should be ``192.168.5.3`` from the start of the allocation pool.
                "user_id": "207638"
            }
        }
-                               
 
-#. Note the IP address on the ``public`` interface (in this case, ``10.23.233.124``). Use 
+
+#. Note the IP address on the ``public`` interface (in this case, ``10.23.233.124``). Use
    this to log in to the server in the next step.
 
 .. _chr-logging-in-to-server-sshcurl:
@@ -288,18 +288,18 @@ the IP address should be ``192.168.5.3`` from the start of the allocation pool.
 Logging in to the server and verify the route (ssh)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following steps show you how to log in to the server and verify that the host route is 
+The following steps show you how to log in to the server and verify that the host route is
 configured correctly by using the command line.
 
 #. Issue the following command at the prompt, substituting your own values for the ones shown:
 
-   .. code::  
+   .. code::
 
       $ ssh root@10.23.233.124
 
    The command returns output like the following example:
 
-   .. code::  
+   .. code::
 
        The authenticity of host '10.23.233.124 (10.23.233.124)' can't be established.
        RSA key fingerprint is 87:b6:8f:7a:44:80:a4:58:f8:9b:09:82:d4:b0:f9:bf.
@@ -312,13 +312,13 @@ configured correctly by using the command line.
 
 #. Issue the following command at the prompt:
 
-   .. code::  
+   .. code::
 
       root@ata:~# route
 
    The command returns output like the following example:
 
-   .. code::  
+   .. code::
 
        Kernel IP routing table
        Destination Gateway Genmask Flags Metric Ref Use Iface
@@ -327,7 +327,7 @@ configured correctly by using the command line.
        10.23.233.0 * 255.255.255.0 U 0 0 0 eth0
        10.181.192.0 * 255.255.248.0 U 0 0 0 eth1
        192.168.5.0 * 255.255.255.0 U 0 0 0 eth2
-                           
+
 
    Notice the route ``1.1.1.0`` with Gateway ``192.168.5.254`` in the
    preceding output. That is what was expected.

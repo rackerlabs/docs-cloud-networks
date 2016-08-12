@@ -3,7 +3,7 @@
 Creating and listing network and subnet with cURL
 -------------------------------------------------
 
-These sections walk you through creating your network and subnet and then listing them by 
+These sections walk you through creating your network and subnet and then listing them by
 using cURL.
 
 .. _cn-creating-network-curl:
@@ -11,19 +11,19 @@ using cURL.
 Creating a network (cURL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-After you create a network, copy its network ID. You use this ID to create a subnet or 
+After you create a network, copy its network ID. You use this ID to create a subnet or
 attach the network to a server.
 
 The Cloud Networks API supports only JSON formatting. XML is not supported.
 
 #. Issue the following cURL command, substituting your own values for
    the ones shown.
-   
+
    **Create network with cURL request**
 
    .. code::
 
-      $ curl -s https://$API_ENDPOINT/v2.0/networks \
+      $ curl -s $API_ENDPOINT/networks \
               -X POST \
               -H "Content-Type: application/json" \
               -H "Accept: application/json" \
@@ -47,7 +47,7 @@ The Cloud Networks API supports only JSON formatting. XML is not supported.
           }
        }
 
-#. Copy the ``id`` value from the output. You will use this value when you create a subnet, 
+#. Copy the ``id`` value from the output. You will use this value when you create a subnet,
    provision your server, or perform other related activities. In this example, the ID is
    ``29f52c7e-6efd-4335-a14a-db77d32a2555``, but use the ID from your response.
 
@@ -56,8 +56,8 @@ The Cloud Networks API supports only JSON formatting. XML is not supported.
 Creating a subnet (cURL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To create a subnet, you specify a network ID (using the ID that you copied in the 
-preceding step), an IP address, and a name for your subnet. After you create a subnet, 
+To create a subnet, you specify a network ID (using the ID that you copied in the
+preceding step), an IP address, and a name for your subnet. After you create a subnet,
 copy its ID for future reference.
 
 #. Issue the following cURL command, substituting your own values for the ones shown.
@@ -66,7 +66,7 @@ copy its ID for future reference.
 
    .. code::
 
-      $ curl -s https://$API_ENDPOINT/v2.0/subnets \
+      $ curl -s $API_ENDPOINT/subnets \
               -X POST \
               -H "Content-Type: application/json" \
               -H "Accept: application/json" \
@@ -102,7 +102,7 @@ copy its ID for future reference.
             }
        }
 
-#. Copy the ``id`` value from the output for future reference. In this example, the ID is 
+#. Copy the ``id`` value from the output for future reference. In this example, the ID is
    ``23e3059e-4f39-4f7f-8cf2-c326e5de6c37``, but use the ID from your response.
 
 .. _cn-listing-networks-curl:
@@ -114,7 +114,7 @@ Listing networks (cURL)
 
 .. code::
 
-   $ curl https://$API_ENDPOINT/v2.0/networks \
+   $ curl $API_ENDPOINT/networks \
         -X GET -H "X-Auth-Token: $AUTH_TOKEN" | python -m json.tool
 
 **List networks with cURL response**
@@ -146,7 +146,7 @@ Listing subnets (cURL)
 
 .. code::
 
-   $ curl https://$API_ENDPOINT/v2.0/subnets \
+   $ curl $API_ENDPOINT/subnets \
        -X GET -H "X-Auth-Token: $AUTH_TOKEN" | python -m json.tool
 
 **List subnets with cURL response**
@@ -170,7 +170,7 @@ Listing subnets (cURL)
             "host_routes":[
             ],
             "id":"23e3059e-4f39-4f7f-8cf2-c326e5de6c37",
-            "ip_version":4,    
+            "ip_version":4,
             "name":"Subamp",
             "network_id":"29f52c7e-6efd-4335-a14a-db77d32a2555",
             "tenant_id":"53501b3c25d34f8ea293c03298caed60"

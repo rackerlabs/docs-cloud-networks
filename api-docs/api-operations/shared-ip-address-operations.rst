@@ -1,15 +1,15 @@
 .. _api-operations-shared-ip-addresses:
 
 Shared IP address operations
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This section describes the API operations for Shared IP addresses. For general information about 
-shared IP addresses, see :ref:`Shared IP addresses concepts <concepts-shared-ips>`.
+This section describes the API operations for Shared IP addresses. For general information 
+about shared IP addresses, see :ref:`Shared IP addresses concepts <concepts-shared-ips>`.
 
 .. note::
-	The Shared IP Addresses API is currently in Limited Availability. It is available only to 
-	Managed Infrastructure customers and not to RackConnect or Managed Operations customers. 
-	To use this feature, contact Rackspace Support.
+	The Shared IP Addresses API is currently in Limited Availability. It is available only 
+	to Managed Infrastructure customers and not to RackConnect or Managed Operations 
+	customers. To use this feature, contact Rackspace Support.
 
 
 .. SHARED IP ADDRESS OPS
