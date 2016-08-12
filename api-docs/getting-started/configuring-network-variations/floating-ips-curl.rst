@@ -10,7 +10,7 @@ the floating IP address.
 
 .. important::
 
-   At this time floating IP functionality is only available in the ```IAD``
+   At this time floating IP functionality is only available in the ``IAD``
    datacenter, so all your regional resources should be located in that
    region.
 
@@ -319,23 +319,15 @@ with the port on the Cloud Server instance connected to the Cloud Network.
    .. code::
 
       {
-          "port": {
-              "admin_state_up": true,
-              "device_id": "",
-              "device_owner": null,
-              "fixed_ips": [
-                  {
-                      "ip_address": "192.168.33.2",
-                      "subnet_id": "525b1720-4a27-4e6d-9cc7-14829e97b8b5"
-                  }
-              ],
-              "id": "b396f184-4c82-47c7-a932-947c2c5acb21",
-              "mac_address": "BC:76:4E:20:3F:09",
-              "name": "FLIP_port",
-              "network_id": "2a68d5be-65f4-45b7-99a0-6a6f1d98525d",
-              "security_groups": [],
-              "status": "ACTIVE",
-              "tenant_id": "53501b3c25d34f8ea293c03298caed605"
+         "floatingip": {
+            "floating_network_id": "00000000-0000-0000-0000-000000000000",
+            "router_id": "00000000-0000-0000-0000-000000000000",
+            "fixed_ip_address": "192.168.33.2",
+            "floating_ip_address": "146.20.6.12",
+            "tenant_id": "53501b3c25d34f8ea293c03298caed605",
+            "port_id": "e84fb78e-fc92-45aa-90b3-8786c82b5112",
+            "status": "ASSOCIATED",
+            "id": "056fd7bb-bdfe-48ee-8083-2fb8baa74817"
           }
       }
 
