@@ -30,6 +30,7 @@ steps are provided in this section.
 
 .. image:: /_images/si-neutron-api.svg
 
+
 The sections are also organized by example type. To simplify your path through this
 chapter, decide whether you prefer neutron-client or cURL examples.
 
