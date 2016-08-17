@@ -6,7 +6,7 @@ Sharing IP address between servers
 
 .. Important::
 
-   The Shared IP Address API is currently in Early Access. It is available for Managed
+   The Shared IP Address API is currently in Limited Access. It is available for Managed
    Infrastructure customers and Managed Operations customers. It is not available for
    RackConnect customers. To use this feature, contact Rackspace Support.
 
