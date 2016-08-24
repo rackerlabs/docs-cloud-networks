@@ -6,7 +6,7 @@ API |contract version| release, September 30, 2014
 The Cloud Networks service was originally released using the OpenStack
 Nova-Network API, and its operations are detailed in the
 :rax-devdocs:`Network extension
-<cloud-servers/v2/developer-guide/#document-extensions/ext-network>`.
+<cloud-servers/v2/extensions/ext-network/>`.
 
 Now Rackspace Cloud Networks has been released using the OpenStack Neutron API
 |contract version|, and its operations are detailed in this guide. We recommend
