@@ -3,33 +3,33 @@
 Using allocation pools to control dynamic IP address allocation with neutron client
 ------------------------------------------------------------------------------------
 
-These sections walk you through using allocation pools to control dynamic IP address 
-allocation by using the neutron client.
+These sections walk you through using allocation pools to control dynamic IP
+address allocation by using the neutron client.
 
 .. _uap-creating-network-neutron:
 
 Creating a network (neutron client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-First, create a network, and then copy the network ID. You use this ID to create a subnet 
-and boot the server.
+First, create a network, and then copy the network ID. You use this ID to
+create a subnet and boot the server.
 
-#. Issue the following neutron client command, substituting your own values for the ones 
-   shown.
-   
+#. Issue the following neutron client command, substituting your own values for
+   the ones shown.
+
    **Create network with neutron request**
 
-   .. code::  
+   .. code::
 
       $ neutron net-create Rackernet
-      
+
    **Positional argument:**
 
    -  The network name. In this example, the network name is ``Rackernet``.
 
    **Create network with neutron response**
 
-   .. code::  
+   .. code::
 
        +----------------+--------------------------------------+
        | Field          | Value                                |
@@ -43,24 +43,25 @@ and boot the server.
        | tenant_id      | 5831008                              |
        +----------------+--------------------------------------+
 
-#. Copy the ``id`` value from the output. You will use this value when you create a subnet, 
-provision your server, or perform other related activities. In this example, the ID is 
-``a8fde776-e80f-47bb-a050-0c057d89afc3``, but use the ID from your response.
+#. Copy the ``id`` value from the output. You will use this value when you
+   create a subnet, provision your server, or perform other related activities.
+   In this example, the ID is ``a8fde776-e80f-47bb-a050-0c057d89afc3``, but use
+   the ID from your response.
 
 .. _uap-creating-subnet-neutron:
 
 Creating a subnet with allocation pools (neutron client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To create a subnet with allocation pools, you specify a network, an IP address and version, 
-allocation pools, and host routes for your subnet.
+To create a subnet with allocation pools, you specify a network, an IP address
+and version, allocation pools, and host routes for your subnet.
 
-#. Issue the following neutron client command, substituting your own values for the ones 
-   shown.
-   
+#. Issue the following neutron client command, substituting your own values for
+   the ones shown.
+
    **Create subnet with neutron request**
 
-   .. code::  
+   .. code::
 
       $ neutron subnet-create \
            --ip-version 4 \
@@ -72,20 +73,23 @@ allocation pools, and host routes for your subnet.
 
    **Positional arguments:**
 
-   -  ``ip-version`` The version of the subnet IP. In this example, the version is ``4``.
-   -  ``allocation-pool** The start and end addresses for one or more allocation pools. In 
-      this example, there are two pools ``start=192.168.5.3,end=192.168.5.100`` and
+   -  ``ip-version`` The version of the subnet IP. In this example, the version
+      is ``4``.
+   -  ``allocation-pool** The start and end addresses for one or more
+      allocation pools. In this example, there are two pools
+      ``start=192.168.5.3,end=192.168.5.100`` and
       ``start=192.168.5.103,end=192.168.5.254``.
-   -  ``host-route`` A list of host route dictionaries for the subnet. In this example, we 
-      used ``destination=1.1.1.0/24,nexthop=192.168.5.254``.
-   -  ``tenant-id`` The tenant ID. In this example, we used the tenant ID ``5831008``.
+   -  ``host-route`` A list of host route dictionaries for the subnet. In this
+      example, we used ``destination=1.1.1.0/24,nexthop=192.168.5.254``.
+   -  ``tenant-id`` The tenant ID. In this example, we used the tenant ID
+      ``5831008``.
    -  The network ID or name. In this example, we used the network ID
       ``a8fde776-e80f-47bb-a050-0c057d89afc3``.
    -  The network CIDR. In this example, the CIDR is ``192.168.5.0/24``.
-   
+
    **Create subnet with neutron response**
 
-   .. code::  
+   .. code::
 
        +------------------+-----------------------------------------------------------+
        | Field            | Value                                                     |
@@ -104,45 +108,49 @@ allocation pools, and host routes for your subnet.
        | tenant_id        | 5831008                                                   |
        +------------------+-----------------------------------------------------------+
 
-#. Copy the ID value from the output for future reference. In this example, the ID is 
-   ``98c1af30-05c9-4502-8b1f-9bffde843cba``, but use the ID from your response.
+#. Copy the ID value from the output for future reference. In this example, the
+   ID is ``98c1af30-05c9-4502-8b1f-9bffde843cba``, but use the ID from your
+   response.
 
 .. _uap-booting-server-nova:
 
 Booting server (nova client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following step shows you how to boot server with the nova client, using the network ID 
-of the network you created in the first step of this procedure. 
+The following step shows you how to boot server with the nova client, using the
+network ID of the network you created in the first step of this procedure.
 
 .. note::
 
 	To create your new server, you need the following information:
-	
+
    -  The name of the new server. Use a name of your choice.
-   -  The image ID. 
-   -  The flavor ID. 
-   -  The network ID of the network, which is ``net-id=a8fde776-e80f-47bb-a050-0c057d89afc3``.
+   -  The image ID.
+   -  The flavor ID.
+   -  The network ID of the network, which is
+      ``net-id=a8fde776-e80f-47bb-a050-0c057d89afc3``.
 
 #. Issue the following nova client command:
 
    **Boot server with nova request**
 
-   .. code::  
+   .. code::
 
        $ nova boot ata --image ffa476b1-9b14-46bd-99a8-862d1d94eb7a --flavor 2 \
          --nic net-id=a8fde776-e80f-47bb-a050-0c057d89afc3
 
    **Positional arguments**
-   
+
    - The server name. In this example, the name is ``ata``.
-   - ``image``.  The image ID. In this example, the ID is ``ffa476b1-9b14-46bd-99a8-862d1d94eb7a``.
+   - ``image``.  The image ID. In this example, the ID is
+     ``ffa476b1-9b14-46bd-99a8-862d1d94eb7a``.
    - ``flavor``. The flavor ID.  In this example, the ID is ``2``
-   - ``nic net-id``.  The network ID. In this example, the ID is ``a8fde776-e80f-47bb-a050-0c057d89afc3``.
-   
+   - ``nic net-id``.  The network ID. In this example, the ID is
+     ``a8fde776-e80f-47bb-a050-0c057d89afc3``.
+
    **Boot server with nova response**
 
-   .. code::  
+   .. code::
 
        +-------------------------+-----------------------------------------------------------------+
        | Property                | Value                                                           |
@@ -169,31 +177,34 @@ of the network you created in the first step of this procedure.
        | user_id                 | 28be72f8fc5b45589c93f55274e459ce                                |
        +-------------------------+-----------------------------------------------------------------+
 
-#. Copy the ``id`` value from the output for future reference. In this example, the ID is 
-   ``a1061a57-0136-4c29-aac1-8b1a646a3001``, but use the ID from your response.
+#. Copy the ``id`` value from the output for future reference. In this example,
+   the ID is ``a1061a57-0136-4c29-aac1-8b1a646a3001``, but use the ID from your
+   response.
 
 .. _uap-verifying-ip-nova:
 
 Verifying IP on server port (nova client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following step shows you how to verify the IP address on the server port. In this case, 
-the IP address should be ``192.168.5.3`` from the start of the allocation pool. Issue the
-following command, substituting your values for the ones shown.
+The following step shows you how to verify the IP address on the server port.
+In this case, the IP address should be ``192.168.5.3`` from the start of the
+allocation pool. Issue the following command, substituting your values for the
+ones shown.
 
 **Show server details with nova request**
 
-.. code::  
+.. code::
 
    $ nova list a1061a57-0136-4c29-aac1-8b1a646a3001
 
 **Positional arguments:**
 
--  The server ID. In this example, the ID is ``a1061a57-0136-4c29-aac1-8b1a646a3001``.
+-  The server ID. In this example, the ID is
+   ``a1061a57-0136-4c29-aac1-8b1a646a3001``.
 
 **Show server details with nova response**
 
-.. code::  
+.. code::
 
    +-------------------------+------------------------------------------------------------------------------------+
    | Property                | Value                                                                              |
@@ -224,17 +235,19 @@ following command, substituting your values for the ones shown.
 .. _uap-creating-port-neutron:
 
 Creating a port outside the allocation pool (neutron client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Before you can attach port and network to a server, you need to create the port.
+Before you can attach port and network to a server, you need to create the
+port.
 
-Do this by using the ``fixed_ips`` attribute and assigning the new IP address to the port. 
-In this case, the allocation pool IP addresses range from ``192.168.5.3`` to 
-``192.168.5.100`` and the IP address for the new port is ``192.168.5.1``.
+Do this by using the ``fixed_ips`` attribute and assigning the new IP address
+to the port. In this case, the allocation pool IP addresses range from
+``192.168.5.3`` to ``192.168.5.100`` and the IP address for the new port is
+``192.168.5.1``.
 
 **Create port with neutron request**
 
-.. code::  
+.. code::
 
    $ neutron port-create \
       --name Rackerport \
@@ -246,11 +259,12 @@ In this case, the allocation pool IP addresses range from ``192.168.5.3`` to
 -  ``name``. The port name. In this example, the port name is ``Rackerport``.
 -  ``fixed-ip``. The subnet id and IP address. In this example, the fixed IP is
    ``subnet_id=98c1af30-05c9-4502-8b1f-9bffde843cba,ip_address=192.168.5.1``.
--  The network ID or name. In this example, the ID is ``a8fde776-e80f-47bb-a050-0c057d89afc3``.
+-  The network ID or name. In this example, the ID is
+   ``a8fde776-e80f-47bb-a050-0c057d89afc3``.
 
 **Create port with neutron repose**
 
-.. code::  
+.. code::
 
 	+-----------------+------------------------------------------------------------------------------------+
 	| Field           | Value                                                                              |

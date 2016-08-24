@@ -1,18 +1,20 @@
 .. _provisioning-port-ips-with-neutron:
 
 Provisioning a port with additional IP and dual-stack IPs with neutron
-------------------------------------------------------------------------
+----------------------------------------------------------------------
 
-These sections walk you through provisioning an additional IP and dual-stack (v4 and v6)
-IP addresses on an isolated network port by using the neutron client.
+These sections walk you through provisioning an additional IP and dual-stack
+(v4 and v6) IP addresses on an isolated network port by using the neutron
+client.
 
 .. _ppi-showing-port-neutron:
 
 Showing a port with an IPv6 address (neutron)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-First, look at your port with an IPv6 IP address. In this example, note the fixed_ips
-ip_address of ``fc01::7``, which is an IPv6 address in hexadecimal format.
+First, look at your port with an IPv6 IP address. In this example, note the
+fixed_ips ip_address of ``fc01::7``, which is an IPv6 address in hexadecimal
+format.
 
 #. **List ports with neutron request**
 
@@ -31,17 +33,19 @@ ip_address of ``fc01::7``, which is an IPv6 address in hexadecimal format.
        +--------------------------------------+-------+-------------------+--------------------------------------------------------------------------------+
 
 #. Note the id value for future reference. In this example, the ID is
-   ``79bf47e2-5107-4d93-b9c3-b78ddbc94c93``), but use the ID from your response.
+   ``79bf47e2-5107-4d93-b9c3-b78ddbc94c93``), but use the ID from your
+   response.
 
 .. _ppi-getting-cidr-neutron:
 
 Getting the IPv4 CIDR for the network (neutron)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Now, note the IPv4 CIDR on the same network as the IPv6 CIDR. You should have already
-created this subnet on the same network. If you have not done so, create an IPv4 subnet
-(**POST /subnets**) on the same network. Because this example assumes that the subnet has
-already been created, run the following command and note the CIDR to identify the IPv4 address.
+Now, note the IPv4 CIDR on the same network as the IPv6 CIDR. You should have
+already created this subnet on the same network. If you have not done so,
+create an IPv4 subnet (**POST /subnets**) on the same network. Because this
+example assumes that the subnet has already been created, run the following
+command and note the CIDR to identify the IPv4 address.
 
 #. **List subnets with neutron request**
 
@@ -61,21 +65,22 @@ already been created, run the following command and note the CIDR to identify th
 
 
 
-#. Note the network_id and CIDR values for future reference. In this example, the
-   network_id is ``03f240c5-6fb8-47a0-860a-c7ba83be519f`` and the CIDR is
+#. Note the network_id and CIDR values for future reference. In this example,
+   the network_id is ``03f240c5-6fb8-47a0-860a-c7ba83be519f`` and the CIDR is
    ``192.168.7.0/24``, but use the values from your response.
 
 .. _ppi-adding-ip-to-port-neutron:
 
 Adding an IPv4 address on the same port (neutron)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To add an IPv4 address on the same port, update the IPv6 port with the existing IPv6 IP
-address, the subnet's IPv4 ID, and the IP address from the subnet's IPv4 CIDR. In this
-example, the IPv4 IP address is ``192.168.7.250`` and the subnet_id is
-``321caa1c-2105-4186-b53b-366fa623c09a``.
+To add an IPv4 address on the same port, update the IPv6 port with the existing
+IPv6 IP address, the subnet's IPv4 ID, and the IP address from the subnet's
+IPv4 CIDR. In this example, the IPv4 IP address is ``192.168.7.250`` and the
+subnet_id is ``321caa1c-2105-4186-b53b-366fa623c09a``.
 
-Issue the following neutron client command, using the port ID from the preceding step.
+Issue the following neutron client command, using the port ID from the
+preceding step.
 
 **Update port with neutron request**
 
@@ -118,13 +123,14 @@ Issue the following neutron client command, using the port ID from the preceding
 .. _ppi-showing-port-again-neutron:
 
 Showing the port with both IP addresses (neutron)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following step shows you how to show port details to verify that both IPv4 and IPv6 IP
-addresses are configured by using the neutron client.
+The following step shows you how to show port details to verify that both IPv4
+and IPv6 IP addresses are configured by using the neutron client.
 
 
-Issue the following neutron client command, substituting your own values for the ones shown.
+Issue the following neutron client command, substituting your own values for
+the ones shown.
 
 **Show port details with neutron request**
 
@@ -161,10 +167,11 @@ Issue the following neutron client command, substituting your own values for the
 .. _ppi-booting-server-nova:
 
 Booting a Server (nova)
-~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^
 
-The following step shows you how to boot a server by using the port ID of the port that
-you configured with dual-stack IP addresses in the second step of this procedure.
+The following step shows you how to boot a server by using the port ID of the
+port that you configured with dual-stack IP addresses in the second step of
+this procedure.
 
 .. note::
 
@@ -173,7 +180,8 @@ you configured with dual-stack IP addresses in the second step of this procedure
    -  The name of the new server. Use a name of your choice.
    -  The image ID.
    -  The flavor ID.
-   -  The network ID of the network, which is ``net-id=79bf47e2-5107-4d93-b9c3-b78ddbc94c93``.
+   -  The network ID of the network, which is
+      ``net-id=79bf47e2-5107-4d93-b9c3-b78ddbc94c93``.
 
 
 #. Issue the following nova client command.
@@ -183,14 +191,16 @@ you configured with dual-stack IP addresses in the second step of this procedure
    .. code::
 
        $ nova boot ata --image c63e20ad-6e3b-4e0b-943c-95cf3ba6c3a6 /
-                   --flavor 2 --nic port-id=79bf47e2-5107-4d93-b9c3-b78ddbc94c93
+                 --flavor 2 --nic port-id=79bf47e2-5107-4d93-b9c3-b78ddbc94c93
 
    **Positional arguments**
 
    - The server name. In this example, the name is ``ata``.
-   - ``image``.  The image ID. In this example, the ID is ``c63e20ad-6e3b-4e0b-943c-95cf3ba6c3a6``.
+   - ``image``.  The image ID. In this example, the ID is
+     ``c63e20ad-6e3b-4e0b-943c-95cf3ba6c3a6``.
    - ``flavor``. The flavor ID.  In this example, the ID is ``2``
-   - ``nic port-id``.  The port ID. In this example, the ID is ``79bf47e2-5107-4d93-b9c3-b78ddbc94c93``.
+   - ``nic port-id``.  The port ID. In this example, the ID is
+     ``79bf47e2-5107-4d93-b9c3-b78ddbc94c93``.
 
    **Boot server with nova response**
 
@@ -221,18 +231,20 @@ you configured with dual-stack IP addresses in the second step of this procedure
        | user_id                 | 28be72f8fc5b45589c93f55274e459ce                                |
        +-------------------------+-----------------------------------------------------------------+
 
-#. Copy the server id value from the output for future reference. In this example, the ID
-   is ``1ed5bc31-153d-4570-a361-92d5a02fd428``, but use the ID from your response.
+#. Copy the server id value from the output for future reference. In this
+   example, the ID is ``1ed5bc31-153d-4570-a361-92d5a02fd428``, but use the ID
+   from your response.
 
 .. _ppi-verifying-ips-nova:
 
 Verifying IP addresses on the server port (nova)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following step shows you how to verify the IP addresses on the server port. In this
-case, the IP addresses should be ``192.168.7.250`` and ``fc01::7``.
+The following step shows you how to verify the IP addresses on the server port.
+In this case, the IP addresses should be ``192.168.7.250`` and ``fc01::7``.
 
-Issue the following nova client command, substituting your value for the one shown.
+Issue the following nova client command, substituting your value for the one
+shown.
 
 **Show server details with nova request**
 
@@ -242,7 +254,8 @@ Issue the following nova client command, substituting your value for the one sho
 
 **Positional arguments:**
 
--  The server ID. In this example, the ID is ``1ed5bc31-153d-4570-a361-92d5a02fd428``.
+-  The server ID. In this example, the ID is
+   ``1ed5bc31-153d-4570-a361-92d5a02fd428``.
 
 **Show server details with nova response**
 

@@ -3,20 +3,23 @@
 Using Floating IP Adresses with  with neutron - UNDEVELOPED
 -----------------------------------------------------------
 
-These sections walk you through creating a shared IP address and attaching it to two
-existing servers or two new servers by using cURL.
+These sections walk you through creating a shared IP address and attaching it
+to two existing servers or two new servers by using cURL.
 
-Once the steps are completed, there will be a shared IP address common to 2 servers in the
-control plane. However, you will still need to configure the guest on the servers, perhaps
-an application like Linux-HA to take advantage of the shared IP during a failover.
+Once the steps are completed, there will be a shared IP address common to 2
+servers in the control plane. However, you will still need to configure the
+guest on the servers, perhaps an application like Linux-HA to take advantage of
+the shared IP during a failover.
 
-**If you already have two active servers, start here:** `Verifying servers share ``publicIPZoneId`` (neutron) <si-verifying-servers-zone-nova>`
-**If you need to create servers, start here:** `Creating server A (neutron) <si-creating-serverA-nova>`
+**If you already have two active servers, start here:**
+`Verifying servers share ``publicIPZoneId`` (neutron) <si-verifying-servers-zone-nova>`
+**If you need to create servers, start here:**
+`Creating server A (neutron) <si-creating-serverA-nova>`
 
 .. _fi-creating-network-nova:
 
 Creating network (neutron client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Create the network.
 
@@ -61,7 +64,7 @@ Create the network.
 .. _fi-creating-subnet-neutron:
 
 Creating subnet (neutron client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Create the subnet for the network with a ``gateway_ip`` and an
 ``allocation pool`` with ``start`` and ``end`` values for the pool. The gateway
@@ -125,14 +128,15 @@ IP address is not within the allocation pool. Remember that ``x.x.x.0`` and
 .. _fi-creating-port-neutron:
 
 Creating a port (neutron client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Create a port on the network you created previously.
 
 #. Issue the following neutron command, substituting your own values for the
    ones shown.
 
-Issue the following nova client command, substituting your values for the ones shown.
+Issue the following nova client command, substituting your values for the ones
+shown.
 
 **Create port with neutron request**
 
@@ -160,7 +164,7 @@ Issue the following nova client command, substituting your values for the ones s
 .. _fi-creating-server-nova:
 
 Creating or preparing a server (nova client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you already have a server, remove the public interface as shown in step 1.
 If you do not have a server, create one without a public interface as shown in
@@ -193,16 +197,18 @@ step 2.
    .. code::
 
        $ nova boot ata --image c63e20ad-6e3b-4e0b-943c-95cf3ba6c3a6 /
-                   --flavor 2 --nic port-id=79bf47e2-5107-4d93-b9c3-b78ddbc94c93
+                  --flavor 2 --nic port-id=79bf47e2-5107-4d93-b9c3-b78ddbc94c93
 
    **Positional arguments:**
 
    -  The server name for the new server. In this example, we used ``serverB``.
 
-   -  ``hint public_ip_zone:near``. The server id of the old server (near to which you want
-      the new server built). In this example, we used ``079f53a4-6947-4895-b9b4-df81e534840b``.
+   -  ``hint public_ip_zone:near``. The server id of the old server (near to
+      which you want the new server built). In this example, we used
+      ``079f53a4-6947-4895-b9b4-df81e534840b``.
 
-   -  The image id. In this example, we used ``2f85a777-9ffd-4b49-a60e-1155ceb93a5e``.
+   -  The image id. In this example, we used
+      ``2f85a777-9ffd-4b49-a60e-1155ceb93a5e``.
 
    -  The flavor id. In this example, we used ``4``.
 
@@ -235,13 +241,14 @@ step 2.
        | user_id                 | 28be72f8fc5b45589c93f55274e459ce                                |
        +-------------------------+-----------------------------------------------------------------+
 
-#. Copy the server id value from the output for future reference. In this example, the ID
-   is ``1ed5bc31-153d-4570-a361-92d5a02fd428``, but use the ID from your response.
+#. Copy the server id value from the output for future reference. In this
+   example, the ID is ``1ed5bc31-153d-4570-a361-92d5a02fd428``, but use the ID
+   from your response.
 
 .. _fi-allocate-floating-ip-neutron:
 
 Allocate floating IP address (neutron client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The following step shows you how to allocate a Floating IP and associate it
 with the port on the Cloud Server instance connected to the Cloud Network.

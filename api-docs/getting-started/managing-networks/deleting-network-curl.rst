@@ -1,18 +1,19 @@
 .. _deleting-network-with-curl:
 
 Deleting your network with cURL
---------------------------------
+-------------------------------
 
 These sections walk you through deleting your subnet and network by using cURL.
 
 .. _dn-delete-subnet-curl:
 
 Deleting a subnet (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 To delete a subnet, specify the subnet ID.
 
-Issue the following cURL command, substituting your own values for the ones shown.
+Issue the following cURL command, substituting your own values for the ones
+shown.
 
 **Delete subnet with cURL request**
 
@@ -31,9 +32,9 @@ Issue the following cURL command, substituting your own values for the ones show
 
 .. note::
 
-   Include the ``-i`` option in the cURL command to show the response header. Omit the
-   ``| python -m json.tool`` clause from the command because the API operation does not
-   return a JSON response.
+   Include the ``-i`` option in the cURL command to show the response header.
+   Omit the ``| python -m json.tool`` clause from the command because the API
+   operation does not return a JSON response.
 
 The operation returns the header as shown in the following example.
 
@@ -54,11 +55,12 @@ The operation returns the header as shown in the following example.
 .. _dn-deleting-network-curl:
 
 Deleting a network (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To delete a network, specify the network ID.
 
-Issue the following cURL command, substituting your own values for the ones shown.
+Issue the following cURL command, substituting your own values for the ones
+shown.
 
 **Delete network with cURL request**
 
@@ -77,9 +79,9 @@ Issue the following cURL command, substituting your own values for the ones show
 
 .. note::
 
-   Include the ``-i`` option in the cURL command to show the response header. Omit the
-   ``| python -m json.tool`` clause from the command because the API operation does not
-   return a JSON response.
+   Include the ``-i`` option in the cURL command to show the response header.
+   Omit the ``| python -m json.tool`` clause from the command because the API
+   operation does not return a JSON response.
 
 The operation returns the header as shown in the following example.
 

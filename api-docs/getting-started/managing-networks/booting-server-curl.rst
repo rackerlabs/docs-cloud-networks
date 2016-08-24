@@ -3,20 +3,23 @@
 Booting server with cURL
 -------------------------
 
-These sections walk you through listing subnets, creating a port for your network, listing
-the ports, provisioning a server with an attached port, listing servers, and listing servers.
+These sections walk you through listing subnets, creating a port for your
+network, listing the ports, provisioning a server with an attached port,
+listing servers, and listing servers.
 
 .. _bns-creating-port-curl:
 
 Creating a port (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^
 
-Before you can attach a port and network to a server, you need to create the port.
+Before you can attach a port and network to a server, you need to create the
+port.
 
-To create a port, you specify a name for your port and the network name. After you create
-a port, copy its port ID. Use this ID to attach it to a new server.
+To create a port, you specify a name for your port and the network name. After
+you create a port, copy its port ID. Use this ID to attach it to a new server.
 
-#. Issue the following cURL command, substituting your own values for  the ones shown.
+#. Issue the following cURL command, substituting your own values for  the ones
+   shown.
 
    **Create port with cURL request**
 
@@ -57,14 +60,15 @@ a port, copy its port ID. Use this ID to attach it to a new server.
        }
 
 
-#. Copy the id value from the output. You will use this value when you provision your
-   server. In this example, the port ID is ``79bf47e2-5107-4d93-b9c3-b78ddbc94c93``, but
-   use the value from your response.
+#. Copy the id value from the output. You will use this value when you
+   provision your server. In this example, the port ID is
+   ``79bf47e2-5107-4d93-b9c3-b78ddbc94c93``, but use the value from your
+   response.
 
 .. _bns-listing-port-curl:
 
 Listing ports (cURL)
-~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^
 
 After you create a port, you might want to list ports to confirm creation.
 
@@ -106,32 +110,35 @@ After you create a port, you might want to list ports to confirm creation.
 
 
 
-#. Confirm the id value from the output. You will use this value when you provision your
-   server. In this example, the port ID is ``79bf47e2-5107-4d93-b9c3-b78ddbc94c93``, but
-   use the value from your response.
+#. Confirm the id value from the output. You will use this value when you
+   provision your server. In this example, the port ID is
+   ``79bf47e2-5107-4d93-b9c3-b78ddbc94c93``, but use the value from your
+   response.
 
    Also, notice the ``ip_address`` with the value of ``fc01::7``.
 
 .. _bns-booting-server-curl:
 
 Provisioning a server with a port on an isolated network (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Create your new server and attach a port with an isolated network.
 
 .. note::
 
-	To create your new server and attach a port with an isolated network, you need the
-	following information:
+	To create your new server and attach a port with an isolated network, you
+	need the following information:
 
    -  The name of the new server. Use a name of your choice.
    -  The image ID.
    -  The flavor ID.
    -  The port ID or network ID of your isolated network.
-   -  The network ID of PublicNet, which is ``00000000-0000-0000-0000-000000000000``, and
-      ServiceNet, which is ``11111111-1111-1111-1111-111111111111``.
+   -  The network ID of PublicNet, which is
+      ``00000000-0000-0000-0000-000000000000``, and ServiceNet, which is
+      ``11111111-1111-1111-1111-111111111111``.
 
-Issue the following cURL command, substituting your own values for the ones shown.
+Issue the following cURL command, substituting your own values for the ones
+shown.
 
 **Boot server with cURL request**
 
@@ -173,12 +180,14 @@ Issue the following cURL command, substituting your own values for the ones show
 .. _bns-listing-networks-curl:
 
 Showing server and attached networks (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-After you provision your server, ensure that the server and attached network are listed.
+After you provision your server, ensure that the server and attached network
+are listed.
 
 
-#. Issue the following command, substituting your own values for the ones shown.
+#. Issue the following command, substituting your own values for the ones
+   shown.
 
    **Show server with cURL request**
 
@@ -193,12 +202,13 @@ After you provision your server, ensure that the server and attached network are
 
    **Positional arguments**
 
-   - The server ID.  In this example, the server ID is ``cfe9a69d-92ef-462f-9240-ed5b43d3d1af``.
+   - The server ID.  In this example, the server ID is
+     ``cfe9a69d-92ef-462f-9240-ed5b43d3d1af``.
 
-   The operation returns the disk configuration, the addresses of any attached networks,
-   flavor and image information, the server ID, and the server status. The networks include
-   any isolated networks that you have created, in addition to Rackspace public and private
-   networks.
+   The operation returns the disk configuration, the addresses of any attached
+   networks, flavor and image information, the server ID, and the server
+   status. The networks include any isolated networks that you have created, in
+   addition to Rackspace public and private networks.
 
    **Show server with cURL response**
 
@@ -280,19 +290,19 @@ After you provision your server, ensure that the server and attached network are
        }
 
 
-#. Servers are listed by server ID, and the addresses for any attached networks are
-   displayed. Copy the server ID for your server in case you need to update or delete your
-   server.
+#. Servers are listed by server ID, and the addresses for any attached networks
+   are displayed. Copy the server ID for your server in case you need to update
+   or delete your server.
 
-   Notice the ``mynet`` network IP address ``fc01::7`` in the output, which is the same as
-   the fixed\_ip IP address of the port that you created.
+   Notice the ``mynet`` network IP address ``fc01::7`` in the output, which is
+   the same as the ``fixed_ip`` IP address of the port that you created.
 
    Use the public IP address when you log in to your server.
 
 .. _bns-listing-ports-curl:
 
 Listing ports (cURL)
-~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^
 
 Confirm the port information, by issuing the following command.
 

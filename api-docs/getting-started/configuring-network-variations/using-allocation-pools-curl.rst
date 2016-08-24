@@ -1,20 +1,21 @@
 .. _using-allocation-pools-with-curl:
 
 Using allocation pools to control dynamic IP address allocation with cURL
----------------------------------------------------------------------------------
+-------------------------------------------------------------------------
 
-These sections walk you through using allocation pools to control dynamic IP address
-allocation by using cURL.
+These sections walk you through using allocation pools to control dynamic IP
+address allocation by using cURL.
 
 .. _uap-creating-network-curl:
 
 Creating a network (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-First, create a network, and then copy the network ID. You use this ID to create a subnet
-and boot the server.
+First, create a network, and then copy the network ID. You use this ID to
+create a subnet and boot the server.
 
-#. Issue the following cURL command, substituting your own values for the ones shown.
+#. Issue the following cURL command, substituting your own values for the ones
+   shown.
 
    **Create network with cURL request**
 
@@ -45,19 +46,21 @@ and boot the server.
        }
 
 
-#. Copy the ``id`` value from the output. You will use this value when you create a subnet,
-   provision your server, or perform other related activities. In this example, the ID is
-   ``a8fde776-e80f-47bb-a050-0c057d89afc3``, but use the ID from your response.
+#. Copy the ``id`` value from the output. You will use this value when you
+   create a subnet, provision your server, or perform other related activities.
+   In this example, the ID is ``a8fde776-e80f-47bb-a050-0c057d89afc3``, but use
+   the ID from your response.
 
 .. _uap-creating-subnet-curl:
 
 Creating a subnet with allocation pools (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To create a subnet with allocation pools, you specify a network, an IP
 address, allocation pools, and host routes for your subnet.
 
-#. Issue the following cURL command, substituting your own values for the ones shown.
+#. Issue the following cURL command, substituting your own values for the ones
+   shown.
 
    **Create subnet with cURL request**
 
@@ -131,16 +134,17 @@ address, allocation pools, and host routes for your subnet.
        }
 
 
-#. Copy the ID value from the output for future reference. In this example, the ID is
-``98c1af30-05c9-4502-8b1f-9bffde843cba``, but use the ID from your response.
+#. Copy the ID value from the output for future reference. In this example, the
+   ID is ``98c1af30-05c9-4502-8b1f-9bffde843cba``, but use the ID from your
+   response.
 
 .. _uap-booting-server-curl:
 
 Booting server (cURL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following step shows you how to boot server with cURL, using the network ID of the
-network you created in the first step of this procedure.
+The following step shows you how to boot server with cURL, using the network ID
+of the network you created in the first step of this procedure.
 
 .. note::
 
@@ -149,9 +153,11 @@ network you created in the first step of this procedure.
    -  The name of the new server. Use a name of your choice.
    -  The image ID.
    -  The flavor ID.
-   -  The network ID of the network, which is ``net-id=a8fde776-e80f-47bb-a050-0c057d89afc3``.
+   -  The network ID of the network, which is
+      ``net-id=a8fde776-e80f-47bb-a050-0c057d89afc3``.
 
-1. Issue the following cURL command, substituting your own values for the ones shown.
+1. Issue the following cURL command, substituting your own values for the ones
+   shown.
 
    **Boot server with cURL request**
 
@@ -193,18 +199,21 @@ network you created in the first step of this procedure.
        }
 
 
-#. Copy the ``id`` value from the output for future reference. In this example, the ID is
-   ``a1061a57-0136-4c29-aac1-8b1a646a3001``, but use the ID from your response.
+#. Copy the ``id`` value from the output for future reference. In this example,
+   the ID is ``a1061a57-0136-4c29-aac1-8b1a646a3001``, but use the ID from your
+   response.
 
 .. _uap-verifying-ip-curl:
 
 Verifying IP on server port (curl)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following step shows you how to verify the IP address on the server port. In this case,
-the IP address should be ``192.168.5.3`` from the start of the allocation pool.
+The following step shows you how to verify the IP address on the server port.
+In this case, the IP address should be ``192.168.5.3`` from the start of the
+allocation pool.
 
-Issue the following cURL command, substituting your own values for the ones shown.
+Issue the following cURL command, substituting your own values for the ones
+shown.
 
 **Show server details with cURL request**
 
@@ -219,7 +228,8 @@ Issue the following cURL command, substituting your own values for the ones show
 
 **Positional arguments**
 
-- The server ID.  In this example, the ID is ``a1061a57-0136-4c29-aac1-8b1a646a3001``.
+- The server ID.  In this example, the ID is
+  ``a1061a57-0136-4c29-aac1-8b1a646a3001``.
 
 **Show server details with cURL response**
 
@@ -304,15 +314,18 @@ Issue the following cURL command, substituting your own values for the ones show
 .. _uap-creating-port-curl:
 
 Creating a port outside the allocation pool (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Before you can attach port and network to a server, you need to create the port.
+Before you can attach port and network to a server, you need to create the
+port.
 
-Do this by using the ``fixed_ips`` attribute and assigning the new IP address to the port.
-In this case, the allocation pool IP addresses range from ``192.168.5.3`` to
-``192.168.5.100`` and the IP address for the new port is ``192.168.5.1``.
+Do this by using the ``fixed_ips`` attribute and assigning the new IP address
+to the port. In this case, the allocation pool IP addresses range from
+``192.168.5.3`` to ``192.168.5.100`` and the IP address for the new port is
+``192.168.5.1``.
 
-Issue the following cURL command, substituting your own values for the ones shown.
+Issue the following cURL command, substituting your own values for the ones
+shown.
 
 **Create port with cURL request**
 

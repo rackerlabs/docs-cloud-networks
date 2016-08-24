@@ -1,0 +1,24 @@
+.. _cn-v2-20160725:
+
+API |contract version| updates, July 25, 2016
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+What's new
+----------
+
+The Cloud Networks API |contract version| now includes operations for
+floating IP addresses. These operations, described in detail in the Cloud
+Networks API Developer Guide
+(see :ref:`Floating IP operations <api-operations-floating-ip-addresses>` ),
+allow you to create, read, update, and delete floating ip addresses.
+To learn more about floating IP addresses, see
+:ref:`Floating IP addresses concepts<concepts-floating-ips>`.
+
+Resolved issues
+---------------
+|no changes|
+
+Known issues
+------------
+For Early Access launch caveats, see
+:ref:`Floating IP address caveats <concepts-floating-ip-caveats>`.

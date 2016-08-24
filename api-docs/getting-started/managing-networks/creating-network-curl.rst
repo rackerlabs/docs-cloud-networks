@@ -3,16 +3,16 @@
 Creating and listing network and subnet with cURL
 -------------------------------------------------
 
-These sections walk you through creating your network and subnet and then listing them by
-using cURL.
+These sections walk you through creating your network and subnet and then
+listing them by using cURL.
 
 .. _cn-creating-network-curl:
 
 Creating a network (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-After you create a network, copy its network ID. You use this ID to create a subnet or
-attach the network to a server.
+After you create a network, copy its network ID. You use this ID to create a
+subnet or attach the network to a server.
 
 The Cloud Networks API supports only JSON formatting. XML is not supported.
 
@@ -47,20 +47,22 @@ The Cloud Networks API supports only JSON formatting. XML is not supported.
           }
        }
 
-#. Copy the ``id`` value from the output. You will use this value when you create a subnet,
-   provision your server, or perform other related activities. In this example, the ID is
-   ``29f52c7e-6efd-4335-a14a-db77d32a2555``, but use the ID from your response.
+#. Copy the ``id`` value from the output. You will use this value when you
+   create a subnet, provision your server, or perform other related activities.
+   In this example, the ID is ``29f52c7e-6efd-4335-a14a-db77d32a2555``, but use
+   the ID from your response.
 
 .. _cn-creating-subnet-curl:
 
 Creating a subnet (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-To create a subnet, you specify a network ID (using the ID that you copied in the
-preceding step), an IP address, and a name for your subnet. After you create a subnet,
-copy its ID for future reference.
+To create a subnet, you specify a network ID (using the ID that you copied in
+the preceding step), an IP address, and a name for your subnet. After you
+create a subnet, copy its ID for future reference.
 
-#. Issue the following cURL command, substituting your own values for the ones shown.
+#. Issue the following cURL command, substituting your own values for the ones
+   shown.
 
    **Create subnet with cURL request**
 
@@ -102,13 +104,14 @@ copy its ID for future reference.
             }
        }
 
-#. Copy the ``id`` value from the output for future reference. In this example, the ID is
-   ``23e3059e-4f39-4f7f-8cf2-c326e5de6c37``, but use the ID from your response.
+#. Copy the ``id`` value from the output for future reference. In this example,
+   the ID is ``23e3059e-4f39-4f7f-8cf2-c326e5de6c37``, but use the ID from your
+   response.
 
 .. _cn-listing-networks-curl:
 
 Listing networks (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^
 
 **List networks with cURL request**
 
@@ -140,7 +143,7 @@ Listing networks (cURL)
 .. _cn-listing-subnets-curl:
 
 Listing subnets (cURL)
-~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^
 
 **List subnets with cURL request**
 
