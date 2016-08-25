@@ -1,7 +1,7 @@
 .. _auth-nova:
 
-Authenticate using nova client
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Authenticate by using the nova client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Use the following steps to authenticate by using the nova client to get the
 authentication token and the service catalog:
