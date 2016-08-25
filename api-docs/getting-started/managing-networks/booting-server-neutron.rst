@@ -3,28 +3,28 @@
 Booting server with neutron client
 ----------------------------------
 
-These sections walk you through creating a port for your network, listing the ports and 
-showing the port details by using the neutron API. They also show the steps for 
-provisioning a server with an attached port and for listing servers by using the 
-nova-network API.
+These sections walk you through creating a port for your network, listing the
+ports and showing the port details by using the neutron API. They also show the
+steps for provisioning a server with an attached port and for listing servers
+by using the nova-network API.
 
 .. _bns-listing-networks-neutron:
 
 Listing networks (neutron client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following steps detail how to list networks. You need to identify the right network 
-from this listing to boot your server.
+The following steps detail how to list networks. You need to identify the right
+network from this listing to boot your server.
 
 #. **List networks with neutron request**
 
-   .. code::  
+   .. code::
 
        $ neutron net-list
 
    **List networks with neutron response**
 
-   .. code::  
+   .. code::
 
        +--------------------------------------+-------+---------------------------------------------------+
        | id                                   | name  | subnets                                           |
@@ -32,28 +32,32 @@ from this listing to boot your server.
        | 03f240c5-6fb8-47a0-860a-c7ba83be519f | mynet | 1d18d76b-a04a-4147-a04c-151630ec80d0 fc01::7      |
        +--------------------------------------+-------+---------------------------------------------------+
 
-#. Copy the network ID value from the output. You will use this value when you provision 
-   your server. In this example, the network ID is ``03f240c5-6fb8-47a0-860a-c7ba83be519f``.
+#. Copy the network ID value from the output. You will use this value when you
+   provision your server. In this example, the network ID is
+   ``03f240c5-6fb8-47a0-860a-c7ba83be519f``.
 
 
 .. _bns-creating-port-neutron:
 
 Creating a port (neutron client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Before you can attach port and network to a server, you need to create the port.
+Before you can attach port and network to a server, you need to create the
+port.
 
-To create a network, you specify a name for your port and the network name. After you 
-create a port, copy its port ID. Use this ID to attach it to a new server.
+To create a network, you specify a name for your port and the network name.
+After you create a port, copy its port ID. Use this ID to attach it to a new
+server.
 
-#. Issue the following neutron command, substituting your own values for the ones shown.
+#. Issue the following neutron command, substituting your own values for the
+   ones shown.
 
    **Create port with neutron request**
 
-   .. code::  
+   .. code::
 
        $ neutron port-create --name port1 03f240c5-6fb8-47a0-860a-c7ba83be519f
-       
+
    **Positional arguments:**
 
    -  ``name``. The port name. In this example, the port name is ``port1``.
@@ -62,7 +66,7 @@ create a port, copy its port ID. Use this ID to attach it to a new server.
 
    **Create port with neutron response**
 
-   .. code::  
+   .. code::
 
        +-----------------------+----------------------------------------------------------------------------------+
        | Field                 | Value                                                                            |
@@ -81,26 +85,27 @@ create a port, copy its port ID. Use this ID to attach it to a new server.
        | tenant_id             | 53501b3c25d34f8ea293c03298caed60                                                 |
        +-----------------------+----------------------------------------------------------------------------------+
 
-#. Copy the id value from the output. You will use this value when you provision your 
-   server. In this example, the port id is ``79bf47e2-5107-4d93-b9c3-b78ddbc94c93``.
+#. Copy the id value from the output. You will use this value when you
+   provision your server. In this example, the port id is
+   ``79bf47e2-5107-4d93-b9c3-b78ddbc94c93``.
 
 
 .. _bns-listing-ports-neutron:
 
 Listing ports (neutron client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 After you create a port, you may want to list ports to confirm creation.
 
 **List ports with neutron request**
 
-.. code::  
+.. code::
 
-   $ neutron port-list 
+   $ neutron port-list
 
 **List ports with neutron response**
 
-.. code::  
+.. code::
 
    +--------------------------------------+---------+-------------------+----------------------------------------------------------------------------------+
    | id                                   | name    | mac_address       | fixed_ips                                                                        |
@@ -112,27 +117,29 @@ After you create a port, you may want to list ports to confirm creation.
 .. _bns-booting-server-nova:
 
 Provisioning a server with a port and an isolated network (nova client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Create your new server and attach a port with an isolated network.
 
 .. note::
 
-	To create your new server and attach a port with an isolated network, you need the 
-	following information:
-	
-   -  The name of the new server. Use a name of your choice.
-   -  The image ID. 
-   -  The flavor ID. 
-   -  The port ID or network ID of your isolated network. 
-   -  The network ID of PublicNet, which is ``00000000-0000-0000-0000-000000000000``, and 
-      ServiceNet, which is ``11111111-1111-1111-1111-111111111111``.
+	To create your new server and attach a port with an isolated network, you
+	need the following information:
 
-Issue the following nova client command, substituting your own values for the ones shown.
+   -  The name of the new server. Use a name of your choice.
+   -  The image ID.
+   -  The flavor ID.
+   -  The port ID or network ID of your isolated network.
+   -  The network ID of PublicNet, which is
+      ``00000000-0000-0000-0000-000000000000``, and ServiceNet, which is
+      ``11111111-1111-1111-1111-111111111111``.
+
+Issue the following nova client command, substituting your own values for the
+ones shown.
 
 **Boot server with nova request**
 
-.. code::  
+.. code::
 
    $ nova boot ServerAmp --image 82e72de5-6366-4217-8c87-a570a9b17e73 \
      --nic port-id=79bf47e2-5107-4d93-b9c3-b78ddbc94c93 --flavor 1
@@ -140,13 +147,15 @@ Issue the following nova client command, substituting your own values for the on
 **Positional arguments:**
 
 -  The server name. In this example, the name is ``ServerAmp``.
--  ``image``.  The image ID. In this example, the ID is ``82e72de5-6366-4217-8c87-a570a9b17e73``.
--  ``nic port-id``. The port ID. In this example, the ID is ``79bf47e2-5107-4d93-b9c3-b78ddbc94c93``.
+-  ``image``.  The image ID. In this example, the ID is
+   ``82e72de5-6366-4217-8c87-a570a9b17e73``.
+-  ``nic port-id``. The port ID. In this example, the ID is
+   ``79bf47e2-5107-4d93-b9c3-b78ddbc94c93``.
 - ``flavor``. The flavor id. In this example, the ID is ``1``.
 
 **Boot server with nova response**
 
-.. code::  
+.. code::
 
    +-------------------------+-----------------------------------------------------------------+
    | Property                | Value                                                           |
@@ -177,24 +186,24 @@ Issue the following nova client command, substituting your own values for the on
 .. _bns-showing-port-neutron:
 
 Showing port details (neutron client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The following procedure shows you how to view details for a port.
 
 **Show port with neutron request**
 
-.. code::  
+.. code::
 
    $ neutron port-show 79bf47e2-5107-4d93-b9c3-b78ddbc94c93
-   
+
 **Positional argument:**
 
--  The ID of the port for which you want to show information. In this example, the ID 
-   is ``79bf47e2-5107-4d93-b9c3-b78ddbc94c93``
+-  The ID of the port for which you want to show information. In this example,
+   the ID is ``79bf47e2-5107-4d93-b9c3-b78ddbc94c93``
 
 **Show port with neutron response**
 
-.. code::  
+.. code::
 
    +-----------------------+----------------------------------------------------------------------------------+
    | Field                 | Value                                                                            |
@@ -217,24 +226,24 @@ The following procedure shows you how to view details for a port.
 .. _bns-listing-servers-nova:
 
 Listing servers (nova client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-After you provision your server, list servers to make sure the server and attached network 
-are listed.
+After you provision your server, list servers to make sure the server and
+attached network are listed.
 
 
 #. **List servers with nova request**
 
-   .. code::  
+   .. code::
 
        $ nova list
 
-   For each server, the operation returns the server ID, name, status, and addresses for any 
-   attached networks, as shown in the following output.
-   
+   For each server, the operation returns the server ID, name, status, and
+   addresses for any attached networks, as shown in the following output.
+
    **List servers with nova response**
 
-   .. code::  
+   .. code::
 
        +--------------------------------------+----------------+--------+---------------------------------------------------------------------------------------+
        | ID                                   | Name           | Status | Networks                                                                              |
@@ -245,9 +254,9 @@ are listed.
    The networks include any isolated networks that you have created and
    Rackspace public and private networks.
 
-#. Servers are listed by server ID, and the addresses for any attached networks are 
-   displayed. Copy the server ID for your server in case you need to update or delete your 
-   server.
+#. Servers are listed by server ID, and the addresses for any attached networks
+   are displayed. Copy the server ID for your server in case you need to update
+   or delete your server.
 
    Use the public IP address when you log into your server.
 

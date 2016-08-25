@@ -1,25 +1,22 @@
-.. _request-using-clients:
+.. _request-using-client:
 
-Using the clients
-~~~~~~~~~~~~~~~~~
+Install CLI clients and |product name| Virtual Interface extension
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. contents::
-  :local:
-  :depth: 1
-
-The nova client is an open-source Python client provides access to all public |apiservice| 
-methods. You can use the nova client to perform the following operations:
+The nova client is an open-source Python client provides access to all public
+|apiservice| methods. You can use the nova client to perform the following
+operations:
 
 #. Boot a server with isolated networks and ports.
 
 #. Attach and detach networks from servers (if the Cloud Networks
    extension is installed).
 
-The neutron client is an open-source Python client provides access to all public Rackspace 
-Network API methods. 
+The neutron client is an open-source Python client provides access to all
+public |apiservice| methods.
 
-To send requests using either client, you have to install the client and set environment 
-variables.
+To send requests using either client, you have to install the client and set
+environment variables.
 
 
 **Prerequisites for both clients**
@@ -92,153 +89,149 @@ variables.
 .. _install-nova-client:
 
 Install the nova client
-^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------
 
-You install the nova client on a Linux distribution or on Mac OS X. 
+To install the nova client, perform the following steps.
 
-.. code::
-
-     $ sudo pip install rackspace-novaclient
-     
-.. note::
-
-   If you previously installed the rackspace-novaclient package, run the following
-   command to upgrade it:
+1. Run the following commands on a Mac OS X or Linux distribution to install
+   the OpenStack and designate clients:
 
    .. code::
 
+      $ sudo pip install rackspace-novaclient
+
+  .. note::
+
+     If you previously installed the rackspace-novaclient package, run the
+     following command to upgrade it:
+
+     .. code::
+
         $ sudo pip install --upgrade rackspace-novaclient
 
-You can specify a debug parameter on any nova command to show the underlying API request 
-for the command. This is a good way to become familiar with the API requests.
+2. Export the following environment variables manually, or update your
+   ``.bash_profile`` or ``.bashrc`` files with these variables:
 
+  .. code::
 
-If you upgrade the operating system of the desktop or remote machine where you installed 
-nova, you may need to reinstall nova to ensure correct operation.
+     export OS_AUTH_URL=https://identity.api.rackspacecloud.com/v2.0/
+     export OS_AUTH_SYSTEM=rackspace
+     export OS_USERNAME=yourUserName
+     export OS_TENANT_ID=yourTenantId
+     export OS_REGION_NAME=yourRegionName
+     export OS_PASSWORD=yourAPIKey
 
-If you have trouble using pip to install the nova client, you can download a nova client 
-installation package from the python package repository at http://pypi.python.org/pypi/rackspace-novaclient/,
-use ``python-pip`` or ``yum`` commands instead of ``pip``.
+  The following table describes the environment variables:
+
+.. list-table:: **Environment variables**
+   :widths: 22 56
+   :header-rows: 1
+
+   * - Environment variable
+     - Description
+   * - OS_AUTH_URL
+     - The endpoint for the Rackspace Cloud Identity service, which the nova
+       client uses for authentication.
+   * - OS_AUTH_SYSTEM
+     - The authentication system required to get your credentials.
+   * - OS_USERNAME
+     - Your Rackspace Cloud user name.
+   * - OS_TENANT_ID
+     - Your Rackspace Cloud tenant ID (account number)
+   * - OS_REGION_NAME
+     - The regional endpoint (for example, DFW) where you want to deploy the
+       Cloud Servers resources. For details, see :ref:`service-access`.
+   * - OS_PASSWORD
+     - Your Rackspace API key.
+
+If you upgrade the operating system of the desktop or remote machine where you
+installed nova, you may need to reinstall nova to ensure correct operation.
+
+If you have trouble using pip to install the nova client, you can download a
+nova client installation package from the python package repository at
+http://pypi.python.org/pypi/rackspace-novaclient/, use ``python-pip`` or
+``yum`` commands instead of ``pip``.
+
+Run the help command to ensure that the client has installed correctly and to
+review information about using the client.
+
+.. code::
+
+   $ nova help
+
+To get help for a specific command, type the command name after the ``help``
+parameter, as follows:
+
+.. code::
+
+   $ nova help <command_name>
+
+You cannot use every command that is listed. The nova client was written for
+use with recent development versions of OpenStack, so it includes support for
+some features that are not available in the Rackspace Cloud. For a complete
+list of Openstack commands, see the
+:os-docs:`OpenStack Compute command-line client reference
+<cli-reference/content/novaclient_commands.html>`.
 
 .. _install-neutron-client:
 
 Install the neutron client
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------
 
-To install the neutron client for Ubuntu, Debian, or Mac OS X, run the following command: 
+To install the neutron client for Ubuntu, Debian, or Mac OS X, run the
+following command:
 
 .. code::
 
      $ sudo pip install rackspace-neutronclient
-     
-To install the neutron client for RHEL, CentOS, or Fedora, run the following command: 
+
+To install the neutron client for RHEL, CentOS, or Fedora, run the following
+command:
 
 .. code::
 
      $ sudo python-pip install rackspace-neutronclient
-     
+
 .. note::
 
-   If you previously installed the rackspace-novaclient package, run the following
-   command to upgrade it:
+   If you previously installed the rackspace-novaclient package, run the
+   following command to upgrade it:
 
 	For Ubuntu, Debian, or Mac OS X:
-	
+
    .. code::
 
         $ pip install --upgrade rackspace-neutronclient
-        
+
    For RHEL, CentOS, or Fedora:
-        
+
    .. code::
 
         $ python-pip install --upgrade rackspace-neutronclient
 
-You can specify a debug parameter on any neutron command to show the underlying API request 
-for the command. This is a good way to become familiar with the API requests. 
+You can specify a debug parameter on any neutron command to show the underlying
+API request for the command. This is a good way to become familiar with the API
+requests.
 
-.. _set-environment-variables:
+.. _install-virtual-int-ext:
 
-Set environment variables
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Install the Cloud Networks Virtual Interface extension
+------------------------------------------------------
 
-Edit your **bash.profile** file or **.bashrc** file to add and set environment
-variables that enable the nova and neutron clients to connect to your Rackspace
-Cloud account. Use nano, or a text editor of your choice, to edit the file.
-
-.. code::
-
-     $ nano ~/.bash_profile
-
-Add the following sets of lines to your bash profile and save the file.
-Information about the environment variables is provided after the examples.
+To attach networks to existing servers, rather than just at boot time, you need
+to install the Virtual Interface extension by using the following command:
 
 .. code::
 
-     export OS_AUTH_URL=https://identity.api.rackspacecloud.com/v2.0/
-     export OS_USERNAME=yourUserName
-     export OS_TENANT_ID=yourTenantId
-     export OS_REGION_NAME=yourRegionName
-     export OS_PASSWORD=yourPassword
-     export OS_EXECUTABLE=neutron
-     export OS_AUTH_SYSTEM=rackspace
-     export OS_AUTH_STRATEGY=rackspace
-     export OS_TENANT_NAME=yourTenantId
-     export OS_PROJECT_ID=yourTenantId
-     export OS_NO_CACHE=1
+   $ sudo pip install os_virtual_interfacesv2_python_novaclient_ext
 
-The following table describes the environment variables:
+.. note::
 
-+-----------------------+--------------------------------------------------+
-| Environment variable  | Description                                      |
-+=======================+==================================================+
-| OS_AUTH_URL           | The endpoint for the Rackspace Cloud Identity    |
-|                       | service, which the heat client uses for          |
-|                       | authentication.                                  |
-+-----------------------+--------------------------------------------------+
-| OS_USERNAME           | Your Rackspace Cloud user name.                  |
-+-----------------------+--------------------------------------------------+
-| OS_TENANT_ID          | Your Rackspace Cloud tenant ID (account number)  |
-| OS_TENANT_NAME        |                                                  |
-| OS_PROJECT_ID         |                                                  |
-+-----------------------+--------------------------------------------------+
-| OS_REGION_NAME        | The regional endpoint (for example, DFW) where   |
-|                       | you want to deploy the Cloud Servers resources.  |
-|                       | For details, see :ref:`service-access-endpoints`.|
-+-----------------------+--------------------------------------------------+
-| OS_PASSWORD           | Your Rackspace Cloud password or API key.        |
-+-----------------------+--------------------------------------------------+
-| OS_EXECUTABLE         | Enables the neutron client.                      |
-+-----------------------+--------------------------------------------------+
-| OS_AUTH_SYSTEM        | Set authentication scheme to ``rackspace``.      |
-| OS_AUTH_STRATEGY      |                                                  |
-+-----------------------+--------------------------------------------------+
-| OS_NO_CACHE           | Set the number of caches to one.                 |
-+-----------------------+--------------------------------------------------+
+   If you previously installed this package, run the following command to
+   upgrade it:
 
-Be sure to source the file containing the environment variables after editing so that the 
-new settings will take effect immediately. For example, ``source .bash_profile``.
+   .. code::
 
-Run the help command to ensure that the client has installed correctly and to review 
-information about using the client.
+      $ sudo pip install os_virtual_interfacesv2_python_novaclient_ext --upgrade
 
-.. code::
 
-     $ nova help
-     $ neutron help
-
-To get help for a specific command, type the command name after the ``help`` parameter, 
-as follows:
-
-   .. code::  
-
-       $ nova help <command_name> 
-       $ neutron help <command_name> 
-
-You cannot use every command that is listed. The clients were written for use with 
-recent development versions of OpenStack, so it includes support for some features that are 
-not available in the Rackspace Cloud. For a complete list of Openstack commands, see the 
-:os-docs:`OpenStack Compute command-line client reference
-<cli-reference/content/novaclient_commands.html>` and 
-:os-docs:`OpenStack Networking command-line client reference
-<cli-reference/content/neutronclient_commands.html>` . 

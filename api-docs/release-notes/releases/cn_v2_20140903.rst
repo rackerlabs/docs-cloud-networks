@@ -1,0 +1,52 @@
+.. _cn-v2-20140930:
+
+API |contract version| release, September 30, 2014
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The Cloud Networks service was originally released using the OpenStack
+Nova-Network API, and its operations are detailed in the
+:rax-devdocs:`Network extension
+<cloud-servers/v2/extensions/ext-network/>`.
+
+Now Rackspace Cloud Networks has been released using the OpenStack Neutron API
+|contract version|, and its operations are detailed in this guide. We recommend
+that you use the Neutron API operations even though the Nova-Network API
+operations still work. For information that helps you determine which method is
+better for you, see :ref:`Networking: neutron versus nova-network
+<neutron-vs-nova>`.
+
+What's new
+----------
+
+- A *network* is an isolated virtual layer-2 broadcast domain that is
+  typically reserved for the tenant who created it, unless the network is
+  configured to be shared. Tenants can create up to 10 networks per region.
+
+  In the Networks API |contract version|, the network is the main entity.
+  Ports and subnets are always associated with a network.
+
+- A *subnet* represents an IP address block that can be used to assign IP
+  addresses to virtual instances. Each subnet must have a CIDR and must be
+  associated with a network. IP addresses can be selected either from the
+  whole subnet CIDR or from allocation pools that can be specified by the
+  user.
+
+  A subnet can also optionally have a gateway, a list of DNS name servers, and
+  host routes. This information is pushed to the cloud servers whose ports are
+  associated with the subnet, as long as the ports or servers were created
+  after the subnet was created.
+
+- A *port* represents a virtual switch port on a logical network switch. Cloud
+  servers attach their interfaces into ports. The logical port also defines
+  the MAC address and the IP addresses, to be assigned to the interfaces that
+  are plugged into them. When IP addresses are associated with a port, the
+  port is associated with a subnet, because the IP address was taken from the
+  allocation pool for a specific subnet.
+
+Resolved issues
+---------------
+|no changes|
+
+Known issues
+------------
+|no changes|

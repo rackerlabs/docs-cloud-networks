@@ -1,14 +1,15 @@
 .. _sharing-ips-with-curl:
 
 Sharing IP Adresses with cURL
-------------------------------
+-----------------------------
 
-These sections walk you through creating a shared IP address and attaching it to two
-existing servers or two new servers by using cURL.
+These sections walk you through creating a shared IP address and attaching it
+to two existing servers or two new servers by using cURL.
 
-Once the steps are completed, there will be a shared IP address common to 2 servers in the
-control plane. However, you will still need to configure the guest on the servers, perhaps
-an application like Linux-HA to take advantage of the shared IP during a failover.
+Once the steps are completed, there will be a shared IP address common to two
+servers in the control plane. However, you will still need to configure the
+guest on the servers, perhaps an application like Linux-HA to take advantage of
+the shared IP during a failover.
 
 - **If you already have two active servers, start here:** :ref:`Verifying servers share publicIPZoneId (cURL) <si-verifying-servers-zone-curl>`
 
@@ -17,11 +18,12 @@ an application like Linux-HA to take advantage of the shared IP during a failove
 .. _si-creating-serverA-curl:
 
 Creating server A (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 Create the first server by using the standard Nova boot process.
 
-#. Issue the following cURL command, substituting your own values for the ones shown.
+#. Issue the following cURL command, substituting your own values for the ones
+   shown.
 
    **Boot server A with cURL request**
 
@@ -63,25 +65,27 @@ Create the first server by using the standard Nova boot process.
        }
 
 
-2. Copy the ``id`` value from the output. You will need this value when you performing
-   other related activities. In this example, the ID is ``f387799f-9668-4cc7-9f0f-03c9cfc43af6``,
-   but use the ID from your response.
+2. Copy the ``id`` value from the output. You will need this value when you
+   performing other related activities. In this example, the ID is
+   ``f387799f-9668-4cc7-9f0f-03c9cfc43af6``, but use the ID from your response.
 
 .. _si-getting-serverA-zone-curl:
 
 Getting server A publicIPZoneId (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In order to share a public IP address, the servers have to be in the same ``publicIPZoneId``.
-To determine the server's ``publicIPZoneId``, perform the GET server details operation and
-find the ``RAX-PUBLIC-IP-ZONE-ID:publicIPZoneId`` attribute.
+In order to share a public IP address, the servers have to be in the same
+``publicIPZoneId``. To determine the server's ``publicIPZoneId``, perform the
+GET server details operation and find the
+``RAX-PUBLIC-IP-ZONE-ID:publicIPZoneId`` attribute.
 
 ..  note::
 
-    If you want to share a Cloud Networks (or isolated network) address, the servers do not
-    need to be in the same ``publicIPZoneId``.
+    If you want to share a Cloud Networks (or isolated network) address, the
+    servers do not need to be in the same ``publicIPZoneId``.
 
-#. Issue the following cURL command, substituting your own values for the ones shown.
+#. Issue the following cURL command, substituting your own values for the ones
+   shown.
 
    **Show server A details with cURL request**
 
@@ -113,20 +117,21 @@ find the ``RAX-PUBLIC-IP-ZONE-ID:publicIPZoneId`` attribute.
        }
 
 
-#. Note the server id, in this case ``f387799f-9668-4cc7-9f0f-03c9cfc43af6``, and the
-   ``RAX-PUBLIC-IP-ZONE-ID:publicIPZoneId`` value, in this example
+#. Note the server id, in this case ``f387799f-9668-4cc7-9f0f-03c9cfc43af6``,
+   and the ``RAX-PUBLIC-IP-ZONE-ID:publicIPZoneId`` value, in this example
    ``85013d5f5100b7b903bc99c3a333d9af01ecd4b4f0df970a2c27a796``.
 
 .. _si-creating-serverB-curl:
 
 Creating server B (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following step shows you how to create server B in the same ``publicIPZoneId`` as server
-A, by using a scheduler hint to direct the service to create server B near to server A
-(``f387799f-9668-4cc7-9f0f-03c9cfc43af6``).
+The following step shows you how to create server B in the same
+``publicIPZoneId`` as server A, by using a scheduler hint to direct the service
+to create server B near to server A (``f387799f-9668-4cc7-9f0f-03c9cfc43af6``).
 
-Issue the following cURL command, substituting your own values for the ones shown.
+Issue the following cURL command, substituting your own values for the ones
+shown.
 
 **Boot server B with cURL request**
 
@@ -172,15 +177,15 @@ Issue the following cURL command, substituting your own values for the ones show
 .. _si-verifying-servers-zone-curl:
 
 Verifying servers share publicIPZoneId (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The following steps show you how to verify that both servers are in the same
 ``publicIPZoneId`` using cURL.
 
 
 #. You have already run this command for server A and noted the
-   ``RAX-PUBLIC-IP-ZONE-ID:publicIPZoneId``. Now, issue the following cURL command,
-   substituting your own Server B id for the server id in the command.
+   ``RAX-PUBLIC-IP-ZONE-ID:publicIPZoneId``. Now, issue the following cURL
+   command, substituting your own Server B id for the server id in the command.
 
    **Show server B details with cURL request**
 
@@ -208,19 +213,20 @@ The following steps show you how to verify that both servers are in the same
        }
 
 
-#. Make sure the ``RAX-PUBLIC-IP-ZONE-ID:publicIPZoneId`` value is the same for both server
-   A and server B.
+#. Make sure the ``RAX-PUBLIC-IP-ZONE-ID:publicIPZoneId`` value is the same for
+   both server A and server B.
 
 .. _si-showing-server-ports-curl:
 
 Showing server ports (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following step shows you how to boot a server by using the port ID of the port that
-you configured with dual-stack IP addresses in the second step of this procedure.
+The following step shows you how to boot a server by using the port ID of the
+port that you configured with dual-stack IP addresses in the second step of
+this procedure.
 
-#. Issue the following cURL command for server A, where the value for device_id is your
-   server A ID.
+#. Issue the following cURL command for server A, where the value for device_id
+   is your server A ID.
 
    **List server A ports with cURL request**
 
@@ -235,7 +241,8 @@ you configured with dual-stack IP addresses in the second step of this procedure
 
    **Positional arguments**
 
-   - The server A ID.  In this example, the ID is ``f387799f-9668-4cc7-9f0f-03c9cfc43af6``.
+   - The server A ID.  In this example, the ID is
+     ``f387799f-9668-4cc7-9f0f-03c9cfc43af6``.
 
    **List server A ports with cURL response**
 
@@ -294,19 +301,20 @@ you configured with dual-stack IP addresses in the second step of this procedure
 
 
 #. Note the id value for the port where the network_id is
-   ``00000000-0000-0000-0000-000000000000`` for future reference. In this example, the ID
-   is ``ad88326b-b232-45e8-9fe6-ff0618ff5de6``), but use the ID from your response.
+   ``00000000-0000-0000-0000-000000000000`` for future reference. In this
+   example, the ID is ``ad88326b-b232-45e8-9fe6-ff0618ff5de6``), but use the ID
+   from your response.
 
-#. Repeat the ``GET /ports`` command (step 1 in this procedure) for server B, and note the port
-   ID for that server's public network.
+#. Repeat the ``GET /ports`` command (step 1 in this procedure) for server B,
+   and note the port ID for that server's public network.
 
 .. _si-creating-shared-ip-curl:
 
 Creating shared IP address (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following steps show you how to create a shared IP address for the Server A and B public
-network ports identified in the previous step.
+The following steps show you how to create a shared IP address for the Server A
+and B public network ports identified in the previous step.
 
 #. Issue the following cURL command, using your port IDs and tenant ID.
 
@@ -349,17 +357,19 @@ network ports identified in the previous step.
 
 
 #. Note the new shared IP ID for future reference. In this example, the ID is
-   ``89875b4a-b098-414f-980a-5e9f89078a49``), but use the ID from your response.
+   ``89875b4a-b098-414f-980a-5e9f89078a49``), but use the ID from your
+   response.
 
 .. _si-associating-shared-ip-curl:
 
 Associating shared IP address to both servers (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following steps show you how to explicitly associate the new shared IP address to
-servers A and B.
+The following steps show you how to explicitly associate the new shared IP
+address to servers A and B.
 
-#. Issue the following cURL command, using your server A ID and shared IP address ID.
+#. Issue the following cURL command, using your server A ID and shared IP
+   address ID.
 
    **Associate IP address to server A with cURL request**
 
@@ -375,8 +385,10 @@ servers A and B.
 
    **Positional arguments**
 
-   - The server A ID. In this example, the ID is ``f387799f-9668-4cc7-9f0f-03c9cfc43af6``.
-   - The shared IP address.  In this example, the IP address is ``89875b4a-b098-414f-980a-5e9f89078a49``.
+   - The server A ID. In this example, the ID is
+     ``f387799f-9668-4cc7-9f0f-03c9cfc43af6``.
+   - The shared IP address.  In this example, the IP address is
+     ``89875b4a-b098-414f-980a-5e9f89078a49``.
 
    **Associate IP address to server A with cURL response**
 
@@ -399,7 +411,8 @@ servers A and B.
 
 #. Repeat the process for server B.
 
-   Issue the following cURL command, using your server B ID and shared IP address ID.
+   Issue the following cURL command, using your server B ID and shared IP
+   address ID.
 
    **Associate IP address to server B with cURL request**
 
@@ -414,8 +427,10 @@ servers A and B.
 
    **Positional arguments**
 
-   - The server B ID. In this example, the ID is ``1a861bf7-2a5e-40a4-acb3-1fb058cf2a74``.
-   - The shared IP address.  In this example, the IP address is ``89875b4a-b098-414f-980a-5e9f89078a49``.
+   - The server B ID. In this example, the ID is
+     ``1a861bf7-2a5e-40a4-acb3-1fb058cf2a74``.
+   - The shared IP address.  In this example, the IP address is
+     ``89875b4a-b098-414f-980a-5e9f89078a49``.
 
    **Associate IP address to server B with cURL response**
 
@@ -438,10 +453,10 @@ servers A and B.
 .. _si-verifying-shared-ip-curl:
 
 Verifying shared IP address (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following steps show you how to verify that the shared IP address is set for the Server A
-and B public network ports.
+The following steps show you how to verify that the shared IP address is set
+for the Server A and B public network ports.
 
 #. Issue the following cURL command, using your port IDs and tenant ID.
 
@@ -503,7 +518,7 @@ and B public network ports.
        }
 
 
-2. Note that both ports show up for the IP address you created. In this case, the shared
-   IP address is ``23.253.64.51`` and both ports are listed.
+2. Note that both ports show up for the IP address you created. In this case,
+   the shared IP address is ``23.253.64.51`` and both ports are listed.
 
 **Next topic:** :ref:`Control Network Access<control-access-intro>`

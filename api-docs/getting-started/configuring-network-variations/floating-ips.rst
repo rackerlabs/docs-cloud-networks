@@ -1,8 +1,7 @@
 .. _floating-ips:
 
-===========================
 Using floating IP addresses
-===========================
+---------------------------
 
 .. Important::
 
@@ -24,10 +23,6 @@ address to a floating IP address. Detailed steps are provided in this section.
 .. COMMENT **Next step:** Choose one of the following methods:
 
 **Next step:** Choose the following method:
-
-.. COMMENT  - Floating IP address with nova and neutron client <floating-ips-with-neutron>
-
--  :ref:`Floating IP address with cURL <floating-ip-with-curl>`
 
 .. COMMENT  floating-ip-neutron  {belongs below in toctree}
 

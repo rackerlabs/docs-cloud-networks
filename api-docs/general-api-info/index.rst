@@ -1,25 +1,32 @@
-.. _general-api-index:
+.. _general-api-info:
 
 =======================
 General API Information
 =======================
 
-The Cloud Networks API v2 is defined as a RESTful HTTP service that uses all aspects of the 
-HTTP protocol, including methods, URIs, media types, and response codes. To request next 
-generation Cloud Networks services, you must first issue an authentication request to the 
-Rackspace Cloud Identity Service. This section provides more information about authentication, 
-cURL, and filtering and pagination of requests. 
+The information in this section is relevant to all operations of the API.
+For details about specific operations, see the
+:ref:`API reference <api-reference>`.
 
-The API v2 supports JSON request and response formats.
+The |apiservice| is implemented using a RESTful web
+service interface. Like other Rackspace Cloud services, this service
+shares a common token-based authentication system that allows seamless
+access between products and services.
+
+
+.. note::
+
+    All requests to authenticate and operate the service are performed using
+    HTTPS on TCP port 443. For authentication instructions, see
+    :ref:`Authenticate to the Rackspace Cloud <authenticate-to-cloud>`.
 
 .. toctree::
-   :maxdepth: 2
-   
-   authenticate-ovw
-   service-access-endpoints
+   :maxdepth: 1
+
+   service-access
    request-response-types
-   role-based-access-control
-   filtering-requests
-   pagination
-   date-time-format
+   paginated-collections
    quotas
+   filtering-requests
+   date-time-format
+   role-based-access-control

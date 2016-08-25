@@ -1,27 +1,31 @@
 .. _sharing-ips-with-neutron:
 
 Sharing IP Adresses with  with neutron
----------------------------------------
+--------------------------------------
 
-These sections walk you through creating a shared IP address and attaching it to two
-existing servers or two new servers by using cURL.
+These sections walk you through creating a shared IP address and attaching it
+to two existing servers or two new servers by using cURL.
 
-Once the steps are completed, there will be a shared IP address common to 2 servers in the
-control plane. However, you will still need to configure the guest on the servers, perhaps
-an application like Linux-HA to take advantage of the shared IP during a failover.
+Once the steps are completed, there will be a shared IP address common to two
+servers in the control plane. However, you will still need to configure the
+guest on the servers, perhaps an application like Linux-HA to take advantage of
+the shared IP during a failover.
 
-- **If you already have two active servers, start here:** :ref:`Verifying servers share publicIPZoneId (neutron) <si-verifying-servers-zone-nova>`
+- **If you already have two active servers, start here:**
+  :ref:`Verifying servers share publicIPZoneId (neutron) <si-verifying-servers-zone-nova>`
 
-- **If you need to create servers, start here:** :ref:`Creating server A (neutron) <si-creating-serverA-nova>`
+- **If you need to create servers, start here:**
+  :ref:`Creating server A (neutron) <si-creating-serverA-nova>`
 
 .. _si-creating-serverA-nova:
 
 Creating server A (nova client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Create the first server by using the standard Nova boot process.
 
-#. Issue the following nova client command, substituting your values for the ones shown.
+#. Issue the following nova client command, substituting your values for the
+   ones shown.
 
    **Boot server A with nova request**
 
@@ -33,7 +37,8 @@ Create the first server by using the standard Nova boot process.
 
    -  The server name. In this example, we used ``serverA``.
 
-   -  The image id. In this example, we used ``2f85a777-9ffd-4b49-a60e-1155ceb93a5e``.
+   -  The image id. In this example, we used
+      ``2f85a777-9ffd-4b49-a60e-1155ceb93a5e``.
 
    -  `The flavor id. In this example, we used ``4``.
 
@@ -68,23 +73,24 @@ Create the first server by using the standard Nova boot process.
        +------------------------+----------------------------------------------------------------------------+
 
 
-#. Copy the ``id`` value from the output. You will need this value when you performing
-   other related activities. In this example, the ID is ``079f53a4-6947-4895-b9b4-df81e534840b``,
-   but use the ID from your response.
+#. Copy the ``id`` value from the output. You will need this value when you
+   performing other related activities. In this example, the ID is
+   ``079f53a4-6947-4895-b9b4-df81e534840b``, but use the ID from your response.
 
 .. _si-getting-serverA-zone-nova:
 
 Getting server A publicIPZoneId (nova client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In order to share a public IP address, the servers have to be in the same ``publicIPZoneId``.
-To determine the server's ``publicIPZoneId``, use the GET server details operation and
-find the ``RAX-PUBLIC-IP-ZONE-ID:publicIPZoneId`` attribute.
+In order to share a public IP address, the servers have to be in the same
+``publicIPZoneId``. To determine the server's ``publicIPZoneId``, use the GET
+server details operation and find the ``RAX-PUBLIC-IP-ZONE-ID:publicIPZoneId``
+attribute.
 
 ..  note::
 
-    If you want to share a Cloud Networks (or isolated network) address, the servers do not
-    need to be in the same ``publicIPZoneId``.
+    If you want to share a Cloud Networks (or isolated network) address, the
+    servers do not need to be in the same ``publicIPZoneId``.
 
 1. Issue the following nova command, substituting your value for the one shown.
 
@@ -96,7 +102,8 @@ find the ``RAX-PUBLIC-IP-ZONE-ID:publicIPZoneId`` attribute.
 
    **Positional arguments:**
 
-   -  The server ID. In this example, we used the server ID ``079f53a4-6947-4895-b9b4-df81e534840b``.
+   -  The server ID. In this example, we used the server ID
+      ``079f53a4-6947-4895-b9b4-df81e534840b``.
 
    **Show server A details with nova response**
 
@@ -130,7 +137,8 @@ find the ``RAX-PUBLIC-IP-ZONE-ID:publicIPZoneId`` attribute.
        | user_id                              | 132156                                                                     |
        +--------------------------------------+----------------------------------------------------------------------------+
 
-2. Note both the server id, in this case ``079f53a4-6947-4895-b9b4-df81e534840b``, the
+2. Note both the server id, in this case
+   ``079f53a4-6947-4895-b9b4-df81e534840b``, the
    ``RAX-PUBLIC-IP-ZONE-ID:publicIPZoneId`` value, in this example
    ``85013d5f5100b7b903bc99c3a333d9af01ecd4b4f0df970a2c27a796``, and the
    ``public network`` IP address value, in this example ``166.78.156.244``.
@@ -138,12 +146,14 @@ find the ``RAX-PUBLIC-IP-ZONE-ID:publicIPZoneId`` attribute.
 .. _si-creating-serverB-nova:
 
 Creating server B (nova client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following step shows you how to create server B in the same ``publicIPZoneId`` as server
-A, by using a scheduler hint to direct the service to create server B near to server A.
+The following step shows you how to create server B in the same
+``publicIPZoneId`` as server A, by using a scheduler hint to direct the service
+to create server B near to server A.
 
-Issue the following nova client command, substituting your values for the ones shown.
+Issue the following nova client command, substituting your values for the ones
+shown.
 
 **Boot server B with nova request**
 
@@ -157,10 +167,12 @@ Issue the following nova client command, substituting your values for the ones s
 
 -  The server name for the new server. In this example, we used ``serverB``.
 
--  ``hint public_ip_zone:near``. The server id of the old server (near to which you want
-   the new server built). In this example, we used ``079f53a4-6947-4895-b9b4-df81e534840b``.
+-  ``hint public_ip_zone:near``. The server id of the old server (near to which
+   you want the new server built). In this example, we used
+   ``079f53a4-6947-4895-b9b4-df81e534840b``.
 
--  The image id. In this example, we used ``2f85a777-9ffd-4b49-a60e-1155ceb93a5e``.
+-  The image id. In this example, we used
+   ``2f85a777-9ffd-4b49-a60e-1155ceb93a5e``.
 
 -  The flavor id. In this example, we used ``4``.
 
@@ -195,15 +207,15 @@ Issue the following nova client command, substituting your values for the ones s
 .. _si-verifying-servers-zone-nova:
 
 Verifying servers share publicIPZoneId (nova client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The following steps show you how to verify that both servers are in the same
 ``publicIPZoneId`` using cURL.
 
 
 1. You have already run this command for server A and noted the
-   ``RAX-PUBLIC-IP-ZONE-ID:publicIPZoneId``. Now, issue the following nova command,
-   substituting your own Server B id for the server id in the command.
+   ``RAX-PUBLIC-IP-ZONE-ID:publicIPZoneId``. Now, issue the following nova
+   command, substituting your own Server B id for the server id in the command.
 
    **Show server B details with nova request**
 
@@ -248,20 +260,21 @@ The following steps show you how to verify that both servers are in the same
        | user_id                              | 132156                                                                     |
        +--------------------------------------+----------------------------------------------------------------------------+
 
-2. Make sure the ``RAX-PUBLIC-IP-ZONE-ID:publicIPZoneId`` value is the same for both server
-   A and server B. Also, make note of the ``public network`` IP address, which is
-   ``166.78.156.196`` in this case.
+2. Make sure the ``RAX-PUBLIC-IP-ZONE-ID:publicIPZoneId`` value is the same for
+   both server A and server B. Also, make note of the ``public network`` IP
+   address, which is ``166.78.156.196`` in this case.
 
 .. _si-showing-server-ports-neutron:
 
 Showing server ports (neutron client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following step shows you how to boot a server by using the port ID of the port that
-you configured with dual-stack IP addresses in the second step of this procedure.
+The following step shows you how to boot a server by using the port ID of the
+port that you configured with dual-stack IP addresses in the second step of
+this procedure.
 
-1. Issue the following neutron client command for server A, substituting your value for the
-   one shown.
+1. Issue the following neutron client command for server A, substituting your
+   value for the one shown.
 
    **List server A ports with neutron request**
 
@@ -289,13 +302,13 @@ you configured with dual-stack IP addresses in the second step of this procedure
 .. _si-creating-shared-ip-neutron:
 
 Creating shared IP address (neutron client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following steps show you how to create a shared IP address for the Server A and B public
-network ports identified in the previous step.
+The following steps show you how to create a shared IP address for the Server A
+and B public network ports identified in the previous step.
 
-#. Issue the following neutron client command for server A, substituting your value for the
-   one shown.
+#. Issue the following neutron client command for server A, substituting your
+   value for the one shown.
 
    **Create IP address with neutron request**
 
@@ -307,11 +320,13 @@ network ports identified in the previous step.
 
    **Positional arguments:**
 
-   -  ``port-id``. This parameter occurs twice, once with server A's port ID and once with
-      server B's port ID. In this example, we used the port IDs
-      ``7e504ba5-7802-4ae7-88a1-5b4bc03f2540`` and ``7af9f379-1395-458c-aa55-9356156dab10``.
+   -  ``port-id``. This parameter occurs twice, once with server A's port ID
+      and once with server B's port ID. In this example, we used the port IDs
+      ``7e504ba5-7802-4ae7-88a1-5b4bc03f2540`` and
+      ``7af9f379-1395-458c-aa55-9356156dab10``.
    -  ``tenant-id``. The tenant-id. In this case, we used ``661919``.
-   -  The publicnet ID, which is always ``00000000-0000-0000-0000-000000000000``.
+   -  The publicnet ID, which is always
+      ``00000000-0000-0000-0000-000000000000``.
    -  The IP version. In this case, we used ``4``.
 
    **Create IP address with neutron response**
@@ -333,17 +348,19 @@ network ports identified in the previous step.
        +------------+--------------------------------------+
 
 #. Note the new shared IP ID for future reference. In this example, the ID is
-   ``25fce49c-955f-4ec4-944a-b03152540b74``), but use the ID from your response.
+   ``25fce49c-955f-4ec4-944a-b03152540b74``), but use the ID from your
+   response.
 
 .. _si-associating-shared-ip-nova:
 
 Associating shared IP address to both servers (nova client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following steps show you how to explicitly associate the new shared IP address to
-servers A and B.
+The following steps show you how to explicitly associate the new shared IP
+address to servers A and B.
 
-1. Issue the following nova command, using your server A ID and shared IP address ID.
+1. Issue the following nova command, using your server A ID and shared IP
+   address ID.
 
    **Associate IP address with Server A with neutron request**
 
@@ -354,9 +371,10 @@ servers A and B.
 
    **Positional arguments:**
 
-   -  The server A ID. In this example, we used ``079f53a4-6947-4895-b9b4-df81e534840b``.
-   -  The ID for shared IP address (not the IP address itself). In this  example, we used
-      ``25fce49c-955f-4ec4-944a-b03152540b74``.
+   -  The server A ID. In this example, we used
+      ``079f53a4-6947-4895-b9b4-df81e534840b``.
+   -  The ID for shared IP address (not the IP address itself). In this
+      example, we used ``25fce49c-955f-4ec4-944a-b03152540b74``.
 
    **Associate IP address with Server A with neutron response**
 
@@ -371,7 +389,8 @@ servers A and B.
 
 2. Repeat the process for server B.
 
-   Issue the following nova command, using your server B ID and shared IP address ID.
+   Issue the following nova command, using your server B ID and shared IP
+   address ID.
 
    **Associate IP address with Server B with neutron request**
 
@@ -382,9 +401,10 @@ servers A and B.
 
    **Positional arguments:**
 
-   -  The server B ID. In this example, we used ``5fe1fcf9-f7b2-4b94-b36f-f154a3075f8e``.
-   -  The ID for shared IP address (not the IP address itself). In this example, we used
-      ``25fce49c-955f-4ec4-944a-b03152540b74``.
+   -  The server B ID. In this example, we used
+      ``5fe1fcf9-f7b2-4b94-b36f-f154a3075f8e``.
+   -  The ID for shared IP address (not the IP address itself). In this
+      example, we used ``25fce49c-955f-4ec4-944a-b03152540b74``.
 
    **Associate IP address with Server B with neutron response**
 
@@ -400,10 +420,10 @@ servers A and B.
 .. _si-verifying-shared-ip-neutron:
 
 Verifying shared IP address (neutron client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following steps show you how to verify that the shared IP address is set for the Server A
-and B public network ports.
+The following steps show you how to verify that the shared IP address is set
+for the Server A and B public network ports.
 
 #. **List IP addresses with neutron request**
 
@@ -426,8 +446,9 @@ and B public network ports.
 
 
 
-2. Notice that the ID of the shared IP address, in this case ``25fce49c-955f-4ec4-944a-b03152540b74``,
-   has two ports in the ``port_id`` column. This means the IP address association to both
-   servers was successful.
+2. Notice that the ID of the shared IP address, in this case
+   ``25fce49c-955f-4ec4-944a-b03152540b74``, has two ports in the ``port_id``
+   column. This means the IP address association to both servers was
+   successful.
 
 **Next topic:** :ref:`Control Network Access<control-access-intro>`

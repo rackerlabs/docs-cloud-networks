@@ -1,36 +1,41 @@
-Request/Response Types
------------------------
+.. _req-resp-types:
 
-API v2 supports JSON data serialization request and response format.
+==========================
+Request and response types
+==========================
 
-You specify the request format in the ``Content-Type`` header in the
-request. This header is required for operations that have a request
-body. The syntax for the ``Content-Type`` header is:
+The |apiservice| supports JSON data serialization format.
+
+The request format is specified by using the ``Content-Type`` header and is
+required for operations that have a request body.
+
+The syntax for the ``Content-Type`` header is:
 
 .. code::
 
-    Content-Type: application/format
+    Content-Type: application/json
 
-Where ``format`` is ``json``.
+The response format can be specified in requests either by using the ``Accept``
+header or adding a ``.json`` extension to the request URI. A response  can be
+serialized using a format that is different from the request. If no response
+format is specified, JSON is the default. If conflicting formats are specified
+by using both an ``Accept`` header and a query extension, the query extension
+takes precedence.
 
-You specify the response format by using one of the following methods:
+You specify a json response format by using one of the following methods:
 
 -  ``Accept`` header. The syntax for the ``Accept`` header is::
 
-       Accept: application/format
+       Accept: application/json
 
-   Where ``format`` is ``json``.
-
-   Default is ``json``.
-
--  Query extension. Add the ``.json`` extension to the
-   request URI. For example, the ``.json`` extension in the following URI
-   request specifies that the response body is returned in JSON format:
+-  Query extension. Add the ``.json`` extension to the  request URI. For
+   example, the ``.json`` extension in the following URI request specifies that
+   the response body is returned in JSON format.
 
    .. code::
 
       POST /v2/010101/servers.json
 
 If you do not specify a response format, JSON is the default.
-   
+
 

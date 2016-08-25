@@ -18,7 +18,7 @@ the floating IP address.
 .. _fi-creating-network-curl:
 
 Creating network (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^
 
 Create the network.
 
@@ -61,7 +61,7 @@ Create the network.
 .. _fi-creating-subnet-curl:
 
 Creating subnet (cURL)
-~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^
 
 Create the subnet for the network with a ``gateway_ip`` and an
 ``allocation pool`` with ``start`` and ``end`` values for the pool. The gateway
@@ -123,7 +123,7 @@ serve traffic.
 .. _fi-creating-server-curl:
 
 Creating or preparing a server (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you already have a server, remove the public interface as shown in step 1.
 If you do not have a server, create one without a public interface as shown in
@@ -290,7 +290,7 @@ step 2.
 .. _fi-allocate-floating-ip-curl:
 
 Allocate floating IP address (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The following step shows you how to allocate a Floating IP and associate it
 with the port on the Cloud Server instance connected to the Cloud Network.

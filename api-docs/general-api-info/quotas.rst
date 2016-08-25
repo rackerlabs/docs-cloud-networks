@@ -1,8 +1,8 @@
 .. _serviceQuotas:
 
-======================
+======
 Quotas
-======================
+======
 
 In the |apiservice|, the following resource quotas apply per region.
 

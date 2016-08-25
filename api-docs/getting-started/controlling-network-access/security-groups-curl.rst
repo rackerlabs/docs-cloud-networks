@@ -3,16 +3,18 @@
 Using security groups and rules with cURL
 -----------------------------------------
 
-This section provides steps for creating, using, and modifying security groups and rules by using cURL.
+This section provides steps for creating, using, and modifying security groups
+and rules by using cURL.
 
 .. _sg-creating-group-curl:
 
 Creating a security group (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The following steps show you how to create a security group.
 
-#. Issue the following cURL command, substituting your own values for the ones shown.
+#. Issue the following cURL command, substituting your own values for the ones
+   shown.
 
    **Create security group with cURL request**
 
@@ -42,17 +44,17 @@ The following steps show you how to create a security group.
        }
 
 
-#. Note the security group ``id`` value from the output. You will use this value in later
-   activities. In this example, the ID is ``fd269d7a-0909-488f-b5fc-5606c8aa489f``, but
-   use the ID from your response.
+#. Note the security group ``id`` value from the output. You will use this
+   value in later activities. In this example, the ID is
+   ``fd269d7a-0909-488f-b5fc-5606c8aa489f``, but use the ID from your response.
 
 .. _sg-adding-ssh-rule-curl:
 
 Adding a rule for SSH traffic (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-First, add a rule for SSH traffic to the security group. Then verify the rule, and ensure
-that the security group contains the rule.
+First, add a rule for SSH traffic to the security group. Then verify the rule,
+and ensure that the security group contains the rule.
 
 #. To add the rule, issue the following cURL command, substituting your
    own values for the ones shown.
@@ -92,9 +94,9 @@ that the security group contains the rule.
        }
 
 
-#. Note the security group rule ``id`` value from the output. You will need this value for
-   verification. In this example, the ID is ``ea794fe0-5f82-4b4e-8c38-7ab5d278973a``, but
-   use the ID from your response.
+#. Note the security group rule ``id`` value from the output. You will need
+   this value for verification. In this example, the ID is
+   ``ea794fe0-5f82-4b4e-8c38-7ab5d278973a``, but use the ID from your response.
 
 #. To see the rule, issue the following cURL command.
 
@@ -131,8 +133,8 @@ that the security group contains the rule.
        }
 
 
-#. Notice that your new rule, ``ea794fe0-5f82-4b4e-8c38-7ab5d278973a`` in this example, is
-   included in the list of rules.
+#. Notice that your new rule, ``ea794fe0-5f82-4b4e-8c38-7ab5d278973a`` in this
+   example, is included in the list of rules.
 
 #. To see the rule in your group, issue the following cURL command.
 
@@ -177,16 +179,17 @@ that the security group contains the rule.
        }
 
 
-#. Notice that your group, ``fd269d7a-0909-488f-b5fc-5606c8aa489f``, contains your new
-   rule, ``ea794fe0-5f82-4b4e-8c38-7ab5d278973a`` in this example.
+#. Notice that your group, ``fd269d7a-0909-488f-b5fc-5606c8aa489f``, contains
+   your new rule, ``ea794fe0-5f82-4b4e-8c38-7ab5d278973a`` in this example.
 
 .. _sg-finding-port-curl:
 
 Finding the port to use on the server (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-First, display your server details to find the port IP address. Then find the port ID for
-that port IP address. You need the port ID to apply the security group to the server port.
+First, display your server details to find the port IP address. Then find the
+port ID for that port IP address. You need the port ID to apply the security
+group to the server port.
 
 
 #. To list server details, issue the following cURL command,
@@ -205,8 +208,8 @@ that port IP address. You need the port ID to apply the security group to the se
 
    **Positional arguments:**
 
-   -  The ID of the server to which you want to add the security group. In this example,
-      the server ID is ``6ae4be93-4ec7-4b55-897a-c250f3a6e161``.
+   -  The ID of the server to which you want to add the security group. In this
+      example, the server ID is ``6ae4be93-4ec7-4b55-897a-c250f3a6e161``.
 
    **List server details with cURL response**
 
@@ -282,12 +285,12 @@ that port IP address. You need the port ID to apply the security group to the se
            }
        }
 
-#. Because you will apply the security group to the PublicNet port, note the public IP
-   address (``addr``) value from the output. In this example, the IP address is
-   ``10.22.253.123``, but use the IP address from your response.
+#. Because you will apply the security group to the PublicNet port, note the
+   public IP address (``addr``) value from the output. In this example, the IP
+   address is ``10.22.253.123``, but use the IP address from your response.
 
-#. To find the port ID that corresponds to the port IP address, issue the following cURL
-   command.
+#. To find the port ID that corresponds to the port IP address, issue the
+   following cURL command.
 
    **List ports with cURL request**
 
@@ -357,12 +360,14 @@ that port IP address. You need the port ID to apply the security group to the se
 .. _sg-applying-ssh-to-port-curl:
 
 Applying security group with SSH rule to a port on the server (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-First, apply the security group to the server port. Then test the security group rule.
+First, apply the security group to the server port. Then test the security
+group rule.
 
-#. To apply the group (in this example ``fd269d7a-0909-488f-b5fc-5606c8aa489f``) to the
-   port, issue the following cURL command, substituting your port ID for the one shown.
+#. To apply the group (in this example
+   ``fd269d7a-0909-488f-b5fc-5606c8aa489f``) to the port, issue the following
+   cURL command, substituting your port ID for the one shown.
 
    **Apply security group to port with cURL request**
 
@@ -379,8 +384,8 @@ First, apply the security group to the server port. Then test the security group
 
    **Positional argument:**
 
-   -  The port ID to which the security group is attached. In this example, the port ID is
-      ``9dd49b03-956d-4cd5-ae23-6dbf89b76aeb``.
+   -  The port ID to which the security group is attached. In this example, the
+      port ID is ``9dd49b03-956d-4cd5-ae23-6dbf89b76aeb``.
 
    **Apply security group to port with cURL response**
 
@@ -413,12 +418,13 @@ First, apply the security group to the server port. Then test the security group
            }
        }
 
-#. Notice that your security group, in this example ``fd269d7a-0909-488f-b5fc-5606c8aa489f``,
-   is listed in the port details, meaning it was successfully applied.
+#. Notice that your security group, in this example
+   ``fd269d7a-0909-488f-b5fc-5606c8aa489f``, is listed in the port details,
+   meaning it was successfully applied.
 
-#. Test the port by pinging the IP address. This test will fail, as the following example
-   shows, because the rule that was applied does not permit ICMP traffic. You will add a
-   rule for ICMP traffic in the next steps!
+#. Test the port by pinging the IP address. This test will fail, as the
+   following example shows, because the rule that was applied does not permit
+   ICMP traffic. You will add a rule for ICMP traffic in the next steps!
 
    .. code::
 
@@ -430,13 +436,13 @@ First, apply the security group to the server port. Then test the security group
 .. _sg-adding-icmp-rule-curl:
 
 Adding a rule for ICMP traffic (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-First, add a rule for ICMP traffic to the security group. Then verify the rule, and ensure
-that the security group contains the rule.
+First, add a rule for ICMP traffic to the security group. Then verify the rule,
+and ensure that the security group contains the rule.
 
-#. To add the rule, issue the following cURL command, substituting your own values for the
-   ones shown.
+#. To add the rule, issue the following cURL command, substituting your own
+   values for the ones shown.
 
    **Add ICMP rule with cURL request**
 
@@ -474,9 +480,9 @@ that the security group contains the rule.
        }
 
 
-#. Note the security group rule ``id`` value from the output. You will need this value for
-   verification. In this example, the ID is ``483b107a-dbf8-41a9-8494-f47558b58524``, but
-   use the ID from your response.
+#. Note the security group rule ``id`` value from the output. You will need
+   this value for verification. In this example, the ID is
+   ``483b107a-dbf8-41a9-8494-f47558b58524``, but use the ID from your response.
 
 #. To see the rule, issue the following cURL command.
 
@@ -524,8 +530,8 @@ that the security group contains the rule.
            ]
        }
 
-#. Notice that your new rule, ``483b107a-dbf8-41a9-8494-f47558b58524`` in this example, is
-   included in the list of rules.
+#. Notice that your new rule, ``483b107a-dbf8-41a9-8494-f47558b58524`` in this
+   example, is included in the list of rules.
 
 #. To see the rule in your group, issue the following cURL command.
 
@@ -588,12 +594,14 @@ that the security group contains the rule.
 .. _sg-applying-icmp-to-port-curl:
 
 Applying security group with ICMP rule to the port on the server (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-First, apply the security group to the server port. Then test the security group rule.
+First, apply the security group to the server port. Then test the security
+group rule.
 
-#. To apply the group, in this example ``fd269d7a-0909-488f-b5fc-5606c8aa489f``, to the
-   port, issue the following cURL command, substituting your port ID for the one shown.
+#. To apply the group, in this example
+   ``fd269d7a-0909-488f-b5fc-5606c8aa489f``, to the port, issue the following
+   cURL command, substituting your port ID for the one shown.
 
    **Apply security group to port with cURL request**
 
@@ -610,8 +618,8 @@ First, apply the security group to the server port. Then test the security group
 
    **Positional argument:**
 
-   -  The port ID to which the security group is attached. In this example, the port ID is
-      ``9dd49b03-956d-4cd5-ae23-6dbf89b76aeb``.
+   -  The port ID to which the security group is attached. In this example, the
+      port ID is ``9dd49b03-956d-4cd5-ae23-6dbf89b76aeb``.
 
 
    **Apply security group to port with cURL response**
@@ -645,11 +653,13 @@ First, apply the security group to the server port. Then test the security group
            }
        }
 
-#. Notice that your security group, in this example ``fd269d7a-0909-488f-b5fc-5606c8aa489f``,
-   is listed in the port details, meaning it was successfully applied.
+#. Notice that your security group, in this example
+   ``fd269d7a-0909-488f-b5fc-5606c8aa489f``, is listed in the port details,
+   meaning it was successfully applied.
 
-#. Test the port by pinging the IP address. This test will succeed, as the following example
-   shows, because the rule applied explicitly permits ICMP traffic.
+#. Test the port by pinging the IP address. This test will succeed, as the
+   following example shows, because the rule applied explicitly permits ICMP
+   traffic.
 
    .. code::
 

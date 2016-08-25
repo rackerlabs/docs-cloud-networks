@@ -1,17 +1,17 @@
 .. _configuring-host-routes-with-curl:
 
 Configuring host routes with cURL
------------------------------------
+---------------------------------
 
 These sections walk you through configuring host routes by using cURL.
 
 .. _chr-creating-network-curl:
 
 Creating a network (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-After you create a network, copy its network ID. You use this ID to create a subnet and
-boot the server.
+After you create a network, copy its network ID. You use this ID to create a
+subnet and boot the server.
 
 #. **Create network with cURL request**
 
@@ -41,19 +41,21 @@ boot the server.
           }
        }
 
-#. Copy the ``id`` value from the output. You will use this value when you create a subnet,
-   provision your server, or perform other related activities. In this example, the ID is
-   ``a8fde776-e80f-47bb-a050-0c057d89afc3``, but use the ID from your response.
+#. Copy the ``id`` value from the output. You will use this value when you
+   create a subnet, provision your server, or perform other related activities.
+   In this example, the ID is ``a8fde776-e80f-47bb-a050-0c057d89afc3``, but use
+   the ID from your response.
 
 .. _chr-creating-subnet-curl:
 
 Creating a subnet with host routes (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To create a subnet with host routes, you specify a network, an IP address, allocation pools,
-and host routes for your subnet.
+To create a subnet with host routes, you specify a network, an IP address,
+allocation pools, and host routes for your subnet.
 
-#. Issue the following cURL command, substituting your own values for the ones shown.
+#. Issue the following cURL command, substituting your own values for the ones
+   shown.
 
    **Create subnet with cURL request**
 
@@ -110,13 +112,13 @@ and host routes for your subnet.
        | tenant_id        | 5831008                                                   |
        +------------------+-----------------------------------------------------------+
 
-#. Note the host_routes attribute with the destination of ``1.1.1.0/24`` and the nexthop
-   of ``192.168.5.254``.
+#. Note the host_routes attribute with the destination of ``1.1.1.0/24`` and
+   the nexthop of ``192.168.5.254``.
 
 .. _chr-booting-server-curl:
 
 Booting a Server (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note::
 
@@ -127,7 +129,8 @@ Booting a Server (cURL)
    -  The flavor ID.
    -  The network ID of the network, which is ``net-id=a8fde776-e80f-47bb-a050-0c057d89afc3``.
 
-#. Issue the following cURL command, substituting your own values for the ones shown.
+#. Issue the following cURL command, substituting your own values for the ones
+   shown.
 
     **Boot server with cURL request**
 
@@ -171,18 +174,21 @@ Booting a Server (cURL)
        }
 
 
-#. Copy the ``id`` value from the output for future reference. In this example, the ID is
-   ``a1061a57-0136-4c29-aac1-8b1a646a3001``, but use the ID from your response.
+#. Copy the ``id`` value from the output for future reference. In this example,
+   the ID is ``a1061a57-0136-4c29-aac1-8b1a646a3001``, but use the ID from your
+   response.
 
 .. _chr-verifying-ip-on-port-curl:
 
 Verifying the IP on the server port (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following step shows you how to verify the IP address on the server port. In this case,
-the IP address should be ``192.168.5.3`` from the start of the allocation pool.
+The following step shows you how to verify the IP address on the server port.
+In this case, the IP address should be ``192.168.5.3`` from the start of the
+allocation pool.
 
-#. Issue the following cURL command, substituting your own values for the ones shown.
+#. Issue the following cURL command, substituting your own values for the ones
+   shown.
 
    **Show server details with cURL request**
 
@@ -280,18 +286,19 @@ the IP address should be ``192.168.5.3`` from the start of the allocation pool.
        }
 
 
-#. Note the IP address on the ``public`` interface (in this case, ``10.23.233.124``). Use
-   this to log in to the server in the next step.
+#. Note the IP address on the ``public`` interface (in this case,
+   ``10.23.233.124``). Use this to log in to the server in the next step.
 
 .. _chr-logging-in-to-server-sshcurl:
 
 Logging in to the server and verify the route (ssh)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following steps show you how to log in to the server and verify that the host route is
-configured correctly by using the command line.
+The following steps show you how to log in to the server and verify that the
+host route is configured correctly by using the command line.
 
-#. Issue the following command at the prompt, substituting your own values for the ones shown:
+#. Issue the following command at the prompt, substituting your own values for
+   the ones shown:
 
    .. code::
 
@@ -333,4 +340,5 @@ configured correctly by using the command line.
    preceding output. That is what was expected.
 
 
-**Next topic:** :ref:`Provisioning additional IP address and dual-stack IP addresses on an isolated network port<provisioning-port-ips>`
+**Next topic:** :ref:`Provisioning additional IP address and dual-stack IP
+addresses on an isolated network port<provisioning-port-ips>`

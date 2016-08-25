@@ -1,18 +1,19 @@
 .. _provisioning-port-ips-with-curl:
 
 Provisioning a port with additional IP and dual-stack IPs with cURL
---------------------------------------------------------------------
+-------------------------------------------------------------------
 
-These sections walk you through provisioning an additional IP and dual-stack (v4 and v6)
-IP addresses on an isolated network port by using cURL.
+These sections walk you through provisioning an additional IP and dual-stack
+(v4 and v6) IP addresses on an isolated network port by using cURL.
 
 .. _ppi-showing-port-curl:
 
 Showing a port with an IPv6 address (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 First, look at your port with an IPv6 IP address. In this example, note the
-fixed_ips ip_address of ``fc01::7``, which is an IPv6 address in hexadecimal format.
+fixed_ips ip_address of ``fc01::7``, which is an IPv6 address in hexadecimal
+format.
 
 #. **List ports with cURL request**
 
@@ -54,17 +55,19 @@ fixed_ips ip_address of ``fc01::7``, which is an IPv6 address in hexadecimal for
 
 
 #. Note the id value for future reference. In this example, the ID is
-   ``79bf47e2-5107-4d93-b9c3-b78ddbc94c93``), but use the ID from your response.
+   ``79bf47e2-5107-4d93-b9c3-b78ddbc94c93``), but use the ID from your
+   response.
 
 .. _ppi-getting-cidr-curl:
 
 Getting the IPv4 CIDR for the network (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Now, note the IPv4 CIDR on the same network as the IPv6 CIDR. You should have already
-created this subnet on the same network. If you have not done so, create an IPv4 subnet
-(**POST /subnets**) on the same network. Because this example assumes that the subnet has
-already been created, run the following command and note the CIDR to identify the IPv4 address.
+Now, note the IPv4 CIDR on the same network as the IPv6 CIDR. You should have
+already created this subnet on the same network. If you have not done so,
+create an IPv4 subnet (**POST /subnets**) on the same network. Because this
+example assumes that the subnet has already been created, run the following
+command and note the CIDR to identify the IPv4 address.
 
 #. **List subnets with cURL request**
 
@@ -105,21 +108,22 @@ already been created, run the following command and note the CIDR to identify th
        }
 
 
-#. Note the network_id and CIDR values for future reference. In this example, the
-   network_id is ``03f240c5-6fb8-47a0-860a-c7ba83be519f`` and the CIDR is
+#. Note the network_id and CIDR values for future reference. In this example,
+   the network_id is ``03f240c5-6fb8-47a0-860a-c7ba83be519f`` and the CIDR is
    ``192.168.7.0/24``, but use the values from your response.
 
 .. _ppi-adding-ip-to-port-curl:
 
 Adding an IPv4 address on the same port (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To add an IPv4 address on the same port, update the IPv6 port with the existing IPv6 IP
-address, the subnet's IPv4 ID, and the IP address from the subnet's IPv4 CIDR. In this
-example, the IPv4 IP address is ``192.168.7.250`` and the subnet_id is
-``321caa1c-2105-4186-b53b-366fa623c09a``.
+To add an IPv4 address on the same port, update the IPv6 port with the existing
+IPv6 IP address, the subnet's IPv4 ID, and the IP address from the subnet's
+IPv4 CIDR. In this example, the IPv4 IP address is ``192.168.7.250`` and the
+subnet_id is ``321caa1c-2105-4186-b53b-366fa623c09a``.
 
-Issue the following cURL command, using the port ID from the preceding step in the URI.
+Issue the following cURL command, using the port ID from the preceding step in
+the URI.
 
 **Update port with cURL request**
 
@@ -148,7 +152,8 @@ Issue the following cURL command, using the port ID from the preceding step in t
 
 **Positional arguments**
 
-- The port ID.  In this example, the ID is ``79bf47e2-5107-4d93-b9c3-b78ddbc94c93``.
+- The port ID.  In this example, the ID is
+  ``79bf47e2-5107-4d93-b9c3-b78ddbc94c93``.
 
 *Update port with cURL response**
 
@@ -184,7 +189,7 @@ Issue the following cURL command, using the port ID from the preceding step in t
 .. _ppi-showing-port-again-curl:
 
 Showing the port with both IP addresses (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The following step shows you how to show port details to verify that
 both IPv4 and IPv6 IP addresses are configured by using cURL.
@@ -240,12 +245,14 @@ both IPv4 and IPv6 IP addresses are configured by using cURL.
 .. _ppi-booting-server-curl:
 
 Booting a Server (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^
 
-The following step shows you how to boot a server by using the port ID of the port that
-you configured with dual-stack IP addresses in the second step of this procedure.
+The following step shows you how to boot a server by using the port ID of the
+port that you configured with dual-stack IP addresses in the second step of
+this procedure.
 
-#. Issue the following cURL command, substituting your own values for the ones shown:
+#. Issue the following cURL command, substituting your own values for the ones
+   shown:
 
    **Boot server with cURL request**
 
@@ -290,16 +297,18 @@ you configured with dual-stack IP addresses in the second step of this procedure
        }
 
 
-#. Copy the server id value from the output for future reference. In this example, the ID
-is ``1ed5bc31-153d-4570-a361-92d5a02fd428``, but use the ID from your response.
+#. Copy the server id value from the output for future reference. In this
+   example, the ID is ``1ed5bc31-153d-4570-a361-92d5a02fd428``, but use the ID
+   from your response.
 
 .. _ppi-verifying-ips-curl:
 
 Verifying IP addresses on the server port (cURL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following example shows you how to verify the IP addresses on the server port. In this
-case, the IP addresses should be ``192.168.7.250`` and ``fc01::7``.
+The following example shows you how to verify the IP addresses on the server
+port. In this case, the IP addresses should be ``192.168.7.250`` and
+``fc01::7``.
 
 **Show port with cURL request**
 

@@ -3,32 +3,33 @@
 Configuring host routes with neutron
 -------------------------------------
 
-These sections walk you through configuring host routes by using the neutron client.
+These sections walk you through configuring host routes by using the neutron
+client.
 
 .. _chr-creating-network-neutron:
 
 Creating a network (neutron client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-After you create a network, copy its network ID. You use this ID to create a subnet and 
-boot the server.
+After you create a network, copy its network ID. You use this ID to create a
+subnet and boot the server.
 
-#. Issue the following neutron client command, substituting your own values for the ones 
-   shown.
-   
+#. Issue the following neutron client command, substituting your own values for
+   the ones shown.
+
    **Create network with neutron request**
 
    .. code::
-   
+
       $ neutron net-create Rackernet
 
    **Positional argument:**
-   
+
       -  The network name. In this example, the network name is ``Rackernet``.
 
    **Create network with neutron response**
 
-   .. code::  
+   .. code::
 
        +----------------+--------------------------------------+
        | Field          | Value                                |
@@ -42,23 +43,25 @@ boot the server.
        | tenant_id      | 5831008                              |
        +----------------+--------------------------------------+
 
-#. Copy the ``id`` value from the output. You will use this value when you create a subnet, 
-   provision your server, or perform other related activities. In this example, the ID is 
-   ``a8fde776-e80f-47bb-a050-0c057d89afc3``, but use the ID from your response.
+#. Copy the ``id`` value from the output. You will use this value when you
+   create a subnet, provision your server, or perform other related activities.
+   In this example, the ID is ``a8fde776-e80f-47bb-a050-0c057d89afc3``, but use
+   the ID from your response.
 
 .. _chr-creating-subnet-neutron:
 
 Creating a subnet with host routes (neutron client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To create a subnet with host routes, you specify a network, an IP address, allocation pools, 
+To create a subnet with host routes, you specify a network, an IP address, allocation pools,
 and host routes for your subnet.
 
-#. Issue the following cURL command, substituting your own values for the ones shown.
+#. Issue the following cURL command, substituting your own values for the ones
+   shown.
 
    **Create subnet with neutron request**
 
-   .. code::  
+   .. code::
 
       $ neutron subnet-create \
            --ip-version 4 \
@@ -67,10 +70,11 @@ and host routes for your subnet.
            --host-route destination=1.1.1.0/24,nexthop=192.168.5.254 \
            --tenant-id 5831008 \
            a8fde776-e80f-47bb-a050-0c057d89afc3 192.168.5.0/24
-           
+
    **Positional arguments:**
 
-   -  ``ip-version`` The version of the subnet IP. In this example, the version is ``4``.
+   -  ``ip-version`` The version of the subnet IP. In this example, the version
+      is ``4``.
 
    -  ``allocation-pool`` The start and end addresses for one or more
       allocation pools. In this example, there are two pools
@@ -78,9 +82,11 @@ and host routes for your subnet.
       ``start=192.168.5.103,end=192.168.5.254``.
 
    -  ``host-route`` A list of host route dictionaries for the subnet.
-      In this example, we used ``"destination": "1.1.1.0/24", "nexthop": "192.168.5.254"``.
+      In this example, we used
+      ``"destination": "1.1.1.0/24", "nexthop": "192.168.5.254"``.
 
-   -  ``tenant-id`` The tenant ID. In this example, we used the tenant ID ``5831008``.
+   -  ``tenant-id`` The tenant ID. In this example, we used the tenant ID
+      ``5831008``.
 
    -  The network ID or name. In this example, we used the network ID
       ``a8fde776-e80f-47bb-a050-0c057d89afc3``.
@@ -89,7 +95,7 @@ and host routes for your subnet.
 
    **Create subnet with neutron response**
 
-   .. code::  
+   .. code::
 
        +------------------+-----------------------------------------------------------+
        | Field            | Value                                                     |
@@ -108,45 +114,48 @@ and host routes for your subnet.
        | tenant_id        | 5831008                                                   |
        +------------------+-----------------------------------------------------------+
 
-#. Note the host\_routes attribute with the destination of ``1.1.1.0/24`` and the nexthop 
-   of ``192.168.5.254``.
+#. Note the host\_routes attribute with the destination of ``1.1.1.0/24`` and
+   the nexthop of ``192.168.5.254``.
 
 .. _chr-booting-server-nova:
 
 Booting a Server (nova client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following step shows you how to boot server with the nova client, using the network ID 
-of the network you created in the first step of this procedure. 
+The following step shows you how to boot server with the nova client, using the
+network ID of the network you created in the first step of this procedure.
 
 .. note::
 
 	To create your new server, you need the following information:
-	
-   -  The name of the new server. Use a name of your choice.
-   -  The image ID. 
-   -  The flavor ID. 
-   -  The network ID of the network, which is ``net-id=a8fde776-e80f-47bb-a050-0c057d89afc3``.
+
+   - The name of the new server. Use a name of your choice.
+   - The image ID.
+   - The flavor ID.
+   - The network ID of the network, which is
+     ``net-id=a8fde776-e80f-47bb-a050-0c057d89afc3``.
 
 #. Issue the following nova client command.
 
    **Boot server with nova request**
 
-   .. code::  
+   .. code::
 
        $ nova boot ata --image ffa476b1-9b14-46bd-99a8-862d1d94eb7a /
               --flavor 2 --nic net-id=a8fde776-e80f-47bb-a050-0c057d89afc3
-              
+
    **Positional arguments**
-   
+
    - The server name. In this example, the name is ``ata``.
-   - ``image``.  The image ID. In this example, the ID is ``ffa476b1-9b14-46bd-99a8-862d1d94eb7a``.
+   - ``image``.  The image ID. In this example, the ID is
+     ``ffa476b1-9b14-46bd-99a8-862d1d94eb7a``.
    - ``flavor``. The flavor ID.  In this example, the ID is ``2``
-   - ``nic net-id``.  The network ID. In this example, the ID is ``a8fde776-e80f-47bb-a050-0c057d89afc3``.
-   
+   - ``nic net-id``.  The network ID. In this example, the ID is
+     ``a8fde776-e80f-47bb-a050-0c057d89afc3``.
+
    **Boot server with nova response**
 
-   .. code::  
+   .. code::
 
        +-------------------------+-----------------------------------------------------------------+
        | Property                | Value                                                           |
@@ -173,32 +182,35 @@ of the network you created in the first step of this procedure.
        | user_id                 | 28be72f8fc5b45589c93f55274e459ce                                |
        +-------------------------+-----------------------------------------------------------------+
 
-#. Copy the ``id`` value from the output for future reference. In this example, the ID is 
-   ``a1061a57-0136-4c29-aac1-8b1a646a3001``, but use the ID from your response.
+#. Copy the ``id`` value from the output for future reference. In this example,
+   the ID is ``a1061a57-0136-4c29-aac1-8b1a646a3001``, but use the ID from your
+   response.
 
 .. _chr-verifying-ip-on-port-nova:
 
 Verifying the IP on the server port (nova client)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following step shows you how to verify the IP address on the server port. In this case, 
-the IP address should be ``192.168.5.3`` from the start of the allocation pool.
+The following step shows you how to verify the IP address on the server port.
+In this case, the IP address should be ``192.168.5.3`` from the start of the
+allocation pool.
 
 #. Issue the following command, substituting your value for the one shown.
 
    **Show server details with nova request**
 
-   .. code::  
+   .. code::
 
        $ nova list a1061a57-0136-4c29-aac1-8b1a646a3001
 
    **Positional arguments:**
 
-   -  The server ID. In this example, the ID is ``a1061a57-0136-4c29-aac1-8b1a646a3001``.
+   -  The server ID. In this example, the ID is
+      ``a1061a57-0136-4c29-aac1-8b1a646a3001``.
 
    **Show server details with nova response**
 
-   .. code::  
+   .. code::
 
        +-------------------------+------------------------------------------------------------------------------------+
        | Property                | Value                                                                              |
@@ -226,26 +238,27 @@ the IP address should be ``192.168.5.3`` from the start of the allocation pool.
        | user_id                 | 207638                                                                             |
        +-------------------------+------------------------------------------------------------------------------------+
 
-#. Note the IP address on the ``public`` interface (in this case, ``10.23.233.124``). Use 
-   this to log in to the server in the next step.
+#. Note the IP address on the ``public`` interface (in this case,
+   ``10.23.233.124``). Use this to log in to the server in the next step.
 
 .. _chr-logging-in-to-server-sshneutron:
 
 Logging in to the server and verify the route (ssh)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following steps show you how to log in to the server and verify that the host route is 
-configured correctly by using the command line.
+The following steps show you how to log in to the server and verify that the
+host route is configured correctly by using the command line.
 
-#. Issue the following command at the prompt, substituting your own value for the one shown.
+#. Issue the following command at the prompt, substituting your own value for
+   the one shown.
 
-   .. code::  
+   .. code::
 
       $ ssh root@10.23.233.124
 
    The command returns output like the following example:
 
-   .. code::  
+   .. code::
 
        The authenticity of host '10.23.233.124 (10.23.233.124)' can't be established.
        RSA key fingerprint is 87:b6:8f:7a:44:80:a4:58:f8:9b:09:82:d4:b0:f9:bf.
@@ -258,13 +271,13 @@ configured correctly by using the command line.
 
 #. Issue the following command at the prompt:
 
-   .. code::  
+   .. code::
 
       root@ata:~# route
 
    The command returns output like the following example:
 
-   .. code::  
+   .. code::
 
        Kernel IP routing table
        Destination Gateway Genmask Flags Metric Ref Use Iface
@@ -273,7 +286,7 @@ configured correctly by using the command line.
        10.23.233.0 * 255.255.255.0 U 0 0 0 eth0
        10.181.192.0 * 255.255.248.0 U 0 0 0 eth1
        192.168.5.0 * 255.255.255.0 U 0 0 0 eth2
-                           
+
 
    Notice the route ``1.1.1.0`` with Gateway ``192.168.5.254`` in the
    preceding output. That is what was expected.
