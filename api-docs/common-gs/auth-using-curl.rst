@@ -1,5 +1,8 @@
 .. _authenticate-using-curl:
 
+Authenticating by using cURL
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Follow these steps to authenticate to the Rackspace Cloud by
 :ref:`using cURL <how-curl-commands-work>`.
 
@@ -36,7 +39,8 @@ response that includes the following information:
 
    For detailed information about the authentication response, see the
    :rax-devdocs:`Annotated authentication request and response
-   <cloud-identity/v2/general-api-info/authentication-info/sample-auth-req-response/#annotated-auth-req-resp>`
+   <cloud-identity/v2/general-api-info/authentication-info/
+   sample-auth-req-response/#annotated-auth-req-resp>`
    in the Rackspace Cloud API documentation.
 
 In the following example, the ellipsis (...)  represents other service
@@ -162,3 +166,7 @@ request, prefix the variable name with a ``$``, for example ``$ENDPOINT``.
    .. code::
 
         $ export API_ENDPOINT="publicURL"
+
+
+   Replace ``publicURL`` with the ``publicURL`` value listed in the service
+   catalog.

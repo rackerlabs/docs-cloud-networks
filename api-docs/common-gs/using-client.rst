@@ -1,7 +1,7 @@
-.. _install-CLI-client:
+.. _request-using-client:
 
-Install CLI clients
-~~~~~~~~~~~~~~~~~~~
+Install CLI clients and |product name| Virtual Interface extension
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The nova client is an open-source Python client provides access to all public
 |apiservice| methods. You can use the nova client to perform the following
@@ -215,11 +215,11 @@ requests.
 
 .. _install-virtual-int-ext:
 
-The Cloud Networks virtual interface extension
+The Cloud Networks Virtual Interface extension
 ----------------------------------------------
 
 To attach networks to existing servers, rather than just at boot time, you need
-to install the virtual interface extension by using the following command:
+to install the Virtual Interface extension by using the following command:
 
 .. code::
 
@@ -233,4 +233,5 @@ to install the virtual interface extension by using the following command:
    .. code::
 
       $ sudo pip install os_virtual_interfacesv2_python_novaclient_ext --upgrade
+
 

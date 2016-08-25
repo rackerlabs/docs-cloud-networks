@@ -148,7 +148,7 @@ rst_epilog = """
 .. |apiservice| replace:: Rackspace Cloud Networks API
 .. |no changes| replace:: None for this release
 .. |contract version| replace:: v2.0
-.. |product name| replace:: product
+.. |product name| replace:: Cloud Networks
 """
 
 
