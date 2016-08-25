@@ -1,7 +1,7 @@
 .. _authenticate-using-curl:
 
-Authenticating by using cURL
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Authenticate by using cURL
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Follow these steps to authenticate to the Rackspace Cloud by
 :ref:`using cURL <how-curl-commands-work>`.
@@ -26,7 +26,7 @@ as shown in the following example.
 .. _review-auth-resp:
 
 Review the authentication response
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If your credentials are valid, the Identity service returns an authentication
 response that includes the following information:

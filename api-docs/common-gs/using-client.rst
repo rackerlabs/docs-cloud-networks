@@ -215,8 +215,8 @@ requests.
 
 .. _install-virtual-int-ext:
 
-The Cloud Networks Virtual Interface extension
-----------------------------------------------
+Install the Cloud Networks Virtual Interface extension
+------------------------------------------------------
 
 To attach networks to existing servers, rather than just at boot time, you need
 to install the Virtual Interface extension by using the following command:
