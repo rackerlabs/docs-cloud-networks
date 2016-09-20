@@ -457,6 +457,12 @@ Specify the following parameters when you create a rule:
 Floating IP addresses
 ~~~~~~~~~~~~~~~~~~~~~
 
+.. important::
+
+   At this time floating IP functionality is only available in the ``IAD``
+   datacenter, so all your regional resources should be located in that
+   region.
+
 A floating IP address is a static IP address that has the ability to move or
 “float” between cloud resources, primarily Cloud Servers. Unlike fixed or
 shared IP addresses, floating IP addresses are associated at the tenant level
@@ -487,12 +493,6 @@ Floating IPs solves the following two problems.
 In general, floating IPs enhance the flexibility of the Rackspace Public Cloud
 by removing the need to manage the networking changes associated with
 constantly changing IP addresses.
-
-.. important::
-
-   At this time floating IP functionality is only available in the ``IAD``
-   datacenter, so all your regional resources should be located in that
-   region.
 
 .. _concepts-floating-ip-caveats:
 
