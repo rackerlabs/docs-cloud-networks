@@ -5,7 +5,7 @@ Additional resources
 ====================
 
 We welcome feedback, comments, and bug reports. Visit the
-:rax-special:`Rackspace customer portal <feedback>`.
+Rackspace Product Feedback forum_.
 
 Use the links below to learn more about the Rackspace Cloud Servers service and
 API.
@@ -27,3 +27,5 @@ API.
 
 For product updates and announcements through Twitter, see
 http://twitter.com/rackspace.
+
+.. _Rackspace Product Feedback forum: https://community.rackspace.com/feedback/default
