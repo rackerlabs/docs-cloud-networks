@@ -6,7 +6,7 @@ Using floating IP addresses
 .. Important::
 
    The Floating IP Address API is currently in Early Access and is available
-   only in the IAD region.. It is available for Managed Infrastructure
+   only in the ``IAD`` region. It is available for Managed Infrastructure
    customers and Managed Operations customers and is not available for
    RackConnect customers. To use this feature, contact Rackspace Support.
 

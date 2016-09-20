@@ -36,7 +36,7 @@ browser plug-in for REST, and various programming languages and tools.
 		  RackConnect v3 customers.
 		- The Security Groups API is currently in Limited Availability.
 		- The Floating IP Address API and Shared IP Address API are in Early
-		  Access. The Floating IP Address API is available only in the IAD
+		  Access. The Floating IP Address API is available only in the ``IAD``
 		  region.
 		- These Security Groups, Floating IP, and Shared IP APIs are available
 		  for Managed Infrastructure customers and Managed Operations customers
