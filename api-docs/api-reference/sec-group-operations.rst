@@ -6,7 +6,7 @@ Security groups operations
 
 This section describes the API operations for security groups. For general
 information about security groups and security group rules, see
-ref:`Security groups concepts <concepts-security>`.
+:ref:`Security groups concepts <concepts-security>`.
 
 .. note::
 	The Security Groups API is currently in Limited Availability. It is
