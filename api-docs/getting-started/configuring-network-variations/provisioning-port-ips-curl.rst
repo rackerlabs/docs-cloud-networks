@@ -404,4 +404,4 @@ port. In this case, the IP addresses should be ``192.168.7.250`` and
       }
    }
 
-**Next topic:** :ref:`Using floating IP addresses<floating-ips>`
+**Next topic:** ref:`Control Network Access<control-access-intro>`

@@ -55,8 +55,6 @@ tasks:
 
 -  Manage and share IP addresses between servers in the same public zone.
 
--  Manage and allocate floating IP addresses.
-
 .. _neutron-vs-nova:
 
 Networking: Neutron versus Nova-Network

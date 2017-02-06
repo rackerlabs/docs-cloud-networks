@@ -1,0 +1,18 @@
+.. _cn-v2-20170207:
+
+API |contract version| updates, February 07, 2017
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+What's new
+----------
+
+The Cloud Networks API |contract version| no longer includes floating IP
+Address functionality.
+
+Resolved issues
+---------------
+|no changes|
+
+Known issues
+------------
+|no changes|
