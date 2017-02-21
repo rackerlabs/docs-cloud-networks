@@ -448,8 +448,8 @@ Specify the following parameters when you create a rule:
 - **Remote IP prefix**
 
   This optional parameter permits traffic from a Source IP address
-  corresponding to the Remote IP prefix. You can enter a single IP address (for
-  example: 10.553.16.23) or a range of IP addresses (for example:
+  corresponding to the Remote IP prefix. You can enter a single IP address
+  (for example: 10.553.16.23) or a range of IP addresses (for example:
   10.553.16.23/24).
 
 .. _concepts-shared-ips:
