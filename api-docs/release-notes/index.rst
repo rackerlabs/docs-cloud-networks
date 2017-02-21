@@ -16,7 +16,7 @@ other important details about |apiservice| |version| service updates.
    For information about using the API, see the
    :ref:`documentation overview <index>`.
 
-
+.. include:: releases/cn_v2_20170207.rst
 .. include:: releases/cn_v2_20160815.rst
 .. include:: releases/cn_v2_20160725.rst
 .. include:: releases/cn_v2_20150324.rst

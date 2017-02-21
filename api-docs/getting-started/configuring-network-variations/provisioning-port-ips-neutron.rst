@@ -288,4 +288,4 @@ shown.
    +-------------------------+------------------------------------------------------------------------------------+
 
 
-**Next topic:** :ref:`Using floating IP addresses<floating-ips>`
+**Next topic:** :ref:`Control Network Access<control-access-intro>`

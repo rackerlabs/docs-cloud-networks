@@ -13,5 +13,4 @@ This section provides neutron client (or nova client) and cURL examples of
    Controlling dynamic IP address allocation by using allocation pools <configuring-network-variations/using-allocation-pools>
    Configuring host routes <configuring-network-variations/configuring-host-routes>
    Provisioning IP addresses on isolated network ports <configuring-network-variations/provisioning-port-ips>
-   Using floating IP addresses <configuring-network-variations/floating-ips>
    Sharing IP addresses <configuring-network-variations/sharing-ips>
