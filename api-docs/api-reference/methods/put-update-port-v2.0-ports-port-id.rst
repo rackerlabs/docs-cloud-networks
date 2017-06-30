@@ -74,9 +74,6 @@ This table shows the body parameters for the request:
 |**port**                  |Object                   |The container for the    |
 |                          |                         |port details.            |
 +--------------------------+-------------------------+-------------------------+
-|port.\ **network_id**     |String                   |A symbolic name for the  |
-|                          |                         |port.                    |
-+--------------------------+-------------------------+-------------------------+
 |port.\ **name**           |String *(Optional)*      |A symbolic name for the  |
 |                          |                         |port.                    |
 +--------------------------+-------------------------+-------------------------+
@@ -94,10 +91,9 @@ This table shows the body parameters for the request:
 
    {
        "port": {
-           "admin_state_up": true,
            "device_id": "d6b4d3a5-c700-476f-b609-1493dd9dadc0",
            "name": "port1",
-           "network_id": "6aeaf34a-c482-4bd3-9dc3-7faf36412f12"
+           "security_group": "[fedbba3a-58ad-4482-87ea-14f1aa2a0819]"
        }
    }
 
@@ -181,7 +177,7 @@ This table shows the body parameters for the response:
             "mac_address":"fa:16:3e:2e:7c:8a",
             "name":"sample_port_1",
             "network_id":"a3775a7d-9f8b-4148-be81-c84bbd0837ce",
-            "security_groups":[],
+            "security_groups":[fedbba3a-58ad-4482-87ea-14f1aa2a0819],
             "status": "ACTIVE",
             "tenant_id":"60cd4f6dbc2f491982a284e7b83b5be3"
          }
