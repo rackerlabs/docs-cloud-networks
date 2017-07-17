@@ -5,7 +5,7 @@ Retrieve list of IP addresses explicitly associated with a server
 
 .. code::
 
-    GET /v2/servers/{serverID}/ip_associations
+    GET /v2/{tenantID}/servers/{serverID}/ip_associations
 
 This operation retrieves a list of all IP addresses explicitly associated to
 the specified server using the ``/ip_addresses`` API operations.
@@ -17,6 +17,8 @@ IP address between two ports, belonging to two servers, you must use a POST
 ``/ip_addresses`` for the relevant ports, followed by an IP association. The IP
 association must be done for the IP address for both the servers so that they
 can forward traffic for the IP address.
+
+In the URI, specify the tenant ID and the target server ID.
 
 This table shows the possible response codes for this operation:
 
