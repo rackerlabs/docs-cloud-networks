@@ -31,11 +31,8 @@ browser plug-in for REST, and various programming languages and tools.
 
 	..  important::
 
-		- The neutron API is in Unlimited Availability and is available for all
-		  Managed Infrastructure and Managed Operations customers except for
-		  RackConnect v3 customers.
-		- The Security Groups API and Shared IP API are currently in Limited
-		  Availability.
+		- The neutron API is available for all Managed Infrastructure and Managed
+		  Operations customers except for RackConnect v3 customers.
 		- The Security Groups API and Shared IP API are available for
 		  Managed Infrastructure customers and Managed Operations customers
 		  and are not available for RackConnect customers. To use these features,

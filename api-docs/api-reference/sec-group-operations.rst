@@ -8,12 +8,6 @@ This section describes the API operations for security groups. For general
 information about security groups and security group rules, see
 :ref:`Security groups concepts <concepts-security>`.
 
-.. note::
-	The Security Groups API is currently in Limited Availability. It is
-	available only to Managed Infrastructure customers and not to RackConnect or
-	Managed Operations customers. To use this feature, contact Rackspace
-	Support.
-
 
 .. SEC GROUPS OPS
 
