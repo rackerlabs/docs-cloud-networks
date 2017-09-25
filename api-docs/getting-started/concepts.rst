@@ -330,12 +330,6 @@ column, the abbreviations are defined as follows:
 Security groups and rules concepts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   .. important::
-      The Security Groups API is currently in Limited Availability. It is
-      available only to Managed Infrastructure customers and not to RackConnect
-      or Managed Operations customers. To use this feature, contact Rackspace
-      Support.
-
 A security group is a named container for security group rules, which provide
 Rackspace Public Cloud users the ability to specify the types of traffic that
 are allowed to pass through, to, and from ports (Public/ServiceNet) on a Cloud

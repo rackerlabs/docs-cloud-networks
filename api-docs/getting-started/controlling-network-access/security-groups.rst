@@ -3,20 +3,12 @@
 Controlling network traffic by using security groups and rules
 --------------------------------------------------------------
 
-.. Important::
-
-   The Security Groups API is currently in Limited Availability. It is
-   available only to Managed Infrastructure customers and not to RackConnect or
-   Managed Operations customers. To use this feature, contact Rackspace
-   Support.
-
 A security group is a named container for security group rules, which provide
 Rackspace Public Cloud users the ability to specify the types of traffic that
 are allowed to pass through, to, and from ports (Public/ServiceNet) on a Cloud
 server instance. After an instance is active, you can assign one or more
 security groups to Neutron ports on that instance. You cannot apply security
 groups to a port at boot time.
-
 
 .. Note::
 
