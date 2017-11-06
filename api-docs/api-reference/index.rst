@@ -29,14 +29,14 @@ The Rackspace Cloud Networks API v2 (Neutron) serves the following functions:
 The neutron API is accessible by using cURL commands, the neutron client, a
 browser plug-in for REST, and various programming languages and tools.
 
-	..  important::
+   ..  important::
 
-		- The neutron API is available for all Managed Infrastructure and Managed
-		  Operations customers except for RackConnect v3 customers.
-		- The Security Groups API and Shared IP API are available for
-		  Managed Infrastructure customers and Managed Operations customers
-		  and are not available for RackConnect customers. To use these features,
-		  contact Rackspace Support.
+      - The neutron API is available for all Managed Infrastructure and Managed
+        Operations customers except for RackConnect v3 customers.
+      - The Security Groups API and Shared IP API are available for
+        Managed Infrastructure customers and Managed Operations customers
+        and are not available for RackConnect customers. To use these features,
+        contact Rackspace Support.
 
 .. note::
 

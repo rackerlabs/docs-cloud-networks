@@ -4,8 +4,8 @@
 Additional resources
 ====================
 
-We welcome feedback, comments, and bug reports. Visit the
-`Rackspace Product Feedback forum`_.
+We welcome feedback, comments, and bug reports. Email
+`<infodev@rackspace.com>`__ with your comments, suggestions, and feedback.
 
 Use the links below to learn more about the Rackspace Cloud Servers service and
 API.
@@ -28,4 +28,3 @@ API.
 For product updates and announcements through Twitter, see
 http://twitter.com/rackspace.
 
-.. _Rackspace Product Feedback forum: https://community.rackspace.com/feedback/f/68

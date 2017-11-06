@@ -2,7 +2,7 @@
 
 .. code:: json
 
-			 {
+          {
                 "name": "cloudNetworks",
                 "endpoints": [
                     {

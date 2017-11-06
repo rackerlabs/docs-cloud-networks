@@ -28,6 +28,3 @@ following items:
   communicating with the API service.
 
 
-
-.. comment: link reference
-

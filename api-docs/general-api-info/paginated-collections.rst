@@ -4,9 +4,6 @@
 Paginated collections
 =====================
 
-.. COMMENT: Adapt this topic to provide information that is relevant for your
-   product.
-
 To reduce load on the service, retrieve operations return a maximum limit of
 100 items at a time. If a request supplies no limit or one that exceeds the
 configured  default limit, the default limit is used instead.
