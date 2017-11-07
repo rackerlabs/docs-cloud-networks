@@ -231,7 +231,7 @@ this procedure.
    **List server A ports with cURL request**
 
    .. code::
-
+      $ API_ENDPOINT='https://dfw.networks.api.rackspacecloud.com'
       $ curl -s $API_ENDPOINT/ports?device_id=f387799f-9668-4cc7-9f0f-03c9cfc43af6 \
               -X GET \
               -H "Content-Type: application/json" \
