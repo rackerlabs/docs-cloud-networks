@@ -12,6 +12,8 @@ This operation allows you to provision an IP address on a specified network.
 A list of port_ids must be specified to provision the IP address on the
 specified ports.
 
+You can provision a shared IP with a specific IP address (Cloud Networks only).
+
 .. note::
 
    When provisioning IP addresses, the type is automatically set to ``shared``
@@ -64,9 +66,6 @@ This table shows the body parameters for the request:
 |ip_address.\ **version**  |String                   |The subnet IP version,   |
 |                          |                         |which is ``4`` or ``6``. |
 +--------------------------+-------------------------+-------------------------+
-|ip_address.\ **tenant_id**|String                   |The ID of the tenant.    |
-|                          |                         |                         |
-+--------------------------+-------------------------+-------------------------+
 
 **Example Provision IP address: JSON request**
 
@@ -80,11 +79,26 @@ This table shows the body parameters for the request:
            "port_ids": [
                "6200d533-a42b-4c04-82a1-cc14dbdbf2de",
                "9d0db2d7-62df-4c99-80cb-6f140a5260e8"
-            ],
-           "tenant_id": "2345678"
+            ]
        }
    }
 
+
+**Example Provision IP address with a specified IP: JSON request**
+
+
+.. code::
+
+   {
+       "ip_address": {
+           "network_id": "00000000-0000-0000-0000-000000000000",
+           "version": 4,
+           "port_ids": [
+               "6200d533-a42b-4c04-82a1-cc14dbdbf2de",
+               "9d0db2d7-62df-4c99-80cb-6f140a5260e8"
+            ]
+       }
+   }
 
 Response
 --------
