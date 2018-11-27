@@ -12,6 +12,11 @@ This operation allows you to provision an IP address on a specified network.
 A list of port_ids must be specified to provision the IP address on the
 specified ports.
 
+For Cloud Networks only, you can provision a shared IP with a specific IP address. 
+To do this, you must specify a network ID in the request in addition to the specific 
+IP that you want to provision.  You cannot specify an IP to provision for either 
+PublicNet or ServiceNet.
+
 .. note::
 
    When provisioning IP addresses, the type is automatically set to ``shared``
@@ -64,8 +69,9 @@ This table shows the body parameters for the request:
 |ip_address.\ **version**  |String                   |The subnet IP version,   |
 |                          |                         |which is ``4`` or ``6``. |
 +--------------------------+-------------------------+-------------------------+
-|ip_address.\ **tenant_id**|String                   |The ID of the tenant.    |
-|                          |                         |                         |
+|ip_address.\              |String                   |For Cloud Networks only, |
+|**ip-address**            |                         |the specified IP that you|
+|                          |                         |want to provision.       |
 +--------------------------+-------------------------+-------------------------+
 
 **Example Provision IP address: JSON request**
@@ -80,11 +86,27 @@ This table shows the body parameters for the request:
            "port_ids": [
                "6200d533-a42b-4c04-82a1-cc14dbdbf2de",
                "9d0db2d7-62df-4c99-80cb-6f140a5260e8"
-            ],
-           "tenant_id": "2345678"
+            ]
        }
    }
 
+
+**Example Provision IP address with a specified IP: JSON request**
+
+
+.. code::
+
+   {
+       "ip_address": {
+           "network_id": "851fe377-bb10-4922-a83a-6358bbc09347",
+           "version": 4,
+           "port_ids": [
+               "6200d533-a42b-4c04-82a1-cc14dbdbf2de",
+               "9d0db2d7-62df-4c99-80cb-6f140a5260e8"
+            ]
+          "ip_address": "192.168.100.4"
+       }
+   }
 
 Response
 --------
@@ -148,3 +170,22 @@ This table shows the body parameters for the response:
        }
    }
 
+**Example Provision IP address with a specified IP: JSON response**
+
+
+.. code::
+
+   {
+       "ip_address":
+       {
+           "id": "4decd21e-d3ba-4ab3-96f4-5c2f56eba929",
+           "network_id": "851fe377-bb10-4922-a83a-6358bbc09347",
+           "address": "192.168.100.4",
+           "port_ids": ["6200d533-a42b-4c04-82a1-cc14dbdbf2de",
+                       "9d0db2d7-62df-4c99-80cb-6f140a5260e8"
+           "subnet_id": "f11687e8-ef0d-4207-8e22-c60e737e473b",
+           "tenant_id": "2345678",
+           "version": "4",
+           "type": "shared"
+       }
+   }
