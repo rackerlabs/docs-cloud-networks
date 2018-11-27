@@ -12,7 +12,7 @@ This operation allows you to provision an IP address on a specified network.
 A list of port_ids must be specified to provision the IP address on the
 specified ports.
 
-For Cloud Netowrks only, you can provision a shared IP with a specific IP address. 
+For Cloud Networks only, you can provision a shared IP with a specific IP address. 
 To do this, you must specify a network ID in the request in addition to the specific 
 IP that you want to provision.  You cannot specify an IP to provision for either 
 PublicNet or ServiceNet.
