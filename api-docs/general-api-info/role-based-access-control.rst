@@ -26,7 +26,7 @@ users specific permissions for accessing the capabilities of the
 is assigned by default to any Rackspace Cloud account when the account is
 created.
 
-See the Cloud Identity API guide for information about how to
+See the Rackspace Identity API guide for information about how to
 perform the following tasks:
 
 * :rax-devdocs:`Add account users
@@ -134,5 +134,3 @@ API operations for |product name| may or may not be available to all
 roles. To see which operations are permitted to invoke which calls,
 review the :how-to:`Permissions Matrix for Role-Based Access Control (RBAC) \
 <permissions-matrix-for-role-based-access-control-rbac>`.
-
-
