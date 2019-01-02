@@ -8,7 +8,7 @@ Whether you use cURL, a REST client, or a command-line client (CLI) to send
 requests to the |apiservice|, you need an authentication token to include in
 the ``X-Auth-Token`` header of each request. You get a token by submitting an
 authentication request with valid account credentials to the following
-Rackspace Cloud Identity API service endpoint:
+Rackspace Identity API service endpoint:
 
 .. code::
 
@@ -23,7 +23,7 @@ authentication request to get a new one.
 
 .. note::
      For more information about authentication tokens, see the following topics
-     in the Rackspace Cloud Identity API documentation:
+     in the Rackspace Identity API documentation:
 
      - :rax-devdocs:`Authentication token operations
        <cloud-identity/v2/api-reference/token-operations/>`
@@ -31,7 +31,7 @@ authentication request to get a new one.
        The examples in this API guide show how to authenticate by
        using username and API key credentials, which is a more secure way to
        communicate with API services. The authentication token operations
-       reference in the Rackspace Cloud Identity API documentation describes
+       reference in the Rackspace Identity API documentation describes
        other types of credentials that you can use for authentication.
 
      - :rax-devdocs:`Manage authentication tokens
