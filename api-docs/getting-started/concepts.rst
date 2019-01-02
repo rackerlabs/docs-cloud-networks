@@ -94,7 +94,6 @@ column, the abbreviations are defined as follows:
 
 .. _concepts-subnet:
 
-
 Subnet concepts
 ~~~~~~~~~~~~~~~
 
