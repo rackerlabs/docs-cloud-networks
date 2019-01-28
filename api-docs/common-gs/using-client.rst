@@ -130,7 +130,7 @@ To install the nova client, perform the following steps.
    * - Environment variable
      - Description
    * - OS_AUTH_URL
-     - The endpoint for the Rackspace Identity service, which the nova
+     - The endpoint for the Identity service, which the nova
        client uses for authentication.
    * - OS_AUTH_SYSTEM
      - The authentication system required to get your credentials.
