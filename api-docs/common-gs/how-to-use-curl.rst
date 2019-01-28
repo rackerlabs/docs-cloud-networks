@@ -26,7 +26,7 @@ or a script.
 .. _auth-curl-json:
 
 The following example shows a cURL command for sending an authentication
-request to the Rackspace Identity service.
+request to the Identity service.
 
 **Example: cURL command for sending a JSON request**
 
