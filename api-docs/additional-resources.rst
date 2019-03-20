@@ -7,20 +7,17 @@ Additional resources
 We welcome feedback, comments, and bug reports. Email
 `<infodev@rackspace.com>`__ with your comments, suggestions, and feedback.
 
-Use the links below to learn more about the Rackspace Cloud Servers service and
+Use the links below to learn more about the Rackspace Cloud Networks service and
 API.
 
-- For general information about Cloud Servers, see the
+- For general information about Cloud Networks, see the
   :how-to:`Cloud Networks FAQ <cloud-networks-faq>`
   article.
 
-- To learn more about the Cloud Servers service and the various ways you can
-  interact with it (API, SDK, CLI, and Control Panel), see the
+- To learn more about the Cloud Networks service and the various ways you can
+  interact with it (API, CLI, and Control Panel), see the
   :rax-devdocs:`Rackspace Cloud Guide to Core Infrastructure
   Services <user-guides/infrastructure/>`.
-
-- To learn about using Rackspace Cloud SDKs, see
-  :rax-dev:`Software Development Kits & Tools <docs/#sdks>`.
 
 - To get information about other Rackspace Cloud services APIs, see the
   :rax-devdocs:`Rackspace API Documentation <>`.
