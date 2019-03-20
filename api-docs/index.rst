@@ -24,9 +24,7 @@ the |product name| service REST API:
 
 .. note::
 
-   You can also use |product name| from the Cloud Control Panel or by using
-   one of the language-specific
-   :rax-devdocs:`software development kits or the rack CLI <#sdks>`.
+   You can also use |product name| from the Cloud Control Panel.
 
 The Rackspace |product name| service enables customers to perform the following
 tasks:
