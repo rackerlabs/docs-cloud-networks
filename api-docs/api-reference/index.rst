@@ -34,9 +34,7 @@ browser plug-in for REST, and various programming languages and tools.
       - The neutron API is available for all Managed Infrastructure and Managed
         Operations customers except for RackConnect v3 customers.
       - The Security Groups API and Shared IP API are available for
-        Managed Infrastructure customers and Managed Operations customers
-        and are not available for RackConnect customers. To use these features,
-        contact Rackspace Support.
+        all customers except RackConnect customers.
 
 .. note::
 
