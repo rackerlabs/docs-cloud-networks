@@ -16,8 +16,8 @@ To get started using shared IP addresses, see
 To learn more about shared IP addresses, see
 :ref:`Shared IP addresses concepts<concepts-shared-ips>`.
 
-The shared IP address API is currently in Limited Availability. It is
-available to Managed Infrastructure customers and Managed Operations
+The shared IP address API is currently in Limited Availability. It is 
+available to Managed Infrastructure customers and Managed Operations 
 customers. To use this feature, contact Rackspace Support.
 
 Resolved issues

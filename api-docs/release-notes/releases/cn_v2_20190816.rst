@@ -1,0 +1,18 @@
+.. _cn-v2-20190816:
+
+API |contract version| updates, August 16, 2019
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+What's new
+----------
+
+The shared IP address API is currently in General Availability. 
+It is available to all customers except RackConnect customers.
+
+Resolved issues
+---------------
+|no changes|
+
+Known issues
+------------
+|no changes|

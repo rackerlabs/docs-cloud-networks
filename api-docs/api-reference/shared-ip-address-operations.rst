@@ -9,10 +9,8 @@ information about shared IP addresses, see
 :ref:`Shared IP addresses concepts <concepts-shared-ips>`.
 
 .. note::
-	The Shared IP Addresses API is currently in Limited Availability. It is
-	available only to Managed Infrastructure customers and not to RackConnect or
-	Managed Operations customers. To use this feature, contact Rackspace
-	Support.
+	The Shared IP Addresses API is available to all customers except 
+	RackConnect customers.
 
 
 .. SHARED IP ADDRESS OPS
