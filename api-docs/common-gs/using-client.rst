@@ -59,7 +59,7 @@ environment variables.
 |                    |                                                        |
 |                    |        $ sudo easy_install pip                         |
 |                    |                                                        |
-|                    | -  Ubuntu                                              |
+|                    | -  The Ubuntu operating system                         |
 |                    |                                                        |
 |                    |    .. code::                                           |
 |                    |                                                        |
@@ -178,8 +178,8 @@ list of Openstack commands, see the
 Install the neutron client
 --------------------------
 
-To install the neutron client for Ubuntu, Debian, or Mac OS X, run the
-following command:
+To install the neutron client for the Ubuntu operating system, Debian, or Mac
+OS X, run the following command:
 
 .. code::
 
@@ -197,7 +197,7 @@ command:
    If you previously installed the rackspace-novaclient package, run the
    following command to upgrade it:
 
-	For Ubuntu, Debian, or Mac OS X:
+	For the Ubuntu operating system, Debian, or Mac OS X:
 
    .. code::
 
