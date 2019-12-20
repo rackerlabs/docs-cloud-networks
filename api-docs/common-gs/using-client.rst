@@ -162,6 +162,7 @@ review information about using the client.
 To get help for a specific command, type the command name after the ``help``
 parameter, as follows:
 
+
 .. code::
 
    $ nova help <command_name>
