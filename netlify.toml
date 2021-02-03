@@ -14,3 +14,9 @@
 [context.deploy-preview]
   publish = "api-docs/_build/html"
   command = "cd api-docs && make clean html && cd .."
+
+[[redirects]]
+  from = "/*"
+  to = "/docs/cloud-networks/v2/:splat"
+  status = 301
+  force = false
