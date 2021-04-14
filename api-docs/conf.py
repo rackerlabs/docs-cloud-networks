@@ -184,10 +184,10 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
-html_title = 'Rackspace Cloud Networks version 2.0 API documentation'
+# html_title = 'Rackspace Cloud Networks version 2.0 API documentation'
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
-html_short_title = 'Rackspace Cloud Networks'
+# html_short_title = 'Rackspace Cloud Networks'
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
